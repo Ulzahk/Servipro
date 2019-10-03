@@ -22,6 +22,8 @@ import com.example.demo4.UserRepository;
  *
  * @author practicante
  */
+
+
 @Controller
 public class UserController {
         private final UserRepository userRepository;

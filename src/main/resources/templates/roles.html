@@ -10,31 +10,47 @@
         <link rel="stylesheet" href="../css/shards.min.css">
     </head>
     <body>
-        <div class="container my-5">
-            <h2 class="mb-5">Agregar nuevo rol</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <form action="#" th:action="@{/adduser}" th:object="${user}" method="post">
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label for="name" class="col-form-label">Nombre</label>
-                                <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Nombre">
-                                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="email" class="col-form-label">Documento</label>
-                                <input type="text" th:field="*{email}" class="form-control" id="email" placeholder="Documento">
-                                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mt-5">
-                                <input type="submit" class="btn btn-primary" value="Add User">
-                            </div>
-                        </div>    
-                    </form>
-                </div>
-            </div>
-        </div>
+        <table>
+            <thead> 
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody th:each="person : ${people}">
+                <tr>
+                    <th th:text="${person.name}"></th>
+                    <th th:text="${person.age}"></th>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <!-- <div class="container my-5">
+             <h2 class="mb-5">Agregar nuevo rol</h2>
+             <div class="row">
+                 <div class="col-md-6">
+                     <form action="#" th:action="@{/adduser}" th:object="${user}" method="post">
+                         <div class="row">
+                             <div class="form-group col-md-6">
+                                 <label for="name" class="col-form-label">Nombre</label>
+                                 <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Nombre">
+                                 <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
+                             </div>
+                             <div class="form-group col-md-6">
+                                 <label for="email" class="col-form-label">Documento</label>
+                                 <input type="text" th:field="*{email}" class="form-control" id="email" placeholder="Documento">
+                                 <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
+                             </div>
+                         </div>
+                         <div class="row">
+                             <div class="col-md-6 mt-5">
+                                 <input type="submit" class="btn btn-primary" value="Add User">
+                             </div>
+                         </div>    
+                     </form>
+                 </div>
+             </div>
+         </div>-->
     </body>
 </html>
