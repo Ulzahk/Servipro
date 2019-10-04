@@ -8,6 +8,7 @@ package com.example.demo4.controller;
 import model.Person;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,20 +27,25 @@ public class Roles3Controller {
     public static final String FORM_VIEW = "form";
     public static final String RESULT_VIEW = "result";
 
-    // 1
+//    // 1
 //    @GetMapping("/")
 //    public RedirectView redirect(){
-//        return new RedirectView ("/roles3/showform");
+//       return new RedirectView ("/roles3/showform");
+//  }
+//    // 2
+//    @GetMapping("/")
+//    public String redirect(){
+//        return "redirect:/roles3/showform";
 //    }
     
     
-    // 2
+    //3 este si sirve
     @GetMapping("/")
-    public String redirect(){
-        return "redirect:/roles3/showform";
+    public ModelAndView redirect(ModelMap model) {
+        model.addAttribute("attribute", "/");
+        return new ModelAndView("redirect:/roles3/showform", model);
     }
-    
-    
+
     @GetMapping("/showform")
     public String showform(Model model) {
         model.addAttribute("person", new Person());
