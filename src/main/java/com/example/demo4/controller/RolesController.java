@@ -5,9 +5,12 @@
  */
 package com.example.demo4.controller;
 
+import com.example.demo4.component.RolesComponent;
 import java.util.ArrayList;
 import java.util.List;
 import model.Person;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,14 +22,19 @@ import org.springframework.web.servlet.ModelAndView;
  * @author PRACTICANTE
  */
 @Controller
-@RequestMapping("/say")
+@RequestMapping("/roles")
 public class RolesController {
 
     public static final String ROLES_VIEW = "roles"; // se establece una variable fija en caso de que se tengan que hacer cambios en todo el código
 
+    @Autowired
+    @Qualifier("RolesComponent")
+    private RolesComponent rolesComponent;
+    
 //Primera forma = para cuando sólo son redirecciones 
     @GetMapping("/rolesString")
     public String rolesString(Model model) {
+        rolesComponent.sayHello();
         model.addAttribute("people", getPeople());
         return ROLES_VIEW;
     }

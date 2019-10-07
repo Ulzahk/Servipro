@@ -5,7 +5,9 @@
  */
 package com.example.demo4.controller;
 
+import com.mysql.cj.log.Log;
 import model.Person;
+import org.apache.juli.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -26,6 +28,7 @@ public class Roles3Controller {
 
     public static final String FORM_VIEW = "form";
     public static final String RESULT_VIEW = "result";
+    
 
 //    // 1
 //    @GetMapping("/")
@@ -47,7 +50,7 @@ public class Roles3Controller {
     }
 
     @GetMapping("/showform")
-    public String showform(Model model) {
+    public String showform(Model model) {        
         model.addAttribute("person", new Person());
         return FORM_VIEW;
     }
