@@ -27,14 +27,14 @@ public class RolesController {
 
     public static final String ROLES_VIEW = "roles"; // se establece una variable fija en caso de que se tengan que hacer cambios en todo el código
 
-    @Autowired
-    @Qualifier("RolesComponent")
-    private RolesComponent rolesComponent;
+//    @Autowired
+//    @Qualifier("RolesComponent")
+//    private RolesComponent rolesComponent;
     
 //Primera forma = para cuando sólo son redirecciones 
     @GetMapping("/rolesString")
     public String rolesString(Model model) {
-        rolesComponent.sayHello();
+//        rolesComponent.sayHello();
         model.addAttribute("people", getPeople());
         return ROLES_VIEW;
     }
