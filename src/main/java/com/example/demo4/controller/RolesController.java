@@ -27,14 +27,11 @@ public class RolesController {
 
     public static final String ROLES_VIEW = "roles"; // se establece una variable fija en caso de que se tengan que hacer cambios en todo el código
 
-//    @Autowired
-//    @Qualifier("RolesComponent")
-//    private RolesComponent rolesComponent;
-    
+
 //Primera forma = para cuando sólo son redirecciones 
     @GetMapping("/rolesString")
     public String rolesString(Model model) {
-//        rolesComponent.sayHello();
+     
         model.addAttribute("people", getPeople());
         return ROLES_VIEW;
     }
@@ -47,16 +44,15 @@ public class RolesController {
         return mav;
     }
 
-    private List<Person> getPeople(){
+    private List<Person> getPeople() {
         List<Person> people = new ArrayList<>();
-        people.add(new Person("Jon",23));
-        people.add(new Person("Max",30));
-        people.add(new Person("Laura",23));
-        people.add(new Person("Clara",23));
+        people.add(new Person("Jon", 23));
+        people.add(new Person("Max", 30));
+        people.add(new Person("Laura", 23));
+        people.add(new Person("Clara", 23));
         return people;
     }
-    
-    
+
     @GetMapping("/roles")
     public String roles() {
         return "roles";
