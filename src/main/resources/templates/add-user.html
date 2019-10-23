@@ -11,19 +11,19 @@
     </head>
     <body>
         <div class="container my-5">
-            <h2 class="mb-5">Nuevo usuario</h2>
+            <h2 class="mb-5">New User</h2>
             <div class="row">
                 <div class="col-md-6">
                     <form action="#" th:action="@{/adduser}" th:object="${user}" method="post">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="name" class="col-form-label">Nombre</label>
-                                <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Nombre">
+                                <label for="name" class="col-form-label">Name</label>
+                                <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Name">
                                 <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="email" class="col-form-label">Documento</label>
-                                <input type="text" th:field="*{email}" class="form-control" id="email" placeholder="Documento">
+                                <label for="email" class="col-form-label">Email</label>
+                                <input type="text" th:field="*{email}" class="form-control" id="email" placeholder="Email">
                                 <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
                             </div>
                         </div>

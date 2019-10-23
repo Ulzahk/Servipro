@@ -39,7 +39,7 @@ public class inicioController {
     
     @GetMapping("/model")
     public ModelAndView inicio(){
-        ModelAndView mod= new ModelAndView("lalala");
+        ModelAndView mod= new ModelAndView("inicio");
 //        mod.addObject("nombre", usuariosservice);
         return  mod;
         
