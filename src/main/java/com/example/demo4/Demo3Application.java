@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication(scanBasePackages={
 "com.example.demo4", "com.example.demo4.controller"})
 
-@ComponentScan({"org.springframework.ui.Model"})
+@ComponentScan({"org.springframework.ui.Model"})//Para agregar el bean de ui model para resolver el problema de com.example.demo4.controller.ExampleController
 
 @EnableAutoConfiguration 
 public class Demo3Application {
