@@ -15,7 +15,7 @@ import javax.validation.constraints.NotBlank;
  * @author practicante
  */
 @Entity
-public class User {
+public class Usuario {
  @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -25,9 +25,9 @@ public class User {
     @NotBlank(message = "Email is mandatory")
     private String email;
 
-    public User() {}
+    public Usuario() {}
 
-    public User(String name, String email) {
+    public Usuario(String name, String email) {
         this.name = name;
         this.email = email;
     }

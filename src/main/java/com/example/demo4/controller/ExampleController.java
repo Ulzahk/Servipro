@@ -18,7 +18,7 @@ public class ExampleController {
     @Qualifier("exampleComponent")
     
     
-    //PRIERMA FORMA
+    //PRIMERA FORMA
     @GetMapping("/exampleString")
     public String exampleString (Model model){
         model.addAttribute("name","John");
