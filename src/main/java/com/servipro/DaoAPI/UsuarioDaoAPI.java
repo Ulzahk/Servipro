@@ -5,13 +5,13 @@
  */
 package com.servipro.DaoAPI;
 
-import com.servipro.entity.Usuario;
+import com.servipro.entity.UsuarioEntity;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author PRACTICANTE
  */
-public interface UsuarioDaoAPI extends CrudRepository<Usuario, Long> {
+public interface UsuarioDaoAPI extends CrudRepository<UsuarioEntity, Long> {
     
 }

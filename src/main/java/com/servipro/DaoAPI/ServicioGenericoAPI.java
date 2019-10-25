@@ -11,6 +11,10 @@ import java.util.List;
 /**
  *
  * @author PRACTICANTE
+ * @param <T>
+ * @param <ID> 
+ * @see
+ * Sirve a manera de intermediario para proveer un servicio de obtencion de entidades
  */
 public interface ServicioGenericoAPI <T, ID extends Serializable> {
     T guardar(T entidad);

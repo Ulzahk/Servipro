@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.servipro.repository;
-import com.servipro.entity.Usuario;
+import com.servipro.entity.UsuarioEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,8 +13,8 @@ import org.springframework.stereotype.Repository;
  * @author practicante
  */
 
-@Repository ("UserRepository")
-public interface UsuarioCRUDRepository extends CrudRepository<Usuario, Long> {
+@Repository ("UsuarioRepository")
+public interface UsuarioCRUDRepository extends CrudRepository<UsuarioEntity, Long> {
     
     
     

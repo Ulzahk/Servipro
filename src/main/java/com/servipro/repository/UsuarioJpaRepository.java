@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.servipro.repository;
-import com.servipro.entity.Usuario;
+import com.servipro.entity.UsuarioEntity;
 import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
  *
  * @author PRACTICANTE
  */
-@Repository ("usuariosJpaRepository")
-public interface UsuarioJpaRepository extends JpaRepository <Usuario,Serializable>{
+@Repository ("usuarioJpaRepository")
+public interface UsuarioJpaRepository extends JpaRepository <UsuarioEntity,Serializable>{
     
 }

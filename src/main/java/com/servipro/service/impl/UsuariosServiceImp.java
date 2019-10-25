@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
  * @author PRACTICANTE
  */
 @Service("usuariosServiceImp")
-public class UsuariosServiceImp implements usuariosservice{
+public abstract class UsuariosServiceImp implements usuariosservice{
     
     @Autowired
     @Qualifier ("usuariosJpaRepository")

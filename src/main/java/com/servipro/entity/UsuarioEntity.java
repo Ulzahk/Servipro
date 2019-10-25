@@ -19,11 +19,11 @@ import javax.validation.constraints.NotBlank;
  */
 @Entity
 @Table(name="usuarios")
-public class Usuario implements Serializable {
+public class UsuarioEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "IDEmpleado")
-    private long idempleado;
+    private Long idempleado;
     @Column(name = "IDUsuario")
     @NotBlank(message = "id de usuario es obligatorio")
     private String idusuario;
@@ -32,12 +32,12 @@ public class Usuario implements Serializable {
     private String contrasena;
     @Column(name = "IDPerfil")
     @NotBlank(message = "El id del perfil es obligatorio")
-    private long idperfil;
+    private Long idperfil;
    
 
-    public Usuario() {}
+    public UsuarioEntity() {}
 
-    public Usuario(long idempleado, String idusuario,String contrasena,long idperfil) {
+    public UsuarioEntity(Long idempleado, String idusuario,String contrasena,Long idperfil) {
         this.idempleado = idempleado;
         this.idusuario = idusuario;
         this.contrasena = contrasena;

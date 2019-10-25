@@ -5,12 +5,12 @@
  */
 package com.servipro.DaoAPI;
 
-import com.servipro.entity.Usuario;
+import com.servipro.entity.UsuarioEntity;
 
 /**
  *
  * @author PRACTICANTE
  */
-public interface UsuarioServiceAPI extends ServicioGenericoAPI<Usuario, Long> {//OJO ACA ERA OBLIGATORIO PORNER LA CLASE Long y en el entity de Usuario el id esta es como objeto rpimitivo tipo long
+public interface UsuarioServiceAPI extends ServicioGenericoAPI<UsuarioEntity, Long> {//OJO ACA ERA OBLIGATORIO PORNER LA CLASE Long y en el entity de UsuarioEntity el id esta es como objeto rpimitivo tipo long
     
 }

@@ -70,11 +70,6 @@
             <!--   <version>2.3.0</version>   -->
         </dependency>
         <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>           
-        </dependency>
-         
-        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <!--  <version>5.0.11.Final</version>
@@ -95,15 +90,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            
-            <!-- <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>             
-                <configuration>    
-                    <mainClass>main.java.com.servipro.ServiproApplication</mainClass>
-                </configuration>
-            </plugin> -->
-            
         </plugins>
     </build>
 
