@@ -4,10 +4,13 @@
  * and open the template in the editor.
  */
 package com.servipro.entity;
+import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 /**
@@ -15,49 +18,81 @@ import javax.validation.constraints.NotBlank;
  * @author practicante
  */
 @Entity
-public class Usuario {
- @Id
+@Table(name="usuarios")
+public class Usuario implements Serializable {
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-    @NotBlank(message = "Name is mandatory")
-    private String name;
-    
-    @NotBlank(message = "Email is mandatory")
-    private String email;
+    @Column(name = "IDEmpleado")
+    private long idempleado;
+    @Column(name = "IDUsuario")
+    @NotBlank(message = "id de usuario es obligatorio")
+    private String idusuario;
+    @Column(name = "Contraseña")
+    @NotBlank(message = "La constraseña es obligatoria")
+    private String contrasena;
+    @Column(name = "IDPerfil")
+    @NotBlank(message = "El id del perfil es obligatorio")
+    private long idperfil;
+   
 
     public Usuario() {}
 
-    public Usuario(String name, String email) {
-        this.name = name;
-        this.email = email;
+    public Usuario(long idempleado, String idusuario,String contrasena,long idperfil) {
+        this.idempleado = idempleado;
+        this.idusuario = idusuario;
+        this.contrasena = contrasena;
+        this.idperfil = idperfil;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-    
-    public long getId() {
-        return id;
-    }
-    
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    public void setEmail(String email) {
-        this.email = email;
+    /**
+     * @return the contrasena
+     */
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public String getName() {
-        return name;
+    /**
+     * @param contrasena the contrasena to set
+     */
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
-    public String getEmail() {
-        return email;
+    /**
+     * @return the idperfil
+     */
+    public long getIdperfil() {
+        return idperfil;
     }
+
+    /**
+     * @param idperfil the idperfil to set
+     */
+    public void setIdperfil(long idperfil) {
+        this.idperfil = idperfil;
+    }
+
+    public void setIdempleado(long idempleado) {
+        this.idempleado = idempleado;
+    }
+    
+    public long getIdempleado() {
+        return idempleado;
+    }
+    
+    public void setIdusuario(String idusuario) {
+        this.idusuario = idusuario;
+    }    
+   
+
+    public String getIdusuario() {
+        return idusuario;
+    }
+
+    
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", name=" + name + ", email=" + email + '}';
+        return "User{" + "id=" + idempleado + ", idusuario=" + idusuario + ", contraseña=" +contrasena+ ", Id Perfil="+ idperfil +'}';
     }
 }

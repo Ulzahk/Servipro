@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.servipro.entity.Usuario;
 import com.servipro.entity.Usuario;
-import com.servipro.repository.UserRepository;
-import com.servipro.repository.UserRepository;
+import com.servipro.repository.UsuarioCRUDRepository;
+import com.servipro.repository.UsuarioCRUDRepository;
 
 /**
  *
@@ -24,10 +24,10 @@ import com.servipro.repository.UserRepository;
  */
 @Controller
 public class UserController {
-        private final UserRepository userRepository;
+        private final UsuarioCRUDRepository userRepository;
 
     @Autowired
-    public UserController(UserRepository userRepository) {
+    public UserController(UsuarioCRUDRepository userRepository) {
         this.userRepository = userRepository;
     }
     
@@ -57,7 +57,7 @@ public class UserController {
     @PostMapping("/update/{id}")
     public String updateUser(@PathVariable("id") long id, @Valid Usuario user, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            user.setId(id);
+            user.setIdempleado(id);
             return "update-user";
         }
         

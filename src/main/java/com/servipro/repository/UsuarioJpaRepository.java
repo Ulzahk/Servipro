@@ -4,19 +4,16 @@
  * and open the template in the editor.
  */
 package com.servipro.repository;
-import java.util.List;
 import com.servipro.entity.Usuario;
-import org.springframework.data.repository.CrudRepository;
+import java.io.Serializable;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author practicante
+ * @author PRACTICANTE
  */
-
-@Repository
-public interface UserRepository extends CrudRepository<Usuario, Long> {
-    
-    List<Usuario> findByName(String name);
+@Repository ("usuariosJpaRepository")
+public interface UsuarioJpaRepository extends JpaRepository <Usuario,Serializable>{
     
 }
