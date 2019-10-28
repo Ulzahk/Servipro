@@ -3,19 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package service;
+package main.java.com.servipro.commons;
 
-
+import java.io.Serializable;
 import java.util.List;
-import model.Person;
 
 /**
  *
  * @author PRACTICANTE
+ * @param <T>
+ * @param <ID>
  */
-public abstract class RolesService {
-    
-    public abstract List<Person> getListPeople();
-    
+public interface GenericServiceApi<T, ID extends Serializable>  {
+
+    T save(T entity);
+    void delete(ID id);
+    T get(ID id);
+    List<T> getAll();
     
 }
