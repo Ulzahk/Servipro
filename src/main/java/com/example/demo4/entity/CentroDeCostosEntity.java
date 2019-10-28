@@ -22,10 +22,10 @@ public class CentroDeCostosEntity {
     private String nombre;
     
     @Column(name="estado_costos")
-    private String estadoa;
+    private boolean estadoa;
     
     @Column(name="estado_costosI")
-    private String estadoin;
+    private boolean estadoin;
     
     public CentroDeCostosEntity(){}
 
@@ -37,11 +37,11 @@ public class CentroDeCostosEntity {
         return nombre;
     }
 
-    public String getEstadoa() {
+    public boolean getEstadoa() {
         return estadoa;
     }
 
-    public String getEstadoin() {
+    public boolean getEstadoin() {
         return estadoin;
     }
 
@@ -49,11 +49,11 @@ public class CentroDeCostosEntity {
         this.nombre = nombre;
     }
 
-    public void setEstadoa(String estadoa) {
+    public void setEstadoa(boolean estadoa) {
         this.estadoa = estadoa;
     }
 
-    public void setEstadoin(String estadoin) {
+    public void setEstadoin(boolean estadoin) {
         this.estadoin = estadoin;
     }
 

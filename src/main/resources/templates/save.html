@@ -5,8 +5,28 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap CSS -->
-        <link href="../static/css/bootstrap.css" rei="stylesheet" th:href="@{/css/bootstrap.css}">
+        <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}">
     </head>
+    <script>
+    function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+</script>
     <body>
         <div class="container">
             <form action="#" th:action="@{/save}" class="form-group" th:object="${CentroDeCostosx}" method="post">
@@ -14,18 +34,16 @@
                 <input type="hidden" id="id" name="id" th:value="${IdDelCentroDeCostosx}" th:if="${(IdDelCentroDeCostosx != null)}" >                
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" th:field="*{nombre}" name="nombre">
+                    <input type="text" class="form-control" id="nombre" th:field="*{nombre}" name="nombre" required onkeypress="return soloLetras(event)">
                 </div>
                 
-                <div class="form-group">
-                    <label for="nombre">Estado Activo</label>
-                    <input type="text" class="form-control" id="estadoa" th:field="*{estadoa}" name="estadoa">
-                </div>
-                
-                <div class="form-group">
-                    <label for="nombre">Estado Inactivo</label>
-                    <input type="text" class="form-control" id="estadoin" th:fiedl="*{estadoin}" name="estadoin">
-                </div>
+                <div class="form-group ">
+                    <label for="estadoa">Estado Activo</label>
+                    <div class="custom-control custom-switch">                        
+                        <input type="checkbox" class="form-control custom-control-input" id="estadoa" th:field="*{estadoa}" name="estadoa" >
+                        <label class="custom-control-label" for="estadoa"></label>
+                    </div>
+                </div>   
                 <button type="submit" class="btn btn-sucess">Guardar</button>
             </form>
         </div>

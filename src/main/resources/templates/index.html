@@ -5,7 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap CSS -->
-        <link href="../static/css/bootstrap.css" rei="stylesheet" th:href="@{/css/bootstrap.css}">
+        <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}">              
+    </script>
     </head>
     <body>
         <div class="container">
@@ -20,8 +21,7 @@
                         <thead>
                             <tr>
                                 <th>Nombre</th>
-                                <th>Estado Activo</th>
-                                <th>Estado Inactivo</th>
+                                <th>Inactivo/Activo </th>
                                 <th></th>
                                 <th></th>
                             </tr>
@@ -29,10 +29,13 @@
                         <tbody>
                             <tr th:each="CentroDeCostos : ${list}">
                                 <td th:text="${CentroDeCostos.nombre}"></td>
-                                <td th:text="${CentroDeCostos.estadoa}"></td>
-                                <td th:text="${CentroDeCostos.estadoin}"></td>
-                                <td><a class="btn btn-info" th:href="@{/save/{id}(id=${CentroDeCostos.id})}">Editar</a></td>
-                                <td><a class="btn btn-danger" th:href="@{/delete/{id}(id=${CentroDeCostos.id})}">Eliminar</a></td>
+                                <td>
+                                    <div class="custom-control custom-switch">
+                                        <input class="custom-control-input" type="checkbox" th:checkbox="${CentroDeCostos.estadoa}" th:checked="${CentroDeCostos.estadoa}" id="customSwitch3">
+                                         <label class="custom-control-label" for="customSwitch1"></label> 
+                                    </div>
+                                </td>
+                                <td><a class="btn btn-info" th:href="@{/save/{id}(id=${CentroDeCostos.id})}">Editar</a></td>                                
                             </tr>
                         </tbody>
                     </table>
