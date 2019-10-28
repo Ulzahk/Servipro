@@ -5,7 +5,7 @@
  */
 package com.servipro.service.impl;
 
-import com.servipro.entity.Usuarios;
+/*import com.servipro.entity.Usuarios;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,10 +13,7 @@ import com.servipro.service.usuariosservice;
 import com.servipro.repository.UsuariosJpaRepository;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author PRACTICANTE
- */
+
 @Service("usuariosServiceImp")
 public abstract class UsuariosServiceImp implements usuariosservice{
     
@@ -45,4 +42,4 @@ public abstract class UsuariosServiceImp implements usuariosservice{
         return 0;
     }
     
-}
+}*/

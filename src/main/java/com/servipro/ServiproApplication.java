@@ -9,6 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 //@SpringBootApplication(scanBasePackages={"com.servipro.repository","com.servipro.model"})
 //@ComponentScan({"com.servipro.repository","com.servipro.model","com.servipro.controller","com.servipro.repository"})
+@ComponentScan({"com.servipro", "com.servipro.model"})
 @SpringBootApplication
 @EnableAutoConfiguration
 

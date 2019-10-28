@@ -76,11 +76,11 @@
             <scope>compile</scope>  -->
         </dependency>
     
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <type>jar</type>
-        </dependency>
+        </dependency>-->
  
     </dependencies>
 

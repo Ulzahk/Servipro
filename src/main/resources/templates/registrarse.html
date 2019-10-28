@@ -11,25 +11,33 @@
     </head>
     <body>
         <div class="container my-5">
-            <h2 class="mb-5">New User</h2>
+            <h2 class="mb-5">Nuevo Usuario</h2>
             <div class="row">
                 <div class="col-md-6">
-                    <form action="#" th:action="@{/usuario/registar}" th:object="${usuario}" method="post">
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label for="name" class="col-form-label">Name</label>
-                                <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Name">
-                                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="email" class="col-form-label">Email</label>
-                                <input type="text" th:field="*{email}" class="form-control" id="email" placeholder="Email">
-                                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
-                            </div>
+                    <form action="#" th:action="@{/usuario/registrar}" th:object="${usuario}" method="post">
+                        <div class="form-group col-md-6">
+                            <label for="id" class="col-form-label">Id de Empleado</label>
+                            <input type="text" th:field="*{id}" class="form-control" id="idempleado" placeholder="#000000">
+                            <!-- <span th:if="${#fields.hasErrors('idempleado')}" th:errors="*{idempleado}" class="text-danger"></span> -->
                         </div>
+                        <div class="form-group col-md-6">
+                            <label for="idusuario" class="col-form-label">Id de Usuario</label>
+                            <input type="text" th:field="*{idusuario}" class="form-control" id="idusuario" placeholder="">
+                            <!-- <span th:if="${#fields.hasErrors('idusuario')}" th:errors="*{idusuario}" class="text-danger"></span>-->
+                        </div>                        
+                        <div class="form-group col-md-6">
+                            <label for="contrasena" class="col-form-label">Contraseña</label>
+                            <input type="password" th:field="*{contrasena}" class="form-control" id="contrasena" placeholder="*********">
+                            <!-- <span th:if="${#fields.hasErrors('contrasena')}" th:errors="*{contrasena}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="idperfil" class="col-form-label">Id de Perfil</label>
+                            <input type="text" th:field="*{idperfil}" class="form-control" id="idperfil" placeholder="#000000">
+                            <!-- <span th:if="${#fields.hasErrors('idperfil')}" th:errors="*{idperfil}" class="text-danger"></span>-->
+                        </div>                        
                         <div class="row">
                             <div class="col-md-6 mt-5">
-                                <input type="submit" class="btn btn-primary" value="Add User">
+                                <input type="submit" class="btn btn-primary" value="Añadir">
                             </div>
                         </div>    
                     </form>

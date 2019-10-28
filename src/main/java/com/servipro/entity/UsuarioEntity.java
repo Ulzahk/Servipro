@@ -19,15 +19,16 @@ import javax.validation.constraints.NotBlank;
  */
 @Entity
 @Table(name="usuarios")
-public class UsuarioEntity implements Serializable {
+//implements Serializable
+public class UsuarioEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "IDEmpleado")
-    private Long idempleado;
-    @Column(name = "IDUsuario")
+    @Column(name = "IDEmpleado",nullable = false)
+    private Long id;
+    @Column(name = "IDUsuario",nullable = false)
     @NotBlank(message = "id de usuario es obligatorio")
     private String idusuario;
-    @Column(name = "Contraseña")
+    @Column(name = "Contrasena",nullable = false)
     @NotBlank(message = "La constraseña es obligatoria")
     private String contrasena;
     @Column(name = "IDPerfil")
@@ -38,7 +39,7 @@ public class UsuarioEntity implements Serializable {
     public UsuarioEntity() {}
 
     public UsuarioEntity(Long idempleado, String idusuario,String contrasena,Long idperfil) {
-        this.idempleado = idempleado;
+        this.id = idempleado;
         this.idusuario = idusuario;
         this.contrasena = contrasena;
         this.idperfil = idperfil;
@@ -73,11 +74,11 @@ public class UsuarioEntity implements Serializable {
     }
 
     public void setIdempleado(long idempleado) {
-        this.idempleado = idempleado;
+        this.id = idempleado;
     }
     
     public long getIdempleado() {
-        return idempleado;
+        return id;
     }
     
     public void setIdusuario(String idusuario) {
@@ -93,6 +94,6 @@ public class UsuarioEntity implements Serializable {
 
     @Override
     public String toString() {
-        return "User{" + "id=" + idempleado + ", idusuario=" + idusuario + ", contraseña=" +contrasena+ ", Id Perfil="+ idperfil +'}';
+        return "User{" + "id=" + id + ", idusuario=" + idusuario + ", contraseña=" +contrasena+ ", Id Perfil="+ idperfil +'}';
     }
 }

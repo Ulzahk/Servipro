@@ -5,17 +5,14 @@
  */
 package com.servipro.service;
 
-import com.servipro.entity.Usuarios;
+/*import com.servipro.entity.Usuarios;
 import java.util.List;
 
-/**
- *
- * @author PRACTICANTE
- */
+
 public interface usuariosservice {
     public abstract List <Usuarios> listAllUsuarios();
     public abstract Usuarios addUsuarios(Usuarios usuarios);
     public abstract int deleteUsuarios(int id);
     public abstract Usuarios updateUsuarios(Usuarios usuarios);
     
-}
+}*/

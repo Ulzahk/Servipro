@@ -11,32 +11,34 @@ package com.servipro.model;
  */
 public class UsuarioModel {
     
-    private long idempleado;    
+    private long id;    
     private String idusuario;    
     private String contrasena;    
     private long idperfil;
 
     public UsuarioModel(long idempleado, String idusuario,String contrasena,long idperfil) {
-        this.idempleado = idempleado;
+        this.id = idempleado;
         this.idusuario = idusuario;
         this.contrasena = contrasena;
         this.idperfil = idperfil;
     }
     
-    public UsuarioModel(){}
-
-    /**
-     * @return the idempleado
-     */
-    public long getIdempleado() {
-        return idempleado;
+    public UsuarioModel(){
+    
     }
 
     /**
-     * @param idempleado the idempleado to set
+     * @return the id
      */
-    public void setIdempleado(long idempleado) {
-        this.idempleado = idempleado;
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(long id) {
+        this.id = id;
     }
 
     /**
@@ -83,7 +85,7 @@ public class UsuarioModel {
 
     @Override
     public String toString() {
-        return "Usuario{" + "id=" + idempleado + ", idusuario=" + idusuario + ", contraseña=" +contrasena+ ", IdPerfil="+ idperfil +'}';
+        return "Usuario{" + "id=" + id + ", idusuario=" + idusuario + ", contraseña=" +contrasena+ ", IdPerfil="+ idperfil +'}';
     }
     
     

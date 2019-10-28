@@ -13,9 +13,9 @@ import org.springframework.stereotype.Repository;
  * @author practicante
  */
 
-@Repository ("UsuarioRepository")
+/*@Repository ("UsuarioRepository")
 public interface UsuarioCRUDRepository extends CrudRepository<UsuarioEntity, Long> {
     
     
     
-}
+}*/

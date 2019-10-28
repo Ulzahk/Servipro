@@ -16,12 +16,12 @@ import javax.persistence.Table;
  *
  * @author PRACTICANTE
  */
-@Entity
-@Table(name="usuariosOLD")
+//@Entity
+//@Table(name="usuariosOLD")
 public class Usuarios implements Serializable {
     
     
-    @Id
+    /*@Id
     @GeneratedValue
     private long id;
     @Column(nullable = false)
@@ -65,7 +65,7 @@ public class Usuarios implements Serializable {
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }
+    }*/
      
     
 }

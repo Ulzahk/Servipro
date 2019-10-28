@@ -5,16 +5,13 @@
  */
 package com.servipro.repository;
 
-import com.servipro.entity.Usuarios;
+/*import com.servipro.entity.Usuarios;
 import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-/**
- *
- * @author PRACTICANTE
- */
+
 @Repository ("usuariosJpaRepository")
 public interface UsuariosJpaRepository extends JpaRepository <Usuarios,Serializable>{
     
-}
+}*/
