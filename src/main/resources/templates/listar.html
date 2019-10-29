@@ -32,11 +32,11 @@ and open the template in the editor.
                         
                         <input type="button" class="btn btn-primary" value="Editar" th:onclick="'window.location.replace(\'./editar/' + ${usuario.id} + '\');'" />
                         <!-- <input type="button" class="btn btn-danger" value="Desactivar"  /> -->
-                    </td>
-                    
+                    </td>                    
                 </tr>
         </tbody>
     </table>
+        <input type="button" class="btn btn-primary" value="Crear" th:onclick="window.location.replace('./registrarse');" />
 
 
 
