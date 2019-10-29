@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  * @author PRACTICANTE
  */
 @Repository ("usuarioJpaRepository")
-public interface UsuarioJpaRepository extends JpaRepository <UsuarioEntity,Serializable>{
+public interface UsuarioJpaRepository extends JpaRepository <UsuarioEntity,Long>{
     
 }

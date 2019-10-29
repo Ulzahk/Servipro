@@ -14,6 +14,8 @@ import java.util.List;
  * @author PRACTICANTE
  */
 public interface UsuarioService {
-    //public abstract UsuarioEntity save(UsuarioEntity usuario);
-    //public abstract List<UsuarioEntity> getAll();
+    public abstract UsuarioEntity save(UsuarioEntity usuario);
+    public abstract List<UsuarioEntity> getAll();
+    public abstract boolean Existe(int id);
+    public abstract UsuarioEntity getById(int id);
 }

@@ -3,14 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.servipro.DaoAPI;
+package com.servipro.DaoAPIVIEJO;
 
 import com.servipro.entity.UsuarioEntity;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author PRACTICANTE
  */
-public interface UsuarioServiceAPI extends ServicioGenericoAPI<UsuarioEntity, Long> {//OJO ACA ERA OBLIGATORIO PORNER LA CLASE Long y en el entity de UsuarioEntity el id esta es como objeto rpimitivo tipo long
+public interface UsuarioDaoAPI extends CrudRepository<UsuarioEntity, Long> {
     
 }

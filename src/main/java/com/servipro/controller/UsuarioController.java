@@ -20,8 +20,11 @@ import com.servipro.service.impl.UsuarioServiceImpl;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import java.util.ArrayList;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.servlet.view.RedirectView;
 
 
 /**
@@ -31,14 +34,20 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 @Controller
 @RequestMapping("/usuario")//se indica la ruta a la cual se asocia la clase controladora(especifica una request)
 public class UsuarioController {
-    /*@Autowired//se le indica a springboot que busque en sus "Beans" lo que sigue debajo (son todo aquelllo que comienza con @ como unos repositorios raros)
+    /*
+    
+    @Autowired//se le indica a springboot que busque en sus "Beans" lo que sigue debajo (son todo aquelllo que comienza con @ como unos repositorios raros)
     @Qualifier("usuarioJpaRepository")//este inyecta la dependecnia (bean) (repositorio) "usuarioJpaRepository" que fue especificado en los parentesis para que se pueda usar en este archvio
-    private UsuarioJpaRepository userJPARepository;*/ //aca es como una especie de instanciamiento???, esta instruccion es necesaria
+    private UsuarioJpaRepository userJPARepository; //aca es como una especie de instanciamiento???, esta instruccion es necesaria
+    
+    */
     
     @Autowired
-    private UsuarioServiceImpl UsuarioServiceImpl;//Este es el servicio el cual usa la interfaz UsuarioService junto con un ainyeccion de dependencias de UsuarioServiceImpl
+    @Qualifier("UsuarioServiceImpl")
+    private UsuarioServiceImpl UsuarioServiceImpl;//Este Inyecta beans que pueden ser componentes,servicios,repositorios en este caso inyecta el servicioImpl de usuarios
+    
     /*@Autowired    
-    public UsuarioController(UsuarioJpaRepository userRepository) {
+    public UsuarioController(UsuarioJpaRepository userRepository) {//ESTE NO SE INYECTABA ACA SINO QUE DEBIA INYECTARSE EN EL IMPL
         this.userJPARepository = userRepository;
     }*/
     
@@ -50,11 +59,11 @@ public class UsuarioController {
         //ArrayList<UsuarioModel> lista= new ArrayList<UsuarioModel>();
         //lista.add(new UsuarioModel(0, "001", "password", 0));
         /* TEMPORALMENTE INGRESO USUARIO FIN*/
-        mav.addObject("usuarios", UsuarioServiceImpl.getDao().findAll());
+        mav.addObject("usuarios", UsuarioServiceImpl.getAll());
         return mav;
     }
     
-    //A continuaacion la Forma para pocos datos (variables sencillas y no objetos complejos)sin conexion a la bd
+    //A continuaacion la Forma para pocos datos (variables sencillas y no objetos complejos)sin conexion a la bd por el momento
     
     
     /*@RequestMapping("/registrarse")
@@ -63,7 +72,7 @@ public class UsuarioController {
         return new ModelAndView("registrarse");
     }*/
         
-//A continuaacion la Forma para varios datos complejos como objetos (usar el model aca)sin conexion a la bd
+//A continuaacion la Forma para varios datos complejos como objetos (usar el model aca)sin conexion a la bd por el momento
     
     
     @GetMapping("/registrarse")//@Get mapping es la forma abreviada de spring de hacer un request mapping indcando que es de tipo GET
@@ -75,41 +84,55 @@ public class UsuarioController {
     
     
     
-    @PostMapping("/registrar")
-    public String registrarUsuario(UsuarioEntity usuariox,Model model) {        
-        UsuarioServiceImpl.getDao().save(usuariox);
+    @PostMapping("/registrar")//para leer valores en la plantilla es ${} y para asignar valores desde la plantilla hacia el back es *{}
+    public ModelAndView registrarUsuario(UsuarioEntity usuariox) {
+        ModelAndView mav;
+        if (UsuarioServiceImpl.Existe(usuariox.getId().intValue())) {
+            mav =new ModelAndView("registrarse");
+            mav.addObject("usuariox", usuariox);
+            mav.addObject("errorUsuarioExiste","Error el usuario ya existe");
+            return mav;
+        }
+        UsuarioServiceImpl.save(usuariox);
+        mav =new ModelAndView("listar");
+        mav.addObject("usuarios", UsuarioServiceImpl.getAll());
+        return mav;
         //ModelAndView mav =new ModelAndView("listar");
         //mav.addObject("usuario", usuario);
-        return "redirect:/usuario/listar";
+        //return "redirect:/usuarios/listar";
         //modelo.addAttribute("users", userJPARepository.findAll());
         //return "registrarse";
     }
     
     @GetMapping("/editar/{id}")
-    public String showUpdateForm(@PathVariable("id") long id, Model model) {
-        //UsuarioEntity user = userJPARepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
-        //model.addAttribute("user", user);
-        return "update-user";
+    public String desplegarFormularioActualizarUsuario(@PathVariable("id") int id, Model model) {
+        UsuarioEntity usuario = UsuarioServiceImpl.getById(id);
+        if (usuario == null) {
+            throw new IllegalArgumentException("Id de empleado invalida:" + id);
+        }
+        model.addAttribute("usuario", usuario);
+        return "editarUsuario";
     }
     
     //@PathVariable("id") long id, @Valid UsuarioEntity user, BindingResult result, Model model
     @PostMapping("/guardar/{id}")
-    public void updateUser() {/*
+    public String actualizarUsuario(@PathVariable("id") int id,UsuarioEntity usuario, Model model) {
+        /*
         if (result.hasErrors()) {
             user.setIdempleado(id);
             return "update-user";
-        }
+        }*/
         
-        userJPARepository.save(user);
-        model.addAttribute("users", userJPARepository.findAll());
-        return "index";*/
+        UsuarioServiceImpl.save(usuario);
+        model.addAttribute("usuarios", UsuarioServiceImpl.getAll());
+        return "redirect:/usuario/listar";
     }
     
-    @GetMapping("/borrar/{id}")
-    public String deleteUser(@PathVariable("id") long id, Model model) {
+    /*@GetMapping("/eliminar/{id}")
+    public String deleteUser(@PathVariable("id") int id, Model model) {
         //UsuarioEntity user = userJPARepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
         //userJPARepository.delete(user);
         //model.addAttribute("users", userJPARepository.findAll());
-        return "index";
-    }
+        return "redirect:/usuarios/listar";
+    }*/
 }
