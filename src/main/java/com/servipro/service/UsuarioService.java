@@ -6,11 +6,14 @@
 package com.servipro.service;
 
 import com.servipro.entity.UsuarioEntity;
+import java.util.List;
+
 
 /**
  *
  * @author PRACTICANTE
  */
 public interface UsuarioService {
-    public abstract UsuarioEntity addUsuario(UsuarioEntity usuario);
+    //public abstract UsuarioEntity save(UsuarioEntity usuario);
+    //public abstract List<UsuarioEntity> getAll();
 }

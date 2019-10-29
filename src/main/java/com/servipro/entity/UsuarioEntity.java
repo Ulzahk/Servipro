@@ -18,31 +18,66 @@ import javax.validation.constraints.NotBlank;
  * @author practicante
  */
 @Entity
-@Table(name="usuarios")
+@Table(name="usuariosmodulo")
 //implements Serializable
-public class UsuarioEntity {
+public class UsuarioEntity implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "IDEmpleado",nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id",nullable = false)
     private Long id;
-    @Column(name = "IDUsuario",nullable = false)
-    @NotBlank(message = "id de usuario es obligatorio")
+    @Column(name = "idusuario")
+    //@NotBlank(message = "id de usuario es obligatorio")
     private String idusuario;
-    @Column(name = "Contrasena",nullable = false)
-    @NotBlank(message = "La constraseña es obligatoria")
+    @Column(name = "contrasena")
+    //@NotBlank(message = "La constraseña es obligatoria")
     private String contrasena;
-    @Column(name = "IDPerfil")
-    @NotBlank(message = "El id del perfil es obligatorio")
+    @Column(name = "idperfil")
+    //@NotBlank(message = "El id del perfil es obligatorio")
     private Long idperfil;
    
 
     public UsuarioEntity() {}
 
-    public UsuarioEntity(Long idempleado, String idusuario,String contrasena,Long idperfil) {
-        this.id = idempleado;
+    public UsuarioEntity(Long id, String idusuario,String contrasena,Long idperfil) {
+        this.id = id;
         this.idusuario = idusuario;
         this.contrasena = contrasena;
         this.idperfil = idperfil;
+    }
+
+    
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + getId() + ", idusuario=" + getIdusuario() + ", contrasena=" +getContrasena()+ ", Id Perfil="+ getIdperfil() +'}';
+    }
+
+    /**
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the idusuario
+     */
+    public String getIdusuario() {
+        return idusuario;
+    }
+
+    /**
+     * @param idusuario the idusuario to set
+     */
+    public void setIdusuario(String idusuario) {
+        this.idusuario = idusuario;
     }
 
     /**
@@ -62,38 +97,14 @@ public class UsuarioEntity {
     /**
      * @return the idperfil
      */
-    public long getIdperfil() {
+    public Long getIdperfil() {
         return idperfil;
     }
 
     /**
      * @param idperfil the idperfil to set
      */
-    public void setIdperfil(long idperfil) {
+    public void setIdperfil(Long idperfil) {
         this.idperfil = idperfil;
-    }
-
-    public void setIdempleado(long idempleado) {
-        this.id = idempleado;
-    }
-    
-    public long getIdempleado() {
-        return id;
-    }
-    
-    public void setIdusuario(String idusuario) {
-        this.idusuario = idusuario;
-    }    
-   
-
-    public String getIdusuario() {
-        return idusuario;
-    }
-
-    
-
-    @Override
-    public String toString() {
-        return "User{" + "id=" + id + ", idusuario=" + idusuario + ", contraseña=" +contrasena+ ", Id Perfil="+ idperfil +'}';
     }
 }

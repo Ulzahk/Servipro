@@ -26,7 +26,7 @@ and open the template in the editor.
             <tbody th:each="usuario:${usuarios}">
                 <tr>
                     <td th:text="${usuario.idusuario}"></td>
-                    <td th:text="${usuario.idempleado}"></td>
+                    <td th:text="${usuario.id}"></td>
                     <td th:text="${usuario.idperfil}"></td>
                     <td>
                         <input type="button" class="btn btn-primary" value="Editar" onclick='window.location.replace("./editar/${usuario.idusuario}")' />

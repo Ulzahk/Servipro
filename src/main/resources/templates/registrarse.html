@@ -7,32 +7,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-        <link rel="stylesheet" href="../css/shards.min.css">
+        
     </head>
     <body>
         <div class="container my-5">
             <h2 class="mb-5">Nuevo Usuario</h2>
             <div class="row">
                 <div class="col-md-6">
-                    <form action="#" th:action="@{/usuario/registrar}" th:object="${usuario}" method="post">
+                    <form action="#" th:action="@{/usuario/registrar}" th:object="${usuariox}" method="post">
                         <div class="form-group col-md-6">
                             <label for="id" class="col-form-label">Id de Empleado</label>
-                            <input type="text" th:field="*{id}" class="form-control" id="idempleado" placeholder="#000000">
+                            <input type="text" id="id" name="id" th:field="*{id}" class="form-control"  placeholder="#000000">
                             <!-- <span th:if="${#fields.hasErrors('idempleado')}" th:errors="*{idempleado}" class="text-danger"></span> -->
                         </div>
                         <div class="form-group col-md-6">
                             <label for="idusuario" class="col-form-label">Id de Usuario</label>
-                            <input type="text" th:field="*{idusuario}" class="form-control" id="idusuario" placeholder="">
+                            <input type="text" th:field="*{idusuario}" class="form-control" id="idusuario" placeholder="" name="idusuario">
                             <!-- <span th:if="${#fields.hasErrors('idusuario')}" th:errors="*{idusuario}" class="text-danger"></span>-->
                         </div>                        
                         <div class="form-group col-md-6">
                             <label for="contrasena" class="col-form-label">Contraseña</label>
-                            <input type="password" th:field="*{contrasena}" class="form-control" id="contrasena" placeholder="*********">
+                            <input type="password" th:field="*{contrasena}" class="form-control" id="contrasena" placeholder="*********" name="contrasena">
                             <!-- <span th:if="${#fields.hasErrors('contrasena')}" th:errors="*{contrasena}" class="text-danger"></span>-->
                         </div>
                         <div class="form-group col-md-6">
                             <label for="idperfil" class="col-form-label">Id de Perfil</label>
-                            <input type="text" th:field="*{idperfil}" class="form-control" id="idperfil" placeholder="#000000">
+                            <input type="text" th:field="*{idperfil}" class="form-control" id="idperfil" placeholder="#000000" name="idperfil">
                             <!-- <span th:if="${#fields.hasErrors('idperfil')}" th:errors="*{idperfil}" class="text-danger"></span>-->
                         </div>                        
                         <div class="row">

@@ -16,8 +16,8 @@ public class UsuarioModel {
     private String contrasena;    
     private long idperfil;
 
-    public UsuarioModel(long idempleado, String idusuario,String contrasena,long idperfil) {
-        this.id = idempleado;
+    public UsuarioModel(long id, String idusuario,String contrasena,long idperfil) {
+        this.id = id;
         this.idusuario = idusuario;
         this.contrasena = contrasena;
         this.idperfil = idperfil;
@@ -25,6 +25,11 @@ public class UsuarioModel {
     
     public UsuarioModel(){
     
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "id=" + getId() + ", idusuario=" + getIdusuario() + ", contraseña=" +getContrasena()+ ", IdPerfil="+ getIdperfil() +'}';
     }
 
     /**
@@ -82,11 +87,8 @@ public class UsuarioModel {
     public void setIdperfil(long idperfil) {
         this.idperfil = idperfil;
     }
-
-    @Override
-    public String toString() {
-        return "Usuario{" + "id=" + id + ", idusuario=" + idusuario + ", contraseña=" +contrasena+ ", IdPerfil="+ idperfil +'}';
-    }
+    
+    
     
     
 }
