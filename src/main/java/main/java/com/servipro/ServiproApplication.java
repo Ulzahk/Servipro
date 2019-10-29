@@ -5,9 +5,8 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-//@SpringBootApplication(scanBasePackages={"com.example.demo4.repository"})
-
-@SpringBootApplication(scanBasePackages={"main.java.com.servipro.repository"})
+//@SpringBootApplication(scanBasePackages={"main.java.com.servipro.repository"})
+@SpringBootApplication
 @EnableAutoConfiguration 
 public class ServiproApplication {
 

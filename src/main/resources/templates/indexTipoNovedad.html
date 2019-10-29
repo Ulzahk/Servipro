@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns: th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tipo de novedad</title>
+    </head>
+    <body>
+
+        <div class="container">
+            <br>
+            <div>
+                <a href="/save/null" class="btn btn-primary">Agregar</a>
+            </div>
+            
+                <h2 th:case="null">No hay tipos de novedades</h2>
+                <div th:case="*">
+                    <h2>Tipo de novedad</h2>
+                    <table class="table">
+                        <thead>                        
+                            <tr>
+                                <th>Descripción</th>
+                                <th>Estado</th>  
+                                <th></th> 
+                                <th></th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--<tr th:each="tipo_novedad : ${list}">
+                                <td th:text="${tipo_novedad.descripcion}"></td>
+                                <td th:text="${tipo_novedad.estado}"></td>
+                                <td><a th:href="@{/delete/{id}(id=${tipo_novedad.id})">Eliminar</td>
+                                <td><a th:href="@{/save/{id}(id=${tipo_novedad.id})">Editar</td>
+                            </tr>  -->                      
+                        </tbody>
+                    </table>
+
+                </div>
+
+        </div>
+    </body>
+</html>
