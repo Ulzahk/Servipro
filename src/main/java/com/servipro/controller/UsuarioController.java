@@ -128,6 +128,12 @@ public class UsuarioController {
         return "redirect:/usuario/listar";
     }
     
+    @RequestMapping("/")
+    public String pagInicial()
+    {
+        return ("redirect:/usuario/listar");
+    }
+    
     /*@GetMapping("/eliminar/{id}")
     public String deleteUser(@PathVariable("id") int id, Model model) {
         //UsuarioEntity user = userJPARepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
