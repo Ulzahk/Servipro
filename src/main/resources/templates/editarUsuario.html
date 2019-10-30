@@ -18,17 +18,17 @@
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <label for="id" class="col-form-label">Id Empleado</label>
-                                <input type="text" th:field="*{id}" class="form-control" id="id" placeholder="#000000">
+                                <input type="text" th:field="*{id}" class="form-control" id="id" placeholder="#000000" required onkeypress="return validarNumeros(event)">
                                 <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" class="text-danger"></span>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="idusuario" class="col-form-label">Id usuario</label>
-                                <input type="text" th:field="*{idusuario}" class="form-control" id="idusuario" placeholder="#000000">
+                                <input type="text" th:field="*{idusuario}" class="form-control" id="idusuario" placeholder="#000000" required onkeypress="return validarNumeros(event)">
                                 <span th:if="${#fields.hasErrors('idusuario')}" th:errors="*{idusuario}" class="text-danger"></span>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="idperfil" class="col-form-label">Id perfil</label>
-                                <input type="text" th:field="*{idperfil}" class="form-control" id="idperfil" placeholder="#000000">
+                                <input type="text" th:field="*{idperfil}" class="form-control" id="idperfil" placeholder="#000000" required onkeypress="return validarNumeros(event)">
                                 <span th:if="${#fields.hasErrors('idperfil')}" th:errors="*{idperfil}" class="text-danger"></span>
                             </div>
                             <div class="form-group col-md-3">
@@ -72,6 +72,26 @@
             return false;
             }
             }
+            
+            function validarNumeros(evento){
+            key = evento.keyCode || evento.which;
+            tecla = String.fromCharCode(key).toLowerCase();
+            caracteres_admitidos = "1234567890";
+            caracteres_especiales = "8-37-39-46";
+
+            tecla_especial = false
+            for(var i in caracteres_especiales){
+            if(key == caracteres_especiales[i]){
+            tecla_especial = true;
+            break;
+            }
+            }
+
+            if(caracteres_admitidos.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+            }
+            }
+            
         </script>
     </body>
 </html>
