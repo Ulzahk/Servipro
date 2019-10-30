@@ -34,6 +34,8 @@ public class UsuarioEntity implements Serializable {
     @Column(name = "idperfil")
     //@NotBlank(message = "El id del perfil es obligatorio")
     private Long idperfil;
+    @Column(name = "estado")    
+    private boolean estado;
    
 
     public UsuarioEntity() {}
@@ -106,5 +108,19 @@ public class UsuarioEntity implements Serializable {
      */
     public void setIdperfil(Long idperfil) {
         this.idperfil = idperfil;
+    }
+
+    /**
+     * @return the estado
+     */
+    public boolean isEstado() {
+        return estado;
+    }
+
+    /**
+     * @param estado the estado to set
+     */
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 }

@@ -15,12 +15,14 @@ public class UsuarioModel {
     private String idusuario;    
     private String contrasena;    
     private long idperfil;
+    private boolean estado;
 
-    public UsuarioModel(long id, String idusuario,String contrasena,long idperfil) {
+    public UsuarioModel(long id, String idusuario,String contrasena,long idperfil,boolean estado) {
         this.id = id;
         this.idusuario = idusuario;
         this.contrasena = contrasena;
         this.idperfil = idperfil;
+        this.estado = estado;
     }
     
     public UsuarioModel(){
@@ -86,6 +88,20 @@ public class UsuarioModel {
      */
     public void setIdperfil(long idperfil) {
         this.idperfil = idperfil;
+    }
+
+    /**
+     * @return the estado
+     */
+    public boolean isEstado() {
+        return estado;
+    }
+
+    /**
+     * @param estado the estado to set
+     */
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
     
     
