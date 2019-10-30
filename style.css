@@ -1,0 +1,80 @@
+html, body {
+    background: white;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contenedor {
+    margin: auto;
+    margin-top: 100px;
+    width: 1200px;
+    height: 230px;
+    background-color: white;
+}
+
+.menu {
+    width: 200px;
+    height: 230px;
+    float: left;
+    position: relative;
+    transition: height .4s;
+}
+
+#uno{
+	background-color: rgb(208,101,3);
+}
+
+#dos{
+	background-color: rgb(233,147,26);
+}
+
+#tres{
+	background-color: rgb(22,145,190);
+}
+
+#cuatro{
+	background-color: rgb(22,107,162);
+}
+
+#cinco{
+	background-color: rgb(27,54,71);
+}
+#seis{
+	background-color: rgb(21,40,54);
+}
+
+.icono {
+   display: block;
+   margin: 50px auto;
+   background-color: rgba(255,255,255,.15);
+   width: 40px;
+   padding: 25px;
+   border-radius: 50%;
+   box-shadow: 0px 0px 0px 30px rgba(255,255,255, 0);
+   transition: box-shadow .4s;
+}
+
+.texto{
+    font-size: 1.2em;
+    color: white;
+    text-align: center;
+    opacity: .6;
+    padding-top: 10px;
+    transition: padding-top .4s;
+}
+
+.menu:hover{
+    height: 250px;
+}
+
+.menu:hover .texto{
+    padding-top: 30px;
+    opacity: 1;
+}
+
+.menu:hover .icono{
+    box-shadow: 0px 0px 0px 0px rgba(255,255,255, .6);
+}
