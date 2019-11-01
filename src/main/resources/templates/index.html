@@ -1,44 +1,53 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
-        <title>Listado de usuarios</title>
+        <title>Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-        
+            
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!--css-->
+    <!-- <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/css/index.css}"> -->
+
     </head>
+    
+    
+    
     <body>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Id Usuario</th>
-                    <th>Id Empleado</th>
-                    <th>Id Perfil</th>
-                </tr>            
-            </thead>
-
-            <tbody th:each="usuario:${usuarios}">
-                <tr>
-                    <td th:text="${usuario.idusuario}"></td>
-                    <td th:text="${usuario.id}"></td>
-                    <td th:text="${usuario.idperfil}"></td>
-                    <td>
-                        
-                        <input type="button" class="btn btn-primary" value="Editar" th:onclick="'window.location.replace(\'./editar/' + ${usuario.id} + '\');'" />
-                        <!-- <input type="button" class="btn btn-danger" value="Desactivar"  /> -->
-                    </td>                    
-                </tr>
-        </tbody>
-    </table>
-        <input type="button" class="btn btn-primary" value="Crear" th:onclick="window.location.replace('./usuario/registrarse');" />
-
-
-
+        
+        
+        <div class="modal-dialog text-center">
+        <div class="col-sm-8 main-section">
+            <div class="modal-content">
+                <!-- <div class="col-12 user-img">
+                    <img src="static/img/user.png" th:src="@{/img/user.png}"/>
+                </div> -->
+                <form class="col-12" th:action="@{/login}" method="post">
+                    <div class="form-group" id="user-group">
+                        <input type="text" class="form-control" placeholder="Nombre de usuario" name="username"/>
+                    </div>
+                    <div class="form-group" id="contrasena-group">
+                        <input type="password" class="form-control" placeholder="Contrasena" name="password"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar </button>
+                </form>
+                <div class="col-12 forgot">
+                    <a href="#">Recordar contrasena?</a>
+                </div>
+                <div th:if="${param.error}" class="alert alert-danger" role="alert">
+		            Invalid username and password.
+		        </div>
+		        <div th:if="${param.logout}" class="alert alert-success" role="alert">
+		            You have been logged out.
+		        </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
