@@ -6,39 +6,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap CSS -->
         <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}">              
-    </script>
     </head>
     <body>
         <div class="container">
             <br>
-            <div>
-                <a href="/save/0" class="btn btn-primary">Crear</a>
-            </div>
-                <h2 th:if="${list.isEmpty()}">No hay costos Guardados</h2>
+                <h2 th:if="${list.isEmpty()}">No hay costos Guardados <a href="/save/0" class="btn btn-primary">Crear</a> </h2>
+                
                 <div th:if="${!list.isEmpty()}">
                     <h2>Costos</h2>
                     <table class="table">
                         <thead>
                             <tr>
                                 <th>Nombre</th>
+                                <th>Identificación</th>
                                 <th>Inactivo/Activo </th>
-                                <th></th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr th:each="CentroDeCostos : ${list}">
                                 <td th:text="${CentroDeCostos.nombre}"></td>
+                                <td th:text="${CentroDeCostos.documento}"></td>  
                                 <td>
-                                    <div class="custom-control custom-switch">
-                                        <input class="custom-control-input" type="checkbox" th:checkbox="${CentroDeCostos.estadoa}" th:checked="${CentroDeCostos.estadoa}" id="customSwitch3">
+                                    <div id="SwitchEstado" class="custom-control custom-switch">
+                                        <input class="custom-control-input" type="checkbox" th:checkbox="${CentroDeCostos.estadoa}" th:checked="${CentroDeCostos.estadoa}" id="customSwitch1">
                                          <label class="custom-control-label" for="customSwitch1"></label> 
                                     </div>
                                 </td>
-                                <td><a class="btn btn-info" th:href="@{/save/{id}(id=${CentroDeCostos.id})}">Editar</a></td>                                
+                                <td></td>
+                                <td><a class="btn btn-info" th:href="@{/save/{id}(id=${CentroDeCostos.id})}">Editar</a></td>
                             </tr>
                         </tbody>
                     </table>
+                    <a href="/save/0" class="btn btn-primary">Crear</a>
             </div>
         </div>
     </body>

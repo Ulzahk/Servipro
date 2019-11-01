@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Empleados</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    </head>
+    <body>
+        <div class="container">
+            <br>
+            <h2 th:if="${list.isEmpty()}">No hay Empleados Registrados <a href="/GuardarEmpleados/0" class="btn btn-primary">Crear</a></h2>
+            
+            <div th:if="${!list.isEmpty()}">
+                <a></a>
+                <h2>Empleados</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id Empleado</th>
+                            <th>Tipo de Documento</th>
+                            <th>Documento</th>
+                            <th>Nombre Completo</th>
+                            <th>Telefono</th>
+                            <th>Id Costos</th>
+                            <th>Id Cargo</th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="Empleados : ${list}">
+                            <td th:text="${Empleados.id_empleado}"></td>
+                            <td th:text="${Empleados.tipo_documento}"></td>
+                            <td th:text="${Empleados.documentoEmpleado}"></td>
+                            <td th:text="${Empleados.nombreEmpleado}"></td>
+                            <td th:text="${Empleados.telefono}"></td>
+                            <td th:text="${Empleados.id_costos}"></td>                                
+                            <td th:text="${Empleados.id_cargo}"></td>
+                            <td></td>
+                            <td><a class="btn btn-info" th:href="@{/GuardarEmpleados/{id_empleado}(id_empleado=${Empleados.id_empleado})}">Editar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="/GuardarEmpleados/0" class="btn btn-primary">Crear</a>
+            </div>
+        </div>
+    </body>
+</html>

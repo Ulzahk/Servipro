@@ -1,5 +1,5 @@
 
-package main.java.com.servipro.entity;
+package com.example.demo4.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,18 +14,18 @@ import javax.persistence.Table;
 public class CentroDeCostosEntity {
     
     @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_costos")
     private Long id;
     
     @Column(name="nombre_costos")
     private String nombre;
     
+    @Column(name="documento_costos", unique = true)
+    private Integer documento;
+    
     @Column(name="estado_costos")
     private boolean estadoa;
-    
-    @Column(name="estado_costosI")
-    private boolean estadoin;
     
     public CentroDeCostosEntity(){}
 
@@ -41,10 +41,6 @@ public class CentroDeCostosEntity {
         return estadoa;
     }
 
-    public boolean getEstadoin() {
-        return estadoin;
-    }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -53,15 +49,26 @@ public class CentroDeCostosEntity {
         this.estadoa = estadoa;
     }
 
-    public void setEstadoin(boolean estadoin) {
-        this.estadoin = estadoin;
-    }
 
     /**
      * @param id the id to set
      */
     public void setId(Long id) {
         this.id = id;
+    }
+
+    /**
+     * @return the documento
+     */
+    public Integer getDocumento() {
+        return documento;
+    }
+
+    /**
+     * @param documento the documento to set
+     */
+    public void setDocumento(Integer documento) {
+        this.documento = documento;
     }
   
 }

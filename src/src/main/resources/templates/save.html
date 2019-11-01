@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Lista Costos</title>
+        <title>Crear Costo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap CSS -->
@@ -26,6 +26,25 @@
             return false;
         }
     }
+    
+    function soloNumeros(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = "0123456789";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
 </script>
     <body>
         <div class="container">
@@ -35,6 +54,9 @@
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" th:field="*{nombre}" name="nombre" required onkeypress="return soloLetras(event)">
+                    
+                    <label for="documento">Documento</label>
+                    <input type="text" class="form-control" id="documento" th:field="*{documento}" name="documento" required onkeypress="return soloNumeros(event)">
                 </div>
                 
                 <div class="form-group ">
@@ -43,7 +65,7 @@
                         <input type="checkbox" class="form-control custom-control-input" id="estadoa" th:field="*{estadoa}" name="estadoa" >
                         <label class="custom-control-label" for="estadoa"></label>
                     </div>
-                </div>   
+                </div>
                 <button type="submit" class="btn btn-sucess">Guardar</button>
             </form>
         </div>

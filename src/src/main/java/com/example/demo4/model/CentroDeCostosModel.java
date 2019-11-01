@@ -1,6 +1,7 @@
 
-package main.java.com.servipro.entity;
+package com.example.demo4.model;
 
+import com.example.demo4.entity.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,26 +9,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="centro_de_costos")
 
-public class CentroDeCostosEntity {
+public class CentroDeCostosModel {
     
-    @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id_costos")
+    
     private Long id;
-    
-    @Column(name="nombre_costos")
     private String nombre;
-    
-    @Column(name="estado_costos")
     private boolean estadoa;
+    private Integer documento;
     
-    @Column(name="estado_costosI")
-    private boolean estadoin;
     
-    public CentroDeCostosEntity(){}
+    public CentroDeCostosModel(){}
 
     public Long getId() {
         return id;
@@ -41,10 +33,6 @@ public class CentroDeCostosEntity {
         return estadoa;
     }
 
-    public boolean getEstadoin() {
-        return estadoin;
-    }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -53,15 +41,31 @@ public class CentroDeCostosEntity {
         this.estadoa = estadoa;
     }
 
-    public void setEstadoin(boolean estadoin) {
-        this.estadoin = estadoin;
-    }
-
     /**
      * @param id the id to set
      */
     public void setId(Long id) {
         this.id = id;
+    }
+
+     @Override
+     public String toString()
+     {
+         return this.id.toString();
+     }
+
+    /**
+     * @return the documento
+     */
+    public Integer getDocumento() {
+        return documento;
+    }
+
+    /**
+     * @param documento the documento to set
+     */
+    public void setDocumento(Integer documento) {
+        this.documento = documento;
     }
   
 }

@@ -15,8 +15,8 @@ public class CentroDeCostosModel {
     
     private Long id;
     private String nombre;
-    private String estadoa;
-    private String estadoin;
+    private boolean estadoa;
+    private boolean estadoin;
     
     public CentroDeCostosModel(){}
 
@@ -28,11 +28,11 @@ public class CentroDeCostosModel {
         return nombre;
     }
 
-    public String getEstadoa() {
+    public boolean getEstadoa() {
         return estadoa;
     }
 
-    public String getEstadoin() {
+    public boolean getEstadoin() {
         return estadoin;
     }
 
@@ -40,11 +40,11 @@ public class CentroDeCostosModel {
         this.nombre = nombre;
     }
 
-    public void setEstadoa(String estadoa) {
+    public void setEstadoa(boolean estadoa) {
         this.estadoa = estadoa;
     }
 
-    public void setEstadoin(String estadoin) {
+    public void setEstadoin(boolean estadoin) {
         this.estadoin = estadoin;
     }
 
