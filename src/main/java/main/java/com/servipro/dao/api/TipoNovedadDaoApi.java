@@ -5,14 +5,14 @@
  */
 package main.java.com.servipro.dao.api;
 
-import main.java.com.servipro.entity.Tipo_novedad;
+import main.java.com.servipro.entity.TipoNovedadEntity;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author PRACTICANTE
  */
-public interface Tipo_novedadDaoApi extends CrudRepository<Tipo_novedad, Integer> {
+public interface TipoNovedadDaoApi extends CrudRepository<TipoNovedadEntity, Integer> {
     
     
 }

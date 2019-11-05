@@ -19,11 +19,11 @@ import javax.validation.constraints.NotBlank;
  */
 
 @Entity
-@Table(name="Tipo_novedad")
-public class Tipo_novedad {
+@Table(name="tipo_novedad")
+public class TipoNovedadEntity {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_tipo_novedad")
     private Integer id;
     
@@ -34,7 +34,7 @@ public class Tipo_novedad {
     @Column(name="estado_tipo_novedad")
     private boolean estado;
     
-    public Tipo_novedad(){}
+    public TipoNovedadEntity(){}
 
     public Integer getId() {
         return id;
@@ -60,15 +60,16 @@ public class Tipo_novedad {
         this.estado = estado;
     }
 
-    public Tipo_novedad(Integer id, String descripcion, boolean estado) {
+    public TipoNovedadEntity(Integer id, String descripcion, boolean estado) {
         this.id = id;
         this.descripcion = descripcion;
         this.estado = estado;
     }
 
+
     @Override
     public String toString() {
-        return "Tipo_novedad{" + "id=" + id + ", descripcion=" + descripcion + ", estado=" + estado + '}';
+        return "TipoNovedadEntity{" + "id=" + id + ", descripcion=" + descripcion + ", estado=" + estado + '}';
     }
 
     

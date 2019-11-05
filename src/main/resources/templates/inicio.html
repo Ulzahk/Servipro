@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inicio</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" th:href="@{../static/css/style.css}"/>
+
+
+    </head>
+
+    <body >
+
+        <div class="container1">            
+            <div  >
+                <h1><span th:text="${nombre}"></span></h1>
+                <form>
+                    <div>
+                        <label >Email address</label>
+                        <br>
+                        <input  placeholder="Enter email">
+                        <small></small>
+                    </div>
+                    <div>
+                        <label >Password</label>
+                        <br>
+                        <input type="password"  placeholder="Password">
+                    </div>
+                    <div>
+                        <input type="checkbox" >
+                        <label>Check me out</label>
+                    </div>
+                    <button type="submit" >Submit</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

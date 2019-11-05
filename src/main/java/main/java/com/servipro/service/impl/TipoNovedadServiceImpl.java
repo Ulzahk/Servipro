@@ -6,26 +6,26 @@
 package main.java.com.servipro.service.impl;
 
 
-import main.java.com.servipro.entity.Tipo_novedad;
+import main.java.com.servipro.entity.TipoNovedadEntity;
 import main.java.com.servipro.commons.GenericServiceImpl;
-import main.java.com.servipro.dao.api.Tipo_novedadDaoApi;
-import main.java.com.servipro.service.api.Tipo_novedadServiceApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
+import main.java.com.servipro.dao.api.TipoNovedadDaoApi;
+import main.java.com.servipro.service.api.TipoNovedadServiceApi;
 
 /**
  *
  * @author PRACTICANTE
  */
 @Service
-public class Tipo_novedadServiceImpl extends GenericServiceImpl<Tipo_novedad, Integer> implements Tipo_novedadServiceApi {
+public class TipoNovedadServiceImpl extends GenericServiceImpl<TipoNovedadEntity, Integer> implements TipoNovedadServiceApi {
 
     @Autowired
-    private Tipo_novedadDaoApi tipo_novDaoApi;
+    private TipoNovedadDaoApi tipo_novDaoApi;
 
     @Override
-    public CrudRepository<Tipo_novedad, Integer> getDao() {
+    public CrudRepository<TipoNovedadEntity, Integer> getDao() {
         return tipo_novDaoApi;
 
     }

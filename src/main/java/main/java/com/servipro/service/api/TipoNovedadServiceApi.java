@@ -6,12 +6,12 @@
 package main.java.com.servipro.service.api;
 
 import main.java.com.servipro.commons.GenericServiceApi;
-import main.java.com.servipro.entity.Tipo_novedad;
+import main.java.com.servipro.entity.TipoNovedadEntity;
 
 /**
  *
  * @author PRACTICANTE
  */
-public interface Tipo_novedadServiceApi extends GenericServiceApi<Tipo_novedad, Integer> {
+public interface TipoNovedadServiceApi extends GenericServiceApi<TipoNovedadEntity, Integer> {
     
 }

@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html xmlns: th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
+        <title>Lista Costos</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Guardar tipo de novedad</title>
+        <!-- Bootstrap CSS -->
+        <link href="../static/css/bootstrap.css" rei="stylesheet" th:href="@{/css/bootstrap.css}">
     </head>
-     
     <body>
-        <div>
-            <form action="#" th:action="@{/save}" th:object=${tipo_novedad} method="post"></form>
+        <div class="container">
+            <form action="#" th:action="@{/save}" class="form-group" th:object="${CentroDeCostosx}" method="post">
+                <input type="hidden" id="id" th:field="*{id}" th:if="${(IdDelCentroDeCostosx == null)}" >
+                <input type="hidden" id="id" name="id" th:value="${IdDelCentroDeCostosx}" th:if="${(IdDelCentroDeCostosx != null)}" >                
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" th:field="*{nombre}" name="nombre">
+                </div>
+                
+                <div class="form-group">
+                    <label for="nombre">Estado Activo</label>
+                    <input type="text" class="form-control" id="estadoa" th:field="*{estadoa}" name="estadoa">
+                </div>
+                
+                <div class="form-group">
+                    <label for="nombre">Estado Inactivo</label>
+                    <input type="text" class="form-control" id="estadoin" th:fiedl="*{estadoin}" name="estadoin">
+                </div>
+                <button type="submit" class="btn btn-sucess">Guardar</button>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="descripcion">Descripción</label>
-            <input type="text" class="form-control" id="descripcion" name="descripcion">           
-        </div>
-        <button type="submit" class="btn-btn-success">Guardar</button>
-        
     </body>
 </html>
