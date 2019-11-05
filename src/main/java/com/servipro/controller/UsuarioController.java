@@ -17,6 +17,7 @@ import com.servipro.model.UsuarioModel;
 import com.servipro.repository.UsuarioJpaRepository;
 import com.servipro.service.UsuarioService;
 import com.servipro.service.impl.UsuarioServiceImpl;
+import com.servipro.utilities.EncriptadorContrasena;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import java.util.ArrayList;
@@ -93,6 +94,10 @@ public class UsuarioController {
     
     @PostMapping("/registrar")//para leer valores en la plantilla es ${} y para asignar valores desde la plantilla hacia el back es *{}
     public ModelAndView registrarUsuario(UsuarioEntity usuariox) {
+        
+        EncriptadorContrasena encriptador= new EncriptadorContrasena();//revisar posibles problemas de seguridad al ponerlo aca
+        usuariox.setContrasena(encriptador.EncriptarContrasena(usuariox.getContrasena()));
+        
         ModelAndView mav;
         if (UsuarioServiceImpl.Existe(usuariox.getId().intValue())) {
             mav =new ModelAndView("registrarse");
@@ -156,7 +161,7 @@ public class UsuarioController {
     private String getJWTToken(String username) {
 		String secretKey = "a1D2&3A5%639f8loC0944G98@#zxDy102";
 		List<GrantedAuthority> grantedAuthorities  = AuthorityUtils
-				.commaSeparatedStringToAuthorityList("ADMIN,USER");
+				.commaSeparatedStringToAuthorityList("USER,ADMIN");
 		
 		String token = Jwts
 				.builder()

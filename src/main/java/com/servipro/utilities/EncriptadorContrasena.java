@@ -16,7 +16,7 @@ public class EncriptadorContrasena {
     
     
     public String EncriptarContrasena(String contrasena) {
-        BCryptPasswordEncoder encriptador = new BCryptPasswordEncoder(contrasena.length());        
+        BCryptPasswordEncoder encriptador = new BCryptPasswordEncoder(4);        
 	return encriptador.encode(contrasena);
     }
     
