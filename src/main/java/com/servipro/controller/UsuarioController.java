@@ -152,29 +152,10 @@ public class UsuarioController {
         return "login";
     }*/
     
-    @PostMapping("/login")
-    public ModelAndView ingresar(String username,String password)
-    {
-        ModelAndView mav;
-        if (/*UsuarioServiceImpl.Existe(Integer.parseInt(username))*/username.equals("hola") && password.equals("hola")) {
-            /*mav =new ModelAndView("registrarse");
-            mav.addObject("usuarioLog", usuarioLog);
-            mav.addObject("errorUsuarioExiste","Error el usuario ya existe");
-            return mav;*/
-            String token = getJWTToken(username);
-		UsuarioModel user = new UsuarioModel();
-		user.setIdusuario(username);
-		user.setToken(token);
-            mav =new ModelAndView("redirect:/usuario/listar");
-            return mav;
-        }        
-        mav =new ModelAndView("redirect:/login?error=true");        
-        return mav;
-    }
     
     private String getJWTToken(String username) {
 		String secretKey = "a1D2&3A5%639f8loC0944G98@#zxDy102";
-		List grantedAuthorities = AuthorityUtils
+		List<GrantedAuthority> grantedAuthorities  = AuthorityUtils
 				.commaSeparatedStringToAuthorityList("ADMIN,USER");
 		
 		String token = Jwts
@@ -192,6 +173,33 @@ public class UsuarioController {
 
 		return "Bearer " + token;
 	}
+    
+    
+    
+    @PostMapping("/login")
+    public ModelAndView ingresar(String username,String password)
+    {       
+        
+        ModelAndView mav;
+        if (/*UsuarioServiceImpl.Existe(Integer.parseInt(username))*/username.equals("hola") && password.equals("hola")) {
+            /*mav =new ModelAndView("registrarse");
+            mav.addObject("usuarioLog", usuarioLog);
+            mav.addObject("errorUsuarioExiste","Error el usuario ya existe");
+            return mav;*/
+            String token = getJWTToken(username);
+            UsuarioModel user = new UsuarioModel();
+            user.setIdusuario(username);
+            user.setToken(token);
+            mav =new ModelAndView("redirect:/usuario/listar");
+            return mav;
+        }        
+        mav =new ModelAndView("redirect:/login?error=true");        
+        return mav;
+    }
+    
+    
+    
+    
     
     
 }

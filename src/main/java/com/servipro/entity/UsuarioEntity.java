@@ -49,7 +49,7 @@ public class UsuarioEntity implements Serializable {
     
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name="authorities_usuario",
-    joinColumns=@JoinColumn(name="idusuario"),
+    joinColumns=@JoinColumn(name="idusuario",referencedColumnName="idusuario"),//referencedColumnName="idusuario"  sirve para indicar cual columna de la entity actual se va a enlazar
     inverseJoinColumns=@JoinColumn(name="authorityid"))
     private Set<AuthorityEntity> authority;
    

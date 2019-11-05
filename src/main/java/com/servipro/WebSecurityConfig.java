@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.servipro.loginSecurity.config;
+package com.servipro;
 
+import com.servipro.loginSecurity.config.JWTAuthorizationFilter ;
 import com.servipro.service.impl.UsuarioDetalleServicioImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +19,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -32,11 +34,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .csrf().disable()
+                        .addFilterAfter(new JWTAuthorizationFilter (), UsernamePasswordAuthenticationFilter.class)
             .authorizeRequests()
 	        .antMatchers(resources).permitAll()  
 	        .antMatchers("/","/index").permitAll()
 	        .antMatchers("/admin*").access("hasRole('ADMIN')")
-	        .antMatchers("/user*").access("hasRole('USER') or hasRole('ADMIN')")
+	        .antMatchers("/usuario*").access("hasRole('USER') or hasRole('ADMIN')")
                 .anyRequest().authenticated()                
                 .and()
             .formLogin()
