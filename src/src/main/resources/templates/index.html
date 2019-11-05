@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
     <head>
-        <title>Lista Costos</title>
+        <title>Centro de Costos</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap CSS -->
@@ -17,6 +17,7 @@
                     <table class="table">
                         <thead>
                             <tr>
+                                <th>Id Costos</th>
                                 <th>Nombre</th>
                                 <th>Identificación</th>
                                 <th>Inactivo/Activo </th>
@@ -25,11 +26,12 @@
                         </thead>
                         <tbody>
                             <tr th:each="CentroDeCostos : ${list}">
+                                <td th:text="${CentroDeCostos.id}"></td>
                                 <td th:text="${CentroDeCostos.nombre}"></td>
                                 <td th:text="${CentroDeCostos.documento}"></td>  
                                 <td>
                                     <div id="SwitchEstado" class="custom-control custom-switch">
-                                        <input class="custom-control-input" type="checkbox" th:checkbox="${CentroDeCostos.estadoa}" th:checked="${CentroDeCostos.estadoa}" id="customSwitch1">
+                                        <input class="custom-control-input" type="checkbox" th:checkbox="${CentroDeCostos.estadoa}" th:checked="${CentroDeCostos.estadoa}" id="customSwitch3">
                                          <label class="custom-control-label" for="customSwitch1"></label> 
                                     </div>
                                 </td>

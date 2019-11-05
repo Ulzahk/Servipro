@@ -52,6 +52,9 @@
                 <input type="hidden" id="id" th:field="*{id}" th:if="${(IdDelCentroDeCostosx == null)}" >
                 <input type="hidden" id="id" name="id" th:value="${IdDelCentroDeCostosx}" th:if="${(IdDelCentroDeCostosx != null)}" >                
                 <div class="form-group">
+                    <label for="id">Id Costos</label>
+                    <input type="text" class="form-control" id="id" th:field="*{id}" name="id" onkeypress="return soloNumeros(event)">
+                    
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" th:field="*{nombre}" name="nombre" required onkeypress="return soloLetras(event)">
                     
