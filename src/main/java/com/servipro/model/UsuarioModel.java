@@ -16,6 +16,7 @@ public class UsuarioModel {
     private String contrasena;    
     private long idperfil;
     private boolean estado;
+    private String token;
 
     public UsuarioModel(long id, String idusuario,String contrasena,long idperfil,boolean estado) {
         this.id = id;
@@ -102,6 +103,20 @@ public class UsuarioModel {
      */
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    /**
+     * @return the token
+     */
+    public String getToken() {
+        return token;
+    }
+
+    /**
+     * @param token the token to set
+     */
+    public void setToken(String token) {
+        this.token = token;
     }
     
     

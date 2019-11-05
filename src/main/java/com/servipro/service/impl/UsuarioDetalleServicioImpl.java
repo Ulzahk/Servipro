@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.servipro.service;
+package com.servipro.service.impl;
 
 
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class UsuarioDetalleServicioImpl implements UserDetailsService {
         	
      //Buscar el usuario con el repositorio y si no existe lanzar una exepcion
       UsuarioEntity appUser = 
-                 usuarioRepositorio.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("No existe usuario"));
+                 usuarioRepositorio.findByidusuario(username).orElseThrow(() -> new UsernameNotFoundException("No existe usuario"));
 		
     //Mapear nuestra lista de Authority con la de spring security 
     List grantList = new ArrayList();

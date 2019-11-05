@@ -25,6 +25,13 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.view.RedirectView;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 
 
 /**
@@ -135,4 +142,56 @@ public class UsuarioController {
         //model.addAttribute("users", userJPARepository.findAll());
         return "redirect:/usuarios/listar";
     }*/
+    
+    /* POSIBLEMENTE EL METODO LOGIN DE ABAJO ES PARA DESECHAR*/
+    
+    /*@GetMapping("/login")
+    public String login(UsuarioModel usuarioLog,Model model)
+    {
+        model.addAttribute("usuarioLog", usuarioLog);
+        return "login";
+    }*/
+    
+    @PostMapping("/login")
+    public ModelAndView ingresar(String username,String password)
+    {
+        ModelAndView mav;
+        if (/*UsuarioServiceImpl.Existe(Integer.parseInt(username))*/username.equals("hola") && password.equals("hola")) {
+            /*mav =new ModelAndView("registrarse");
+            mav.addObject("usuarioLog", usuarioLog);
+            mav.addObject("errorUsuarioExiste","Error el usuario ya existe");
+            return mav;*/
+            String token = getJWTToken(username);
+		UsuarioModel user = new UsuarioModel();
+		user.setIdusuario(username);
+		user.setToken(token);
+            mav =new ModelAndView("redirect:/usuario/listar");
+            return mav;
+        }        
+        mav =new ModelAndView("redirect:/login?error=true");        
+        return mav;
+    }
+    
+    private String getJWTToken(String username) {
+		String secretKey = "a1D2&3A5%639f8loC0944G98@#zxDy102";
+		List grantedAuthorities = AuthorityUtils
+				.commaSeparatedStringToAuthorityList("ADMIN,USER");
+		
+		String token = Jwts
+				.builder()
+				.setId("ServiProJWT")
+				.setSubject(username)
+				.claim("authorities",
+						grantedAuthorities.stream()
+								.map(GrantedAuthority::getAuthority)
+								.collect(Collectors.toList()))
+				.setIssuedAt(new Date(System.currentTimeMillis()))
+				.setExpiration(new Date(System.currentTimeMillis() + 600000))
+				.signWith(SignatureAlgorithm.HS512,
+						secretKey.getBytes()).compact();
+
+		return "Bearer " + token;
+	}
+    
+    
 }

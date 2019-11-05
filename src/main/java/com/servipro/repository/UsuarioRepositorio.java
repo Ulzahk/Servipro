@@ -15,6 +15,7 @@ import com.servipro.entity.UsuarioEntity;
  */
 @Repository("UsuarioRepositorio")
 public interface UsuarioRepositorio extends CrudRepository<UsuarioEntity, Long>{
-    public Optional<UsuarioEntity> findByUsername(String username);
+    
+    public Optional<UsuarioEntity> findByidusuario(String idusuario);//en findByidusuario la parte que viene despues de "findBy" es el nombre del campo de la entity que se desea utilizar en este caso "idusuario"
     
 }

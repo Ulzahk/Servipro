@@ -44,6 +44,8 @@ public class UsuarioEntity implements Serializable {
     private Long idperfil;
     @Column(name = "estado")    
     private boolean estado;
+    @Column (name = "token")
+    private String token;
     
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name="authorities_usuario",
@@ -59,6 +61,7 @@ public class UsuarioEntity implements Serializable {
         this.idusuario = idusuario;
         this.contrasena = contrasena;
         this.idperfil = idperfil;
+        
     }
 
     
@@ -181,6 +184,20 @@ public String toString() {
      */
     public void setAuthority(Set<AuthorityEntity> authority) {
         this.authority = authority;
+    }
+
+    /**
+     * @return the token
+     */
+    public String getToken() {
+        return token;
+    }
+
+    /**
+     * @param token the token to set
+     */
+    public void setToken(String token) {
+        this.token = token;
     }
     
 }

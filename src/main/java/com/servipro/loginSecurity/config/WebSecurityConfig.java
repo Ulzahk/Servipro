@@ -5,7 +5,7 @@
  */
 package com.servipro.loginSecurity.config;
 
-import com.servipro.service.UsuarioDetalleServicioImpl;
+import com.servipro.service.impl.UsuarioDetalleServicioImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     //Necesario para evitar que la seguridad se aplique a los resources
     //Como los css, imagenes y javascripts
     String[] resources = new String[]{
-            "/include/**","/css/**","/icons/**","/img/**","/js/**","/layer/**"
+            "/include/**","/css/**","/icons/**","/img/**","/js/**","/layer/**","/usuario/login"
     };
 	
     @Override

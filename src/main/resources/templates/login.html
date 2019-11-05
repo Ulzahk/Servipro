@@ -1,16 +1,82 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Ingresar</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="container my-5">
+            <h2 class="mb-5">Ingresar</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="#" th:action="@{/login}" th:object="${usuarioLog}" method="post">
+                        <div class="row">                            
+                            <div class="form-group col-md-3">
+                                <label for="idusuario" class="col-form-label">Id usuario</label>
+                                <input type="text" th:field="*{idusuario}" class="form-control" id="idusuario" placeholder="#000000" required onkeypress="return validarNumeros(event)">
+                                <span th:if="${#fields.hasErrors('idusuario')}" th:errors="*{idusuario}" class="text-danger"></span>
+                            </div>                            
+                            <div class="form-group col-md-3">
+                                <label for="contrasena" class="col-form-label">Contraseña</label>
+                                <input type="password" th:field="*{contrasena}" class="form-control" id="contrasena" placeholder="*********" name="contrasena" required onkeypress="return soloIngresarLetras(event)">
+                                <!-- <span th:if="${#fields.hasErrors('contrasena')}" th:errors="*{contrasena}" class="text-danger"></span>-->
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-5">
+                                <input type="submit" class="btn btn-primary" value="Actualizar">
+                            </div>
+                        </div>    
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script>
+            function soloIngresarLetras(e){
+            key = e.keyCode || e.which;
+            tecla = String.fromCharCode(key).toLowerCase();
+            letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+            especiales = "8-37-39-46";
+
+            tecla_especial = false
+            for(var i in especiales){
+            if(key == especiales[i]){
+            tecla_especial = true;
+            break;
+            }
+            }
+
+            if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+            }
+            }
+            
+            function validarNumeros(evento){
+            key = evento.keyCode || evento.which;
+            tecla = String.fromCharCode(key).toLowerCase();
+            caracteres_admitidos = "1234567890";
+            caracteres_especiales = "8-37-39-46";
+
+            tecla_especial = false
+            for(var i in caracteres_especiales){
+            if(key == caracteres_especiales[i]){
+            tecla_especial = true;
+            break;
+            }
+            }
+
+            if(caracteres_admitidos.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+            }
+            }
+            
+        </script>
     </body>
 </html>
+
+
