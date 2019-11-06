@@ -22,7 +22,7 @@ public class ControlConfirmarEliminarCentroDeCostos {
     public ModelAndView centroDeCostos(HttpServletRequest request){
         
         int id_ccostos=Integer.parseInt(request.getParameter("id_ccostos"));
-        this.jdbcTemplate.update("delete from centro_de_costos "+"where "+"id_ccostos=?",id_ccostos);
+        this.jdbcTemplate.update("delete from nm_centro_de_costos "+"where "+"id_ccostos=?",id_ccostos);
         return new ModelAndView("redirect:/centrodecostos.htm");
         
     }

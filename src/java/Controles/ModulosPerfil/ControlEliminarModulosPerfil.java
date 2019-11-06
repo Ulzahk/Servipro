@@ -23,8 +23,8 @@ public class ControlEliminarModulosPerfil {
     public ModelAndView modulosPerfil(HttpServletRequest request){
         ModelAndView mav=new ModelAndView();
         int id_modulo_perfil=Integer.parseInt(request.getParameter("id_modulo_perfil"));
-        String sql="select * from modulos_perfil join modulos on modulos_perfil.id_modulo=modulos.id_modulo  "
-        + "join perfil on modulos_perfil.id_perfil=perfil.id_perfil where id_modulo_perfil='"+id_modulo_perfil+"'";
+        String sql="select * from nm_modulos_perfil join nm_modulos on nm_modulos_perfil.id_modulo=nm_modulos.id_modulo  "
+        + "join nm_perfil on nm_modulos_perfil.id_perfil=nm_perfil.id_perfil where id_modulo_perfil='"+id_modulo_perfil+"'";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.setViewName("eliminarmodulosperfil");
         mav.addObject("datos", datos);

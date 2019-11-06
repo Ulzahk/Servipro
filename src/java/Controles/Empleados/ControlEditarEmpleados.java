@@ -64,7 +64,7 @@ public class ControlEditarEmpleados {
         }else{
             
             int id_empleado=Integer.parseInt(request.getParameter("id_empleado"));
-            this.jdbcTemplate.update("update empleados "+"set tipo_documento=?, "+
+            this.jdbcTemplate.update("update nm_empleados "+"set tipo_documento=?, "+
             "documento=?, nombre=?, telefono=?, id_ccostos=?, id_cargo=? where "+
             "id_empleado=?",emp.getTipo_documento(),emp.getDocumento(),emp.getNombre(),
             emp.getTelefono(),emp.getId_ccostos(),emp.getId_cargo(),id_empleado);
@@ -75,7 +75,7 @@ public class ControlEditarEmpleados {
     public Empleados selectEmpleados(int id_empleado){
         
         final Empleados emple=new Empleados();
-        String quer="select * from empleados where id_empleado='"+id_empleado+"'";
+        String quer="select * from nm_empleados where id_empleado='"+id_empleado+"'";
         return (Empleados) jdbcTemplate.query(quer, new ResultSetExtractor<Empleados>(){
            public Empleados extractData(ResultSet rs)throws SQLException, DataAccessException{
                if(rs.next()){

@@ -51,7 +51,7 @@ public class ControlAgregarCargoEmpleado {
         }else{
             
             this.jdbcTemplate.update(
-            "insert into cargo_empleado(descripcion_cargo)values(?)",
+            "insert into nm_cargo_empleado(descripcion_cargo)values(?)",
             ce.getDescripcion_cargo());
             return new ModelAndView("redirect:/cargoempleado.htm");
         }

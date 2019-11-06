@@ -23,7 +23,7 @@ public class ControlConfirmarEliminarTipoNovedad {
     public ModelAndView tipoNovedad(HttpServletRequest request){
         
         int id_tipo_novedad=Integer.parseInt(request.getParameter("id_tipo_novedad"));
-        this.jdbcTemplate.update("delete from tipo_novedad where id_tipo_novedad=?",
+        this.jdbcTemplate.update("delete from nm_tipo_novedad where id_tipo_novedad=?",
         id_tipo_novedad);
         return new ModelAndView("redirect:/tiponovedad.htm");
                 

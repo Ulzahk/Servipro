@@ -61,7 +61,7 @@ public class ControlEditarCargoEmpleado {
         }else{
             
             int id_cargo=Integer.parseInt(request.getParameter("id_cargo"));
-            this.jdbcTemplate.update("update cargo_empleado "+" set descripcion_cargo=? "+
+            this.jdbcTemplate.update("update nm_cargo_empleado "+" set descripcion_cargo=? "+
             "where "+"id_cargo=?",ce.getDescripcion_cargo(),id_cargo);
             return new ModelAndView("redirect:/cargoempleado.htm");
             
@@ -71,7 +71,7 @@ public class ControlEditarCargoEmpleado {
     public CargoEmpleado selectCargoEmpleado(int id_cargo){
         
         final CargoEmpleado cargoemp=new CargoEmpleado();
-        String quer="select * from cargo_empleado where id_cargo='"+id_cargo+"'";
+        String quer="select * from nm_cargo_empleado where id_cargo='"+id_cargo+"'";
         return(CargoEmpleado) jdbcTemplate.query(quer, new ResultSetExtractor<CargoEmpleado>(){
             public CargoEmpleado extractData(ResultSet rs) throws SQLException, DataAccessException{
                 

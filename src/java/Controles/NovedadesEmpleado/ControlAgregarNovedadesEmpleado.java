@@ -51,7 +51,7 @@ public class ControlAgregarNovedadesEmpleado {
             
         }else{
             
-            this.jdbcTemplate.update("insert into novedades_empleado"
+            this.jdbcTemplate.update("insert into nm_novedades_empleado"
             + "(id_empleado,detalle,tipo,fecha)values(?,?,?,?)",ne.getId_empleado(),
             ne.getDetalle(),ne.getTipo(),ne.getFecha());
             return new ModelAndView("redirect:/novedadesempleado.htm");

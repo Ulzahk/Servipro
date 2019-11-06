@@ -24,7 +24,7 @@ public class ControlConfirmarEliminarEmpleados {
     public ModelAndView empleados(HttpServletRequest request){
         
         int id_empleado=Integer.parseInt(request.getParameter("id_empleado"));
-        this.jdbcTemplate.update("delete from empleados where id_empleado=?",id_empleado);
+        this.jdbcTemplate.update("delete from nm_empleados where id_empleado=?",id_empleado);
         return new ModelAndView("redirect:/empleados.htm");
         
     }

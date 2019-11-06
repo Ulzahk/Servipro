@@ -23,7 +23,7 @@ public class ControlConfirmarEliminarResponsableGrupo {
     public ModelAndView responsableGrupo(HttpServletRequest request){
         
         int id_responsable=Integer.parseInt(request.getParameter("id_responsable"));
-        this.jdbcTemplate.update("delete from responsable_grupo where id_responsable=?",
+        this.jdbcTemplate.update("delete from nm_responsable_grupo where id_responsable=?",
         id_responsable);
         return new ModelAndView("redirect:/responsablegrupo.htm");
         

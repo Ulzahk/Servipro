@@ -48,7 +48,7 @@ public class ControlAgregarPerfil {
             return mav;
         }else{
             this.jdbcTemplate.update(
-            "insert into perfil(descripcion_perfil)values(?)",
+            "insert into nm_perfil(descripcion_perfil)values(?)",
             p.getDescripcion_perfil());
             return new ModelAndView("redirect:/perfil.htm");
         }  

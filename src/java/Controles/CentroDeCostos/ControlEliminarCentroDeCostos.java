@@ -23,7 +23,7 @@ public class ControlEliminarCentroDeCostos {
     public ModelAndView centroDeCostos(HttpServletRequest request){
         ModelAndView mav=new ModelAndView();
         int id_ccostos=Integer.parseInt(request.getParameter("id_ccostos"));
-        String sql="select * from centro_de_costos where id_ccostos='"+id_ccostos+"'";
+        String sql="select * from nm_centro_de_costos where id_ccostos='"+id_ccostos+"'";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("datos",datos);
         mav.setViewName("eliminarcentrodecostos");

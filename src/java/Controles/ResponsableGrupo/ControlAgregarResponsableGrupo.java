@@ -51,7 +51,7 @@ public class ControlAgregarResponsableGrupo {
             
         }else{
             
-            this.jdbcTemplate.update("insert into responsable_grupo(id_grupo, id_usuario)"
+            this.jdbcTemplate.update("insert into nm_responsable_grupo(id_grupo, id_usuario)"
             + "values(?,?)",rg.getId_grupo(),rg.getId_usuario());
             return new ModelAndView("redirect:/responsablegrupo.htm");
             

@@ -23,7 +23,7 @@ public class ControlConfirmarEliminarNovedadesEmpleado {
     public ModelAndView novedadesEmpleado(HttpServletRequest request){
         
         int id_novedad_empleado=Integer.parseInt(request.getParameter("id_novedad_empleado"));
-        this.jdbcTemplate.update("delete from novedades_empleado where id_novedad_empleado=?",
+        this.jdbcTemplate.update("delete from nm_novedades_empleado where id_novedad_empleado=?",
         id_novedad_empleado);
         return new ModelAndView("redirect:/novedadesempleado.htm");
     }

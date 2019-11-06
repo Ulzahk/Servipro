@@ -23,7 +23,7 @@ public class ControlConfirmarEliminarCargoEmpleado {
     public ModelAndView cargoEmpleado(HttpServletRequest request){
         
         int id_cargo=Integer.parseInt(request.getParameter("id_cargo"));
-        this.jdbcTemplate.update("delete from cargo_empleado "+"where "+"id_cargo=?",id_cargo);
+        this.jdbcTemplate.update("delete from nm_cargo_empleado "+"where "+"id_cargo=?",id_cargo);
         return new ModelAndView("redirect:/cargoempleado.htm");
     }
 }

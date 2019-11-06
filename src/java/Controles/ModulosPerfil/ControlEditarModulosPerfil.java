@@ -63,7 +63,7 @@ public class ControlEditarModulosPerfil {
         }else{
             
             int id_modulo_perfil=Integer.parseInt(request.getParameter("id_modulo_perfil"));
-            this.jdbcTemplate.update("update modulos_perfil set id_modulo=?, id_perfil=? "
+            this.jdbcTemplate.update("update nm_modulos_perfil set id_modulo=?, id_perfil=? "
             + "where id_modulo_perfil=?",mp.getId_modulo(),mp.getId_perfil(),
             id_modulo_perfil);
             return new ModelAndView("redirect:/modulosperfil.htm");
@@ -73,7 +73,7 @@ public class ControlEditarModulosPerfil {
     public ModulosPerfil selectModulosPerfil(int id_modulo_perfil){
         
         final ModulosPerfil modp=new ModulosPerfil();
-        String quer="select * from modulos_perfil where id_modulo_perfil='"+id_modulo_perfil+"'";
+        String quer="select * from nm_modulos_perfil where id_modulo_perfil='"+id_modulo_perfil+"'";
         return (ModulosPerfil) jdbcTemplate.query(quer, new ResultSetExtractor<ModulosPerfil>(){
           public ModulosPerfil extractData(ResultSet rs)throws SQLException, DataAccessException{
               if(rs.next()){

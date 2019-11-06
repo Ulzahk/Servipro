@@ -22,7 +22,7 @@ public class ControlConfirmarEliminarGrupos {
     public ModelAndView grupos(HttpServletRequest request){
         
         int id_grupo=Integer.parseInt(request.getParameter("id_grupo"));
-        this.jdbcTemplate.update("delete from grupos where id_grupo=?",id_grupo);
+        this.jdbcTemplate.update("delete from nm_grupos where id_grupo=?",id_grupo);
         return new ModelAndView("redirect:/grupos.htm");
         
     }

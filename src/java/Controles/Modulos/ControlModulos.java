@@ -22,7 +22,7 @@ public class ControlModulos {
     
     public ModelAndView modulos(){
         ModelAndView mav=new ModelAndView();
-        String sql="select * from modulos";
+        String sql="select * from nm_modulos";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("datos",datos);
         mav.setViewName("modulos");

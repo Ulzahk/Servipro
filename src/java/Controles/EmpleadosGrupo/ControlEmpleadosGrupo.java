@@ -24,8 +24,8 @@ public class ControlEmpleadosGrupo {
     public ModelAndView empleadoGrupo(){
         
         ModelAndView mav=new ModelAndView();
-        String sql="select * from empleados_grupo join grupos on empleados_grupo.id_grupo=grupos.id_grupo"
-                + " join empleados on empleados_grupo.id_empleado=empleados.id_empleado";
+        String sql="select * from nm_empleados_grupo join nm_grupos on nm_empleados_grupo.id_grupo=nm_grupos.id_grupo"
+                + " join nm_empleados on nm_empleados_grupo.id_empleado=nm_empleados.id_empleado";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.setViewName("empleadosgrupo");
         mav.addObject("datos", datos);

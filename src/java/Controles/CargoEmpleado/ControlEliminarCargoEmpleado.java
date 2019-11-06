@@ -23,7 +23,7 @@ public class ControlEliminarCargoEmpleado {
     public ModelAndView cargoEmpleado(HttpServletRequest request){
       ModelAndView mav=new ModelAndView();
       int id_cargo=Integer.parseInt(request.getParameter("id_cargo"));
-      String sql="select * from cargo_empleado where id_cargo='"+id_cargo+"'";
+      String sql="select * from nm_cargo_empleado where id_cargo='"+id_cargo+"'";
       List datos=this.jdbcTemplate.queryForList(sql);
       mav.addObject("datos",datos);
       mav.setViewName("eliminarcargoempleado");

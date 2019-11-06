@@ -61,7 +61,7 @@ public class ControlEditarGrupos {
         }else{
             
             int id_grupo=Integer.parseInt(request.getParameter("id_grupo"));
-            this.jdbcTemplate.update("update grupos set nombre_grupo=? where id_grupo=?",
+            this.jdbcTemplate.update("update nm_grupos set nombre_grupo=? where id_grupo=?",
             grup.getNombre_grupo(),id_grupo);
             return new ModelAndView("redirect:/grupos.htm");
         }
@@ -70,7 +70,7 @@ public class ControlEditarGrupos {
     public Grupos selectGrupos(int id_grupo){
         
         final Grupos grupo=new Grupos();
-        String quer="select * from  grupos where id_grupo='"+id_grupo+"'";
+        String quer="select * from  nm_grupos where id_grupo='"+id_grupo+"'";
         return (Grupos)jdbcTemplate.query(quer,new ResultSetExtractor<Grupos>(){
             public Grupos extractData(ResultSet rs)throws SQLException, DataAccessException{
                if(rs.next()){

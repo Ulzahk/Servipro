@@ -26,8 +26,8 @@ public class ControlEliminarEmpleadosGrupo {
         
         ModelAndView mav=new ModelAndView();
         int id_empleados_grupo=Integer.parseInt(request.getParameter("id_empleados_grupo"));
-        String sql="select * from empleados_grupo join grupos on empleados_grupo.id_grupo=grupos.id_grupo"
-                + " join empleados on empleados_grupo.id_empleado=empleados.id_empleado where id_empleados_grupo='"
+        String sql="select * from nm_empleados_grupo join nm_grupos on nm_empleados_grupo.id_grupo=nm_grupos.id_grupo"
+                + " join nm_empleados on nm_empleados_grupo.id_empleado=nm_empleados.id_empleado where id_empleados_grupo='"
                 +id_empleados_grupo+"'";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.setViewName("eliminarempleadosgrupo");

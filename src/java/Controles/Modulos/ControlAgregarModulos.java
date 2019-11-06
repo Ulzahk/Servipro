@@ -52,7 +52,7 @@ public class ControlAgregarModulos {
         }else{
             
             this.jdbcTemplate.update(
-            "insert into modulos (nombre_modulo)values(?)",
+            "insert into nm_modulos (nombre_modulo)values(?)",
             mod.getNombre_modulo());
             return new ModelAndView("redirect:/modulos.htm");
         }

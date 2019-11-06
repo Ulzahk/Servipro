@@ -51,7 +51,7 @@ public class ControlAgregarUsuarios {
             
         }else{
             
-            this.jdbcTemplate.update("insert into usuarios(id_usuario,id_empleado,contraseña,id_perfil) "
+            this.jdbcTemplate.update("insert into nm_usuarios(id_usuario,id_empleado,contraseña,id_perfil) "
             +"values(?,?,?,?)",u.getId_usuario(),u.getId_empleado(),u.getContraseña(),
             u.getId_perfil());
             return new ModelAndView("redirect:/usuarios.htm");

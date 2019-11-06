@@ -51,7 +51,7 @@ public class ControlAgregarCentroDeCostos {
         }else{
             
             this.jdbcTemplate.update(
-            "insert into centro_de_costos(nombre_ccostos)values(?)",
+            "insert into nm_centro_de_costos(nombre_ccostos)values(?)",
             cdc.getNombre_ccostos());
             return new ModelAndView("redirect:/centrodecostos.htm");
         } 

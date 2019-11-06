@@ -61,7 +61,7 @@ public class ControlEditarCentroDeCostos {
         }else{
             
             int id_ccostos=Integer.parseInt(request.getParameter("id_ccostos"));
-            this.jdbcTemplate.update("update centro_de_costos "+"set nombre_ccostos=? "+
+            this.jdbcTemplate.update("update nm_centro_de_costos "+"set nombre_ccostos=? "+
             "where "+"id_ccostos=?",cdc.getNombre_ccostos(),id_ccostos);
             return new ModelAndView("redirect:/centrodecostos.htm"); 
         }
@@ -70,7 +70,7 @@ public class ControlEditarCentroDeCostos {
     public CentroDeCostos selectCentroDeCostos(int id_ccostos){
         
         final CentroDeCostos centrod=new CentroDeCostos();
-        String quer="select * from centro_de_costos where id_ccostos='"+id_ccostos+"'";
+        String quer="select * from nm_centro_de_costos where id_ccostos='"+id_ccostos+"'";
         return (CentroDeCostos) jdbcTemplate.query(quer, new ResultSetExtractor<CentroDeCostos>(){
             public CentroDeCostos extractData(ResultSet rs)throws SQLException, DataAccessException{
                 if(rs.next()){

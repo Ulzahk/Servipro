@@ -20,7 +20,7 @@ public class ControlPerfil {
     @RequestMapping("perfil.htm")
     public ModelAndView perfil (){
         ModelAndView mav = new ModelAndView();
-        String sql="select * from perfil;";
+        String sql="select * from nm_perfil;";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("datos",datos);
         mav.setViewName("perfil");

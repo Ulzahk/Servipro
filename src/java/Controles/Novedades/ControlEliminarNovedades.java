@@ -24,7 +24,7 @@ public class ControlEliminarNovedades {
         
         ModelAndView mav=new ModelAndView();
         int id_novedad=Integer.parseInt(request.getParameter("id_novedad"));
-        String sql="select * from novedades where id_novedad='"+id_novedad+"'";
+        String sql="select * from nm_novedades where id_novedad='"+id_novedad+"'";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.setViewName("eliminarnovedades");
         mav.addObject("datos",datos);

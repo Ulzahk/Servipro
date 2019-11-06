@@ -65,7 +65,7 @@ public class ControlEditarConfiguracion {
         }else{
             
             int id_configuracion=Integer.parseInt(request.getParameter("id_configuracion"));
-            this.jdbcTemplate.update("update configuracion set desconfiguracion=?, "
+            this.jdbcTemplate.update("update nm_configuracion set desconfiguracion=?, "
             +"desconfiguracion_d=?, nombre_variable=?, valor=?, id_modulo=? where "
             +"id_configuracion=?", c.getDesconfiguracion(),c.getDesconfiguracion_d(),
             c.getNombre_variable(),c.getValor(),c.getId_modulo(),id_configuracion);
@@ -76,7 +76,7 @@ public class ControlEditarConfiguracion {
     public Configuracion selectConfiguracion(int id_configuracion){
         
         final Configuracion conf=new Configuracion();
-        String quer=" select * from configuracion where id_configuracion='"+id_configuracion+"'";
+        String quer=" select * from nm_configuracion where id_configuracion='"+id_configuracion+"'";
         return (Configuracion)jdbcTemplate.query(quer, new ResultSetExtractor<Configuracion>(){
             public Configuracion extractData(ResultSet rs)throws SQLException, DataAccessException{
                 if(rs.next()){

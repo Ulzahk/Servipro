@@ -21,7 +21,7 @@ public class ControlCentroDeCostos {
     @RequestMapping("centrodecostos.htm")
     public ModelAndView centroDeCostos(){
         ModelAndView mav=new ModelAndView();
-        String sql="select * from centro_de_costos";
+        String sql="select * from nm_centro_de_costos";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("datos",datos);
         mav.setViewName("centrodecostos");

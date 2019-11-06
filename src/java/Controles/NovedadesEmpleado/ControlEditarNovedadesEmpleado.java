@@ -63,7 +63,7 @@ public class ControlEditarNovedadesEmpleado {
         }else{
             
             int id_novedad_empleado=Integer.parseInt(request.getParameter("id_novedad_empleado"));
-            this.jdbcTemplate.update("update novedades_empleado set id_empleado=?, "
+            this.jdbcTemplate.update("update nm_novedades_empleado set id_empleado=?, "
             + "detalle=?, tipo=?, fecha=? where id_novedad_empleado=?",ne.getId_empleado(),
             ne.getDetalle(),ne.getTipo(),ne.getFecha(),id_novedad_empleado);
             return new ModelAndView("redirect:/novedadesempleado.htm");
@@ -74,7 +74,7 @@ public class ControlEditarNovedadesEmpleado {
     public NovedadesEmpleado selectNovedadesEmpleado(int id_novedad_empleado){
         
         final NovedadesEmpleado nove=new NovedadesEmpleado();
-        String quer="select * from novedades_empleado where id_novedad_empleado='"
+        String quer="select * from nm_novedades_empleado where id_novedad_empleado='"
         +id_novedad_empleado+"'";
         return (NovedadesEmpleado)jdbcTemplate.query(quer, new ResultSetExtractor<NovedadesEmpleado>(){
             public NovedadesEmpleado extractData(ResultSet rs)throws SQLException,DataAccessException{

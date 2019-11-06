@@ -21,8 +21,8 @@ public class ControlModulosPerfil {
     @RequestMapping("modulosperfil.htm")
     public ModelAndView modulosPerfil(){
         ModelAndView mav=new ModelAndView();
-        String sql="select * from modulos_perfil join modulos on modulos_perfil.id_modulo=modulos.id_modulo  "
-        + "join perfil on modulos_perfil.id_perfil=perfil.id_perfil";
+        String sql="select * from nm_modulos_perfil join nm_modulos on nm_modulos_perfil.id_modulo=nm_modulos.id_modulo  "
+        + "join nm_perfil on nm_modulos_perfil.id_perfil=nm_perfil.id_perfil";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.setViewName("modulosperfil");
         mav.addObject("datos", datos);

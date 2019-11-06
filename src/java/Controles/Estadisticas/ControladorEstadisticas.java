@@ -21,7 +21,7 @@ public class ControladorEstadisticas {
     @RequestMapping("estadisticas.htm")
     public ModelAndView consulta(){
         ModelAndView mav=new ModelAndView();
-        String sql="select * from empleados";
+        String sql="select * from nm_empleados";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.setViewName("estadisticas");
         mav.addObject("datos",datos);

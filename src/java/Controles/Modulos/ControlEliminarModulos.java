@@ -24,7 +24,7 @@ public class ControlEliminarModulos {
     public ModelAndView modulos(HttpServletRequest request){
         ModelAndView mav=new ModelAndView();
         int id_modulo=Integer.parseInt(request.getParameter("id_modulo"));
-        String sql="select * from modulos where id_modulo='"+id_modulo+"'";
+        String sql="select * from nm_modulos where id_modulo='"+id_modulo+"'";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("datos",datos);
         mav.setViewName("eliminarmodulos");

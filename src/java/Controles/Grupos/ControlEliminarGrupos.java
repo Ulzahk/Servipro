@@ -23,7 +23,7 @@ public class ControlEliminarGrupos {
     public ModelAndView grupos(HttpServletRequest request){
         ModelAndView mav=new ModelAndView();
         int id_grupo=Integer.parseInt(request.getParameter("id_grupo"));
-        String sql="select * from grupos where id_grupo='"+id_grupo+"'";
+        String sql="select * from nm_grupos where id_grupo='"+id_grupo+"'";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("datos", datos);
         mav.setViewName("eliminargrupos");

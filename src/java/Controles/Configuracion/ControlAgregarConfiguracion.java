@@ -51,7 +51,7 @@ public class ControlAgregarConfiguracion {
             return mav;
         }else{
             
-            this.jdbcTemplate.update("insert into configuracion "
+            this.jdbcTemplate.update("insert into nm_configuracion "
             +"(desconfiguracion, desconfiguracion_d, nombre_variable, valor, id_modulo)"
             +"values(?,?,?,?,?)",c.getDesconfiguracion(),c.getDesconfiguracion_d(),
             c.getNombre_variable(),c.getValor(),c.getId_modulo());
