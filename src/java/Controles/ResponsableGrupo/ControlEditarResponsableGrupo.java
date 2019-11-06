@@ -64,7 +64,7 @@ public class ControlEditarResponsableGrupo {
         }else{
             
             int id_responsable=Integer.parseInt(request.getParameter("id_responsable"));
-            this.jdbcTemplate.update("update responsable_grupo set id_grupo=?, id_usuario=? "
+            this.jdbcTemplate.update("update nm_responsable_grupo set id_grupo=?, id_usuario=? "
             +"where id_responsable=?",rg.getId_grupo(),rg.getId_usuario(),id_responsable);
             return new ModelAndView("redirect:/responsablegrupo.htm");
         }
@@ -74,7 +74,7 @@ public class ControlEditarResponsableGrupo {
     public ResponsableGrupo selectResponsableGrupo(int id_responsable){
         
         final ResponsableGrupo resg=new ResponsableGrupo();
-        String quer="select * from responsable_grupo where id_responsable='"+id_responsable+"'";
+        String quer="select * from nm_responsable_grupo where id_responsable='"+id_responsable+"'";
         return (ResponsableGrupo)jdbcTemplate.query(quer,new ResultSetExtractor<ResponsableGrupo>(){
             public ResponsableGrupo extractData(ResultSet rs)throws SQLException, DataAccessException{
                 if(rs.next()){

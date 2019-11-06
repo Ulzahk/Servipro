@@ -23,7 +23,7 @@ public class ControlEliminarTipoNovedad {
     public ModelAndView tipoNovedad(HttpServletRequest request){
         ModelAndView mav = new ModelAndView();
         int id_tipo_novedad=Integer.parseInt(request.getParameter("id_tipo_novedad"));
-        String sql="select * from tipo_novedad where id_tipo_novedad='"+id_tipo_novedad+"'";
+        String sql="select * from nm_tipo_novedad where id_tipo_novedad='"+id_tipo_novedad+"'";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.setViewName("eliminartiponovedad");
         mav.addObject("datos",datos);

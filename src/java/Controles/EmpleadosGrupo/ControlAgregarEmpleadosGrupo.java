@@ -48,7 +48,7 @@ public class ControlAgregarEmpleadosGrupo {
             mav.addObject("empleadosgrupo", new EmpleadosGrupo());
             return mav; 
         }else{
-            this.jdbcTemplate.update("insert into empleados_grupo(id_grupo, id_empleado) "
+            this.jdbcTemplate.update("insert into nm_empleados_grupo(id_grupo, id_empleado) "
             +" values(?,?)",eg.getId_grupo(),eg.getId_empleado());
             return new ModelAndView("redirect:/empleadosgrupo.htm");
         }

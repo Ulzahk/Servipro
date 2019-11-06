@@ -24,7 +24,7 @@ public class ControlConfirmarEliminarPerfil {
     public ModelAndView perfil(HttpServletRequest request){
         {
             int id_perfil=Integer.parseInt(request.getParameter("id_perfil"));
-            this.jdbcTemplate.update("delete from perfil "+ "where "+"id_perfil=?",id_perfil);
+            this.jdbcTemplate.update("delete from nm_perfil "+ "where "+"id_perfil=?",id_perfil);
             return new ModelAndView("redirect:/perfil.htm");
         }
     } 

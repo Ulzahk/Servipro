@@ -21,7 +21,7 @@ public class ControlEliminarPerfil {
     public ModelAndView perfil (HttpServletRequest request){
         ModelAndView mav = new ModelAndView();
         int id_perfil=Integer.parseInt(request.getParameter("id_perfil"));
-        String sql="select * from perfil where id_perfil='"+id_perfil+"'";
+        String sql="select * from nm_perfil where id_perfil='"+id_perfil+"'";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("datos",datos);
         mav.setViewName("eliminarperfil");

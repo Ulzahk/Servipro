@@ -23,7 +23,7 @@ public class ControlConfirmarEliminarUsuarios {
     public ModelAndView usuarios(HttpServletRequest request){
         
         String id_usuario=request.getParameter("id_usuario");
-        this.jdbcTemplate.update("delete from usuarios where id_usuario=?",id_usuario);
+        this.jdbcTemplate.update("delete from nm_usuarios where id_usuario=?",id_usuario);
         return new ModelAndView("redirect:/usuarios.htm");
         
     }

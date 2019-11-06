@@ -61,7 +61,7 @@ public class ControlEditarPerfil {
         }else{
             
             int id_perfil=Integer.parseInt(request.getParameter("id_perfil"));
-            this.jdbcTemplate.update("update perfil "+" set descripcion_perfil=? "+
+            this.jdbcTemplate.update("update nm_perfil "+" set descripcion_perfil=? "+
             "where "+"id_perfil=?",p.getDescripcion_perfil(),id_perfil);
             return new ModelAndView("redirect:/perfil.htm");
         }

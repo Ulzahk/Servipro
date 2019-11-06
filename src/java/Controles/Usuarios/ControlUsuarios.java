@@ -18,7 +18,7 @@ public class ControlUsuarios {
     @RequestMapping("usuarios.htm")
     public ModelAndView usuarios(){
         ModelAndView mav = new ModelAndView();
-        //String sql="select * from nm_usuarios";
+        /*String sql="select * from nm_usuarios";*/
         String sql="select * from nm_empleados join nm_usuarios on nm_empleados.id_empleado=nm_usuarios.id_empleado "
                 + "join nm_perfil on nm_usuarios.id_perfil=nm_perfil.id_perfil";
         List datos=this.jdbcTemplate.queryForList(sql);

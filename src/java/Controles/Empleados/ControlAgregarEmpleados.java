@@ -52,7 +52,7 @@ public class ControlAgregarEmpleados {
         }else{
             
             this.jdbcTemplate.update(
-            "insert into empleados (tipo_documento, documento, nombre, telefono, id_ccostos,id_cargo)"
+            "insert into nm_empleados (tipo_documento, documento, nombre, telefono, id_ccostos,id_cargo)"
                     + " values"+ "(?,?,?,?,?,?)", emp.getTipo_documento(),emp.getDocumento(),emp.getNombre(),
             emp.getTelefono(),emp.getId_ccostos(),emp.getId_cargo());
             return new ModelAndView("redirect:/empleados.htm");

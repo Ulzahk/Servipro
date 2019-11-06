@@ -21,7 +21,7 @@ public class ControlGrupos {
     @RequestMapping("grupos.htm")
     public ModelAndView grupos(){
         ModelAndView mav=new ModelAndView();
-        String sql="select * from grupos";
+        String sql="select * from nm_grupos";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("datos", datos);
         mav.setViewName("grupos");

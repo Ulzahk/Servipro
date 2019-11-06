@@ -23,7 +23,7 @@ public class ControlEliminarResponsableGrupo {
     public ModelAndView responsableGrupo(HttpServletRequest request){
         ModelAndView mav=new ModelAndView();
         int id_responsable=Integer.parseInt(request.getParameter("id_responsable"));
-        String sql="select * from responsable_grupo where id_responsable='"+id_responsable+"'";
+        String sql="select * from nm_responsable_grupo where id_responsable='"+id_responsable+"'";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.setViewName("eliminarresponsablegrupo");
         mav.addObject("datos",datos);

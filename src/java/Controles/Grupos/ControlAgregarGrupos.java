@@ -51,7 +51,7 @@ public class ControlAgregarGrupos {
             
         }else{
             
-            this.jdbcTemplate.update("insert into grupos(nombre_grupo)value(?)",
+            this.jdbcTemplate.update("insert into nm_grupos(nombre_grupo)value(?)",
             grup.getNombre_grupo());
             return new ModelAndView("redirect:/grupos.htm");
             

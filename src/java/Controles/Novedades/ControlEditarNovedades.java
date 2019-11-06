@@ -74,7 +74,7 @@ public class ControlEditarNovedades {
     public Novedades selectNovedades(int id_novedad){
         
         final Novedades nov=new Novedades();
-        String quer="select * from novedades where id_novedad='"+id_novedad+"'";
+        String quer="select * from nm_novedades where id_novedad='"+id_novedad+"'";
         return (Novedades) jdbcTemplate.query(quer, new ResultSetExtractor<Novedades>(){
           public Novedades  extractData(ResultSet rs)throws SQLException, DataAccessException{
               if(rs.next()){

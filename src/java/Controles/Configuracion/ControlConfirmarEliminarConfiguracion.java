@@ -25,7 +25,7 @@ public class ControlConfirmarEliminarConfiguracion {
     public ModelAndView configuracion(HttpServletRequest request){
         
         int id_configuracion=Integer.parseInt(request.getParameter("id_configuracion"));
-        this.jdbcTemplate.update("delete from configuracion where id_configuracion=?",id_configuracion);
+        this.jdbcTemplate.update("delete from nm_configuracion where id_configuracion=?",id_configuracion);
         return new ModelAndView("redirect:/configuracion.htm");
     }
 }

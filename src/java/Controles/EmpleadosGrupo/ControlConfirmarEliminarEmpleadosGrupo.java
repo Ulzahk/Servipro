@@ -23,7 +23,7 @@ public class ControlConfirmarEliminarEmpleadosGrupo {
     public ModelAndView empleadosGrupo(HttpServletRequest request){
         
         int id_empleados_grupo=Integer.parseInt(request.getParameter("id_empleados_grupo"));
-        this.jdbcTemplate.update("delete from empleados_grupo where id_empleados_grupo=?",id_empleados_grupo);
+        this.jdbcTemplate.update("delete from nm_empleados_grupo where id_empleados_grupo=?",id_empleados_grupo);
         return new ModelAndView("redirect:/empleadosgrupo.htm");
         
     }

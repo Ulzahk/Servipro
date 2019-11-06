@@ -24,8 +24,8 @@ public class ControlEliminarEmpleados {
     public ModelAndView empleados(HttpServletRequest request){
         ModelAndView mav=new ModelAndView();
         int id_empleado=Integer.parseInt(request.getParameter("id_empleado"));
-        String sql="select * from empleados join cargo_empleado on empleados.id_cargo=cargo_empleado.id_cargo  "
-        + "join centro_de_costos on empleados.id_ccostos=centro_de_costos.id_ccostos where id_empleado='"+id_empleado+"'";
+        String sql="select * from nm_empleados join nm_cargo_empleado on nm_empleados.id_cargo=nm_cargo_empleado.id_cargo  "
+        + "join nm_centro_de_costos on nm_empleados.id_ccostos=nm_centro_de_costos.id_ccostos where id_empleado='"+id_empleado+"'";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("datos", datos);
         mav.setViewName("eliminarempleados");

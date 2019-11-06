@@ -62,7 +62,7 @@ public class ControlEditarEmpleadosGrupo {
         }else{
             
             int id_empleados_grupo=Integer.parseInt(request.getParameter("id_empleados_grupo"));
-            this.jdbcTemplate.update("update empleados_grupo set id_grupo=?, id_empleado=? where "
+            this.jdbcTemplate.update("update nm_empleados_grupo set id_grupo=?, id_empleado=? where "
             + "id_empleados_grupo=? ",eg.getId_grupo(),eg.getId_empleado(),id_empleados_grupo);
             return new ModelAndView("redirect:/empleadosgrupo-htm"); 
             
@@ -72,7 +72,7 @@ public class ControlEditarEmpleadosGrupo {
     public EmpleadosGrupo selectEmpleadosGrupo(int id_empleados_grupo){
         
         final EmpleadosGrupo ego=new EmpleadosGrupo();
-        String quer="select * from empleados_grupo where id_empleados_grupo='"+id_empleados_grupo+"'";
+        String quer="select * from nm_empleados_grupo where id_empleados_grupo='"+id_empleados_grupo+"'";
         return (EmpleadosGrupo)jdbcTemplate.query(quer, new ResultSetExtractor<EmpleadosGrupo>(){
             public EmpleadosGrupo extractData(ResultSet rs)throws SQLException, DataAccessException{
                 if(rs.next()){

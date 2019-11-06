@@ -67,7 +67,7 @@ public class ControlEditarUsuarios {
         }else{
             
             String id_usuario = request.getParameter("id_usuario");
-            this.jdbcTemplate.update("update usuarios set id_empleado=?, "
+            this.jdbcTemplate.update("update nm_usuarios set id_empleado=?, "
             +"contraseña=?, id_perfil=? where id_usuario=?",u.getId_empleado(),
             u.getContraseña(),u.getId_perfil(),id_usuario);
             return new ModelAndView("redirect:/usuarios.htm");
@@ -78,7 +78,7 @@ public class ControlEditarUsuarios {
     public Usuarios selectUsuarios(String id_usuario){
         
         final Usuarios usua=new Usuarios();
-        String quer="select * from usuarios where id_usuario='"+id_usuario+"'";
+        String quer="select * from nm_usuarios where id_usuario='"+id_usuario+"'";
         return(Usuarios)jdbcTemplate.query(quer, new ResultSetExtractor<Usuarios>(){
             public Usuarios extractData(ResultSet rs)throws SQLException, DataAccessException{
                 if(rs.next()){

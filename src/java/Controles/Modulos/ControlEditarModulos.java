@@ -59,7 +59,7 @@ public class ControlEditarModulos {
             return mav;
         }else{
             int id_modulo=Integer.parseInt(request.getParameter("id_modulo"));
-            this.jdbcTemplate.update("update modulos set nombre_modulo=? "+
+            this.jdbcTemplate.update("update nm_modulos set nombre_modulo=? "+
             "where id_modulo=?",mod.getNombre_modulo(),id_modulo);
             return new ModelAndView("redirect:/modulos.htm");
         }
@@ -68,7 +68,7 @@ public class ControlEditarModulos {
     public Modulos selectModulos(int id_modulo){
         
         final Modulos modu=new Modulos();
-        String quer="select * from modulos where id_modulo='"+id_modulo+"'";
+        String quer="select * from nm_modulos where id_modulo='"+id_modulo+"'";
         return (Modulos)jdbcTemplate.query(quer, new ResultSetExtractor<Modulos>(){
             public Modulos extractData(ResultSet rs)throws SQLException, DataAccessException{
                 if(rs.next()){

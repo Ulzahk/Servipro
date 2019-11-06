@@ -51,7 +51,7 @@ public class ControlAgregarModulosPerfil {
             
         }else{
             
-            this.jdbcTemplate.update("insert into modulos_perfil(id_modulo, id_perfil)"
+            this.jdbcTemplate.update("insert into nm_modulos_perfil(id_modulo, id_perfil)"
             +"values(?,?)", mp.getId_modulo(), mp.getId_perfil());
             return new ModelAndView("redirect:/modulosperfil.htm");
                     
