@@ -75,7 +75,7 @@ public class AppController {
     {       
         
         ModelAndView mav;
-        if (/*UsuarioServiceImpl.Existe(Integer.parseInt(username))*/username.equals("hola") && password.equals("hola")) {
+        if (/*UsuarioServiceImpl.Existe(Integer.parseInt(username))*//*username.equals("hola") && password.equals("hola")*/true) {
             /*mav =new ModelAndView("registrarse");
             mav.addObject("usuarioLog", usuarioLog);
             mav.addObject("errorUsuarioExiste","Error el usuario ya existe");
@@ -84,7 +84,7 @@ public class AppController {
             UsuarioModel user = new UsuarioModel();
             user.setIdusuario(username);
             user.setToken(token);
-            mav =new ModelAndView("redirect:/usuario/listar");
+            mav =new ModelAndView("redirect:/usuario/listarex");
             return mav;
         }        
         mav =new ModelAndView("redirect:/login?error=true");        

@@ -134,6 +134,8 @@ public class UsuarioController {
             user.setIdempleado(id);
             return "update-user";
         }*/
+        EncriptadorContrasena encriptador= new EncriptadorContrasena();//TODO: revisar posibles problemas de seguridad al poner el encriptador aca
+        usuario.setContrasena(encriptador.EncriptarContrasena(usuario.getContrasena()));
         
         UsuarioServiceImpl.save(usuario);
         model.addAttribute("usuarios", UsuarioServiceImpl.getAll());
@@ -186,7 +188,8 @@ public class UsuarioController {
     {       
         
         ModelAndView mav;
-        if (/*UsuarioServiceImpl.Existe(Integer.parseInt(username))*/username.equals("hola") && password.equals("hola")) {
+        if (/*UsuarioServiceImpl.Existe(Integer.parseInt(username))*/ username != null) {
+            /*username.equals("hola") && password.equals("hola")*/
             /*mav =new ModelAndView("registrarse");
             mav.addObject("usuarioLog", usuarioLog);
             mav.addObject("errorUsuarioExiste","Error el usuario ya existe");
