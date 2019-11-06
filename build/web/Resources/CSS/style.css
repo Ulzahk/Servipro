@@ -1,0 +1,104 @@
+.tipoLetra{
+    font-family: arial,sans-serif;
+}
+
+.barraNavegacion{
+}
+
+/*Index*/
+.colorEnlace{
+    color:#ffffff;
+}
+.colorEnlace:hover{
+    color:#ffffff;
+    text-decoration:none;
+    
+}
+.colorEnlace:active{
+    color:#ffffff;
+    
+}
+
+.tamañoIcono{
+    font-size:150%;
+}
+.aIndex{
+    background-color:#4da6ff;
+    padding-top: 1.5%;
+    border: 10px solid white;
+}
+.aIndex:hover{
+    background-color:#3399ff;
+}
+
+
+.bIndex{
+    background-color:#ff6666;
+    padding-top: 1.5%;
+    border: 10px solid white;   
+}
+
+.bIndex:hover{
+    background-color:#ff4d4d;
+}
+
+
+.cIndex{
+    background-color:#47d147;
+    padding-top: 1.5%;
+    border: 10px solid white;
+}
+
+.cIndex:hover{
+    background-color:#33cc33;
+}
+
+
+.dIndex{
+    background-color:#ffc34d;
+    padding-top: 1.5%;
+    border: 10px solid white;
+}
+
+.dIndex:hover{
+    background-color:#ffbb33;
+}
+
+.eIndex{
+    background-color:#5cd6d6;
+    padding-top: 1.5%;
+    border: 10px solid white;
+}
+
+.eIndex:hover{
+    background-color:#47d1d1;
+}
+
+.fIndex{
+    background-color:#ff944d;
+    padding-top: 1.5%;
+    border: 10px solid white;
+}
+
+.fIndex:hover{
+    background-color:#ff8533;
+}
+
+.gIndex{
+    background-color:#b366ff;
+    padding-top: 2.5%;
+    padding-bottom: 1.5%;
+    border: 10px solid white;
+}
+
+.gIndex:hover{
+    background-color:#a64dff;
+}
+
+
+
+
+
+
+
+
