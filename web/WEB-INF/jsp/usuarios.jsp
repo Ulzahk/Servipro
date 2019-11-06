@@ -1,20 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
-    HttpSession objsesion = request.getSession(false);
-    String id_usuario = (String)objsesion.getAttribute("id_usuario");
-    String descripcion_perfil = (String)objsesion.getAttribute("descripcion_perfil");
-    
-    if(id_usuario==null){
-        response.sendRedirect("login.jsp");
-    }else{
-        if(descripcion_perfil.equals("COORDINADOR")){
-        
-        }else{
-            response.sendRedirect("index.htm");
-        }
-    }
-%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -97,7 +83,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle btn btn-dark" href="#" id="navbardrop" data-toggle="dropdown">
-                            Usuario: <% out.println(id_usuario); %>
+                            
                         </a>
                         <div class="dropdown-menu text-center">
                             <form action="cerrar" method="post" id="formcerrar">

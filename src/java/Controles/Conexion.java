@@ -7,13 +7,13 @@ import java.sql.SQLException;
 
 public class Conexion {
     
-    private String USERNAME = "root";
-    private String PASSWORD = "";
-    private String HOST = "localhost";
-    private String PORT = "3306";
-    private String DATABASE = "nomina";
-    private String CLASSNAME = "com.mysql.jdbc.Driver";
-    private String URL = "jdbc:mysql://"+HOST+":"+PORT+"/"+DATABASE;
+    private String USERNAME = "contable19";
+    private String PASSWORD = "contable19";
+    private String HOST = "10.0.0.98";
+    private String PORT = "1433";
+    private String DATABASE = "sssacontable";
+    private String CLASSNAME = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+    private String URL = "jdbc:sqlserver://"+HOST+":"+PORT+";databaseName="+DATABASE;
     private Connection con;
     
     public Conexion(){
