@@ -26,7 +26,7 @@
                         <option value="EDITOR">EDITOR</option>
                         <option value="USUARIO">USUARIO</option>
                     </select>
-                    <p>Usuario</p>
+                    <p>Usuario (escriba el documento aquí)</p>
                     <input type="text" name="id_usuario" placeholder="Ingrese Usuario" id="txtusuario"/>
                     <p>Contraseña</p>
                     <input type="password" name="contraseña" id="txtpass" placeholder="Ingrese Contraseña"/>
