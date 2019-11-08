@@ -114,15 +114,13 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">I.D. C.Costos</th>
-                                <th class="align-middle">Nombre C.Costos</th>
+                                <th class="align-middle">Centro de Costos</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                             <tr>
-                                <td class="align-middle">${dato.Id_ccostos}</td>
                                 <td class="align-middle">${dato.Nombre_ccostos}</td>
                                 <td class="align-middle">
                                     <a href="<c:url value="editarcentrodecostos.htm?id_ccostos=${dato.Id_ccostos}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>

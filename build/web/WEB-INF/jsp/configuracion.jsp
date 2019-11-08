@@ -115,24 +115,22 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">I.D. Configuracion</th>
                                 <th class="align-middle">Desconfiguracion</th>
                                 <th class="align-middle">Desconfiguracion D.</th>
-                                <th class="align-middle">Nombre Variable</th>
+                                <th class="align-middle">Variable</th>
                                 <th class="align-middle">Valor</th>
-                                <th class="align-middle">I.D. Modulo</th>
+                                <th class="align-middle">Modulo</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                             <tr>
-                                <td class="align-middle"><c:out value="${dato.Id_configuracion}"/></td>
                                 <td class="align-middle"><c:out value="${dato.Desconfiguracion}"/></td>
                                 <td class="align-middle"><c:out value="${dato.Desconfiguracion_d}"/></td>
                                 <td class="align-middle"><c:out value="${dato.Nombre_variable}"/></td>
                                 <td class="align-middle"><c:out value="${dato.Valor}"/></td>
-                                <td class="align-middle"><c:out value="${dato.Id_modulo}"/></td>
+                                <td class="align-middle"><c:out value="${dato.Modulo}"/></td>
                                 <td class="align-middle">
                                     <a href="<c:url value="editarconfiguracion.htm?id_configuracion=${dato.Id_configuracion}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                     <a href="<c:url value="eliminarconfiguracion.htm?id_configuracion=${dato.Id_configuracion}"/>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>

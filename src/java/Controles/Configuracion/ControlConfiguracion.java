@@ -20,7 +20,7 @@ public class ControlConfiguracion {
     @RequestMapping("configuracion.htm")
     public ModelAndView configuracion(){
         ModelAndView mav = new ModelAndView();
-        String sql="select * from nm_configuracion";
+        String sql="SELECT conf.*, mod.Nombre_modulo Modulo FROM nm_configuracion conf INNER JOIN nm_modulos mod ON mod.Id_modulo = conf.Id_modulo";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("datos",datos);
         mav.setViewName("configuracion");
