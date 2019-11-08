@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Iniciar Sesión</title>
+        <title>Esta es una prueba</title>
         <link rel="stylesheet"  type="text/css" href="<c:url value="/Resources/CSS/stylelogin.css"/>"/>
         <script src="Resources/JS/functions.js"></script>
         
