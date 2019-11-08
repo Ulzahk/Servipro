@@ -1,12 +1,12 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
+<%--<%
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String)objsesion.getAttribute("id_usuario");
     if(id_usuario==null){
         response.sendRedirect("login.jsp");
     }
-%>
+%>--%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -90,7 +90,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle btn btn-dark" href="#" id="navbardrop" data-toggle="dropdown">
-                            Usuario: <% out.println(id_usuario); %>
+                            <%--Usuario: <% out.println(id_usuario); %>--%>
                         </a>
                         <div class="dropdown-menu text-center">
                             <form action="cerrar" method="post" id="formcerrar">
@@ -116,7 +116,6 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">I.D. Tipo Novedad</th>
                                 <th class="align-middle">Descripcion</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
@@ -124,7 +123,6 @@
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                             <tr>
-                                <td class="align-middle">${dato.Id_tipo_novedad}</td>
                                 <td class="align-middle">${dato.Descripcion}</td>
                                 <td>
                                     <a href="<c:url value="editartiponovedad.htm?id_tipo_novedad=${dato.Id_tipo_novedad}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>

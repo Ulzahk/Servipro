@@ -1,12 +1,12 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
+<%--<%
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String)objsesion.getAttribute("id_usuario");
     if(id_usuario==null){
         response.sendRedirect("login.jsp");
     }
-%>
+%>--%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -89,7 +89,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle btn btn-dark" href="#" id="navbardrop" data-toggle="dropdown">
-                            Usuario: <% out.println(id_usuario); %>
+                            <%--Usuario: <% out.println(id_usuario); %>--%>
                         </a>
                         <div class="dropdown-menu text-center">
                             <form action="cerrar" method="post" id="formcerrar">
@@ -114,22 +114,16 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">I.D. Modulo Perfil</th>
-                                <th class="align-middle">I.D Modulo</th>
-                                <th class="align-middle">Nombre Modulo</th>
-                                <th class="align-middle">I.D. Perfil</th>
-                                <th class="align-middle">Descripcion Perfil</th>
+                                <th class="align-middle">Modulo</th>
+                                <th class="align-middle">Perfil</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                             <tr>
-                                <td class="align-middle">${dato.Id_modulo_perfil}</td>
-                                <td class="align-middle">${dato.Id_modulo}</td>
-                                <td class="align-middle">${dato.Nombre_modulo}</td>
-                                <td class="align-middle">${dato.Id_perfil}</td>
-                                <td class="align-middle">${dato.Descripcion_perfil}</td>
+                                <td class="align-middle">${dato.Modulo}</td>
+                                <td class="align-middle">${dato.Perfil}</td>
                                 <td class="align-middle">
                                     <a href="<c:url value="editarmodulosperfil.htm?id_modulo_perfil=${dato.Id_modulo_perfil}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                     <a href="<c:url value="eliminarmodulosperfil.htm?id_modulo_perfil=${dato.Id_modulo_perfil}"/>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>

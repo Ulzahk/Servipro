@@ -1,13 +1,13 @@
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
+<%--<%
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String)objsesion.getAttribute("id_usuario");
     if(id_usuario==null){
         response.sendRedirect("login.jsp");
     }
-%>
+%>--%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -115,15 +115,14 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">I.D. Modulo</th>
-                                <th class="align-middle">Nombre Modulo</th>
+                                <th class="align-middle">Modulo</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                             <tr>
-                                <td class="align-middle">${dato.Id_modulo}</td>
+
                                 <td class="align-middle">${dato.Nombre_modulo}</td>
                                 <td class="align-middle">
                                     <a href="<c:url value="editarmodulos.htm?id_modulo=${dato.Id_modulo}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>

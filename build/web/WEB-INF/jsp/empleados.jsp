@@ -1,12 +1,12 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
+<%--<%
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String)objsesion.getAttribute("id_usuario");
     if(id_usuario==null){
         response.sendRedirect("login.jsp");
     }
-%>
+%>--%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -89,7 +89,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle btn btn-dark" href="#" id="navbardrop" data-toggle="dropdown">
-                            Usuario: <% out.println(id_usuario); %>
+                            <%--Usuario: <% out.println(id_usuario); %>--%>
                         </a>
                         <div class="dropdown-menu text-center">
                             <form action="cerrar" method="post" id="formcerrar">
@@ -114,28 +114,24 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">I.D. Empleado</th>
                                 <th class="align-middle">Tipo Documento</th>
                                 <th class="align-middle">Documento</th>
                                 <th class="align-middle">Nombre</th>
                                 <th class="align-middle">Teléfono</th>
-                                <th class="align-middle">I.D. Cargo</th>
                                 <th class="align-middle">Cargo</th>
-                                <th class="align-middle">I.D. C.costos</th>
+                                <th class="align-middle">Centro de Costos</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                             <tr>
-                                <td class="align-middle">${dato.Id_empleado}</td>
                                 <td class="align-middle">${dato.Tipo_documento}</td>
                                 <td class="align-middle">${dato.Documento}</td>
                                 <td class="align-middle">${dato.Nombre}</td>
                                 <td class="align-middle">${dato.Telefono}</td>
-                                <td class="align-middle">${dato.Id_cargo}</td>
-                                <td class="align-middle">${dato.Descripcion_cargo}</td>
-                                <td class="align-middle">${dato.Id_ccostos}</td>
+                                <td class="align-middle">${dato.Cargo}</td>
+                                <td class="align-middle">${dato.CCostos}</td>
                                 <td class="align-middle">
                                     <a href="<c:url value="editarempleados.htm?id_empleado=${dato.Id_empleado}"/>"  class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                     <a href="<c:url value="eliminarempleados.htm?id_empleado=${dato.Id_empleado}"/>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>

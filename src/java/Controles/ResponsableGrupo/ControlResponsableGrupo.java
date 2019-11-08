@@ -21,7 +21,7 @@ public class ControlResponsableGrupo {
     @RequestMapping("responsablegrupo.htm")
     public ModelAndView responsableGrupo(){
         ModelAndView mav=new ModelAndView();
-        String sql="select * from nm_responsable_grupo";
+        String sql="SELECT g.nombre_grupo Grupo, u.Id_usuario Usuario FROM nm_responsable_grupo resg INNER JOIN nm_grupos g ON g.Id_grupo = resg.Id_grupo INNER JOIN nm_usuarios u ON u.Id_usuario = resg.Id_usuario ";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.setViewName("responsablegrupo");
         mav.addObject("datos",datos);

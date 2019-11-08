@@ -21,7 +21,7 @@ public class ControlNovedadesEmpleado {
     @RequestMapping("novedadesempleado.htm")
     public ModelAndView novedadesEmpleado(){
         ModelAndView mav= new ModelAndView();
-        String sql="select * from nm_novedades_empleado";
+        String sql="SELECT nov.*, emp.Nombre Empleado, emp.Documento Documento FROM nm_novedades_empleado nov INNER JOIN nm_empleados emp ON emp.Id_empleado = nov.Id_empleado ";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.setViewName("novedadesempleado");
         mav.addObject("datos",datos);

@@ -22,8 +22,7 @@ public class ControlEmpleados {
     @RequestMapping("empleados.htm")
     public ModelAndView empleados(){
         ModelAndView mav=new ModelAndView();
-        String sql="select * from empleados join cargo_empleado on empleados.id_cargo=cargo_empleado.id_cargo  "
-        + "join centro_de_costos on empleados.id_ccostos=centro_de_costos.id_ccostos";
+        String sql="SELECT emp.*, cemp.Descripcion_cargo Cargo, cc.Nombre_ccostos CCostos FROM nm_empleados emp INNER JOIN nm_cargo_empleado cemp ON cemp.Id_cargo = emp.Id_cargo INNER JOIN nm_centro_de_costos cc ON cc.Id_ccostos = emp.Id_ccostos";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("datos", datos);
         mav.setViewName("empleados");
