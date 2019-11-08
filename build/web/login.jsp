@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Esta es una prueba</title>
+        <title>Esta es NO una prueba</title>
         <link rel="stylesheet"  type="text/css" href="<c:url value="/Resources/CSS/stylelogin.css"/>"/>
         <script src="Resources/JS/functions.js"></script>
         
