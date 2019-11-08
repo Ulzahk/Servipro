@@ -90,7 +90,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle btn btn-dark" href="#" id="navbardrop" data-toggle="dropdown">
-                            Usuario: <% out.println(id_usuario); %>
+                            Usuario: <%-- <% out.println(id_usuario); %> --%>
                         </a>
                         <div class="dropdown-menu text-center">
                             <form action="cerrar" method="post" id="formcerrar">
