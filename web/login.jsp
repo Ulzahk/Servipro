@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="loginbox">
-            <p>Hola</p>
+            <p>Hola123</p>
         </div>
         <div class="loginbox">
            <img src="<c:url value="/Resources/Images/LogoUsuario.png"/>" class="avatar"/>
