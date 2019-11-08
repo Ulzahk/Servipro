@@ -70,7 +70,7 @@ public class ControlEditarPerfil {
     public Perfil selectPerfil(int id_perfil){
         
         final Perfil per=new Perfil();
-        String quer="select * from perfil where id_perfil='"+ id_perfil+"'";
+        String quer="select * from nm_perfil where id_perfil='"+ id_perfil+"'";
         return(Perfil) jdbcTemplate.query (quer,new ResultSetExtractor<Perfil>(){
            public Perfil extractData(ResultSet rs) throws SQLException, DataAccessException{
              if(rs.next()){
