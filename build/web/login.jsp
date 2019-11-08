@@ -11,12 +11,13 @@
     </head>
     <body>
         <div class="loginbox">
-            <p>Hola123</p>
+            
         </div>
         <div class="loginbox">
            <img src="<c:url value="/Resources/Images/LogoUsuario.png"/>" class="avatar"/>
            <img src="<c:url value="/Resources/Images/LogoServiSoft2.PNG"/>" class="imgLogo"/>
                 <h1>Iniciar Sesión</h1>
+                <p>Hola123</p>
                 <form action="logear" method="post" id="forminicio">
                     <p>Perfil</p>
                     <select name="descripcion_perfil" id="txtperfil">
