@@ -13,8 +13,8 @@ public class ConsultasLogin extends Conexion {
         
         try {
             
-            String consulta="select * from nm_usuarios join nm_perfil on nm_usuarios.id_perfil=nm_perfil.id_perfil "
-                    + " where descripcion_perfil=? and id_usuario=? and contraseña=? ";
+            String consulta="SELECT * FROM nm_usuarios JOIN nm_perfil ON nm_usuarios.id_perfil=nm_perfil.id_perfil "
+                    + " WHERE descripcion_perfil=? AND id_usuario=? and contraseña=? ";
             pst = getConexion().prepareStatement(consulta);
             pst.setString(1, descripcion_perfil);
             pst.setString(2, id_usuario);
@@ -42,6 +42,6 @@ public class ConsultasLogin extends Conexion {
     }
     public static void main(String[] args) {
         ConsultasLogin con=new ConsultasLogin();
-        System.out.println(con.autenticacion("","CMARTINEZ", "123456"));
+        System.out.println(con.autenticacion("COORDINADOR","CMARTINEZ", "123456"));
     }
 }

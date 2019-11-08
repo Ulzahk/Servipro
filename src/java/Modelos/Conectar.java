@@ -2,7 +2,7 @@
 package Modelos;
 
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-
+import java.sql.Connection;
 
 
 public class Conectar {
