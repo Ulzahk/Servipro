@@ -2,26 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/modulosperfil.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/estadisticas.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Controles/ResponsableGrupo/ControlResponsableGrupo.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/usuarios.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/index.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/grupos.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/perfil.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Controles/NovedadesEmpleado/ControlNovedadesEmpleado.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/empleadosgrupo.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Controles/EmpleadosGrupo/ControlEmpleadosGrupo.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/novedadesempleado.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/empleados.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Controles/Empleados/ControlEmpleados.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/novedades.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/tiponovedad.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Controles/ModulosPerfil/ControlModulosPerfil.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/modulos.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/responsablegrupo.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Controles/Usuarios/ControlUsuarios.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

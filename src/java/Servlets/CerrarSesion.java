@@ -1,7 +1,7 @@
 
 package Servlets;
 
-import Controles.ConsultasLogin;
+import Controles.AccesoDatos;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -25,19 +25,20 @@ public class CerrarSesion extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        
-        String id_usuario=request.getParameter("id_usuario");
-        String contraseña=request.getParameter("contraseña");
-        
-        
-        ConsultasLogin col=new ConsultasLogin();
-        
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            String Descripcion_perfil=null, Id_usuario=null, Contraseña=null;
+            Descripcion_perfil=request.getParameter("descripcion_perfil");
+            Id_usuario=request.getParameter("id_usuario");
+            Contraseña=request.getParameter("contraseña");
+            AccesoDatos a = new AccesoDatos();
+            int ca=a.buscar(Descripcion_perfil, Id_usuario, Contraseña);
+            
             HttpSession objsesion=request.getSession(true);
             objsesion.invalidate();
             response.sendRedirect("login.jsp");
+        }
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

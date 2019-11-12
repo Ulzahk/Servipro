@@ -4,31 +4,27 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Esta es SI!!! es un Cambio</title>
+        <title>Iniciar Sesión</title>
         <link rel="stylesheet"  type="text/css" href="<c:url value="/Resources/CSS/stylelogin.css"/>"/>
         <script src="Resources/JS/functions.js"></script>
         
     </head>
     <body>
         <div class="loginbox">
-            
-        </div>
-        <div class="loginbox">
            <img src="<c:url value="/Resources/Images/LogoUsuario.png"/>" class="avatar"/>
            <img src="<c:url value="/Resources/Images/LogoServiSoft2.PNG"/>" class="imgLogo"/>
                 <h1>Iniciar Sesión</h1>
-                <p>Hola123</p>
                 <form action="logear" method="post" id="forminicio">
-                    <p>Perfil</p>
+                    <p>Perfil:</p>
                     <select name="descripcion_perfil" id="txtperfil">
                         <option value="">POR FAVOR SELECCIONE UNA OPCIÓN</option>
                         <option value="COORDINADOR">COORDINADOR</option>
                         <option value="EDITOR">EDITOR</option>
                         <option value="USUARIO">USUARIO</option>
                     </select>
-                    <p>Usuario :(</p>
+                    <p>Usuario:</p>
                     <input type="text" name="id_usuario" placeholder="Ingrese Usuario" id="txtusuario"/>
-                    <p>Contraseña</p>
+                    <p>Contraseña:</p>
                     <input type="password" name="contraseña" id="txtpass" placeholder="Ingrese Contraseña"/>
                     <input type="button" value="Acceder"  id="btniniciar" />
                 </form>

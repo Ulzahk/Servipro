@@ -1,7 +1,7 @@
 
 package Servlets;
 
-import Controles.ConsultasLogin;
+import Controles.AccesoDatos;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -24,21 +24,22 @@ public class IniciarSesion extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        
-        String descripcion_perfil=request.getParameter("descripcion_perfil");
-        String id_usuario=request.getParameter("id_usuario");
-        String contraseña=request.getParameter("contraseña");
-        
-        
-        ConsultasLogin col=new ConsultasLogin();
-        if(col.autenticacion(descripcion_perfil, id_usuario, contraseña)){
-            HttpSession objsesion=request.getSession(true);
-            objsesion.setAttribute("descripcion_perfil", descripcion_perfil);
-            objsesion.setAttribute("id_usuario", id_usuario);
-            response.sendRedirect("index.htm");
-        }else{
-            response.sendRedirect("login.jsp");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            String Descripcion_perfil=null, Id_usuario=null, Contraseña=null;
+            Descripcion_perfil=request.getParameter("descripcion_perfil");
+            Id_usuario=request.getParameter("id_usuario");
+            Contraseña=request.getParameter("contraseña");
+            AccesoDatos a = new AccesoDatos();
+            int ca=a.buscar(Descripcion_perfil, Id_usuario, Contraseña);
+            if(ca>0){
+                HttpSession objsesion=request.getSession(true);
+                objsesion.setAttribute("descripcion_perfil", Descripcion_perfil);
+                objsesion.setAttribute("id_usuario", Id_usuario);
+                response.sendRedirect("index.htm");
+            }else{
+                response.sendRedirect("login.jsp");
+            }
         }
     }
 
