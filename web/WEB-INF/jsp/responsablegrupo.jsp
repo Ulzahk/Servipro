@@ -1,12 +1,20 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%-- <%
+<%
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String)objsesion.getAttribute("id_usuario");
+    String Descripcion_perfil = (String)objsesion.getAttribute("descripcion_perfil");
     if(id_usuario==null){
         response.sendRedirect("login.jsp");
+    }else{
+        if(Descripcion_perfil.equals("COORDINADOR DE NOMINA")||
+                Descripcion_perfil.equals("JEFE DE NOMINA")){
+            
+        }else{
+          response.sendRedirect("nomina.htm");  
+        }
     }
-%> --%>
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -90,9 +98,10 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle btn btn-dark" href="#" id="navbardrop" data-toggle="dropdown">
-                            <%--Usuario: <% out.println(id_usuario); %>--%>
+                            Usuario: <% out.println(id_usuario); %>
                         </a>
                         <div class="dropdown-menu text-center">
+                            <a class="dropdown-item" href="nomina.htm">Perfil: <%out.println(Descripcion_perfil);%></a>
                             <form action="cerrar" method="post" id="formcerrar">
                                 <input type="submit" value="Cerrar Sesión"  class="btn btn-link text-center"
                                        style="color: #000;"/>
@@ -126,8 +135,8 @@
                             <c:forEach var="dato" items="${datos}">
                             <tr>
 
-                                <td class="align-middle">${dato.Grupo}</td>
-                                <td class="align-middle">${dato.Usuario}</td>
+                                <td class="align-middle">${dato.nombre_grupo}</td>
+                                <td class="align-middle">${dato.Id_usuario}</td>
                                 <td class="align-middle">
                                     <a href="<c:url value="editarresponsablegrupo.htm?id_responsable=${dato.Id_responsable}"/>"class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                     <a href="<c:url value="eliminarresponsablegrupo.htm?id_responsable=${dato.Id_responsable}"/>"class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>

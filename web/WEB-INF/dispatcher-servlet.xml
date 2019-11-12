@@ -21,6 +21,8 @@
             <props>
                 
                 <prop key="index.htm">indexController</prop>
+                <!--Nomina-->
+                <prop key="nomina.htm">controlNomina</prop>
                 <!--Consulta-->
                 <prop key="estadisticas.htm">controlEstadisticas</prop>
                 <!--Usuarios props-->
@@ -117,6 +119,8 @@
           p:suffix=".jsp" />
 
     <!--Controles-->
+    <!--Nomina-->
+    <bean name="controlNomina" class="Controles.ControlNomina"/>
     <!--Consulta-->
     <bean name="controlEstadisticas" class="Controles.Estadisticas.ControladorEstadisticas"/>
     <!--Usuarios-->

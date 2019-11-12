@@ -1,5 +1,4 @@
-
-package Controles.ResponsableGrupo;
+package Controles;
 
 import Modelos.Conectar;
 import java.util.List;
@@ -7,26 +6,23 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-public class ControlResponsableGrupo {
+public class ControlNomina {
     
     private JdbcTemplate jdbcTemplate;
     
-    public ControlResponsableGrupo(){
-        
+    public ControlNomina(){
         Conectar con=new Conectar();
         this.jdbcTemplate=new JdbcTemplate(con.conectar());
-        
     }
     
-    @RequestMapping("responsablegrupo.htm")
-    public ModelAndView responsableGrupo(){
+    @RequestMapping("nomina.htm")
+    public ModelAndView nomina(){
         ModelAndView mav=new ModelAndView();
-        String sql="select * from nm_responsable_grupo join nm_grupos"
-                + " on nm_responsable_grupo.id_grupo=nm_grupos.id_grupo join nm_usuarios"
-                + " on nm_responsable_grupo.id_usuario=nm_usuarios.id_usuario";
+        String sql="select * from nm_usuarios";
         List datos=this.jdbcTemplate.queryForList(sql);
-        mav.setViewName("responsablegrupo");
+        mav.setViewName("nomina");
         mav.addObject("datos",datos);
         return mav;
-    }
+    } 
+    
 }

@@ -1,5 +1,4 @@
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     HttpSession objsesion = request.getSession(false);
@@ -8,27 +7,32 @@
     if(id_usuario==null){
         response.sendRedirect("login.jsp");
     }else{
-        if(Descripcion_perfil.equals("COORDINADOR DE NOMINA")||
+        if(Descripcion_perfil.equals("COORDINADOR DE NOMINA") || 
+                Descripcion_perfil.equals("ADMINISTRADOR DE NOMINA ")||
                 Descripcion_perfil.equals("JEFE DE NOMINA")){
             
         }else{
-          response.sendRedirect("nomina.htm");  
+          response.sendRedirect("index.htm");  
         }
     }
 %>
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>Editar Novedad</title>
+        <meta charset="UTF-8">
+        <title>Index</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+          <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+          
     </head>
+
     <body>
-        
         <nav class="navbar navbar-expand-sm bg-info navbar-dark justify-content-center">
             <a class="navbar-brand" href="index.htm">ServiSoft S.A.</a>  
             <div>
@@ -111,30 +115,86 @@
                 </ul>
             </div>    
         </nav>
-        
-        <div class="container mt-4">
-            <h1 class="text-center">Editar Novedad</h1>
-            <br>
-            <div class="card border-info">
-                <div class="card-header bg-info text-white">
-                    <a href="novedades.htm" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
-                </div>
-                <div class="card-body">
-                <form:form method="post" commandName="novedades">
-                    <form:errors path="*" element="div" cssClass="alert alert-danger"/>
-                    <p>
-                        <form:label path="descripcion"><b>Descripcion</b></form:label>
-                        <form:input path="descripcion" cssClass="form-control"/>
-                    </p>
-                    <p>
-                        <form:label path="alias"><b>Alias</b></form:label>
-                        <form:input path="alias" cssClass="form-control"/>
-                    </p>
-                    <hr/>
-                    <input type="submit" value="Guardar" class="btn btn-info"/>
-                </form:form>
+   
+    
+        <div class="container mt-3 mb-1 text-center">
+           <img src="<c:url value="/Resources/Images/LogoServiSoft.png"/>"/>  
+        </div>
+        <br/>
+        <div class="container mt-4 text-center">
+            <!--Primera Fila-->
+            <div class="row text-center">
+                <a href="usuarios.htm" class="col aIndex colorEnlace">
+                    <i class="fas fa-user-circle mb-2 mt-2 tamañoIcono"></i>
+                    <p><b>Usuarios</b></p>
+                </a>
+                <a href="perfil.htm" class="col aIndex colorEnlace">
+                    <i class="fas fa-address-card mb-2 mt-2 tamañoIcono"></i>
+                    <p><b>Perfil</b></p>
+                </a>
+                <a href="novedades.htm" class="col bIndex colorEnlace">
+                    <i class="fas fa-bullhorn mb-2 mt-2   tamañoIcono "></i>
+                    <p><b>Novedades</b></p>
+                </a>
+                <a href="tiponovedad.htm" class="col bIndex colorEnlace">
+                    <i class="fab fa-buromobelexperte mb-2 mt-2 tamañoIcono"></i>
+                    <p><b>Tipo de Novedad</b></p>
+                </a>
+                <a href="novedadesempleado.htm" class="col bIndex colorEnlace">
+                    <i class="fas fa-user-check mb-2 tamañoIcono"></i>
+                    <p><b>Novedades por Empleado</b></p>
+                </a>
+                <a href="centrodecostos.htm" class="col eIndex colorEnlace">
+                    <i class="fas fa-file-invoice-dollar mb-2 mt-2 tamañoIcono"></i>
+                    <p><b>Centro de Costos</b></p>
+                </a>
+            </div>
+            <!--Segunda Fila-->
+            <div class="row text-center">
+                <a href="empleados.htm" class="col dIndex colorEnlace">
+                    <i class="fas fa-user-clock mb-2 mt-2 tamañoIcono"></i>
+                    <p><b>Empleados</b></p>
+                </a>
+                <a href="cargoempleado.htm" class="col dIndex colorEnlace">
+                    <i class="fas fa-briefcase mb-2 mt-2 tamañoIcono"></i>
+                    <p><b>Cargo Empleado</b></p>
+                </a>
+                <a href="modulos.htm" class="col cIndex colorEnlace">
+                    <i class="fas fa-th mb-2 mt-2 tamañoIcono"></i>
+                    <p><b>Modulos</b></p>
+                </a>
+                <a href="modulosperfil.htm" class="col-2 cIndex colorEnlace">
+                    <i class="fas fa-th-list mb-2 tamañoIcono"></i>
+                    <p><b>Modulos por Perfil</b></p>
+                </a>
+                <a href="grupos.htm" class="col fIndex colorEnlace">
+                    <i class="fas fa-users mb-2 mt-2 tamañoIcono"></i>
+                    <p><b>Grupos</b></p>
+                </a>
+                <a href="empleadosgrupo.htm" class="col fIndex colorEnlace">
+                    <i class="fas fa-users-cog mb-2 tamañoIcono"></i>
+                    <p><b>Empleados por Grupo</b></p>
+                </a>
+            </div>
+            <!--Tercera fila-->
+            <div class="row text-center">
+                <a href="responsablegrupo.htm" class="col-2 fIndex colorEnlace">
+                    <i class="fas fa-user-tie mb-2  tamañoIcono"></i>
+                    <p><b>Responsable por Grupo</b></p>
+                </a>
+                <a href="configuracion.htm" class="col-2 gIndex colorEnlace">
+                    <i class="fas fa-cog mb-2  tamañoIcono"></i>
+                    <p><b>Configuracion</b></p>
+                </a>
+                <a href="estadisticas.htm" class="col-2 gIndex colorEnlace">
+                    <i class="fas fa-chart-bar mb-2  tamañoIcono"></i>
+                    <p><b>Estadisticas</b></p>
+                </a>
+
+                <div class="col-6">
+
                 </div>
             </div>
         </div>
-    </body>
+    </body>   
 </html>

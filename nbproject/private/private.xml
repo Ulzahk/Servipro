@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/WEB-INF/jsp/editarnovedades.jsp</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/WEB-INF/jsp/usuarios.jsp</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/WEB-INF/jsp/responsablegrupo.jsp</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/WEB-INF/jsp/agregarnovedades.jsp</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/src/java/Controles/ResponsableGrupo/ControlResponsableGrupo.java</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/WEB-INF/dispatcher-servlet.xml</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/src/java/Controles/Empleados/ControlEmpleados.java</file>
+        </group>
     </open-files>
 </project-private>

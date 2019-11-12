@@ -4,8 +4,16 @@
 <%
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String)objsesion.getAttribute("id_usuario");
+    String Descripcion_perfil = (String)objsesion.getAttribute("descripcion_perfil");
     if(id_usuario==null){
         response.sendRedirect("login.jsp");
+    }else{
+        if(Descripcion_perfil.equals("ADMINISTRADOR DE NOMINA")||
+                Descripcion_perfil.equals("JEFE DE NOMINA")){
+            
+        }else{
+          response.sendRedirect("nomina.htm");  
+        }
     }
 %>
 <!DOCTYPE html>
@@ -93,6 +101,7 @@
                             Usuario: <% out.println(id_usuario); %>
                         </a>
                         <div class="dropdown-menu text-center">
+                            <a class="dropdown-item" href="nomina.htm">Perfil: <%out.println(Descripcion_perfil);%></a>
                             <form action="cerrar" method="post" id="formcerrar">
                                 <input type="submit" value="Cerrar Sesión"  class="btn btn-link text-center"
                                        style="color: #000;"/>

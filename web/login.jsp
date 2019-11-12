@@ -18,9 +18,9 @@
                     <p>Perfil:</p>
                     <select name="descripcion_perfil" id="txtperfil">
                         <option value="">POR FAVOR SELECCIONE UNA OPCIÓN</option>
-                        <option value="COORDINADOR">COORDINADOR</option>
-                        <option value="EDITOR">EDITOR</option>
-                        <option value="USUARIO">USUARIO</option>
+                        <option value="JEFE DE NOMINA">JEFE DE NOMINA</option>
+                        <option value="ADMINISTRADOR DE NOMINA ">ADMINISTRADOR DE NOMINA </option>
+                        <option value="COORDINADOR DE NOMINA">COORDINADOR DE NOMINA</option>
                     </select>
                     <p>Usuario:</p>
                     <input type="text" name="id_usuario" placeholder="Ingrese Usuario" id="txtusuario"/>
