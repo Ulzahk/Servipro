@@ -9,26 +9,28 @@
         <script src="Resources/JS/functions.js"></script>
         
     </head>
-    <body>
+    <body background="Resources/Images/city.png" style="background-repeat: no-repeat; background-position: center center; background-size: cover;">
         <div class="loginbox">
            <img src="<c:url value="/Resources/Images/LogoUsuario.png"/>" class="avatar"/>
-           <img src="<c:url value="/Resources/Images/LogoServiSoft2.PNG"/>" class="imgLogo"/>
+           <img src="<c:url value="/Resources/Images/unnamed.png"/>" class="imgLogo"/>
                 <h1>Iniciar Sesión</h1>
                 <form action="logear" method="post" id="forminicio">
-                    <p>Perfil:</p>
+                    <p>Perfiles:</p>
+                    <span class="custom-dropdown">
                     <select name="descripcion_perfil" id="txtperfil">
-                        <option value="">POR FAVOR SELECCIONE UNA OPCIÓN</option>
-                        <option value="JEFE DE NOMINA">JEFE DE NOMINA</option>
-                        <option value="ADMINISTRADOR DE NOMINA ">ADMINISTRADOR DE NOMINA </option>
-                        <option value="COORDINADOR DE NOMINA">COORDINADOR DE NOMINA</option>
+                        <option value="">Selecciones una opción</option>
+                        <option value="JEFE DE NOMINA">Jefe de nomina</option>
+                        <option value="ADMINISTRADOR DE NOMINA ">Administrador de nomina</option>
+                        <option value="COORDINADOR DE NOMINA">Coordinador de nomina</option>
                     </select>
-                    <p>Usuario:</p>
-                    <input type="text" name="id_usuario" placeholder="Ingrese Usuario" id="txtusuario"/>
-                    <p>Contraseña:</p>
-                    <input type="password" name="contraseña" id="txtpass" placeholder="Ingrese Contraseña"/>
+                         </span>
+                   
+                    <input type="text" name="id_usuario" placeholder="Usuario" id="txtusuario"/>
+                    
+                    <input type="password" name="contraseña" id="txtpass" placeholder="Contraseña"/>
                     <input type="button" value="Acceder"  id="btniniciar" />
                 </form>
         </div>
-                <img src="Resources/Images/FondoNatural.jpg" height="800px" width="100%" class="imgFondo"/>
+                
     </body>
 </html>

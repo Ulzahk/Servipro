@@ -1,27 +1,33 @@
 
-
-.imgFondo{
+body, html {
+    height: 100%;
+    
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* No Scrollbar */
+    overflow: hidden;
+    
+}
+
+
 
 .imgLogo{
     width: 100%;
     height: 20%;
 }
 
-
-body{
-    margin:0;
-    padding:0;
-    background: url(Resources/Images/FondoNaturaleza.jpg) !important;
-    background-size: cover;
-    background-position: center;
-    font-family: arial,sans-serif;
-}
-
 .loginbox{
     width: 400px;
-    height: 500px;
-    background: #fff;
+    height: 500px;   
     color: #000;
     top: 50%;
     left:50%;
@@ -29,9 +35,14 @@ body{
     transform: translate(-50%,-50%);
     box-sizing: border-box;
     border-radius: 5px;
-    padding: 70px 30px;
-    border: 3px solid #8c8c8c;
+    padding: 70px 30px; 
+    background: rgba(255, 255, 255, 0.808);
+    text-align: center;
+  -webkit-box-shadow: 0 0 10px black;
+     -moz-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
 }
+
 
 .avatar{
     width: 100px;
@@ -60,29 +71,150 @@ h1{
     margin-bottom: 20px;
 }
 
-.loginbox input[type="text"], input[type="password"]{
-    border: none;
-    border-bottom: 1px solid #8c8c8c;
-    background: transparent;
+.loginbox input[type="text"], input[type="password"], input[type="button"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2980b9;
+    padding: 14px 10px;
+    width: 200px;
     outline: none;
-    height: 40px;
-    color: #000;
-    font-size: 16px;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
 }
-
+.loginbox input[type="text"]:focus, .loginbox input[type="password"]:focus {
+    width: 280px;
+    border-color: #2980b9;
+}
 .loginbox input[type="button"]{
-    border: none;
+    border: 0;
+    background: #2980b9;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2980b9;
+    padding: 14px 40px;
     outline: none;
-    height: 40px;
-    background: #1a1a1a;;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 5px;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
 }
 
-.loginbox input[type="button"]:hover{
-    
-    cursor: pointer;
-    background: #000; 
-    color: #fff;
+.loginbox input[type="button"]:hover {
+    background: white;
+    color: black;
+}
+
+/*.desplegable {
+   -webkit-appearance:none;
+   -moz-appearance:none;
+   -ms-appearance:none;
+   appearance:none;
+   outline:0;
+   box-shadow:none;
+   border:0!important;
+   background: #5c6664;
+   background-image: none;
+   flex: 1;
+   padding: 0 .5em;
+   color:#fff;
+   cursor:pointer;
+   font-size: 1em;
+   font-family: 'Open Sans', sans-serif;
+}
+.desplegable::-ms-expand {
+   display: none;
+}
+.desplegable {
+   position: relative;
+   display: flex;
+   width: 20em;
+   height: 3em;
+   line-height: 3;
+   background: #5c6664;
+   overflow: hidden;
+   border-radius: .25em;
+}
+.desplegable::after {
+   content: '\25BC';
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 0 1em;
+   background: #2b2e2e;
+   cursor:pointer;
+   pointer-events:none;
+   transition:.25s all ease;
+}
+.desplegable:hover::after {
+   color: #23b499;
+}*/
+
+
+
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0px;  
+}
+
+.custom-dropdown select {
+  background-color: #2980b9;
+  color: #fff;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.1em;	
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button;  
+  appearance: button;  
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.custom-dropdown::after {   
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+
+.custom-dropdown::before {  
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.custom-dropdown select[disabled] {
+  color: rgba(0,0,0,.3);
+}
+
+.custom-dropdown select[disabled]::after {
+  color: rgba(0,0,0,.1);
+}
+
+.custom-dropdown::before {
+  background-color: rgba(0,0,0,.15);
+}
+
+.custom-dropdown::after {
+  color: rgba(0,0,0,.4);
 }
