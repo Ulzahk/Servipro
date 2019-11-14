@@ -193,7 +193,6 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">I.D. Modulo</th>
                                 <th class="align-middle">Nombre Modulo</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
@@ -201,7 +200,6 @@
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                             <tr>
-                                <td class="align-middle">${dato.Id_modulo}</td>
                                 <td class="align-middle">${dato.Nombre_modulo}</td>
                                 <td class="align-middle">
                                     <a href="<c:url value="confirmareliminarmodulos.htm?id_modulo=${dato.Id_modulo}"/>" class="btn btn-danger"><b>Confirmar Eliminación</b></a>

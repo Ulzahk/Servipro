@@ -206,7 +206,6 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">I.D. Grupo</th>
                                 <th class="align-middle">Nombre Grupo</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
@@ -214,7 +213,6 @@
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                             <tr>
-                                <td class="align-middle">${dato.Id_grupo}</td>
                                 <td class="align-middle">${dato.nombre_grupo}</td>
                                 <td class="align-middle">
                                     <a href="<c:url value="confirmareliminargrupos.htm?id_grupo=${dato.Id_grupo}"/>" class="btn btn-danger"><b>Confirmar Eliminación</b></a>

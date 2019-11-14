@@ -1,6 +1,7 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*;"%>
 <%
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String)objsesion.getAttribute("id_usuario");
@@ -224,12 +225,56 @@
                         <form:input path="telefono" cssClass="form-control"/>
                     </p>
                     <p>
-                        <form:label path="id_cargo"><b>I.D. Cargo</b></form:label>
-                        <form:input path="id_cargo" cssClass="form-control"/>
+                        <label for="id_cargo"><b>Cargo</b></label>
+                        <select id="id_cargo" name="id_cargo" class="form-control">
+                            <option value="-1">SELECCIONE NUEVAMENTE UN CARGO</option>
+                            <%
+                                try
+                                {
+                                    String Query="select * from nm_cargo_empleado";
+                                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                                    Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
+                                    Statement stm=conn.createStatement();
+                                    ResultSet rs=stm.executeQuery(Query);
+                                    while(rs.next())
+                                    {
+                                        %>
+                                        <option value="<%=rs.getInt("Id_cargo")%>"><%=rs.getString("Descripcion_cargo")%></option>
+                                        <%
+                                    }
+                                }
+                                catch(Exception ex){
+                                   ex.printStackTrace();
+                                   out.println("Error "+ex.getMessage());
+                                }
+                            %>
+                        </select>
                     </p>
                     <p>
-                        <form:label path="id_ccostos"><b>I.D. C.Costos</b></form:label>
-                        <form:input path="id_ccostos" cssClass="form-control"/>
+                        <label for="id_ccostos"><b>C.Costos</b></label>
+                        <select id="id_ccostos" name="id_ccostos" class="form-control">
+                            <option value="-1">SELECCIONE NUEVAMENTE UN C.COSTOS</option>
+                            <%
+                                try
+                                {
+                                    String Query="select * from nm_centro_de_costos";
+                                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                                    Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
+                                    Statement stm=conn.createStatement();
+                                    ResultSet rs=stm.executeQuery(Query);
+                                    while(rs.next())
+                                    {
+                                        %>
+                                        <option value="<%=rs.getInt("Id_ccostos")%>"><%=rs.getString("Nombre_ccostos")%></option>
+                                        <%
+                                    }
+                                }
+                                catch(Exception ex){
+                                   ex.printStackTrace();
+                                   out.println("Error "+ex.getMessage());
+                                }
+                            %>
+                        </select>
                     </p>
                     <hr/>
                     <input type="submit" value="Guardar" class="btn btn-info"/>

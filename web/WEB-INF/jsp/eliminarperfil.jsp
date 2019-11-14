@@ -194,15 +194,13 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">I.D. Perfil</th>
-                                <th class="align-middle">Descripcion Perfil</th>
+                                <th class="align-middle">Perfil</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                             <tr>
-                                <td class="align-middle"><c:out value="${dato.Id_perfil}"/></td>
                                 <td class="align-middle"><c:out value="${dato.Descripcion_perfil}"/></td>
                                 <td class="align-middle">
                                     <a href="<c:url value="confirmareliminarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-danger"><b>Confirmar Eliminación</b></a>

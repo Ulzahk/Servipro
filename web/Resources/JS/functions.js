@@ -3,9 +3,6 @@ function preguntaEliminar(){
     alert("Hola");
 };
 
-$(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip();
-});
 
 function bloqueo(){
     alert("Una fuerza misteriosa no te deja avanzar");

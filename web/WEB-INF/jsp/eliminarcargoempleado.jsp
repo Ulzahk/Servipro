@@ -205,7 +205,6 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">I.D. Cargo</th>
                                 <th class="align-middle">Descripcion Cargo</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
@@ -213,7 +212,6 @@
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                             <tr>
-                                <td class="align-middle">${dato.Id_cargo}</td>
                                 <td class="align-middle">${dato.Descripcion_cargo}</td>
                                 <td class="align-middle">
                                     <a href="<c:url value="confirmareliminarcargoempleado.htm?id_cargo=${dato.Id_cargo}"/>" class="btn btn-danger"><b>Confirmar Eliminación</b></a>

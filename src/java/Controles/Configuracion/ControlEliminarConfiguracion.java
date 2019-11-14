@@ -22,7 +22,7 @@ public class ControlEliminarConfiguracion {
     public ModelAndView configuracion(HttpServletRequest request){
         ModelAndView mav = new ModelAndView();
         int id_configuracion=Integer.parseInt(request.getParameter("id_configuracion"));
-        String sql="select * from nm_configuracion where id_configuracion='"+id_configuracion+"'";
+        String sql="SELECT conf.*, mod.Nombre_modulo Modulo FROM nm_configuracion conf INNER JOIN nm_modulos mod ON mod.Id_modulo = conf.Id_modulo where id_configuracion='"+id_configuracion+"'";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("datos",datos);
         mav.setViewName("eliminarconfiguracion");

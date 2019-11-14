@@ -204,7 +204,7 @@
                 <form:form method="post" commandName="grupos">
                     <form:errors path="*" element="div" cssClass="alert alert-danger"/>
                     <p>
-                        <form:label path="nombre_grupo"><b>Nombre Grupo</b></form:label>
+                        <form:label path="nombre_grupo"><b>Grupo</b></form:label>
                         <form:input path="nombre_grupo" cssClass="form-control"/>
                     </p>
                     <hr/>

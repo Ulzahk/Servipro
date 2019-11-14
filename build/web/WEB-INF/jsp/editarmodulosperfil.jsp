@@ -1,6 +1,7 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*;"%>
 <%
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String)objsesion.getAttribute("id_usuario");
@@ -191,12 +192,58 @@
                 <div class="card-body">
                 <form:form method="post" commandName="modulosperfil">
                     <p>
-                        <form:label path="id_modulo"><b>I.D. Modulo</b></form:label>
-                        <form:input path="id_modulo" cssClass="form-control"/>
+                        <label id="id_modulo"><b>Modulo</b></label>
+                        <select id="id_modulo" name="id_modulo" class="form-control">
+                            <option value="-1">SELECCIONE NUEVAMENTE UN MODULO</option>
+                            <%
+                                try
+                                {
+                                    String Query="select * from nm_modulos";
+                                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                                    Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
+                                    Statement stm=conn.createStatement();
+                                    ResultSet rs=stm.executeQuery(Query);
+                                    while(rs.next()){
+                                        %>
+                                        <option value="<%=rs.getInt("Id_modulo")%>"><%=rs.getString("Nombre_modulo")%></option>
+                                        <%
+                                        
+                                    }
+                                }    
+                                catch( Exception ex)
+                                {  
+                                    ex.printStackTrace();
+                                    out.println("Error "+ex.getMessage());
+                                }      
+                            %>    
+                        </select>
                     </p>
                     <p>
-                        <form:label path="id_perfil"><b>I.D. Perfil</b></form:label>
-                        <form:input path="id_perfil" cssClass="form-control"/>
+                        <label id="id_perfil"><b>Perfil</b></label>
+                        <select id="id_perfil" name="id_perfil" class="form-control">
+                            <option value="-1">SELECCIONE NUEVAMENTE UN PERFIL</option>
+                            <%
+                                try
+                                {
+                                    String Query="select * from nm_perfil";
+                                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                                    Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
+                                    Statement stm=conn.createStatement();
+                                    ResultSet rs=stm.executeQuery(Query);
+                                    while(rs.next()){
+                                        %>
+                                        <option value="<%=rs.getInt("Id_perfil")%>"><%=rs.getString("Descripcion_perfil")%></option>
+                                        <%
+                                        
+                                    }
+                                }    
+                                catch( Exception ex)
+                                {  
+                                    ex.printStackTrace();
+                                    out.println("Error "+ex.getMessage());
+                                }      
+                            %>    
+                        </select>
                     </p>
                     <hr/>
                     <input type="submit" value="Guardar" class="btn btn-info"/>

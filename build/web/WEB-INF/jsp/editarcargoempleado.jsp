@@ -204,7 +204,7 @@
                 <form:form method="post" commandName="cargoempleado">
                     <form:errors path="*" element="div" cssClass="alert alert-danger"/>
                     <p>
-                        <form:label path="descripcion_cargo"><b>Descripcion Cargo</b></form:label>
+                        <form:label path="descripcion_cargo"><b>Cargo</b></form:label>
                         <form:input path="descripcion_cargo" cssClass="form-control"/>
                     </p>
                     <hr/>

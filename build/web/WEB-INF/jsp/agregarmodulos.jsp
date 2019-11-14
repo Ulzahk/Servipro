@@ -192,7 +192,7 @@
                 <form:form method="post" commandName="modulos">
                     <form:errors path="*" element="div" cssClass="alert alert-danger"/>
                     <p>
-                        <form:label path="nombre_modulo"><b>Nombre Modulo</b></form:label>
+                        <form:label path="nombre_modulo"><b>Modulo</b></form:label>
                         <form:input path="nombre_modulo" cssClass="form-control"/>
                     </p>
                     <hr/>

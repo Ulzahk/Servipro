@@ -194,12 +194,11 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">I.D. Usuario</th>
-                                <th class="align-middle">I.D. Empleado</th>
+                                <th class="align-middle">Usuario</th>
                                 <th class="align-middle">Empleado</th>
+                                <th class="align-middle">Documento</th>
                                 <th class="align-middle">Contraseña</th>
-                                <th class="align-middle">I.D. Perfil</th>
-                                <th class="align-middle">Descripcion P.</th>
+                                <th class="align-middle">Perfil</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </thead>
@@ -207,10 +206,9 @@
                             <c:forEach var="dato" items="${datos}">
                             <tr>
                                 <td class="align-middle"><c:out value="${dato.Id_usuario}"/></td>
-                                <td class="align-middle"><c:out value="${dato.Id_empleado}"/></td>
                                 <td class="align-middle"><c:out value="${dato.Nombre}"/></td>
+                                <td class="align-middle"><c:out value="${dato.Documento}"/></td>
                                 <td class="align-middle"><c:out value="${dato.Contraseña}"/></td>
-                                <td class="align-middle"><c:out value="${dato.Id_perfil}"/></td>
                                 <td class="align-middle"><c:out value="${dato.Descripcion_perfil}"/></td>
                                 <td class="align-middle">
                                     <a href="<c:url value="confirmareliminarusuarios.htm?id_usuario=${dato.Id_usuario}"/>" class="btn btn-danger"><b>Confirmar Eliminación</b></a>

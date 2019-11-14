@@ -193,21 +193,15 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">I.D. Modulo Perfil</th>
-                                <th class="align-middle">I.D Modulo</th>
-                                <th class="align-middle">Nombre Modulo</th>
-                                <th class="align-middle">I.D. Perfil</th>
-                                <th class="align-middle">Descripcion Perfil</th>
+                                <th class="align-middle">Modulo</th>
+                                <th class="align-middle">Perfil</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                             <tr>
-                                <td class="align-middle">${dato.Id_modulo_perfil}</td>
-                                <td class="align-middle">${dato.Id_modulo}</td>
                                 <td class="align-middle">${dato.Nombre_modulo}</td>
-                                <td class="align-middle">${dato.Id_perfil}</td>
                                 <td class="align-middle">${dato.Descripcion_perfil}</td>
                                 <td class="align-middle">
                                     <a href="<c:url value="confirmareliminarmodulosperfil.htm?id_modulo_perfil=${dato.Id_modulo_perfil}"/>" class="btn btn-danger"><b>Confirmar Eliminación</b></a>

@@ -64,7 +64,7 @@ public class ControlEditarEmpleadosGrupo {
             int id_empleados_grupo=Integer.parseInt(request.getParameter("id_empleados_grupo"));
             this.jdbcTemplate.update("update nm_empleados_grupo set id_grupo=?, id_empleado=? where "
             + "id_empleados_grupo=? ",eg.getId_grupo(),eg.getId_empleado(),id_empleados_grupo);
-            return new ModelAndView("redirect:/empleadosgrupo-htm"); 
+            return new ModelAndView("redirect:/empleadosgrupo.htm"); 
             
         }
     }

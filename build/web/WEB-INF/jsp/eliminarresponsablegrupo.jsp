@@ -205,17 +205,15 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">I.D. Responsable</th>
-                                <th class="align-middle">I.D. Grupo</th>
-                                <th class="align-middle">I.D. Usuario</th>
+                                <th class="align-middle">Grupo</th>
+                                <th class="align-middle">Usuario</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                             <tr>
-                                <td class="align-middle">${dato.Id_responsable}</td>
-                                <td class="align-middle">${dato.Id_grupo}</td>
+                                <td class="align-middle">${dato.nombre_grupo}</td>
                                 <td class="align-middle">${dato.Id_usuario}</td>
                                 <td class="align-middle">
                                     <a href="<c:url value="confirmareliminarresponsablegrupo.htm?id_responsable=${dato.Id_responsable}"/>"class="btn btn-danger"><b>Confirmar Eliminación</b></a>

@@ -205,7 +205,6 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">I.D. Tipo Novedad</th>
                                 <th class="align-middle">Descripcion</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
@@ -213,7 +212,6 @@
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                             <tr>
-                                <td class="align-middle">${dato.Id_tipo_novedad}</td>
                                 <td class="align-middle">${dato.Descripcion}</td>
                                 <td>
                                     <a href="<c:url value="confirmareliminartiponovedad.htm?id_tipo_novedad=${dato.Id_tipo_novedad}"/>"class="btn btn-danger"><b>Confirmar Eliminación</b></a>

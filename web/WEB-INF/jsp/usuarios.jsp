@@ -1,3 +1,4 @@
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
@@ -206,10 +207,10 @@
                             <c:forEach var="dato" items="${datos}">
                             <tr>
                                 <td class="align-middle"><c:out value="${dato.Id_usuario}"/></td>
-                                <td class="align-middle"><c:out value="${dato.Empleado}"/></td>
+                                <td class="align-middle"><c:out value="${dato.Nombre}"/></td>
                                 <td class="align-middle"><c:out value="${dato.Documento}"/></td>
                                 <td class="align-middle"><c:out value="${dato.Contraseña}"/></td>
-                                <td class="align-middle"><c:out value="${dato.Perfil}"/></td>
+                                <td class="align-middle"><c:out value="${dato.Descripcion_perfil}"/></td>
                                 <td class="align-middle">
                                     <a href="<c:url value="editarusuarios.htm?id_usuario=${dato.Id_usuario}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                     <a href="<c:url value="eliminarusuarios.htm?id_usuario=${dato.Id_usuario}"/>" class="btn btn-danger" onclick="pregunta()"><i class="fas fa-trash-alt"></i></a>

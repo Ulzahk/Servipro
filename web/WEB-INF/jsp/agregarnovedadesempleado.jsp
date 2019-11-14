@@ -1,6 +1,7 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*;"%>
 <%
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String)objsesion.getAttribute("id_usuario");
@@ -204,8 +205,30 @@
                 <form:form method="post" commandName="novedadesempleado">
                     <form:errors path="*" element="div" cssClass="alert alert-danger"/>
                     <p>
-                        <form:label path="id_empleado"><b>I.D. Empleado</b></form:label>
-                        <form:input path="id_empleado" cssClass="form-control"/>
+                        <label for="id_empleado"><b>Empleado</b></label>
+                        <select id="id_empleado" name="id_empleado" class="form-control">
+                            <option value="-1">SELECCIONE UN EMPLEADO</option>
+                            <%
+                                try
+                                {
+                                    String Query="select * from nm_empleados";
+                                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                                    Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
+                                    Statement stm=conn.createStatement();
+                                    ResultSet rs=stm.executeQuery(Query);
+                                    while(rs.next())
+                                    {
+                                        %>
+                                        <option value="<%=rs.getInt("Id_empleado")%>"><%=rs.getString("Nombre")%></option>
+                                        <%
+                                    }
+                                }
+                                catch(Exception ex){
+                                   ex.printStackTrace();
+                                   out.println("Error "+ex.getMessage());
+                                }
+                            %>
+                        </select>
                     </p>
                     <p>
                         <form:label path="detalle"><b>Detalle</b></form:label>

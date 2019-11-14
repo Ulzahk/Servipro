@@ -18,7 +18,7 @@
                     <p>Perfiles:</p>
                     <span class="custom-dropdown">
                     <select name="descripcion_perfil" id="txtperfil">
-                        <option value="">Selecciones una opción</option>
+                        <option value="">Seleccione una opción</option>
                         <option value="JEFE">Jefe</option>
                         <option value="ADMINISTRADOR">Administrador</option>
                         <option value="COORDINADOR">Coordinador</option>

@@ -23,7 +23,7 @@ public class ControlEliminarNovedadesEmpleado {
     public ModelAndView novedadesEmpleado(HttpServletRequest request){
         ModelAndView mav= new ModelAndView();
         int id_novedad_empleado=Integer.parseInt(request.getParameter("id_novedad_empleado"));
-        String sql="select * from nm_novedades_empleado where id_novedad_empleado='"+id_novedad_empleado+"'";
+        String sql="SELECT nov.*, emp.Nombre Empleado, emp.Documento Documento FROM nm_novedades_empleado nov INNER JOIN nm_empleados emp ON emp.Id_empleado = nov.Id_empleado where id_novedad_empleado='"+id_novedad_empleado+"'";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.setViewName("eliminarnovedadesempleado");
         mav.addObject("datos",datos);

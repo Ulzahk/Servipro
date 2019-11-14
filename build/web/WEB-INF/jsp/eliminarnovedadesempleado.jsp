@@ -1,5 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <%
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String)objsesion.getAttribute("id_usuario");
@@ -205,8 +206,8 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">I.D. Novedad Empleado</th>
-                                <th class="align-middle">I.D. Empleado</th>
+                                <th class="align-middle">Empleado</th>
+                                <th class="align-middle">Documento</th>
                                 <th class="align-middle">Detalle</th>
                                 <th class="align-middle">Tipo</th>
                                 <th class="align-middle">Fecha</th>
@@ -216,8 +217,8 @@
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                             <tr>
-                                <td class="align-middle">${dato.Id_novedad_empleado}</td>
-                                <td class="align-middle">${dato.Id_empleado}</td>
+                                <td class="align-middle">${dato.Empleado}</td>
+                                <td class="align-middle">${dato.Documento}</td>
                                 <td class="align-middle">${dato.Detalle}</td>
                                 <td class="align-middle">${dato.Tipo}</td>
                                 <td class="align-middle">${dato.Fecha}</td>

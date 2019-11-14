@@ -205,28 +205,24 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">I.D. Empleado</th>
                                 <th class="align-middle">Tipo Documento</th>
                                 <th class="align-middle">Documento</th>
                                 <th class="align-middle">Nombre</th>
                                 <th class="align-middle">Teléfono</th>
-                                <th class="align-middle">I.D. Cargo</th>
                                 <th class="align-middle">Cargo</th>
-                                <th class="align-middle">I.D. C.costos</th>
+                                <th class="align-middle">Centro de Costos</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                             <tr>
-                                <td class="align-middle">${dato.Id_empleado}</td>
                                 <td class="align-middle">${dato.Tipo_documento}</td>
                                 <td class="align-middle">${dato.Documento}</td>
                                 <td class="align-middle">${dato.Nombre}</td>
                                 <td class="align-middle">${dato.Telefono}</td>
-                                <td class="align-middle">${dato.Id_cargo}</td>
                                 <td class="align-middle">${dato.Descripcion_cargo}</td>
-                                <td class="align-middle">${dato.Id_ccostos}</td>
+                                <td class="align-middle">${dato.Nombre_ccostos}</td>
                                 <td class="align-middle">
                                     <a href="<c:url value="confirmareliminarempleados.htm?id_empleado=${dato.Id_empleado}"/>" class="btn btn-danger"><b>Confirmar Eliminación</b></a>
                                 </td>
