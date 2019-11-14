@@ -1,6 +1,7 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
 <%
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String)objsesion.getAttribute("id_usuario");
@@ -190,6 +191,14 @@
                 <div class="card-header bg-info text-white">
                     <a href="nomina.htm" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
                     <a href="agregarusuarios.htm" class="btn btn-secondary">Agregar Registro</a>
+                    <form action="" method="post">
+                    <div class="input-group mt-3"">
+                        <input type="text" class="form-control" name="Buscar" placeholder="Buscar en Servisoft S.A."/>
+                        <div class="input-group-append">
+                            <button type="submit" Value="Buscar" class="btn btn-secondary"><i class="fas fa-search"></i> Buscar</button> 
+                        </div>
+                    </div>
+                    </form>
                 </div>
                 <div class="card-body">
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
@@ -203,21 +212,72 @@
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <c:forEach var="dato" items="${datos}">
-                            <tr>
-                                <td class="align-middle"><c:out value="${dato.Id_usuario}"/></td>
-                                <td class="align-middle"><c:out value="${dato.Nombre}"/></td>
-                                <td class="align-middle"><c:out value="${dato.Documento}"/></td>
-                                <td class="align-middle"><c:out value="${dato.Contraseña}"/></td>
-                                <td class="align-middle"><c:out value="${dato.Descripcion_perfil}"/></td>
-                                <td class="align-middle">
-                                    <a href="<c:url value="editarusuarios.htm?id_usuario=${dato.Id_usuario}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                    <a href="<c:url value="eliminarusuarios.htm?id_usuario=${dato.Id_usuario}"/>" class="btn btn-danger" onclick="pregunta()"><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                            </c:forEach>
-                        </tbody>    
+                        <%
+                            String control=request.getParameter("Buscar");
+                            try
+                            {
+                                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                                Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
+                                String Query="SELECT * FROM nm_usuarios u  JOIN nm_empleados emp "
+                                        + " ON emp.Id_empleado = u.Id_empleado JOIN nm_perfil p "
+                                        + " ON u.Id_perfil = p.Id_perfil where"
+                                        + " Id_usuario like '%"+request.getParameter("Buscar")+"%' or "
+                                        + " Nombre like '%"+request.getParameter("Buscar")+"%' or "
+                                        + " Documento like '%"+request.getParameter("Buscar")+"%' or "
+                                        + " Contraseña like '%"+request.getParameter("Buscar")+"%' or "
+                                        + " Descripcion_perfil like '%"+request.getParameter("Buscar")+"%'";
+                                Statement stm=conn.createStatement();
+                                ResultSet rs=stm.executeQuery(Query);
+                                
+                                if(control!=null)
+                                {
+                                    while(rs.next())
+                                    {
+                                        %>
+                                        <tbody>
+                                            <tr>
+                                                <td class="align-middle"><%=rs.getString("Id_usuario")%></td>
+                                                <td class="align-middle"><%=rs.getString("Nombre")%></td>
+                                                <td class="align-middle"><%=rs.getString("Documento")%></td>
+                                                <td class="align-middle"><%=rs.getString("Contraseña")%></td>
+                                                <td class="align-middle"><%=rs.getString("Descripcion_perfil")%></td>
+                                                <c:forEach var="dato" items="${datos}"  begin="<%=rs.getInt("Id_empleado")-1%>" end="<%=rs.getInt("Id_empleado")-1%>">
+                                                <td class="align-middle">
+                                                    <a href="<c:url value="editarusuarios.htm?id_usuario=${dato.Id_usuario}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                                    <a href="<c:url value="eliminarusuarios.htm?id_usuario=${dato.Id_usuario}"/>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                </td>
+                                                </c:forEach>
+                                            </tr>
+                                        </tbody>  
+                                        <%
+                                    }
+                                }else{
+                                    %>
+                                    <tbody>
+                                        <c:forEach var="dato" items="${datos}">
+                                        <tr>
+                                            <td class="align-middle"><c:out value="${dato.Id_usuario}"/></td>
+                                            <td class="align-middle"><c:out value="${dato.Nombre}"/></td>
+                                            <td class="align-middle"><c:out value="${dato.Documento}"/></td>
+                                            <td class="align-middle"><c:out value="${dato.Contraseña}"/></td>
+                                            <td class="align-middle"><c:out value="${dato.Descripcion_perfil}"/></td>
+                                            <td class="align-middle">
+                                                <a href="<c:url value="editarusuarios.htm?id_usuario=${dato.Id_usuario}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                                <a href="<c:url value="eliminarusuarios.htm?id_usuario=${dato.Id_usuario}"/>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        </c:forEach>
+                                    </tbody> 
+                                    <%
+                                }
+                            }
+                            catch(Exception ex)
+                            {
+                                ex.printStackTrace();
+                                out.println("Error "+ex.getMessage());
+                            }
+                        
+                        %> 
                     </table>   
                 </div>
             </div>
