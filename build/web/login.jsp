@@ -19,9 +19,9 @@
                     <span class="custom-dropdown">
                     <select name="descripcion_perfil" id="txtperfil">
                         <option value="">Selecciones una opción</option>
-                        <option value="JEFE DE NOMINA">Jefe de nomina</option>
-                        <option value="ADMINISTRADOR DE NOMINA ">Administrador de nomina</option>
-                        <option value="COORDINADOR DE NOMINA">Coordinador de nomina</option>
+                        <option value="JEFE">Jefe</option>
+                        <option value="ADMINISTRADOR">Administrador</option>
+                        <option value="COORDINADOR">Coordinador</option>
                     </select>
                          </span>
                    

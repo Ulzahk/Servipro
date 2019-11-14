@@ -3,6 +3,14 @@ function preguntaEliminar(){
     alert("Hola");
 };
 
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
+function bloqueo(){
+    alert("Una fuerza misteriosa no te deja avanzar");
+};
+
 window.addEventListener('load',function(){
    document.getElementById('btniniciar').addEventListener('click', function(){
        var descripcion_perfil = document.getElementById('txtperfil').value;

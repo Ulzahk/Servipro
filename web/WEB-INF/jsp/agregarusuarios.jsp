@@ -8,8 +8,8 @@
     if(id_usuario==null){
         response.sendRedirect("login.jsp");
     }else{
-        if(Descripcion_perfil.equals("ADMINISTRADOR DE NOMINA")||
-                Descripcion_perfil.equals("JEFE DE NOMINA")){
+        if(Descripcion_perfil.equals("ADMINISTRADOR")||
+                Descripcion_perfil.equals("JEFE")){
             
         }else{
           response.sendRedirect("nomina.htm");  
@@ -30,88 +30,157 @@
     </head>
     <body>
         
-        <nav class="navbar navbar-expand-sm bg-info navbar-dark justify-content-center">
-            <a class="navbar-brand" href="index.htm">ServiSoft S.A.</a>  
-            <div>
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Control Usuarios
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="usuarios.htm">Usuarios</a>
-                            <a class="dropdown-item" href="perfil.htm">Perfil</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Novedades
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="novedades.htm">Tabla Novedades</a>
-                            <a class="dropdown-item" href="tiponovedad.htm">Tipo de Novedades</a>
-                            <a class="dropdown-item" href="novedadesempleado.htm">Novedades por Empleado</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Centro de Costos
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="centrodecostos.htm">Tabla Centro de Costos</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Empleados
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="empleados.htm">Tabla Empleados</a>
-                            <a class="dropdown-item" href="cargoempleado.htm">Cargo Empleado</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Modulos
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="modulos.htm">Tabla Modulos</a>
-                            <a class="dropdown-item" href="modulosperfil.htm">Modulos por Perfil</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Grupos
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="grupos.htm">Tabla Grupo</a>
-                            <a class="dropdown-item" href="empleadosgrupo.htm">Empleados por Grupo</a>
-                            <a class="dropdown-item" href="responsablegrupo.htm">Responsable del Grupo</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Configuracion
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="configuracion.htm">Configuracion</a>
-                        </div> 
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle btn btn-dark" href="#" id="navbardrop" data-toggle="dropdown">
-                            Usuario: <% out.println(id_usuario); %>
-                        </a>
-                        <div class="dropdown-menu text-center">
-                            <a class="dropdown-item" href="nomina.htm">Perfil: <%out.println(Descripcion_perfil);%></a>
-                            <form action="cerrar" method="post" id="formcerrar">
-                                <input type="submit" value="Cerrar Sesión"  class="btn btn-link text-center"
-                                       style="color: #000;"/>
-                            </form>
-                        </div> 
-                    </li>
-                </ul>
-            </div>    
-        </nav>
+        <%--Barra de Navegación de Jefe--%>
+        <%
+            if(Descripcion_perfil.equals("JEFE")){
+
+                out.println("<nav class='navbar navbar-expand-sm bg-info navbar-dark justify-content-center'>");
+                    out.println("<a class='navbar-brand' href='index.htm'>ServiSoft S.A.</a>");
+                    out.println("<div>");
+                        out.println("<ul class='navbar-nav'>");
+                            out.println("<li class='nav-item dropdown'>");
+                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
+                                    out.println("Control Usuarios");
+                                out.println("</a>");
+                                    out.println("<div class='dropdown-menu'>");
+                                        out.println("<a class='dropdown-item' href='usuarios.htm'>Usuarios</a>");
+                                        out.println("<a class='dropdown-item' href='perfil.htm'>Perfil</a>");
+                                    out.println("</div>");;
+                            out.println("</li>");
+                            out.println("<li class='nav-item dropdown'>");
+                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
+                                    out.println("Novedades");
+                                out.println("</a>");
+                                out.println("<div class='dropdown-menu'>");
+                                    out.println("<a class='dropdown-item' href='novedades.htm'>Tabla Novedades</a>");
+                                    out.println("<a class='dropdown-item' href='tiponovedad.htm'>Tipo de Novedades</a>");
+                                    out.println("<a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>");
+                                out.println("</div>");
+                            out.println("</li>");
+                            out.println("<li class='nav-item dropdown'>");
+                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
+                                    out.println("Centro de Costos");
+                                out.println("</a>");
+                                out.println("<div class='dropdown-menu'>");
+                                    out.println("<a class='dropdown-item' href='centrodecostos.htm'>Tabla Centro de Costos</a>");
+                                out.println("</div>");
+                            out.println("</li>");
+                            out.println("<li class='nav-item dropdown'>");
+                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
+                                    out.println("Empleados");
+                                out.println("</a>");
+                                out.println("<div class='dropdown-menu'>");
+                                    out.println("<a class='dropdown-item' href='empleados.htm'>Tabla Empleados</a>");
+                                    out.println("<a class='dropdown-item' href='cargoempleado.htm'>Cargo Empleado</a>");
+                                out.println("</div>");
+                            out.println("</li>");
+                            out.println("<li class='nav-item dropdown'>");
+                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
+                                    out.println("Modulos");
+                                out.println("</a>");
+                                out.println("<div class='dropdown-menu'>");
+                                    out.println("<a class='dropdown-item' href='modulos.htm'>Tabla Modulos</a>");
+                                    out.println("<a class='dropdown-item' href='modulosperfil.htm'>Modulos por Perfil</a>");
+                                out.println("</div>");
+                            out.println("</li>");
+                            out.println("<li class='nav-item dropdown'>");
+                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
+                                    out.println("Grupos");
+                                out.println("</a>");
+                                out.println("<div class='dropdown-menu'>");
+                                    out.println("<a class='dropdown-item' href='grupos.htm'>Tabla Grupos</a>");
+                                    out.println("<a class='dropdown-item' href='empleadosgrupo.htm'>Empleados por Grupo</a>");
+                                    out.println("<a class='dropdown-item' href='responsablegrupo.htm'>Responsable del Grupo</a>");
+                                out.println("</div>");
+                            out.println("</li>");
+                            out.println("<li class='nav-item dropdown'>");
+                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
+                                    out.println("Configuracion");
+                                out.println("</a>");
+                                out.println("<div class='dropdown-menu'>");
+                                    out.println("<a class='dropdown-item' href='configuracion.htm'>Configuracion</a>");
+                                out.println("</div>");
+                            out.println("</li>");
+                            out.println("<li class='nav-item dropdown'>");
+                                out.println("<a class='nav-link dropdown-toggle btn btn-dark' href='#' id='navbardrop' data-toggle='dropdown'>");
+                                    out.println("Usuario:"); out.println(id_usuario);
+                                out.println("</a>");
+                                out.println("<div class='dropdown-menu text-center'>");
+                                    out.println("<a class='dropdown-item' href='nomina.htm'>");
+                                        out.println("Perfil:"); out.println(Descripcion_perfil);
+                                    out.println("</a>");
+                                    out.println("<form action='cerrar' method='post' id='formcerrar'>");
+                                            out.println("<input type='submit' value='Cerrar Sesión' "
+                                                        + " class='btn btn-link text-center' style='color: #000;'/>");
+                                    out.println("</form>");
+                                out.println("</div>");
+                            out.println("</li>");
+                        out.println("</ul>");
+                    out.println("</div>");
+                out.println("</nav>");
+            }
+        %>
+        
+        <%--Barra de Navegación de Administrador--%>
+        <%
+            if(Descripcion_perfil.equals("ADMINISTRADOR")){
+
+                out.println("<nav class='navbar navbar-expand-sm bg-info navbar-dark justify-content-center'>");
+                    out.println("<a class='navbar-brand' href='index.htm'>ServiSoft S.A.</a>");
+                    out.println("<div>");
+                        out.println("<ul class='navbar-nav'>");
+                            out.println("<li class='nav-item dropdown'>");
+                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
+                                    out.println("Usuarios");
+                                out.println("</a>");
+                                    out.println("<div class='dropdown-menu'>");
+                                        out.println("<a class='dropdown-item' href='usuarios.htm'>Tabla de Usuarios</a>");
+                                    out.println("</div>");;
+                            out.println("</li>");
+                            out.println("<li class='nav-item dropdown'>");
+                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
+                                    out.println("Perfil");
+                                out.println("</a>");
+                                    out.println("<div class='dropdown-menu'>");
+                                        out.println("<a class='dropdown-item' href='perfil.htm'>Tabla de Perfil</a>");
+                                    out.println("</div>");;
+                            out.println("</li>");
+                            out.println("<li class='nav-item dropdown'>");
+                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
+                                    out.println("Modulos");
+                                out.println("</a>");
+                                out.println("<div class='dropdown-menu'>");
+                                    out.println("<a class='dropdown-item' href='modulos.htm'>Tabla Modulos</a>");
+                                out.println("</div>");
+                            out.println("</li>");
+                            out.println("<li class='nav-item dropdown'>");
+                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
+                                    out.println("Modulos por Perfil");
+                                out.println("</a>");
+                                out.println("<div class='dropdown-menu'>");
+                                    out.println("<a class='dropdown-item' href='modulosperfil.htm'>Tabla Modulos por Perfil</a>");
+                                out.println("</div>");
+                            out.println("</li>");
+                            out.println("<li class='nav-item dropdown'>");
+                                out.println("<a class='nav-link dropdown-toggle btn btn-dark' href='#' id='navbardrop' data-toggle='dropdown'>");
+                                    out.println("Usuario:"); out.println(id_usuario);
+                                out.println("</a>");
+                                out.println("<div class='dropdown-menu text-center'>");
+                                    out.println("<a class='dropdown-item' href='nomina.htm'>");
+                                        out.println("Perfil:"); out.println(Descripcion_perfil);
+                                    out.println("</a>");
+                                    out.println("<form action='cerrar' method='post' id='formcerrar'>");
+                                            out.println("<input type='submit' value='Cerrar Sesión' "
+                                                        + " class='btn btn-link text-center' style='color: #000;'/>");
+                                    out.println("</form>");
+                                out.println("</div>");
+                            out.println("</li>");
+                        out.println("</ul>");
+                    out.println("</div>");
+                out.println("</nav>");
+            }
+        %> 
+        
         
         
         <div class="container mt-4">
