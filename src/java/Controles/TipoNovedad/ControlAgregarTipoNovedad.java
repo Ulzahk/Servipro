@@ -51,7 +51,7 @@ public class ControlAgregarTipoNovedad {
             
         }else{
             
-            this.jdbcTemplate.update("insert into nm_tipo_novedad(descripcion) values(?)",
+            this.jdbcTemplate.update("insert into nm_facturacion(descripcion) values(?)",
             tn.getDescripcion());
             return new ModelAndView("redirect:/tiponovedad.htm");
             

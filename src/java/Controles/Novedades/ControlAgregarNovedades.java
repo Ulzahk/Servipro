@@ -51,7 +51,7 @@ public class ControlAgregarNovedades {
             
         }else{
             
-            this.jdbcTemplate.update("insert into nm_novedades(descripcion, alias) "
+            this.jdbcTemplate.update("insert into nm_tipo_novedad(descripcion, alias) "
             +"values(?,?)", n.getDescripcion(), n.getAlias());
             return new ModelAndView("redirect:/novedades.htm");
                     

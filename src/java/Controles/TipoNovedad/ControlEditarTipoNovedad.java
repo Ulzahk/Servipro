@@ -62,7 +62,7 @@ public class ControlEditarTipoNovedad {
         }else{
             
             int id_tipo_novedad=Integer.parseInt(request.getParameter("id_tipo_novedad"));
-            this.jdbcTemplate.update("update nm_tipo_novedad set descripcion=? where id_tipo_novedad=?",
+            this.jdbcTemplate.update("update nm_facturacion set descripcion=? where id_tipo_novedad=?",
             tn.getDescripcion(),id_tipo_novedad);
             return new ModelAndView("redirect:/tiponovedad.htm");
         }
@@ -71,7 +71,7 @@ public class ControlEditarTipoNovedad {
     public TipoNovedad selectTipoNovedad(int id_tipo_novedad){
         
         final TipoNovedad tipon=new TipoNovedad();
-        String quer="select * from nm_tipo_novedad where id_tipo_novedad='"+id_tipo_novedad+"'";
+        String quer="select * from nm_facturacion where id_tipo_novedad='"+id_tipo_novedad+"'";
         return (TipoNovedad)jdbcTemplate.query(quer, new ResultSetExtractor<TipoNovedad>(){
             public TipoNovedad extractData(ResultSet rs) throws SQLException, DataAccessException{
                 if(rs.next()){

@@ -203,7 +203,7 @@
                     <a href="nomina.htm" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
                     <a href="agregartiponovedad.htm" class="btn btn-secondary">Agregar Registro</a>
                      <form action="" method="post">
-                    <div class="input-group mt-3"">
+                    <div class="input-group mt-3">
                         <input type="text" class="form-control" name="Buscar" placeholder="Buscar en Servisoft S.A."/>
                         <div class="input-group-append">
                             <button type="submit" Value="Buscar" class="btn btn-secondary"><i class="fas fa-search"></i> Buscar</button> 
@@ -225,7 +225,7 @@
                             {
                                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
                                 Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
-                                String Query="SELECT * FROM nm_tipo_novedad where "
+                                String Query="SELECT * FROM nm_facturacion where "
                                         + " Id_tipo_novedad like  '%"+request.getParameter("Buscar")+"%' or "
                                         + " Descripcion like '%"+request.getParameter("Buscar")+"%'";
                                 Statement stm=conn.createStatement();
