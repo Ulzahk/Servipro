@@ -25,10 +25,12 @@
                     </select>
                          </span>
                    
+                   
                     <input type="text" name="id_usuario" placeholder="Usuario" id="txtusuario"/>
                     
                     <input type="password" name="contraseña" id="txtpass" placeholder="Contraseña"/>
-                    <input type="button" value="Acceder"  id="btniniciar" />
+                    <input type="button" value="Acceder"  id="btniniciar" onclick="formValidation();"/>
+                    <label id="lblerror" ></label>
                 </form>
         </div>
                 
