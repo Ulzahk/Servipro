@@ -1,4 +1,4 @@
-package Controles.Novedades;
+package Controles.TipoDeNovedades;
 
 import Modelos.Conectar;
 import Modelos.Novedades.Novedades;
@@ -18,13 +18,13 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("editarnovedades.htm")
-public class ControlEditarNovedades {
+@RequestMapping("editartipodenovedades.htm")
+public class ControlEditarTipoDeNovedades {
     
     NovedadesValidacion novedadesValidacion;
     private JdbcTemplate jdbcTemplate;
     
-    public ControlEditarNovedades(){
+    public ControlEditarTipoDeNovedades(){
         
         this.novedadesValidacion=new NovedadesValidacion();
         Conectar con=new Conectar();
@@ -38,7 +38,7 @@ public class ControlEditarNovedades {
         ModelAndView mav=new ModelAndView();
         int id_novedad=Integer.parseInt(request.getParameter("id_novedad"));
         Novedades datos=this.selectNovedades(id_novedad);
-        mav.setViewName("editarnovedades");
+        mav.setViewName("editartipodenovedades");
         mav.addObject("novedades", new Novedades(id_novedad,datos.getDescripcion(),
         datos.getAlias()));
         return mav;
@@ -55,7 +55,7 @@ public class ControlEditarNovedades {
             ModelAndView mav=new ModelAndView();
             int id_novedad=Integer.parseInt(request.getParameter("id_novedad"));
             Novedades datos=this.selectNovedades(id_novedad);
-            mav.setViewName("editarnovedades");
+            mav.setViewName("editartipodenovedades");
             mav.addObject("novedades", new Novedades(id_novedad,datos.getDescripcion(),
             datos.getAlias()));
             return mav;
@@ -65,7 +65,7 @@ public class ControlEditarNovedades {
             int id_novedad=Integer.parseInt(request.getParameter("id_novedad"));
             this.jdbcTemplate.update("update novedades set descripcion=?, alias=? "
             +"where id_novedad=?",n.getDescripcion(),n.getAlias(),id_novedad);
-            return new ModelAndView("redirect:/novedades.htm");
+            return new ModelAndView("redirect:/tipodenovedades.htm");
             
         }  
     }

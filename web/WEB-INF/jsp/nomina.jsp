@@ -56,8 +56,8 @@
                                     out.println("Novedades");
                                 out.println("</a>");
                                 out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='novedades.htm'>Tabla Novedades</a>");
-                                    out.println("<a class='dropdown-item' href='tiponovedad.htm'>Tipo de Novedades</a>");
+                                    out.println("<a class='dropdown-item' href='tipodenovedades.htm'>Tabla De Novedades</a>");
+                                    out.println("<a class='dropdown-item' href='facturacion.htm'>Facturación</a>");
                                     out.println("<a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>");
                                 out.println("</div>");
                             out.println("</li>");
@@ -198,8 +198,8 @@
                                     out.println("Novedades");
                                 out.println("</a>");
                                 out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='novedades.htm'>Tabla Novedades</a>");
-                                    out.println("<a class='dropdown-item' href='tiponovedad.htm'>Tipo de Novedades</a>");
+                                    out.println("<a class='dropdown-item' href='tipodenovedades.htm'>Tabla De Novedades</a>");
+                                    out.println("<a class='dropdown-item' href='facturacion.htm'>Facturación</a>");
                                     out.println("<a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>");
                                 out.println("</div>");
                             out.println("</li>");
@@ -276,13 +276,13 @@
                             out.println("<i class='fas fa-address-card mb-2 mt-2 tamañoIcono'></i>");
                             out.println("<p><b>Perfil</b></p>");
                         out.println("</a>");
-                        out.println("<a href='novedades.htm' class='col bIndex colorEnlace'>");
+                        out.println("<a href='tipodenovedades.htm' class='col bIndex colorEnlace'>");
                             out.println("<i class='fas fa-bullhorn mb-2 mt-2 tamañoIcono'></i>");
-                            out.println("<p><b>Novedades</b></p>");
+                            out.println("<p><b>Tipo De Novedades</b></p>");
                         out.println("</a>");
-                        out.println("<a href='tiponovedad.htm' class='col bIndex colorEnlace'>");
+                        out.println("<a href='facturacion.htm' class='col bIndex colorEnlace'>");
                             out.println("<i class='fab fa-buromobelexperte mb-2 mt-2 tamañoIcono'></i>");
-                            out.println("<p><b>Tipo de Novedad</b></p>");
+                            out.println("<p><b>Facturación</b></p>");
                         out.println("</a>");
                         out.println("<a href='novedadesempleado.htm' class='col bIndex colorEnlace'>");
                             out.println("<i class='fas fa-user-check mb-2 tamañoIcono'></i>");
@@ -369,13 +369,13 @@
             if(Descripcion_perfil.equals("COORDINADOR")) {
                 out.println("<div class='container mt-4 text-center'>");
                     out.println("<div class='row text-center'>");
-                        out.println("<a href='novedades.htm' class='col bIndex colorEnlace'>");
+                        out.println("<a href='tipodenovedades.htm' class='col bIndex colorEnlace'>");
                             out.println("<i class='fas fa-bullhorn mb-2 mt-2 tamañoIcono'></i>");
-                            out.println("<p><b>Novedades</b></p>");
+                            out.println("<p><b>Tipo De Novedades</b></p>");
                         out.println("</a>");
-                        out.println("<a href='tiponovedad.htm' class='col bIndex colorEnlace'>");
+                        out.println("<a href='facturacion.htm' class='col bIndex colorEnlace'>");
                             out.println("<i class='fab fa-buromobelexperte mb-2 mt-2 tamañoIcono'></i>");
-                            out.println("<p><b>Tipo de Novedad</b></p>");
+                            out.println("<p><b>Facturación</b></p>");
                         out.println("</a>");
                         out.println("<a href='novedadesempleado.htm' class='col bIndex colorEnlace'>");
                             out.println("<i class='fas fa-user-check mb-2 tamañoIcono'></i>");

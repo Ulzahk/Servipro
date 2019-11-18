@@ -49,12 +49,24 @@
                 <prop key="editarnovedades.htm">controlEditarNovedades</prop>
                 <prop key="eliminarnovedades.htm">controlEliminarNovedades</prop>
                 <prop key="confirmareliminarnovedades.htm">controlConfirmarEliminarNovedades</prop>
+                <!--TipoDeNoverdades props-->
+                <prop key="tipodenovedades.htm">controlTipoDeNovedades</prop>
+                <prop key="agregartipodenovedades.htm">controlAgregarTipoDeNovedades</prop>
+                <prop key="editartipodenovedades.htm">controlEditarTipoDeNovedades</prop>
+                <prop key="eliminartipodenovedades.htm">controlEliminarTipoDeNovedades</prop>
+                <prop key="confirmareliminartipodenovedades">controlConfirmarEliminarTipoDeNovedades</prop>
                 <!--Tiponovedad-->
                 <prop key="tiponovedad.htm">controlTipoNovedad</prop>
                 <prop key="agregartiponovedad.htm">controlAgregarTipoNovedad</prop>
                 <prop key="editartiponovedad.htm">controlEditarTipoNovedad</prop>
                 <prop key="eliminartiponovedad.htm">controlEliminarTipoNovedad</prop>
                 <prop key="confirmareliminartiponovedad.htm">controlConfirmarEliminarTipoNovedad</prop>
+                <!--Facturacion props-->
+                <prop key="facturacion.htm">controlFacturacion</prop>
+                <prop key="agregarfacturacion.htm">controlAgregarFacturacion</prop>
+                <prop key="editarfacturacion.htm">controlEditarFacturacion</prop>
+                <prop key="eliminarfacturacion.htm">controlEliminarFacturacion</prop>
+                <prop key="confirmareliminarfacturacion.htm">controlConfirmarEliminarFacturacion</prop>
                 <!--Novedadesempleado-->
                 <prop key="novedadesempleado.htm">controlNovedadesEmpleado</prop>
                 <prop key="agregarnovedadesempleado.htm">controlAgregarNovedadesEmpleado</prop>
@@ -147,12 +159,39 @@
     <bean name="controlEditarNovedades" class="Controles.Novedades.ControlEditarNovedades"/>
     <bean name="controlEliminarNovedades" class="Controles.Novedades.ControlEliminarNovedades"/>
     <bean name="controlConfirmarEliminarNovedades" class="Controles.Novedades.ControlConfirmarEliminarNovedades"/>
+    
+    
+    
+      
+    
+    <!--TipoDeNovedades-->
+    <bean name="controlTipoDeNovedades" class="Controles.TipoDeNovedades.ControlTipoDeNovedades"/>
+    <bean name="controlAgregarTipoDeNovedades" class="Controles.TipoDeNovedades.ControlAgregarTipoDeNovedades"/>
+    <bean name="controlEditarTipoDeNovedades" class="Controles.TipoDeNovedades.ControlEditarTipoDeNovedades"/>
+    <bean name="controlEliminarTipoDeNovedades" class="Controles.TipoDeNovedades.ControlEliminarTipoDeNovedades"/>
+    <bean name="controlConfirmarEliminarTipoDeNovedades" class="Controles.TipoDeNovedades.ControlConfirmarEliminarTipoDeNovedades"/>
+        
+    
+    
+    
+
     <!--Tiponovedad-->
     <bean name="controlTipoNovedad" class="Controles.TipoNovedad.ControlTipoNovedad"/>
     <bean name="controlAgregarTipoNovedad" class="Controles.TipoNovedad.ControlAgregarTipoNovedad" />
     <bean name="controlEditarTipoNovedad" class="Controles.TipoNovedad.ControlEditarTipoNovedad" />
     <bean name="controlEliminarTipoNovedad" class="Controles.TipoNovedad.ControlEliminarTipoNovedad"/>
     <bean name="controlConfirmarEliminarTipoNovedad" class="Controles.TipoNovedad.ControlConfirmarEliminarTipoNovedad"/>
+    
+    
+    <!--Facturacion-->
+    <bean name="controlFacturacion" class="Controles.Facturacion.ControlFacturacion"/>
+    <bean name="controlAgregarFacturacion" class="Controles.Facturacion.ControlAgregarFacturacion"/>
+    <bean name="controlEditarFacturacion" class="Controles.Facturacion.ControlEditarFacturacion"/>
+    <bean name="controlEliminarFacturacion" class="Controles.Facturacion.ControlEliminarFacturacion"/>
+    <bean name="controlConfirmarEliminarFacturacion" class="Controles.Facturacion.ControlConfirmarEliminarFacturacion"/>
+    
+    
+    
     <!--Novedadesempleado-->
     <bean name="controlNovedadesEmpleado" class="Controles.NovedadesEmpleado.ControlNovedadesEmpleado"/>
     <bean name="controlAgregarNovedadesEmpleado" class="Controles.NovedadesEmpleado.ControlAgregarNovedadesEmpleado"/>

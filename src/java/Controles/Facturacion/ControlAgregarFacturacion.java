@@ -1,8 +1,8 @@
-package Controles.Novedades;
+package Controles.Facturacion;
 
 import Modelos.Conectar;
-import Modelos.Novedades.Novedades;
-import Modelos.Novedades.NovedadesValidacion;
+import Modelos.TipoNovedad.TipoNovedad;
+import Modelos.TipoNovedad.TipoNovedadValidacion;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -13,47 +13,48 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("agregarnovedades.htm")
-public class ControlAgregarNovedades {
+@RequestMapping("agregarfacturacion.htm")
+public class ControlAgregarFacturacion {
     
-    NovedadesValidacion novedadesValidacion;
+    TipoNovedadValidacion tipoNovedadValidacion;
     private JdbcTemplate jdbcTemplate;
     
-    public ControlAgregarNovedades(){
+    public ControlAgregarFacturacion(){
         
-        this.novedadesValidacion=new NovedadesValidacion();
+        this.tipoNovedadValidacion=new TipoNovedadValidacion();
         Conectar con=new Conectar();
         this.jdbcTemplate=new JdbcTemplate(con.conectar());
         
     }
     
     @RequestMapping(method=RequestMethod.GET)
-    public ModelAndView novedades(){
+    public ModelAndView tipoNovedad(){
         
         ModelAndView mav=new ModelAndView();
-        mav.setViewName("agregarnovedades");
-        mav.addObject("novedades", new Novedades());
+        mav.setViewName("agregarfacturacion");
+        mav.addObject("tiponovedad",new TipoNovedad());
         return mav;
     }
     
     @RequestMapping(method=RequestMethod.POST)
-    public ModelAndView novedades(@ModelAttribute("novedades")Novedades n,
+    public ModelAndView tipoNovedad(@ModelAttribute("tiponovedad")TipoNovedad tn,
     BindingResult result, SessionStatus status){
         
-        this.novedadesValidacion.validate(n, result);
+        this.tipoNovedadValidacion.validate(tn, result);
         if(result.hasErrors()){
             
             ModelAndView mav=new ModelAndView();
-            mav.setViewName("agregarnovedades");
-            mav.addObject("novedades",new Novedades());
+            mav.setViewName("agregarfacturacion");
+            mav.addObject("tiponovedad",new TipoNovedad());
             return mav;
             
         }else{
             
-            this.jdbcTemplate.update("insert into nm_tipo_novedad(descripcion, alias) "
-            +"values(?,?)", n.getDescripcion(), n.getAlias());
-            return new ModelAndView("redirect:/novedades.htm");
-                    
+            this.jdbcTemplate.update("insert into nm_facturacion(descripcion) values(?)",
+            tn.getDescripcion());
+            return new ModelAndView("redirect:/facturacion.htm");
+            
         }
     }
 }
+

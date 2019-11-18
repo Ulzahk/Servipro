@@ -1,4 +1,4 @@
-package Controles.Novedades;
+package Controles.TipoDeNovedades;
 
 import Modelos.Conectar;
 import Modelos.Novedades.Novedades;
@@ -13,13 +13,13 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("agregarnovedades.htm")
-public class ControlAgregarNovedades {
+@RequestMapping("agregartipodenovedades.htm")
+public class ControlAgregarTipoDeNovedades {
     
     NovedadesValidacion novedadesValidacion;
     private JdbcTemplate jdbcTemplate;
     
-    public ControlAgregarNovedades(){
+    public ControlAgregarTipoDeNovedades(){
         
         this.novedadesValidacion=new NovedadesValidacion();
         Conectar con=new Conectar();
@@ -31,7 +31,7 @@ public class ControlAgregarNovedades {
     public ModelAndView novedades(){
         
         ModelAndView mav=new ModelAndView();
-        mav.setViewName("agregarnovedades");
+        mav.setViewName("agregartipodenovedades");
         mav.addObject("novedades", new Novedades());
         return mav;
     }
@@ -44,7 +44,7 @@ public class ControlAgregarNovedades {
         if(result.hasErrors()){
             
             ModelAndView mav=new ModelAndView();
-            mav.setViewName("agregarnovedades");
+            mav.setViewName("agregartipodenovedades");
             mav.addObject("novedades",new Novedades());
             return mav;
             
@@ -52,7 +52,7 @@ public class ControlAgregarNovedades {
             
             this.jdbcTemplate.update("insert into nm_tipo_novedad(descripcion, alias) "
             +"values(?,?)", n.getDescripcion(), n.getAlias());
-            return new ModelAndView("redirect:/novedades.htm");
+            return new ModelAndView("redirect:/tipodenovedades.htm");
                     
         }
     }

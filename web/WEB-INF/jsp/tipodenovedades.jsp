@@ -1,4 +1,3 @@
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
@@ -20,8 +19,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>Agregar Empleados por Grupo</title>
+        <meta charset="UTF-8">
+        <title>Tipo De Novedades</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -52,8 +51,8 @@
                                     out.println("Novedades");
                                 out.println("</a>");
                                 out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='tipodenovedades.htm'>Tabla De Novedades</a>");
-                                    out.println("<a class='dropdown-item' href='facturacion.htm'>Facturación</a>");
+                                    out.println("<a class='dropdown-item' href='novedades.htm'>Tabla Novedades</a>");
+                                    out.println("<a class='dropdown-item' href='tiponovedad.htm'>Tipo de Novedades</a>");
                                     out.println("<a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>");
                                 out.println("</div>");
                             out.println("</li>");
@@ -134,8 +133,8 @@
                                     out.println("Novedades");
                                 out.println("</a>");
                                 out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='tipodenovedades.htm'>Tabla De Novedades</a>");
-                                    out.println("<a class='dropdown-item' href='facturacion.htm'>Facturación</a>");
+                                    out.println("<a class='dropdown-item' href='novedades.htm'>Tabla Novedades</a>");
+                                    out.println("<a class='dropdown-item' href='tiponovedad.htm'>Tipo de Novedades</a>");
                                     out.println("<a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>");
                                 out.println("</div>");
                             out.println("</li>");
@@ -195,69 +194,87 @@
         %> 
         
         <div class="container mt-4">
-            <h1 class="text-center">Agregar Empleados por Grupo</h1>
+         <h1 class="text-center">Tipo De Novedades</h1>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
-                    <a href="empleadosgrupo.htm" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
+                    <a href="nomina.htm" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
+                    <a href="agregartipodenovedades.htm" class="btn btn-secondary">Agregar Registro</a>
+                    <form action="" method="post">
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control" name="Buscar" placeholder="Buscar en Servisoft S.A."/>
+                        <div class="input-group-append">
+                            <button type="submit" Value="Buscar" class="btn btn-secondary"><i class="fas fa-search"></i> Buscar</button> 
+                        </div>
+                    </div>
+                    </form>
                 </div>
                 <div class="card-body">
-                <form:form method="post" commandName="empleadosgrupo">
-                    <p>
-                        <label for="id_grupo"><b>Grupo</b></label>
-                        <select id="id_grupo" name="id_grupo" class="form-control">
-                            <option value="-1">SELECCIONE UN GRUPO</option>
-                            <%
-                                try
+                    <table border="1" class="table table-bordered table-striped table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th class="align-middle">Descripcion</th>
+                                <th class="align-middle">Alias</th>
+                                <th class="align-middle">Acciones</th>
+                            </tr>
+                        </thead>
+                        <%
+                            String control=request.getParameter("Buscar");
+                            try
+                            {
+                                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                                Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
+                                String Query="SELECT * FROM nm_tipo_novedad where "
+                                        + " Id_novedad like '%"+request.getParameter("Buscar")+"%' or "
+                                        + " Descripcion like '%"+request.getParameter("Buscar")+"%' or "
+                                        + " Alias like '%"+request.getParameter("Buscar")+"%'";
+                                Statement stm=conn.createStatement();
+                                ResultSet rs=stm.executeQuery(Query);
+                                
+                                if(control!=null)
                                 {
-                                    String Query="select * from nm_grupos";
-                                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                                    Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
-                                    Statement stm=conn.createStatement();
-                                    ResultSet rs=stm.executeQuery(Query);
                                     while(rs.next())
                                     {
                                         %>
-                                        <option value="<%=rs.getInt("Id_grupo")%>"><%=rs.getString("nombre_grupo")%></option>
+                                        <tbody>
+                                            <tr>
+                                                <td class="align-middle"><%=rs.getString("Descripcion")%></td>
+                                                <td class="align-middle"><%=rs.getString("Alias")%></td>
+                                                <c:forEach var="dato" items="${datos}"  begin="<%=rs.getInt("Id_novedad")-1%>" end="<%=rs.getInt("Id_novedad")-1%>">
+                                                <td class="align-middle">
+                                                    <a href="<c:url value="editartipodenovedades.htm?id_novedad=${dato.Id_novedad}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                                    <a href="<c:url value="eliminartipodenovedades.htm?id_novedad=${dato.Id_novedad}"/>"class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                </td>
+                                                </c:forEach>
+                                            </tr>
+                                        </tbody>  
                                         <%
                                     }
+                                }else{
+                                    %>
+                                    <tbody>
+                                        <c:forEach var="dato" items="${datos}">
+                                        <tr>
+                                            <td class="align-middle">${dato.Descripcion}</td>
+                                            <td class="align-middle">${dato.Alias}</td>
+                                            <td class="align-middle">
+                                                <a href="<c:url value="editartipodenovedades.htm?id_novedad=${dato.Id_novedad}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                                <a href="<c:url value="eliminartipodenovedades.htm?id_novedad=${dato.Id_novedad}"/>"class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                        </c:forEach>
+                                    </tbody> 
+                                    <%
                                 }
-                                catch(Exception ex){
-                                   ex.printStackTrace();
-                                   out.println("Error "+ex.getMessage());
-                                }
-                            %>
-                        </select>
-                    </p>
-                    <p>
-                        <label for="id_empleado"><b>Empleado</b></label>
-                        <select id="id_empleado" name="id_empleado" class="form-control">
-                            <option value="-1">SELECCIONE UN EMPLEADO</option>
-                            <%
-                                try
-                                {
-                                    String Query="select * from nm_empleados";
-                                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                                    Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
-                                    Statement stm=conn.createStatement();
-                                    ResultSet rs=stm.executeQuery(Query);
-                                    while(rs.next())
-                                    {
-                                        %>
-                                        <option value="<%=rs.getInt("Id_empleado")%>"><%=rs.getString("Nombre")%></option>
-                                        <%
-                                    }
-                                }
-                                catch(Exception ex){
-                                   ex.printStackTrace();
-                                   out.println("Error "+ex.getMessage());
-                                }
-                            %>
-                        </select>
-                    </p>
-                    <hr/>
-                    <input type="submit" value="Guardar" class="btn btn-info"/>
-                </form:form>
+                            }
+                            catch(Exception ex)
+                            {
+                                ex.printStackTrace();
+                                out.println("Error "+ex.getMessage());
+                            }
+                        
+                        %> 
+                       
                 </div>
             </div>
         </div>
