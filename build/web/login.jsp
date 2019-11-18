@@ -26,11 +26,20 @@
                         <option value="EDITOR">EDITOR</option>
                         <option value="USUARIO">USUARIO</option>
                     </select>
+<<<<<<< Updated upstream
                     <p>Usuario :(</p>
                     <input type="text" name="id_usuario" placeholder="Ingrese Usuario" id="txtusuario"/>
                     <p>Contraseña</p>
                     <input type="password" name="contraseña" id="txtpass" placeholder="Ingrese Contraseña"/>
                     <input type="button" value="Acceder"  id="btniniciar" />
+=======
+                         </span>
+                   
+                    <input type="text" name="id_usuario" placeholder="Usuario" id="txtusuario"/>
+                    
+                    <input type="password" name="contraseña" id="txtpass" placeholder="Contraseña"/>
+                    <input type="button" value="Acceder"  id="btniniciar" onclick="return formValidation();" />
+>>>>>>> Stashed changes
                 </form>
         </div>
                 <img src="Resources/Images/FondoNatural.jpg" height="800px" width="100%" class="imgFondo"/>
