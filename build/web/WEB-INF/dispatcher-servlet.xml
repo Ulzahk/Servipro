@@ -122,7 +122,7 @@
     <!--Nomina-->
     <bean name="controlNomina" class="Controles.ControlNomina"/>
     <!--Consulta-->
-    <bean name="controlEstadisticas" class="Controles.Estadisticas.ControladorEstadisticas"/>
+    <bean name="controlEstadisticas" class="Controles.Estadisticas.ControlEstadisticas"/>
     <!--Usuarios-->
     <bean name="controlUsuarios" class="Controles.Usuarios.ControlUsuarios"/>
     <bean name="controlAgregarUsuarios" class="Controles.Usuarios.ControlAgregarUsuarios"/>
