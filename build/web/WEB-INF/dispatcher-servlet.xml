@@ -43,18 +43,12 @@
                 <prop key="editarconfiguracion.htm">controlEditarConfiguracion</prop>
                 <prop key="eliminarconfiguracion.htm">controlEliminarConfiguracion</prop>
                 <prop key="confirmareliminarconfiguracion.htm">controlConfirmarEliminarConfiguracion</prop>               
-                <!--TipoDeNoverdades props-->
+                <!--TipoDeNovedades props-->
                 <prop key="tipodenovedades.htm">controlTipoDeNovedades</prop>
                 <prop key="agregartipodenovedades.htm">controlAgregarTipoDeNovedades</prop>
                 <prop key="editartipodenovedades.htm">controlEditarTipoDeNovedades</prop>
                 <prop key="eliminartipodenovedades.htm">controlEliminarTipoDeNovedades</prop>
-                <prop key="confirmareliminartipodenovedades">controlConfirmarEliminarTipoDeNovedades</prop>
-                <!--Tiponovedad-->
-                <prop key="tiponovedad.htm">controlTipoNovedad</prop>
-                <prop key="agregartiponovedad.htm">controlAgregarTipoNovedad</prop>
-                <prop key="editartiponovedad.htm">controlEditarTipoNovedad</prop>
-                <prop key="eliminartiponovedad.htm">controlEliminarTipoNovedad</prop>
-                <prop key="confirmareliminartiponovedad.htm">controlConfirmarEliminarTipoNovedad</prop>
+                <prop key="confirmareliminartipodenovedades">controlConfirmarEliminarTipoDeNovedades</prop>                
                 <!--Facturacion props-->
                 <prop key="facturacion.htm">controlFacturacion</prop>
                 <prop key="agregarfacturacion.htm">controlAgregarFacturacion</prop>
@@ -155,12 +149,7 @@
     <bean name="controlEliminarTipoDeNovedades" class="Controles.TipoDeNovedades.ControlEliminarTipoDeNovedades"/>
     <bean name="controlConfirmarEliminarTipoDeNovedades" class="Controles.TipoDeNovedades.ControlConfirmarEliminarTipoDeNovedades"/>
 
-    <!--Tiponovedad-->
-    <bean name="controlTipoNovedad" class="Controles.TipoNovedad.ControlTipoNovedad"/>
-    <bean name="controlAgregarTipoNovedad" class="Controles.TipoNovedad.ControlAgregarTipoNovedad" />
-    <bean name="controlEditarTipoNovedad" class="Controles.TipoNovedad.ControlEditarTipoNovedad" />
-    <bean name="controlEliminarTipoNovedad" class="Controles.TipoNovedad.ControlEliminarTipoNovedad"/>
-    <bean name="controlConfirmarEliminarTipoNovedad" class="Controles.TipoNovedad.ControlConfirmarEliminarTipoNovedad"/>
+    
     
     
     <!--Facturacion-->
