@@ -3,7 +3,6 @@ package Modelos.Novedades;
 
 
 public class Novedades {
-    
     private int id_novedad;
     private String descripcion;
     private String alias;
@@ -11,8 +10,9 @@ public class Novedades {
     public Novedades() {
     }
 
-    public Novedades(String descripcion) {
+    public Novedades(String descripcion, String alias) {
         this.descripcion = descripcion;
+        this.alias = alias;
     }
 
     public Novedades(int id_novedad, String descripcion, String alias) {
@@ -44,5 +44,6 @@ public class Novedades {
     public void setAlias(String alias) {
         this.alias = alias;
     }
-
+    
+    
 }

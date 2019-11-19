@@ -8,27 +8,7 @@ function bloqueo(){
     alert("Una fuerza misteriosa no te deja avanzar");
 };
 
-//window.addEventListener('load',function(){
-//   document.getElementById('btniniciar').addEventListener('click', function(){
-//       var descripcion_perfil = document.getElementById('txtperfil').value;
-//       var id_usuario = document.getElementById('txtusuario').value;
-//       var contraseña = document.getElementById('txtpass').value;
-//       
-//       var bandera= false;
-//       
-//       if(descripcion_perfil.length>0 && id_usuario.length>0){
-//           if(contraseña.length>0){
-//              bandera=true; 
-//           }
-//       }
-//       
-//       if(bandera){
-//           document.getElementById('forminicio').submit();
-//       }else{
-//           alert("Por favor complete todos los campos");
-//       }
-//   }); 
-//});
+
 
 function formValidation() {
 
@@ -70,7 +50,7 @@ function formValidation() {
         return false;
     } 
     
-    if (user === "" && pass === "" && perfil.length === "") {
+    if (user === "" && pass === "" && perfil === "") {
         document.getElementById('txtuser').style.borderColor = "#D54324";
         document.getElementById('txtpass').style.borderColor = "#D54324";
         document.getElementById('lblerror').style.color = '#D54324';

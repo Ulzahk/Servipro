@@ -50,8 +50,8 @@
                                     out.println("Novedades");
                                 out.println("</a>");
                                 out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='novedades.htm'>Tabla Novedades</a>");
-                                    out.println("<a class='dropdown-item' href='tiponovedad.htm'>Tipo de Novedades</a>");
+                                    out.println("<a class='dropdown-item' href='tipodenovedades.htm'>Tabla De Novedades</a>");
+                                    out.println("<a class='dropdown-item' href='facturacion.htm'>Facturación</a>");
                                     out.println("<a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>");
                                 out.println("</div>");
                             out.println("</li>");
@@ -132,8 +132,8 @@
                                     out.println("Novedades");
                                 out.println("</a>");
                                 out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='novedades.htm'>Tabla Novedades</a>");
-                                    out.println("<a class='dropdown-item' href='tiponovedad.htm'>Tipo de Novedades</a>");
+                                    out.println("<a class='dropdown-item' href='tipodenovedades.htm'>Tabla de Novedades</a>");
+                                    out.println("<a class='dropdown-item' href='facturacion.htm'>Facturación</a>");
                                     out.println("<a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>");
                                 out.println("</div>");
                             out.println("</li>");

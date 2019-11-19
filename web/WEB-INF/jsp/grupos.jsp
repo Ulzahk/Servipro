@@ -52,8 +52,8 @@
                                     out.println("Novedades");
                                 out.println("</a>");
                                 out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='novedades.htm'>Tabla Novedades</a>");
-                                    out.println("<a class='dropdown-item' href='tiponovedad.htm'>Tipo de Novedades</a>");
+                                    out.println("<a class='dropdown-item' href='tipodenovedades.htm'>Tabla De Novedades</a>");
+                                    out.println("<a class='dropdown-item' href='facturacion.htm'>Facturación</a>");
                                     out.println("<a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>");
                                 out.println("</div>");
                             out.println("</li>");
@@ -134,8 +134,8 @@
                                     out.println("Novedades");
                                 out.println("</a>");
                                 out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='novedades.htm'>Tabla Novedades</a>");
-                                    out.println("<a class='dropdown-item' href='tiponovedad.htm'>Tipo de Novedades</a>");
+                                    out.println("<a class='dropdown-item' href='tipodenovedades.htm'>Tabla De Novedades</a>");
+                                    out.println("<a class='dropdown-item' href='facturacion.htm'>Facturación</a>");
                                     out.println("<a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>");
                                 out.println("</div>");
                             out.println("</li>");
@@ -202,7 +202,7 @@
                     <a href="nomina.htm" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
                     <a href="agregargrupos.htm" class="btn btn-secondary">Agregar Registro</a>
                     <form action="" method="post">
-                    <div class="input-group mt-3"">
+                    <div class="input-group mt-3">
                         <input type="text" class="form-control" name="Buscar" placeholder="Buscar en Servisoft S.A."/>
                         <div class="input-group-append">
                             <button type="submit" Value="Buscar" class="btn btn-secondary"><i class="fas fa-search"></i> Buscar</button> 

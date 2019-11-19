@@ -42,13 +42,7 @@
                 <prop key="agregarconfiguracion.htm">controlAgregarConfiguracion</prop>
                 <prop key="editarconfiguracion.htm">controlEditarConfiguracion</prop>
                 <prop key="eliminarconfiguracion.htm">controlEliminarConfiguracion</prop>
-                <prop key="confirmareliminarconfiguracion.htm">controlConfirmarEliminarConfiguracion</prop>
-                <!--Novedades props-->
-                <prop key="novedades.htm">controlNovedades</prop>
-                <prop key="agregarnovedades.htm">controlAgregarNovedades</prop>
-                <prop key="editarnovedades.htm">controlEditarNovedades</prop>
-                <prop key="eliminarnovedades.htm">controlEliminarNovedades</prop>
-                <prop key="confirmareliminarnovedades.htm">controlConfirmarEliminarNovedades</prop>
+                <prop key="confirmareliminarconfiguracion.htm">controlConfirmarEliminarConfiguracion</prop>               
                 <!--TipoDeNoverdades props-->
                 <prop key="tipodenovedades.htm">controlTipoDeNovedades</prop>
                 <prop key="agregartipodenovedades.htm">controlAgregarTipoDeNovedades</prop>
@@ -153,27 +147,13 @@
     <bean name="controlEditarConfiguracion" class="Controles.Configuracion.ControlEditarConfiguracion" />
     <bean name="controlEliminarConfiguracion" class="Controles.Configuracion.ControlEliminarConfiguracion"/>
     <bean name="controlConfirmarEliminarConfiguracion" class="Controles.Configuracion.ControlConfirmarEliminarConfiguracion"/>
-    <!--Novedades-->
-    <bean name="controlNovedades" class="Controles.Novedades.ControlNovedades"/>
-    <bean name="controlAgregarNovedades" class="Controles.Novedades.ControlAgregarNovedades" />
-    <bean name="controlEditarNovedades" class="Controles.Novedades.ControlEditarNovedades"/>
-    <bean name="controlEliminarNovedades" class="Controles.Novedades.ControlEliminarNovedades"/>
-    <bean name="controlConfirmarEliminarNovedades" class="Controles.Novedades.ControlConfirmarEliminarNovedades"/>
-    
-    
-    
-      
-    
+
     <!--TipoDeNovedades-->
     <bean name="controlTipoDeNovedades" class="Controles.TipoDeNovedades.ControlTipoDeNovedades"/>
     <bean name="controlAgregarTipoDeNovedades" class="Controles.TipoDeNovedades.ControlAgregarTipoDeNovedades"/>
     <bean name="controlEditarTipoDeNovedades" class="Controles.TipoDeNovedades.ControlEditarTipoDeNovedades"/>
     <bean name="controlEliminarTipoDeNovedades" class="Controles.TipoDeNovedades.ControlEliminarTipoDeNovedades"/>
     <bean name="controlConfirmarEliminarTipoDeNovedades" class="Controles.TipoDeNovedades.ControlConfirmarEliminarTipoDeNovedades"/>
-        
-    
-    
-    
 
     <!--Tiponovedad-->
     <bean name="controlTipoNovedad" class="Controles.TipoNovedad.ControlTipoNovedad"/>
@@ -189,9 +169,7 @@
     <bean name="controlEditarFacturacion" class="Controles.Facturacion.ControlEditarFacturacion"/>
     <bean name="controlEliminarFacturacion" class="Controles.Facturacion.ControlEliminarFacturacion"/>
     <bean name="controlConfirmarEliminarFacturacion" class="Controles.Facturacion.ControlConfirmarEliminarFacturacion"/>
-    
-    
-    
+      
     <!--Novedadesempleado-->
     <bean name="controlNovedadesEmpleado" class="Controles.NovedadesEmpleado.ControlNovedadesEmpleado"/>
     <bean name="controlAgregarNovedadesEmpleado" class="Controles.NovedadesEmpleado.ControlAgregarNovedadesEmpleado"/>
