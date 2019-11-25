@@ -3,37 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/editarcargoempleado.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/editargrupos.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/editarperfil.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/agregartipodenovedades.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/eliminarcentrodecostos.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/agregarnovedadesempleado.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/centrodecostos.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/editarmodulos.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/editarconfiguracion.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/agregarperfil.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/cargoempleado.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/editarnovedadesempleado.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/agregarnovedades.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/editarnovedades.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/editarusuarios.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/agregartiponovedad.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/editarempleados.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/editartiponovedad.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/eliminarcargoempleado.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/Resources/JS/functions.js</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/agregarmodulosperfil.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/editarresponsablegrupo.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/configuracion.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/editartipodenovedades.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/agregarusuarios.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/eliminarconfiguracion.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/editarfacturacion.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/editarcentrodecostos.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/agregarresponsablegrupo.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/editarempleadosgrupo.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/editarmodulosperfil.jsp</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/WEB-INF/jsp/estadisticas.jsp</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/WEB-INF/jsp/editarestadisticas.jsp</file>
         </group>
     </open-files>
 </project-private>

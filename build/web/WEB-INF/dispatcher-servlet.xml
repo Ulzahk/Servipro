@@ -24,7 +24,11 @@
                 <!--Nomina-->
                 <prop key="nomina.htm">controlNomina</prop>
                 <!--Consulta-->
+                <!--Estadisticas-->
                 <prop key="estadisticas.htm">controlEstadisticas</prop>
+                <prop key="agregarestadisticas.htm">controlAgregarEstadisticas</prop>
+                <prop key="editarestadisticas.htm">controlEditarEstadisticas</prop>
+                <prop key="eliminarestadisticas.htm">controlEliminarEstadisticas</prop>
                 <!--Usuarios props-->
                 <prop key="usuarios.htm">controlUsuarios</prop>
                 <prop key="agregarusuarios.htm">controlAgregarUsuarios</prop>
@@ -122,7 +126,11 @@
     <!--Nomina-->
     <bean name="controlNomina" class="Controles.ControlNomina"/>
     <!--Consulta-->
+    <!--Estadisticas-->
     <bean name="controlEstadisticas" class="Controles.Estadisticas.ControlEstadisticas"/>
+    <bean name="controlAgregarEstadisticas" class="Controles.Estadisticas.ControlAgregarEstadisticas"/>
+    <bean name="controlEditarEstadisticas" class="Controles.Estadisticas.ControlEditarEstadisticas"/>
+    <bean name="controlEliminarEstadisticas" class="Controles.Estadisticas.ControlEliminarEstadisticas"/>
     <!--Usuarios-->
     <bean name="controlUsuarios" class="Controles.Usuarios.ControlUsuarios"/>
     <bean name="controlAgregarUsuarios" class="Controles.Usuarios.ControlAgregarUsuarios"/>
