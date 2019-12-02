@@ -201,7 +201,7 @@
                     </form>
                 </div>
                 <div class="card-body">
-                    <table border="1" class="table table-bordered table-striped table-hover text-center">
+                    <table border="1" class="table table-bordered table-striped table-hover text-center table-responsive-lg">
                         <thead>
                             <tr>
                                 <th class="align-middle">Usuario</th>

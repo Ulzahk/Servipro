@@ -6,6 +6,7 @@ import Modelos.Empleados.Empleados;
 import Modelos.Empleados.EmpleadosValidacion;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -32,6 +33,17 @@ public class ControlEditarEmpleados {
         this.jdbcTemplate=new JdbcTemplate(con.conectar());
         
     }
+    
+    @RequestMapping("agregarempleados.htm")
+    public ModelAndView empleados(){
+        ModelAndView mav=new ModelAndView();
+        String sql="select * from empleados";
+        List datos=this.jdbcTemplate.queryForList(sql);
+        mav.addObject("datos", datos);
+        mav.setViewName("agregarempleados");
+        return mav;
+    }
+    
     
     @RequestMapping(method=RequestMethod.GET)
     public ModelAndView empleados(HttpServletRequest request){

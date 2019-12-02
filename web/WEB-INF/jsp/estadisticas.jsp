@@ -118,7 +118,7 @@
                         <a href="nomina.htm" class="btn btn-secondary mr-2"><i class="fas fa-arrow-left"></i></a>
                         <a href="agregarestadisticas.htm" class="btn btn-secondary mr-2">Agregar Registro</a>
                         <select  class="form-control" id="Filtrar" name="Filtrar">
-                                <option selected>Mensualidad</option> 
+                                <option>Mensualidad</option> 
                                 <option>Quincena 1</option>
                                 <option>Quincena 2</option>
                         </select>
@@ -129,7 +129,7 @@
                     </form>
                 </div>
                 <div class="card-body">
-                    <table border="1" class="table table-bordered table-striped table-hover text-center">
+                    <table border="1" class="table table-bordered table-striped table-hover text-center table-responsive-xl">
                         <thead>
                             <tr>
                                 <th class="align-middle">Empleado</th>

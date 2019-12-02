@@ -213,6 +213,11 @@
                             <form:option value="PASAPORTE">PASAPORTE</form:option>
                         </form:select>
                     </p>
+                    <script>
+                        $(document).ready(function(){
+                            document.getElementById('tipo_documento').selectedIndex=-1;
+                        });
+                    </script>
                     <p>
                         <form:label path="documento"><b>Documento</b></form:label>
                         <form:input path="documento" cssClass="form-control"/>
