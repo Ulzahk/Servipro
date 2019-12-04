@@ -1,3 +1,6 @@
+<%@page import="java.math.BigInteger"%>
+<%@page import="java.security.MessageDigest"%>
+<%@page import="Utils.Encriptar"%>
 <%@page import="java.sql.*"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -181,6 +184,14 @@
             }
         %> 
         
+                <%
+            HttpSession sesion = request.getSession();
+            if(sesion.getAttribute("id_usuario")== null  || sesion.getAttribute("id_usuario").equals("0")){
+                response.sendRedirect("login.jsp");
+            }
+            Connection conn=null;
+            
+        %>
         
         <div class="container mt-4">
             <h1 class="text-center">Editar Usuario</h1>
@@ -190,9 +201,9 @@
                     <a href="usuarios.htm" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
                 </div>
                 <div class="card-body">
-                <form:form method="post" commandName="usuarios">
-                    <form:errors path="*" element="div" cssClass="alert alert-danger"/>
-                    <p>
+                    <form:form method="post" commandName="usuarios">
+                        <form:errors path="*" element="div" cssClass="alert alert-danger"/>
+                        <p>
                         <label for="id_empleado"><b>Empleado</b></label>
                         <select id="id_empleado" name="id_empleado" class="form-control">
                             <option value="-1">SELECCIONE NUEVAMENTE AL EMPLEADO</option>
@@ -201,7 +212,7 @@
                                 {
                                    String Query="select * from nm_empleados";
                                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                                   Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
+                                   conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
                                    Statement stm=conn.createStatement();
                                    ResultSet rs=stm.executeQuery(Query);
                                    while(rs.next())
@@ -217,45 +228,91 @@
                                     out.println("Error "+ex.getMessage());
                                 }
                             %>
-                        </select>
-                    </p>
-                    <p>
-                        <form:label path="contraseña"><b>Contraseña</b></form:label>
-                        <form:input path="contraseña" cssClass="form-control"/>
-                    </p>
-                    <p>
-                        <label id="id_perfil"><b>Perfil</b></label>
-                        <select id="id_perfil" name="id_perfil" class="form-control">
-                            <option value="-1">SELECCIONE UN PERFIL</option>
-                            <%
-                                try
-                                {
-                                    String Query="select * from nm_perfil";
-                                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                                    Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
-                                    Statement stm=conn.createStatement();
-                                    ResultSet rs=stm.executeQuery(Query);
-                                    while(rs.next()){
-                                        %>
-                                        <option value="<%=rs.getInt("Id_perfil")%>"><%=rs.getString("Descripcion_perfil")%></option>
-                                        <%
-                                        
-                                    }
-                                }    
-                                catch( Exception ex)
-                                {  
-                                    ex.printStackTrace();
-                                    out.println("Error "+ex.getMessage());
-                                }      
-                            %>    
-                        </select>
-                    </p>
+                        </select> 
+                        </p>
+                        <p>
+                        <label for="id_perfil" id="id_perfil"><b>Perfil</b></label>
+                            <select id="id_perfil" name="id_perfil" class="form-control">
+                                <option value="-1">SELECCIONE UN PERFIL</option>
+                                <%
+                                    try
+                                    {
+                                     String Query="select * from nm_perfil";
+                                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                                        conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
+                                        Statement stm=conn.createStatement();
+                                        ResultSet rs=stm.executeQuery(Query);
+                                        while(rs.next()){
+                                            %>
+                                            <option value="<%=rs.getInt("Id_perfil")%>"><%=rs.getString("Descripcion_perfil")%></option>
+                                            <%
+                                            
+                                     }
+                                    }    
+                                    catch( Exception ex)
+                                    {  
+                                        ex.printStackTrace();
+                                        out.println("Error "+ex.getMessage());
+                                    }      
+                                %>    
+                            </select>                            
+                        </p> 
+                        <p>
+                            <form:label path="contraseña"><b>Contraseña</b></form:label>
+                            <form:input path="contraseña" id="contraseña" cssClass="form-control"/>
+                        </p>
+                        <p>
+                            <form:label path="" ><b>Confirmar Contraseña</b></form:label>
+                            <form:input path="" id="ccontraseña"  Class="form-control"/>
+                        </p>
                     <hr/>
-                    <input type="submit" value="Guardar" class="btn btn-info"/>
-                </form:form>
+                        <input type="submit" id="Guardar" value="Guardar" name="btnGuardar" class="btn btn-info"/>
+                    </form:form>
                 </div>
             </div>
         </div>
     </body>
+<%
+    if(request.getParameter("btnGuardar")!= null){
+        String contraseña = request.getParameter("txtContraseña");
+        String ccontraseña = request.getParameter("txtConfirmarContraseña");
+        int id_empleado = Integer.parseInt(request.getParameter("id_empleado"));
+        int id_perfil = Integer.parseInt(request.getParameter("id_perfil"));
+            if(contraseña.equals(ccontraseña)){
+                try{
+                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                    conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
+                    PreparedStatement ps = conn.prepareStatement("UPDATE nm_usuarios SET (Id_usuario="+id_usuario+",Contraseña="+contraseña+",Id_empleado="+id_empleado+",Id_perfil="+id_perfil+")WHERE Id_usuario="+id_usuario+";"); 
+                    ps.setString(0, id_usuario);
+                    ps.setString(1, contraseña);
+                    ps.setInt(2, id_empleado);
+                    ps.setInt(3, id_perfil);
+                    ps.execute();
+                    response.sendRedirect("index.htm");
+                }catch(Exception ex){
+                    out.println(ex);
+                }           
+            }
+            else{
+                out.println("La contraseña no Coincide");
+            }
+    }
+    
+    %>
 </html>
-
+<%!
+    public String getMD5(String input){
+        try{
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte [] encBytes = md.digest(input.getBytes());
+            BigInteger numero = new  BigInteger(1, encBytes);
+            String encString = numero.toString(16);
+            while (encString.length()<32){
+                encString = "0" + encString;
+            }
+            return encString;
+        }catch (Exception ex){
+            throw new RuntimeException (ex); 
+        }
+    }
+%>

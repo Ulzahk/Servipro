@@ -8,7 +8,7 @@ import Modelos.Usuarios.UsuariosValidacion;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedHashMap;
-import java.util.List;
+import Utils.Encriptar;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.dao.DataAccessException;
@@ -66,11 +66,15 @@ public class ControlEditarUsuarios {
             
         }else{
             
+            String contraseña = u.getContraseña();
+            Encriptar enc = new Encriptar();
+            contraseña = enc.getMD5(contraseña);
             String id_usuario = request.getParameter("id_usuario");
             this.jdbcTemplate.update("update nm_usuarios set id_empleado=?, "
             +"contraseña=?, id_perfil=? where id_usuario=?",u.getId_empleado(),
-            u.getContraseña(),u.getId_perfil(),id_usuario);
+            contraseña,u.getId_perfil(),id_usuario);
             return new ModelAndView("redirect:/usuarios.htm");
+            
             
         }
     }

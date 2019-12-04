@@ -1,7 +1,6 @@
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
-<%@page import="java.math.BigInteger"%>
 <%@page import="java.util.Random"%>
-<%@page import="java.security.MessageDigest"%>
+<%@page import="Utils.Encriptar"%>
 <%@page import="java.security.NoSuchAlgorithmException"%>
 <%@page import="java.security.SecureRandom"%>
 <%@page import="java.security.spec.InvalidKeySpecException"%>
@@ -212,7 +211,7 @@
                 <div class="card-body">
                     <form method="post">
                         <p>
-                            <label for="Id_usuario">Usuarios:</label>
+                            <label for="Id_usuario"><b>Usuarios</b></label>
                             <input type="text" id="Id_usuario" name="txtUsuarios" placeholder="Nombre de usuario" Class="form-control"/>
                         </p>
                         <p>
@@ -249,6 +248,7 @@
                             <label for="contraseña"><b>Confirmar Contraseña</b></label>
                             <input type="text" id="ccontraseña" name="txtConfirmarContraseña" placeholder="**********" Class="form-control"/>
                         </p>
+                        
                         <p>
                             <label for="id_perfil"><b>Perfil</b></label>
                             <select id="id_perfil" name="txtid_perfil" class="form-control">
@@ -290,6 +290,7 @@
             String contraseña = request.getParameter("txtContraseña");
             String contraseña1 = request.getParameter("txtConfirmarContraseña");
             int Id_perfil = Integer.parseInt(request.getParameter("txtid_perfil"));
+            Encriptar enc = new Encriptar();
             
             if(contraseña.equals(contraseña1)){
                 try{
@@ -297,7 +298,7 @@
                     conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
                     PreparedStatement ps = conn.prepareStatement("INSERT INTO nm_usuarios (Id_usuario,Contraseña,Id_empleado,Id_perfil) VALUES (?,?,?,?)"); 
                     ps.setString(1, usuario);
-                    ps.setString(2, getMD5(contraseña));
+                    ps.setString(2, enc.getMD5(contraseña));
                     ps.setInt(3, Id_empleado);
                     ps.setInt(4, Id_perfil);
                     ps.execute();
@@ -313,19 +314,3 @@
         }
     %>
 </html>
-<%!
-    public String getMD5(String input){
-        try{
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            byte [] encBytes = md.digest(input.getBytes());
-            BigInteger numero = new  BigInteger(1, encBytes);
-            String encString = numero.toString(16);
-            while (encString.length()<23){
-                encString = "0" + encString;
-            }
-            return encString;
-        }catch (Exception ex){
-            throw new RuntimeException (ex); 
-        }
-    }
-%>
