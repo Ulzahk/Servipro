@@ -41,7 +41,7 @@ public class clsEmpleado {
         
         try {
             ResultSet rs = null;
-            PreparedStatement ps = conn.prepareStatement("{call spConsultarEmpleado()}");
+            PreparedStatement ps = conn.prepareStatement("{call spConsultarEmpleado}");
             
             rs=ps.executeQuery();
             
