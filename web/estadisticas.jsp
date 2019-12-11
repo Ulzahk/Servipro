@@ -293,17 +293,17 @@
                         </tr>
                         <tr>
                             <td class="align-middle"><a href="estadisticas?codigoDia1=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia1().getAliasDia1()%></a></td>
-                            <td class="align-middle"><%=elem.getObId_dia2().getAliasDia2()%></td>
-                            <td class="align-middle"><%=elem.getObId_dia3().getAliasDia3()%></td>
-                            <td class="align-middle"><%=elem.getObId_dia4().getAliasDia4()%></td>
-                            <td class="align-middle"><%=elem.getObId_dia5().getAliasDia5()%></td>
-                            <td class="align-middle"><%=elem.getObId_dia6().getAliasDia6()%></td>
-                            <td class="align-middle"><%=elem.getObId_dia7().getAliasDia7()%></td>
-                            <td class="align-middle"><%=elem.getObId_dia8().getAliasDia8()%></td>
-                            <td class="align-middle"><%=elem.getObId_dia9().getAliasDia9()%></td>
-                            <td class="align-middle"><%=elem.getObId_dia10().getAliasDia10()%></td>
-                            <td class="align-middle"><%=elem.getObId_dia11().getAliasDia11()%></td>
-                            <td class="align-middle"><%=elem.getObId_dia12().getAliasDia12()%></td>
+                            <td class="align-middle"><a href="estadisticas?codigoDia2=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia2().getAliasDia2()%></a></td>
+                            <td class="align-middle"><a href="estadisticas?codigoDia3=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia3().getAliasDia3()%></a></td>
+                            <td class="align-middle"><a href="estadisticas?codigoDia4=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia4().getAliasDia4()%></a></td>
+                            <td class="align-middle"><a href="estadisticas?codigoDia5=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia5().getAliasDia5()%></a></td>
+                            <td class="align-middle"><a href="estadisticas?codigoDia6=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia6().getAliasDia6()%></a></td>
+                            <td class="align-middle"><a href="estadisticas?codigoDia7=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia7().getAliasDia7()%></a></td>
+                            <td class="align-middle"><a href="estadisticas?codigoDia8=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia8().getAliasDia8()%></a></td>
+                            <td class="align-middle"><a href="estadisticas?codigoDia9=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia9().getAliasDia9()%></a></td>
+                            <td class="align-middle"><a href="estadisticas?codigoDia10=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia10().getAliasDia10()%></a></td>
+                            <td class="align-middle"><a href="estadisticas?codigoDia11=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia11().getAliasDia11()%></a></td>
+                            <td class="align-middle"><a href="estadisticas?codigoDia12=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia12().getAliasDia12()%></a></td>
                             <td class="align-middle"><%=elem.getObId_dia13().getAliasDia13()%></td>
                             <td class="align-middle"><%=elem.getObId_dia14().getAliasDia14()%></td>
                             <td class="align-middle"><%=elem.getObId_dia15().getAliasDia15()%></td>

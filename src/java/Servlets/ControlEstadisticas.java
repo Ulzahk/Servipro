@@ -123,49 +123,49 @@ public class ControlEstadisticas extends HttpServlet {
         }else if (request.getParameter("btnEditarEstaDia1")!= null){
             btnEditarEstaDia1(request, response);
         }else if (request.getParameter("codigoDia2")!= null){
-            cargarEditarEstaDia1(request, response);
+            cargarEditarEstaDia2(request, response);
         }else if (request.getParameter("btnEditarEstaDia2")!= null){
-            btnEditarEstaDia1(request, response);
+            btnEditarEstaDia2(request, response);
         }else if (request.getParameter("codigoDia3")!= null){
-            cargarEditarEstaDia1(request, response);
+            cargarEditarEstaDia3(request, response);
         }else if (request.getParameter("btnEditarEstaDia3")!= null){
-            btnEditarEstaDia1(request, response);
+            btnEditarEstaDia3(request, response);
         }else if (request.getParameter("codigoDia4")!= null){
-            cargarEditarEstaDia1(request, response);
+            cargarEditarEstaDia4(request, response);
         }else if (request.getParameter("btnEditarEstaDia4")!= null){
-            btnEditarEstaDia1(request, response);
+            btnEditarEstaDia4(request, response);
         }else if (request.getParameter("codigoDia5")!= null){
-            cargarEditarEstaDia1(request, response);
+            cargarEditarEstaDia5(request, response);
         }else if (request.getParameter("btnEditarEstaDia5")!= null){
-            btnEditarEstaDia1(request, response);
+            btnEditarEstaDia5(request, response);
         }else if (request.getParameter("codigoDia6")!= null){
-            cargarEditarEstaDia1(request, response);
+            cargarEditarEstaDia6(request, response);
         }else if (request.getParameter("btnEditarEstaDia6")!= null){
-            btnEditarEstaDia1(request, response);
+            btnEditarEstaDia6(request, response);
         }else if (request.getParameter("codigoDia7")!= null){
-            cargarEditarEstaDia1(request, response);
+            cargarEditarEstaDia7(request, response);
         }else if (request.getParameter("btnEditarEstaDia7")!= null){
-            btnEditarEstaDia1(request, response);
+            btnEditarEstaDia7(request, response);
         }else if (request.getParameter("codigoDia8")!= null){
-            cargarEditarEstaDia1(request, response);
+            cargarEditarEstaDia8(request, response);
         }else if (request.getParameter("btnEditarEstaDia8")!= null){
-            btnEditarEstaDia1(request, response);
+            btnEditarEstaDia8(request, response);
         }else if (request.getParameter("codigoDia9")!= null){
-            cargarEditarEstaDia1(request, response);
+            cargarEditarEstaDia9(request, response);
         }else if (request.getParameter("btnEditarEstaDia9")!= null){
-            btnEditarEstaDia1(request, response);
+            btnEditarEstaDia9(request, response);
         }else if (request.getParameter("codigoDia10")!= null){
-            cargarEditarEstaDia1(request, response);
+            cargarEditarEstaDia10(request, response);
         }else if (request.getParameter("btnEditarEstaDia10")!= null){
-            btnEditarEstaDia1(request, response);
+            btnEditarEstaDia10(request, response);
         }else if (request.getParameter("codigoDia11")!= null){
-            cargarEditarEstaDia1(request, response);
+            cargarEditarEstaDia11(request, response);
         }else if (request.getParameter("btnEditarEstaDia11")!= null){
-            btnEditarEstaDia1(request, response);
+            btnEditarEstaDia11(request, response);
         }else if (request.getParameter("codigoDia12")!= null){
-            cargarEditarEstaDia1(request, response);
+            cargarEditarEstaDia12(request, response);
         }else if (request.getParameter("btnEditarEstaDia12")!= null){
-            btnEditarEstaDia1(request, response);
+            btnEditarEstaDia12(request, response);
         }else if (request.getParameter("codigoDia13")!= null){
             cargarEditarEstaDia1(request, response);
         }else if (request.getParameter("btnEditarEstaDia13")!= null){
@@ -959,6 +959,484 @@ public class ControlEstadisticas extends HttpServlet {
         }
     }
     
+    public void btnEditarEstaDia2 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException,ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsId_dia2 obclsDia2 = new Modelos.Estadisticas.clsId_dia2();
+            
+            if(request.getParameter("IdModificar")!=null){
+                obclsEstadisticas.setId_estadistica(Integer.valueOf(request.getParameter("IdModificar")));
+            }                        
+            if(request.getParameter("ddlDia2")!=null){
+                //Modelo Externo
+                obclsDia2.setId_dia2(Integer.parseInt(request.getParameter("ddlDia2")));
+                //Asignación al modelo padre
+                obclsEstadisticas.setObId_dia2(obclsDia2);
+            }
+            //Definición de parametros desde el controlador
+            request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia2(obclsEstadisticas));
+            request.setAttribute("stTipo", "success");
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            //Redireccion y envio de valores
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo","error");
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            BL.Estadisticas.clsDia2 bl_clsDia2=new BL.Estadisticas.clsDia2();
+            request.setAttribute("lstclsDia2", bl_clsDia2.getDia2());
+            request.getRequestDispatcher("editarestadisticasdia2.jsp").forward(request, response);
+
+
+        }
+    }
+    
+    public void btnEditarEstaDia3 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException,ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsId_dia3 obclsDia3 = new Modelos.Estadisticas.clsId_dia3();
+            
+            if(request.getParameter("IdModificar")!=null){
+                obclsEstadisticas.setId_estadistica(Integer.valueOf(request.getParameter("IdModificar")));
+            }                        
+            if(request.getParameter("ddlDia3")!=null){
+                //Modelo Externo
+                obclsDia3.setId_dia3(Integer.parseInt(request.getParameter("ddlDia3")));
+                //Asignación al modelo padre
+                obclsEstadisticas.setObId_dia3(obclsDia3);
+            }
+            //Definición de parametros desde el controlador
+            request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia3(obclsEstadisticas));
+            request.setAttribute("stTipo", "success");
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            //Redireccion y envio de valores
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo","error");
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            BL.Estadisticas.clsDia3 bl_clsDia3=new BL.Estadisticas.clsDia3();
+            request.setAttribute("lstclsDia3", bl_clsDia3.getDia3());
+            request.getRequestDispatcher("editarestadisticasdia3.jsp").forward(request, response);
+
+
+        }
+    }
+    
+    public void btnEditarEstaDia4 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException,ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsId_dia4 obclsDia4 = new Modelos.Estadisticas.clsId_dia4();
+            
+            if(request.getParameter("IdModificar")!=null){
+                obclsEstadisticas.setId_estadistica(Integer.valueOf(request.getParameter("IdModificar")));
+            }                        
+            if(request.getParameter("ddlDia4")!=null){
+                //Modelo Externo
+                obclsDia4.setId_dia4(Integer.parseInt(request.getParameter("ddlDia4")));
+                //Asignación al modelo padre
+                obclsEstadisticas.setObId_dia4(obclsDia4);
+            }
+            //Definición de parametros desde el controlador
+            request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia4(obclsEstadisticas));
+            request.setAttribute("stTipo", "success");
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            //Redireccion y envio de valores
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo","error");
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            BL.Estadisticas.clsDia4 bl_clsDia4=new BL.Estadisticas.clsDia4();
+            request.setAttribute("lstclsDia4", bl_clsDia4.getDia4());
+            request.getRequestDispatcher("editarestadisticasdia4.jsp").forward(request, response);
+
+
+        }
+    }
+    
+    public void btnEditarEstaDia5 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException,ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsId_dia5 obclsDia5 = new Modelos.Estadisticas.clsId_dia5();
+            
+            if(request.getParameter("IdModificar")!=null){
+                obclsEstadisticas.setId_estadistica(Integer.valueOf(request.getParameter("IdModificar")));
+            }                        
+            if(request.getParameter("ddlDia5")!=null){
+                //Modelo Externo
+                obclsDia5.setId_dia5(Integer.parseInt(request.getParameter("ddlDia5")));
+                //Asignación al modelo padre
+                obclsEstadisticas.setObId_dia5(obclsDia5);
+            }
+            //Definición de parametros desde el controlador
+            request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia5(obclsEstadisticas));
+            request.setAttribute("stTipo", "success");
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            //Redireccion y envio de valores
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo","error");
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            BL.Estadisticas.clsDia5 bl_clsDia5=new BL.Estadisticas.clsDia5();
+            request.setAttribute("lstclsDia5", bl_clsDia5.getDia5());
+            request.getRequestDispatcher("editarestadisticasdia5.jsp").forward(request, response);
+
+
+        }
+    }
+    
+        public void btnEditarEstaDia6 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException,ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsId_dia6 obclsDia6 = new Modelos.Estadisticas.clsId_dia6();
+            
+            if(request.getParameter("IdModificar")!=null){
+                obclsEstadisticas.setId_estadistica(Integer.valueOf(request.getParameter("IdModificar")));
+            }                        
+            if(request.getParameter("ddlDia6")!=null){
+                //Modelo Externo
+                obclsDia6.setId_dia6(Integer.parseInt(request.getParameter("ddlDia6")));
+                //Asignación al modelo padre
+                obclsEstadisticas.setObId_dia6(obclsDia6);
+            }
+            //Definición de parametros desde el controlador
+            request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia6(obclsEstadisticas));
+            request.setAttribute("stTipo", "success");
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            //Redireccion y envio de valores
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo","error");
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            BL.Estadisticas.clsDia6 bl_clsDia6=new BL.Estadisticas.clsDia6();
+            request.setAttribute("lstclsDia6", bl_clsDia6.getDia6());
+            request.getRequestDispatcher("editarestadisticasdia6.jsp").forward(request, response);
+
+
+        }
+    }
+    
+   
+    
+    public void btnEditarEstaDia7 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException,ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsId_dia7 obclsDia7 = new Modelos.Estadisticas.clsId_dia7();
+            
+            if(request.getParameter("IdModificar")!=null){
+                obclsEstadisticas.setId_estadistica(Integer.valueOf(request.getParameter("IdModificar")));
+            }                        
+            if(request.getParameter("ddlDia7")!=null){
+                //Modelo Externo
+                obclsDia7.setId_dia7(Integer.parseInt(request.getParameter("ddlDia7")));
+                //Asignación al modelo padre
+                obclsEstadisticas.setObId_dia7(obclsDia7);
+            }
+            //Definición de parametros desde el controlador
+            request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia7(obclsEstadisticas));
+            request.setAttribute("stTipo", "success");
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            //Redireccion y envio de valores
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo","error");
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            BL.Estadisticas.clsDia7 bl_clsDia7=new BL.Estadisticas.clsDia7();
+            request.setAttribute("lstclsDia7", bl_clsDia7.getDia7());
+            request.getRequestDispatcher("editarestadisticasdia7.jsp").forward(request, response);
+
+
+        }
+    }
+    
+    public void btnEditarEstaDia8 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException,ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsId_dia8 obclsDia8 = new Modelos.Estadisticas.clsId_dia8();
+            
+            if(request.getParameter("IdModificar")!=null){
+                obclsEstadisticas.setId_estadistica(Integer.valueOf(request.getParameter("IdModificar")));
+            }                        
+            if(request.getParameter("ddlDia8")!=null){
+                //Modelo Externo
+                obclsDia8.setId_dia8(Integer.parseInt(request.getParameter("ddlDia8")));
+                //Asignación al modelo padre
+                obclsEstadisticas.setObId_dia8(obclsDia8);
+            }
+            //Definición de parametros desde el controlador
+            request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia8(obclsEstadisticas));
+            request.setAttribute("stTipo", "success");
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            //Redireccion y envio de valores
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo","error");
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            BL.Estadisticas.clsDia8 bl_clsDia8=new BL.Estadisticas.clsDia8();
+            request.setAttribute("lstclsDia8", bl_clsDia8.getDia8());
+            request.getRequestDispatcher("editarestadisticasdia8.jsp").forward(request, response);
+
+
+        }
+    }
+    
+    public void btnEditarEstaDia9 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException,ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsId_dia9 obclsDia9 = new Modelos.Estadisticas.clsId_dia9();
+            
+            if(request.getParameter("IdModificar")!=null){
+                obclsEstadisticas.setId_estadistica(Integer.valueOf(request.getParameter("IdModificar")));
+            }                        
+            if(request.getParameter("ddlDia9")!=null){
+                //Modelo Externo
+                obclsDia9.setId_dia9(Integer.parseInt(request.getParameter("ddlDia9")));
+                //Asignación al modelo padre
+                obclsEstadisticas.setObId_dia9(obclsDia9);
+            }
+            //Definición de parametros desde el controlador
+            request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia9(obclsEstadisticas));
+            request.setAttribute("stTipo", "success");
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            //Redireccion y envio de valores
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo","error");
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            BL.Estadisticas.clsDia9 bl_clsDia9=new BL.Estadisticas.clsDia9();
+            request.setAttribute("lstclsDia9", bl_clsDia9.getDia9());
+            request.getRequestDispatcher("editarestadisticasdia9.jsp").forward(request, response);
+
+
+        }
+    }
+    
+    public void btnEditarEstaDia10 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException,ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsId_dia10 obclsDia10 = new Modelos.Estadisticas.clsId_dia10();
+            
+            if(request.getParameter("IdModificar")!=null){
+                obclsEstadisticas.setId_estadistica(Integer.valueOf(request.getParameter("IdModificar")));
+            }                        
+            if(request.getParameter("ddlDia10")!=null){
+                //Modelo Externo
+                obclsDia10.setId_dia10(Integer.parseInt(request.getParameter("ddlDia10")));
+                //Asignación al modelo padre
+                obclsEstadisticas.setObId_dia10(obclsDia10);
+            }
+            //Definición de parametros desde el controlador
+            request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia10(obclsEstadisticas));
+            request.setAttribute("stTipo", "success");
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            //Redireccion y envio de valores
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo","error");
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            BL.Estadisticas.clsDia10 bl_clsDia10=new BL.Estadisticas.clsDia10();
+            request.setAttribute("lstclsDia10", bl_clsDia10.getDia10());
+            request.getRequestDispatcher("editarestadisticasdia10.jsp").forward(request, response);
+
+
+        }
+    }
+    
+    public void btnEditarEstaDia11 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException,ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsId_dia11 obclsDia11 = new Modelos.Estadisticas.clsId_dia11();
+            
+            if(request.getParameter("IdModificar")!=null){
+                obclsEstadisticas.setId_estadistica(Integer.valueOf(request.getParameter("IdModificar")));
+            }                        
+            if(request.getParameter("ddlDia11")!=null){
+                //Modelo Externo
+                obclsDia11.setId_dia11(Integer.parseInt(request.getParameter("ddlDia11")));
+                //Asignación al modelo padre
+                obclsEstadisticas.setObId_dia11(obclsDia11);
+            }
+            //Definición de parametros desde el controlador
+            request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia11(obclsEstadisticas));
+            request.setAttribute("stTipo", "success");
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            //Redireccion y envio de valores
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo","error");
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            BL.Estadisticas.clsDia11 bl_clsDia11=new BL.Estadisticas.clsDia11();
+            request.setAttribute("lstclsDia11", bl_clsDia11.getDia11());
+            request.getRequestDispatcher("editarestadisticasdia11.jsp").forward(request, response);
+
+
+        }
+    }
+    
+    public void btnEditarEstaDia12 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException,ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsId_dia12 obclsDia12 = new Modelos.Estadisticas.clsId_dia12();
+            
+            if(request.getParameter("IdModificar")!=null){
+                obclsEstadisticas.setId_estadistica(Integer.valueOf(request.getParameter("IdModificar")));
+            }                        
+            if(request.getParameter("ddlDia12")!=null){
+                //Modelo Externo
+                obclsDia12.setId_dia12(Integer.parseInt(request.getParameter("ddlDia12")));
+                //Asignación al modelo padre
+                obclsEstadisticas.setObId_dia12(obclsDia12);
+            }
+            //Definición de parametros desde el controlador
+            request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia12(obclsEstadisticas));
+            request.setAttribute("stTipo", "success");
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            //Redireccion y envio de valores
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo","error");
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            BL.Estadisticas.clsDia12 bl_clsDia12=new BL.Estadisticas.clsDia12();
+            request.setAttribute("lstclsDia12", bl_clsDia12.getDia12());
+            request.getRequestDispatcher("editarestadisticasdia12.jsp").forward(request, response);
+
+
+        }
+    }
+    
+    
+    
+    
     public void btnEliminarEsta (HttpServletRequest request,
             HttpServletResponse response) throws IOException, ServletException{
         
@@ -1049,7 +1527,458 @@ public class ControlEstadisticas extends HttpServlet {
         }
     }
     
+      public void cargarEditarEstaDia2 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            
+            List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticas = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            
+            lstclsEstadisticas = bl_clsEstadisticas.getEstadisticas();
+            
+            for (Modelos.Estadisticas.clsEstadisticas elem: lstclsEstadisticas){
+                if(elem.getId_estadistica()== Integer.parseInt(request.getParameter("codigoDia2"))){
+                    obclsEstadisticas = elem;
+                    break;
+                }
+            }
+            //Lista Dia 2 
+            BL.Estadisticas.clsDia2 bl_clsDia2=new BL.Estadisticas.clsDia2();
+            request.setAttribute("lstclsDia2", bl_clsDia2.getDia2());
+            
+            request.setAttribute("obclsEstadisticas", obclsEstadisticas);
+            request.setAttribute("lstclsEstadisticas",lstclsEstadisticas);
+            request.getRequestDispatcher("editarestadisticasdia2.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+            ex.getMessage();
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+        }
+    }
     
+       public void cargarEditarEstaDia3 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            
+            List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticas = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            
+            lstclsEstadisticas = bl_clsEstadisticas.getEstadisticas();
+            
+            for (Modelos.Estadisticas.clsEstadisticas elem: lstclsEstadisticas){
+                if(elem.getId_estadistica()== Integer.parseInt(request.getParameter("codigoDia3"))){
+                    obclsEstadisticas = elem;
+                    break;
+                }
+            }
+            //Lista Dia 2 
+            BL.Estadisticas.clsDia3 bl_clsDia3=new BL.Estadisticas.clsDia3();
+            request.setAttribute("lstclsDia3", bl_clsDia3.getDia3());
+            
+            request.setAttribute("obclsEstadisticas", obclsEstadisticas);
+            request.setAttribute("lstclsEstadisticas",lstclsEstadisticas);
+            request.getRequestDispatcher("editarestadisticasdia3.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+            ex.getMessage();
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+        }
+    }
+    
+     public void cargarEditarEstaDia4 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            
+            List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticas = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            
+            lstclsEstadisticas = bl_clsEstadisticas.getEstadisticas();
+            
+            for (Modelos.Estadisticas.clsEstadisticas elem: lstclsEstadisticas){
+                if(elem.getId_estadistica()== Integer.parseInt(request.getParameter("codigoDia4"))){
+                    obclsEstadisticas = elem;
+                    break;
+                }
+            }
+            //Lista Dia 2 
+            BL.Estadisticas.clsDia4 bl_clsDia4=new BL.Estadisticas.clsDia4();
+            request.setAttribute("lstclsDia4", bl_clsDia4.getDia4());
+            
+            request.setAttribute("obclsEstadisticas", obclsEstadisticas);
+            request.setAttribute("lstclsEstadisticas",lstclsEstadisticas);
+            request.getRequestDispatcher("editarestadisticasdia4.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+            ex.getMessage();
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+        }
+    }
+    
+     public void cargarEditarEstaDia5 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            
+            List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticas = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            
+            lstclsEstadisticas = bl_clsEstadisticas.getEstadisticas();
+            
+            for (Modelos.Estadisticas.clsEstadisticas elem: lstclsEstadisticas){
+                if(elem.getId_estadistica()== Integer.parseInt(request.getParameter("codigoDia5"))){
+                    obclsEstadisticas = elem;
+                    break;
+                }
+            }
+            //Lista Dia 2 
+            BL.Estadisticas.clsDia5 bl_clsDia5=new BL.Estadisticas.clsDia5();
+            request.setAttribute("lstclsDia5", bl_clsDia5.getDia5());
+            
+            request.setAttribute("obclsEstadisticas", obclsEstadisticas);
+            request.setAttribute("lstclsEstadisticas",lstclsEstadisticas);
+            request.getRequestDispatcher("editarestadisticasdia5.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+            ex.getMessage();
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+        }
+    }
+     
+      public void cargarEditarEstaDia6 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            
+            List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticas = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            
+            lstclsEstadisticas = bl_clsEstadisticas.getEstadisticas();
+            
+            for (Modelos.Estadisticas.clsEstadisticas elem: lstclsEstadisticas){
+                if(elem.getId_estadistica()== Integer.parseInt(request.getParameter("codigoDia6"))){
+                    obclsEstadisticas = elem;
+                    break;
+                }
+            }
+            //Lista Dia 2 
+            BL.Estadisticas.clsDia6 bl_clsDia6=new BL.Estadisticas.clsDia6();
+            request.setAttribute("lstclsDia6", bl_clsDia6.getDia6());
+            
+            request.setAttribute("obclsEstadisticas", obclsEstadisticas);
+            request.setAttribute("lstclsEstadisticas",lstclsEstadisticas);
+            request.getRequestDispatcher("editarestadisticasdia6.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+            ex.getMessage();
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+        }
+    }
+    
+
+    
+     public void cargarEditarEstaDia7 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            
+            List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticas = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            
+            lstclsEstadisticas = bl_clsEstadisticas.getEstadisticas();
+            
+            for (Modelos.Estadisticas.clsEstadisticas elem: lstclsEstadisticas){
+                if(elem.getId_estadistica()== Integer.parseInt(request.getParameter("codigoDia7"))){
+                    obclsEstadisticas = elem;
+                    break;
+                }
+            }
+            //Lista Dia 2 
+            BL.Estadisticas.clsDia7 bl_clsDia7=new BL.Estadisticas.clsDia7();
+            request.setAttribute("lstclsDia7", bl_clsDia7.getDia7());
+            
+            request.setAttribute("obclsEstadisticas", obclsEstadisticas);
+            request.setAttribute("lstclsEstadisticas",lstclsEstadisticas);
+            request.getRequestDispatcher("editarestadisticasdia7.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+            ex.getMessage();
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+        }
+    }
+    
+      public void cargarEditarEstaDia8 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            
+            List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticas = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            
+            lstclsEstadisticas = bl_clsEstadisticas.getEstadisticas();
+            
+            for (Modelos.Estadisticas.clsEstadisticas elem: lstclsEstadisticas){
+                if(elem.getId_estadistica()== Integer.parseInt(request.getParameter("codigoDia8"))){
+                    obclsEstadisticas = elem;
+                    break;
+                }
+            }
+            //Lista Dia 2 
+            BL.Estadisticas.clsDia8 bl_clsDia8=new BL.Estadisticas.clsDia8();
+            request.setAttribute("lstclsDia8", bl_clsDia8.getDia8());
+            
+            request.setAttribute("obclsEstadisticas", obclsEstadisticas);
+            request.setAttribute("lstclsEstadisticas",lstclsEstadisticas);
+            request.getRequestDispatcher("editarestadisticasdia8.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+            ex.getMessage();
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+        }
+    }
+      
+       public void cargarEditarEstaDia9 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            
+            List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticas = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            
+            lstclsEstadisticas = bl_clsEstadisticas.getEstadisticas();
+            
+            for (Modelos.Estadisticas.clsEstadisticas elem: lstclsEstadisticas){
+                if(elem.getId_estadistica()== Integer.parseInt(request.getParameter("codigoDia9"))){
+                    obclsEstadisticas = elem;
+                    break;
+                }
+            }
+            //Lista Dia 2 
+            BL.Estadisticas.clsDia9 bl_clsDia9=new BL.Estadisticas.clsDia9();
+            request.setAttribute("lstclsDia9", bl_clsDia9.getDia9());
+            
+            request.setAttribute("obclsEstadisticas", obclsEstadisticas);
+            request.setAttribute("lstclsEstadisticas",lstclsEstadisticas);
+            request.getRequestDispatcher("editarestadisticasdia9.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+            ex.getMessage();
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+        }
+    }
+    
+        public void cargarEditarEstaDia10 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            
+            List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticas = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            
+            lstclsEstadisticas = bl_clsEstadisticas.getEstadisticas();
+            
+            for (Modelos.Estadisticas.clsEstadisticas elem: lstclsEstadisticas){
+                if(elem.getId_estadistica()== Integer.parseInt(request.getParameter("codigoDia10"))){
+                    obclsEstadisticas = elem;
+                    break;
+                }
+            }
+            //Lista Dia 2 
+            BL.Estadisticas.clsDia10 bl_clsDia10=new BL.Estadisticas.clsDia10();
+            request.setAttribute("lstclsDia10", bl_clsDia10.getDia10());
+            
+            request.setAttribute("obclsEstadisticas", obclsEstadisticas);
+            request.setAttribute("lstclsEstadisticas",lstclsEstadisticas);
+            request.getRequestDispatcher("editarestadisticasdia10.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+            ex.getMessage();
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+        }
+    }
+    
+         public void cargarEditarEstaDia11 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            
+            List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticas = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            
+            lstclsEstadisticas = bl_clsEstadisticas.getEstadisticas();
+            
+            for (Modelos.Estadisticas.clsEstadisticas elem: lstclsEstadisticas){
+                if(elem.getId_estadistica()== Integer.parseInt(request.getParameter("codigoDia11"))){
+                    obclsEstadisticas = elem;
+                    break;
+                }
+            }
+            //Lista Dia 2 
+            BL.Estadisticas.clsDia11 bl_clsDia11=new BL.Estadisticas.clsDia11();
+            request.setAttribute("lstclsDia11", bl_clsDia11.getDia11());
+            
+            request.setAttribute("obclsEstadisticas", obclsEstadisticas);
+            request.setAttribute("lstclsEstadisticas",lstclsEstadisticas);
+            request.getRequestDispatcher("editarestadisticasdia11.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+            ex.getMessage();
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+        }
+    }
+    
+         public void cargarEditarEstaDia12 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            
+            List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticas = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            
+            lstclsEstadisticas = bl_clsEstadisticas.getEstadisticas();
+            
+            for (Modelos.Estadisticas.clsEstadisticas elem: lstclsEstadisticas){
+                if(elem.getId_estadistica()== Integer.parseInt(request.getParameter("codigoDia12"))){
+                    obclsEstadisticas = elem;
+                    break;
+                }
+            }
+            //Lista Dia 1 
+            BL.Estadisticas.clsDia12 bl_clsDia12=new BL.Estadisticas.clsDia12();
+            request.setAttribute("lstclsDia12", bl_clsDia12.getDia12());
+            
+            request.setAttribute("obclsEstadisticas", obclsEstadisticas);
+            request.setAttribute("lstclsEstadisticas",lstclsEstadisticas);
+            request.getRequestDispatcher("editarestadisticasdia12.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+            ex.getMessage();
+            
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+        }
+    }
     
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
