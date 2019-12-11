@@ -406,6 +406,102 @@ public class clsEstadisticas {
             return ex.getMessage();
         }
     }
+       public String updateEstaDia23(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+        try {
+            PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia23(?,?)}");
+            ps.setInt(1, obclsEstadisticas.getId_estadistica());
+            ps.setInt(2, obclsEstadisticas.getObId_dia23().getId_dia23());
+            ps.execute();
+            return "Se realizo el proceso con exito";
+        } catch (Exception ex) {
+            return ex.getMessage();
+        }
+    }
+       public String updateEstaDia24(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+        try {
+            PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia24(?,?)}");
+            ps.setInt(1, obclsEstadisticas.getId_estadistica());
+            ps.setInt(2, obclsEstadisticas.getObId_dia24().getId_dia24());
+            ps.execute();
+            return "Se realizo el proceso con exito";
+        } catch (Exception ex) {
+            return ex.getMessage();
+        }
+    }
+       public String updateEstaDia25(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+        try {
+            PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia25(?,?)}");
+            ps.setInt(1, obclsEstadisticas.getId_estadistica());
+            ps.setInt(2, obclsEstadisticas.getObId_dia25().getId_dia25());
+            ps.execute();
+            return "Se realizo el proceso con exito";
+        } catch (Exception ex) {
+            return ex.getMessage();
+        }
+    }
+       public String updateEstaDia26(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+        try {
+            PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia26(?,?)}");
+            ps.setInt(1, obclsEstadisticas.getId_estadistica());
+            ps.setInt(2, obclsEstadisticas.getObId_dia26().getId_dia26());
+            ps.execute();
+            return "Se realizo el proceso con exito";
+        } catch (Exception ex) {
+            return ex.getMessage();
+        }
+    }
+       public String updateEstaDia27(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+        try {
+            PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia27(?,?)}");
+            ps.setInt(1, obclsEstadisticas.getId_estadistica());
+            ps.setInt(2, obclsEstadisticas.getObId_dia27().getId_dia27());
+            ps.execute();
+            return "Se realizo el proceso con exito";
+        } catch (Exception ex) {
+            return ex.getMessage();
+        }
+    }
+       public String updateEstaDia28(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+        try {
+            PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia28(?,?)}");
+            ps.setInt(1, obclsEstadisticas.getId_estadistica());
+            ps.setInt(2, obclsEstadisticas.getObId_dia28().getId_dia28());
+            ps.execute();
+            return "Se realizo el proceso con exito";
+        } catch (Exception ex) {
+            return ex.getMessage();
+        }
+    }
+       public String updateEstaDia29(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+        try {
+            PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia29(?,?)}");
+            ps.setInt(1, obclsEstadisticas.getId_estadistica());
+            ps.setInt(2, obclsEstadisticas.getObId_dia29().getId_dia29());
+            ps.execute();
+            return "Se realizo el proceso con exito";
+        } catch (Exception ex) {
+            return ex.getMessage();
+        }
+    }
+       public String updateEstaDia30(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+        try {
+            PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia30(?,?)}");
+            ps.setInt(1, obclsEstadisticas.getId_estadistica());
+            ps.setInt(2, obclsEstadisticas.getObId_dia30().getId_dia30());
+            ps.execute();
+            return "Se realizo el proceso con exito";
+        } catch (Exception ex) {
+            return ex.getMessage();
+        }
+    }
 
     public List<Modelos.Estadisticas.clsEstadisticas> getEstadisticas() {
 
@@ -821,4 +917,6 @@ public class clsEstadisticas {
         }
         return lstclsEstadisticas;
     }
+
+    
 }
