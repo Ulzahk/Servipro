@@ -233,12 +233,22 @@
                     <a href="estadisticas?btnConsultarEsta=true" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
                 </div>
                 <div class="card-body">
-                    <form action="estadisticas" method="POST">                        
+                    <form action="estadisticas" method="POST">   
+                        <div class="form-group">
+                            <div class="form-group">
+                                <div class="col-12 text-center">                                 
+                                    <h4> 
+                                        <b><%=obclsEstadisticas.getObEmpleado().getNombreEmp()!= null ? obclsEstadisticas.getObEmpleado().getNombreEmp(): ""%></b>
+                                    </h4>                                         
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
                         <!--FILA 1-->
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia1">Dia 1</label>
+                                    <label for="lblDia1"><b>Dia 1</b></label>
                                     <select class="form-control" name="ddlDia1">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia1> lstclsDia1 = new ArrayList<Modelos.Estadisticas.clsId_dia1>();
@@ -259,7 +269,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia2">Dia 2</label>
+                                    <label for="lblDia2"><b>Dia 2</b></label>
                                     <select class="form-control" name="ddlDia2">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia2> lstclsDia2 = new ArrayList<Modelos.Estadisticas.clsId_dia2>();
@@ -280,7 +290,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia3">Dia 3</label>
+                                    <label for="lblDia3"><b>Dia 3</b></label>
                                     <select class="form-control" name="ddlDia3">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia3> lstclsDia3 = new ArrayList<Modelos.Estadisticas.clsId_dia3>();
@@ -306,7 +316,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia4">Dia 4</label>
+                                    <label for="lblDia4"><b>Dia 4</b></label>
                                     <select class="form-control" name="ddlDia4">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia4> lstclsDia4 = new ArrayList<Modelos.Estadisticas.clsId_dia4>();
@@ -327,7 +337,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia5">Dia 5</label>
+                                    <label for="lblDia5"><b>Dia 5</b></label>
                                     <select class="form-control" name="ddlDia5">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia5> lstclsDia5 = new ArrayList<Modelos.Estadisticas.clsId_dia5>();
@@ -348,7 +358,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia6">Dia 6</label>
+                                    <label for="lblDia6"><b>Dia 6</b></label>
                                     <select class="form-control" name="ddlDia6">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia6> lstclsDia6 = new ArrayList<Modelos.Estadisticas.clsId_dia6>();
@@ -374,7 +384,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia7">Dia 7</label>
+                                    <label for="lblDia7"><b>Dia 7</b></label>
                                     <select class="form-control" name="ddlDia7">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia7> lstclsDia7 = new ArrayList<Modelos.Estadisticas.clsId_dia7>();
@@ -395,7 +405,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia8">Dia 8</label>
+                                    <label for="lblDia8"><b>Dia 8</b></label>
                                     <select class="form-control" name="ddlDia8">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia8> lstclsDia8 = new ArrayList<Modelos.Estadisticas.clsId_dia8>();
@@ -416,7 +426,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia9">Dia 9</label>
+                                    <label for="lblDia9"><b>Dia 9</b></label>
                                     <select class="form-control" name="ddlDia9">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia9> lstclsDia9 = new ArrayList<Modelos.Estadisticas.clsId_dia9>();
@@ -442,7 +452,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia10">Dia 10</label>
+                                    <label for="lblDia10"><b>Dia 10</b></label>
                                     <select class="form-control" name="ddlDia10">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia10> lstclsDia10 = new ArrayList<Modelos.Estadisticas.clsId_dia10>();
@@ -463,7 +473,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia11">Dia 11</label>
+                                    <label for="lblDia11"><b>Dia 11</b></label>
                                     <select class="form-control" name="ddlDia11">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia11> lstclsDia11 = new ArrayList<Modelos.Estadisticas.clsId_dia11>();
@@ -484,7 +494,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia12">Dia 12</label>
+                                    <label for="lblDia12"><b>Dia 12</b></label>
                                     <select class="form-control" name="ddlDia12">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia12> lstclsDia12 = new ArrayList<Modelos.Estadisticas.clsId_dia12>();
@@ -510,7 +520,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia13">Dia 13</label>
+                                    <label for="lblDia13"><b>Dia 13</b></label>
                                     <select class="form-control" name="ddlDia13">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia13> lstclsDia13 = new ArrayList<Modelos.Estadisticas.clsId_dia13>();
@@ -531,7 +541,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia14">Dia 14</label>
+                                    <label for="lblDia14"><b>Dia 14</b></label>
                                     <select class="form-control" name="ddlDia14">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia14> lstclsDia14 = new ArrayList<Modelos.Estadisticas.clsId_dia14>();
@@ -552,7 +562,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia15">Dia 15</label>
+                                    <label for="lblDia15"><b>Dia 15</b></label>
                                     <select class="form-control" name="ddlDia15">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia15> lstclsDia15 = new ArrayList<Modelos.Estadisticas.clsId_dia15>();
@@ -578,7 +588,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia16">Dia 16</label>
+                                    <label for="lblDia16"><b>Dia 16</b></label>
                                     <select class="form-control" name="ddlDia16">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia16> lstclsDia16 = new ArrayList<Modelos.Estadisticas.clsId_dia16>();
@@ -599,7 +609,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia17">Dia 17</label>
+                                    <label for="lblDia17"><b>Dia 17</b></label>
                                     <select class="form-control" name="ddlDia17">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia17> lstclsDia17 = new ArrayList<Modelos.Estadisticas.clsId_dia17>();
@@ -620,7 +630,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia18">Dia 18</label>
+                                    <label for="lblDia18"><b>Dia 18</b></label>
                                     <select class="form-control" name="ddlDia18">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia18> lstclsDia18 = new ArrayList<Modelos.Estadisticas.clsId_dia18>();
@@ -646,7 +656,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia19">Dia 19</label>
+                                    <label for="lblDia19"><b>Dia 19</b></label>
                                     <select class="form-control" name="ddlDia19">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia19> lstclsDia19 = new ArrayList<Modelos.Estadisticas.clsId_dia19>();
@@ -667,7 +677,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia20">Dia 20</label>
+                                    <label for="lblDia20"><b>Dia 20</b></label>
                                     <select class="form-control" name="ddlDia20">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia20> lstclsDia20 = new ArrayList<Modelos.Estadisticas.clsId_dia20>();
@@ -688,7 +698,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia21">Dia 21</label>
+                                    <label for="lblDia21"><b>Dia 21</b></label>
                                     <select class="form-control" name="ddlDia21">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia21> lstclsDia21 = new ArrayList<Modelos.Estadisticas.clsId_dia21>();
@@ -714,7 +724,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia22">Dia 22</label>
+                                    <label for="lblDia22"><b>Dia 22</b></label>
                                     <select class="form-control" name="ddlDia22">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia22> lstclsDia22 = new ArrayList<Modelos.Estadisticas.clsId_dia22>();
@@ -735,7 +745,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia23">Dia 23</label>
+                                    <label for="lblDia23"><b>Dia 23</b></label>
                                     <select class="form-control" name="ddlDia23">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia23> lstclsDia23 = new ArrayList<Modelos.Estadisticas.clsId_dia23>();
@@ -756,7 +766,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia24">Dia 24</label>
+                                    <label for="lblDia24"><b>Dia 24</b></label>
                                     <select class="form-control" name="ddlDia24">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia24> lstclsDia24 = new ArrayList<Modelos.Estadisticas.clsId_dia24>();
@@ -782,7 +792,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia25">Dia 25</label>
+                                    <label for="lblDia25"><b>Dia 25</b></label>
                                     <select class="form-control" name="ddlDia25">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia25> lstclsDia25 = new ArrayList<Modelos.Estadisticas.clsId_dia25>();
@@ -803,7 +813,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia26">Dia 26</label>
+                                    <label for="lblDia26"><b>Dia 26</b></label>
                                     <select class="form-control" name="ddlDia26">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia26> lstclsDia26 = new ArrayList<Modelos.Estadisticas.clsId_dia26>();
@@ -824,7 +834,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia27">Dia 27</label>
+                                    <label for="lblDia27"><b>Dia 27</b></label>
                                     <select class="form-control" name="ddlDia27">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia27> lstclsDia27 = new ArrayList<Modelos.Estadisticas.clsId_dia27>();
@@ -850,7 +860,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia28">Dia 28</label>
+                                    <label for="lblDia28"><b>Dia 28</b></label>
                                     <select class="form-control" name="ddlDia28">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia28> lstclsDia28 = new ArrayList<Modelos.Estadisticas.clsId_dia28>();
@@ -871,7 +881,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia29">Dia 29</label>
+                                    <label for="lblDia29"><b>Dia 29</b></label>
                                     <select class="form-control" name="ddlDia29">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia29> lstclsDia29 = new ArrayList<Modelos.Estadisticas.clsId_dia29>();
@@ -892,7 +902,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia30">Dia 30</label>
+                                    <label for="lblDia30"><b>Dia 30</b></label>
                                     <select class="form-control" name="ddlDia30">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia30> lstclsDia30 = new ArrayList<Modelos.Estadisticas.clsId_dia30>();

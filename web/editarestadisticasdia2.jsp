@@ -21,7 +21,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Agregar Estadisticas por Empleado</title>
+        <title>Editar Estadisticas por Empleado</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -226,40 +226,24 @@
             }
         %> 
         <div class="container mt-4">
-            <h1 class="text-center">Agregar Estadisticas por Empleado</h1>
+            <h1 class="text-center">Editar Estadisticas DIA2</h1>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
                     <a href="estadisticas?btnConsultarEsta=true" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
                 </div>
                 <div class="card-body">
-                    <form action="estadisticas" method="POST">
-                        <!--FILA-->
+                    <form action="estadisticas" method="POST">   
                         <div class="form-group">
-                            <div class="row">
-                                <div class="col-12">
-                                    <label for="lblEmpleado"><b>Empleado</b></label>
-                                    <select class="form-control" name="ddlEmpleado">
-                                        <%
-                                            List<Modelos.Estadisticas.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.Estadisticas.clsEmpleado>();
-
-                                            if (request.getAttribute("lstclsEmpleado") != null) {
-                                                lstclsEmpleado = (List<Modelos.Estadisticas.clsEmpleado>) request.getAttribute("lstclsEmpleado");
-                                            }
-
-                                            for (Modelos.Estadisticas.clsEmpleado elem : lstclsEmpleado) {
-                                        %>
-                                        <option value="<%=elem.getId_empleado()%>"
-                                                <%=obclsEstadisticas.getObEmpleado()!= null ? obclsEstadisticas.getObEmpleado().getId_empleado() == elem.getId_empleado()? "selected" : "" : ""%>>
-                                            <%=elem.getNombreEmp()%>
-                                        </option>
-                                        <%
-                                            }
-                                        %>
-                                    </select>
-                                </div>                                
+                            <div class="form-group">
+                                <div class="col-12 text-center">                                 
+                                    <h4> 
+                                        <b><%=obclsEstadisticas.getObEmpleado().getNombreEmp()!= null ? obclsEstadisticas.getObEmpleado().getNombreEmp(): ""%></b>
+                                    </h4>                                         
+                                </div>
                             </div>
                         </div>
+                        <hr/>
                         <!--FILA 1-->
                         <div class="form-group">
                             <div class="form-row">
@@ -944,7 +928,8 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12">
-                                    <input type="submit" value="Guardar" class="btn btn-info" name="btnGuardarEsta"/>
+                                    <input type="submit" value="Guardar" class="btn btn-info" name="btnEditarEsta"/>
+                                    <input type="text" name="IdModificar" id="IdModificar" value="<%=obclsEstadisticas.getId_estadistica()%>" hidden=""/>
                                 </div>
                             </div>
                         </div>
@@ -954,9 +939,3 @@
         </div>
     </body>
 </html>
-
-
-
-  
-                                
-                                

@@ -21,7 +21,7 @@ public class clsEstadisticas {
     public String deleteEstadistica(Modelos.Estadisticas.clsEstadisticas obclsEstadistica){
         
         try{
-            PreparedStatement ps = conn.prepareStatement("{call spEliminarEstadistica (?)}");
+            PreparedStatement ps = conn.prepareStatement("{call spEliminarEsta (?)}");
             ps.setInt(1, obclsEstadistica.getId_estadistica());
             ps.execute();
             return "Se realizo el proceso con exito";
@@ -122,6 +122,19 @@ public class clsEstadisticas {
         }
         catch (Exception ex)
         {
+            return ex.getMessage();
+        }
+    }
+    
+    public String updateEstaDia1 (Modelos.Estadisticas.clsEstadisticas obclsEstadisticas){
+        
+        try {
+            PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia1(?,?)}");
+            ps.setInt(1, obclsEstadisticas.getId_estadistica());            
+            ps.setInt(2, obclsEstadisticas.getObId_dia1().getId_dia1());
+            ps.execute();
+            return "Se realizo el proceso con exito";
+        } catch (Exception ex) {
             return ex.getMessage();
         }
     }
@@ -334,4 +347,213 @@ public class clsEstadisticas {
         }
         return lstclsEstadisticas;
     }
+    
+    public List<Modelos.Estadisticas.clsEstadisticas> getBuscarEstadisticas(Modelos.Estadisticas.clsBuscar obclsBuscar){
+        
+        List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticas = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+        
+        try {
+            ResultSet rs = null;
+            PreparedStatement ps = conn.prepareStatement("{call spBuscarEsta(?)}");
+            ps.setString(1, obclsBuscar.getStBuscar());
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                Modelos.Estadisticas.clsEstadisticas obEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+                obEstadisticas.setId_estadistica(rs.getInt("Id_estadistica"));
+                
+                Modelos.Estadisticas.clsEmpleado obEmpleado = new Modelos.Estadisticas.clsEmpleado();
+                obEmpleado.setId_empleado(rs.getInt("Id_empleado"));
+                obEmpleado.setNombreEmp(rs.getString("Nombre"));
+                obEstadisticas.setObEmpleado(obEmpleado);                
+                
+                Modelos.Estadisticas.clsId_dia1 obId_dia1 = new Modelos.Estadisticas.clsId_dia1();
+                obId_dia1.setId_dia1(rs.getInt("Id_dia1"));
+                obId_dia1.setDescripcionDia1(rs.getString("Descripcion1"));
+                obId_dia1.setAliasDia1(rs.getString("Alias1"));
+                obEstadisticas.setObId_dia1(obId_dia1);
+                
+                Modelos.Estadisticas.clsId_dia2 obId_dia2 = new Modelos.Estadisticas.clsId_dia2();
+                obId_dia2.setId_dia2(rs.getInt("Id_dia2"));
+                obId_dia2.setDescripcionDia2(rs.getString("Descripcion2"));
+                obId_dia2.setAliasDia2(rs.getString("Alias2"));
+                obEstadisticas.setObId_dia2(obId_dia2);
+                
+                Modelos.Estadisticas.clsId_dia3 obId_dia3 = new Modelos.Estadisticas.clsId_dia3();
+                obId_dia3.setId_dia3(rs.getInt("Id_dia3"));
+                obId_dia3.setDescripcionDia3(rs.getString("Descripcion3"));
+                obId_dia3.setAliasDia3(rs.getString("Alias3"));
+                obEstadisticas.setObId_dia3(obId_dia3);
+                
+                Modelos.Estadisticas.clsId_dia4 obId_dia4 = new Modelos.Estadisticas.clsId_dia4();
+                obId_dia4.setId_dia4(rs.getInt("Id_dia4"));
+                obId_dia4.setDescripcionDia4(rs.getString("Descripcion4"));
+                obId_dia4.setAliasDia4(rs.getString("Alias4"));
+                obEstadisticas.setObId_dia4(obId_dia4);
+                
+                Modelos.Estadisticas.clsId_dia5 obId_dia5 = new Modelos.Estadisticas.clsId_dia5();
+                obId_dia5.setId_dia5(rs.getInt("Id_dia5"));
+                obId_dia5.setDescripcionDia5(rs.getString("Descripcion5"));
+                obId_dia5.setAliasDia5(rs.getString("Alias5"));
+                obEstadisticas.setObId_dia5(obId_dia5);
+                
+                Modelos.Estadisticas.clsId_dia6 obId_dia6 = new Modelos.Estadisticas.clsId_dia6();
+                obId_dia6.setId_dia6(rs.getInt("Id_dia6"));
+                obId_dia6.setDescripcionDia6(rs.getString("Descripcion6"));
+                obId_dia6.setAliasDia6(rs.getString("Alias6"));
+                obEstadisticas.setObId_dia6(obId_dia6);
+                
+                Modelos.Estadisticas.clsId_dia7 obId_dia7 = new Modelos.Estadisticas.clsId_dia7();
+                obId_dia7.setId_dia7(rs.getInt("Id_dia7"));
+                obId_dia7.setDescripcionDia7(rs.getString("Descripcion7"));
+                obId_dia7.setAliasDia7(rs.getString("Alias7"));
+                obEstadisticas.setObId_dia7(obId_dia7);
+                
+                Modelos.Estadisticas.clsId_dia8 obId_dia8 = new Modelos.Estadisticas.clsId_dia8();
+                obId_dia8.setId_dia8(rs.getInt("Id_dia8"));
+                obId_dia8.setDescripcionDia8(rs.getString("Descripcion8"));
+                obId_dia8.setAliasDia8(rs.getString("Alias8"));
+                obEstadisticas.setObId_dia8(obId_dia8);
+                
+                Modelos.Estadisticas.clsId_dia9 obId_dia9 = new Modelos.Estadisticas.clsId_dia9();
+                obId_dia9.setId_dia9(rs.getInt("Id_dia9"));
+                obId_dia9.setDescripcionDia9(rs.getString("Descripcion9"));
+                obId_dia9.setAliasDia9(rs.getString("Alias9"));
+                obEstadisticas.setObId_dia9(obId_dia9);
+                
+                Modelos.Estadisticas.clsId_dia10 obId_dia10 = new Modelos.Estadisticas.clsId_dia10();
+                obId_dia10.setId_dia10(rs.getInt("Id_dia10"));
+                obId_dia10.setDescripcionDia10(rs.getString("Descripcion10"));
+                obId_dia10.setAliasDia10(rs.getString("Alias10"));
+                obEstadisticas.setObId_dia10(obId_dia10);
+                
+                Modelos.Estadisticas.clsId_dia11 obId_dia11 = new Modelos.Estadisticas.clsId_dia11();
+                obId_dia11.setId_dia11(rs.getInt("Id_dia11"));
+                obId_dia11.setDescripcionDia11(rs.getString("Descripcion11"));
+                obId_dia11.setAliasDia11(rs.getString("Alias11"));
+                obEstadisticas.setObId_dia11(obId_dia11);
+                
+                Modelos.Estadisticas.clsId_dia12 obId_dia12 = new Modelos.Estadisticas.clsId_dia12();
+                obId_dia12.setId_dia12(rs.getInt("Id_dia12"));
+                obId_dia12.setDescripcionDia12(rs.getString("Descripcion12"));
+                obId_dia12.setAliasDia12(rs.getString("Alias12"));
+                obEstadisticas.setObId_dia12(obId_dia12);
+                
+                Modelos.Estadisticas.clsId_dia13 obId_dia13 = new Modelos.Estadisticas.clsId_dia13();
+                obId_dia13.setId_dia13(rs.getInt("Id_dia13"));
+                obId_dia13.setDescripcionDia13(rs.getString("Descripcion13"));
+                obId_dia13.setAliasDia13(rs.getString("Alias13"));
+                obEstadisticas.setObId_dia13(obId_dia13);
+                
+                Modelos.Estadisticas.clsId_dia14 obId_dia14 = new Modelos.Estadisticas.clsId_dia14();
+                obId_dia14.setId_dia14(rs.getInt("Id_dia14"));
+                obId_dia14.setDescripcionDia14(rs.getString("Descripcion14"));
+                obId_dia14.setAliasDia14(rs.getString("Alias14"));
+                obEstadisticas.setObId_dia14(obId_dia14);
+                
+                Modelos.Estadisticas.clsId_dia15 obId_dia15 = new Modelos.Estadisticas.clsId_dia15();
+                obId_dia15.setId_dia15(rs.getInt("Id_dia15"));
+                obId_dia15.setDescripcionDia15(rs.getString("Descripcion15"));
+                obId_dia15.setAliasDia15(rs.getString("Alias15"));
+                obEstadisticas.setObId_dia15(obId_dia15);
+                
+                Modelos.Estadisticas.clsId_dia16 obId_dia16 = new Modelos.Estadisticas.clsId_dia16();
+                obId_dia16.setId_dia16(rs.getInt("Id_dia16"));
+                obId_dia16.setDescripcionDia16(rs.getString("Descripcion16"));
+                obId_dia16.setAliasDia16(rs.getString("Alias16"));
+                obEstadisticas.setObId_dia16(obId_dia16);
+                
+                Modelos.Estadisticas.clsId_dia17 obId_dia17 = new Modelos.Estadisticas.clsId_dia17();
+                obId_dia17.setId_dia17(rs.getInt("Id_dia17"));
+                obId_dia17.setDescripcionDia17(rs.getString("Descripcion17"));
+                obId_dia17.setAliasDia17(rs.getString("Alias17"));
+                obEstadisticas.setObId_dia17(obId_dia17);
+                
+                Modelos.Estadisticas.clsId_dia18 obId_dia18 = new Modelos.Estadisticas.clsId_dia18();
+                obId_dia18.setId_dia18(rs.getInt("Id_dia18"));
+                obId_dia18.setDescripcionDia18(rs.getString("Descripcion18"));
+                obId_dia18.setAliasDia18(rs.getString("Alias18"));
+                obEstadisticas.setObId_dia18(obId_dia18);
+                
+                Modelos.Estadisticas.clsId_dia19 obId_dia19 = new Modelos.Estadisticas.clsId_dia19();
+                obId_dia19.setId_dia19(rs.getInt("Id_dia19"));
+                obId_dia19.setDescripcionDia19(rs.getString("Descripcion19"));
+                obId_dia19.setAliasDia19(rs.getString("Alias19"));
+                obEstadisticas.setObId_dia19(obId_dia19);
+                
+                Modelos.Estadisticas.clsId_dia20 obId_dia20 = new Modelos.Estadisticas.clsId_dia20();
+                obId_dia20.setId_dia20(rs.getInt("Id_dia20"));
+                obId_dia20.setDescripcionDia20(rs.getString("Descripcion20"));
+                obId_dia20.setAliasDia20(rs.getString("Alias20"));
+                obEstadisticas.setObId_dia20(obId_dia20);
+                
+                Modelos.Estadisticas.clsId_dia21 obId_dia21 = new Modelos.Estadisticas.clsId_dia21();
+                obId_dia21.setId_dia21(rs.getInt("Id_dia21"));
+                obId_dia21.setDescripcionDia21(rs.getString("Descripcion21"));
+                obId_dia21.setAliasDia21(rs.getString("Alias21"));
+                obEstadisticas.setObId_dia21(obId_dia21);
+                
+                Modelos.Estadisticas.clsId_dia22 obId_dia22 = new Modelos.Estadisticas.clsId_dia22();
+                obId_dia22.setId_dia22(rs.getInt("Id_dia22"));
+                obId_dia22.setDescripcionDia22(rs.getString("Descripcion22"));
+                obId_dia22.setAliasDia22(rs.getString("Alias22"));
+                obEstadisticas.setObId_dia22(obId_dia22);
+                
+                Modelos.Estadisticas.clsId_dia23 obId_dia23 = new Modelos.Estadisticas.clsId_dia23();
+                obId_dia23.setId_dia23(rs.getInt("Id_dia23"));
+                obId_dia23.setDescripcionDia23(rs.getString("Descripcion23"));
+                obId_dia23.setAliasDia23(rs.getString("Alias23"));
+                obEstadisticas.setObId_dia23(obId_dia23);
+                
+                Modelos.Estadisticas.clsId_dia24 obId_dia24 = new Modelos.Estadisticas.clsId_dia24();
+                obId_dia24.setId_dia24(rs.getInt("Id_dia24"));
+                obId_dia24.setDescripcionDia24(rs.getString("Descripcion24"));
+                obId_dia24.setAliasDia24(rs.getString("Alias24"));
+                obEstadisticas.setObId_dia24(obId_dia24);
+                
+                Modelos.Estadisticas.clsId_dia25 obId_dia25 = new Modelos.Estadisticas.clsId_dia25();
+                obId_dia25.setId_dia25(rs.getInt("Id_dia25"));
+                obId_dia25.setDescripcionDia25(rs.getString("Descripcion25"));
+                obId_dia25.setAliasDia25(rs.getString("Alias25"));
+                obEstadisticas.setObId_dia25(obId_dia25);
+                
+                Modelos.Estadisticas.clsId_dia26 obId_dia26 = new Modelos.Estadisticas.clsId_dia26();
+                obId_dia26.setId_dia26(rs.getInt("Id_dia26"));
+                obId_dia26.setDescripcionDia26(rs.getString("Descripcion26"));
+                obId_dia26.setAliasDia26(rs.getString("Alias26"));
+                obEstadisticas.setObId_dia26(obId_dia26);
+                
+                Modelos.Estadisticas.clsId_dia27 obId_dia27 = new Modelos.Estadisticas.clsId_dia27();
+                obId_dia27.setId_dia27(rs.getInt("Id_dia27"));
+                obId_dia27.setDescripcionDia27(rs.getString("Descripcion27"));
+                obId_dia27.setAliasDia27(rs.getString("Alias27"));
+                obEstadisticas.setObId_dia27(obId_dia27);
+                
+                Modelos.Estadisticas.clsId_dia28 obId_dia28 = new Modelos.Estadisticas.clsId_dia28();
+                obId_dia28.setId_dia28(rs.getInt("Id_dia28"));
+                obId_dia28.setDescripcionDia28(rs.getString("Descripcion28"));
+                obId_dia28.setAliasDia28(rs.getString("Alias28"));
+                obEstadisticas.setObId_dia28(obId_dia28);
+                
+                Modelos.Estadisticas.clsId_dia29 obId_dia29 = new Modelos.Estadisticas.clsId_dia29();
+                obId_dia29.setId_dia29(rs.getInt("Id_dia29"));
+                obId_dia29.setDescripcionDia29(rs.getString("Descripcion29"));
+                obId_dia29.setAliasDia29(rs.getString("Alias29"));
+                obEstadisticas.setObId_dia29(obId_dia29);
+                
+                Modelos.Estadisticas.clsId_dia30 obId_dia30 = new Modelos.Estadisticas.clsId_dia30();
+                obId_dia30.setId_dia30(rs.getInt("Id_dia30"));
+                obId_dia30.setDescripcionDia30(rs.getString("Descripcion30"));
+                obId_dia30.setAliasDia30(rs.getString("Alias30"));
+                obEstadisticas.setObId_dia30(obId_dia30);
+                
+                lstclsEstadisticas.add(obEstadisticas);
+            }
+        
+            
+        } catch (Exception e) {
+            
+        }
+        return lstclsEstadisticas;
+    } 
 }

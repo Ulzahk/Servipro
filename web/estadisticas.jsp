@@ -260,7 +260,7 @@
                             <td colspan="15" class="align-middle"><b>Días - Novedades</b></td>
                             <td class="align-middle"><b>Accíones</b></td>                            
                         </tr>
-                        <%
+                        <%                            
                             for(Modelos.Estadisticas.clsEstadisticas elem: lstclsEstadisticas){
                         %>
                         <tr>
@@ -282,17 +282,17 @@
                             <td class="align-middle">15</td>
                             <td rowspan="4" class="align-middle">
                                 <a class="btn btn-warning btn-sm mb-2" id="btnEditarEsta" 
-                                   href="estadisticas?stOpcion=M&codigoSeleccionado=<%=elem.getId_estadistica()%>">
+                                   href="estadisticas?codigoSeleccionado=<%=elem.getId_estadistica()%>">
                                     <i class="fas fa-edit" style="font-size:15px;"></i>
                                 </a>
                                 <a class="btn btn-danger btn-sm" id="btnEmplEliminar"
-                                   href="estadisticas?stOpcion=E&codigoSeleccionado=<%=elem.getId_estadistica()%>">
+                                   href="estadisticas?codigoEliminar=<%=elem.getId_estadistica()%>">
                                     <i class="fas fa-trash-alt" style="font-size:15px;"></i>
                                 </a>
                             </td>
                         </tr>
                         <tr>
-                            <td class="align-middle"><%=elem.getObId_dia1().getAliasDia1()%></td>
+                            <td class="align-middle"><a href="estadisticas?codigoDia1=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia1().getAliasDia1()%></a></td>
                             <td class="align-middle"><%=elem.getObId_dia2().getAliasDia2()%></td>
                             <td class="align-middle"><%=elem.getObId_dia3().getAliasDia3()%></td>
                             <td class="align-middle"><%=elem.getObId_dia4().getAliasDia4()%></td>
@@ -349,6 +349,22 @@
                 </div>
             </div>
         </div>
+                    
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">                        
+                        <div class="modal-body">
+                                
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         <script>
             $('a.btn-danger').click(function(event){
                 event.preventDefault();
@@ -361,5 +377,13 @@
                 }
             });   
         </script>
+        <script>
+                $('.openBtn').on('click',function(){
+                $('.modal-body').load(this.href, function()
+                {
+                    $('#myModal').modal({show:false});
+                });
+                });
+            </script>
     </body>
 </html>                           
