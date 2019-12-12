@@ -21,7 +21,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Editar Día 1</title>
+        <title>Editar Día 2</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -62,16 +62,13 @@
         <%
             }
         %>
-        <div class="container">    
-            <h3 class="text-center">Editar Dia 1</h3>
-            <br>
+        <div>    
             <div class="card border-info ">
-                
                 <div class="card-header bg-info text-white">                    
                         <div class="form-group">
                             <div class="form-group">
                                 <div class="col-12 text-center">                                    
-                                    <h5> 
+                                    <h5 class="align-middle mt-1"> 
                                         <b><%=obclsEstadisticas.getObEmpleado().getNombreEmp()!= null ? obclsEstadisticas.getObEmpleado().getNombreEmp(): ""%></b>
                                     </h5>                                         
                                 </div>
