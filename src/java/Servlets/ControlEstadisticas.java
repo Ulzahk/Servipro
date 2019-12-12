@@ -40,11 +40,21 @@ public class ControlEstadisticas extends HttpServlet {
             btnEditarEsta(request, response);
         } else if (request.getParameter("codigoSeleccionado")!=null){
             cargarEditarEsta(request, response);
-        } else if (request.getParameter("btnConsultarEsta")!= null){
+        } else if (request.getParameter("btnConsultarEstaMensualidad")!= null){
             BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
             
             request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+        } else if (request.getParameter("btnConsultarEstaQuincena1")!= null){
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            request.getRequestDispatcher("estadisticasquincena1.jsp").forward(request, response);
+        } else if (request.getParameter("btnConsultarEstaQuincena2")!= null){
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            request.getRequestDispatcher("estadisticasquincena2.jsp").forward(request, response);
         } else if (request.getParameter("btnAgregarEsta")!= null){
             
             //Listas desplegables
@@ -114,8 +124,12 @@ public class ControlEstadisticas extends HttpServlet {
             
             request.getRequestDispatcher("agregarestadisticas.jsp").forward(request, response);
             
-        } else if (request.getParameter("btnBuscarEsta")!=null){
-            btnBuscarEsta(request, response);
+        } else if (request.getParameter("btnBuscarEstaMensualidad")!=null){
+            btnBuscarEstaMensualidad(request, response);
+        }else if (request.getParameter("btnBuscarEstaQuincena1")!=null){
+            btnBuscarEstaQuincena1(request, response);
+        }else if (request.getParameter("btnBuscarEstaQuincena2")!=null){
+            btnBuscarEstaQuincena2(request, response);
         }else if (request.getParameter("codigoEliminar")!= null){
             btnEliminarEsta(request, response);
         }else if (request.getParameter("codigoDia1")!= null){
@@ -2224,7 +2238,7 @@ public class ControlEstadisticas extends HttpServlet {
         }
     }
     
-    public void btnBuscarEsta (HttpServletRequest request,
+    public void btnBuscarEstaMensualidad (HttpServletRequest request,
             HttpServletResponse response) throws IOException,ServletException{
         
         try {
@@ -2246,6 +2260,56 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("stMensaje", ex.getMessage());
             
             request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+        }
+    }
+    
+    public void btnBuscarEstaQuincena1 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException,ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            
+                Modelos.Estadisticas.clsBuscar obclsBuscar = new Modelos.Estadisticas.clsBuscar();
+                
+                if(request.getParameter("txtBuscarEsta")!=null){
+                    
+                    obclsBuscar.setStBuscar(request.getParameter("txtBuscarEsta"));
+                }
+                
+                request.setAttribute("stTipo", "success");
+                request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getBuscarEstadisticas(obclsBuscar));
+                
+                request.getRequestDispatcher("estadisticasquincena1.jsp").forward(request, response);
+        } catch (Exception ex) {
+            request.setAttribute("stTipo", "error");
+            request.setAttribute("stMensaje", ex.getMessage());
+            
+            request.getRequestDispatcher("estadisticasquincena1.jsp").forward(request, response);
+        }
+    }
+    
+    public void btnBuscarEstaQuincena2 (HttpServletRequest request,
+            HttpServletResponse response) throws IOException,ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            
+                Modelos.Estadisticas.clsBuscar obclsBuscar = new Modelos.Estadisticas.clsBuscar();
+                
+                if(request.getParameter("txtBuscarEsta")!=null){
+                    
+                    obclsBuscar.setStBuscar(request.getParameter("txtBuscarEsta"));
+                }
+                
+                request.setAttribute("stTipo", "success");
+                request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getBuscarEstadisticas(obclsBuscar));
+                
+                request.getRequestDispatcher("estadisticasquincena2.jsp").forward(request, response);
+        } catch (Exception ex) {
+            request.setAttribute("stTipo", "error");
+            request.setAttribute("stMensaje", ex.getMessage());
+            
+            request.getRequestDispatcher("estadisticasquincena2.jsp").forward(request, response);
         }
     }
     

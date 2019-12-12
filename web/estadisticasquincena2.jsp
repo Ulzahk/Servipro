@@ -239,7 +239,7 @@
                         <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2">Quincena 2</a>
                         <input type="text" class="form-control" name="txtBuscarEsta" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
                         <div class="input-group-append">
-                            <input type="submit" value="Buscar" class="btn btn-secondary" name="btnBuscarEstaMensualidad"> 
+                            <input type="submit" value="Buscar" class="btn btn-secondary" name="btnBuscarEstaQuincena2"> 
                         </div>
                     </div>
                     </form>
@@ -266,51 +266,7 @@
                             for(Modelos.Estadisticas.clsEstadisticas elem: lstclsEstadisticas){
                         %>
                         <tr>
-                            <td rowspan="4" class="align-middle"><%=elem.getObEmpleado().getNombreEmp()%></td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">2</td>
-                            <td class="align-middle">3</td>
-                            <td class="align-middle">4</td>
-                            <td class="align-middle">5</td>
-                            <td class="align-middle">6</td>
-                            <td class="align-middle">7</td>
-                            <td class="align-middle">8</td>
-                            <td class="align-middle">9</td>
-                            <td class="align-middle">10</td>
-                            <td class="align-middle">11</td>
-                            <td class="align-middle">12</td>
-                            <td class="align-middle">13</td>
-                            <td class="align-middle">14</td>
-                            <td class="align-middle">15</td>
-                            <td rowspan="4" class="align-middle">
-                                <a class="btn btn-warning btn-sm mb-2" id="btnEditarEsta" 
-                                   href="estadisticas?codigoSeleccionado=<%=elem.getId_estadistica()%>">
-                                    <i class="fas fa-edit" style="font-size:15px;"></i>
-                                </a>
-                                <a class="btn btn-danger btn-sm" id="btnEmplEliminar"
-                                   href="estadisticas?codigoEliminar=<%=elem.getId_estadistica()%>">
-                                    <i class="fas fa-trash-alt" style="font-size:15px;"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="align-middle"><a href="estadisticas?codigoDia1=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia1().getAliasDia1()%></a></td>
-                            <td class="align-middle"><a href="estadisticas?codigoDia2=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia2().getAliasDia2()%></a></td>
-                            <td class="align-middle"><a href="estadisticas?codigoDia3=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia3().getAliasDia3()%></a></td>
-                            <td class="align-middle"><a href="estadisticas?codigoDia4=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia4().getAliasDia4()%></a></td>
-                            <td class="align-middle"><a href="estadisticas?codigoDia5=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia5().getAliasDia5()%></a></td>
-                            <td class="align-middle"><a href="estadisticas?codigoDia6=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia6().getAliasDia6()%></a></td>
-                            <td class="align-middle"><a href="estadisticas?codigoDia7=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia7().getAliasDia7()%></a></td>
-                            <td class="align-middle"><a href="estadisticas?codigoDia8=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia8().getAliasDia8()%></a></td>
-                            <td class="align-middle"><a href="estadisticas?codigoDia9=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia9().getAliasDia9()%></a></td>
-                            <td class="align-middle"><a href="estadisticas?codigoDia10=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia10().getAliasDia10()%></a></td>
-                            <td class="align-middle"><a href="estadisticas?codigoDia11=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia11().getAliasDia11()%></a></td>
-                            <td class="align-middle"><a href="estadisticas?codigoDia12=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia12().getAliasDia12()%></a></td>
-                            <td class="align-middle"><a href="estadisticas?codigoDia13=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia13().getAliasDia13()%></a></td>
-                            <td class="align-middle"><a href="estadisticas?codigoDia14=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia14().getAliasDia14()%></a></td>
-                            <td class="align-middle"><a href="estadisticas?codigoDia15=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia15().getAliasDia15()%></a></td>
-                        </tr>
-                        <tr>
+                            <td rowspan="2" class="align-middle"><%=elem.getObEmpleado().getNombreEmp()%></td>
                             <td class="align-middle">16</td>
                             <td class="align-middle">17</td>
                             <td class="align-middle">18</td>
@@ -326,6 +282,16 @@
                             <td class="align-middle">28</td>
                             <td class="align-middle">29</td>
                             <td class="align-middle">30</td>
+                            <td rowspan="2" class="align-middle">
+                                <a class="btn btn-warning btn-sm mb-2" id="btnEditarEsta" 
+                                   href="estadisticas?codigoSeleccionado=<%=elem.getId_estadistica()%>">
+                                    <i class="fas fa-edit" style="font-size:15px;"></i>
+                                </a>
+                                <a class="btn btn-danger btn-sm" id="btnEmplEliminar"
+                                   href="estadisticas?codigoEliminar=<%=elem.getId_estadistica()%>">
+                                    <i class="fas fa-trash-alt" style="font-size:15px;"></i>
+                                </a>
+                            </td>
                         </tr>
                         <tr>
                             <td class="align-middle"><a href="estadisticas?codigoDia16=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia16().getAliasDia16()%></a></td>
