@@ -205,7 +205,7 @@
                         <thead>
                             <tr>
                                 <th class="align-middle">Empleado</th>
-                                <th class="align-middle">Documento</th>
+                                <th class="align-middle">Novedad</th>
                                 <th class="align-middle">Detalle</th>
                                 <th class="align-middle">Tipo</th>
                                 <th class="align-middle">Fecha</th>
@@ -215,11 +215,11 @@
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                             <tr>
-                                <td class="align-middle">${dato.Empleado}</td>
-                                <td class="align-middle">${dato.Documento}</td>
+                                <td class="align-middle">${dato.emplNombre}</td>
+                                <td class="align-middle">${dato.Descripcion}</td>
                                 <td class="align-middle">${dato.Detalle}</td>
-                                <td class="align-middle">${dato.Tipo}</td>
                                 <td class="align-middle">${dato.Fecha}</td>
+                                <td class="align-middle">${dato.Día}</td>
                                 <td class="align-middle">
                                     <a href="<c:url value="editarnovedadesempleado.htm?id_novedad_empleado=${dato.Id_novedad_empleado}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                     <a href="<c:url value="eliminarnovedadesempleado.htm?id_novedad_empleado=${dato.Id_novedad_empleado}"/>"class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>

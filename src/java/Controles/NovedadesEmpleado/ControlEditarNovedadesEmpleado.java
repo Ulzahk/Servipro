@@ -41,7 +41,7 @@ public class ControlEditarNovedadesEmpleado {
         NovedadesEmpleado datos=this.selectNovedadesEmpleado(id_novedad_empleado);
         mav.setViewName("editarnovedadesempleado");
         mav.addObject("novedadesempleado",new NovedadesEmpleado(id_novedad_empleado,
-        datos.getId_empleado(),datos.getDetalle(),datos.getTipo(),datos.getFecha()));
+        datos.getId_empleado(),datos.getId_novedad(),datos.getDetalle(),datos.getFecha(),datos.getDía()));
         return mav;
     }
     
@@ -57,15 +57,15 @@ public class ControlEditarNovedadesEmpleado {
             NovedadesEmpleado datos=this.selectNovedadesEmpleado(id_novedad_empleado);
             mav.setViewName("editarnovedadesempleado");
             mav.addObject("novedadesempleado", new NovedadesEmpleado(id_novedad_empleado,
-            datos.getId_empleado(),datos.getDetalle(),datos.getTipo(),datos.getFecha()));
+            datos.getId_empleado(),datos.getId_novedad(),datos.getDetalle(),datos.getFecha(),datos.getDía()));
             return mav;
             
         }else{
             
             int id_novedad_empleado=Integer.parseInt(request.getParameter("id_novedad_empleado"));
             this.jdbcTemplate.update("update nm_novedades_empleado set id_empleado=?, "
-            + "detalle=?, tipo=?, fecha=? where id_novedad_empleado=?",ne.getId_empleado(),
-            ne.getDetalle(),ne.getTipo(),ne.getFecha(),id_novedad_empleado);
+            + " id_novedad?, detalle=?, fecha=?, día=? where id_novedad_empleado=?",ne.getId_empleado(),
+            ne.getId_novedad(), ne.getDetalle(),ne.getFecha(), ne.getDía(), id_novedad_empleado);
             return new ModelAndView("redirect:/novedadesempleado.htm");
             
         }
@@ -80,9 +80,10 @@ public class ControlEditarNovedadesEmpleado {
             public NovedadesEmpleado extractData(ResultSet rs)throws SQLException,DataAccessException{
                if(rs.next()){
                    nove.setId_empleado(rs.getInt("id_empleado"));
+                   nove.setId_novedad(rs.getInt("id_novedad"));
                    nove.setDetalle(rs.getString("detalle"));
-                   nove.setTipo(rs.getInt("tipo"));
                    nove.setFecha(rs.getString("fecha"));
+                   nove.setDía(rs.getInt("día"));
                } 
                return nove;
             }
