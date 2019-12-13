@@ -20,7 +20,7 @@ public class ControlEliminarUsuarios {
     public ModelAndView usuarios(HttpServletRequest request){
         ModelAndView mav = new ModelAndView();
         String id_usuario=request.getParameter("id_usuario");
-        String sql="select * from nm_empleados join nm_usuarios on nm_empleados.id_empleado=nm_usuarios.id_empleado "
+        String sql="select * from nm_empleadosjsp join nm_usuarios on nm_empleadosjsp.emplId=nm_usuarios.id_empleado "
                 + "join nm_perfil on nm_usuarios.id_perfil=nm_perfil.id_perfil where id_usuario='"+id_usuario+"'";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("datos",datos);

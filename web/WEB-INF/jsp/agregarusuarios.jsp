@@ -221,7 +221,7 @@
                                 <%
                                     try
                                 {
-                                    String Query="select * from nm_empleados";
+                                    String Query="select * from nm_empleadosjsp";
                                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
                                     Connection conne=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
                                     Statement stm=conne.createStatement();
@@ -229,7 +229,7 @@
                                     while(rs.next())
                                     {
                                         %>
-                                        <option value="<%=rs.getInt("Id_empleado")%>"><%=rs.getString("Nombre")%></option>
+                                        <option value="<%=rs.getInt("emplId")%>"><%=rs.getString("emplNombre")%></option>
                                         <%
                                     }
                                 }

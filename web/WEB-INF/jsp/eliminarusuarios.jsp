@@ -206,8 +206,8 @@
                             <c:forEach var="dato" items="${datos}">
                             <tr>
                                 <td class="align-middle"><c:out value="${dato.Id_usuario}"/></td>
-                                <td class="align-middle"><c:out value="${dato.Nombre}"/></td>
-                                <td class="align-middle"><c:out value="${dato.Documento}"/></td>
+                                <td class="align-middle"><c:out value="${dato.emplNombre}"/></td>
+                                <td class="align-middle"><c:out value="${dato.emplDocumento}"/></td>
                                 <td class="align-middle"><c:out value="${dato.Contraseña}"/></td>
                                 <td class="align-middle"><c:out value="${dato.Descripcion_perfil}"/></td>
                                 <td class="align-middle">

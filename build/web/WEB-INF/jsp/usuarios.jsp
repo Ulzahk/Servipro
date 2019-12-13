@@ -218,12 +218,12 @@
                             {
                                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
                                 Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
-                                String Query="SELECT * FROM nm_usuarios u  JOIN nm_empleados emp "
-                                        + " ON emp.Id_empleado = u.Id_empleado JOIN nm_perfil p "
+                                String Query="SELECT * FROM nm_usuarios u  JOIN nm_empleadosjsp emp "
+                                        + " ON emp.emplId = u.Id_empleado JOIN nm_perfil p "
                                         + " ON u.Id_perfil = p.Id_perfil where"
                                         + " Id_usuario like '%"+request.getParameter("Buscar")+"%' or "
-                                        + " Nombre like '%"+request.getParameter("Buscar")+"%' or "
-                                        + " Documento like '%"+request.getParameter("Buscar")+"%' or "
+                                        + " emplNombre like '%"+request.getParameter("Buscar")+"%' or "
+                                        + " emplDocumento like '%"+request.getParameter("Buscar")+"%' or "
                                         + " Contraseña like '%"+request.getParameter("Buscar")+"%' or "
                                         + " Descripcion_perfil like '%"+request.getParameter("Buscar")+"%'";
                                 Statement stm=conn.createStatement();
@@ -237,11 +237,11 @@
                                         <tbody>
                                             <tr>
                                                 <td class="align-middle"><%=rs.getString("Id_usuario")%></td>
-                                                <td class="align-middle"><%=rs.getString("Nombre")%></td>
-                                                <td class="align-middle"><%=rs.getString("Documento")%></td>
+                                                <td class="align-middle"><%=rs.getString("emplNombre")%></td>
+                                                <td class="align-middle"><%=rs.getString("emplDocumento")%></td>
                                                 <td class="align-middle"><%=rs.getString("Contraseña")%></td>
                                                 <td class="align-middle"><%=rs.getString("Descripcion_perfil")%></td>
-                                                <c:forEach var="dato" items="${datos}"  begin="<%=rs.getInt("Id_empleado")-1%>" end="<%=rs.getInt("Id_empleado")-1%>">
+                                                <c:forEach var="dato" items="${datos}"  begin="<%=rs.getInt("emplId")-1%>" end="<%=rs.getInt("emplId")-1%>">
                                                 <td class="align-middle">
                                                     <a href="<c:url value="editarusuarios.htm?id_usuario=${dato.Id_usuario}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                                     <a href="<c:url value="eliminarusuarios.htm?id_usuario=${dato.Id_usuario}"/>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
@@ -257,8 +257,8 @@
                                         <c:forEach var="dato" items="${datos}">
                                         <tr>
                                             <td class="align-middle"><c:out value="${dato.Id_usuario}"/></td>
-                                            <td class="align-middle"><c:out value="${dato.Nombre}"/></td>
-                                            <td class="align-middle"><c:out value="${dato.Documento}"/></td>
+                                            <td class="align-middle"><c:out value="${dato.emplNombre}"/></td>
+                                            <td class="align-middle"><c:out value="${dato.emplDocumento}"/></td>
                                             <td class="align-middle"><c:out value="${dato.Contraseña}"/></td>
                                             <td class="align-middle"><c:out value="${dato.Descripcion_perfil}"/></td>
                                             <td class="align-middle">

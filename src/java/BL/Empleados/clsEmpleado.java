@@ -145,12 +145,12 @@ public class clsEmpleado {
                 
                 Modelos.Empleados.clsCentroCosto obclsCentroCosto = new Modelos.Empleados.clsCentroCosto();
                 obclsCentroCosto.setInId(rs.getInt("cecoId"));
-                obclsCentroCosto.setStDescripcion(rs.getString("cecoDescripcion"));
+                obclsCentroCosto.setStDescripcion(rs.getString("Nombre_ccostos"));
                 obclsEmpleado.setObclsCentroCosto(obclsCentroCosto);
                 
                 Modelos.Empleados.clsCargo obclsCargo = new Modelos.Empleados.clsCargo();
                 obclsCargo.setInId(rs.getInt("cargId"));
-                obclsCargo.setStDescripcion(rs.getString("cargDescripcion"));
+                obclsCargo.setStDescripcion(rs.getString("Descripcion_cargo"));
                 obclsEmpleado.setObclsCargo(obclsCargo);
                 
                 lstclsEmpleado.add(obclsEmpleado);
