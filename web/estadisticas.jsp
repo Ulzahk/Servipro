@@ -388,14 +388,12 @@
             </div>
             <!-- Modal -->
             <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
+                <div class="modal-dialog ">
+                    
                     <!-- Modal content-->
-                    <div class="modal-content">                        
+                    <div class="modal-content">  
                         <div class="modal-body">
 
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
                         </div>
                     </div>
                 </div>

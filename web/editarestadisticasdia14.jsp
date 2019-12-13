@@ -62,16 +62,14 @@
         <%
             }
         %>
-        <div class="container">    
-            <h3 class="text-center">Editar Dia 14</h3>
-            <br>
+        <div>    
             <div class="card border-info ">
                 
                 <div class="card-header bg-info text-white">                    
                         <div class="form-group">
                             <div class="form-group">
                                 <div class="col-12 text-center">                                    
-                                    <h5> 
+                                    <h5 class="align-middle mt-1"> 
                                         <b><%=obclsEstadisticas.getObEmpleado().getNombreEmp()!= null ? obclsEstadisticas.getObEmpleado().getNombreEmp(): ""%></b>
                                     </h5>                                         
                                 </div>
