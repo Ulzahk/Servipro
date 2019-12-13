@@ -36,16 +36,16 @@ public class ControlEmpleados extends HttpServlet {
                 btnEmplEliminar(request, response);
             }
         } else if(request.getParameter("btnEmplConsultar")!=null){
-            BL.clsEmpleado bl_clsEmpleado = new BL.clsEmpleado();
+            BL.Empleados.clsEmpleado bl_clsEmpleado = new BL.Empleados.clsEmpleado();
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
             
             request.getRequestDispatcher("empleados.jsp").forward(request, response); 
         } else if(request.getParameter("btnEmplAgregar")!=null){
             
             //Listas desplegables
-            BL.clsTipoDocumento bl_clsTipoDocumento = new BL.clsTipoDocumento();
-            BL.clsCentroCosto bl_clsCentroCosto = new BL.clsCentroCosto();
-            BL.clsCargo bl_clsCargo = new BL.clsCargo();
+            BL.Empleados.clsTipoDocumento bl_clsTipoDocumento = new BL.Empleados.clsTipoDocumento();
+            BL.Empleados.clsCentroCosto bl_clsCentroCosto = new BL.Empleados.clsCentroCosto();
+            BL.Empleados.clsCargo bl_clsCargo = new BL.Empleados.clsCargo();
             
             request.setAttribute("lstclsTipoDocumento", bl_clsTipoDocumento.getTipoDocumento());
             request.setAttribute("lstclsCentroCosto", bl_clsCentroCosto.getCentroCosto());
@@ -61,15 +61,15 @@ public class ControlEmpleados extends HttpServlet {
             HttpServletResponse response)throws ServletException, IOException{
         
         try {
-            BL.clsEmpleado bl_clsEmpleado = new BL.clsEmpleado();
+            BL.Empleados.clsEmpleado bl_clsEmpleado = new BL.Empleados.clsEmpleado();
             
             //Definición de Modelos
             
-            Modelos.clsEmpleado obclsEmpleado = new Modelos.clsEmpleado();
+            Modelos.Empleados.clsEmpleado obclsEmpleado = new Modelos.Empleados.clsEmpleado();
             
-            Modelos.clsTipoDocumento obclsTipoDocumento = new Modelos.clsTipoDocumento();
-            Modelos.clsCentroCosto obclsCentroCosto = new Modelos.clsCentroCosto();
-            Modelos.clsCargo obclsCargo = new Modelos.clsCargo();
+            Modelos.Empleados.clsTipoDocumento obclsTipoDocumento = new Modelos.Empleados.clsTipoDocumento();
+            Modelos.Empleados.clsCentroCosto obclsCentroCosto = new Modelos.Empleados.clsCentroCosto();
+            Modelos.Empleados.clsCargo obclsCargo = new Modelos.Empleados.clsCargo();
             
             if (request.getParameter("ddlTipoDocumento")!=null){
                 //Modelo Externo
@@ -115,9 +115,9 @@ public class ControlEmpleados extends HttpServlet {
             
             //Listas desplegables
             
-            BL.clsTipoDocumento bl_clsTipoDocumento = new BL.clsTipoDocumento();
-            BL.clsCentroCosto bl_clsCentroCosto = new BL.clsCentroCosto();
-            BL.clsCargo bl_clsCargo = new BL.clsCargo();
+            BL.Empleados.clsTipoDocumento bl_clsTipoDocumento = new BL.Empleados.clsTipoDocumento();
+            BL.Empleados.clsCentroCosto bl_clsCentroCosto = new BL.Empleados.clsCentroCosto();
+            BL.Empleados.clsCargo bl_clsCargo = new BL.Empleados.clsCargo();
             
             request.setAttribute("lstclsTipoDocumento", bl_clsTipoDocumento.getTipoDocumento());
             request.setAttribute("lstclsCentroCosto", bl_clsCentroCosto.getCentroCosto());
@@ -130,15 +130,15 @@ public class ControlEmpleados extends HttpServlet {
     public void cargarModificarEmpl(HttpServletRequest request,
             HttpServletResponse response) throws IOException, ServletException{
         try {
-            BL.clsEmpleado bl_clsEmpleado = new BL.clsEmpleado();
+            BL.Empleados.clsEmpleado bl_clsEmpleado = new BL.Empleados.clsEmpleado();
             //Lista de objetos donde esta la información guardada
-            List<Modelos.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.clsEmpleado>();
+            List<Modelos.Empleados.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.Empleados.clsEmpleado>();
             //Modelo que se esta trabajando
-            Modelos.clsEmpleado obclsEmpleado = new Modelos.clsEmpleado();
+            Modelos.Empleados.clsEmpleado obclsEmpleado = new Modelos.Empleados.clsEmpleado();
             
             lstclsEmpleado = bl_clsEmpleado.getEmpleado();
             
-            for (Modelos.clsEmpleado elem: lstclsEmpleado){
+            for (Modelos.Empleados.clsEmpleado elem: lstclsEmpleado){
                 if(elem.getInId()== Integer.parseInt(request.getParameter("codigoSeleccionado"))){
                     obclsEmpleado = elem;
                     break;
@@ -147,9 +147,9 @@ public class ControlEmpleados extends HttpServlet {
             
              //Listas desplegables
             
-            BL.clsTipoDocumento bl_clsTipoDocumento = new BL.clsTipoDocumento();
-            BL.clsCentroCosto bl_clsCentroCosto = new BL.clsCentroCosto();
-            BL.clsCargo bl_clsCargo = new BL.clsCargo();
+            BL.Empleados.clsTipoDocumento bl_clsTipoDocumento = new BL.Empleados.clsTipoDocumento();
+            BL.Empleados.clsCentroCosto bl_clsCentroCosto = new BL.Empleados.clsCentroCosto();
+            BL.Empleados.clsCargo bl_clsCargo = new BL.Empleados.clsCargo();
             
             request.setAttribute("lstclsTipoDocumento", bl_clsTipoDocumento.getTipoDocumento());
             request.setAttribute("lstclsCentroCosto", bl_clsCentroCosto.getCentroCosto());
@@ -173,15 +173,15 @@ public class ControlEmpleados extends HttpServlet {
             HttpServletResponse response)throws IOException, ServletException{
         try {
             
-            BL.clsEmpleado bl_clsEmpleado = new BL.clsEmpleado();
+            BL.Empleados.clsEmpleado bl_clsEmpleado = new BL.Empleados.clsEmpleado();
             
             //Definición de Modelos
             
-            Modelos.clsEmpleado obclsEmpleado = new Modelos.clsEmpleado();
+            Modelos.Empleados.clsEmpleado obclsEmpleado = new Modelos.Empleados.clsEmpleado();
             
-            Modelos.clsTipoDocumento obclsTipoDocumento = new Modelos.clsTipoDocumento();
-            Modelos.clsCentroCosto obclsCentroCosto = new Modelos.clsCentroCosto();
-            Modelos.clsCargo obclsCargo = new Modelos.clsCargo();
+            Modelos.Empleados.clsTipoDocumento obclsTipoDocumento = new Modelos.Empleados.clsTipoDocumento();
+            Modelos.Empleados.clsCentroCosto obclsCentroCosto = new Modelos.Empleados.clsCentroCosto();
+            Modelos.Empleados.clsCargo obclsCargo = new Modelos.Empleados.clsCargo();
             
             //Asignación de atributos o propiedades
             //Asignación de atributos o propiedades
@@ -231,13 +231,13 @@ public class ControlEmpleados extends HttpServlet {
             request.setAttribute("stTipo","error");
             
             //Lista de Empleados
-            BL.clsEmpleado bl_clsEmpleado = new BL.clsEmpleado();
+            BL.Empleados.clsEmpleado bl_clsEmpleado = new BL.Empleados.clsEmpleado();
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
             
             //Listas desplegables
-            BL.clsTipoDocumento bl_clsTipoDocumento = new BL.clsTipoDocumento();
-            BL.clsCentroCosto bl_clsCentroCosto = new BL.clsCentroCosto();
-            BL.clsCargo bl_clsCargo = new BL.clsCargo();
+            BL.Empleados.clsTipoDocumento bl_clsTipoDocumento = new BL.Empleados.clsTipoDocumento();
+            BL.Empleados.clsCentroCosto bl_clsCentroCosto = new BL.Empleados.clsCentroCosto();
+            BL.Empleados.clsCargo bl_clsCargo = new BL.Empleados.clsCargo();
             
             request.setAttribute("lstclsTipoDocumento", bl_clsTipoDocumento.getTipoDocumento());
             request.setAttribute("lstclsCentroCosto", bl_clsCentroCosto.getCentroCosto());
@@ -252,9 +252,9 @@ public class ControlEmpleados extends HttpServlet {
         
         try {
             
-            BL.clsEmpleado bl_clsEmpleado = new BL.clsEmpleado();
+            BL.Empleados.clsEmpleado bl_clsEmpleado = new BL.Empleados.clsEmpleado();
             
-            Modelos.clsEmpleado obclsEmpleado = new Modelos.clsEmpleado();
+            Modelos.Empleados.clsEmpleado obclsEmpleado = new Modelos.Empleados.clsEmpleado();
             
             if(request.getParameter("codigoSeleccionado")!=null){
                 obclsEmpleado.setInId(Integer.valueOf(request.getParameter("codigoSeleccionado")));
@@ -280,9 +280,9 @@ public class ControlEmpleados extends HttpServlet {
             HttpServletResponse response)throws IOException, ServletException{
         
         try {
-                BL.clsEmpleado bl_clsEmpleado = new BL.clsEmpleado();
+                BL.Empleados.clsEmpleado bl_clsEmpleado = new BL.Empleados.clsEmpleado();
                 
-                Modelos.clsBuscar obclsBuscar = new Modelos.clsBuscar();
+                Modelos.Empleados.clsBuscar obclsBuscar = new Modelos.Empleados.clsBuscar();
                 
                 if(request.getParameter("txtEmplBuscar")!=null){
                     obclsBuscar.setStBuscar(request.getParameter("txtEmplBuscar"));

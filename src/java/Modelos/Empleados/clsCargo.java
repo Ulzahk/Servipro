@@ -1,8 +1,8 @@
 
-package Modelos;
+package Modelos.Empleados;
 
 
-public class clsCentroCosto {
+public class clsCargo {
     
     public int inId;
     public String stDescripcion;
@@ -22,5 +22,7 @@ public class clsCentroCosto {
     public void setStDescripcion(String stDescripcion) {
         this.stDescripcion = stDescripcion;
     }
-
+    
+    
+    
 }

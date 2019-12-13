@@ -1,5 +1,6 @@
-package BL;
+package BL.Empleados;
 
+import BL.clsConexion;
 import java.sql.*;
 import java.util.*;
 import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
@@ -15,9 +16,9 @@ public class clsCargo {
         
     }
     
-    public List<Modelos.clsCargo> getCargo(){
+    public List<Modelos.Empleados.clsCargo> getCargo(){
         
-        List<Modelos.clsCargo> lstclsCargo = new ArrayList<Modelos.clsCargo>();
+        List<Modelos.Empleados.clsCargo> lstclsCargo = new ArrayList<Modelos.Empleados.clsCargo>();
         
         try {
             
@@ -25,9 +26,9 @@ public class clsCargo {
             ResultSet rs = ps.executeQuery();
             
             while(rs.next()){
-                Modelos.clsCargo obclsCargo = new Modelos.clsCargo();
-                obclsCargo.setInId(rs.getInt("cargId"));
-                obclsCargo.setStDescripcion(rs.getString("cargDescripcion"));
+                Modelos.Empleados.clsCargo obclsCargo = new Modelos.Empleados.clsCargo();
+                obclsCargo.setInId(rs.getInt("Id_cargo"));
+                obclsCargo.setStDescripcion(rs.getString("Descripcion_cargo"));
                 
                 lstclsCargo.add(obclsCargo);
             }
@@ -37,7 +38,5 @@ public class clsCargo {
         return lstclsCargo;
         
     }
-    
-    
-    
+   
 }

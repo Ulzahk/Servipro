@@ -1,8 +1,8 @@
 
-package Modelos;
+package Modelos.Empleados;
 
 
-public class clsTipoDocumento {
+public class clsCentroCosto {
     
     public int inId;
     public String stDescripcion;
@@ -22,6 +22,5 @@ public class clsTipoDocumento {
     public void setStDescripcion(String stDescripcion) {
         this.stDescripcion = stDescripcion;
     }
-    
-    
+
 }

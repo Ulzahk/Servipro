@@ -1,4 +1,5 @@
-package BL;
+package BL.Empleados;
+import BL.clsConexion;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,7 @@ public class clsEmpleado {
         
     }
     
-    public String createEmpleado(Modelos.clsEmpleado obclsEmpleado){
+    public String createEmpleado(Modelos.Empleados.clsEmpleado obclsEmpleado){
         
         try 
         {
@@ -35,9 +36,9 @@ public class clsEmpleado {
         }
     }
     
-    public List<Modelos.clsEmpleado> getEmpleado(){
+    public List<Modelos.Empleados.clsEmpleado> getEmpleado(){
         
-        List<Modelos.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.clsEmpleado>();
+        List<Modelos.Empleados.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.Empleados.clsEmpleado>();
         
         try {
             ResultSet rs = null;
@@ -46,10 +47,10 @@ public class clsEmpleado {
             rs=ps.executeQuery();
             
             while(rs.next()){
-                Modelos.clsEmpleado obclsEmpleado = new Modelos.clsEmpleado();
+                Modelos.Empleados.clsEmpleado obclsEmpleado = new Modelos.Empleados.clsEmpleado();
                 obclsEmpleado.setInId(rs.getInt("emplId"));
                 
-                Modelos.clsTipoDocumento obclsTipoDocumento = new Modelos.clsTipoDocumento();
+                Modelos.Empleados.clsTipoDocumento obclsTipoDocumento = new Modelos.Empleados.clsTipoDocumento();
                 obclsTipoDocumento.setInId(rs.getInt("tidoId"));
                 obclsTipoDocumento.setStDescripcion(rs.getString("tidoDescripcion"));
                 obclsEmpleado.setObclsTipoDocumento(obclsTipoDocumento);
@@ -58,14 +59,14 @@ public class clsEmpleado {
                 obclsEmpleado.setStNombre(rs.getString("emplNombre"));
                 obclsEmpleado.setStTelefono(rs.getString("emplTelefono"));
                 
-                Modelos.clsCentroCosto obclsCentroCosto = new Modelos.clsCentroCosto();
+                Modelos.Empleados.clsCentroCosto obclsCentroCosto = new Modelos.Empleados.clsCentroCosto();
                 obclsCentroCosto.setInId(rs.getInt("cecoId"));
-                obclsCentroCosto.setStDescripcion(rs.getString("cecoDescripcion"));
+                obclsCentroCosto.setStDescripcion(rs.getString("Nombre_ccostos"));
                 obclsEmpleado.setObclsCentroCosto(obclsCentroCosto);
                 
-                Modelos.clsCargo obclsCargo = new Modelos.clsCargo();
+                Modelos.Empleados.clsCargo obclsCargo = new Modelos.Empleados.clsCargo();
                 obclsCargo.setInId(rs.getInt("cargId"));
-                obclsCargo.setStDescripcion(rs.getString("cargDescripcion"));
+                obclsCargo.setStDescripcion(rs.getString("Descripcion_cargo"));
                 obclsEmpleado.setObclsCargo(obclsCargo);
                 
                 lstclsEmpleado.add(obclsEmpleado);
@@ -78,10 +79,10 @@ public class clsEmpleado {
         
     }
     
-    public String updateEmpleado(Modelos.clsEmpleado obclsEmpleado){
+    public String updateEmpleado(Modelos.Empleados.clsEmpleado obclsEmpleado){
         
         try {
-            PreparedStatement ps = conn.prepareStatement("{call spModificarEmpleado(?,?,?,?,?,?,?)}");
+            PreparedStatement ps = conn.prepareStatement("{call spEditarEmpleado(?,?,?,?,?,?,?)}");
             
             ps.setInt(1, obclsEmpleado.getInId());
             ps.setInt(2, obclsEmpleado.getObclsTipoDocumento().getInId());
@@ -101,7 +102,7 @@ public class clsEmpleado {
         }
     }
     
-    public String deleteEmpleado(Modelos.clsEmpleado obclsEmpleado){
+    public String deleteEmpleado(Modelos.Empleados.clsEmpleado obclsEmpleado){
         
         try {
             
@@ -117,9 +118,9 @@ public class clsEmpleado {
         }
     }
     
-    public List<Modelos.clsEmpleado> getBuscarEmpleado(Modelos.clsBuscar obclsBuscar){
+    public List<Modelos.Empleados.clsEmpleado> getBuscarEmpleado(Modelos.Empleados.clsBuscar obclsBuscar){
         
-        List<Modelos.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.clsEmpleado>();
+        List<Modelos.Empleados.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.Empleados.clsEmpleado>();
         
         try {
             
@@ -130,10 +131,10 @@ public class clsEmpleado {
             
             while(rs.next()){
                 
-                Modelos.clsEmpleado obclsEmpleado = new Modelos.clsEmpleado();
+                Modelos.Empleados.clsEmpleado obclsEmpleado = new Modelos.Empleados.clsEmpleado();
                 obclsEmpleado.setInId(rs.getInt("emplId"));
                 
-                Modelos.clsTipoDocumento obclsTipoDocumento = new Modelos.clsTipoDocumento();
+                Modelos.Empleados.clsTipoDocumento obclsTipoDocumento = new Modelos.Empleados.clsTipoDocumento();
                 obclsTipoDocumento.setInId(rs.getInt("tidoId"));
                 obclsTipoDocumento.setStDescripcion(rs.getString("tidoDescripcion"));
                 obclsEmpleado.setObclsTipoDocumento(obclsTipoDocumento);
@@ -142,12 +143,12 @@ public class clsEmpleado {
                 obclsEmpleado.setStNombre(rs.getString("emplNombre"));
                 obclsEmpleado.setStTelefono(rs.getString("emplTelefono"));
                 
-                Modelos.clsCentroCosto obclsCentroCosto = new Modelos.clsCentroCosto();
+                Modelos.Empleados.clsCentroCosto obclsCentroCosto = new Modelos.Empleados.clsCentroCosto();
                 obclsCentroCosto.setInId(rs.getInt("cecoId"));
                 obclsCentroCosto.setStDescripcion(rs.getString("cecoDescripcion"));
                 obclsEmpleado.setObclsCentroCosto(obclsCentroCosto);
                 
-                Modelos.clsCargo obclsCargo = new Modelos.clsCargo();
+                Modelos.Empleados.clsCargo obclsCargo = new Modelos.Empleados.clsCargo();
                 obclsCargo.setInId(rs.getInt("cargId"));
                 obclsCargo.setStDescripcion(rs.getString("cargDescripcion"));
                 obclsEmpleado.setObclsCargo(obclsCargo);

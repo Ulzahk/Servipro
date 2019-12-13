@@ -1,4 +1,6 @@
-package Modelos;
+package Modelos.Empleados;
+
+import Modelos.Empleados.clsTipoDocumento;
 
 
 public class clsEmpleado {

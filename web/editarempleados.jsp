@@ -33,16 +33,16 @@
     </head>
     <body>
         <%
-            Modelos.clsEmpleado obclsEmpleado = new Modelos.clsEmpleado();
+            Modelos.Empleados.clsEmpleado obclsEmpleado = new Modelos.Empleados.clsEmpleado();
 
             if (request.getAttribute("obclsEmpleado") != null) {
-                obclsEmpleado = (Modelos.clsEmpleado) request.getAttribute("obclsEmpleado");
+                obclsEmpleado = (Modelos.Empleados.clsEmpleado) request.getAttribute("obclsEmpleado");
             }
 
-            List<Modelos.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.clsEmpleado>();
+            List<Modelos.Empleados.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.Empleados.clsEmpleado>();
 
             if (request.getAttribute("lstclsEmpleado") != null) {
-                lstclsEmpleado = (List<Modelos.clsEmpleado>) request.getAttribute("lstclsEmpleado");
+                lstclsEmpleado = (List<Modelos.Empleados.clsEmpleado>) request.getAttribute("lstclsEmpleado");
             }
 
             if (request.getAttribute("stMensaje") != null && request.getAttribute("stTipo") != null) {
@@ -243,13 +243,13 @@
                                     <label for="lblTipoDocumento">Tipo Documento</label>
                                     <select class="form-control" name="ddlTipoDocumento">
                                         <%
-                                            List<Modelos.clsTipoDocumento> lstclsTipoDocumento = new ArrayList<Modelos.clsTipoDocumento>();
+                                            List<Modelos.Empleados.clsTipoDocumento> lstclsTipoDocumento = new ArrayList<Modelos.Empleados.clsTipoDocumento>();
 
                                             if (request.getAttribute("lstclsTipoDocumento") != null) {
-                                                lstclsTipoDocumento = (List<Modelos.clsTipoDocumento>) request.getAttribute("lstclsTipoDocumento");
+                                                lstclsTipoDocumento = (List<Modelos.Empleados.clsTipoDocumento>) request.getAttribute("lstclsTipoDocumento");
                                             }
 
-                                            for (Modelos.clsTipoDocumento elem : lstclsTipoDocumento) {
+                                            for (Modelos.Empleados.clsTipoDocumento elem : lstclsTipoDocumento) {
                                         %>
                                         <option value="<%=elem.getInId()%>"
                                                 <%=obclsEmpleado.getObclsTipoDocumento() != null ? obclsEmpleado.getObclsTipoDocumento().getInId() == elem.getInId() ? "selected" : "" : ""%>>
@@ -289,11 +289,11 @@
                                     <label for="lblCentroCosto">Centro Costos</label>
                                     <select class="form-control" name="ddlCentroCosto">
                                         <%
-                                            List<Modelos.clsCentroCosto> lstclsCentroCosto = new ArrayList<Modelos.clsCentroCosto>();
+                                            List<Modelos.Empleados.clsCentroCosto> lstclsCentroCosto = new ArrayList<Modelos.Empleados.clsCentroCosto>();
                                             if(request.getAttribute("lstclsCentroCosto")!=null){
-                                                lstclsCentroCosto = (List<Modelos.clsCentroCosto>)request.getAttribute("lstclsCentroCosto");
+                                                lstclsCentroCosto = (List<Modelos.Empleados.clsCentroCosto>)request.getAttribute("lstclsCentroCosto");
                                             }
-                                            for(Modelos.clsCentroCosto elem: lstclsCentroCosto){
+                                            for(Modelos.Empleados.clsCentroCosto elem: lstclsCentroCosto){
                                         %>
                                         <option value="<%=elem.getInId()%>"
                                                 <%=obclsEmpleado.getObclsCentroCosto() !=null ? obclsEmpleado.getObclsCentroCosto().getInId() == elem.getInId() ? "selected": "": ""%>>
@@ -308,12 +308,12 @@
                                     <label for="lblCargo">Cargo</label>
                                     <select class="form-control" name="ddlCargo">
                                         <%
-                                            List<Modelos.clsCargo> lstclsCargo = new ArrayList<Modelos.clsCargo>();
+                                            List<Modelos.Empleados.clsCargo> lstclsCargo = new ArrayList<Modelos.Empleados.clsCargo>();
                                             
                                             if(request.getAttribute("lstclsCargo")!=null){
-                                                lstclsCargo = (List<Modelos.clsCargo>)request.getAttribute("lstclsCargo");
+                                                lstclsCargo = (List<Modelos.Empleados.clsCargo>)request.getAttribute("lstclsCargo");
                                             }
-                                            for(Modelos.clsCargo elem: lstclsCargo){    
+                                            for(Modelos.Empleados.clsCargo elem: lstclsCargo){    
                                         %>
                                         <option value="<%=elem.getInId()%>"
                                                 <%=obclsEmpleado.getObclsCargo() !=null ? obclsEmpleado.getObclsCargo().getInId() == elem.getInId() ? "selected": "": ""%>>

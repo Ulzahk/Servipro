@@ -33,17 +33,17 @@
     </head>
     <body>
         <%
-            Modelos.clsEmpleado obclsEmpleado = new Modelos.clsEmpleado();
+            Modelos.Empleados.clsEmpleado obclsEmpleado = new Modelos.Empleados.clsEmpleado();
             
             if(request.getAttribute("obclsEmpleado")!=null){
-                obclsEmpleado = (Modelos.clsEmpleado)request.getAttribute("obclsEmpleado");
+                obclsEmpleado = (Modelos.Empleados.clsEmpleado)request.getAttribute("obclsEmpleado");
             }
             
-            List<Modelos.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.clsEmpleado>();
+            List<Modelos.Empleados.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.Empleados.clsEmpleado>();
             
             if(request.getAttribute("lstclsEmpleado")!=null){
                 
-                lstclsEmpleado = (List<Modelos.clsEmpleado>)request.getAttribute("lstclsEmpleado");
+                lstclsEmpleado = (List<Modelos.Empleados.clsEmpleado>)request.getAttribute("lstclsEmpleado");
             }
             
             if(request.getAttribute("stMensaje")!=null && request.getAttribute("stTipo")!=null){
@@ -265,7 +265,7 @@
                             <td class="align-middle"><b>Acciones</b></td>
                         </tr>
                         <%
-                            for(Modelos.clsEmpleado elem: lstclsEmpleado){
+                            for(Modelos.Empleados.clsEmpleado elem: lstclsEmpleado){
                         %>
                         <tr>
                             <td class="align-middle"><%=elem.getObclsTipoDocumento().getStDescripcion()%></td>
