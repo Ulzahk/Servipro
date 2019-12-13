@@ -20,6 +20,14 @@
         <servlet-name>CerrarSesion</servlet-name>
         <servlet-class>Servlets.CerrarSesion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControlEmpleados</servlet-name>
+        <servlet-class>Servlets.ControlEmpleados</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControlEstadisticas</servlet-name>
+        <servlet-class>Servlets.ControlEstadisticas</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>CerrarSesion</servlet-name>
         <url-pattern>/cerrar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControlEmpleados</servlet-name>
+        <url-pattern>/empleados</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControlEstadisticas</servlet-name>
+        <url-pattern>/estadisticas</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

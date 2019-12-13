@@ -111,8 +111,12 @@
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
+                    <div class="mb-2">
+                        
+                    </div>
                     <form class="form-inline" action="" method="post">
                         <a href="nomina.htm" class="btn btn-secondary mr-2"><i class="fas fa-arrow-left"></i></a>
+                        <a href="agregarestadisticas.htm" class="btn btn-secondary mr-2">Agregar Registro</a>
                         <select  class="form-control" id="Filtrar" name="Filtrar">
                                 <option>Mensualidad</option> 
                                 <option>Quincena 1</option>
@@ -125,11 +129,12 @@
                     </form>
                 </div>
                 <div class="card-body">
-                    <table border="1" class="table table-bordered table-striped table-hover text-center">
+                    <table border="1" class="table table-bordered table-striped table-hover text-center table-responsive-xl">
                         <thead>
                             <tr>
                                 <th class="align-middle">Empleado</th>
                                 <th colspan="10" class="align-middle">Días - Novedades</th>
+                                <th class="align-middle">Acciones</th>
                             </tr>
                         </thead>
                         <%
@@ -139,7 +144,7 @@
                             {
                                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
                                 Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
-                                String Query="select Nombre, dia1.Alias Alias1, dia2.Alias Alias2, dia3.Alias Alias3, dia4.Alias Alias4, dia5.Alias Alias5, "
+                                String Query="select nm_empleados.*, Id_estadistica, dia1.Alias Alias1, dia2.Alias Alias2, dia3.Alias Alias3, dia4.Alias Alias4, dia5.Alias Alias5, "
                                         + " dia6.Alias Alias6, dia7.Alias Alias7, dia8.Alias Alias8, dia9.Alias Alias9, dia10.Alias Alias10, "
                                         + " dia11.Alias Alias11, dia12.Alias Alias12, dia13.Alias Alias13, dia14.Alias Alias14, dia15.Alias Alias15, "
                                         + " dia16.Alias Alias16, dia17.Alias Alias17, dia18.Alias Alias18, dia19.Alias Alias19, dia20.Alias Alias20, "
@@ -181,6 +186,9 @@
                                         + " Nombre like '%"+request.getParameter("Buscar")+"%'";
                                 Statement stm=conn.createStatement();
                                 ResultSet rs=stm.executeQuery(Query);
+                                
+                                
+                                
                                 if(controlFiltrar!=null)
                                 {
                                     
@@ -204,18 +212,24 @@
                                                    <td class="align-middle">8</td>
                                                    <td class="align-middle">9</td>
                                                    <td class="align-middle">10</td>
+                                                   <c:forEach var="dato" items="${datos}" begin="<%=rs.getInt("Id_estadistica")-1%>" end="<%=rs.getInt("Id_estadistica")-1%>">
+                                                    <td rowspan="6" class="align-middle">
+                                                         <a href="<c:url value="editarestadisticas.htm?id_estadistica=${dato.Id_estadistica}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                                         <a href="<c:url value="eliminarestadisticas.htm?id_estadistica=${dato.Id_estadistica}"/>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                    </td>
+                                                   </c:forEach>
                                                 </tr>   
                                                 <tr>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias1")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias2")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias3")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias4")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias5")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias6")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias7")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias8")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias9")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias10")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias1")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias2")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias3")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias4")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias5")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias6")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias7")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias8")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias9")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias10")%></button></td>
                                                 </tr>
                                                 <tr>
                                                    <td class="align-middle">11</td>
@@ -230,16 +244,16 @@
                                                    <td class="align-middle">20</td>
                                                 </tr> 
                                                 <tr>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias11")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias12")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias13")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias14")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias15")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias16")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias17")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias18")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias19")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias20")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias11")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias12")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias13")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias14")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias15")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias16")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias17")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias18")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias19")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias20")%></button></td>
                                                 </tr>
                                                 <tr>
                                                    <td class="align-middle">21</td>
@@ -254,18 +268,28 @@
                                                    <td class="align-middle">30</td>
                                                 </tr> 
                                                 <tr>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias21")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias22")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias23")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias24")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias25")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias26")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias27")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias28")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias29")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias30")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias21")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias22")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias23")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias24")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias25")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias26")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias27")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias28")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias29")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias30")%></button></td>
                                                 </tr>
                                             </tbody> 
+                                            
+                                            <script>
+                                                $('.openBtn').on('click',function(){
+                                                    $('.modal-body').load('editarestadisticas.htm?id_estadistica='+<%=rs.getInt("Id_estadistica")%>, function()
+                                                    {
+                                                        $('#myModal').modal({show:false});
+                                                    });
+                                                 });
+                                            </script>   
+                                            
                                             <%
 
                                         }     
@@ -288,18 +312,22 @@
                                                        <td class="align-middle">8</td>
                                                        <td class="align-middle">9</td>
                                                        <td class="align-middle">10</td>
+                                                       <td rowspan="6" class="align-middle">
+                                                             <a href="<c:url value="editarestadisticas.htm?id_estadistica=${dato.Id_estadistica}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                                             <a href="<c:url value="eliminarestadisticas.htm?id_estadistica=${dato.Id_estadistica}"/>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                       </td>
                                                     </tr>    
                                                     <tr>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias1}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias2}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias3}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias4}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias5}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias6}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias7}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias8}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias9}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias10}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias1}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias2}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias3}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias4}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias5}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias6}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias7}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias8}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias9}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias10}"/></button></td>
                                                     </tr>
                                                     <tr>
                                                        <td class="align-middle">11</td>
@@ -314,16 +342,16 @@
                                                        <td class="align-middle">20</td>
                                                     </tr> 
                                                     <tr>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias11}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias12}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias13}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias14}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias15}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias16}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias17}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias18}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias19}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias20}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias11}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias12}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias13}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias14}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias15}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias16}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias17}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias18}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias19}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias20}"/></button></td>
                                                     </tr>
                                                     <tr>
                                                        <td class="align-middle">21</td>
@@ -338,28 +366,36 @@
                                                        <td class="align-middle">30</td>
                                                     </tr> 
                                                     <tr>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias21}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias22}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias23}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias24}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias25}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias26}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias27}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias28}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias29}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias30}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias21}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias22}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias23}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias24}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias25}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias26}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias27}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias28}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias29}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias30}"/></button></td>
                                                     </tr>
                                                     </c:forEach>
                                                 </tbody> 
+                                                <script>
+                                                    $('.openBtn').on('click',function(){
+                                                        $('.modal-body').load('editarestadisticas.htm?id_estadistica='+<%=rs.getInt("Id_estadistica")%>, function()
+                                                        {
+                                                            $('#myModal').modal({show:false});
+                                                        });
+                                                     });
+                                                </script>    
                                                
                                         <%
                                     }
                                 }
-                                
-                                
-                                
+                                                               
                                 if(controlFiltrar.equals("Mensualidad"))
                                 {
+                                    
+                                    
                                    if(controlBuscar!=null)
                                     {   
                                         while(rs.next())
@@ -378,18 +414,24 @@
                                                    <td class="align-middle">8</td>
                                                    <td class="align-middle">9</td>
                                                    <td class="align-middle">10</td>
+                                                   <c:forEach var="dato" items="${datos}" begin="<%=rs.getInt("Id_estadistica")-1%>" end="<%=rs.getInt("Id_estadistica")-1%>">
+                                                   <td rowspan="6" class="align-middle">
+                                                        <a href="<c:url value="editarestadisticas.htm?id_estadistica=${dato.Id_estadistica}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                                        <a href="<c:url value="eliminarestadisticas.htm?id_estadistica=${dato.Id_estadistica}"/>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                   </td>
+                                                   </c:forEach>
                                                 </tr>   
                                                 <tr>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias1")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias2")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias3")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias4")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias5")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias6")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias7")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias8")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias9")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias10")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias1")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias2")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias3")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias4")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias5")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias6")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias7")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias8")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias9")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias10")%></button></td>
                                                 </tr>
                                                 <tr>
                                                    <td class="align-middle">11</td>
@@ -404,16 +446,16 @@
                                                    <td class="align-middle">20</td>
                                                 </tr> 
                                                 <tr>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias11")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias12")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias13")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias14")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias15")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias16")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias17")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias18")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias19")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias20")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias11")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias12")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias13")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias14")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias15")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias16")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias17")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias18")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias19")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias20")%></button></td>
                                                 </tr>
                                                 <tr>
                                                    <td class="align-middle">21</td>
@@ -428,18 +470,27 @@
                                                    <td class="align-middle">30</td>
                                                 </tr> 
                                                 <tr>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias21")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias22")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias23")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias24")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias25")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias26")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias27")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias28")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias29")%></button></td>
-                                                    <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias30")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias21")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias22")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias23")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias24")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias25")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias26")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias27")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias28")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias29")%></button></td>
+                                                    <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias30")%></button></td>
                                                 </tr>
                                             </tbody> 
+                                           
+                                            <script>
+                                                $('.openBtn').on('click',function(){
+                                                    $('.modal-body').load('editarestadisticas.htm?id_estadistica='+<%=rs.getInt("Id_estadistica")%>, function()
+                                                    {
+                                                        $('#myModal').modal({show:false});
+                                                    });
+                                                 });
+                                            </script>                               
                                             <%
 
                                         }     
@@ -462,18 +513,22 @@
                                                        <td class="align-middle">8</td>
                                                        <td class="align-middle">9</td>
                                                        <td class="align-middle">10</td>
+                                                        <td rowspan="6" class="align-middle">
+                                                             <a href="<c:url value="editarestadisticas.htm?id_estadistica=${dato.Id_estadistica}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                                             <a href="<c:url value="eliminarestadisticas.htm?id_estadistica=${dato.Id_estadistica}"/>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                        </td>
                                                     </tr>    
                                                     <tr>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias1}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias2}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias3}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias4}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias5}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias6}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias7}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias8}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias9}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias10}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias1}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias2}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias3}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias4}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias5}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias6}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias7}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias8}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias9}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias10}"/></button></td>
                                                     </tr>
                                                     <tr>
                                                        <td class="align-middle">11</td>
@@ -488,16 +543,16 @@
                                                        <td class="align-middle">20</td>
                                                     </tr> 
                                                     <tr>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias11}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias12}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias13}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias14}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias15}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias16}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias17}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias18}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias19}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias20}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias11}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias12}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias13}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias14}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias15}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias16}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias17}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias18}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias19}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias20}"/></button></td>
                                                     </tr>
                                                     <tr>
                                                        <td class="align-middle">21</td>
@@ -512,19 +567,27 @@
                                                        <td class="align-middle">30</td>
                                                     </tr> 
                                                     <tr>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias21}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias22}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias23}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias24}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias25}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias26}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias27}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias28}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias29}"/></button></td>
-                                                        <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias30}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias21}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias22}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias23}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias24}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias25}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias26}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias27}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias28}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias29}"/></button></td>
+                                                        <td class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias30}"/></button></td>
                                                     </tr>
                                                     </c:forEach>
                                                 </tbody> 
+                                                <script>
+                                                    $('.openBtn').on('click',function(){
+                                                        $('.modal-body').load('editarestadisticas.htm?id_estadistica='+<%=rs.getInt("Id_estadistica")%>, function()
+                                                        {
+                                                            $('#myModal').modal({show:false});
+                                                        });
+                                                     });
+                                                </script>   
                                                
                                         <%
                                     }
@@ -541,48 +604,62 @@
                                                     <tbody>
                                                         <tr>
                                                            <td rowspan="6" class="align-middle"><%=rs.getString("Nombre")%></td>
-                                                           <td class="align-middle">1</td>
-                                                           <td class="align-middle">2</td>
-                                                           <td class="align-middle">3</td>
-                                                           <td class="align-middle">4</td>
-                                                           <td class="align-middle">5</td>
+                                                           <td colspan="2" class="align-middle">1</td>
+                                                           <td colspan="2" class="align-middle">2</td>
+                                                           <td colspan="2" class="align-middle">3</td>
+                                                           <td colspan="2" class="align-middle">4</td>
+                                                           <td colspan="2" class="align-middle">5</td>
+                                                            <c:forEach var="dato" items="${datos}" begin="<%=rs.getInt("Id_estadistica")-1%>" end="<%=rs.getInt("Id_estadistica")-1%>">
+                                                                <td rowspan="6" class="align-middle">
+                                                                     <a href="<c:url value="editarestadisticas.htm?id_estadistica=${dato.Id_estadistica}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                                                     <a href="<c:url value="eliminarestadisticas.htm?id_estadistica=${dato.Id_estadistica}"/>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                                </td>
+                                                            </c:forEach>
                                                         </tr>   
                                                         <tr>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias1")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias2")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias3")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias4")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias5")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias1")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias2")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias3")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias4")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias5")%></button></td>
                                                         </tr>
                                                         <tr>
-                                                           <td class="align-middle">6</td>
-                                                           <td class="align-middle">7</td>
-                                                           <td class="align-middle">8</td>
-                                                           <td class="align-middle">9</td>
-                                                           <td class="align-middle">10</td>
+                                                           <td colspan="2" class="align-middle">6</td>
+                                                           <td colspan="2" class="align-middle">7</td>
+                                                           <td colspan="2" class="align-middle">8</td>
+                                                           <td colspan="2" class="align-middle">9</td>
+                                                           <td colspan="2" class="align-middle">10</td>
                                                         </tr> 
                                                         <tr>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias6")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias7")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias8")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias9")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias10")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias6")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias7")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias8")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias9")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias10")%></button></td>
                                                         </tr>
                                                         <tr>
-                                                           <td class="align-middle">11</td>
-                                                           <td class="align-middle">12</td>
-                                                           <td class="align-middle">13</td>
-                                                           <td class="align-middle">14</td>
-                                                           <td class="align-middle">15</td>
+                                                           <td colspan="2" class="align-middle">11</td>
+                                                           <td colspan="2" class="align-middle">12</td>
+                                                           <td colspan="2" class="align-middle">13</td>
+                                                           <td colspan="2" class="align-middle">14</td>
+                                                           <td colspan="2" class="align-middle">15</td>
                                                         </tr> 
                                                         <tr>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias11")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias12")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias13")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias14")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias15")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias11")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias12")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias13")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias14")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias15")%></button></td>
                                                         </tr>
-                                                    </tbody> 
+                                                    </tbody>
+                                                    <script>
+                                                        $('.openBtn').on('click',function(){
+                                                            $('.modal-body').load('editarestadisticas.htm?id_estadistica='+<%=rs.getInt("Id_estadistica")%>, function()
+                                                            {
+                                                                $('#myModal').modal({show:false});
+                                                            });
+                                                         });
+                                                    </script>  
                                                 <%
                                             }     
                                     }
@@ -594,49 +671,61 @@
                                                     <c:forEach var="dato" items="${datos}">
                                                         <tr>
                                                            <td rowspan="6" class="align-middle"><c:out value="${dato.Nombre}"/></td>
-                                                           <td class="align-middle">1</td>
-                                                           <td class="align-middle">2</td>
-                                                           <td class="align-middle">3</td>
-                                                           <td class="align-middle">4</td>
-                                                           <td class="align-middle">5</td>
+                                                           <td colspan="2" class="align-middle">1</td>
+                                                           <td colspan="2" class="align-middle">2</td>
+                                                           <td colspan="2" class="align-middle">3</td>
+                                                           <td colspan="2" class="align-middle">4</td>
+                                                           <td colspan="2" class="align-middle">5</td>
+                                                            <td rowspan="6" class="align-middle">
+                                                                 <a href="<c:url value="editarestadisticas.htm?id_estadistica=${dato.Id_estadistica}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                                                 <a href="<c:url value="eliminarestadisticas.htm?id_estadistica=${dato.Id_estadistica}"/>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                            </td>
                                                         </tr>    
                                                         <tr>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias1}"/></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias2}"/></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias3}"/></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias4}"/></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias5}"/></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias1}"/></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias2}"/></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias3}"/></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias4}"/></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias5}"/></button></td>
                                                         </tr>
                                                         <tr>
-                                                           <td class="align-middle">6</td>
-                                                           <td class="align-middle">7</td>
-                                                           <td class="align-middle">8</td>
-                                                           <td class="align-middle">9</td>
-                                                           <td class="align-middle">10</td>
+                                                           <td colspan="2" class="align-middle">6</td>
+                                                           <td colspan="2" class="align-middle">7</td>
+                                                           <td colspan="2" class="align-middle">8</td>
+                                                           <td colspan="2" class="align-middle">9</td>
+                                                           <td colspan="2" class="align-middle">10</td>
                                                         </tr> 
                                                         <tr>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias6}"/></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias7}"/></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias8}"/></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias9}"/></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias10}"/></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias6}"/></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias7}"/></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias8}"/></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias9}"/></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias10}"/></button></td>
                                                         </tr>
                                                         <tr>
-                                                           <td class="align-middle">11</td>
-                                                           <td class="align-middle">12</td>
-                                                           <td class="align-middle">13</td>
-                                                           <td class="align-middle">14</td>
-                                                           <td class="align-middle">15</td>
+                                                           <td colspan="2" class="align-middle">11</td>
+                                                           <td colspan="2" class="align-middle">12</td>
+                                                           <td colspan="2" class="align-middle">13</td>
+                                                           <td colspan="2" class="align-middle">14</td>
+                                                           <td colspan="2" class="align-middle">15</td>
                                                         </tr> 
                                                         <tr>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias11}"/></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias12}"/></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias13}"/></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias14}"/></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias15}"/></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias11}"/></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias12}"/></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias13}"/></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias14}"/></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias15}"/></button></td>
                                                         </tr>
                                                         </c:forEach>
                                                     </tbody> 
+                                                    <script>
+                                                        $('.openBtn').on('click',function(){
+                                                            $('.modal-body').load('editarestadisticas.htm?id_estadistica='+<%=rs.getInt("Id_estadistica")%>, function()
+                                                            {
+                                                                $('#myModal').modal({show:false});
+                                                            });
+                                                         });
+                                                    </script>  
                                             <%
                                         }
                                     }
@@ -652,48 +741,62 @@
                                                     <tbody>
                                                         <tr>
                                                            <td rowspan="6" class="align-middle"><%=rs.getString("Nombre")%></td>
-                                                           <td class="align-middle">16</td>
-                                                           <td class="align-middle">17</td>
-                                                           <td class="align-middle">18</td>
-                                                           <td class="align-middle">19</td>
-                                                           <td class="align-middle">20</td>
+                                                           <td colspan="2" class="align-middle">16</td>
+                                                           <td colspan="2" class="align-middle">17</td>
+                                                           <td colspan="2" class="align-middle">18</td>
+                                                           <td colspan="2" class="align-middle">19</td>
+                                                           <td colspan="2" class="align-middle">20</td>
+                                                            <c:forEach var="dato" items="${datos}" begin="<%=rs.getInt("Id_estadistica")-1%>" end="<%=rs.getInt("Id_estadistica")-1%>">
+                                                                <td rowspan="6" class="align-middle">
+                                                                     <a href="<c:url value="editarestadisticas.htm?id_estadistica=${dato.Id_estadistica}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                                                     <a href="<c:url value="eliminarestadisticas.htm?id_estadistica=${dato.Id_estadistica}"/>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                                </td>
+                                                            </c:forEach>
                                                         </tr>   
                                                         <tr>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias16")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias17")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias18")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias19")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias20")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias16")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias17")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias18")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias19")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias20")%></button></td>
                                                         </tr>
                                                         <tr>
-                                                           <td class="align-middle">21</td>
-                                                           <td class="align-middle">22</td>
-                                                           <td class="align-middle">23</td>
-                                                           <td class="align-middle">24</td>
-                                                           <td class="align-middle">25</td>
+                                                           <td colspan="2" class="align-middle">21</td>
+                                                           <td colspan="2" class="align-middle">22</td>
+                                                           <td colspan="2" class="align-middle">23</td>
+                                                           <td colspan="2" class="align-middle">24</td>
+                                                           <td colspan="2" class="align-middle">25</td>
                                                         </tr> 
                                                         <tr>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias21")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias22")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias23")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias24")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias25")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias21")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias22")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias23")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias24")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias25")%></button></td>
                                                         </tr>
                                                         <tr>
-                                                           <td class="align-middle">26</td>
-                                                           <td class="align-middle">27</td>
-                                                           <td class="align-middle">28</td>
-                                                           <td class="align-middle">29</td>
-                                                           <td class="align-middle">30</td>
+                                                           <td colspan="2" class="align-middle">26</td>
+                                                           <td colspan="2" class="align-middle">27</td>
+                                                           <td colspan="2" class="align-middle">28</td>
+                                                           <td colspan="2" class="align-middle">29</td>
+                                                           <td colspan="2" class="align-middle">30</td>
                                                         </tr> 
                                                         <tr>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias26")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias27")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias28")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias29")%></button></td>
-                                                            <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><%=rs.getString("Alias30")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias26")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias27")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias28")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias29")%></button></td>
+                                                            <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=rs.getString("Alias30")%></button></td>
                                                         </tr>
                                                     </tbody> 
+                                                    <script>
+                                                        $('.openBtn').on('click',function(){
+                                                            $('.modal-body').load('editarestadisticas.htm?id_estadistica='+<%=rs.getInt("Id_estadistica")%>, function()
+                                                            {
+                                                                $('#myModal').modal({show:false});
+                                                            });
+                                                         });
+                                                    </script> 
                                                     <%
                                                 }     
                                             }
@@ -705,52 +808,63 @@
                                                         <c:forEach var="dato" items="${datos}">
                                                             <tr>
                                                                <td rowspan="6" class="align-middle"><c:out value="${dato.Nombre}"/></td>
-                                                               <td class="align-middle">16</td>
-                                                               <td class="align-middle">17</td>
-                                                               <td class="align-middle">18</td>
-                                                               <td class="align-middle">19</td>
-                                                               <td class="align-middle">20</td>
+                                                               <td colspan="2"  class="align-middle">16</td>
+                                                               <td colspan="2"  class="align-middle">17</td>
+                                                               <td colspan="2"  class="align-middle">18</td>
+                                                               <td colspan="2"  class="align-middle">19</td>
+                                                               <td colspan="2"  class="align-middle">20</td>
+                                                                <td rowspan="6" class="align-middle">
+                                                                     <a href="<c:url value="editarestadisticas.htm?id_estadistica=${dato.Id_estadistica}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                                                     <a href="<c:url value="eliminarestadisticas.htm?id_estadistica=${dato.Id_estadistica}"/>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                                </td>
                                                             </tr>    
                                                             <tr>
-                                                                <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias16}"/></button></td>
-                                                                <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias17}"/></button></td>
-                                                                <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias18}"/></button></td>
-                                                                <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias19}"/></button></td>
-                                                                <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias20}"/></button></td>
+                                                                <td colspan="2"  class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias16}"/></button></td>
+                                                                <td colspan="2"  class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias17}"/></button></td>
+                                                                <td colspan="2"  class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias18}"/></button></td>
+                                                                <td colspan="2"  class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias19}"/></button></td>
+                                                                <td colspan="2"  class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias20}"/></button></td>
                                                             </tr>
                                                             <tr>
-                                                               <td class="align-middle">21</td>
-                                                               <td class="align-middle">22</td>
-                                                               <td class="align-middle">23</td>
-                                                               <td class="align-middle">24</td>
-                                                               <td class="align-middle">25</td>
+                                                               <td colspan="2" class="align-middle">21</td>
+                                                               <td colspan="2" class="align-middle">22</td>
+                                                               <td colspan="2" class="align-middle">23</td>
+                                                               <td colspan="2" class="align-middle">24</td>
+                                                               <td colspan="2" class="align-middle">25</td>
 
                                                             </tr> 
                                                             <tr>
-                                                                <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias21}"/></button></td>
-                                                                <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias22}"/></button></td>
-                                                                <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias23}"/></button></td>
-                                                                <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias24}"/></button></td>
-                                                                <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias25}"/></button></td>
+                                                                <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias21}"/></button></td>
+                                                                <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias22}"/></button></td>
+                                                                <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias23}"/></button></td>
+                                                                <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias24}"/></button></td>
+                                                                <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias25}"/></button></td>
                                                             </tr>
                                                             <tr>
-                                                               <td class="align-middle">26</td>
-                                                               <td class="align-middle">27</td>
-                                                               <td class="align-middle">28</td>
-                                                               <td class="align-middle">29</td>
-                                                               <td class="align-middle">30</td>
+                                                               <td colspan="2" class="align-middle">26</td>
+                                                               <td colspan="2" class="align-middle">27</td>
+                                                               <td colspan="2" class="align-middle">28</td>
+                                                               <td colspan="2" class="align-middle">29</td>
+                                                               <td colspan="2" class="align-middle">30</td>
                                                             </tr> 
                                                             <tr>
-                                                                <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias26}"/></button></td>
-                                                                <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias27}"/></button></td>
-                                                                <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias28}"/></button></td>
-                                                                <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias29}"/></button></td>
-                                                                <td class="align-middle"><button class="btn btn-link" data-toggle="modal" data-target="#exampleModalCenter"><c:out value="${dato.Alias30}"/></button></td>
+                                                                <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias26}"/></button></td>
+                                                                <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias27}"/></button></td>
+                                                                <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias28}"/></button></td>
+                                                                <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias29}"/></button></td>
+                                                                <td colspan="2" class="align-middle"><button class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><c:out value="${dato.Alias30}"/></button></td>
                                                             </tr>
                                                             </c:forEach>
                                                         </tbody> 
-
-                                                        <%
+                                                        <script>
+                                                            $('.openBtn').on('click',function(){
+                                                                $('.modal-body').load('editarestadisticas.htm?id_estadistica='+<%=rs.getInt("Id_estadistica")%>, function()
+                                                                {
+                                                                    $('#myModal').modal({show:false});
+                                                                });
+                                                             });
+                                                        </script> 
+                                                    <%
                                             }
                                         } 
                                     }
@@ -760,46 +874,65 @@
                             {
                                 
                             }
+                            
                         %>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                              <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Cambiar Novedad</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                    <div class="modal-body">
-                                        <form:form method="post" commandName="estadisticas">
-                                            <p>
-                                                <label>Id_empleado</label>
-                                                <input type="text" name="Id_empleado" placeholder="Id_empleado" id="Id_empleado" class="form-control"/>
-                                            </p>
-                                            <p>
-                                                <label>Id_dia1</label>
-                                                <input type="text" name="Id_dia1" placeholder="Id_dia1" id="Id_dia1" class="form-control"/>
-                                            </p>
-                                            <p>
-                                                <label>Id_dia2</label>
-                                                <input type="text" name="Id_dia2" placeholder="Id_dia2" id="Id_dia2" class="form-control"/>
-                                            </p>
-                                       </form:form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <form:form method="post" commandName="estadisticas">
-                                            <input type="submit" value="Guardar" class="btn btn-info form-control"/>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                        </form:form>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>  
+                            
                     </table>   
                 </div>
             </div>
         </div>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header mt-1">
+                            <h4 class="modal-title">Editar Estadisticas</h4>
+                            <button type="button" class="close" data-dismiss="modal">x</button>
+                            <p>&nbsp;</p>
+                        </div>
+                        <div class="modal-body">
+                                
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!-- Button to Open the Modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+              Open modal
+            </button>
+
+            <!-- The Modal -->
+            <div class="modal" id="myModal2">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    Modal body..
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
     </body>
 </html>

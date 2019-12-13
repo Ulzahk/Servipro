@@ -1,3 +1,13 @@
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<%@page import="java.util.Random"%>
+<%@page import="Utils.Encriptar"%>
+<%@page import="java.security.NoSuchAlgorithmException"%>
+<%@page import="java.security.SecureRandom"%>
+<%@page import="java.security.spec.InvalidKeySpecException"%>
+<%@page import="java.util.Arrays"%>
+<%@page import="java.util.Base64"%>
+<%@page import="javax.crypto.SecretKeyFactory"%>
+<%@page import="javax.crypto.spec.PBEKeySpec"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -182,7 +192,14 @@
             }
         %> 
         
-        
+        <%
+            HttpSession sesion = request.getSession();
+            if(sesion.getAttribute("id_usuario")== null  || sesion.getAttribute("id_usuario").equals("0")){
+                response.sendRedirect("login.jsp");
+            }
+            Connection conn=null;
+            
+        %>
         
         <div class="container mt-4">
             <h1 class="text-center">Agregar Usuarios</h1>
@@ -192,23 +209,22 @@
                     <a href="usuarios.htm" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
                 </div>
                 <div class="card-body">
-                <form:form method="post" commandName="usuarios">
-                    <form:errors path="*" element="div" cssClass="alert alert-danger"/>
-                    <p>
-                        <form:label path="id_usuario"><b>Usuario</b></form:label>
-                        <form:input path="id_usuario" cssClass="form-control"/>
-                    </p>
-                    <p>
-                        <label for="id_empleado"><b>Empleado</b></label>
-                        <select id="id_empleado" name="id_empleado" class="form-control">
-                            <option value="-1">SELECCIONE UN EMPLEADO</option>
-                            <%
-                                try
+                    <form method="post">
+                        <p>
+                            <label for="Id_usuario"><b>Usuarios</b></label>
+                            <input type="text" id="Id_usuario" name="txtUsuarios" placeholder="Nombre de usuario" Class="form-control"/>
+                        </p>
+                        <p>
+                            <label for="id_empleado"><b>Empleado</b></label>
+                            <select id="id_empleado" name="txtid_empleado" class="form-control">
+                                <option value="-1">SELECCIONE UN EMPLEADO</option>
+                                <%
+                                    try
                                 {
                                     String Query="select * from nm_empleados";
                                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                                    Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
-                                    Statement stm=conn.createStatement();
+                                    Connection conne=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
+                                    Statement stm=conne.createStatement();
                                     ResultSet rs=stm.executeQuery(Query);
                                     while(rs.next())
                                     {
@@ -221,25 +237,29 @@
                                    ex.printStackTrace();
                                    out.println("Error "+ex.getMessage());
                                 }
-                            %>
-                        </select>
-                    </p>
-                    <p>
-                        <form:label path="contraseña"><b>Contraseña</b></form:label>
-                        <form:input path="contraseña" cssClass="form-control"/>
-                    </p>
-                    
-                    <p>
-                        <label id="id_perfil"><b>Perfil</b></label>
-                        <select id="id_perfil" name="id_perfil" class="form-control">
-                            <option value="-1">SELECCIONE UN PERFIL</option>
-                            <%
-                                try
+                                %>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="contraseña"><b>Contraseña</b></label>
+                            <input type="contraseña-" id="contraseña" name="txtContraseña" placeholder="**********" Class="form-control"/>
+                        </p>
+                        <p>
+                            <label for="contraseña"><b>Confirmar Contraseña</b></label>
+                            <input type="text" id="ccontraseña" name="txtConfirmarContraseña" placeholder="**********" Class="form-control"/>
+                        </p>
+                        
+                        <p>
+                            <label for="id_perfil"><b>Perfil</b></label>
+                            <select id="id_perfil" name="txtid_perfil" class="form-control">
+                                <option value="-1">SELECCIONE UN PERFIL</option>
+                                <%
+                                   try
                                 {
                                     String Query="select * from nm_perfil";
                                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                                    Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
-                                    Statement stm=conn.createStatement();
+                                    Connection conne=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
+                                    Statement stm=conne.createStatement();
                                     ResultSet rs=stm.executeQuery(Query);
                                     while(rs.next()){
                                         %>
@@ -252,15 +272,45 @@
                                 {  
                                     ex.printStackTrace();
                                     out.println("Error "+ex.getMessage());
-                                }      
-                            %>    
-                        </select>
-                    </p>
+                                }       
+                                %>
+                            </select>
+                        </p>
                     <hr/>
-                    <input type="submit" value="Guardar" class="btn btn-info"/>
-                </form:form>
+                       <input type="submit" id="Guardar" value="Guardar" name="btnGuardar" class="btn btn-info"/>
+                    </form>
                 </div>
             </div>
         </div>
     </body>
+    <%
+        if(request.getParameter("btnGuardar")!= null){
+            String usuario =request.getParameter("txtUsuarios");            
+            int Id_empleado = Integer.parseInt(request.getParameter("txtid_empleado"));
+            String contraseña = request.getParameter("txtContraseña");
+            String contraseña1 = request.getParameter("txtConfirmarContraseña");
+            int Id_perfil = Integer.parseInt(request.getParameter("txtid_perfil"));
+            Encriptar enc = new Encriptar();
+            
+            if(contraseña.equals(contraseña1)){
+                try{
+                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                    conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
+                    PreparedStatement ps = conn.prepareStatement("INSERT INTO nm_usuarios (Id_usuario,Contraseña,Id_empleado,Id_perfil) VALUES (?,?,?,?)"); 
+                    ps.setString(1, usuario);
+                    ps.setString(2, enc.getMD5(contraseña));
+                    ps.setInt(3, Id_empleado);
+                    ps.setInt(4, Id_perfil);
+                    ps.execute();
+                    sesion.setAttribute("usuario", usuario);
+                    response.sendRedirect("usuarios.htm");
+                }catch(Exception ex){
+                    out.println(ex);
+                }         
+            }
+            else{
+                out.println("La contraseña no Coincide");
+            }
+        }
+    %>
 </html>

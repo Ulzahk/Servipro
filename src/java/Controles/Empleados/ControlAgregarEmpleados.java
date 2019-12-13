@@ -26,6 +26,7 @@ public class ControlAgregarEmpleados {
         this.empleadosValidacion=new EmpleadosValidacion();
         Conectar con=new Conectar();
         this.jdbcTemplate=new JdbcTemplate(con.conectar());
+        
     }
     
     @RequestMapping(method=RequestMethod.GET)

@@ -1,3 +1,10 @@
+<%@page import="java.math.BigInteger"%>
+<%@page import="java.security.MessageDigest"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="Utils.Encriptar"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,16 +30,62 @@
                         <option value="ADMINISTRADOR">Administrador</option>
                         <option value="COORDINADOR">Coordinador</option>
                     </select>
-                         </span>
-                   
-                   
-                    <input type="text" name="id_usuario" placeholder="Usuario" id="txtusuario"/>
-                    
+                    </span>
+                    <input type="text" name="id_usuario" placeholder="Usuario" id="txtusuario"/>                   
                     <input type="password" name="contraseña" id="txtpass" placeholder="Contraseña"/>
                     <input type="button" value="Acceder"  id="btniniciar" onclick="formValidation();"/>
+                    <input type="hidden" name="id" value="txtusuario"
                     <label id="lblerror" ></label>
                 </form>
-        </div>
-                
+                    <%
+                        Connection conn = null;
+                        Statement st = null;
+                        ResultSet rs = null;
+                        Encriptar enc = new Encriptar();
+                        
+
+                        if(request.getParameter("login") != null){
+                            String perfil = request.getParameter("txtperfil");
+                            String user = request.getParameter("txtusuario");
+                            String password = request.getParameter("txtpass");
+                            String hash = getMD5(password);
+                            
+                            HttpSession sesion = request.getSession();
+
+                            try{
+                                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                                     conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
+                                     st = conn.createStatement();
+                                     rs = st.executeQuery("SELECT * FROM nm_usuarios where Id_perfil='"+perfil+"'and contraseña='"+hash+"'; ");
+                                     
+                                     while (rs.next()){
+                                         sesion.setAttribute("logueado", "1");
+                                         sesion.setAttribute("user", rs.getString("user"));
+                                         sesion.setAttribute("id", rs.getString("id"));
+                                         response.sendRedirect("index.jsp");
+                                     }
+                                     out.println(" <div class=\"alert alert-danger\" role=\"alert\">Usuario no valido</div>");
+                                 }catch (Exception ex){
+
+                                 }
+                        }
+                    %>
+        </div>                
     </body>
 </html>
+<%!
+    public String getMD5(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] encBytes = md.digest(input.getBytes());
+            BigInteger numero = new BigInteger(1, encBytes);
+            String encString = numero.toString(16);
+            while (encString.length() < 32) {
+                encString = "0" + encString;
+            }
+            return encString;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+%>

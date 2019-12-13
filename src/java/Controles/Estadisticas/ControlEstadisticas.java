@@ -21,7 +21,7 @@ public class ControlEstadisticas {
     @RequestMapping("estadisticas.htm")
     public ModelAndView consulta(){
         ModelAndView mav=new ModelAndView();
-        String sql="select Nombre, dia1.Alias Alias1, dia2.Alias Alias2, dia3.Alias Alias3, dia4.Alias Alias4, dia5.Alias Alias5, "
+        String sql="select Id_estadistica, Nombre, dia1.Alias Alias1, dia2.Alias Alias2, dia3.Alias Alias3, dia4.Alias Alias4, dia5.Alias Alias5, "
                                         + " dia6.Alias Alias6, dia7.Alias Alias7, dia8.Alias Alias8, dia9.Alias Alias9, dia10.Alias Alias10, "
                                         + " dia11.Alias Alias11, dia12.Alias Alias12, dia13.Alias Alias13, dia14.Alias Alias14, dia15.Alias Alias15, "
                                         + " dia16.Alias Alias16, dia17.Alias Alias17, dia18.Alias Alias18, dia19.Alias Alias19, dia20.Alias Alias20, "

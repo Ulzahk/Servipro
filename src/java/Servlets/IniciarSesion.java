@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import Utils.Encriptar;
 
 public class IniciarSesion extends HttpServlet {
 
@@ -30,6 +31,9 @@ public class IniciarSesion extends HttpServlet {
             Descripcion_perfil=request.getParameter("descripcion_perfil");
             Id_usuario=request.getParameter("id_usuario");
             Contraseña=request.getParameter("contraseña");
+            Encriptar enc = new Encriptar();
+            Contraseña = enc.getMD5(Contraseña);
+            
             AccesoDatos a = new AccesoDatos();
             int ca=a.buscar(Descripcion_perfil, Id_usuario, Contraseña);
             if(ca>0){
