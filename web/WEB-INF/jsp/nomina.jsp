@@ -328,7 +328,7 @@
                             out.println("<i class='fas fa-cog mb-2  tamañoIcono'></i>");
                             out.println("<p><b>Configuracion</b></p>");
                         out.println("</a>");
-                        out.println("<a href='estadisticas.htm' class='col gIndex colorEnlace'>");
+                        out.println("<a href='estadisticas?btnConsultarEstaMensualidad=true' class='col gIndex colorEnlace'>");
                             out.println("<i class='fas fa-chart-bar mb-2  tamañoIcono'></i>");
                             out.println("<p><b>Estadisticas</b></p>");
                         out.println("</a>");
@@ -411,7 +411,7 @@
                             out.println("<i class='fas fa-cog mb-2  tamañoIcono'></i>");
                             out.println("<p><b>Configuracion</b></p>");
                         out.println("</a>");
-                        out.println("<a href='estadisticas.htm' class='col-2 gIndex colorEnlace'>");
+                        out.println("<a href='estadisticas?btnConsultarEstaMensualidad=true' class='col-2 gIndex colorEnlace'>");
                             out.println("<i class='fas fa-chart-bar mb-2  tamañoIcono'></i>");
                             out.println("<p><b>Estadisticas</b></p>");
                         out.println("</a>");

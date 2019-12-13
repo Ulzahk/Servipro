@@ -26,8 +26,8 @@ public class clsEmpleado {
             
             while(rs.next()){
                 Modelos.Estadisticas.clsEmpleado obclsEmpleado = new Modelos.Estadisticas.clsEmpleado();
-                obclsEmpleado.setId_empleado(rs.getInt("Id_empleado"));
-                obclsEmpleado.setNombreEmp(rs.getString("Nombre"));
+                obclsEmpleado.setId_empleado(rs.getInt("emplId"));
+                obclsEmpleado.setNombreEmp(rs.getString("emplNombre"));
                 
                 lstclsEmpleado.add(obclsEmpleado);
             }

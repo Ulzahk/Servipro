@@ -520,7 +520,7 @@ public class clsEstadisticas {
 
                 Modelos.Estadisticas.clsEmpleado obEmpleado = new Modelos.Estadisticas.clsEmpleado();
                 obEmpleado.setId_empleado(rs.getInt("Id_empleado"));
-                obEmpleado.setNombreEmp(rs.getString("Nombre"));
+                obEmpleado.setNombreEmp(rs.getString("emplNombre"));
                 obEstadisticas.setObEmpleado(obEmpleado);
 
                 Modelos.Estadisticas.clsId_dia1 obId_dia1 = new Modelos.Estadisticas.clsId_dia1();
@@ -726,7 +726,7 @@ public class clsEstadisticas {
 
                 Modelos.Estadisticas.clsEmpleado obEmpleado = new Modelos.Estadisticas.clsEmpleado();
                 obEmpleado.setId_empleado(rs.getInt("Id_empleado"));
-                obEmpleado.setNombreEmp(rs.getString("Nombre"));
+                obEmpleado.setNombreEmp(rs.getString("emplNombre"));
                 obEstadisticas.setObEmpleado(obEmpleado);
 
                 Modelos.Estadisticas.clsId_dia1 obId_dia1 = new Modelos.Estadisticas.clsId_dia1();
