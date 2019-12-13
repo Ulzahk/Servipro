@@ -19,7 +19,7 @@ public class ControlUsuarios {
     public ModelAndView usuarios(){
         ModelAndView mav = new ModelAndView();
         /*String sql="select * from nm_usuarios";*/
-        String sql="SELECT * FROM nm_usuarios u  JOIN nm_empleados emp ON emp.Id_empleado = u.Id_empleado JOIN nm_perfil p ON u.Id_perfil = p.Id_perfil";
+        String sql="SELECT * FROM nm_usuarios u  JOIN nm_empleadosjsp emp ON emp.emplId = u.Id_empleado JOIN nm_perfil p ON u.Id_perfil = p.Id_perfil";
         List datos=this.jdbcTemplate.queryForList(sql);
         mav.addObject("datos",datos);
         mav.setViewName("usuarios");
