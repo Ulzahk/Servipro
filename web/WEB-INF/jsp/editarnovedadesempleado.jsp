@@ -211,7 +211,7 @@
                             <%
                                 try
                                 {
-                                    String Query="select * from nm_empleadosjsp";
+                                    String Query="select * from nm_empleados";
                                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
                                     Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
                                     Statement stm=conn.createStatement();

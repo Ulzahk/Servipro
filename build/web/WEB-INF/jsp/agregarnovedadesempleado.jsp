@@ -211,7 +211,7 @@
                             <%
                                 try
                                 {
-                                    String Query="select * from nm_empleadosjsp";
+                                    String Query="select * from nm_empleados";
                                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
                                     Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
                                     Statement stm=conn.createStatement();
@@ -219,7 +219,7 @@
                                     while(rs.next())
                                     {
                                         %>
-                                        <option value="<%=rs.getInt("emplId")%>"><%=rs.getString("emplNombre")%></option>
+                                        <option value="<%=rs.getInt("Id_empleado")%>"><%=rs.getString("Nombre")%></option>
                                         <%
                                     }
                                 }
@@ -230,44 +230,17 @@
                             %>
                         </select>
                     </p>
-                    <p>
-                        <label for="id_novedad"><b>Empleado</b></label>
-                        <select id="id_empleado" name="id_novedad" class="form-control">
-                            <option value="-1">SELECCIONE UN TIPO DE NOVEDAD</option>
-                            <%
-                                try
-                                {
-                                    String Query="select * from nm_tipo_novedad";
-                                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                                    Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
-                                    Statement stm=conn.createStatement();
-                                    ResultSet rs=stm.executeQuery(Query);
-                                    while(rs.next())
-                                    {
-                                        %>
-                                        <option value="<%=rs.getInt("Id_novedad")%>"><%=rs.getString("Descripcion")%></option>
-                                        <%
-                                    }
-                                }
-                                catch(Exception ex){
-                                   ex.printStackTrace();
-                                   out.println("Error "+ex.getMessage());
-                                }
-                            %>
-                        </select>
-                    </p>
-                    
                     <p>
                         <form:label path="detalle"><b>Detalle</b></form:label>
                         <form:input path="detalle" cssClass="form-control"/>
                     </p>
                     <p>
-                        <form:label path="fecha"><b>Fecha</b></form:label>
-                        <form:input path="fecha" cssClass="form-control"/>
+                        <form:label path="tipo"><b>Tipo</b></form:label>
+                        <form:input path="tipo" cssClass="form-control"/>
                     </p>
                     <p>
-                        <form:label path="día"><b>Día</b></form:label>
-                        <form:input path="día" cssClass="form-control"/>
+                        <form:label path="fecha"><b>Fecha</b></form:label>
+                        <form:input path="fecha" cssClass="form-control"/>
                     </p>
                     <hr/>
                     <input type="submit" value="Guardar" class="btn btn-info"/>

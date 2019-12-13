@@ -294,7 +294,7 @@
                         out.println("</a>");
                     out.println("</div>");
                     out.println("<div class='row text-center'>");
-                        out.println("<a href='empleados?btnEmplConsultar=true' class='col dIndex colorEnlace'>");
+                        out.println("<a href='empleados.htm' class='col dIndex colorEnlace'>");
                             out.println("<i class='fas fa-user-clock mb-2 mt-2 tamañoIcono'></i>");
                             out.println("<p><b>Empleados</b></p>");
                         out.println("</a>");
@@ -385,7 +385,7 @@
                             out.println("<i class='fas fa-file-invoice-dollar mb-2 mt-2 tamañoIcono'></i>");
                             out.println("<p><b>Centro de Costos</b></p>");
                         out.println("</a>");
-                        out.println("<a href='empleados?btnEmplConsultar=true' class='col dIndex colorEnlace'>");
+                        out.println("<a href='empleados.htm' class='col dIndex colorEnlace'>");
                             out.println("<i class='fas fa-user-clock mb-2 mt-2 tamañoIcono'></i>");
                             out.println("<p><b>Empleados</b></p>");
                         out.println("</a>");
