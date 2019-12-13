@@ -229,46 +229,40 @@
             }
         %> 
         <div class="mr-2 ml-2 mt-4">
-            <h1 class="text-center">Estadisticas Quincena 1</h1>
+            <h1 class="text-center">Estadisticas</h1>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
                     <form action="estadisticas" method="post">
                         <div class="form-group ">
-                            <div class="row">
-                                <div class="col-1 " style="padding-right: -500px;">
-                                    <a href="nomina.htm" class="btn btn-secondary mr-2"><i class="fas fa-arrow-left"></i></a>
+                            <div class="row mt-4">
+                                <div class="col-3 ">                                    
+                                    <p><a href="nomina.htm" class="btn btn-secondary mr-2 ml-4"><i class="fas fa-arrow-left"></i></a><b  style="font-size: 20px !important; align-content: center !important;">Filtro de Paginación: </b></p>
                                 </div>
-                                <div class="col-2 " style="padding-right: -500px;">
-                                    <h6 class="align-middle text-center"><b>Filtro de Paginación: </b></h6>
-                                </div>
-                                <div class=" col-4">                            
+                                <div class=" col-1">                            
                                     <select class  ="form-control" name="state" id="maxRows">                                           
-                                        <option value="5000">Show ALL Rows</option>
+                                        <option value="5000">Todos</option>
                                         <option value="5">5</option>
                                         <option value="10">10</option>
                                         <option value="15">15</option>
-                                        <option value="20">20</option>
+                                        <option value="25">25</option>
                                         <option value="50">50</option>
-                                        <option value="70">70</option>
+                                        <option value="75">75</option>
                                         <option value="100">100</option>
                                     </select>
                                 </div>
-                                <div class="col-5" style="padding-right: -500px;">
-
-                                    <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2">Agregar Registro</a>
-                                    <a id="maxRows" href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary mr-2">Mensualidad</a>
-                                    <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2">Quincena 1</a>
-                                    <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2">Quincena 2</a>
+                                <div class="col-8">
+                                    <div class="input-group-append">
+                                        <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2">Agregar Registro</a>
+                                        <a id="maxRows" href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary mr-2">Mensualidad</a>
+                                        <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2">Quincena 1</a>
+                                        <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2">Quincena 2</a>
+                                        <input type="text" class="form-control-md" name="txtBuscarEsta" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
+                                        <input type="submit" value="Buscar" class="btn btn-secondary" name="btnBuscarEstaQuincena1"> 
+                                    </div>
                                 </div>
                             </div>                            
                         </div>                        
-                        <div class="input-group mt-3">                            
-                            <input type="text" class="form-control" name="txtBuscarEsta" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
-                            <div class="input-group-append">
-                                <input type="submit" value="Buscar" class="btn btn-secondary" name="btnBuscarEstaMensualidad"> 
-                            </div>
-                        </div>
                     </form>
                 </div>
                 <div class="card-body">
@@ -278,11 +272,12 @@
                             <div class="form-row">
                                 <b>
                                     <i class="fas fa-clipboard-list"></i>
-                                    <span>Registros: <%=lstclsEstadisticas.size()%></span>
+                                    <span>Registros Existentes: <%=lstclsEstadisticas.size()%></span>
                                 </b>
                             </div>
                         </div>
                         <h3 class="text-center">Novedad por Día</h3>
+                        <br>
                         <tr>
                             <th class="align-middle"><b>Empleado</b></th>
                             <th>1</th>
@@ -545,7 +540,7 @@
             }
 
             table tr:nth-child(even){
-                background-color: #BEF2F5
+                background-color: #fff;
             }
 
             .pagination li:hover{

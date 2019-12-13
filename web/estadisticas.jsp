@@ -244,13 +244,13 @@
                                 </div>
                                 <div class=" col-1">                            
                                     <select class  ="form-control" name="state" id="maxRows">                                           
-                                        <option value="5000">Show ALL Rows</option>
+                                        <option value="5000">Todos</option>
                                         <option value="5">5</option>
                                         <option value="10">10</option>
                                         <option value="15">15</option>
-                                        <option value="20">20</option>
+                                        <option value="25">25</option>
                                         <option value="50">50</option>
-                                        <option value="70">70</option>
+                                        <option value="75">75</option>
                                         <option value="100">100</option>
                                     </select>
                                 </div>
@@ -264,9 +264,6 @@
                                         <input type="submit" value="Buscar" class="btn btn-secondary" name="btnBuscarEstaMensualidad"> 
                                     </div>
                                 </div>
-                                <div class="col-1">
-
-                                </div>
                             </div>                            
                         </div>                      
                     </form>
@@ -278,11 +275,12 @@
                                 <div class="form-row">
                                     <b>
                                         <i class="fas fa-clipboard-list"></i>
-                                        <span>Registros: <%=lstclsEstadisticas.size()%></span>
+                                        <span>Registros Existentes: <%=lstclsEstadisticas.size()%></span>
                                     </b>
                                 </div>
                             </div>
                             <h3 class="text-center">Novedad por Día</h3>
+                            <br>
                             <tr>
                                 <th class="align-middle"><b>Empleado</b></th>
                                 <th>1</th>
@@ -575,7 +573,7 @@
             }
 
             table tr:nth-child(even){
-                background-color: #BEF2F5
+                background-color: #fff;
             }
 
             .pagination li:hover{
