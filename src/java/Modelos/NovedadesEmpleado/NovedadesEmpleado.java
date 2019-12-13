@@ -6,32 +6,29 @@ public class NovedadesEmpleado {
     
     private int id_novedad_empleado;
     private int id_empleado;
+    private int id_novedad;
     private String detalle;
-    private int tipo;
     private String fecha;
+    private int día;
 
     public NovedadesEmpleado() {
     }
 
-    public NovedadesEmpleado(int id_empleado, String detalle, int tipo, String fecha) {
+    public NovedadesEmpleado(int id_empleado, int id_novedad, String detalle, String fecha, int día) {
         this.id_empleado = id_empleado;
+        this.id_novedad = id_novedad;
         this.detalle = detalle;
-        this.tipo = tipo;
         this.fecha = fecha;
+        this.día = día;
     }
 
-    public NovedadesEmpleado(String detalle, int tipo, String fecha) {
-        this.detalle = detalle;
-        this.tipo = tipo;
-        this.fecha = fecha;
-    }
-
-    public NovedadesEmpleado(int id_novedad_empleado, int id_empleado, String detalle, int tipo, String fecha) {
+    public NovedadesEmpleado(int id_novedad_empleado, int id_empleado, int id_novedad, String detalle, String fecha, int día) {
         this.id_novedad_empleado = id_novedad_empleado;
         this.id_empleado = id_empleado;
+        this.id_novedad = id_novedad;
         this.detalle = detalle;
-        this.tipo = tipo;
         this.fecha = fecha;
+        this.día = día;
     }
 
     public int getId_novedad_empleado() {
@@ -50,20 +47,20 @@ public class NovedadesEmpleado {
         this.id_empleado = id_empleado;
     }
 
+    public int getId_novedad() {
+        return id_novedad;
+    }
+
+    public void setId_novedad(int id_novedad) {
+        this.id_novedad = id_novedad;
+    }
+
     public String getDetalle() {
         return detalle;
     }
 
     public void setDetalle(String detalle) {
         this.detalle = detalle;
-    }
-
-    public int getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(int tipo) {
-        this.tipo = tipo;
     }
 
     public String getFecha() {
@@ -73,6 +70,20 @@ public class NovedadesEmpleado {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
+    public int getDía() {
+        return día;
+    }
+
+    public void setDía(int día) {
+        this.día = día;
+    }
+
+   
+    
+
+    
+
     
     
     

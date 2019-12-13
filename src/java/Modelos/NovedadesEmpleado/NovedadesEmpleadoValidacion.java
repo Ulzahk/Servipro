@@ -23,9 +23,6 @@ public class NovedadesEmpleadoValidacion implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "detalle",
         "required.detalle", "El campo Detalle es obligatorio");
         
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "tipo",
-        "required.tipo", "El campo Tipo es obligatorio");
-        
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "fecha",
         "required.fecha","El campo Fecha es obligatorio");
         
