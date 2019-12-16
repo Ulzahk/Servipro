@@ -240,7 +240,7 @@
                         <div class="form-group ">
                             <div class="row mt-4">                                
                                 <div class="col-3 ">                                    
-                                    <p><a href="nomina.htm" class="btn btn-secondary mr-2 ml-4"><i class="fas fa-arrow-left"></i></a><b  style="font-size: 20px !important; align-content: center !important;">Filtro de Paginación: </b></p>
+                                    <p><a href="nomina.htm" class="btn btn-secondary mr-2 ml-4" data-toggle="tooltip" title="Haz clic para regresar al menú nomina"><i class="fas fa-arrow-left"></i></a><b  style="font-size: 20px !important; align-content: center !important;">Filtro de Paginación: </b></p>
                                 </div>
                                 <div class=" col-1">                            
                                     <select class  ="form-control" name="state" id="maxRows">                                           
