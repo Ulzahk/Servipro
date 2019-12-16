@@ -1,5 +1,6 @@
-package BL;
+package BL.Empleados;
 
+import BL.clsConexion;
 import java.sql.*;
 import java.util.*;
 
@@ -13,9 +14,9 @@ public class clsCentroCosto {
         conn = obclsConexion.getConexion();
     }
     
-    public List<Modelos.clsCentroCosto> getCentroCosto(){
+    public List<Modelos.Empleados.clsCentroCosto> getCentroCosto(){
         
-        List<Modelos.clsCentroCosto> lstclsCentroCosto = new ArrayList<Modelos.clsCentroCosto>();
+        List<Modelos.Empleados.clsCentroCosto> lstclsCentroCosto = new ArrayList<Modelos.Empleados.clsCentroCosto>();
         
         try {
             
@@ -23,9 +24,9 @@ public class clsCentroCosto {
             ResultSet rs = ps.executeQuery();
             
             while(rs.next()){
-                Modelos.clsCentroCosto obclsCentroCosto = new Modelos.clsCentroCosto();
-                obclsCentroCosto.setInId(rs.getInt("cecoId"));
-                obclsCentroCosto.setStDescripcion(rs.getString("cecoDescripcion"));
+                Modelos.Empleados.clsCentroCosto obclsCentroCosto = new Modelos.Empleados.clsCentroCosto();
+                obclsCentroCosto.setInId(rs.getInt("Id_ccostos"));
+                obclsCentroCosto.setStDescripcion(rs.getString("Nombre_ccostos"));
                 
                 lstclsCentroCosto.add(obclsCentroCosto);
             }

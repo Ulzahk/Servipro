@@ -268,159 +268,165 @@
     <%--Menú Nomina de Jefe--%>
     <%
         if (Descripcion_perfil.equals("JEFE")) {
-            out.println("<div class='container mt-4 text-center'>");
-            out.println("<div class='row text-center'>");
-            out.println("<a href='usuarios.htm' class='col aIndex colorEnlace'>");
-            out.println("<i class='fas fa-user-circle mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Usuarios</b></p>");
-            out.println("</a>");
-            out.println("<a href='perfil.htm' class='col aIndex colorEnlace'>");
-            out.println("<i class='fas fa-address-card mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Perfil</b></p>");
-            out.println("</a>");
-            out.println("<a href='tipodenovedades.htm' class='col bIndex colorEnlace'>");
-            out.println("<i class='fas fa-bullhorn mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Tipo De Novedades</b></p>");
-            out.println("</a>");
-            out.println("<a href='facturacion.htm' class='col bIndex colorEnlace'>");
-            out.println("<i class='fab fa-buromobelexperte mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Facturación</b></p>");
-            out.println("</a>");
-            out.println("<a href='novedadesempleado.htm' class='col bIndex colorEnlace'>");
-            out.println("<i class='fas fa-user-check mb-2 tamañoIcono'></i>");
-            out.println("<p><b>Novedades por Empleado</b></p>");
-            out.println("</a>");
-            out.println("<a href='centrodecostos.htm' class='col eIndex colorEnlace'>");
-            out.println("<i class='fas fa-file-invoice-dollar mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Centro de Costos</b></p>");
-            out.println("</a>");
-            out.println("</div>");
-            out.println("<div class='row text-center'>");
-            out.println("<a href='empleados.htm' class='col dIndex colorEnlace'>");
-            out.println("<i class='fas fa-user-clock mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Empleados</b></p>");
-            out.println("</a>");
-            out.println("<a href='cargoempleado.htm' class='col dIndex colorEnlace'>");
-            out.println("<i class='fas fa-briefcase mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Cargo Empleado</b></p>");
-            out.println("</a>");
-            out.println("<a href='modulos.htm' class='col cIndex colorEnlace'>");
-            out.println("<i class='fas fa-th mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Modulos</b></p>");
-            out.println("</a>");
-            out.println("<a href='modulosperfil.htm' class='col cIndex colorEnlace'>");
-            out.println("<i class='fas fa-th-list mb-2 tamañoIcono'></i>");
-            out.println("<p><b>Modulos por Perfil</b></p>");
-            out.println("</a>");
-            out.println("<a href='grupos.htm' class='col fIndex colorEnlace'>");
-            out.println("<i class='fas fa-users mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Grupos</b></p>");
-            out.println("</a>");
-            out.println("<a href='empleadosgrupo.htm' class='col fIndex colorEnlace'>");
-            out.println("<i class='fas fa-users-cog mb-2 tamañoIcono'></i>");
-            out.println("<p><b>Empleados por Grupo</b></p>");
-            out.println("</a>");
-            out.println("</div>");
-            out.println("<div class='row text-center'>");
-            out.println("<a href='responsablegrupo.htm' class='col fIndex colorEnlace'>");
-            out.println("<i class='fas fa-user-tie mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Responsable por Grupo</b></p>");
-            out.println("</a>");
-            out.println("<a href='configuracion.htm' class='col gIndex colorEnlace'>");
-            out.println("<i class='fas fa-cog mb-2  tamañoIcono'></i>");
-            out.println("<p><b>Configuracion</b></p>");
-            out.println("</a>");
-            out.println("<a href='estadisticas?btnConsultarEstaMensualidad=true' class='col gIndex colorEnlace'>");
-            out.println("<i class='fas fa-chart-bar mb-2  tamañoIcono'></i>");
-            out.println("<p><b>Estadisticas</b></p>");
-            out.println("</a>");
-            out.println("</div>");
-            out.println("</div>");
-        }
+
+    %>
+    <div class='container mt-4 text-center'>
+        <div class='row text-center'>
+            <a href='usuarios.htm' class='col aIndex colorEnlace'>
+                <i class='fas fa-user-circle mb-2 mt-2 tamañoIcono'></i>
+                <p><b>Usuarios</b></p>
+            </a>
+            <a href='perfil.htm' class='col aIndex colorEnlace'>
+                <i class='fas fa-address-card mb-2 mt-2 tamañoIcono'></i>
+                <p><b>Perfil</b></p>
+            </a>
+            <a href='tipodenovedades.htm' class='col bIndex colorEnlace'>
+                <i class='fas fa-bullhorn mb-2 mt-2 tamañoIcono'></i>
+                <p><b>Tipo De Novedades</b></p>
+            </a>
+            <a href='facturacion.htm' class='col bIndex colorEnlace'>
+                <i class='fab fa-buromobelexperte mb-2 mt-2 tamañoIcono'></i>
+                <p><b>Facturación</b></p>
+            </a>
+            <a href='novedadesempleado.htm' class='col bIndex colorEnlace'>
+                <i class='fas fa-user-check mb-2 tamañoIcono'></i>
+                <p><b>Novedades por Empleado</b></p>
+            </a>
+            <a href='centrodecostos.htm' class='col eIndex colorEnlace'>
+                <i class='fas fa-file-invoice-dollar mb-2 mt-2 tamañoIcono'></i>
+                <p><b>Centro de Costos</b></p>
+            </a>
+        </div>
+        <div class='row text-center'>
+            <a href='empleados?btnEmplConsultar=true' class='col dIndex colorEnlace'>
+                <i class='fas fa-user-clock mb-2 mt-2 tamañoIcono'></i>
+                <p><b>Empleados</b></p>
+            </a>
+            <a href='cargoempleado.htm' class='col dIndex colorEnlace'>
+                <i class='fas fa-briefcase mb-2 mt-2 tamañoIcono'></i>
+                <p><b>Cargo Empleado</b></p>
+            </a>
+            <a href='modulos.htm' class='col cIndex colorEnlace'>
+                <i class='fas fa-th mb-2 mt-2 tamañoIcono'></i>
+                <p><b>Modulos</b></p>
+            </a>
+            <a href='modulosperfil.htm' class='col cIndex colorEnlace'>
+                <i class='fas fa-th-list mb-2 tamañoIcono'></i>
+                <p><b>Modulos por Perfil</b></p>
+            </a>
+            <a href='grupos.htm' class='col fIndex colorEnlace'>
+                <i class='fas fa-users mb-2 mt-2 tamañoIcono'></i>
+                <p><b>Grupos</b></p>
+            </a>
+            <a href='empleadosgrupo.htm' class='col fIndex colorEnlace'>
+                <i class='fas fa-users-cog mb-2 tamañoIcono'></i>
+                <p><b>Empleados por Grupo</b></p>
+            </a>
+        </div>
+        <div class='row text-center'>
+            <a href='responsablegrupo.htm' class='col fIndex colorEnlace'>
+                <i class='fas fa-user-tie mb-2 mt-2 tamañoIcono'></i>
+                <p><b>Responsable por Grupo</b></p>
+            </a>
+            <a href='configuracion.htm' class='col gIndex colorEnlace'>
+                <i class='fas fa-cog mb-2  tamañoIcono'></i>
+                <p><b>Configuracion</b></p>
+            </a>
+            <a href='estadisticas?btnConsultarEstaMensualidad=true' class='col gIndex colorEnlace'>
+                <i class='fas fa-chart-bar mb-2  tamañoIcono'></i>
+                <p><b>Estadisticas</b></p>
+            </a>
+        </div>
+    </div>
+    <%        }
     %>
 
     <%--Menú Nomina de Administrador--%>
     <%
         if (Descripcion_perfil.equals("ADMINISTRADOR")) {
-            out.println("<div class='container mt-4 text-center'>");
-            out.println("<div class='row text-center'>");
-            out.println("<a href='usuarios.htm' class='col aIndex colorEnlace'>");
-            out.println("<i class='fas fa-user-circle mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Usuarios</b></p>");
-            out.println("</a>");
-            out.println("<a href='perfil.htm' class='col aIndex colorEnlace'>");
-            out.println("<i class='fas fa-address-card mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Perfil</b></p>");
-            out.println("</a>");
-            out.println("</div>");
-            out.println("<div class='row text-center'>");
-            out.println("<a href='modulos.htm' class='col cIndex colorEnlace'>");
-            out.println("<i class='fas fa-th mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Modulos</b></p>");
-            out.println("</a>");
-            out.println("<a href='modulosperfil.htm' class='col cIndex colorEnlace'>");
-            out.println("<i class='fas fa-th-list mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Modulos por Perfil</b></p>");
-            out.println("</a>");
-            out.println("</div>");
-        }
     %>
-
-    <%--Menú Nomina de Coordinador--%>
+    <div class='container mt-4 text-center'>
+        <div class='row text-center'>
+            <a href='usuarios.htm' class='col aIndex colorEnlace'>
+                <i class='fas fa-user-circle mb-2 mt-2 tamañoIcono'></i>
+                <p><b>Usuarios</b></p>
+            </a>
+            <a href='perfil.htm' class='col aIndex colorEnlace'>
+                <i class='fas fa-address-card mb-2 mt-2 tamañoIcono'></i>
+                <p><b>Perfil</b></p>
+            </a>
+        </div>
+        <div class='row text-center'>
+            <a href='modulos.htm' class='col cIndex colorEnlace'>
+                <i class='fas fa-th mb-2 mt-2 tamañoIcono'></i>
+                <p><b>Modulos</b></p>
+            </a>
+            <a href='modulosperfil.htm' class='col cIndex colorEnlace'>
+                <i class='fas fa-th-list mb-2 mt-2 tamañoIcono'></i>
+                <p><b>Modulos por Perfil</b></p>
+            </a>
+        </div>
     <%
-        if (Descripcion_perfil.equals("COORDINADOR")) {
-            out.println("<div class='container mt-4 text-center'>");
-            out.println("<div class='row text-center'>");
-            out.println("<a href='tipodenovedades.htm' class='col bIndex colorEnlace'>");
-            out.println("<i class='fas fa-bullhorn mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Tipo De Novedades</b></p>");
-            out.println("</a>");
-            out.println("<a href='facturacion.htm' class='col bIndex colorEnlace'>");
-            out.println("<i class='fab fa-buromobelexperte mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Facturación</b></p>");
-            out.println("</a>");
-            out.println("<a href='novedadesempleado.htm' class='col bIndex colorEnlace'>");
-            out.println("<i class='fas fa-user-check mb-2 tamañoIcono'></i>");
-            out.println("<p><b>Novedades por Empleado</b></p>");
-            out.println("</a>");
-            out.println("<a href='centrodecostos.htm' class='col eIndex colorEnlace'>");
-            out.println("<i class='fas fa-file-invoice-dollar mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Centro de Costos</b></p>");
-            out.println("</a>");
-            out.println("<a href='empleados.htm' class='col dIndex colorEnlace'>");
-            out.println("<i class='fas fa-user-clock mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Empleados</b></p>");
-            out.println("</a>");
-            out.println("<a href='cargoempleado.htm' class='col dIndex colorEnlace'>");
-            out.println("<i class='fas fa-briefcase mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Cargo Empleado</b></p>");
-            out.println("</a>");
-            out.println("</div>");
-            out.println("<div class='row text-center'>");
-            out.println("<a href='grupos.htm' class='col-2 fIndex colorEnlace'>");
-            out.println("<i class='fas fa-users mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Grupos</b></p>");
-            out.println("</a>");
-            out.println("<a href='empleadosgrupo.htm' class='col-2 fIndex colorEnlace'>");
-            out.println("<i class='fas fa-users-cog mb-2 tamañoIcono'></i>");
-            out.println("<p><b>Empleados por Grupo</b></p>");
-            out.println("</a>");
-            out.println("<a href='responsablegrupo.htm' class='col-2 fIndex colorEnlace'>");
-            out.println("<i class='fas fa-user-tie mb-2 mt-2 tamañoIcono'></i>");
-            out.println("<p><b>Responsable por Grupo</b></p>");
-            out.println("</a>");
-            out.println("<a href='configuracion.htm' class='col-2 gIndex colorEnlace'>");
-            out.println("<i class='fas fa-cog mb-2  tamañoIcono'></i>");
-            out.println("<p><b>Configuracion</b></p>");
-            out.println("</a>");
-            out.println("<a href='estadisticas?btnConsultarEstaMensualidad=true' class='col-2 gIndex colorEnlace'>");
-            out.println("<i class='fas fa-chart-bar mb-2  tamañoIcono'></i>");
-            out.println("<p><b>Estadisticas</b></p>");
-            out.println("</a>");
-            out.println("</div>");
-            out.println("</div>");
         }
     %>
 
-</body>   
+        <%--Menú Nomina de Coordinador--%>
+        <%
+            if (Descripcion_perfil.equals("COORDINADOR")) {
+        %>
+        <div class='container mt-4 text-center'>
+            <div class='row text-center'>
+                <a href='tipodenovedades.htm' class='col bIndex colorEnlace'>
+                    <i class='fas fa-bullhorn mb-2 mt-2 tamañoIcono'></i>
+                    <p><b>Tipo De Novedades</b></p>
+                </a>
+                <a href='facturacion.htm' class='col bIndex colorEnlace'>
+                    <i class='fab fa-buromobelexperte mb-2 mt-2 tamañoIcono'></i>
+                    <p><b>Facturación</b></p>
+                </a>
+                <a href='novedadesempleado.htm' class='col bIndex colorEnlace'>
+                    <i class='fas fa-user-check mb-2 tamañoIcono'></i>
+                    <p><b>Novedades por Empleado</b></p>
+                </a>
+                <a href='centrodecostos.htm' class='col eIndex colorEnlace'>
+                    <i class='fas fa-file-invoice-dollar mb-2 mt-2 tamañoIcono'></i>
+                    <p><b>Centro de Costos</b></p>
+                </a>
+                <a href='empleados?btnEmplConsultar=true' class='col dIndex colorEnlace'>
+                    <i class='fas fa-user-clock mb-2 mt-2 tamañoIcono'></i>
+                    <p><b>Empleados</b></p>
+                </a>
+                <a href='cargoempleado.htm' class='col dIndex colorEnlace'>
+                    <i class='fas fa-briefcase mb-2 mt-2 tamañoIcono'></i>
+                    <p><b>Cargo Empleado</b></p>
+                </a>
+            </div>
+            <div class='row text-center'>
+                <a href='grupos.htm' class='col-2 fIndex colorEnlace'>
+                    <i class='fas fa-users mb-2 mt-2 tamañoIcono'></i>
+                    <p><b>Grupos</b></p>
+                </a>
+                <a href='empleadosgrupo.htm' class='col-2 fIndex colorEnlace'>
+                    <i class='fas fa-users-cog mb-2 tamañoIcono'></i>
+                    <p><b>Empleados por Grupo</b></p>
+                </a>
+                <a href='responsablegrupo.htm' class='col-2 fIndex colorEnlace'>
+                    <i class='fas fa-user-tie mb-2 mt-2 tamañoIcono'></i>
+                    <p><b>Responsable por Grupo</b></p>
+                </a>
+                <a href='configuracion.htm' class='col-2 gIndex colorEnlace'>
+                    <i class='fas fa-cog mb-2  tamañoIcono'></i>
+                    <p><b>Configuracion</b></p>
+                </a>
+                <a href='estadisticas?btnConsultarEstaMensualidad=true' class='col-2 gIndex colorEnlace'>
+                    <i class='fas fa-chart-bar mb-2  tamañoIcono'></i>
+                    <p><b>Estadisticas</b></p>
+                </a>
+            </div>
+        </div>
+        <%
+            }
+        %>
+
+    </body>   
 </html>

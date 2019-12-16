@@ -1,5 +1,6 @@
-package BL;
+package BL.Empleados;
 
+import BL.clsConexion;
 import java.sql.*;
 import java.util.*;
 
@@ -13,16 +14,16 @@ public class clsTipoDocumento {
         conn = obclsConexion.getConexion();
     }
     
-    public List<Modelos.clsTipoDocumento> getTipoDocumento(){
+    public List<Modelos.Empleados.clsTipoDocumento> getTipoDocumento(){
         
-        List<Modelos.clsTipoDocumento> lstclsTipoDocumento = new ArrayList<Modelos.clsTipoDocumento>();
+        List<Modelos.Empleados.clsTipoDocumento> lstclsTipoDocumento = new ArrayList<Modelos.Empleados.clsTipoDocumento>();
         
         try {
             PreparedStatement ps = conn.prepareStatement("{call spConsultarTipoDocumento()}");
             ResultSet rs = ps.executeQuery();
             
             while(rs.next()){
-                Modelos.clsTipoDocumento obclsTipoDocumento = new Modelos.clsTipoDocumento();
+                Modelos.Empleados.clsTipoDocumento obclsTipoDocumento = new Modelos.Empleados.clsTipoDocumento();
                 obclsTipoDocumento.setInId(rs.getInt("tidoId"));
                 obclsTipoDocumento.setStDescripcion(rs.getString("tidoDescripcion"));
                 

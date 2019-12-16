@@ -1,5 +1,5 @@
 
-package Modelos;
+package Modelos.Empleados;
 
 
 public class clsBuscar {

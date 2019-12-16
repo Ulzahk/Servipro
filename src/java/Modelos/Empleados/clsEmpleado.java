@@ -1,4 +1,7 @@
-package Modelos;
+package Modelos.Empleados;
+
+import Modelos.Empleados.clsCentroCosto;
+import Modelos.Empleados.clsCargo;
 
 
 public class clsEmpleado {

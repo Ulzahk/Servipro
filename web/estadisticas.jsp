@@ -282,7 +282,7 @@
                             <h3 class="text-center">Novedad por Día</h3>
                             <br>
                             <tr>
-                                <th class="align-middle"><b>Empleado</b></th>
+                                <th class="align-middle">Empleado</th>
                                 <th>1</th>
                                 <th>2</th>
                                 <th>3</th>
@@ -372,11 +372,11 @@
                                 <ul class="pagination">
 
                                     <li data-page="prev" >
-                                        <span> < <span class="sr-only">(current)</span></span>
+                                        <span><i class="fas fa-angle-left"></i>&nbsp;<span class="sr-only">(current)</span></span>
                                     </li>
                                     <!--	Here the JS Function Will Add the Rows -->
                                     <li data-page="next" id="prev">
-                                        <span> > <span class="sr-only">(current)</span></span>
+                                        <span>&nbsp;<i class="fas fa-angle-right"></i><span class="sr-only">(current)</span></span>
                                     </li>
                                 </ul>
                             </nav>

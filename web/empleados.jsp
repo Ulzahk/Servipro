@@ -21,7 +21,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Empleados Prueba</title>
+        <title>Empleados</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -33,17 +33,17 @@
     </head>
     <body>
         <%
-            Modelos.clsEmpleado obclsEmpleado = new Modelos.clsEmpleado();
+            Modelos.Empleados.clsEmpleado obclsEmpleado = new Modelos.Empleados.clsEmpleado();
             
             if(request.getAttribute("obclsEmpleado")!=null){
-                obclsEmpleado = (Modelos.clsEmpleado)request.getAttribute("obclsEmpleado");
+                obclsEmpleado = (Modelos.Empleados.clsEmpleado)request.getAttribute("obclsEmpleado");
             }
             
-            List<Modelos.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.clsEmpleado>();
+            List<Modelos.Empleados.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.Empleados.clsEmpleado>();
             
             if(request.getAttribute("lstclsEmpleado")!=null){
                 
-                lstclsEmpleado = (List<Modelos.clsEmpleado>)request.getAttribute("lstclsEmpleado");
+                lstclsEmpleado = (List<Modelos.Empleados.clsEmpleado>)request.getAttribute("lstclsEmpleado");
             }
             
             if(request.getAttribute("stMensaje")!=null && request.getAttribute("stTipo")!=null){
@@ -226,7 +226,7 @@
             }
         %> 
         <div class="container mt-4">
-            <h1 class="text-center">Empleados Prueba</h1>
+            <h1 class="text-center">Empleados</h1>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
@@ -234,7 +234,6 @@
                     <div class="input-group mt-3">
                         <a href="nomina.htm" class="btn btn-secondary mr-2"><i class="fas fa-arrow-left"></i></a>
                         <a href="empleados?btnEmplAgregar=true" class="btn btn-secondary mr-2">Agregar Registro</a>
-                        <a href="empleados?btnEmplConsultar=true" class="btn btn-secondary mr-2">Cargar Registros</a>
                         <input type="text" class="form-control" name="txtEmplBuscar" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
                         <div class="input-group-append">
                             <input type="submit" value="Buscar" class="btn btn-secondary" name="btnEmplBuscar"> 
@@ -265,7 +264,7 @@
                             <td class="align-middle"><b>Acciones</b></td>
                         </tr>
                         <%
-                            for(Modelos.clsEmpleado elem: lstclsEmpleado){
+                            for(Modelos.Empleados.clsEmpleado elem: lstclsEmpleado){
                         %>
                         <tr>
                             <td class="align-middle"><%=elem.getObclsTipoDocumento().getStDescripcion()%></td>
@@ -275,7 +274,7 @@
                             <td class="align-middle"><%=elem.getObclsCentroCosto().getStDescripcion()%></td>
                             <td class="align-middle"><%=elem.getObclsCargo().getStDescripcion()%></td>
                             <td class="align-middle">
-                                <a class="btn btn-warning btn-sm mb-2" id="btnEmplModificar" 
+                                <a class="btn btn-warning btn-sm mb-2 openBtn" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
                                    href="empleados?stOpcion=M&codigoSeleccionado=<%=elem.getInId()%>">
                                     <i class="fas fa-edit" style="font-size:15px;"></i>
                                 </a>
@@ -291,6 +290,18 @@
                     </table>   
                 </div>
             </div>
+        <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    
+                    <!-- Modal content-->
+                    <div class="modal-content">  
+                        <div class="modal-body">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         <script>
             $('a.btn-danger').click(function(event){
                 event.preventDefault();
@@ -301,7 +312,14 @@
                 }else{
                     alert("El registro se mantiene intacto");
                 }
-            });   
+            });
+            
+            $('.openBtn').on('click', function () {
+                $('.modal-body').load(this.href, function ()
+                {
+                    $('#myModal').modal({show: false});
+                });
+            });
         </script>
     </body>
 </html>
