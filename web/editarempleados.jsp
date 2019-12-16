@@ -23,7 +23,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Editar Empleado Practica</title>
+        <title>Editar Empleado</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -168,7 +168,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12">
-                                    <input type="submit" value="Guardar" class="btn btn-info" name="btnEmplModificar"/>
+                                    <input type="submit" value="Guardar" class="btn btn-info" name="btnEmplEditar"/>
                                     <input type="text" name="IdModificar" id="IdModificar" value="<%=obclsEmpleado.getInId()%>" hidden=""/>
                                 </div>
                             </div>
