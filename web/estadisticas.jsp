@@ -243,7 +243,7 @@
                                     <p><a href="nomina.htm" class="btn btn-secondary mr-2 ml-4" data-toggle="tooltip" title="Haz clic para regresar al menú nomina"><i class="fas fa-arrow-left"></i></a><b  style="font-size: 20px !important; align-content: center !important;">Filtro de Paginación: </b></p>
                                 </div>
                                 <div class=" col-1">                            
-                                    <select class="form-control" name="state" id="maxRows">                                           
+                                    <select class  ="form-control" name="state" id="maxRows">                                           
                                         <option value="5000">Todos</option>
                                         <option value="5">5</option>
                                         <option value="10">10</option>
@@ -256,12 +256,12 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="input-group-append">
-                                        <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2">Agregar Registro</a>
-                                        <a id="maxRows" href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary mr-2">Mensualidad</a>
-                                        <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2">Quincena 1</a>
-                                        <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2">Quincena 2</a>
+                                        <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
+                                        <a id="maxRows" href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la mensualidad">Mensualidad</a>
+                                        <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 1 al 15">Quincena 1</a>
+                                        <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 16 al 30">Quincena 2</a>
                                         <input type="text" class="form-control-md" name="txtBuscarEsta" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
-                                        <input type="submit" value="Buscar" class="btn btn-secondary" name="btnBuscarEstaMensualidad"> 
+                                        <input type="submit" value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar" name="btnBuscarEstaMensualidad"> 
                                     </div>
                                 </div>
                             </div>                            
@@ -270,21 +270,19 @@
                 </div>
                 <div class="card-body">
                     <div class="">
-                        <table id="table-id" cellspacing="0" border="1" class="table table-bordered table-striped table-hover text-center table-responsive">
+                        <table   id="table-id" cellspacing="0" border="1" class="table table-bordered table-striped table-hover text-center table-responsive">
                             <div class="form-group">
                                 <div class="form-row">
-                                    <div class="col-4 ml-2">
-                                        <b>
-                                            <i class="fas fa-clipboard-list"></i>
-                                            <span>Registros Existentes: <%=lstclsEstadisticas.size()%></span>
-                                        </b>
-                                    </div>  
+                                    <b>
+                                        <i class="fas fa-clipboard-list"></i>
+                                        <span>Registros Existentes: <%=lstclsEstadisticas.size()%></span>
+                                    </b>
                                 </div>
                             </div>
                             <h3 class="text-center">Novedad por Día</h3>
                             <br>
                             <tr>
-                                <th class="align-middle">Empleado</th>
+                                <th class="align-middle"><b>Empleado</b></th>
                                 <th>1</th>
                                 <th>2</th>
                                 <th>3</th>
@@ -368,17 +366,17 @@
                                 }
                             %>
                         </table>
-                        <!--Inicio de la Paginación -->
+                        <!--		Start Pagination -->
                         <div class='pagination-container' >
                             <nav>
                                 <ul class="pagination">
 
                                     <li data-page="prev" >
-                                        <span><i class="fas fa-angle-left"></i>&nbsp;<span class="sr-only">(current)</span></span>
+                                        <span> < <span class="sr-only">(current)</span></span>
                                     </li>
-                                    <!--Acá estaran las paginas -->
+                                    <!--	Here the JS Function Will Add the Rows -->
                                     <li data-page="next" id="prev">
-                                        <span>&nbsp;<i class="fas fa-angle-right"></i><span class="sr-only">(current)</span></span>
+                                        <span> > <span class="sr-only">(current)</span></span>
                                     </li>
                                 </ul>
                             </nav>
@@ -389,7 +387,7 @@
             <!-- Modal -->
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog ">
-
+                    
                     <!-- Modal content-->
                     <div class="modal-content">  
                         <div class="modal-body">
@@ -510,7 +508,7 @@
                                 var trIndex = 0; // reset tr counter
                                 $('.pagination li').removeClass('active'); // remove active class from all li
                                 $('.pagination [data-page="' + lastPage + '"]').addClass('active'); // add active class to the clicked
-                                $(this).addClass('active');					// add active class to the clicked
+                                // $(this).addClass('active');					// add active class to the clicked
                                 limitPagging();
                                 $(table + ' tr:gt(0)').each(function () {
                                     // each tr in table not the header

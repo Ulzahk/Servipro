@@ -237,7 +237,7 @@
                         <div class="form-group ">
                             <div class="row mt-4">
                                 <div class="col-3 ">                                    
-                                    <p><a href="nomina.htm" class="btn btn-secondary mr-2 ml-4"><i class="fas fa-arrow-left"></i></a><b  style="font-size: 20px !important; align-content: center !important;">Filtro de Paginación: </b></p>
+                                    <p><a href="nomina.htm" class="btn btn-secondary mr-2 ml-4" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a><b  style="font-size: 20px !important; align-content: center !important;">Filtro de Paginación: </b></p>
                                 </div>
                                 <div class=" col-1">                            
                                     <select class  ="form-control" name="state" id="maxRows">                                           
@@ -253,12 +253,12 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="input-group-append">
-                                        <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2">Agregar Registro</a>
-                                        <a id="maxRows" href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary mr-2">Mensualidad</a>
-                                        <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2">Quincena 1</a>
-                                        <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2">Quincena 2</a>
+                                        <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
+                                        <a id="maxRows" href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la mensualidad">Mensualidad</a>
+                                        <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 1 al 15">Quincena 1</a>
+                                        <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 16 al 30">Quincena 2</a>
                                         <input type="text" class="form-control-md" name="txtBuscarEsta" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
-                                        <input type="submit" value="Buscar" class="btn btn-secondary" name="btnBuscarEstaQuincena1"> 
+                                        <input type="submit" value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar" name="btnBuscarEstaQuincena1"> 
                                     </div>
                                 </div>
                             </div>                            
