@@ -226,7 +226,7 @@
             }
         %> 
         <div class="container mt-4">
-            <h1 class="text-center">Empleados prueba</h1>
+            <h1 class="text-center">Empleados</h1>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">

@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/pruebapag.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/editarestadisticasdia1.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Modelos/Estadisticas/clsEmpleado.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/estadisticas.jsp</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/WEB-INF/jsp/agregarusuarios.jsp</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/empleados.jsp</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/src/java/Servlets/ControlEmpleados.java</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/agregarempleados.jsp</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/editarestadisticasdia3.jsp</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/editarempleados.jsp</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/WEB-INF/jsp/nomina.jsp</file>
         </group>
     </open-files>
 </project-private>
