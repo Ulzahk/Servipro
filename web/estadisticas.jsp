@@ -243,7 +243,7 @@
                                     <p><a href="nomina.htm" class="btn btn-secondary mr-2 ml-4" data-toggle="tooltip" title="Haz clic para regresar al menú nomina"><i class="fas fa-arrow-left"></i></a><b  style="font-size: 20px !important; align-content: center !important;">Filtro de Paginación: </b></p>
                                 </div>
                                 <div class=" col-1">                            
-                                    <select class  ="form-control" name="state" id="maxRows">                                           
+                                    <select class="form-control" name="state" id="maxRows">                                           
                                         <option value="5000">Todos</option>
                                         <option value="5">5</option>
                                         <option value="10">10</option>
@@ -270,13 +270,15 @@
                 </div>
                 <div class="card-body">
                     <div class="">
-                        <table   id="table-id" cellspacing="0" border="1" class="table table-bordered table-striped table-hover text-center table-responsive">
+                        <table id="table-id" cellspacing="0" border="1" class="table table-bordered table-striped table-hover text-center table-responsive">
                             <div class="form-group">
                                 <div class="form-row">
-                                    <b>
-                                        <i class="fas fa-clipboard-list"></i>
-                                        <span>Registros Existentes: <%=lstclsEstadisticas.size()%></span>
-                                    </b>
+                                    <div class="col-4 ml-2">
+                                        <b>
+                                            <i class="fas fa-clipboard-list"></i>
+                                            <span>Registros Existentes: <%=lstclsEstadisticas.size()%></span>
+                                        </b>
+                                    </div>  
                                 </div>
                             </div>
                             <h3 class="text-center">Novedad por Día</h3>
@@ -366,7 +368,7 @@
                                 }
                             %>
                         </table>
-                        <!--		Start Pagination -->
+                        <!--Inicio de la Paginación -->
                         <div class='pagination-container' >
                             <nav>
                                 <ul class="pagination">
@@ -374,7 +376,7 @@
                                     <li data-page="prev" >
                                         <span><i class="fas fa-angle-left"></i>&nbsp;<span class="sr-only">(current)</span></span>
                                     </li>
-                                    <!--	Here the JS Function Will Add the Rows -->
+                                    <!--Acá estaran las paginas -->
                                     <li data-page="next" id="prev">
                                         <span>&nbsp;<i class="fas fa-angle-right"></i><span class="sr-only">(current)</span></span>
                                     </li>
@@ -387,7 +389,7 @@
             <!-- Modal -->
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog ">
-                    
+
                     <!-- Modal content-->
                     <div class="modal-content">  
                         <div class="modal-body">
@@ -508,7 +510,7 @@
                                 var trIndex = 0; // reset tr counter
                                 $('.pagination li').removeClass('active'); // remove active class from all li
                                 $('.pagination [data-page="' + lastPage + '"]').addClass('active'); // add active class to the clicked
-                                // $(this).addClass('active');					// add active class to the clicked
+                                $(this).addClass('active');					// add active class to the clicked
                                 limitPagging();
                                 $(table + ' tr:gt(0)').each(function () {
                                     // each tr in table not the header
