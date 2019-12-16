@@ -311,11 +311,11 @@
                             <ul class="pagination">
 
                                 <li data-page="prev" >
-                                    <span><i class="fas fa-angle-left" style="font-size: 35px;"></i>&nbsp;<span class="sr-only">(current)</span></span>
+                                    <button class="btn btn-secondary btn-sm mr-1"><i class="fas fa-angle-left" style="font-size: 15px;"></i>&nbsp;<span class="sr-only">(current)</span></button>
                                 </li>
                                 <!--	Here the JS Function Will Add the Rows -->
                                 <li data-page="next" id="prev">
-                                    <span><i class="fas fa-angle-right" style="font-size: 35px;"></i><span class="sr-only">(current)</span></span>
+                                    <button class="btn btn-secondary btn-sm"><i class="fas fa-angle-right" style="font-size: 15px;"></i><span class="sr-only">(current)</span></button>
                                 </li>
                             </ul>
                         </nav>

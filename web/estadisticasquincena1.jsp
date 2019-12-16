@@ -21,7 +21,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Estadisticas</title>
+        <title>Estadísticas</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -228,19 +228,20 @@
                 out.println("</nav>");
             }
         %> 
-        <div class="mr-2 ml-2 mt-4">
-            <h1 class="text-center">Estadisticas</h1>
+        <div class="container-fluid mt-4">
+            <h1 class="text-center">Estadísticas</h1>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
                     <form action="estadisticas" method="post">
                         <div class="form-group ">
                             <div class="row mt-4">
-                                <div class="col-3 ">                                    
-                                    <p><a href="nomina.htm" class="btn btn-secondary mr-2 ml-4" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a><b  style="font-size: 20px !important; align-content: center !important;">Filtro de Paginación: </b></p>
+                                <div class="col-1">                                    
+                                    <p><a href="nomina.htm" class="btn btn-secondary ml-4" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a></p>
                                 </div>
-                                <div class=" col-1">                            
-                                    <select class  ="form-control" name="state" id="maxRows">                                           
+                                <div class=" col-3">                            
+                                    <select class  ="form-control" name="state" id="maxRows"> 
+                                        <option value="5000">Filtro de Paginación</option>
                                         <option value="5000">Todos</option>
                                         <option value="5">5</option>
                                         <option value="10">10</option>
@@ -254,9 +255,9 @@
                                 <div class="col-8">
                                     <div class="input-group-append">
                                         <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
-                                        <a id="maxRows" href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la mensualidad">Mensualidad</a>
-                                        <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 1 al 15">Quincena 1</a>
-                                        <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 16 al 30">Quincena 2</a>
+                                        <a id="maxRows" href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la mensualidad"><i class="fas fa-calendar-alt"></i></a>
+                                        <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 1 al 15"><i class="fas fa-calendar-week"></i></a>
+                                        <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 16 al 30"><i class="fas fa-calendar-minus"></i></a>
                                         <input type="text" class="form-control-md" name="txtBuscarEsta" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
                                         <input type="submit" value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar" name="btnBuscarEstaQuincena1"> 
                                     </div>
@@ -332,17 +333,17 @@
                             }
                         %>
                     </table>   
-                    <!--		Start Pagination -->
+                    <!--Inicio de la Paginación -->
                     <div class='pagination-container' >
                         <nav>
                             <ul class="pagination">
 
                                 <li data-page="prev" >
-                                    <span> < <span class="sr-only">(current)</span></span>
+                                    <button class="btn btn-secondary btn-sm mr-1"><i class="fas fa-angle-left" style="font-size: 15px;"></i>&nbsp;<span class="sr-only">(current)</span></button>
                                 </li>
                                 <!--	Here the JS Function Will Add the Rows -->
                                 <li data-page="next" id="prev">
-                                    <span> > <span class="sr-only">(current)</span></span>
+                                    <button class="btn btn-secondary btn-sm"><i class="fas fa-angle-right" style="font-size: 15px;"></i><span class="sr-only">(current)</span></button>
                                 </li>
                             </ul>
                         </nav>
@@ -357,9 +358,6 @@
                 <div class="modal-content">                        
                     <div class="modal-body">
 
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
             </div>
@@ -441,9 +439,9 @@
                                                     '<li data-page="' +
                                                     i +
                                                     '">\
-                                                                  <span>' +
+                                                                  <button class="btn btn-secondary btn-sm mr-1">' +
                                                     i++ +
-                                                    '<span class="sr-only">(current)</span></span>\
+                                                    '<span class="sr-only">(current)</span></button>\
                                                                 </li>'
                                                     )
                                             .show();
@@ -493,7 +491,7 @@
                             }); // end of on click pagination list
                             limitPagging();
                         })
-                        .val(5)
+                        .val(5000)
                         .change();
 
                 // end of on select change
