@@ -230,7 +230,7 @@
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
-                    <a href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
+                    <a href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para volver a la vista estadísticas"><i class="fas fa-arrow-left"></i></a>
                 </div>
                 <div class="card-body">
                     <form action="estadisticas" method="POST">   

@@ -357,7 +357,7 @@
                                        href="estadisticas?codigoSeleccionado=<%=elem.getId_estadistica()%>">
                                         <i class="fas fa-edit" style="font-size:15px;"></i>
                                     </a>
-                                    <a class="btn btn-danger btn-sm" id="btnEmplEliminar"
+                                    <a class="btn btn-danger btn-sm openBtn" data-toggle="modal" data-target="#myModal" id="btnEmplEliminar"
                                        href="estadisticas?codigoEliminar=<%=elem.getId_estadistica()%>">
                                         <i class="fas fa-trash-alt" style="font-size:15px;"></i>
                                     </a>
@@ -399,16 +399,6 @@
             </div>
         </div>
         <script>
-            $('a.btn-danger').click(function (event) {
-                event.preventDefault();
-
-                var r = confirm("¿Esta seguro que quiere eliminar este registro?");
-                if (r == true) {
-                    window.location = this.href;
-                } else {
-                    alert("El registro se mantiene intacto");
-                }
-            });
 
             $('.openBtn').on('click', function () {
                 $('.modal-body').load(this.href, function ()
