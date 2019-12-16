@@ -21,7 +21,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Estadísticas</title>
+        <title>Estadísticas Prueba</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
         <link href="Resources/CSS/style.css" rel="stylesheet" type="text/css"/>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -232,7 +232,7 @@
             }
         %> 
         <div class="container-fluid mt-4">
-            <h1 class="text-center">Estadísticas</h1>
+            <h1 class="text-center">Estadísticas Prueba</h1>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
