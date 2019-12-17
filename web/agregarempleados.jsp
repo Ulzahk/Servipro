@@ -231,7 +231,7 @@
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
-                    <a href="empleados?btnEmplConsultar=true" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
+                    <a href="empleados?btnEmplConsultar=true" class="btn btn-secondary"data-toggle="tooltip" title="Haz clic para regresar al menú empleados"><i class="fas fa-arrow-left"></i></a>
                 </div>
                 <div class="card-body">
                     <form action="empleados" method="POST">
@@ -329,7 +329,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12">
-                                    <input type="submit" value="Guardar" class="btn btn-info" name="btnEmplGuardar"/>
+                                    <input type="submit" value="Guardar" class="btn btn-info" data-toggle="tooltip" title="Haz clic para guardar"btnEmplGuardar"/>
                                 </div>
                             </div>
                         </div>

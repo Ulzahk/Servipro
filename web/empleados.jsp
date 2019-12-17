@@ -235,11 +235,11 @@
                 <div class="card-header bg-info text-white">
                     <form action="empleados" method="post">
                         <div class="input-group mt-3">
-                            <a href="nomina.htm" class="btn btn-secondary mr-2"><i class="fas fa-arrow-left"></i></a>
-                            <a href="empleados?btnEmplAgregar=true" class="btn btn-secondary mr-2">Agregar Registro</a>
+                            <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú"><i class="fas fa-arrow-left"></i></a>
+                            <a href="empleados?btnEmplAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
                             <input type="text" class="form-control" name="txtEmplBuscar" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
                             <div class="input-group-append">
-                                <input type="submit" value="Buscar" class="btn btn-secondary" name="btnEmplBuscar"> 
+                                <input type="submit" value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar" name="btnEmplBuscar"> 
                             </div>
                         </div>
                     </form>
@@ -291,11 +291,11 @@
                             <td class="align-middle"><%=elem.getObclsCentroCosto().getStDescripcion()%></td>
                             <td class="align-middle"><%=elem.getObclsCargo().getStDescripcion()%></td>
                             <td class="align-middle">
-                                <a class="btn btn-warning btn-sm mb-2 openBtn" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
+                                <a class="btn btn-warning btn-sm mb-2 openBtn" title="Haz clic para modificar empleado" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
                                    href="empleados?stOpcion=M&codigoSeleccionado=<%=elem.getInId()%>">
                                     <i class="fas fa-edit" style="font-size:15px;"></i>
                                 </a>
-                                <a class="btn btn-danger btn-sm openBtn" data-toggle="modal" data-target="#myModal" id="btnEmplEliminar"
+                                <a class="btn btn-danger btn-sm openBtn" title="Haz clic para eliminar" data-toggle="modal" data-target="#myModal" id="btnEmplEliminar"
                                    href="empleados?stOpcion=E&codigoSeleccionado=<%=elem.getInId()%>">
                                     <i class="fas fa-trash-alt" style="font-size:15px;"></i>
                                 </a>
