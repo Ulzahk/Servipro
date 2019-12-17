@@ -288,7 +288,7 @@
                 <i class='fab fa-buromobelexperte mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Facturación</b></p>
             </a>
-            <a href='novedadesempleado.htm' class='col bIndex colorEnlace'>
+            <a href='controlnovedadesempleado?btnNoveEmplConsultar=true' class='col bIndex colorEnlace'>
                 <i class='fas fa-user-check mb-2 tamañoIcono'></i>
                 <p><b>Novedades por Empleado</b></p>
             </a>
@@ -384,7 +384,7 @@
                     <i class='fab fa-buromobelexperte mb-2 mt-2 tamañoIcono'></i>
                     <p><b>Facturación</b></p>
                 </a>
-                <a href='novedadesempleado.htm' class='col bIndex colorEnlace'>
+                <a href='controlnovedadesempleado?btnNoveEmplConsultar=true' class='col bIndex colorEnlace'>
                     <i class='fas fa-user-check mb-2 tamañoIcono'></i>
                     <p><b>Novedades por Empleado</b></p>
                 </a>
