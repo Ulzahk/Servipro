@@ -31,10 +31,6 @@
     <servlet>
         <servlet-name>ControlNovedadesEmpleado</servlet-name>
         <servlet-class>Servlets.ControlNovedadesEmpleado</servlet-class>
-        </servlet>
-    <servlet>
-        <servlet-name>ControlModulosPerfil</servlet-name>
-        <servlet-class>Servlets.ControlModulosPerfil</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
@@ -59,10 +55,6 @@
     <servlet-mapping>
         <servlet-name>ControlNovedadesEmpleado</servlet-name>
         <url-pattern>/controlnovedadesempleado</url-pattern>
-        </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ControlModulosPerfil</servlet-name>
-        <url-pattern>/controlmodulosperfil</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
