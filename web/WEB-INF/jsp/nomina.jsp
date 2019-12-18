@@ -310,7 +310,7 @@
                 <i class='fas fa-th mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Modulos</b></p>
             </a>
-            <a href='modulosperfil.htm' class='col cIndex colorEnlace'>
+            <a href='controlmodulosperfil?btnModPerfilConsultar=true' class='col cIndex colorEnlace'>
                 <i class='fas fa-th-list mb-2 tamañoIcono'></i>
                 <p><b>Modulos por Perfil</b></p>
             </a>
