@@ -28,6 +28,10 @@
         <servlet-name>ControlEstadisticas</servlet-name>
         <servlet-class>Servlets.ControlEstadisticas</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControlModulosPerfil</servlet-name>
+        <servlet-class>Servlets.ControlModulosPerfil</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>ControlEstadisticas</servlet-name>
         <url-pattern>/estadisticas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControlModulosPerfil</servlet-name>
+        <url-pattern>/controlmodulosperfil</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
