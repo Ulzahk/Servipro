@@ -228,19 +228,32 @@
                 out.println("</nav>");
             }
         %> 
-        <div class="container-fluid mt-4">
+        <div class="container mt-4">
             <h1 class="text-center">Estadísticas</h1>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
                     <form action="estadisticas" method="post">
-                        <div class="form-group ">
-                            <div class="row mt-4">
-                                <div class="col-1">                                    
-                                    <p><a href="nomina.htm" class="btn btn-secondary ml-4" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a></p>
-                                </div>
-                                <div class=" col-3">                            
-                                    <select class  ="form-control" name="state" id="maxRows"> 
+                        <div class="input-group mt-3">
+                            <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
+                            <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
+                            <a href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la mensualidad"><i class="fas fa-calendar-alt"></i></a>
+                            <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 1 al 15"><i class="fas fa-calendar-week"></i></a>
+                            <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 16 al 30"><i class="fas fa-calendar-minus"></i></a>
+                            <input type="text" class="form-control" name="txtBuscarEsta" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
+                            <div class="input-group-append">
+                                <button type="submit" Value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar" name="btnBuscarEstaQuincena1"><i class="fas fa-search"></i></button>                            
+                            </div>
+                        </div>                          
+                    </form>
+                </div>
+                <div class="card-body">
+                    <div class=""></div>
+                    <table id="table-id" cellspacing="0" border="1" class="table table-bordered table-striped table-hover text-center table-responsive">
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-2">
+                                    <select class="form-control form-control-sm" name="state" id="maxRows"> 
                                         <option value="5000">Filtro de Paginación</option>
                                         <option value="5000">Todos</option>
                                         <option value="5">5</option>
@@ -252,33 +265,14 @@
                                         <option value="100">100</option>
                                     </select>
                                 </div>
-                                <div class="col-8">
-                                    <div class="input-group-append">
-                                        <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
-                                        <a id="maxRows" href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la mensualidad"><i class="fas fa-calendar-alt"></i></a>
-                                        <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 1 al 15"><i class="fas fa-calendar-week"></i></a>
-                                        <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 16 al 30"><i class="fas fa-calendar-minus"></i></a>
-                                        <input type="text" class="form-control-md" name="txtBuscarEsta" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
-                                        <button type="submit" Value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar" name="btnBuscarEstaQuincena1"><i class="fas fa-search"></i></button>
-                                    </div>
+                                <div class="col-4 ml-2">
+                                    <b>
+                                        <i class="fas fa-clipboard-list"></i>
+                                        <span>Registros Existentes: <%=lstclsEstadisticas.size()%></span>
+                                    </b>
                                 </div>
-                            </div>                            
-                        </div>                        
-                    </form>
-                </div>
-                <div class="card-body">
-                    <div class=""></div>
-                    <table id="table-id" cellspacing="0" border="1" class="table table-bordered table-striped table-hover text-center table-responsive">
-                        <div class="form-group">
-                            <div class="form-row">
-                                <b>
-                                    <i class="fas fa-clipboard-list"></i>
-                                    <span>Registros Existentes: <%=lstclsEstadisticas.size()%></span>
-                                </b>
                             </div>
                         </div>
-                        <h3 class="text-center">Novedad por Día</h3>
-                        <br>
                         <tr>
                             <th class="align-middle"><b>Empleado</b></th>
                             <th>1</th>
