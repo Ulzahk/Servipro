@@ -199,7 +199,7 @@
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
-                    <a href="facturacion.htm" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
+                    <a href="facturacion.htm" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para regresar al menú facturación"><i class="fas fa-arrow-left"></i></a>
                 </div>
                 <div class="card-body">
                     <table border="1" class="table table-bordered table-striped table-hover text-center">

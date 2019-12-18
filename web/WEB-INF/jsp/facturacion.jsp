@@ -200,13 +200,13 @@
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
-                    <a href="nomina.htm" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
-                    <a href="agregarfacturacion.htm" class="btn btn-secondary">Agregar Registro</a>
                      <form action="" method="post">
-                    <div class="input-group mt-3">
-                        <input type="text" class="form-control" name="Buscar" placeholder="Buscar en Servisoft S.A."/>
+                    <div class="input-group">
+                        <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú"><i class="fas fa-arrow-left"></i></a>
+                        <a href="agregarfacturacion.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
+                        <input type="text" class="form-control" name="Buscar" placeholder="Buscar en ServiSoft S.A."/>
                         <div class="input-group-append">
-                            <button type="submit" Value="Buscar" class="btn btn-secondary"><i class="fas fa-search"></i> Buscar</button> 
+                            <button type="submit" Value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar"><i class="fas fa-search"></i> Buscar</button> 
                         </div>
                     </div>
                     </form>
@@ -256,8 +256,8 @@
                                         <tr>
                                             <td class="align-middle">${dato.Descripcion}</td>
                                             <td>
-                                                <a href="<c:url value="editarfacturacion.htm?id_tipo_novedad=${dato.Id_tipo_novedad}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                                <a href="<c:url value="eliminarfacturacion.htm?id_tipo_novedad=${dato.Id_tipo_novedad}"/>"class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                <a href="<c:url value="editarfacturacion.htm?id_tipo_novedad=${dato.Id_tipo_novedad}"/>" class="btn btn-warning" data-toggle="tooltip" title="Haz clic para editar facturación"><i class="fas fa-edit"></i></a>
+                                                <a href="<c:url value="eliminarfacturacion.htm?id_tipo_novedad=${dato.Id_tipo_novedad}"/>"class="btn btn-danger" data-toggle="tooltip" title="Haz clic para eliminar"><i class="fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
                                         </c:forEach>
