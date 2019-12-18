@@ -1,8 +1,7 @@
 package Modelos.Estadisticas;
 
-
 public class clsEstadisticas {
-    
+
     public int Id_estadistica;
     public clsEmpleado obEmpleado;
     public clsId_dia1 obId_dia1;
@@ -35,6 +34,7 @@ public class clsEstadisticas {
     public clsId_dia28 obId_dia28;
     public clsId_dia29 obId_dia29;
     public clsId_dia30 obId_dia30;
+    public String Comentario;
 
     public int getId_estadistica() {
         return Id_estadistica;
@@ -290,7 +290,13 @@ public class clsEstadisticas {
 
     public void setObId_dia30(clsId_dia30 obId_dia30) {
         this.obId_dia30 = obId_dia30;
-    }   
+    }
+
+    public String getComentario() {
+        return Comentario;
+    }
+
+    public void setComentario(String Comentario) {
+        this.Comentario = Comentario;
+    }
 }
-
-

@@ -195,7 +195,7 @@
                     <div class="input-group mt-3">
                         <input type="text" class="form-control" name="Buscar" placeholder="Buscar en Servisoft S.A."/>
                         <div class="input-group-append">
-                            <button type="submit" Value="Buscar" class="btn btn-secondary"><i class="fas fa-search"></i> Buscar</button> 
+                            <button type="submit" Value="Buscar" class="btn btn-secondary"><i class="fas fa-search"></i></button> 
                         </div>
                     </div>
                     </form>

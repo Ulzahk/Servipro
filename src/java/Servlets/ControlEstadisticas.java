@@ -40,8 +40,12 @@ public class ControlEstadisticas extends HttpServlet {
             btnEditarEsta(request, response);
         } else if (request.getParameter("btnEliminarEsta") != null) {
             btnEliminarEsta(request, response);
+        } else if (request.getParameter("btnComentarEsta") != null) {
+            btnComentarEsta(request, response);
         } else if (request.getParameter("codigoSeleccionado") != null) {
             cargarEditarEsta(request, response);
+        } else if (request.getParameter("codigoComentar") != null) {
+            cargarComentarEsta(request, response);
         } else if (request.getParameter("btnConsultarEstaMensualidad") != null) {
             BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
@@ -638,6 +642,45 @@ public class ControlEstadisticas extends HttpServlet {
         }
     }
 
+    public void cargarComentarEsta(HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException {
+        try {
+
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+
+            List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticas = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+
+            lstclsEstadisticas = bl_clsEstadisticas.getEstadisticas();
+
+            for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticas) {
+                if (elem.getId_estadistica() == Integer.parseInt(request.getParameter("codigoComentar"))) {
+                    obclsEstadisticas = elem;
+                    break;
+                }
+            }
+
+            request.setAttribute("obclsEstadisticas", obclsEstadisticas);
+            request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
+
+            request.getRequestDispatcher("comentarestadisticas.jsp").forward(request, response);
+
+        } catch (Exception ex) {
+
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+
+            ex.getMessage();
+
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+        }
+    }
+
     public void cargarEliminarEsta(HttpServletRequest request,
             HttpServletResponse response) throws IOException, ServletException {
         try {
@@ -675,6 +718,45 @@ public class ControlEstadisticas extends HttpServlet {
         }
     }
 
+    public void btnComentarEsta(HttpServletRequest request,
+            HttpServletResponse response)throws IOException, ServletException{
+        
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            
+            Modelos.Estadisticas.clsComentarEstadisticas obclsComentarEstadisticas = new Modelos.Estadisticas.clsComentarEstadisticas();
+            
+            if(request.getParameter("IdModificar")!=null){
+                obclsComentarEstadisticas.setId_estadisticas(Integer.valueOf(request.getParameter("IdModificar")));
+            }
+            
+            if(request.getParameter("txtComentario")!=null){
+                obclsComentarEstadisticas.setComentario(request.getParameter("txtComentario"));
+            }
+            
+            //Definición de parametros desde el controlador
+            request.setAttribute("stMensaje", bl_clsEstadisticas.commentEstadistica(obclsComentarEstadisticas));
+            request.setAttribute("stTipo", "success");
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            //Redireccion y envio de valores
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+            
+            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            
+        }
+    }
+    
+    
     public void btnEditarEsta(HttpServletRequest request,
             HttpServletResponse response) throws IOException, ServletException {
         try {

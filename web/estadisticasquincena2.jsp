@@ -319,14 +319,24 @@
                             <td class="align-middle"><a href="estadisticas?codigoDia29=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia29().getAliasDia29()%></a></td>
                             <td class="align-middle"><a href="estadisticas?codigoDia30=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia30().getAliasDia30()%></a></td>
                             <td class="align-middle">
-                                <a class="btn btn-warning btn-sm mb-2" id="btnEditarEsta" 
-                                   href="estadisticas?codigoSeleccionado=<%=elem.getId_estadistica()%>">
-                                    <i class="fas fa-edit" style="font-size:15px;"></i>
-                                </a>
-                                <a class="btn btn-danger btn-sm" id="btnEmplEliminar"
-                                   href="estadisticas?codigoEliminar=<%=elem.getId_estadistica()%>">
-                                    <i class="fas fa-trash-alt" style="font-size:15px;"></i>
-                                </a>
+                                <div class="btn-group">
+                                    <a class="btn btn-warning rounded mr-1" id="btnEditarEsta" data-toggle="tooltip" title="Haz clic para editar el registro" 
+                                       href="estadisticas?codigoSeleccionado=<%=elem.getId_estadistica()%>">
+                                        <i class="fas fa-edit" style="font-size:15px;"></i>
+                                    </a>
+
+
+                                    <a class="btn btn-primary rounded mr-1 openBtn" data-toggle="modal" data-target="#myModal" id="btnEmplComentar"
+                                       title="Haz clic para comentar" href="estadisticas?codigoComentar=<%=elem.getId_estadistica()%>">
+                                        <i class="far fa-comment" style="font-size:15px;"></i>
+                                    </a>
+
+
+                                    <a class="btn btn-danger rounded openBtn" data-toggle="modal" data-target="#myModal" id="btnEmplEliminar"
+                                       title="Haz clic paa eliminar" href="estadisticas?codigoEliminar=<%=elem.getId_estadistica()%>">
+                                        <i class="fas fa-trash-alt" style="font-size:15px;"></i>
+                                    </a>
+                                </div> 
                             </td>
                         </tr>
                         <%
@@ -353,7 +363,7 @@
         </div>
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <!-- Modal content-->
                 <div class="modal-content">                        
                     <div class="modal-body">

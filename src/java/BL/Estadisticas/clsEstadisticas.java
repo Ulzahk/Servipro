@@ -73,7 +73,22 @@ public class clsEstadisticas {
             return ex.getMessage();
         }
     }
-
+    
+    public String commentEstadistica(Modelos.Estadisticas.clsComentarEstadisticas obclsComentarEstadisticas){
+        try {
+            PreparedStatement ps = conn.prepareStatement("{call spComentarEsta(?,?)}");
+            ps.setInt(1, obclsComentarEstadisticas.getId_estadisticas());
+            ps.setString(2, obclsComentarEstadisticas.getComentario());
+            
+            ps.execute();
+            
+            return "Se realizo el proceso correctamente";
+            
+        } catch (Exception ex) {
+            return ex.getMessage();
+        }
+    }
+    
     public String updateEstadistica(Modelos.Estadisticas.clsEstadisticas obEstadisticas) {
 
         try {
@@ -702,7 +717,9 @@ public class clsEstadisticas {
                 obId_dia30.setDescripcionDia30(rs.getString("Descripcion30"));
                 obId_dia30.setAliasDia30(rs.getString("Alias30"));
                 obEstadisticas.setObId_dia30(obId_dia30);
-
+                
+                obEstadisticas.setComentario(rs.getString("Comentario"));
+                
                 lstclsEstadisticas.add(obEstadisticas);
             }
         } catch (Exception ex) {
