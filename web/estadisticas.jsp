@@ -262,7 +262,7 @@
                                         <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary  mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 1 al 15"><i class="fas fa-calendar-week"></i></a>
                                         <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary  mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 16 al 30"><i class="fas fa-calendar-minus"></i></a>
                                         <input type="text" class="form-control-md" name="txtBuscarEsta" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
-                                        <input type="submit" value="Buscar" class="btn btn-secondary " data-toggle="tooltip" title="Haz clic para buscar" name="btnBuscarEstaMensualidad"> 
+                                        <button type="submit" Value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar" name="btnBuscarEstaMensualidad"><i class="fas fa-search"></i></button>
                                     </div>
                                 </div>
                             </div>                            

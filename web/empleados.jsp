@@ -239,7 +239,7 @@
                             <a href="empleados?btnEmplAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
                             <input type="text" class="form-control" name="txtEmplBuscar" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
                             <div class="input-group-append">
-                                <input type="submit" value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar" name="btnEmplBuscar"> 
+                                <button type="submit" Value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar" name="btnEmplBuscar"><i class="fas fa-search"></i></button>
                             </div>
                         </div>
                     </form>
