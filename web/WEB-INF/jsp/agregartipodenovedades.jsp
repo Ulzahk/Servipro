@@ -1,4 +1,4 @@
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
@@ -198,7 +198,7 @@
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
-                    <a href="tipodenovedades.htm" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
+                    <a href="tipodenovedades.htm" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para regresar al menú tipo de novedades"><i class="fas fa-arrow-left"></i></a>
                 </div>
                 <div class="card-body">
                 <form:form method="post" commandName="novedades">
