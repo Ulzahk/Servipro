@@ -261,7 +261,7 @@
                                         <option value="100">100</option>
                                     </select>
                                 </div>
-                                <div class="col-4 ml-2">
+                                <div class="col-6 ml-2">
                                     <b>
                                         <i class="fas fa-clipboard-list"></i>
                                         <span>Registros Existentes: <%=lstclsEmpleado.size()%></span>
@@ -291,14 +291,16 @@
                             <td class="align-middle"><%=elem.getObclsCentroCosto().getStDescripcion()%></td>
                             <td class="align-middle"><%=elem.getObclsCargo().getStDescripcion()%></td>
                             <td class="align-middle">
-                                <a class="btn btn-warning btn-sm mb-2 openBtn" title="Haz clic para modificar empleado" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
-                                   href="empleados?stOpcion=M&codigoSeleccionado=<%=elem.getInId()%>">
-                                    <i class="fas fa-edit" style="font-size:15px;"></i>
-                                </a>
-                                <a class="btn btn-danger btn-sm openBtn" title="Haz clic para eliminar" data-toggle="modal" data-target="#myModal" id="btnEmplEliminar"
-                                   href="empleados?stOpcion=E&codigoSeleccionado=<%=elem.getInId()%>">
-                                    <i class="fas fa-trash-alt" style="font-size:15px;"></i>
-                                </a>
+                                <div class="btn-group">
+                                    <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para modificar empleado" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
+                                       href="empleados?stOpcion=M&codigoSeleccionado=<%=elem.getInId()%>">
+                                        <i class="fas fa-edit" style="font-size:15px;"></i>
+                                    </a>
+                                    <a class="btn btn-danger btn-sm openBtn rounded" title="Haz clic para eliminar" data-toggle="modal" data-target="#myModal" id="btnEmplEliminar"
+                                       href="empleados?stOpcion=E&codigoSeleccionado=<%=elem.getInId()%>">
+                                        <i class="fas fa-trash-alt" style="font-size:15px;"></i>
+                                    </a>
+                                </div>
                             </td>
                         </tr>
                         <%

@@ -261,7 +261,7 @@
                                         <option value="100">100</option>
                                     </select>
                                 </div>
-                                <div class="col-4 ml-2">
+                                <div class="col-6 ml-2">
                                     <b>
                                         <i class="fas fa-clipboard-list"></i>
                                         <span>Registros Existentes: <%=lstclsModulosPerfil.size()%></span>
@@ -282,14 +282,16 @@
                             <td class="align-middle"><%=elem.getObclsModulo().getStNombre_modulo()%></td>
                             <td class="align-middle"><%=elem.getObclsPerfil().getStDescripcion_perfil()%></td>
                             <td class="align-middle">
-                                <a class="btn btn-warning btn-sm mb-2 openBtn" data-toggle="modal" data-target="#myModal" id="btnModPerfilEditar" 
-                                   href="controlmodulosperfil?stOpcion=M&codigoSeleccionado=<%=elem.getId_modulos_perfil()%>">
-                                    <i class="fas fa-edit" style="font-size:15px;"></i>
-                                </a>
-                                <a class="btn btn-danger btn-sm openBtn" data-toggle="modal" data-target="#myModal" id="btnModPerfilEliminar"
-                                   href="controlmodulosperfil?stOpcion=E&codigoSeleccionado=<%=elem.getId_modulos_perfil()%>">
-                                    <i class="fas fa-trash-alt" style="font-size:15px;"></i>
-                                </a>
+                                <div class="btn-group">
+                                    <a class="btn btn-warning btn-sm mr-1 openBtn rounded" data-toggle="modal" data-target="#myModal" id="btnModPerfilEditar" 
+                                       href="controlmodulosperfil?stOpcion=M&codigoSeleccionado=<%=elem.getId_modulos_perfil()%>">
+                                        <i class="fas fa-edit" style="font-size:15px;"></i>
+                                    </a>
+                                    <a class="btn btn-danger btn-sm openBtn rounded" data-toggle="modal" data-target="#myModal" id="btnModPerfilEliminar"
+                                       href="controlmodulosperfil?stOpcion=E&codigoSeleccionado=<%=elem.getId_modulos_perfil()%>">
+                                        <i class="fas fa-trash-alt" style="font-size:15px;"></i>
+                                    </a>
+                                </div>                                
                             </td>
                         </tr>
                         <%

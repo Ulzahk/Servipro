@@ -268,7 +268,7 @@
                                             <option value="100">100</option>
                                         </select>
                                     </div>
-                                    <div class="col-4 ml-2">
+                                    <div class="col-6 ml-2">
                                         <b>
                                             <i class="fas fa-clipboard-list"></i>
                                             <span>Registros Existentes: <%=lstclsEstadisticas.size()%></span>
