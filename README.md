@@ -8,7 +8,7 @@ Servipro es una herramienta que registra la información de eventos en una empre
 En este momento presenta dos modulos, de los cuales uno llamado Nomina esta en funcionamiento y se segmenta en varias partes.
 
 ## Nomina
-En nomina se pueden realizar funciones realacionadas con el pago salarias de cada uno de los empleados, además de los registros de eventualidades y la separación de grupos para asignarles coordinadores.
+En nomina se pueden realizar funciones realacionadas con el pago de salarios de cada uno de los empleados, además de los registros de eventualidades y la separación de grupos para asignarles coordinadores.
 
 Vamos a encontrar diferentes maestros o secciones, que son los siguientes:
 * Usuarios
