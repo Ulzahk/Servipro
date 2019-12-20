@@ -245,7 +245,7 @@
                     </form>
                 </div>
                 <div class="card-body">
-                    <table id="table-id" border="1" class="table table-bordered table-striped table-hover text-center table-responsive-lg">
+                    <table id="table-id" border="1" class="table table-bordered table-striped table-hover text-center table-responsive-sm">
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-2">
