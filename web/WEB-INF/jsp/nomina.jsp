@@ -272,7 +272,7 @@
     %>
     <div class='container mt-4 text-center'>
         <div class='row text-center'>
-            <a href='usuarios.htm' class='col aIndex colorEnlace'>
+            <a href='controlusuarios?btnUsuConsultar=true' class='col aIndex colorEnlace'>
                 <i class='fas fa-user-circle mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Usuarios</b></p>
             </a>
@@ -347,7 +347,7 @@
     %>
     <div class='container mt-4 text-center'>
         <div class='row text-center'>
-            <a href='usuarios.htm' class='col aIndex colorEnlace'>
+            <a href='controlusuarios?btnUsuConsultar=true' class='col aIndex colorEnlace'>
                 <i class='fas fa-user-circle mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Usuarios</b></p>
             </a>
