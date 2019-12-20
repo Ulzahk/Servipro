@@ -324,7 +324,7 @@
             </a>
         </div>
         <div class='row text-center'>
-            <a href='responsablegrupo.htm' class='col fIndex colorEnlace'>
+            <a href='controlresponsablegrupo?btnReGruConsultar=true' class='col fIndex colorEnlace'>
                 <i class='fas fa-user-tie mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Responsable por Grupo</b></p>
             </a>
@@ -410,7 +410,7 @@
                     <i class='fas fa-users-cog mb-2 tamañoIcono'></i>
                     <p><b>Empleados por Grupo</b></p>
                 </a>
-                <a href='responsablegrupo.htm' class='col-2 fIndex colorEnlace'>
+                <a href='controlresponsablegrupo?btnReGruConsultar=true' class='col-2 fIndex colorEnlace'>
                     <i class='fas fa-user-tie mb-2 mt-2 tamañoIcono'></i>
                     <p><b>Responsable por Grupo</b></p>
                 </a>

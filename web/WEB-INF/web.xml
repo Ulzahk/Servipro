@@ -36,6 +36,10 @@
         <servlet-name>ControlModulosPerfil</servlet-name>
         <servlet-class>Servlets.ControlModulosPerfil</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControlResponsableGrupo</servlet-name>
+        <servlet-class>Servlets.ControlResponsableGrupo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>ControlModulosPerfil</servlet-name>
         <url-pattern>/controlmodulosperfil</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControlResponsableGrupo</servlet-name>
+        <url-pattern>/controlresponsablegrupo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
