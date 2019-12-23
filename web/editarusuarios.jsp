@@ -66,7 +66,7 @@
                     <div class="form-group">
                         <div class="col-12 text-center">                                    
                             <h5 class="align-middle mt-1"> 
-                                <b><%=obclsUsuarios.getObclsEmpleado().getStNombreEmpleado()!= null ? obclsUsuarios.getObclsEmpleado().getStNombreEmpleado(): ""%></b>
+                                <b><%=obclsUsuarios.getObclsEmpleado().getStNombreEmpleado() != null ? obclsUsuarios.getObclsEmpleado().getStNombreEmpleado() : ""%></b>
                             </h5>                                         
                         </div>
                     </div>

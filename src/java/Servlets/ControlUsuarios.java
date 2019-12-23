@@ -5,6 +5,7 @@
  */
 package Servlets;
 
+import Utils.Encriptar;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -90,7 +91,10 @@ public class ControlUsuarios extends HttpServlet {
             }
 
             if (request.getParameter("txtContraseña") != null) {
-                obclsUsuarios.setContraseña(request.getParameter("txtContraseña"));
+                Encriptar enc = new Encriptar();                
+                String Contraseña = (request.getParameter("txtContraseña"));
+                Contraseña = enc.getMD5(Contraseña);
+                obclsUsuarios.setContraseña(Contraseña);
             }
 
             if (request.getParameter("ddlPerfil") != null) {
@@ -240,7 +244,10 @@ public class ControlUsuarios extends HttpServlet {
             }
 
             if (request.getParameter("txtContraseña") != null) {
-                obclsUsuarios.setContraseña(request.getParameter("txtContraseña"));
+                Encriptar enc = new Encriptar();                
+                String Contraseña = (request.getParameter("txtContraseña"));
+                Contraseña = enc.getMD5(Contraseña);
+                obclsUsuarios.setContraseña(Contraseña);
             }
 
             if (request.getParameter("ddlPerfil") != null) {
