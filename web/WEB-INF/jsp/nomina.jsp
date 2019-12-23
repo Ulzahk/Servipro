@@ -72,7 +72,7 @@
     %> 
 </header>
 
-    <div class="container mt-3 mb-1 text-center">
+    <div class="logo container mt-3 mb-1 text-center">
         <img src="<c:url value="/Resources/Images/LogoServiSoft.png"/>"/>  
     </div>
     <br/>
@@ -241,4 +241,30 @@
         %>
 
     </body>   
+     <script>
+       $(document).ready(main);
+ 
+var contador = 1;
+ 
+function main () {
+	$('.menu_bar').click(function(){
+		if (contador == 1) {
+			$('nav').animate({
+				left: '0'
+			});
+			contador = 0;
+		} else {
+			contador = 1;
+			$('nav').animate({
+				left: '-100%'
+			});
+		}
+	});
+ 
+	// Mostramos y ocultamos submenus
+	$('.submenu').click(function(){
+		$(this).children('.children').slideToggle();
+	});
+}
+    </script>
 </html>
