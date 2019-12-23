@@ -5,11 +5,13 @@
  */
 package Servlets;
 
+import Utils.AnotherOneBitesTheSaltest;
 import Utils.Encriptar;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import javax.crypto.SecretKey;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +22,9 @@ import javax.servlet.http.HttpServletResponse;
  * @author PRACTICANTE
  */
 public class ControlUsuarios extends HttpServlet {
+
+    private static String secretKey = "boooooooooom!!!!";
+    private static String salt = "ssshhhhhhhhhhh!!!!";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -91,10 +96,10 @@ public class ControlUsuarios extends HttpServlet {
             }
 
             if (request.getParameter("txtContraseña") != null) {
-                Encriptar enc = new Encriptar();                
                 String Contraseña = (request.getParameter("txtContraseña"));
-                Contraseña = enc.getMD5(Contraseña);
-                obclsUsuarios.setContraseña(Contraseña);
+                String encryptedString = AnotherOneBitesTheSaltest.encrypt(Contraseña, secretKey);
+                System.out.println(encryptedString);
+                obclsUsuarios.setContraseña(encryptedString);
             }
 
             if (request.getParameter("ddlPerfil") != null) {
@@ -243,11 +248,11 @@ public class ControlUsuarios extends HttpServlet {
                 obclsUsuarios.setObclsEmpleado(obclsEmpleados);
             }
 
-            if (request.getParameter("txtContraseña") != null) {
-                Encriptar enc = new Encriptar();                
+            if (request.getParameter("txtContraseña") != null) {                
                 String Contraseña = (request.getParameter("txtContraseña"));
-                Contraseña = enc.getMD5(Contraseña);
-                obclsUsuarios.setContraseña(Contraseña);
+                String encryptedString = AnotherOneBitesTheSaltest.encrypt(Contraseña, secretKey);
+                System.out.println(encryptedString);
+                obclsUsuarios.setContraseña(encryptedString);
             }
 
             if (request.getParameter("ddlPerfil") != null) {
