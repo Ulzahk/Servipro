@@ -36,94 +36,15 @@
 
     <body>
 
+        <header>
         <%--Barra de Navegación de Jefe--%>
         <%
             if (Descripcion_perfil.equals("JEFE")) {
 
         %>       
-    <nav class='navbar navbar-expand-sm bg-info navbar-dark justify-content-center'>
-        <a class='navbar-brand' href='index.htm'>ServiSoft S.A.</a>
-        <div>
-            <ul class='navbar-nav'>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Control Usuarios
-                    </a>
-                    <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='usuarios.htm'>Usuarios</a>
-                        <a class='dropdown-item' href='perfil.htm'>Perfil</a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Novedades
-                    </a>
-                    <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='tipodenovedades.htm'>Tabla De Novedades</a>
-                        <a class='dropdown-item' href='facturacion.htm'>Facturación</a>
-                        <a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Centro de Costos
-                    </a>
-                    <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='centrodecostos.htm'>Tabla Centro de Costos</a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Empleados
-                    </a>
-                    <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='empleados.htm'>Tabla Empleados</a>
-                        <a class='dropdown-item' href='cargoempleado.htm'>Cargo Empleado</a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Modulos
-                    </a>
-                    <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='modulos.htm'>Tabla Modulos</a>
-                        <a class='dropdown-item' href='modulosperfil.htm'>Modulos por Perfil</a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Grupos
-                    </a>
-                    <div class='dropdown-menu'>;
-                        <a class='dropdown-item' href='grupos.htm'>Tabla Grupos</a>
-                        <a class='dropdown-item' href='empleadosgrupo.htm'>Empleados por Grupo</a>
-                        <a class='dropdown-item' href='responsablegrupo.htm'>Responsable del Grupo</a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Configuracion
-                    </a>
-                    <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='configuracion.htm'>Configuracion</a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle btn btn-dark' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Usuario: <%out.println(id_usuario);%>
-                    </a>
-                    <div class='dropdown-menu text-center'>
-                        <a class='dropdown-item' href='nomina.htm'>
-                            Perfil: <%out.println(Descripcion_perfil);%>
-                        </a>
-                        <form action='cerrar' method='post' id='formcerrar'>
-                            <input type='submit' value='Cerrar Sesión'class='btn btn-link text-center' style='color: #000;'/>
-                        </form>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    
+        <jsp:include page="menujefe.jsp"></jsp:include>
+        
     <%
         }
     %>
@@ -133,58 +54,8 @@
         if (Descripcion_perfil.equals("ADMINISTRADOR")) {
     %>
 
-    <nav class='navbar navbar-expand-sm bg-info navbar-dark justify-content-center'>
-        <a class='navbar-brand' href='index.htm'>ServiSoft S.A.</a>
-        <div>
-            <ul class='navbar-nav'>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Usuarios
-                    </a>
-                    <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='usuarios.htm'>Tabla de Usuarios</a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Perfil
-                    </a>
-                    <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='perfil.htm'>Tabla de Perfil</a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Modulos
-                    </a>
-                    <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='modulos.htm'>Tabla Modulos</a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Modulos por Perfil
-                    </a>
-                    <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='modulosperfil.htm'>Tabla Modulos por Perfil</a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle btn btn-dark' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Usuario: <%out.println(id_usuario);%>
-                    </a>
-                    <div class='dropdown-menu text-center'>
-                        <a class='dropdown-item' href='nomina.htm'>
-                            Perfil: <%out.println(Descripcion_perfil);%>
-                        </a>
-                        <form action='cerrar' method='post' id='formcerrar'>
-                            <input type='submit' value='Cerrar Sesión' class='btn btn-link text-center' style='color: #000;'/>
-                        </form>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <jsp:include page="menuadmin.jsp"></jsp:include>
+    
     <%
         }
     %> 
@@ -193,74 +64,13 @@
     <%
         if (Descripcion_perfil.equals("COORDINADOR")) {
     %>
-    <nav class='navbar navbar-expand-sm bg-info navbar-dark justify-content-center'>
-        <a class='navbar-brand' href='index.htm'>ServiSoft S.A.</a>
-        <div>
-            <ul class='navbar-nav'>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Novedades
-                    </a>
-                    <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='tipodenovedades.htm'>Tabla De Novedades</a>
-                        <a class='dropdown-item' href='facturacion.htm'>Facturación</a>
-                        <a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Centro de Costos
-                    </a>
-                    <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='centrodecostos.htm'>Tabla Centro de Costos</a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Empleados
-                    </a>
-                    <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='empleados.htm'>Tabla Empleados</a>
-                        <a class='dropdown-item' href='cargoempleado.htm'>Cargo Empleado</a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Grupos
-                    </a>
-                    <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='grupos.htm'>Tabla Grupos</a>
-                        <a class='dropdown-item' href='empleadosgrupo.htm'>Empleados por Grupo</a>
-                        <a class='dropdown-item' href='responsablegrupo.htm'>Responsable del Grupo</a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Configuracion
-                    </a>
-                    <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='configuracion.htm'>Configuracion</a>
-                    </div>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle btn btn-dark' href='#' id='navbardrop' data-toggle='dropdown'>
-                        Usuario: <%out.println(id_usuario);%>
-                    </a>
-                    <div class='dropdown-menu text-center'>
-                        <a class='dropdown-item' href='nomina.htm'>
-                            Perfil: <%out.println(Descripcion_perfil);%>
-                        </a>
-                        <form action='cerrar' method='post' id='formcerrar'>
-                            <input type='submit' value='Cerrar Sesión'class='btn btn-link text-center' style='color: #000;'/>
-                        </form>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+   
+    <jsp:include page="menucordi.jsp"></jsp:include>
+    
     <%
         }
     %> 
+</header>
 
     <div class="container mt-3 mb-1 text-center">
         <img src="<c:url value="/Resources/Images/LogoServiSoft.png"/>"/>  
