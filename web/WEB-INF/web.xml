@@ -44,6 +44,10 @@
         <servlet-name>ControlUsuarios</servlet-name>
         <servlet-class>Servlets.ControlUsuarios</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControlEmpleadosGrupo</servlet-name>
+        <servlet-class>Servlets.ControlEmpleadosGrupo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -79,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>ControlUsuarios</servlet-name>
         <url-pattern>/controlusuarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControlEmpleadosGrupo</servlet-name>
+        <url-pattern>/controlempleadosgrupo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

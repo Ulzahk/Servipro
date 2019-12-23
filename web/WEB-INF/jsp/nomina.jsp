@@ -318,7 +318,7 @@
                 <i class='fas fa-users mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Grupos</b></p>
             </a>
-            <a href='empleadosgrupo.htm' class='col fIndex colorEnlace'>
+            <a href='controlempleadosgrupo?btnEmplGruConsultar=true' class='col fIndex colorEnlace'>
                 <i class='fas fa-users-cog mb-2 tamañoIcono'></i>
                 <p><b>Empleados por Grupo</b></p>
             </a>
@@ -406,7 +406,7 @@
                     <i class='fas fa-users mb-2 mt-2 tamañoIcono'></i>
                     <p><b>Grupos</b></p>
                 </a>
-                <a href='empleadosgrupo.htm' class='col-2 fIndex colorEnlace'>
+                <a href='controlempleadosgrupo?btnEmplGruConsultar=true' class='col-2 fIndex colorEnlace'>
                     <i class='fas fa-users-cog mb-2 tamañoIcono'></i>
                     <p><b>Empleados por Grupo</b></p>
                 </a>
