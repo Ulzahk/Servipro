@@ -41,7 +41,7 @@ public class ControlNovedadesEmpleado extends HttpServlet {
                 BL.NovedadesEmpleado.clsNovedadesEmpleado bl_clsNovedadesEmpleado = new BL.NovedadesEmpleado.clsNovedadesEmpleado();
                 request.setAttribute("lstclsNovedadesEmpleado", bl_clsNovedadesEmpleado.getNovedadesEmpleado());
 
-                request.getRequestDispatcher("novedadesempleado.jsp").forward(request, response);
+                request.getRequestDispatcher("NovedadesEmpleado/novedadesempleado.jsp").forward(request, response);
             } else if (request.getParameter("btnNoveEmplAgregar") != null) {
 
                 //Listas desplegables
@@ -51,7 +51,7 @@ public class ControlNovedadesEmpleado extends HttpServlet {
                 request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
                 request.setAttribute("lstclsTipoNovedad", bl_clsTipoNovedad.getTipoNovedad());
 
-                request.getRequestDispatcher("agregarnovedadesempleado.jsp").forward(request, response);
+                request.getRequestDispatcher("NovedadesEmpleado/agregarnovedadesempleado.jsp").forward(request, response);
             } else if (request.getParameter("btnNoveEmplBuscar") != null) {
                 btnNoveEmplBuscar(request, response);
             }
@@ -98,7 +98,7 @@ public class ControlNovedadesEmpleado extends HttpServlet {
             request.setAttribute("lstclsNovedadesEmpleado", bl_clsNovedadesEmpleados.getNovedadesEmpleado());
 
             //Redirección y envio de valores
-            request.getRequestDispatcher("novedadesempleado.jsp").forward(request, response);
+            request.getRequestDispatcher("NovedadesEmpleado/novedadesempleado.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
@@ -110,7 +110,7 @@ public class ControlNovedadesEmpleado extends HttpServlet {
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
             request.setAttribute("lstclsTipoNovedad", bl_clsTipoNovedad.getTipoNovedad());
 
-            request.getRequestDispatcher("agregarnovedadesempleado.jsp").forward(request, response);
+            request.getRequestDispatcher("NovedadesEmpleado/agregarnovedadesempleado.jsp").forward(request, response);
         }
 
     }
@@ -143,14 +143,14 @@ public class ControlNovedadesEmpleado extends HttpServlet {
 
             request.setAttribute("obclsNovedadesEmpleado", obclsNovedadesEmpleado);
             request.setAttribute("lstclsNovedadesEmpleado", lstclsNovedadesEmpleado);
-            request.getRequestDispatcher("editarnovedadesempleado.jsp").forward(request, response);
+            request.getRequestDispatcher("NovedadesEmpleado/editarnovedadesempleado.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
 
-            request.getRequestDispatcher("novedadesempleado.jsp").forward(request, response);
+            request.getRequestDispatcher("NovedadesEmpleado/novedadesempleado.jsp").forward(request, response);
         }
 
     }
@@ -183,14 +183,14 @@ public class ControlNovedadesEmpleado extends HttpServlet {
 
             request.setAttribute("obclsNovedadesEmpleado", obclsNovedadesEmpleado);
             request.setAttribute("lstclsNovedadesEmpleado", lstclsNovedadesEmpleado);
-            request.getRequestDispatcher("eliminarnovedadesempleado.jsp").forward(request, response);
+            request.getRequestDispatcher("NovedadesEmpleado/eliminarnovedadesempleado.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "erro");
 
-            request.getRequestDispatcher("novedadesempleado.jsp").forward(request, response);
+            request.getRequestDispatcher("NovedadesEmpleado/novedadesempleado.jsp").forward(request, response);
         }
     }
     
@@ -231,7 +231,7 @@ public class ControlNovedadesEmpleado extends HttpServlet {
             request.setAttribute("lstclsNovedadesEmpleado", bl_clsNovedadesEmpleados.getNovedadesEmpleado());
 
             //Redirección y envio de valores
-            request.getRequestDispatcher("novedadesempleado.jsp").forward(request, response);
+            request.getRequestDispatcher("NovedadesEmpleado/novedadesempleado.jsp").forward(request, response);
 
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
@@ -248,7 +248,7 @@ public class ControlNovedadesEmpleado extends HttpServlet {
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
             request.setAttribute("lstclsTipoNovedad", bl_clsTipoNovedad.getTipoNovedad());
 
-            request.getRequestDispatcher("editarnovedadesempleado.jsp").forward(request, response);
+            request.getRequestDispatcher("NovedadesEmpleado/editarnovedadesempleado.jsp").forward(request, response);
         }
     }
 
@@ -268,12 +268,12 @@ public class ControlNovedadesEmpleado extends HttpServlet {
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsNovedadesEmpleado", bl_clsNovedadesEmpleado.getNovedadesEmpleado());
 
-            request.getRequestDispatcher("novedadesempleado.jsp").forward(request, response);
+            request.getRequestDispatcher("NovedadesEmpleado/novedadesempleado.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
             
-            request.getRequestDispatcher("novedadesempleado.jsp").forward(request, response);
+            request.getRequestDispatcher("NovedadesEmpleado/eliminarnovedadesempleado.jsp").forward(request, response);
         }
 
     }
@@ -292,13 +292,13 @@ public class ControlNovedadesEmpleado extends HttpServlet {
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsNovedadesEmpleado", bl_clsNovedadesEmpleados.getBuscarNovedadesEmpleado(obclsBuscar));
             
-            request.getRequestDispatcher("novedadesempleado.jsp").forward(request, response);
+            request.getRequestDispatcher("NovedadesEmpleado/novedadesempleado.jsp").forward(request, response);
             
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
             
-            request.getRequestDispatcher("novedadesempleado.jsp").forward(request, response);
+            request.getRequestDispatcher("NovedadesEmpleado/novedadesempleado.jsp").forward(request, response);
         }
 
     }
