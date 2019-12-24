@@ -44,7 +44,7 @@ public class ControlUsuarios extends HttpServlet {
                 BL.Usuarios.clsUsuarios bl_clsUsuarios = new BL.Usuarios.clsUsuarios();
                 request.setAttribute("lstclsUsuarios", bl_clsUsuarios.getUsuarios());
 
-                request.getRequestDispatcher("usuarios.jsp").forward(request, response);
+                request.getRequestDispatcher("Usuarios/usuarios.jsp").forward(request, response);
             } else if (request.getParameter("btnUsuAgregar") != null) {
                 //Listas Desplegables
                 BL.Usuarios.clsEmpleados bl_clsEmpleados = new BL.Usuarios.clsEmpleados();
@@ -53,7 +53,7 @@ public class ControlUsuarios extends HttpServlet {
                 request.setAttribute("lstclsEmpleados", bl_clsEmpleados.getEmpleados());
                 request.setAttribute("lstclsPerfil", bl_clsPerfil.getPerfil());
 
-                request.getRequestDispatcher("agregarusuarios.jsp").forward(request, response);
+                request.getRequestDispatcher("Usuarios/agregarusuarios.jsp").forward(request, response);
 
             } else if (request.getParameter("btnUsuGuardar") != null) {
                 btnUsuGuardar(request, response);
@@ -119,7 +119,7 @@ public class ControlUsuarios extends HttpServlet {
             request.setAttribute("lstclsUsuarios", bl_clsUsuarios.getUsuarios());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("usuarios.jsp").forward(request, response);
+            request.getRequestDispatcher("Usuarios/usuarios.jsp").forward(request, response);
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
@@ -132,7 +132,7 @@ public class ControlUsuarios extends HttpServlet {
             request.setAttribute("lstclsEmpleados", bl_clsEmpleados.getEmpleados());
             request.setAttribute("lstclsPerfil", bl_clsPerfil.getPerfil());
 
-            request.getRequestDispatcher("agregarusuarios.jsp").forward(request, response);
+            request.getRequestDispatcher("Usuarios/agregarusuarios.jsp").forward(request, response);
         }
     }
 
@@ -151,12 +151,12 @@ public class ControlUsuarios extends HttpServlet {
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsUsuarios", bl_clsUsuarios.getBuscarUsuarios(obclsBuscar));
 
-            request.getRequestDispatcher("usuarios.jsp").forward(request, response);
+            request.getRequestDispatcher("Usuarios/usuarios.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("stTipo", "error");
             request.setAttribute("stMensaje", ex.getMessage());
 
-            request.getRequestDispatcher("usuarios.jsp").forward(request, response);
+            request.getRequestDispatcher("Usuarios/usuarios.jsp").forward(request, response);
         }
     }
 
@@ -190,13 +190,13 @@ public class ControlUsuarios extends HttpServlet {
 
             request.setAttribute("obclsUsuarios", obclsUsuarios);
             request.setAttribute("lstclsUsuarios", lstclsUsuarios);
-            request.getRequestDispatcher("editarusuarios.jsp").forward(request, response);
+            request.getRequestDispatcher("Usuarios/editarusuarios.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("usuarios.jsp").forward(request, response);
+            request.getRequestDispatcher("Usuarios/usuarios.jsp").forward(request, response);
         }
     }
 
@@ -222,12 +222,12 @@ public class ControlUsuarios extends HttpServlet {
 
             request.setAttribute("obclsUsuarios", obclsUsuarios);
             request.setAttribute("lstclsUsuarios", lstclsUsuarios);
-            request.getRequestDispatcher("eliminarusuarios.jsp").forward(request, response);
+            request.getRequestDispatcher("Usuarios/eliminarusuarios.jsp").forward(request, response);
 
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("usuarios.jsp").forward(request, response);
+            request.getRequestDispatcher("Usuarios/usuarios.jsp").forward(request, response);
         }
     }
 
@@ -282,7 +282,7 @@ public class ControlUsuarios extends HttpServlet {
             request.setAttribute("lstclsUsuarios", bl_clsUsuarios.getUsuarios());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("usuarios.jsp").forward(request, response);
+            request.getRequestDispatcher("Usuarios/usuarios.jsp").forward(request, response);
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
@@ -299,7 +299,7 @@ public class ControlUsuarios extends HttpServlet {
             request.setAttribute("lstclsEmpleados", bl_clsEmpleados.getEmpleados());
             request.setAttribute("lstclsPerfil", bl_clsPerfil.getPerfil());
 
-            request.getRequestDispatcher("editarusuarios.jsp").forward(request, response);
+            request.getRequestDispatcher("Usuarios/editarusuarios.jsp").forward(request, response);
         }
     }
 
@@ -322,12 +322,12 @@ public class ControlUsuarios extends HttpServlet {
             request.setAttribute("lstclsUsuarios", bl_clsUsuarios.getUsuarios());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("usuarios.jsp").forward(request, response);
+            request.getRequestDispatcher("Usuarios/usuarios.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
 
-            request.getRequestDispatcher("eliminarusuarios.jsp").forward(request, response);
+            request.getRequestDispatcher("Usuarios/eliminarusuarios.jsp").forward(request, response);
         }
     }
 

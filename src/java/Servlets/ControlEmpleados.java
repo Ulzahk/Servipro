@@ -40,7 +40,7 @@ public class ControlEmpleados extends HttpServlet {
             BL.Empleados.clsEmpleado bl_clsEmpleado = new BL.Empleados.clsEmpleado();
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
 
-            request.getRequestDispatcher("empleados.jsp").forward(request, response);
+            request.getRequestDispatcher("Empleados/empleados.jsp").forward(request, response);
         } else if (request.getParameter("btnEmplAgregar") != null) {
 
             //Listas desplegables
@@ -52,7 +52,7 @@ public class ControlEmpleados extends HttpServlet {
             request.setAttribute("lstclsCentroCosto", bl_clsCentroCosto.getCentroCosto());
             request.setAttribute("lstclsCargo", bl_clsCargo.getCargo());
 
-            request.getRequestDispatcher("agregarempleados.jsp").forward(request, response);
+            request.getRequestDispatcher("Empleados/agregarempleados.jsp").forward(request, response);
         } else if (request.getParameter("btnEmplBuscar") != null) {
             btnEmplBuscar(request, response);
         }
@@ -106,7 +106,7 @@ public class ControlEmpleados extends HttpServlet {
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("empleados.jsp").forward(request, response);
+            request.getRequestDispatcher("Empleados/empleados.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
@@ -120,7 +120,7 @@ public class ControlEmpleados extends HttpServlet {
             request.setAttribute("lstclsCentroCosto", bl_clsCentroCosto.getCentroCosto());
             request.setAttribute("lstclsCargo", bl_clsCargo.getCargo());
 
-            request.getRequestDispatcher("agregarempleados.jsp").forward(request, response);
+            request.getRequestDispatcher("Empleados/agregarempleados.jsp").forward(request, response);
         }
     }
 
@@ -153,13 +153,13 @@ public class ControlEmpleados extends HttpServlet {
 
             request.setAttribute("obclsEmpleado", obclsEmpleado);
             request.setAttribute("lstclsEmpleado", lstclsEmpleado);
-            request.getRequestDispatcher("editarempleados.jsp").forward(request, response);
+            request.getRequestDispatcher("Empleados/editarempleados.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("empleados.jsp").forward(request, response);
+            request.getRequestDispatcher("Empleados/empleados.jsp").forward(request, response);
 
         }
 
@@ -185,14 +185,14 @@ public class ControlEmpleados extends HttpServlet {
             
             request.setAttribute("obclsEmpleado", obclsEmpleado);
             request.setAttribute("lstclsEmpleado", lstclsEmpleado);
-            request.getRequestDispatcher("eliminarempleados.jsp").forward(request, response);
+            request.getRequestDispatcher("Empleados/eliminarempleados.jsp").forward(request, response);
             
             
         } catch (Exception ex) {
             
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("empleados.jsp").forward(request, response);
+            request.getRequestDispatcher("Empleados/empleados.jsp").forward(request, response);
         }
 
     }
@@ -250,7 +250,7 @@ public class ControlEmpleados extends HttpServlet {
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("empleados.jsp").forward(request, response);
+            request.getRequestDispatcher("Empleados/empleados.jsp").forward(request, response);
 
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
@@ -269,7 +269,7 @@ public class ControlEmpleados extends HttpServlet {
             request.setAttribute("lstclsCentroCosto", bl_clsCentroCosto.getCentroCosto());
             request.setAttribute("lstclsCargo", bl_clsCargo.getCargo());
 
-            request.getRequestDispatcher("editarempleados.jsp").forward(request, response);
+            request.getRequestDispatcher("Empleados/editarempleados.jsp").forward(request, response);
         }
     }
 
@@ -290,14 +290,14 @@ public class ControlEmpleados extends HttpServlet {
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
 
-            request.getRequestDispatcher("empleados.jsp").forward(request, response);
+            request.getRequestDispatcher("Empleados/empleados.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stTipo", "error");
             request.setAttribute("stMensaje", ex.getMessage());
 
-            request.getRequestDispatcher("empleados.jsp").forward(request, response);
+            request.getRequestDispatcher("Empleados/empleados.jsp").forward(request, response);
         }
     }
 
@@ -316,14 +316,14 @@ public class ControlEmpleados extends HttpServlet {
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getBuscarEmpleado(obclsBuscar));
 
-            request.getRequestDispatcher("empleados.jsp").forward(request, response);
+            request.getRequestDispatcher("Empleados/empleados.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stTipo", "error");
             request.setAttribute("stMensaje", ex.getMessage());
 
-            request.getRequestDispatcher("empleados.jsp").forward(request, response);
+            request.getRequestDispatcher("Empleados/empleados.jsp").forward(request, response);
 
         }
     }
