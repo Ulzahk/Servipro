@@ -102,7 +102,7 @@ public class clsUsuarios {
             return "Se realizo el proceso con exito";
 
         } catch (Exception ex) {
-            return ex.getMessage();
+            return "El proceso presento un error";
         }
     }
     
@@ -120,7 +120,7 @@ public class clsUsuarios {
             return "Se realizo el proceso con exito";
              
         } catch (Exception ex) {
-            return ex.getMessage();
+            return "El proceso presento un error";
         }
     }
     

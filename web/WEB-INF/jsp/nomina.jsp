@@ -36,41 +36,40 @@
 
     <body>
 
-        <header>
+    <header>
         <%--Barra de Navegación de Jefe--%>
         <%
             if (Descripcion_perfil.equals("JEFE")) {
 
         %>       
-    
+
         <jsp:include page="menujefe.jsp"></jsp:include>
-        
-    <%
-        }
-    %>
 
-    <%--Barra de Navegación de Administrador--%>
-    <%
-        if (Descripcion_perfil.equals("ADMINISTRADOR")) {
-    %>
+        <%        }
+        %>
 
-    <jsp:include page="menuadmin.jsp"></jsp:include>
-    
-    <%
-        }
-    %> 
+        <%--Barra de Navegación de Administrador--%>
+        <%
+            if (Descripcion_perfil.equals("ADMINISTRADOR")) {
+        %>
 
-    <%--Barra de Navegación de Coordinador--%>
-    <%
-        if (Descripcion_perfil.equals("COORDINADOR")) {
-    %>
-   
-    <jsp:include page="menucordi.jsp"></jsp:include>
-    
-    <%
-        }
-    %> 
-</header>
+        <jsp:include page="menuadmin.jsp"></jsp:include>
+
+        <%
+            }
+        %> 
+
+        <%--Barra de Navegación de Coordinador--%>
+        <%
+            if (Descripcion_perfil.equals("COORDINADOR")) {
+        %>
+
+        <jsp:include page="menucordi.jsp"></jsp:include>
+
+        <%
+            }
+        %> 
+    </header>
 
     <div class="logo container mt-3 mb-1 text-center">
         <img src="<c:url value="/Resources/Images/LogoServiSoft.png"/>"/>  
@@ -178,9 +177,9 @@
                 <p><b>Modulos por Perfil</b></p>
             </a>
         </div>
-    <%
-        }
-    %>
+        <%
+            }
+        %>
 
         <%--Menú Nomina de Coordinador--%>
         <%
@@ -241,30 +240,30 @@
         %>
 
     </body>   
-     <script>
-       $(document).ready(main);
- 
-var contador = 1;
- 
-function main () {
-	$('.menu_bar').click(function(){
-		if (contador == 1) {
-			$('nav').animate({
-				left: '0'
-			});
-			contador = 0;
-		} else {
-			contador = 1;
-			$('nav').animate({
-				left: '-100%'
-			});
-		}
-	});
- 
-	// Mostramos y ocultamos submenus
-	$('.submenu').click(function(){
-		$(this).children('.children').slideToggle();
-	});
-}
+    <script>
+        $(document).ready(main);
+
+        var contador = 1;
+
+        function main() {
+            $('.menu_bar').click(function () {
+                if (contador == 1) {
+                    $('nav').animate({
+                        left: '0'
+                    });
+                    contador = 0;
+                } else {
+                    contador = 1;
+                    $('nav').animate({
+                        left: '-100%'
+                    });
+                }
+            });
+
+            // Mostramos y ocultamos submenus
+            $('.submenu').click(function () {
+                $(this).children('.children').slideToggle();
+            });
+        }
     </script>
 </html>

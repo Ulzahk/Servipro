@@ -96,10 +96,11 @@ public class ControlUsuarios extends HttpServlet {
             }
 
             if (request.getParameter("txtContraseña") != null) {
-                String Contraseña = (request.getParameter("txtContraseña"));
-                String encryptedString = AnotherOneBitesTheSaltest.encrypt(Contraseña, secretKey);
-                System.out.println(encryptedString);
-                obclsUsuarios.setContraseña(encryptedString);
+                if (request.getParameter("txtContraseña").equals(request.getParameter("txtConfirmarContraseña"))) {
+                    String Contraseña = (request.getParameter("txtContraseña"));
+                    String encryptedString = AnotherOneBitesTheSaltest.encrypt(Contraseña, secretKey);
+                    obclsUsuarios.setContraseña(encryptedString);
+                }
             }
 
             if (request.getParameter("ddlPerfil") != null) {
@@ -110,7 +111,11 @@ public class ControlUsuarios extends HttpServlet {
 
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsUsuarios.createUsuario(obclsUsuarios));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }else{
+                request.setAttribute("stTipo", "error");
+            }
             request.setAttribute("lstclsUsuarios", bl_clsUsuarios.getUsuarios());
 
             //Redireccion y envio de valores
@@ -248,11 +253,13 @@ public class ControlUsuarios extends HttpServlet {
                 obclsUsuarios.setObclsEmpleado(obclsEmpleados);
             }
 
-            if (request.getParameter("txtContraseña") != null) {                
-                String Contraseña = (request.getParameter("txtContraseña"));
-                String encryptedString = AnotherOneBitesTheSaltest.encrypt(Contraseña, secretKey);
-                System.out.println(encryptedString);
-                obclsUsuarios.setContraseña(encryptedString);
+            if (request.getParameter("txtContraseña") != null) {
+
+                if (request.getParameter("txtContraseña").equals(request.getParameter("txtConfirmarContraseña"))) {
+                    String Contraseña = (request.getParameter("txtContraseña"));
+                    String encryptedString = AnotherOneBitesTheSaltest.encrypt(Contraseña, secretKey);
+                    obclsUsuarios.setContraseña(encryptedString);
+                }
             }
 
             if (request.getParameter("ddlPerfil") != null) {
@@ -267,7 +274,11 @@ public class ControlUsuarios extends HttpServlet {
 
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsUsuarios.updateUsuarios(obclsUsuarios));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }else{
+                request.setAttribute("stTipo", "error");
+            }
             request.setAttribute("lstclsUsuarios", bl_clsUsuarios.getUsuarios());
 
             //Redireccion y envio de valores

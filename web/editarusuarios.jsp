@@ -52,6 +52,15 @@
 
 
         %>
+        <%            if (request.getParameter("btnUsuEditar") != null) {
+                String Contraseña = request.getParameter("txtContraseña");
+                String cContraseña = request.getParameter("txtConfirmarContraseña");
+
+                if (Contraseña.equals(cContraseña)) {
+
+                }
+            }
+        %>
         <input type="txt" hidden="" id="txtMensaje" value="<%=request.getAttribute("stMensaje")%>"/>
         <input type="txt" hidden="" id="txtTipo" value="<%=request.getAttribute("stTipo")%>"/>
         <script>
@@ -83,10 +92,20 @@
                                     <input type="text" class="form-control" name="txtUsuario"
                                            value="<%=obclsUsuarios.getId_Usuarios() != null ? obclsUsuarios.getId_Usuarios() : ""%>"/>
                                 </div> 
+                            </div>
+                        </div>
+                        <!--FILA-->
+                        <div class="form-group">
+                            <div class="row"> 
                                 <div class="col-6">
                                     <label for="lblContraseña"><b>Contraseña</b></label>
                                     <input type="text" class="form-control" name="txtContraseña"
                                            value="<%=obclsUsuarios.getContraseña() != null ? obclsUsuarios.getContraseña() : ""%>"/>
+                                </div>
+                                <div class="col-6">
+                                    <label for="lblcContraseña"><b>Confirmar Contraseña</b></label>
+                                    <input type="text" class="form-control" name="txtConfirmarContraseña"
+                                           value="<%=obclsUsuarios.getContraseña() != null ? obclsUsuarios.getContraseña() : ""%>"/>                                           
                                 </div>
                             </div>
                         </div>

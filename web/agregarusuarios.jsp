@@ -248,10 +248,20 @@
                                     <input type="text" class="form-control" name="txtUsuario"
                                            value="<%=obclsUsuarios.getId_Usuarios() != null ? obclsUsuarios.getId_Usuarios() : ""%>"/>
                                 </div> 
+                            </div>
+                        </div>
+                        <!--FILA-->
+                        <div class="form-group">
+                            <div class="row">
                                 <div class="col-6">
                                     <label for="lblContraseña"><b>Contraseña</b></label>
                                     <input type="text" class="form-control" name="txtContraseña"
                                            value="<%=obclsUsuarios.getContraseña() != null ? obclsUsuarios.getContraseña() : ""%>"/>
+                                </div>
+                                <div class="col-6">
+                                    <label for="lblcContraseña"><b>Confirmar Contraseña</b></label>
+                                    <input type="text" class="form-control" name="txtConfirmarContraseña"
+                                           value="<%=obclsUsuarios.getContraseña() != null ? obclsUsuarios.getContraseña() : ""%>"/>                                           
                                 </div>
                             </div>
                         </div>
@@ -269,7 +279,7 @@
                                             for (Modelos.Usuarios.clsEmpleados elem : lstclsEmpleados) {
                                         %>
                                         <option value="<%=elem.getId_empleado()%>"
-                                                <%=obclsUsuarios.getObclsEmpleado()!= null ? obclsUsuarios.getObclsEmpleado().getId_empleado()== elem.getId_empleado()? "selected" : "" : ""%>>
+                                                <%=obclsUsuarios.getObclsEmpleado() != null ? obclsUsuarios.getObclsEmpleado().getId_empleado() == elem.getId_empleado() ? "selected" : "" : ""%>>
                                             <%=elem.getStNombreEmpleado()%>
                                         </option>
                                         <%
@@ -288,7 +298,7 @@
                                             for (Modelos.Usuarios.clsPerfil elem : lstclsPerfil) {
                                         %>
                                         <option value="<%=elem.getId_perfil()%>"
-                                                <%=obclsUsuarios.getObclsPerfil()!= null ? obclsUsuarios.getObclsPerfil().getId_perfil()== elem.getId_perfil()? "selected" : "" : ""%>>
+                                                <%=obclsUsuarios.getObclsPerfil() != null ? obclsUsuarios.getObclsPerfil().getId_perfil() == elem.getId_perfil() ? "selected" : "" : ""%>>
                                             <%=elem.getStDescripcion_Perfil()%>
                                         </option>
                                         <%
