@@ -731,7 +731,14 @@ public class ControlEstadisticas extends HttpServlet {
             }
             
             if(request.getParameter("txtComentario")!=null){
-                obclsComentarEstadisticas.setComentario(request.getParameter("txtComentario"));
+                
+                String comentario = request.getParameter("txtComentario");
+                
+                if(comentario.contains("\n")){
+                    comentario = comentario.replaceAll(("\r\n|\n"),"<br/>");
+                }
+ 
+                obclsComentarEstadisticas.setComentario(comentario);
             }
             
             //Definición de parametros desde el controlador
