@@ -37,6 +37,6 @@ public class AccesoDatos extends Conexion {
 
     public static void main(String[] args) {
         AccesoDatos a = new AccesoDatos();
-        System.out.println(a.buscar("JEFE", "ANANA", "123"));
+        System.out.println(a.buscar("JEFE", "PPEREZ", "123456"));
     }
 }

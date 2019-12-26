@@ -28,7 +28,7 @@ public class ControlEmpleadosGrupo extends HttpServlet {
             BL.EmpleadosGrupo.clsEmpleadosGrupo bl_clsEmpleadosGrupo = new BL.EmpleadosGrupo.clsEmpleadosGrupo();
             request.setAttribute("lstclsEmpleadosGrupo", bl_clsEmpleadosGrupo.getEmpleadosGrupo());
 
-            request.getRequestDispatcher("empleadosgrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("EmpleadosGrupo/empleadosgrupo.jsp").forward(request, response);
         } else if (request.getParameter("btnEmplGruAgregar") != null) {
             //Lista desplegables
             BL.EmpleadosGrupo.clsGrupo bl_clsGrupo = new BL.EmpleadosGrupo.clsGrupo();
@@ -37,7 +37,7 @@ public class ControlEmpleadosGrupo extends HttpServlet {
             request.setAttribute("lstclsGrupo", bl_clsGrupo.getGrupo());
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
 
-            request.getRequestDispatcher("agregarempleadosgrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("EmpleadosGrupo/agregarempleadosgrupo.jsp").forward(request, response);
         } else if (request.getParameter("btnEmplGruGuardar") != null) {
             btnEmplGruGuardar(request, response);
         } else if (request.getParameter("btnEmplGruBuscar") != null) {
@@ -83,7 +83,7 @@ public class ControlEmpleadosGrupo extends HttpServlet {
             request.setAttribute("lstclsEmpleadosGrupo", bl_clsEmpleadosGrupo.getEmpleadosGrupo());
 
             //Redirección y envio de valores
-            request.getRequestDispatcher("empleadosgrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("EmpleadosGrupo/empleadosgrupo.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -97,7 +97,7 @@ public class ControlEmpleadosGrupo extends HttpServlet {
             request.setAttribute("lstclsGrupo", bl_clsGrupo.getGrupo());
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
 
-            request.getRequestDispatcher("agregarempleadosgrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("EmpleadosGrupo/agregarempleadosgrupo.jsp").forward(request, response);
         }
     }
 
@@ -115,12 +115,12 @@ public class ControlEmpleadosGrupo extends HttpServlet {
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsEmpleadosGrupo", bl_clsEmpleadosGrupo.getBuscarEmpleadosGrupo(obclsBuscar));
 
-            request.getRequestDispatcher("empleadosgrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("EmpleadosGrupo/empleadosgrupo.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
 
-            request.getRequestDispatcher("empleadosgrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("EmpleadosGrupo/empleadosgrupo.jsp").forward(request, response);
         }
     }
 
@@ -151,13 +151,13 @@ public class ControlEmpleadosGrupo extends HttpServlet {
 
             request.setAttribute("obclsEmpleadosGrupo", obclsEmpleadosGrupo);
             request.setAttribute("lstclsEmpleadosGrupo", lstclsEmpleadosGrupo);
-            request.getRequestDispatcher("editarempleadosgrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("EmpleadosGrupo/editarempleadosgrupo.jsp").forward(request, response);
 
         } catch (Exception ex) {
             
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("empleadosgrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("EmpleadosGrupo/empleadosgrupo.jsp").forward(request, response);
         }
 
     }
@@ -182,13 +182,13 @@ public class ControlEmpleadosGrupo extends HttpServlet {
             
             request.setAttribute("obclsEmpleadosGrupo", obclsEmpleadosGrupo);
             request.setAttribute("lstclsEmpleadosGrupo", lstclsEmpleadosGrupo);
-            request.getRequestDispatcher("eliminarempleadosgrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("EmpleadosGrupo/eliminarempleadosgrupo.jsp").forward(request, response);
             
         } catch (Exception ex) {
             
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("empleadosgrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("EmpleadosGrupo/empleadosgrupo.jsp").forward(request, response);
         }
     }
     
@@ -222,7 +222,7 @@ public class ControlEmpleadosGrupo extends HttpServlet {
             request.setAttribute("lstclsEmpleadosGrupo", bl_clsEmpleadosGrupo.getEmpleadosGrupo());
 
             //Redirección y envio de valores
-            request.getRequestDispatcher("empleadosgrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("EmpleadosGrupo/empleadosgrupo.jsp").forward(request, response);
         } catch (Exception ex) {
             
             request.setAttribute("stMensaje", ex.getMessage());
@@ -239,7 +239,7 @@ public class ControlEmpleadosGrupo extends HttpServlet {
             request.setAttribute("lstclsGrupo", bl_clsGrupo.getGrupo());
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
 
-            request.getRequestDispatcher("editarempleadosgrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("EmpleadosGrupo/editarempleadosgrupo.jsp").forward(request, response);
         }
         
     }
@@ -262,14 +262,14 @@ public class ControlEmpleadosGrupo extends HttpServlet {
             request.setAttribute("lstclsEmpleadosGrupo", bl_clsEmpleadosGrupo.getEmpleadosGrupo());
 
             //Redirección y envio de valores
-            request.getRequestDispatcher("empleadosgrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("EmpleadosGrupo/empleadosgrupo.jsp").forward(request, response);
             
         } catch (Exception ex) {
             
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
             
-            request.getRequestDispatcher("eliminarempleadosgrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("EmpleadosGrupo/eliminarempleadosgrupo.jsp").forward(request, response);
         }
         
     }
