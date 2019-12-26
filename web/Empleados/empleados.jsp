@@ -107,7 +107,7 @@
                     </form>
                 </div>
                 <div class="card-body">
-                    <table id="table-id" border="1" class="table table-bordered table-striped table-hover text-center table-responsive-lg">
+                    <table id="table-id" border="1" class="table table-bordered table-striped table-hover text-center table-responsive">
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-3">
@@ -136,7 +136,7 @@
                         <tr>
                             <td class="align-middle"><b>Tipo Documento</b></td>
                             <td class="align-middle"><b>Documento</b></td>
-                            <td class="align-middle"><b>Nombre</b></td>
+                            <td class="align-middle"><b>Nombre Completo</b></td>
                             <td class="align-middle"><b>Telefono</b></td>
                             <td class="align-middle"><b>Centro de Costos</b></td>
                             <td class="align-middle"><b>Cargo</b></td>
@@ -148,7 +148,7 @@
                         <tr>
                             <td class="align-middle"><%=elem.getObclsTipoDocumento().getStDescripcion()%></td>
                             <td class="align-middle"><%=elem.getStDocumento()%></td>
-                            <td class="align-middle"><%=elem.getStNombre()%></td>
+                            <td class="align-middle"><%=elem.getStPrimerNombre()%> <%=elem.getStSegundoNombre()%> <%=elem.getStPrimerApellido()%> <%=elem.getStSegundoApellido()%></td>
                             <td class="align-middle"><%=elem.getStTelefono()%></td>
                             <td class="align-middle"><%=elem.getObclsCentroCosto().getStDescripcion()%></td>
                             <td class="align-middle"><%=elem.getObclsCargo().getStDescripcion()%></td>

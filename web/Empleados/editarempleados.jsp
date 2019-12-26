@@ -68,7 +68,12 @@
                         <div class="form-group">
                             <div class="col-12 text-center">                                    
                                 <h5 class="align-middle mt-1"> 
-                                    <b><%=obclsEmpleado.getStNombre() != null ? obclsEmpleado.getStNombre() : ""%></b>
+                                    <b>
+                                        <%=obclsEmpleado.getStPrimerNombre()!= null ? obclsEmpleado.getStPrimerNombre(): ""%>
+                                         <%=obclsEmpleado.getStSegundoNombre()!= null ? obclsEmpleado.getStSegundoNombre(): ""%>
+                                         <%=obclsEmpleado.getStPrimerApellido()!= null ? obclsEmpleado.getStPrimerApellido(): ""%>
+                                          <%=obclsEmpleado.getStSegundoApellido()!= null ? obclsEmpleado.getStSegundoApellido(): ""%>
+                                    </b>
                                 </h5>                                         
                             </div>
                         </div>
@@ -79,7 +84,7 @@
                         <!--FILA-->
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-12">
                                     <label for="lblTipoDocumento"><b>Tipo Documento</b></label>
                                     <select class="form-control" name="ddlTipoDocumento">
                                         <%
@@ -100,7 +105,7 @@
                                         %>
                                     </select>
                                 </div>
-                                <div class="col-8">
+                                <div class="col-12">
                                     <label for="lblDocumento"><b>Documento</b></label>
                                     <input type="txt" class="form-control" name="txtDocumento"
                                            value="<%=obclsEmpleado.getStDocumento() != null ? obclsEmpleado.getStDocumento() : ""%>"/>
@@ -110,22 +115,42 @@
                         <!--FILA-->
                         <div class="form-group">
                             <div class="form-row">
-                                <div class="col-6">
-                                    <label for="lblNombre"><b>Nombre</b></label>
-                                    <input type="text" class="form-control" name="txtNombre"
-                                           value="<%=obclsEmpleado.getStNombre() != null ? obclsEmpleado.getStNombre() : ""%>"/>
+                                <div class="col-12">
+                                    <label for="lblPrimerNombre"><b>Primer Nombre</b></label>
+                                    <input type="text" class="form-control" name="txtPrimerNombre"
+                                           value="<%=obclsEmpleado.getStPrimerNombre()!= null ? obclsEmpleado.getStPrimerNombre(): ""%>"/>
                                 </div>
-                                <div class="col-6">
-                                    <label for="lblTelefono"><b>Teléfono</b></label>
-                                    <input type="text" class="form-control" name="txtTelefono"
-                                           value="<%=obclsEmpleado.getStTelefono() != null ? obclsEmpleado.getStTelefono() : ""%>"/>
+                                <div class="col-12">
+                                    <label for="lblSegundoNombre"><b>Segundo Nombre</b></label>
+                                    <input type="text" class="form-control" name="txtSegundoNombre"
+                                           value="<%=obclsEmpleado.getStSegundoNombre()!= null ? obclsEmpleado.getStSegundoNombre(): ""%>"/>
                                 </div>
                             </div>
                         </div>
+                         <!--FILA-->
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-12">
+                                    <label for="lblPrimerApellido"><b>Primer Apellido</b></label>
+                                    <input type="text" class="form-control" name="txtPrimerApellido"
+                                           value="<%=obclsEmpleado.getStPrimerApellido()!= null ? obclsEmpleado.getStPrimerApellido(): ""%>"/>
+                                </div>
+                                <div class="col-12">
+                                    <label for="lblSegundoApellido"><b>Segundo Apellido</b></label>
+                                    <input type="text" class="form-control" name="txtSegundoApellido"
+                                           value="<%=obclsEmpleado.getStSegundoApellido()!= null ? obclsEmpleado.getStSegundoApellido(): ""%>"/>
+                                </div>
+                            </div>
+                        </div>        
                         <!--FILA-->       
                         <div class="form-group">
                             <div class="form-row">
-                                <div class="col-6">
+                                <div class="col-12">
+                                    <label for="lblTelefono"><b>Telefono</b></label>
+                                    <input type="text" class="form-control" name="txtTelefono"
+                                           value="<%=obclsEmpleado.getStTelefono() != null ? obclsEmpleado.getStTelefono() : ""%>"/>
+                                </div>
+                                <div class="col-12">
                                     <label for="lblCentroCosto"><b>Centro Costos</b></label>
                                     <select class="form-control" name="ddlCentroCosto">
                                         <%
@@ -144,7 +169,7 @@
                                         %>
                                     </select>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-12">
                                     <label for="lblCargo"><b>Cargo</b></label>
                                     <select class="form-control" name="ddlCargo">
                                         <%

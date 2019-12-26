@@ -9,7 +9,10 @@ public class clsEmpleado {
     public int inId;
     public clsTipoDocumento obclsTipoDocumento;
     public String stDocumento;
-    public String stNombre;
+    public String stPrimerNombre;
+    public String stSegundoNombre;
+    public String stPrimerApellido;
+    public String stSegundoApellido;
     public String stTelefono;
     public clsCentroCosto obclsCentroCosto;
     public clsCargo obclsCargo;
@@ -38,12 +41,36 @@ public class clsEmpleado {
         this.stDocumento = stDocumento;
     }
 
-    public String getStNombre() {
-        return stNombre;
+    public String getStPrimerNombre() {
+        return stPrimerNombre;
     }
 
-    public void setStNombre(String stNombre) {
-        this.stNombre = stNombre;
+    public void setStPrimerNombre(String stPrimerNombre) {
+        this.stPrimerNombre = stPrimerNombre;
+    }
+
+    public String getStSegundoNombre() {
+        return stSegundoNombre;
+    }
+
+    public void setStSegundoNombre(String stSegundoNombre) {
+        this.stSegundoNombre = stSegundoNombre;
+    }
+
+    public String getStPrimerApellido() {
+        return stPrimerApellido;
+    }
+
+    public void setStPrimerApellido(String stPrimerApellido) {
+        this.stPrimerApellido = stPrimerApellido;
+    }
+
+    public String getStSegundoApellido() {
+        return stSegundoApellido;
+    }
+
+    public void setStSegundoApellido(String stSegundoApellido) {
+        this.stSegundoApellido = stSegundoApellido;
     }
 
     public String getStTelefono() {

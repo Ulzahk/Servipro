@@ -81,9 +81,19 @@ public class ControlEmpleados extends HttpServlet {
             if (request.getParameter("txtDocumento") != null) {
                 obclsEmpleado.setStDocumento(request.getParameter("txtDocumento"));
             }
-            if (request.getParameter("txtNombre") != null) {
-                obclsEmpleado.setStNombre(request.getParameter("txtNombre"));
+            if (request.getParameter("txtPrimerNombre") != null) {
+                obclsEmpleado.setStPrimerNombre(request.getParameter("txtPrimerNombre"));
             }
+            if (request.getParameter("txtSegundoNombre") != null) {
+                obclsEmpleado.setStSegundoNombre(request.getParameter("txtSegundoNombre"));
+            }
+            if (request.getParameter("txtPrimerApellido") != null) {
+                obclsEmpleado.setStPrimerApellido(request.getParameter("txtPrimerApellido"));
+            }
+            if (request.getParameter("txtSegundoApellido") != null) {
+                obclsEmpleado.setStSegundoApellido(request.getParameter("txtSegundoApellido"));
+            }
+            
             if (request.getParameter("txtTelefono") != null) {
                 obclsEmpleado.setStTelefono(request.getParameter("txtTelefono"));
             }
@@ -225,8 +235,17 @@ public class ControlEmpleados extends HttpServlet {
             if (request.getParameter("txtDocumento") != null) {
                 obclsEmpleado.setStDocumento(request.getParameter("txtDocumento"));
             }
-            if (request.getParameter("txtNombre") != null) {
-                obclsEmpleado.setStNombre(request.getParameter("txtNombre"));
+            if (request.getParameter("txtPrimerNombre") != null) {
+                obclsEmpleado.setStPrimerNombre(request.getParameter("txtPrimerNombre"));
+            }
+            if (request.getParameter("txtSegundoNombre") != null) {
+                obclsEmpleado.setStSegundoNombre(request.getParameter("txtSegundoNombre"));
+            }
+            if (request.getParameter("txtPrimerApellido") != null) {
+                obclsEmpleado.setStPrimerApellido(request.getParameter("txtPrimerApellido"));
+            }
+            if (request.getParameter("txtSegundoApellido") != null) {
+                obclsEmpleado.setStSegundoApellido(request.getParameter("txtSegundoApellido"));
             }
             if (request.getParameter("txtTelefono") != null) {
                 obclsEmpleado.setStTelefono(request.getParameter("txtTelefono"));

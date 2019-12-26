@@ -129,21 +129,41 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-6">
-                                    <label for="lblNombre"><b>Nombre</b></label>
-                                    <input type="text" class="form-control" name="txtNombre"
-                                           value="<%=obclsEmpleado.getStNombre() != null ? obclsEmpleado.getStNombre() : ""%>"/>
+                                    <label for="lblPrimerNombre"><b>Primer Nombre</b></label>
+                                    <input type="text" class="form-control" name="txtPrimerNombre"
+                                           value="<%=obclsEmpleado.getStPrimerNombre()!= null ? obclsEmpleado.getStPrimerNombre(): ""%>"/>
                                 </div>
                                 <div class="col-6">
-                                    <label for="lblTelefono"><b>Teléfono</b></label>
-                                    <input type="text" class="form-control" name="txtTelefono"
-                                           value="<%=obclsEmpleado.getStTelefono() != null ? obclsEmpleado.getStTelefono() : ""%>"/>
+                                    <label for="lblSegundoNombre"><b>Segundo Nombre</b></label>
+                                    <input type="text" class="form-control" name="txtSegundoNombre"
+                                           value="<%=obclsEmpleado.getStSegundoNombre()!= null ? obclsEmpleado.getStSegundoNombre(): ""%>"/>
                                 </div>
                             </div>
                         </div>
-                        <!--FILA-->       
+                        <!--FILA-->
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-6">
+                                    <label for="lblPrimerApellido"><b>Primer Apellido</b></label>
+                                    <input type="text" class="form-control" name="txtPrimerApellido"
+                                           value="<%=obclsEmpleado.getStPrimerApellido()!= null ? obclsEmpleado.getStPrimerApellido(): ""%>"/>
+                                </div>
+                                <div class="col-6">
+                                    <label for="lblSegundoApellido"><b>Segundo Apellido</b></label>
+                                    <input type="text" class="form-control" name="txtSegundoApellido"
+                                           value="<%=obclsEmpleado.getStSegundoApellido()!= null ? obclsEmpleado.getStSegundoApellido(): ""%>"/>
+                                </div>
+                            </div>
+                        </div>        
+                        <!--FILA-->       
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-4">
+                                    <label for="lblTelefono"><b>Telefono</b></label>
+                                    <input type="text" class="form-control" name="txtTelefono"
+                                           value="<%=obclsEmpleado.getStTelefono() != null ? obclsEmpleado.getStTelefono() : ""%>"/>
+                                </div>
+                                <div class="col-4">
                                     <label for="lblCentroCosto"><b>Centro Costos</b></label>
                                     <select class="form-control" name="ddlCentroCosto">
                                         <%
@@ -162,7 +182,7 @@
                                         %>
                                     </select>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-4">
                                     <label for="lblCargo"><b>Cargo</b></label>
                                     <select class="form-control" name="ddlCargo">
                                         <%
