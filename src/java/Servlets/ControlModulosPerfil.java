@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Servlets;
 
 import java.io.IOException;
@@ -50,7 +45,7 @@ public class ControlModulosPerfil extends HttpServlet {
             BL.ModelosPerfil.clsModulosPerfil bl_clsModulosPerfil = new BL.ModelosPerfil.clsModulosPerfil();
             request.setAttribute("lstclsModulosPerfil", bl_clsModulosPerfil.getModulosPerfil());
             
-            request.getRequestDispatcher("modulosperfil.jsp").forward(request, response);
+            request.getRequestDispatcher("ModulosPerfil/modulosperfil.jsp").forward(request, response);
         }else if (request.getParameter("btnModPerfilAgregar")!= null){
             
             //Listas desplegables
@@ -60,7 +55,7 @@ public class ControlModulosPerfil extends HttpServlet {
             request.setAttribute("lstclsModulos", bl_clsModulos.getModulos());
             request.setAttribute("lstclsPerfil", bl_clsPerfil.getPerfil());
             
-            request.getRequestDispatcher("agregarmodulosperfil.jsp").forward(request, response);
+            request.getRequestDispatcher("ModulosPerfil/agregarmodulosperfil.jsp").forward(request, response);
         }else if (request.getParameter("btnModPerfilBuscar")!= null){
             btnModPerfilBuscar(request, response);
         }      
@@ -97,7 +92,7 @@ public class ControlModulosPerfil extends HttpServlet {
             request.setAttribute("lstclsModulosPerfil", bl_clsModulosPerfil.getModulosPerfil());
             
             //Redirección y envio de valores
-            request.getRequestDispatcher("modulosperfil.jsp").forward(request, response);
+            request.getRequestDispatcher("ModulosPerfil/modulosperfil.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
@@ -108,7 +103,7 @@ public class ControlModulosPerfil extends HttpServlet {
             
             request.setAttribute("lstclsModulos", bl_clsModulos.getModulos());
             request.setAttribute("lstclsPerfil", bl_clsPerfil.getPerfil());
-            request.getRequestDispatcher("agregarmodulosperfil.jsp").forward(request, response);
+            request.getRequestDispatcher("ModulosPerfil/agregarmodulosperfil.jsp").forward(request, response);
         }
     }
     
@@ -139,12 +134,12 @@ public class ControlModulosPerfil extends HttpServlet {
             
             request.setAttribute("obclsModulosPerfil", obclsModulosPerfil);
             request.setAttribute("lstclsModulosPerfil", lstclsModulosPerfil);
-            request.getRequestDispatcher("editarmodulosperfil.jsp").forward(request, response);
+            request.getRequestDispatcher("ModulosPerfil/editarmodulosperfil.jsp").forward(request, response);
             
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("modulosperfil.jsp").forward(request, response);
+            request.getRequestDispatcher("ModulosPerfil/modulosperfil.jsp").forward(request, response);
         }
     }
     
@@ -165,12 +160,12 @@ public class ControlModulosPerfil extends HttpServlet {
             
             request.setAttribute("obclsModulosPerfil", obclsModulosPerfil);
             request.setAttribute("lstclsModulosPerfil", lstclsModulosPerfil);
-            request.getRequestDispatcher("eliminarmodulosperfil.jsp").forward(request, response);
+            request.getRequestDispatcher("ModulosPerfil/eliminarmodulosperfil.jsp").forward(request, response);
             
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("modulosperfil.jsp").forward(request, response);
+            request.getRequestDispatcher("ModulosPerfil/modulosperfil.jsp").forward(request, response);
         }
     }
     
@@ -206,7 +201,7 @@ public class ControlModulosPerfil extends HttpServlet {
             request.setAttribute("lstclsModulosPerfil", bl_clsModulosPerfil.getModulosPerfil());
             
             //Redirección y envio de valores
-            request.getRequestDispatcher("modulosperfil.jsp").forward(request, response);
+            request.getRequestDispatcher("ModulosPerfil/modulosperfil.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
@@ -222,7 +217,7 @@ public class ControlModulosPerfil extends HttpServlet {
             request.setAttribute("lstclsModulos", bl_clsModulos.getModulos());
             request.setAttribute("lstclsPerfil", bl_clsPerfil.getPerfil());
             
-            request.getRequestDispatcher("editarmodulosperfil.jsp").forward(request, response);
+            request.getRequestDispatcher("ModulosPerfil/editarmodulosperfil.jsp").forward(request, response);
         }
     }
     
@@ -240,12 +235,12 @@ public class ControlModulosPerfil extends HttpServlet {
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsModulosPerfil", bl_clsModulosPerfil.getModulosPerfil());
             
-            request.getRequestDispatcher("modulosperfil.jsp").forward(request, response);
+            request.getRequestDispatcher("ModulosPerfil/modulosperfil.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("stTipo", "error");
             request.setAttribute("stMensaje", ex.getMessage());
             
-            request.getRequestDispatcher("modulosperfil.jsp").forward(request, response);
+            request.getRequestDispatcher("ModulosPerfil/eliminarmodulosperfil.jsp").forward(request, response);
         }
     }
     
@@ -261,12 +256,12 @@ public class ControlModulosPerfil extends HttpServlet {
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsModulosPerfil", bl_clsModulosPerfil.getBuscarModulosPerfil(obclsBuscar));
             
-            request.getRequestDispatcher("modulosperfil.jsp").forward(request, response);
+            request.getRequestDispatcher("ModulosPerfil/modulosperfil.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("stTipo", "error");
             request.setAttribute("stMensaje", ex.getMessage());
             
-            request.getRequestDispatcher("modulosperfil.jsp").forward(request, response);
+            request.getRequestDispatcher("ModulosPerfil/modulosperfil.jsp").forward(request, response);
         }
     }
     
