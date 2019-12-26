@@ -3,16 +3,16 @@
 <%@page import="java.sql.*"%>
 <%
     HttpSession objsesion = request.getSession(false);
-    String id_usuario = (String)objsesion.getAttribute("id_usuario");
-    String Descripcion_perfil = (String)objsesion.getAttribute("descripcion_perfil");
-    if(id_usuario==null){
+    String id_usuario = (String) objsesion.getAttribute("id_usuario");
+    String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
+    if (id_usuario == null) {
         response.sendRedirect("login.jsp");
-    }else{
-        if(Descripcion_perfil.equals("COORDINADOR")||
-                Descripcion_perfil.equals("JEFE")){
-            
-        }else{
-          response.sendRedirect("nomina.htm");  
+    } else {
+        if (Descripcion_perfil.equals("COORDINADOR")
+                || Descripcion_perfil.equals("JEFE")) {
+
+        } else {
+            response.sendRedirect("nomina.htm");
         }
     }
 %>
@@ -32,46 +32,46 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-        
-       <header>
-        <%--Barra de Navegación de Jefe--%>
-        <%
-            if (Descripcion_perfil.equals("JEFE")) {
 
-        %>       
+        <header>
+            <%--Barra de Navegación de Jefe--%>
+            <%
+                if (Descripcion_perfil.equals("JEFE")) {
 
-        <jsp:include page="menujefe.jsp"></jsp:include>
+            %>       
 
-        <%        }
-        %>
+            <jsp:include page="menujefe.jsp"></jsp:include>
 
-        <%--Barra de Navegación de Coordinador--%>
-        <%
-            if (Descripcion_perfil.equals("COORDINADOR")) {
-        %>
+            <%        }
+            %>
 
-        <jsp:include page="menucordi.jsp"></jsp:include>
+            <%--Barra de Navegación de Coordinador--%>
+            <%
+                if (Descripcion_perfil.equals("COORDINADOR")) {
+            %>
 
-        <%
-            }
-        %> 
-    </header>
-        
-        
+            <jsp:include page="menucordi.jsp"></jsp:include>
+
+            <%
+                }
+            %> 
+        </header>
+
+
         <div class="container mt-4">
             <h1 class="text-center">Facturación</h1>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
-                     <form action="" method="post">
-                    <div class="input-group">
-                        <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú"><i class="fas fa-arrow-left"></i></a>
-                        <a href="agregarfacturacion.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
-                        <input type="text" class="form-control" name="Buscar" placeholder="Buscar en ServiSoft S.A."/>
-                        <div class="input-group-append">
-                            <button type="submit" Value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar"><i class="fas fa-search"></i></button> 
+                    <form action="" method="post">
+                        <div class="input-group">
+                            <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú"><i class="fas fa-arrow-left"></i></a>
+                            <a href="agregarfacturacion.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
+                            <input type="text" class="form-control" name="Buscar" placeholder="Buscar en ServiSoft S.A."/>
+                            <div class="input-group-append">
+                                <button type="submit" Value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar"><i class="fas fa-search"></i></button> 
+                            </div>
                         </div>
-                    </div>
                     </form>
                 </div>
                 <div class="card-body">
@@ -83,65 +83,64 @@
                             </tr>
                         </thead>
                         <%
-                            String control=request.getParameter("Buscar");
-                            try
-                            {
+                            String control = request.getParameter("Buscar");
+                            try {
                                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                                Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
-                                String Query="SELECT * FROM nm_facturacion where "
-                                        + " Id_tipo_novedad like  '%"+request.getParameter("Buscar")+"%' or "
-                                        + " Descripcion like '%"+request.getParameter("Buscar")+"%'";
-                                Statement stm=conn.createStatement();
-                                ResultSet rs=stm.executeQuery(Query);
-                                
-                                if(control!=null)
-                                {
-                                    while(rs.next())
-                                    {
-                                        %>
-                                        <tbody>
-                                            <tr>
-                                                <td class="align-middle"><%=rs.getString("Descripcion")%></td>
-                                                <c:forEach var="dato" items="${datos}"  begin="<%=rs.getInt("Id_tipo_novedad")-1%>" end="<%=rs.getInt("Id_tipo_novedad")-1%>">
-                                                <td class="align-middle">
-                                                    <a href="<c:url value="editarfacturacion.htm?id_tipo_novedad=${dato.Id_tipo_novedad}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                                    <a href="<c:url value="eliminarfacturacion.htm?id_tipo_novedad=${dato.Id_tipo_novedad}"/>"class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
-                                                </td>
-                                                </c:forEach>
-                                            </tr>
-                                        </tbody>  
-                                        <%
-                                    }
-                                }else{
-                                    %>
-                                    <tbody>
-                                        <c:forEach var="dato" items="${datos}">
-                                        <tr>
-                                            <td class="align-middle">${dato.Descripcion}</td>
-                                            <td>
-                                                <a href="<c:url value="editarfacturacion.htm?id_tipo_novedad=${dato.Id_tipo_novedad}"/>" class="btn btn-warning" data-toggle="tooltip" title="Haz clic para editar facturación"><i class="fas fa-edit"></i></a>
-                                                <a href="<c:url value="eliminarfacturacion.htm?id_tipo_novedad=${dato.Id_tipo_novedad}"/>"class="btn btn-danger" data-toggle="tooltip" title="Haz clic para eliminar"><i class="fas fa-trash-alt"></i></a>
-                                            </td>
-                                        </tr>
-                                        </c:forEach>
-                                    </tbody>   
-                                    <%
+                                Connection conn = DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable", "contable19", "contable19");
+                                String Query = "SELECT * FROM nm_facturacion where "
+                                        + " Id_tipo_novedad like  '%" + request.getParameter("Buscar") + "%' or "
+                                        + " Descripcion like '%" + request.getParameter("Buscar") + "%'";
+                                Statement stm = conn.createStatement();
+                                ResultSet rs = stm.executeQuery(Query);
+
+                                if (control != null) {
+                                    while (rs.next()) {
+                        %>
+                        <tbody>
+                            <tr>
+                                <td class="align-middle"><%=rs.getString("Descripcion")%></td>
+                                <c:forEach var="dato" items="${datos}"  begin="<%=rs.getInt("Id_tipo_novedad") - 1%>" end="<%=rs.getInt("Id_tipo_novedad") - 1%>">
+                                    <td class="align-middle">
+                                        <div class="btn-group ml-4 mr-4">
+                                            <a href="<c:url value="editarfacturacion.htm?id_tipo_novedad=${dato.Id_tipo_novedad}"/>" class="btn btn-warning rounded ml-4 mr-1"><i class="fas fa-edit"></i></a>
+                                            <a href="<c:url value="eliminarfacturacion.htm?id_tipo_novedad=${dato.Id_tipo_novedad}"/>"class="btn btn-danger rounded mr-4"><i class="fas fa-trash-alt"></i></a>
+                                        </div>
+                                    </td>
+                                </c:forEach>
+                            </tr>
+                        </tbody>  
+                        <%
+                            }
+                        } else {
+                        %>
+                        <tbody>
+                            <c:forEach var="dato" items="${datos}">
+                                <tr>
+                                    <td class="align-middle">${dato.Descripcion}</td>
+                                    <td>
+                                        <div class="btn-group ml-4 mr-4">
+                                            <a href="<c:url value="editarfacturacion.htm?id_tipo_novedad=${dato.Id_tipo_novedad}"/>" class="btn btn-warning rounded mr-1 ml-4" data-toggle="tooltip" title="Haz clic para editar facturación"><i class="fas fa-edit"></i></a>
+                                            <a href="<c:url value="eliminarfacturacion.htm?id_tipo_novedad=${dato.Id_tipo_novedad}"/>"class="btn btn-danger rounded mr-4" data-toggle="tooltip" title="Haz clic para eliminar"><i class="fas fa-trash-alt"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>   
+                        <%
                                 }
-                            }
-                            catch(Exception ex)
-                            {
+                            } catch (Exception ex) {
                                 ex.printStackTrace();
-                                out.println("Error "+ex.getMessage());
+                                out.println("Error " + ex.getMessage());
                             }
-                        
+
                         %>  
                     </table>   
                 </div>
             </div>
         </div>
     </body>
-    
-      <script>
+
+    <script>
         $(document).ready(main);
 
         var contador = 1;

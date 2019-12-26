@@ -104,7 +104,7 @@
                     <table id="table-id" border="1" class="table table-bordered table-striped table-hover text-center table-responsive-lg">
                         <div class="form-group">
                             <div class="form-row">
-                                <div class="col-2">
+                                <div class="col-3">
                                     <select class="form-control form-control-sm" name="state" id="maxRows">
                                         <option value="5000">Filtro de Paginación</option>
                                         <option value="5000">Todos</option>
@@ -117,7 +117,7 @@
                                         <option value="100">100</option>
                                     </select>
                                 </div>
-                                <div class="col-6 ml-2">
+                                <div class="col-8 ml-2">
                                     <b>
                                         <i class="fas fa-clipboard-list"></i>
                                         <span>Registros Existentes: <%=lstclsUsuarios.size()%></span>

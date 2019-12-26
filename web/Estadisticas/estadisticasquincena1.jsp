@@ -25,6 +25,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Estadísticas</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -63,185 +64,44 @@
         <%
             }
         %>
-        <%--Barra de Navegación de Jefe--%>
-        <%
-            if (Descripcion_perfil.equals("JEFE")) {
+        <header>
+            <%--Barra de Navegación de Jefe--%>
+            <%
+                if (Descripcion_perfil.equals("JEFE")) {
 
-                out.println("<nav class='navbar navbar-expand-sm bg-info navbar-dark justify-content-center'>");
-                out.println("<a class='navbar-brand' href='index.htm'>ServiSoft S.A.</a>");
-                out.println("<div>");
-                out.println("<ul class='navbar-nav'>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Control Usuarios");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='usuarios.htm'>Usuarios</a>");
-                out.println("<a class='dropdown-item' href='perfil.htm'>Perfil</a>");
-                out.println("</div>");;
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Novedades");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='tipodenovedades.htm'>Tabla De Novedades</a>");
-                out.println("<a class='dropdown-item' href='facturacion.htm'>Facturación</a>");
-                out.println("<a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Centro de Costos");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='centrodecostos.htm'>Tabla Centro de Costos</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Empleados");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='empleados.htm'>Tabla Empleados</a>");
-                out.println("<a class='dropdown-item' href='cargoempleado.htm'>Cargo Empleado</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Modulos");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='modulos.htm'>Tabla Modulos</a>");
-                out.println("<a class='dropdown-item' href='modulosperfil.htm'>Modulos por Perfil</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Grupos");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='grupos.htm'>Tabla Grupos</a>");
-                out.println("<a class='dropdown-item' href='empleadosgrupo.htm'>Empleados por Grupo</a>");
-                out.println("<a class='dropdown-item' href='responsablegrupo.htm'>Responsable del Grupo</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Configuracion");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='configuracion.htm'>Configuracion</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle btn btn-dark' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Usuario:");
-                out.println(id_usuario);
-                out.println("</a>");
-                out.println("<div class='dropdown-menu text-center'>");
-                out.println("<a class='dropdown-item' href='nomina.htm'>");
-                out.println("Perfil:");
-                out.println(Descripcion_perfil);
-                out.println("</a>");
-                out.println("<form action='cerrar' method='post' id='formcerrar'>");
-                out.println("<input type='submit' value='Cerrar Sesión' "
-                        + " class='btn btn-link text-center' style='color: #000;'/>");
-                out.println("</form>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("</ul>");
-                out.println("</div>");
-                out.println("</nav>");
-            }
-        %>
+            %>       
 
-        <%--Barra de Navegación de Coordinador--%>
-        <%
-            if (Descripcion_perfil.equals("COORDINADOR")) {
+            <jsp:include page="../WEB-INF/jsp/menujefe.jsp"></jsp:include>
 
-                out.println("<nav class='navbar navbar-expand-sm bg-info navbar-dark justify-content-center'>");
-                out.println("<a class='navbar-brand' href='index.htm'>ServiSoft S.A.</a>");
-                out.println("<div>");
-                out.println("<ul class='navbar-nav'>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Novedades");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='tipodenovedades.htm'>Tabla De Novedades</a>");
-                out.println("<a class='dropdown-item' href='facturacion.htm'>Facturación</a>");
-                out.println("<a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Centro de Costos");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='centrodecostos.htm'>Tabla Centro de Costos</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Empleados");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='empleados.htm'>Tabla Empleados</a>");
-                out.println("<a class='dropdown-item' href='cargoempleado.htm'>Cargo Empleado</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Grupos");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='grupos.htm'>Tabla Grupos</a>");
-                out.println("<a class='dropdown-item' href='empleadosgrupo.htm'>Empleados por Grupo</a>");
-                out.println("<a class='dropdown-item' href='responsablegrupo.htm'>Responsable del Grupo</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Configuracion");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='configuracion.htm'>Configuracion</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle btn btn-dark' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Usuario:");
-                out.println(id_usuario);
-                out.println("</a>");
-                out.println("<div class='dropdown-menu text-center'>");
-                out.println("<a class='dropdown-item' href='nomina.htm'>");
-                out.println("Perfil:");
-                out.println(Descripcion_perfil);
-                out.println("</a>");
-                out.println("<form action='cerrar' method='post' id='formcerrar'>");
-                out.println("<input type='submit' value='Cerrar Sesión' "
-                        + " class='btn btn-link text-center' style='color: #000;'/>");
-                out.println("</form>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("</ul>");
-                out.println("</div>");
-                out.println("</nav>");
-            }
-        %> 
+            <%        }
+            %>
+
+
+            <%--Barra de Navegación de Coordinador--%>
+            <%
+                if (Descripcion_perfil.equals("COORDINADOR")) {
+            %>
+
+            <jsp:include page="../WEB-INF/jsp/menucordi.jsp"></jsp:include>
+
+            <%
+                }
+            %> 
+        </header> 
         <div class="container mt-4">
             <h1 class="text-center">Estadísticas</h1>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
                     <form action="estadisticas" method="post">
-                        <div class="input-group mt-3">
+                        <div class="input-group">
                             <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
-                            <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
                             <a href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la mensualidad"><i class="fas fa-calendar-alt"></i></a>
                             <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 1 al 15"><i class="fas fa-calendar-week"></i></a>
                             <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 16 al 30"><i class="fas fa-calendar-minus"></i></a>
+                        </div>
+                        <div class="input-group mt-2">
+                            <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
                             <input type="text" class="form-control" name="txtBuscarEsta" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
                             <div class="input-group-append">
                                 <button type="submit" Value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar" name="btnBuscarEstaQuincena1"><i class="fas fa-search"></i></button>                            
@@ -254,7 +114,7 @@
                     <table id="table-id" cellspacing="0" border="1" class="table table-bordered table-striped table-hover text-center table-responsive">
                         <div class="form-group">
                             <div class="form-row">
-                                <div class="col-2">
+                                <div class="col-3">
                                     <select class="form-control form-control-sm" name="state" id="maxRows"> 
                                         <option value="5000">Filtro de Paginación</option>
                                         <option value="5000">Todos</option>
@@ -267,7 +127,7 @@
                                         <option value="100">100</option>
                                     </select>
                                 </div>
-                                <div class="col-4 ml-2">
+                                <div class="col-8 ml-2">
                                     <b>
                                         <i class="fas fa-clipboard-list"></i>
                                         <span>Registros Existentes: <%=lstclsEstadisticas.size()%></span>
@@ -554,4 +414,30 @@
 
         </style>
     </body>
+    <script>
+    $(document).ready(main);
+
+    var contador = 1;
+
+    function main() {
+        $('.menu_bar').click(function () {
+            if (contador == 1) {
+                $('nav').animate({
+                    left: '0'
+                });
+                contador = 0;
+            } else {
+                contador = 1;
+                $('nav').animate({
+                    left: '-100%'
+                });
+            }
+        });
+
+// Mostramos y ocultamos submenus
+        $('.submenu').click(function () {
+            $(this).children('.children').slideToggle();
+        });
+    }
+</script>
 </html>                           
