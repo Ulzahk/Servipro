@@ -25,6 +25,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Novedades por Empleados</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -63,173 +64,31 @@
         <%
             }
         %>
-        <%--Barra de Navegación de Jefe--%>
-        <%
-            if (Descripcion_perfil.equals("JEFE")) {
 
-                out.println("<nav class='navbar navbar-expand-sm bg-info navbar-dark justify-content-center'>");
-                out.println("<a class='navbar-brand' href='index.htm'>ServiSoft S.A.</a>");
-                out.println("<div>");
-                out.println("<ul class='navbar-nav'>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Control Usuarios");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='usuarios.htm'>Usuarios</a>");
-                out.println("<a class='dropdown-item' href='perfil.htm'>Perfil</a>");
-                out.println("</div>");;
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Novedades");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='tipodenovedades.htm'>Tabla De Novedades</a>");
-                out.println("<a class='dropdown-item' href='facturacion.htm'>Facturación</a>");
-                out.println("<a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Centro de Costos");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='centrodecostos.htm'>Tabla Centro de Costos</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Empleados");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='empleados.htm'>Tabla Empleados</a>");
-                out.println("<a class='dropdown-item' href='cargoempleado.htm'>Cargo Empleado</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Modulos");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='modulos.htm'>Tabla Modulos</a>");
-                out.println("<a class='dropdown-item' href='modulosperfil.htm'>Modulos por Perfil</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Grupos");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='grupos.htm'>Tabla Grupos</a>");
-                out.println("<a class='dropdown-item' href='empleadosgrupo.htm'>Empleados por Grupo</a>");
-                out.println("<a class='dropdown-item' href='responsablegrupo.htm'>Responsable del Grupo</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Configuracion");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='configuracion.htm'>Configuracion</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle btn btn-dark' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Usuario:");
-                out.println(id_usuario);
-                out.println("</a>");
-                out.println("<div class='dropdown-menu text-center'>");
-                out.println("<a class='dropdown-item' href='nomina.htm'>");
-                out.println("Perfil:");
-                out.println(Descripcion_perfil);
-                out.println("</a>");
-                out.println("<form action='cerrar' method='post' id='formcerrar'>");
-                out.println("<input type='submit' value='Cerrar Sesión' "
-                        + " class='btn btn-link text-center' style='color: #000;'/>");
-                out.println("</form>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("</ul>");
-                out.println("</div>");
-                out.println("</nav>");
-            }
-        %>
+        <header>
+            <%--Barra de Navegación de Jefe--%>
+            <%
+                if (Descripcion_perfil.equals("JEFE")) {
 
-        <%--Barra de Navegación de Coordinador--%>
-        <%
-            if (Descripcion_perfil.equals("COORDINADOR")) {
+            %>       
 
-                out.println("<nav class='navbar navbar-expand-sm bg-info navbar-dark justify-content-center'>");
-                out.println("<a class='navbar-brand' href='index.htm'>ServiSoft S.A.</a>");
-                out.println("<div>");
-                out.println("<ul class='navbar-nav'>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Novedades");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='tipodenovedades.htm'>Tabla De Novedades</a>");
-                out.println("<a class='dropdown-item' href='facturacion.htm'>Facturación</a>");
-                out.println("<a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Centro de Costos");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='centrodecostos.htm'>Tabla Centro de Costos</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Empleados");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='empleados.htm'>Tabla Empleados</a>");
-                out.println("<a class='dropdown-item' href='cargoempleado.htm'>Cargo Empleado</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Grupos");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='grupos.htm'>Tabla Grupos</a>");
-                out.println("<a class='dropdown-item' href='empleadosgrupo.htm'>Empleados por Grupo</a>");
-                out.println("<a class='dropdown-item' href='responsablegrupo.htm'>Responsable del Grupo</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Configuracion");
-                out.println("</a>");
-                out.println("<div class='dropdown-menu'>");
-                out.println("<a class='dropdown-item' href='configuracion.htm'>Configuracion</a>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("<li class='nav-item dropdown'>");
-                out.println("<a class='nav-link dropdown-toggle btn btn-dark' href='#' id='navbardrop' data-toggle='dropdown'>");
-                out.println("Usuario:");
-                out.println(id_usuario);
-                out.println("</a>");
-                out.println("<div class='dropdown-menu text-center'>");
-                out.println("<a class='dropdown-item' href='nomina.htm'>");
-                out.println("Perfil:");
-                out.println(Descripcion_perfil);
-                out.println("</a>");
-                out.println("<form action='cerrar' method='post' id='formcerrar'>");
-                out.println("<input type='submit' value='Cerrar Sesión' "
-                        + " class='btn btn-link text-center' style='color: #000;'/>");
-                out.println("</form>");
-                out.println("</div>");
-                out.println("</li>");
-                out.println("</ul>");
-                out.println("</div>");
-                out.println("</nav>");
-            }
-        %> 
+            <jsp:include page="../WEB-INF/jsp/menujefe.jsp"></jsp:include>
+
+            <%        }
+            %>
+
+
+            <%--Barra de Navegación de Coordinador--%>
+            <%
+                if (Descripcion_perfil.equals("COORDINADOR")) {
+            %>
+
+            <jsp:include page="../WEB-INF/jsp/menucordi.jsp"></jsp:include>
+
+            <%
+                }
+            %> 
+        </header> 
         <div class="container mt-4">
             <h1 class="text-center">Novedades por Empleados</h1>
             <br>
@@ -340,10 +199,10 @@
             </div>
             <script>
                 $('.openBtn').on('click', function () {
-                    $('.modal-body').load(this.href, function ()
-                    {
-                        $('#myModal').modal({show: false});
-                    });
+                $('.modal-body').load(this.href, function ()
+                {
+                $('#myModal').modal({show: false});
+                });
                 });
 
                 getPagination('#table-id');
@@ -351,155 +210,181 @@
                 //getPagination('table');
 
                 /*					PAGINATION 
-                 - on change max rows select options fade out all rows gt option value mx = 5
-                 - append pagination list as per numbers of rows / max rows option (20row/5= 4pages )
-                 - each pagination li on click -> fade out all tr gt max rows * li num and (5*pagenum 2 = 10 rows)
-                 - fade out all tr lt max rows * li num - max rows ((5*pagenum 2 = 10) - 5)
-                 - fade in all tr between (maxRows*PageNum) and (maxRows*pageNum)- MaxRows 
-                 */
+                - on change max rows select options fade out all rows gt option value mx = 5
+                - append pagination list as per numbers of rows / max rows option (20row/5= 4pages )
+                - each pagination li on click -> fade out all tr gt max rows * li num and (5*pagenum 2 = 10 rows)
+                - fade out all tr lt max rows * li num - max rows ((5*pagenum 2 = 10) - 5)
+                - fade in all tr between (maxRows*PageNum) and (maxRows*pageNum)- MaxRows 
+                */
 
 
                 function getPagination(table) {
-                    var lastPage = 1;
+                var lastPage = 1;
 
-                    $('#maxRows')
-                            .on('change', function (evt) {
-                                //$('.paginationprev').html(''); // reset pagination
+                $('#maxRows')
+                .on('change', function (evt) {
+                //$('.paginationprev').html(''); // reset pagination
 
-                                lastPage = 1;
-                                $('.pagination')
-                                        .find('li')
-                                        .slice(1, -1)
-                                        .remove();
-                                var trnum = 0; // reset tr counter
-                                var maxRows = parseInt($(this).val()); // get Max Rows from select option
+                lastPage = 1;
+                $('.pagination')
+                .find('li')
+                .slice(1, -1)
+                .remove();
+                var trnum = 0; // reset tr counter
+                var maxRows = parseInt($(this).val()); // get Max Rows from select option
 
-                                if (maxRows == 5000) {
-                                    $('.pagination').hide();
-                                } else {
-                                    $('.pagination').show();
-                                }
+                if (maxRows == 5000) {
+                $('.pagination').hide();
+                } else {
+                $('.pagination').show();
+                }
 
-                                var totalRows = $(table + ' tbody tr').length; // numbers of rows
-                                $(table + ' tr:gt(0)').each(function () {
-                                    // each TR in  table and not the header
-                                    trnum++; // Start Counter
-                                    if (trnum > maxRows) {
-                                        // if tr number gt maxRows
+                var totalRows = $(table + ' tbody tr').length; // numbers of rows
+                $(table + ' tr:gt(0)').each(function () {
+                // each TR in  table and not the header
+                trnum++; // Start Counter
+                if (trnum > maxRows) {
+                // if tr number gt maxRows
 
-                                        $(this).hide(); // fade it out
-                                    }
-                                    if (trnum <= maxRows) {
-                                        $(this).show();
-                                    } // else fade in Important in case if it ..
-                                }); //  was fade out to fade it in
-                                if (totalRows > maxRows) {
-                                    // if tr total rows gt max rows option
-                                    var pagenum = Math.ceil(totalRows / maxRows); // ceil total(rows/maxrows) to get ..
-                                    //	numbers of pages
-                                    for (var i = 1; i <= pagenum; ) {
-                                        // for each page append pagination li
-                                        $('.pagination #prev')
-                                                .before(
-                                                        '<li data-page="' +
-                                                        i +
-                                                        '">\
-                                                                  <button class="btn btn-secondary btn-sm mr-1">' +
-                                                        i++ +
-                                                        '<span class="sr-only">(current)</span></button>\
-                                                                </li>'
-                                                        )
-                                                .show();
-                                    } // end for i
-                                } // end if row count > max rows
-                                $('.pagination [data-page="1"]').addClass('active'); // add active class to the first li
-                                $('.pagination li').on('click', function (evt) {
-                                    // on click each page
-                                    evt.stopImmediatePropagation();
-                                    evt.preventDefault();
-                                    var pageNum = $(this).attr('data-page'); // get it's number
+                $(this).hide(); // fade it out
+                }
+                if (trnum <= maxRows) {
+                $(this).show();
+                } // else fade in Important in case if it ..
+                }); //  was fade out to fade it in
+                if (totalRows > maxRows) {
+                // if tr total rows gt max rows option
+                var pagenum = Math.ceil(totalRows / maxRows); // ceil total(rows/maxrows) to get ..
+                //	numbers of pages
+                for (var i = 1; i <= pagenum; ) {
+                // for each page append pagination li
+                $('.pagination #prev')
+                .before(
+                '<li data-page="' +
+                i +
+                '">\
+                <button class="btn btn-secondary btn-sm mr-1">' +
+                i++ +
+                '<span class="sr-only">(current)</span></button>\
+                </li>'
+                )
+                .show();
+                } // end for i
+                } // end if row count > max rows
+                $('.pagination [data-page="1"]').addClass('active'); // add active class to the first li
+                $('.pagination li').on('click', function (evt) {
+                // on click each page
+                evt.stopImmediatePropagation();
+                evt.preventDefault();
+                var pageNum = $(this).attr('data-page'); // get it's number
 
-                                    var maxRows = parseInt($('#maxRows').val()); // get Max Rows from select option
+                var maxRows = parseInt($('#maxRows').val()); // get Max Rows from select option
 
-                                    if (pageNum == 'prev') {
-                                        if (lastPage == 1) {
-                                            return;
-                                        }
-                                        pageNum = --lastPage;
-                                    }
-                                    if (pageNum == 'next') {
-                                        if (lastPage == $('.pagination li').length - 2) {
-                                            return;
-                                        }
-                                        pageNum = ++lastPage;
-                                    }
+                if (pageNum == 'prev') {
+                if (lastPage == 1) {
+                return;
+                }
+                pageNum = --lastPage;
+                }
+                if (pageNum == 'next') {
+                if (lastPage == $('.pagination li').length - 2) {
+                return;
+                }
+                pageNum = ++lastPage;
+                }
 
-                                    lastPage = pageNum;
-                                    var trIndex = 0; // reset tr counter
-                                    $('.pagination li').removeClass('active'); // remove active class from all li
-                                    $('.pagination [data-page="' + lastPage + '"]').addClass('active'); // add active class to the clicked
-                                    //$(this).addClass('active');					// add active class to the clicked
-                                    limitPagging();
-                                    $(table + ' tr:gt(0)').each(function () {
-                                        // each tr in table not the header
-                                        trIndex++; // tr index counter
-                                        // if tr index gt maxRows*pageNum or lt maxRows*pageNum-maxRows fade if out
-                                        if (
-                                                trIndex > maxRows * pageNum ||
-                                                trIndex <= maxRows * pageNum - maxRows
-                                                ) {
-                                            $(this).hide();
-                                        } else {
-                                            $(this).show();
-                                        } //else fade in
-                                    }); // end of for each tr in table
-                                }); // end of on click pagination list
-                                limitPagging();
-                            })
-                            .val(5000)
-                            .change();
+                lastPage = pageNum;
+                var trIndex = 0; // reset tr counter
+                $('.pagination li').removeClass('active'); // remove active class from all li
+                $('.pagination [data-page="' + lastPage + '"]').addClass('active'); // add active class to the clicked
+                //$(this).addClass('active');					// add active class to the clicked
+                limitPagging();
+                $(table + ' tr:gt(0)').each(function () {
+                // each tr in table not the header
+                trIndex++; // tr index counter
+                // if tr index gt maxRows*pageNum or lt maxRows*pageNum-maxRows fade if out
+                if (
+                trIndex > maxRows * pageNum ||
+                trIndex <= maxRows * pageNum - maxRows
+                ) {
+                $(this).hide();
+                } else {
+                $(this).show();
+                } //else fade in
+                }); // end of for each tr in table
+                }); // end of on click pagination list
+                limitPagging();
+                })
+                .val(5000)
+                .change();
 
-                    // end of on select change
+                // end of on select change
 
-                    // END OF PAGINATION
+                // END OF PAGINATION
                 }
 
                 function limitPagging() {
-                    // alert($('.pagination li').length)
+                // alert($('.pagination li').length)
 
-                    if ($('.pagination li').length > 7) {
-                        if ($('.pagination li.active').attr('data-page') <= 3) {
-                            $('.pagination li:gt(5)').hide();
-                            $('.pagination li:lt(5)').show();
-                            $('.pagination [data-page="next"]').show();
-                        }
-                        if ($('.pagination li.active').attr('data-page') > 3) {
-                            $('.pagination li:gt(0)').hide();
-                            $('.pagination [data-page="next"]').show();
-                            for (let i = (parseInt($('.pagination li.active').attr('data-page')) - 2); i <= (parseInt($('.pagination li.active').attr('data-page')) + 2); i++) {
-                                $('.pagination [data-page="' + i + '"]').show();
+                if ($('.pagination li').length > 7) {
+                if ($('.pagination li.active').attr('data-page') <= 3) {
+                $('.pagination li:gt(5)').hide();
+                $('.pagination li:lt(5)').show();
+                $('.pagination [data-page="next"]').show();
+                }
+                if ($('.pagination li.active').attr('data-page') > 3) {
+                $('.pagination li:gt(0)').hide();
+                $('.pagination [data-page="next"]').show();
+                for (let i = (parseInt($('.pagination li.active').attr('data-page')) - 2); i <= (parseInt($('.pagination li.active').attr('data-page')) + 2); i++) {
+                $('.pagination [data-page="' + i + '"]').show();
 
-                            }
+                }
 
-                        }
-                    }
+                }
+                }
                 }
 
                 $(function () {
-                    // Just to append id number for each row
-                    $('table tr:eq(0)').prepend('<th> ID </th>');
+                // Just to append id number for each row
+                $('table tr:eq(0)').prepend('<th> ID </th>');
 
-                    var id = 0;
+                var id = 0;
 
-                    $('table tr:gt(0)').each(function () {
-                        id++;
-                        $(this).prepend('<td>' + id + '</td>');
-                    });
+                $('table tr:gt(0)').each(function () {
+                id++;
+                $(this).prepend('<td>' + id + '</td>');
+                });
                 });
 
 
             </script>
     </body>
+    <script>
+        $(document).ready(main);
+
+        var contador = 1;
+
+        function main() {
+        $('.menu_bar').click(function () {
+        if (contador == 1) {
+        $('nav').animate({
+        left: '0'
+        });
+        contador = 0;
+        } else {
+        contador = 1;
+        $('nav').animate({
+        left: '-100%'
+        });
+        }
+        });
+
+        // Mostramos y ocultamos submenus
+        $('.submenu').click(function () {
+        $(this).children('.children').slideToggle();
+        });
+        }
+    </script>
 </html>
 
 
