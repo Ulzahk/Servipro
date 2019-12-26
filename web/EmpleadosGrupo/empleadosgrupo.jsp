@@ -123,7 +123,7 @@
                                         <option value="100">100</option>
                                     </select>
                                 </div>
-                                <div class="col-9">
+                                <div class="col-8">
                                     <b>
                                         <i class="fas fa-clipboard-list"></i>
                                         <span>Registros Existentes: <%=lstclsEmpleadosGrupo.size()%></span>

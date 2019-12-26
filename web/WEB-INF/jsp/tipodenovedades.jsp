@@ -30,9 +30,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
-    
 
-      <header>
+
+    <header>
         <%--Barra de Navegación de Jefe--%>
         <%
             if (Descripcion_perfil.equals("JEFE")) {
@@ -56,7 +56,7 @@
             }
         %> 
     </header>
- <body>
+    <body>
         <div class="container mt-4">
             <h1 class="text-center">Tipo De Novedades</h1>
             <br>
@@ -103,8 +103,10 @@
                                 <td class="align-middle"><%=rs.getString("Alias")%></td>
                                 <c:forEach var="dato" items="${datos}"  begin="<%=rs.getInt("Id_novedad") - 1%>" end="<%=rs.getInt("Id_novedad") - 1%>">
                                     <td class="align-middle">
-                                        <a href="<c:url value="editartipodenovedades.htm?id_novedad=${dato.Id_novedad}"/>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                        <a href="<c:url value="eliminartipodenovedades.htm?id_novedad=${dato.Id_novedad}"/>"class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                        <div class="btn-group">
+                                            <a href="<c:url value="editartipodenovedades.htm?id_novedad=${dato.Id_novedad}"/>" class="btn btn-warning rounded mr-1"><i class="fas fa-edit"></i></a>
+                                            <a href="<c:url value="eliminartipodenovedades.htm?id_novedad=${dato.Id_novedad}"/>"class="btn btn-danger rounded mr-4"><i class="fas fa-trash-alt"></i></a>
+                                        </div>
                                     </td>
                                 </c:forEach>
                             </tr>
@@ -119,8 +121,10 @@
                                     <td class="align-middle">${dato.Descripcion}</td>
                                     <td class="align-middle">${dato.Alias}</td>
                                     <td class="align-middle">
-                                        <a href="<c:url value="editartipodenovedades.htm?id_novedad=${dato.Id_novedad}"/>" class="btn btn-warning" data-toggle="tooltip" title="Haz clic para editar tipo de novedad"><i class="fas fa-edit"></i></a>
-                                        <a href="<c:url value="eliminartipodenovedades.htm?id_novedad=${dato.Id_novedad}"/>"class="btn btn-danger" data-toggle="tooltip" title="Haz clic para eliminar"><i class="fas fa-trash-alt"></i></a>
+                                        <div class="btn-group">
+                                            <a href="<c:url value="editartipodenovedades.htm?id_novedad=${dato.Id_novedad}"/>" class="btn btn-warning rounded mr-1" data-toggle="tooltip" title="Haz clic para editar tipo de novedad"><i class="fas fa-edit"></i></a>
+                                            <a href="<c:url value="eliminartipodenovedades.htm?id_novedad=${dato.Id_novedad}"/>"class="btn btn-danger rounded mr-4" data-toggle="tooltip" title="Haz clic para eliminar"><i class="fas fa-trash-alt"></i></a>
+                                        </div>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -138,7 +142,7 @@
             </div>
         </div>
     </body>
-     <script>
+    <script>
         $(document).ready(main);
 
         var contador = 1;

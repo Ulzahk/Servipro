@@ -9,7 +9,7 @@
     if (id_usuario == null) {
         response.sendRedirect("login.jsp");
     } else {
-        if (Descripcion_perfil.equals("COORDINADOR")
+        if (Descripcion_perfil.equals("ADMINISTRADOR")
                 || Descripcion_perfil.equals("JEFE")) {
 
         } else {
