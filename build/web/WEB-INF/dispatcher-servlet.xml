@@ -23,18 +23,6 @@
                 <prop key="index.htm">indexController</prop>
                 <!--Nomina-->
                 <prop key="nomina.htm">controlNomina</prop>
-                <!--Consulta-->
-                <!--Estadisticas-->
-                <prop key="estadisticas.htm">controlEstadisticas</prop>
-                <prop key="agregarestadisticas.htm">controlAgregarEstadisticas</prop>
-                <prop key="editarestadisticas.htm">controlEditarEstadisticas</prop>
-                <prop key="eliminarestadisticas.htm">controlEliminarEstadisticas</prop>
-                <!--Usuarios props-->
-                <prop key="usuarios.htm">controlUsuarios</prop>
-                <prop key="agregarusuarios.htm">controlAgregarUsuarios</prop>
-                <prop key="editarusuarios.htm">controlEditarUsuarios</prop>
-                <prop key="eliminarusuarios.htm">controlEliminarUsuarios</prop>
-                <prop key="confirmareliminarusuarios.htm">controlConfirmarEliminarUsuarios</prop>
                 <!--Perfil props-->
                 <prop key="perfil.htm">controlPerfil</prop>
                 <prop key="agregarperfil.htm">controlAgregarPerfil</prop>
@@ -59,36 +47,12 @@
                 <prop key="editarfacturacion.htm">controlEditarFacturacion</prop>
                 <prop key="eliminarfacturacion.htm">controlEliminarFacturacion</prop>
                 <prop key="confirmareliminarfacturacion.htm">controlConfirmarEliminarFacturacion</prop>
-                <!--Novedadesempleado-->
-                <prop key="novedadesempleado.htm">controlNovedadesEmpleado</prop>
-                <prop key="agregarnovedadesempleado.htm">controlAgregarNovedadesEmpleado</prop>
-                <prop key="editarnovedadesempleado.htm">controlEditarNovedadesEmpleado</prop>
-                <prop key="eliminarnovedadesempleado.htm">controlEliminarNovedadesEmpleado</prop>
-                <prop key="confirmareliminarnovedadesempleado.htm">controlConfirmarEliminarNovedadesEmpleado</prop>
                 <!--Grupos props-->
                 <prop key="grupos.htm">controlGrupos</prop>
                 <prop key="agregargrupos.htm">controlAgregarGrupos</prop>
                 <prop key="editargrupos.htm">controlEditarGrupos</prop>
                 <prop key="eliminargrupos.htm">controlEliminarGrupos</prop>
                 <prop key="confirmareliminargrupos.htm">controlConfirmarEliminarGrupos</prop>
-                <!--Empleadosgrupo props-->
-                <prop key="empleadosgrupo.htm">controlEmpleadosGrupo</prop>
-                <prop key="agregarempleadosgrupo.htm">controlAgregarEmpleadosGrupo</prop>
-                <prop key="editarempleadosgrupo.htm">controlEditarEmpleadosGrupo</prop>
-                <prop key="eliminarempleadosgrupo.htm">controlEliminarEmpleadosGrupo</prop>
-                <prop key="confirmareliminarempleadosgrupo.htm">controlConfirmarEliminarEmpleadosGrupo</prop>
-                <!--Responsablegrupo prop-->
-                <prop key="responsablegrupo.htm">controlResponsableGrupo</prop>
-                <prop key="agregarresponsablegrupo.htm">controlAgregarResponsableGrupo</prop>
-                <prop key="editarresponsablegrupo.htm">controlEditarResponsableGrupo</prop>
-                <prop key="eliminarresponsablegrupo.htm">controlEliminarResponsableGrupo</prop>
-                <prop key="confirmareliminarresponsablegrupo.htm">controlConfirmarEliminarResponsableGrupo</prop>
-                <!--Empleados props-->
-                <prop key="empleados.htm">controlEmpleados</prop>
-                <prop key="agregarempleados.htm">controlAgregarEmpleados</prop>
-                <prop key="editarempleados.htm">controlEditarEmpleados</prop>
-                <prop key="eliminarempleados.htm">controlEliminarEmpleados</prop>
-                <prop key="confirmareliminarempleados.htm">controlConfirmarEliminarEmpleados</prop> 
                 <!--Centrodecostos props-->
                 <prop key="centrodecostos.htm">controlCentroDeCostos</prop>
                 <prop key="agregarcentrodecostos.htm">controlAgregarCentroDeCostos</prop>
@@ -107,12 +71,6 @@
                 <prop key="editarmodulos.htm">controlEditarModulos</prop>
                 <prop key="eliminarmodulos.htm">controlEliminarModulos</prop>
                 <prop key="confirmareliminarmodulos.htm">controlConfirmarEliminarModulos</prop>
-                <!--Modulosperfil props-->
-                <prop key="modulosperfil.htm">controlModulosPerfil</prop>
-                <prop key="agregarmodulosperfil.htm">controlAgregarModulosPerfil</prop>
-                <prop key="editarmodulosperfil.htm">controlEditarModulosPerfil</prop>
-                <prop key="eliminarmodulosperfil.htm">controlEliminarModulosPerfil</prop>
-                <prop key="confirmareliminarmodulosperfil.htm">controlConfirmarEliminarModulosPerfil</prop>
             </props>
         </property>
     </bean>
@@ -126,17 +84,6 @@
     <!--Nomina-->
     <bean name="controlNomina" class="Controles.ControlNomina"/>
     <!--Consulta-->
-    <!--Estadisticas-->
-    <bean name="controlEstadisticas" class="Controles.Estadisticas.ControlEstadisticas"/>
-    <bean name="controlAgregarEstadisticas" class="Controles.Estadisticas.ControlAgregarEstadisticas"/>
-    <bean name="controlEditarEstadisticas" class="Controles.Estadisticas.ControlEditarEstadisticas"/>
-    <bean name="controlEliminarEstadisticas" class="Controles.Estadisticas.ControlEliminarEstadisticas"/>
-    <!--Usuarios-->
-    <bean name="controlUsuarios" class="Controles.Usuarios.ControlUsuarios"/>
-    <bean name="controlAgregarUsuarios" class="Controles.Usuarios.ControlAgregarUsuarios"/>
-    <bean name="controlEditarUsuarios" class="Controles.Usuarios.ControlEditarUsuarios"/>
-    <bean name="controlEliminarUsuarios" class="Controles.Usuarios.ControlEliminarUsuarios"/>
-    <bean name="controlConfirmarEliminarUsuarios" class="Controles.Usuarios.ControlConfirmarEliminarUsuarios"/>
      <!--Perfil-->
     <bean name="controlPerfil" class="Controles.Perfil.ControlPerfil"/>
     <bean name="controlAgregarPerfil" class="Controles.Perfil.ControlAgregarPerfil"/>
@@ -156,47 +103,18 @@
     <bean name="controlEditarTipoDeNovedades" class="Controles.TipoDeNovedades.ControlEditarTipoDeNovedades"/>
     <bean name="controlEliminarTipoDeNovedades" class="Controles.TipoDeNovedades.ControlEliminarTipoDeNovedades"/>
     <bean name="controlConfirmarEliminarTipoDeNovedades" class="Controles.TipoDeNovedades.ControlConfirmarEliminarTipoDeNovedades"/>
-
-    
-    
-    
     <!--Facturacion-->
     <bean name="controlFacturacion" class="Controles.Facturacion.ControlFacturacion"/>
     <bean name="controlAgregarFacturacion" class="Controles.Facturacion.ControlAgregarFacturacion"/>
     <bean name="controlEditarFacturacion" class="Controles.Facturacion.ControlEditarFacturacion"/>
     <bean name="controlEliminarFacturacion" class="Controles.Facturacion.ControlEliminarFacturacion"/>
     <bean name="controlConfirmarEliminarFacturacion" class="Controles.Facturacion.ControlConfirmarEliminarFacturacion"/>
-      
-    <!--Novedadesempleado-->
-    <bean name="controlNovedadesEmpleado" class="Controles.NovedadesEmpleado.ControlNovedadesEmpleado"/>
-    <bean name="controlAgregarNovedadesEmpleado" class="Controles.NovedadesEmpleado.ControlAgregarNovedadesEmpleado"/>
-    <bean name="controlEditarNovedadesEmpleado" class="Controles.NovedadesEmpleado.ControlEditarNovedadesEmpleado"/>
-    <bean name="controlEliminarNovedadesEmpleado" class="Controles.NovedadesEmpleado.ControlEliminarNovedadesEmpleado"/>
-    <bean name="controlConfirmarEliminarNovedadesEmpleado" class="Controles.NovedadesEmpleado.ControlConfirmarEliminarNovedadesEmpleado"/>
     <!--Grupos-->
     <bean name="controlGrupos" class="Controles.Grupos.ControlGrupos"/>
     <bean name="controlAgregarGrupos" class="Controles.Grupos.ControlAgregarGrupos" />
     <bean name="controlEditarGrupos" class="Controles.Grupos.ControlEditarGrupos"/>
     <bean name="controlEliminarGrupos" class="Controles.Grupos.ControlEliminarGrupos"/>
     <bean name="controlConfirmarEliminarGrupos" class="Controles.Grupos.ControlConfirmarEliminarGrupos"/>
-    <!--Empleadosgrupo-->
-    <bean name="controlEmpleadosGrupo" class="Controles.EmpleadosGrupo.ControlEmpleadosGrupo"/>
-    <bean name="controlAgregarEmpleadosGrupo" class="Controles.EmpleadosGrupo.ControlAgregarEmpleadosGrupo"/>
-    <bean name="controlEditarEmpleadosGrupo" class="Controles.EmpleadosGrupo.ControlEditarEmpleadosGrupo"/>
-    <bean name="controlEliminarEmpleadosGrupo" class="Controles.EmpleadosGrupo.ControlEliminarEmpleadosGrupo"/>
-    <bean name="controlConfirmarEliminarEmpleadosGrupo" class="Controles.EmpleadosGrupo.ControlConfirmarEliminarEmpleadosGrupo"/>
-    <!--Responsablegrupo-->
-    <bean name="controlResponsableGrupo" class="Controles.ResponsableGrupo.ControlResponsableGrupo"/>
-    <bean name="controlAgregarResponsableGrupo" class="Controles.ResponsableGrupo.ControlAgregarResponsableGrupo" />
-    <bean name="controlEditarResponsableGrupo" class="Controles.ResponsableGrupo.ControlEditarResponsableGrupo"/>
-    <bean name="controlEliminarResponsableGrupo" class="Controles.ResponsableGrupo.ControlEliminarResponsableGrupo"/>
-    <bean name="controlConfirmarEliminarResponsableGrupo" class="Controles.ResponsableGrupo.ControlConfirmarEliminarResponsableGrupo"/>
-    <!--Empleados-->
-    <bean name="controlEmpleados" class="Controles.Empleados.ControlEmpleados"/>
-    <bean name="controlAgregarEmpleados" class="Controles.Empleados.ControlAgregarEmpleados"/>
-    <bean name="controlEditarEmpleados" class="Controles.Empleados.ControlEditarEmpleados"/>
-    <bean name="controlEliminarEmpleados" class="Controles.Empleados.ControlEliminarEmpleados"/>
-    <bean name="controlConfirmarEliminarEmpleados" class="Controles.Empleados.ControlConfirmarEliminarEmpleados"/>
     <!--Centrodecostos-->
     <bean name="controlCentroDeCostos" class="Controles.CentroDeCostos.ControlCentroDeCostos"/>
     <bean name="controlAgregarCentroDeCostos" class="Controles.CentroDeCostos.ControlAgregarCentroDeCostos"/>
@@ -215,12 +133,6 @@
     <bean name="controlEditarModulos" class="Controles.Modulos.ControlEditarModulos"/>
     <bean name="controlEliminarModulos" class="Controles.Modulos.ControlEliminarModulos"/>
     <bean name="controlConfirmarEliminarModulos" class="Controles.Modulos.ControlConfirmarEliminarModulos"/>
-    <!--Modulosperfil-->
-    <bean name="controlModulosPerfil" class="Controles.ModulosPerfil.ControlModulosPerfil"/>
-    <bean name="controlAgregarModulosPerfil" class="Controles.ModulosPerfil.ControlAgregarModulosPerfil" />
-    <bean name="controlEditarModulosPerfil" class="Controles.ModulosPerfil.ControlEditarModulosPerfil"/>
-    <bean name="controlEliminarModulosPerfil" class="Controles.ModulosPerfil.ControlEliminarModulosPerfil"/>
-    <bean name="controlConfirmarEliminarModulosPerfil" class="Controles.ModulosPerfil.ControlConfirmarEliminarModulosPerfil"/>
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
