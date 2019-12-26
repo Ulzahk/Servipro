@@ -21,7 +21,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Eliminar Modulo</title>
+        <title>Eliminar Módulo</title>
         <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -61,7 +61,7 @@
         <div class="container mt-4">
             <h1 class="text-center">Eliminar Modulo</h1>
             <br>
-            <h3 class="text-center">¿Seguro que quiere eliminar este registro?</h3>
+            <h3 class="text-center">¿Está seguro de que quiere eliminar este registro?</h3>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
@@ -71,7 +71,7 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">Nombre Modulo</th>
+                                <th class="align-middle">Nombre Módulo</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </thead>

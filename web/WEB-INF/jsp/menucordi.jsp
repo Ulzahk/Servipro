@@ -40,7 +40,7 @@
             <ul class="children">
                 <li><a href="tipodenovedades.htm">Tipo de novedades<span class="icon-dot"></span></a></li>
                 <li><a href="controlnovedadesempleado?btnNoveEmplConsultar=true">Novedades por empleado<span class="icon-dot"></span></a></li>
-                <li><a href="estadisticas?btnConsultarEstaMensualidad=true">Estadisticas<span class="icon-dot"></span></a></li>
+                <li><a href="estadisticas?btnConsultarEstaMensualidad=true">Estadísticas<span class="icon-dot"></span></a></li>
             </ul>
         </li>
         <li class="submenu">

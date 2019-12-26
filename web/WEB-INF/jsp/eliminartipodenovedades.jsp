@@ -58,7 +58,7 @@
         <div class="container mt-4">
          <h1 class="text-center">Eliminar Tipo De Novedades</h1>
             <br>
-            <h3 class="text-center">¿Estas seguro de eliminar este registro?</h3>
+            <h3 class="text-center">¿Estás seguro de querer eliminar este registro?</h3>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
@@ -68,7 +68,7 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">Descripcion</th>
+                                <th class="align-middle">Descripción</th>
                                 <th class="align-middle">Alias</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>

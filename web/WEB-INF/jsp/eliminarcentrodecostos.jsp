@@ -58,7 +58,7 @@
         <div class="container mt-4">
             <h1 class="text-center">Eliminar Centro de Costos</h1>
             <br>
-            <h3 class="text-center">¿Seguro que quiere eliminar este registro?</h3>
+            <h3 class="text-center">¿Está seguro de que quiere eliminar este registro?</h3>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">

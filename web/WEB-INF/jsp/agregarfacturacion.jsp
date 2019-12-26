@@ -67,7 +67,7 @@
                 <form:form method="post" commandName="tiponovedad">
                     <form:errors path="*" element="div" cssClass="alert alert-danger"/>
                     <p>
-                        <form:label path="descripcion"><b>Descripcion</b></form:label>
+                        <form:label path="descripcion"><b>Descripción</b></form:label>
                         <form:input path="descripcion" cssClass="form-control"/>
                     </p>
                     <hr/>

@@ -23,7 +23,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Editar Estadisticas por Empleado</title>
+        <title>Editar Estadísticas por Empleado</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -83,8 +83,8 @@
                                 </div>
                                 <div class="col-8 text-center">
                                     <i class="fas fa-exclamation-triangle mb-2" style="font-size:70px;color:#FFCC00;"></i>
-                                    <h4 class="font-weight-bold">¿Seguro que quieres eliminar esto?</h4>
-                                    <h6>No podras deshacer esta acción</h6>
+                                    <h4 class="font-weight-bold">¿Estás seguro de que quieres eliminar esto?</h4>
+                                    <h6>No podrás deshacer esta acción</h6>
                                 </div>
                                 <div class="col-2">
                                 </div>

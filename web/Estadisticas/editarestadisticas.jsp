@@ -25,6 +25,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Editar Estadisticas por Empleado</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -64,171 +65,32 @@
         <%
             }
         %>
-        <%--Barra de Navegación de Jefe--%>
-        <%
-            if(Descripcion_perfil.equals("JEFE")){
+          <header>
+            <%--Barra de Navegación de Jefe--%>
+            <%
+                if (Descripcion_perfil.equals("JEFE")) {
 
-                out.println("<nav class='navbar navbar-expand-sm bg-info navbar-dark justify-content-center'>");
-                    out.println("<a class='navbar-brand' href='index.htm'>ServiSoft S.A.</a>");
-                    out.println("<div>");
-                        out.println("<ul class='navbar-nav'>");
-                            out.println("<li class='nav-item dropdown'>");
-                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                                    out.println("Control Usuarios");
-                                out.println("</a>");
-                                    out.println("<div class='dropdown-menu'>");
-                                        out.println("<a class='dropdown-item' href='usuarios.htm'>Usuarios</a>");
-                                        out.println("<a class='dropdown-item' href='perfil.htm'>Perfil</a>");
-                                    out.println("</div>");;
-                            out.println("</li>");
-                            out.println("<li class='nav-item dropdown'>");
-                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                                    out.println("Novedades");
-                                out.println("</a>");
-                                out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='tipodenovedades.htm'>Tabla De Novedades</a>");
-                                    out.println("<a class='dropdown-item' href='facturacion.htm'>Facturación</a>");
-                                    out.println("<a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>");
-                                out.println("</div>");
-                            out.println("</li>");
-                            out.println("<li class='nav-item dropdown'>");
-                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                                    out.println("Centro de Costos");
-                                out.println("</a>");
-                                out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='centrodecostos.htm'>Tabla Centro de Costos</a>");
-                                out.println("</div>");
-                            out.println("</li>");
-                            out.println("<li class='nav-item dropdown'>");
-                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                                    out.println("Empleados");
-                                out.println("</a>");
-                                out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='empleados.htm'>Tabla Empleados</a>");
-                                    out.println("<a class='dropdown-item' href='cargoempleado.htm'>Cargo Empleado</a>");
-                                out.println("</div>");
-                            out.println("</li>");
-                            out.println("<li class='nav-item dropdown'>");
-                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                                    out.println("Modulos");
-                                out.println("</a>");
-                                out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='modulos.htm'>Tabla Modulos</a>");
-                                    out.println("<a class='dropdown-item' href='modulosperfil.htm'>Modulos por Perfil</a>");
-                                out.println("</div>");
-                            out.println("</li>");
-                            out.println("<li class='nav-item dropdown'>");
-                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                                    out.println("Grupos");
-                                out.println("</a>");
-                                out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='grupos.htm'>Tabla Grupos</a>");
-                                    out.println("<a class='dropdown-item' href='empleadosgrupo.htm'>Empleados por Grupo</a>");
-                                    out.println("<a class='dropdown-item' href='responsablegrupo.htm'>Responsable del Grupo</a>");
-                                out.println("</div>");
-                            out.println("</li>");
-                            out.println("<li class='nav-item dropdown'>");
-                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                                    out.println("Configuracion");
-                                out.println("</a>");
-                                out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='configuracion.htm'>Configuracion</a>");
-                                out.println("</div>");
-                            out.println("</li>");
-                            out.println("<li class='nav-item dropdown'>");
-                                out.println("<a class='nav-link dropdown-toggle btn btn-dark' href='#' id='navbardrop' data-toggle='dropdown'>");
-                                    out.println("Usuario:"); out.println(id_usuario);
-                                out.println("</a>");
-                                out.println("<div class='dropdown-menu text-center'>");
-                                    out.println("<a class='dropdown-item' href='nomina.htm'>");
-                                        out.println("Perfil:"); out.println(Descripcion_perfil);
-                                    out.println("</a>");
-                                    out.println("<form action='cerrar' method='post' id='formcerrar'>");
-                                            out.println("<input type='submit' value='Cerrar Sesión' "
-                                                        + " class='btn btn-link text-center' style='color: #000;'/>");
-                                    out.println("</form>");
-                                out.println("</div>");
-                            out.println("</li>");
-                        out.println("</ul>");
-                    out.println("</div>");
-                out.println("</nav>");
-            }
-        %>
-        
-        <%--Barra de Navegación de Coordinador--%>
-        <%
-            if(Descripcion_perfil.equals("COORDINADOR")){
+            %>       
 
-                out.println("<nav class='navbar navbar-expand-sm bg-info navbar-dark justify-content-center'>");
-                    out.println("<a class='navbar-brand' href='index.htm'>ServiSoft S.A.</a>");
-                    out.println("<div>");
-                        out.println("<ul class='navbar-nav'>");
-                            out.println("<li class='nav-item dropdown'>");
-                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                                    out.println("Novedades");
-                                out.println("</a>");
-                                out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='tipodenovedades.htm'>Tabla De Novedades</a>");
-                                    out.println("<a class='dropdown-item' href='facturacion.htm'>Facturación</a>");
-                                    out.println("<a class='dropdown-item' href='novedadesempleado.htm'>Novedades por Empleado</a>");
-                                out.println("</div>");
-                            out.println("</li>");
-                            out.println("<li class='nav-item dropdown'>");
-                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                                    out.println("Centro de Costos");
-                                out.println("</a>");
-                                out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='centrodecostos.htm'>Tabla Centro de Costos</a>");
-                                out.println("</div>");
-                            out.println("</li>");
-                            out.println("<li class='nav-item dropdown'>");
-                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                                    out.println("Empleados");
-                                out.println("</a>");
-                                out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='empleados.htm'>Tabla Empleados</a>");
-                                    out.println("<a class='dropdown-item' href='cargoempleado.htm'>Cargo Empleado</a>");
-                                out.println("</div>");
-                            out.println("</li>");
-                            out.println("<li class='nav-item dropdown'>");
-                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                                    out.println("Grupos");
-                                out.println("</a>");
-                                out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='grupos.htm'>Tabla Grupos</a>");
-                                    out.println("<a class='dropdown-item' href='empleadosgrupo.htm'>Empleados por Grupo</a>");
-                                    out.println("<a class='dropdown-item' href='responsablegrupo.htm'>Responsable del Grupo</a>");
-                                out.println("</div>");
-                            out.println("</li>");
-                            out.println("<li class='nav-item dropdown'>");
-                                out.println("<a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>");
-                                    out.println("Configuracion");
-                                out.println("</a>");
-                                out.println("<div class='dropdown-menu'>");
-                                    out.println("<a class='dropdown-item' href='configuracion.htm'>Configuracion</a>");
-                                out.println("</div>");
-                            out.println("</li>");
-                            out.println("<li class='nav-item dropdown'>");
-                                out.println("<a class='nav-link dropdown-toggle btn btn-dark' href='#' id='navbardrop' data-toggle='dropdown'>");
-                                    out.println("Usuario:"); out.println(id_usuario);
-                                out.println("</a>");
-                                out.println("<div class='dropdown-menu text-center'>");
-                                    out.println("<a class='dropdown-item' href='nomina.htm'>");
-                                        out.println("Perfil:"); out.println(Descripcion_perfil);
-                                    out.println("</a>");
-                                    out.println("<form action='cerrar' method='post' id='formcerrar'>");
-                                            out.println("<input type='submit' value='Cerrar Sesión' "
-                                                        + " class='btn btn-link text-center' style='color: #000;'/>");
-                                    out.println("</form>");
-                                out.println("</div>");
-                            out.println("</li>");
-                        out.println("</ul>");
-                    out.println("</div>");
-                out.println("</nav>");
-            }
-        %> 
+            <jsp:include page="../WEB-INF/jsp/menujefe.jsp"></jsp:include>
+
+            <%        }
+            %>
+
+
+            <%--Barra de Navegación de Coordinador--%>
+            <%
+                if (Descripcion_perfil.equals("COORDINADOR")) {
+            %>
+
+            <jsp:include page="../WEB-INF/jsp/menucordi.jsp"></jsp:include>
+
+            <%
+                }
+            %> 
+        </header>
         <div class="container mt-4">
-            <h1 class="text-center">Editar Estadisticas por Empleado</h1>
+            <h1 class="text-center">Editar Estadísticas por Empleado</h1>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
@@ -250,7 +112,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia1"><b>Dia 1</b></label>
+                                    <label for="lblDia1"><b>Día 1</b></label>
                                     <select class="form-control" name="ddlDia1">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia1> lstclsDia1 = new ArrayList<Modelos.Estadisticas.clsId_dia1>();
@@ -271,7 +133,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia2"><b>Dia 2</b></label>
+                                    <label for="lblDia2"><b>Día 2</b></label>
                                     <select class="form-control" name="ddlDia2">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia2> lstclsDia2 = new ArrayList<Modelos.Estadisticas.clsId_dia2>();
@@ -292,7 +154,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia3"><b>Dia 3</b></label>
+                                    <label for="lblDia3"><b>Día 3</b></label>
                                     <select class="form-control" name="ddlDia3">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia3> lstclsDia3 = new ArrayList<Modelos.Estadisticas.clsId_dia3>();
@@ -318,7 +180,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia4"><b>Dia 4</b></label>
+                                    <label for="lblDia4"><b>Día 4</b></label>
                                     <select class="form-control" name="ddlDia4">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia4> lstclsDia4 = new ArrayList<Modelos.Estadisticas.clsId_dia4>();
@@ -339,7 +201,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia5"><b>Dia 5</b></label>
+                                    <label for="lblDia5"><b>Día 5</b></label>
                                     <select class="form-control" name="ddlDia5">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia5> lstclsDia5 = new ArrayList<Modelos.Estadisticas.clsId_dia5>();
@@ -360,7 +222,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia6"><b>Dia 6</b></label>
+                                    <label for="lblDia6"><b>Día 6</b></label>
                                     <select class="form-control" name="ddlDia6">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia6> lstclsDia6 = new ArrayList<Modelos.Estadisticas.clsId_dia6>();
@@ -386,7 +248,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia7"><b>Dia 7</b></label>
+                                    <label for="lblDia7"><b>Día 7</b></label>
                                     <select class="form-control" name="ddlDia7">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia7> lstclsDia7 = new ArrayList<Modelos.Estadisticas.clsId_dia7>();
@@ -407,7 +269,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia8"><b>Dia 8</b></label>
+                                    <label for="lblDia8"><b>Día 8</b></label>
                                     <select class="form-control" name="ddlDia8">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia8> lstclsDia8 = new ArrayList<Modelos.Estadisticas.clsId_dia8>();
@@ -428,7 +290,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia9"><b>Dia 9</b></label>
+                                    <label for="lblDia9"><b>Día 9</b></label>
                                     <select class="form-control" name="ddlDia9">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia9> lstclsDia9 = new ArrayList<Modelos.Estadisticas.clsId_dia9>();
@@ -454,7 +316,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia10"><b>Dia 10</b></label>
+                                    <label for="lblDia10"><b>Día 10</b></label>
                                     <select class="form-control" name="ddlDia10">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia10> lstclsDia10 = new ArrayList<Modelos.Estadisticas.clsId_dia10>();
@@ -475,7 +337,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia11"><b>Dia 11</b></label>
+                                    <label for="lblDia11"><b>Día 11</b></label>
                                     <select class="form-control" name="ddlDia11">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia11> lstclsDia11 = new ArrayList<Modelos.Estadisticas.clsId_dia11>();
@@ -496,7 +358,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia12"><b>Dia 12</b></label>
+                                    <label for="lblDia12"><b>Día 12</b></label>
                                     <select class="form-control" name="ddlDia12">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia12> lstclsDia12 = new ArrayList<Modelos.Estadisticas.clsId_dia12>();
@@ -522,7 +384,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia13"><b>Dia 13</b></label>
+                                    <label for="lblDia13"><b>Día 13</b></label>
                                     <select class="form-control" name="ddlDia13">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia13> lstclsDia13 = new ArrayList<Modelos.Estadisticas.clsId_dia13>();
@@ -543,7 +405,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia14"><b>Dia 14</b></label>
+                                    <label for="lblDia14"><b>Día 14</b></label>
                                     <select class="form-control" name="ddlDia14">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia14> lstclsDia14 = new ArrayList<Modelos.Estadisticas.clsId_dia14>();
@@ -564,7 +426,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia15"><b>Dia 15</b></label>
+                                    <label for="lblDia15"><b>Día 15</b></label>
                                     <select class="form-control" name="ddlDia15">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia15> lstclsDia15 = new ArrayList<Modelos.Estadisticas.clsId_dia15>();
@@ -590,7 +452,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia16"><b>Dia 16</b></label>
+                                    <label for="lblDia16"><b>Día 16</b></label>
                                     <select class="form-control" name="ddlDia16">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia16> lstclsDia16 = new ArrayList<Modelos.Estadisticas.clsId_dia16>();
@@ -611,7 +473,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia17"><b>Dia 17</b></label>
+                                    <label for="lblDia17"><b>Día 17</b></label>
                                     <select class="form-control" name="ddlDia17">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia17> lstclsDia17 = new ArrayList<Modelos.Estadisticas.clsId_dia17>();
@@ -632,7 +494,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia18"><b>Dia 18</b></label>
+                                    <label for="lblDia18"><b>Día 18</b></label>
                                     <select class="form-control" name="ddlDia18">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia18> lstclsDia18 = new ArrayList<Modelos.Estadisticas.clsId_dia18>();
@@ -658,7 +520,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia19"><b>Dia 19</b></label>
+                                    <label for="lblDia19"><b>Día 19</b></label>
                                     <select class="form-control" name="ddlDia19">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia19> lstclsDia19 = new ArrayList<Modelos.Estadisticas.clsId_dia19>();
@@ -679,7 +541,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia20"><b>Dia 20</b></label>
+                                    <label for="lblDia20"><b>Día 20</b></label>
                                     <select class="form-control" name="ddlDia20">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia20> lstclsDia20 = new ArrayList<Modelos.Estadisticas.clsId_dia20>();
@@ -700,7 +562,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia21"><b>Dia 21</b></label>
+                                    <label for="lblDia21"><b>Día 21</b></label>
                                     <select class="form-control" name="ddlDia21">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia21> lstclsDia21 = new ArrayList<Modelos.Estadisticas.clsId_dia21>();
@@ -726,7 +588,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia22"><b>Dia 22</b></label>
+                                    <label for="lblDia22"><b>Día 22</b></label>
                                     <select class="form-control" name="ddlDia22">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia22> lstclsDia22 = new ArrayList<Modelos.Estadisticas.clsId_dia22>();
@@ -747,7 +609,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia23"><b>Dia 23</b></label>
+                                    <label for="lblDia23"><b>Día 23</b></label>
                                     <select class="form-control" name="ddlDia23">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia23> lstclsDia23 = new ArrayList<Modelos.Estadisticas.clsId_dia23>();
@@ -768,7 +630,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia24"><b>Dia 24</b></label>
+                                    <label for="lblDia24"><b>Día 24</b></label>
                                     <select class="form-control" name="ddlDia24">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia24> lstclsDia24 = new ArrayList<Modelos.Estadisticas.clsId_dia24>();
@@ -794,7 +656,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia25"><b>Dia 25</b></label>
+                                    <label for="lblDia25"><b>Día 25</b></label>
                                     <select class="form-control" name="ddlDia25">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia25> lstclsDia25 = new ArrayList<Modelos.Estadisticas.clsId_dia25>();
@@ -815,7 +677,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia26"><b>Dia 26</b></label>
+                                    <label for="lblDia26"><b>Día 26</b></label>
                                     <select class="form-control" name="ddlDia26">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia26> lstclsDia26 = new ArrayList<Modelos.Estadisticas.clsId_dia26>();
@@ -836,7 +698,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia27"><b>Dia 27</b></label>
+                                    <label for="lblDia27"><b>Día 27</b></label>
                                     <select class="form-control" name="ddlDia27">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia27> lstclsDia27 = new ArrayList<Modelos.Estadisticas.clsId_dia27>();
@@ -862,7 +724,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
-                                    <label for="lblDia28"><b>Dia 28</b></label>
+                                    <label for="lblDia28"><b>Día 28</b></label>
                                     <select class="form-control" name="ddlDia28">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia28> lstclsDia28 = new ArrayList<Modelos.Estadisticas.clsId_dia28>();
@@ -883,7 +745,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia29"><b>Dia 29</b></label>
+                                    <label for="lblDia29"><b>Día 29</b></label>
                                     <select class="form-control" name="ddlDia29">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia29> lstclsDia29 = new ArrayList<Modelos.Estadisticas.clsId_dia29>();
@@ -904,7 +766,7 @@
                                     </select>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblDia30"><b>Dia 30</b></label>
+                                    <label for="lblDia30"><b>Día 30</b></label>
                                     <select class="form-control" name="ddlDia30">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia30> lstclsDia30 = new ArrayList<Modelos.Estadisticas.clsId_dia30>();
@@ -940,4 +802,30 @@
             </div>
         </div>
     </body>
+      <script>
+        $(document).ready(main);
+
+        var contador = 1;
+
+        function main() {
+        $('.menu_bar').click(function () {
+        if (contador == 1) {
+        $('nav').animate({
+        left: '0'
+        });
+        contador = 0;
+        } else {
+        contador = 1;
+        $('nav').animate({
+        left: '-100%'
+        });
+        }
+        });
+
+        // Mostramos y ocultamos submenus
+        $('.submenu').click(function () {
+        $(this).children('.children').slideToggle();
+        });
+        }
+    </script>
 </html>

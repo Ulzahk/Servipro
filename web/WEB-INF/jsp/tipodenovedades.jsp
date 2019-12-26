@@ -77,7 +77,7 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center table-responsive-sm">
                         <thead>
                             <tr>
-                                <th class="align-middle">Descripcion</th>
+                                <th class="align-middle">Descripción</th>
                                 <th class="align-middle">Alias</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>

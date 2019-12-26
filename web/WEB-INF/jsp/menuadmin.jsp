@@ -45,8 +45,8 @@
         <li class="submenu">
             <a href="#">Modulos <i class="fas fa-caret-down"></i></a>
             <ul class="children">
-                <li><a href="modulos.htm">Tabla modulos<span class="icon-dot"></span></a></li>
-                <li><a href="modulosperfil.htm">Modulos perfil<span class="icon-dot"></span></a></li>
+                <li><a href="modulos.htm">Tabla módulos<span class="icon-dot"></span></a></li>
+                <li><a href="modulosperfil.htm">Módulos perfil<span class="icon-dot"></span></a></li>
             </ul>
         </li>
 

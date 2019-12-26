@@ -119,11 +119,11 @@
             </a>
             <a href='modulos.htm' class='col cIndex colorEnlace'>
                 <i class='fas fa-th mb-2 mt-2 tamañoIcono'></i>
-                <p><b>Modulos</b></p>
+                <p><b>Módulos</b></p>
             </a>
             <a href='controlmodulosperfil?btnModPerfilConsultar=true' class='col cIndex colorEnlace'>
                 <i class='fas fa-th-list mb-2 tamañoIcono'></i>
-                <p><b>Modulos por Perfil</b></p>
+                <p><b>Módulos por Perfil</b></p>
             </a>
             <a href='grupos.htm' class='col fIndex colorEnlace'>
                 <i class='fas fa-users mb-2 mt-2 tamañoIcono'></i>
@@ -141,11 +141,11 @@
             </a>
             <a href='configuracion.htm' class='col gIndex colorEnlace'>
                 <i class='fas fa-cog mb-2  tamañoIcono'></i>
-                <p><b>Configuracion</b></p>
+                <p><b>Configuración</b></p>
             </a>
             <a href='estadisticas?btnConsultarEstaMensualidad=true' class='col gIndex colorEnlace'>
                 <i class='fas fa-chart-bar mb-2  tamañoIcono'></i>
-                <p><b>Estadisticas</b></p>
+                <p><b>Estadísticas</b></p>
             </a>
         </div>
     </div>
@@ -170,11 +170,11 @@
         <div class='row text-center'>
             <a href='modulos.htm' class='col cIndex colorEnlace'>
                 <i class='fas fa-th mb-2 mt-2 tamañoIcono'></i>
-                <p><b>Modulos</b></p>
+                <p><b>Módulos</b></p>
             </a>
             <a href='modulosperfil.htm' class='col cIndex colorEnlace'>
                 <i class='fas fa-th-list mb-2 mt-2 tamañoIcono'></i>
-                <p><b>Modulos por Perfil</b></p>
+                <p><b>Módulos por Perfil</b></p>
             </a>
         </div>
         <%
@@ -231,7 +231,7 @@
                 </a>
                 <a href='estadisticas?btnConsultarEstaMensualidad=true' class='col-2 gIndex colorEnlace'>
                     <i class='fas fa-chart-bar mb-2  tamañoIcono'></i>
-                    <p><b>Estadisticas</b></p>
+                    <p><b>Estadísticas</b></p>
                 </a>
             </div>
         </div>

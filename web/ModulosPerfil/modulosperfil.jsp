@@ -86,7 +86,7 @@
         </header>
 
         <div class="container mt-4">
-            <h1 class="text-center">Modulos por Perfil</h1>
+            <h1 class="text-center">Módulos por Perfil</h1>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
@@ -128,7 +128,7 @@
                         </div>
 
                         <tr>
-                            <td class="align-middle"><b>Modulo</b></td>
+                            <td class="align-middle"><b>Módulo</b></td>
                             <td class="align-middle"><b>Perfil</b></td>
                             <td class="align-middle"><b>Acciones</b></td>
                         </tr>

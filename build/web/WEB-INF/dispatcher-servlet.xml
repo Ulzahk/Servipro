@@ -40,7 +40,7 @@
                 <prop key="agregartipodenovedades.htm">controlAgregarTipoDeNovedades</prop>
                 <prop key="editartipodenovedades.htm">controlEditarTipoDeNovedades</prop>
                 <prop key="eliminartipodenovedades.htm">controlEliminarTipoDeNovedades</prop>
-                <prop key="confirmareliminartipodenovedades">controlConfirmarEliminarTipoDeNovedades</prop>                
+                <prop key="confirmareliminartipodenovedades.htm">controlConfirmarEliminarTipoDeNovedades</prop>                
                 <!--Facturacion props-->
                 <prop key="facturacion.htm">controlFacturacion</prop>
                 <prop key="agregarfacturacion.htm">controlAgregarFacturacion</prop>

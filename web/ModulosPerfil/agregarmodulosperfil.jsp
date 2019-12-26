@@ -23,7 +23,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Agregar Modulos por Perfil</title>
+        <title>Agregar Módulos por Perfil</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
         <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -84,7 +84,7 @@
             %> 
         </header> 
         <div class="container mt-4">
-            <h1 class="text-center">Agregar Modulos por Perfil</h1>
+            <h1 class="text-center">Agregar Módulos por Perfil</h1>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
@@ -96,7 +96,7 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-6">
-                                    <label for="lblmodulos"><b>Modulos</b></label>
+                                    <label for="lblmodulos"><b>Módulos</b></label>
                                     <select class="form-control" name="ddlModulo">
                                         <%
                                             List<Modelos.ModulosPerfil.clsModulo> lstclsModulos = new ArrayList<Modelos.ModulosPerfil.clsModulo>();

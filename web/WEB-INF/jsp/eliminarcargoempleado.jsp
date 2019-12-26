@@ -58,7 +58,7 @@
         <div class="container mt-4">
             <h1 class="text-center">Eliminar Cargo Empleado</h1>
             <br>
-            <h3 class="text-center">¿Seguro que quiere eliminar este registro?</h3>
+            <h3 class="text-center">¿Está seguro de que quiere eliminar este registro?</h3>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
@@ -68,7 +68,7 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="align-middle">Descripcion Cargo</th>
+                                <th class="align-middle">Descripción Cargo</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </thead>

@@ -134,7 +134,7 @@
                                            value="<%=obclsEmpleado.getStNombre() != null ? obclsEmpleado.getStNombre() : ""%>"/>
                                 </div>
                                 <div class="col-6">
-                                    <label for="lblTelefono"><b>Telefono</b></label>
+                                    <label for="lblTelefono"><b>Teléfono</b></label>
                                     <input type="text" class="form-control" name="txtTelefono"
                                            value="<%=obclsEmpleado.getStTelefono() != null ? obclsEmpleado.getStTelefono() : ""%>"/>
                                 </div>

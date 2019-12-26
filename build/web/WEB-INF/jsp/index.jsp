@@ -34,19 +34,19 @@
             <div>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="nomina.htm">Nomina</a>
+                        <a class="nav-link" href="nomina.htm">Nómina</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contabilidad</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Modulo 3</a>
+                        <a class="nav-link" href="#">Módulo 3</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Modulo 4</a>
+                        <a class="nav-link" href="#">Módulo 4</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Modulo 5</a>
+                        <a class="nav-link" href="#">Módulo 5</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle btn btn-dark" href="#" id="navbardrop" data-toggle="dropdown">
@@ -77,7 +77,7 @@
             <div class="row text-center">
                 <a href="nomina.htm" class="col cIndex colorEnlace">
                     <i class="fas fa-file-invoice-dollar mb-2 mt-2 tamañoIcono"></i>
-                    <p><b>Nomina</b></p>
+                    <p><b>Nómina</b></p>
                 </a>
                 <a href="index.htm" class="col cIndex colorEnlace" onclick="bloqueo();">
                     <i class="fas fa-chart-bar mb-2 mt-2 tamañoIcono"></i>

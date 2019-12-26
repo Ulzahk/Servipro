@@ -23,7 +23,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Editar Configuracion</title>
+        <title>Editar Configuración</title>
         <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -59,7 +59,7 @@
     </header>
         
         <div class="container mt-4">
-            <h1 class="text-center">Editar Configuracion</h1>
+            <h1 class="text-center">Editar Configuración</h1>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
@@ -69,11 +69,11 @@
                 <form:form method="post" commandName="configuracion">
                     <form:errors path="*" element="div" cssClass="alert alert-danger"/>
                     <p>
-                        <form:label path="desconfiguracion"><b>Desconfiguracion</b></form:label>
+                        <form:label path="desconfiguracion"><b>Desconfiguración</b></form:label>
                         <form:input path="desconfiguracion" cssClass="form-control"/>
                     </p>
                     <p>
-                        <form:label path="desconfiguracion_d"><b>Desconfiguracion D.</b></form:label>
+                        <form:label path="desconfiguracion_d"><b>Desconfiguración D.</b></form:label>
                         <form:input path="desconfiguracion_d" cssClass="form-control"/>
                     </p>
                     <p>
@@ -87,7 +87,7 @@
                     <p>
                         <label id="id_modulo"><b>Modulo</b></label>
                         <select id="id_modulo" name="id_modulo" class="form-control">
-                            <option value="-1">SELECCIONE NUEVAMENTE UN MODULO</option>
+                            <option value="-1">SELECCIONE NUEVAMENTE UN MÓDULO</option>
                             <%
                                 try
                                 {

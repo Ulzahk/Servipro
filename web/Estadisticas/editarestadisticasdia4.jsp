@@ -83,7 +83,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12">
-                                    <label for="lblDia4"><b>Dia 4</b></label>
+                                    <label for="lblDia4"><b>Día 4</b></label>
                                     <select class="form-control" name="ddlDia4">
                                         <%
                                             List<Modelos.Estadisticas.clsId_dia4> lstclsDia4 = new ArrayList<Modelos.Estadisticas.clsId_dia4>();

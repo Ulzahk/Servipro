@@ -23,7 +23,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Configuracion</title>
+        <title>Configuración</title>
         <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -78,11 +78,11 @@
                     <table border="1" class="table table-bordered table-striped table-hover text-center table-responsive-lg">
                         <thead>
                             <tr>
-                                <th class="align-middle">Desconfiguracion</th>
-                                <th class="align-middle">Desconfiguracion D.</th>
+                                <th class="align-middle">Desconfiguración</th>
+                                <th class="align-middle">Desconfiguración D.</th>
                                 <th class="align-middle">Variable</th>
                                 <th class="align-middle">Valor</th>
-                                <th class="align-middle">Modulo</th>
+                                <th class="align-middle">Módulo</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </thead>

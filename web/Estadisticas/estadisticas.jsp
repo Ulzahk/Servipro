@@ -168,7 +168,7 @@
                                 <th>28</th>
                                 <th>29</th>
                                 <th>30</th>
-                                <th rowspan="1" class="align-middle"><b>Accíones</b></th> 
+                                <th rowspan="1" class="align-middle"><b>Acciones</b></th> 
                             </tr>
 
                             <%
