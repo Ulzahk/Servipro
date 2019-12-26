@@ -35,7 +35,7 @@
             <a class='navbar-brand' href='index.htm'>ServiSoft S.A.</a>
         </li>
         <li class="submenu">
-            <a href="usuarios.htm">Control de usuarios</a>
+            <a href="controlusuarios?btnUsuConsultar=true">Control de usuarios</a>
 
         </li>
         <li class="submenu">
@@ -46,7 +46,7 @@
             <a href="#">Modulos <i class="fas fa-caret-down"></i></a>
             <ul class="children">
                 <li><a href="modulos.htm">Tabla modulos<span class="icon-dot"></span></a></li>
-                <li><a href="modulosperfil.htm">Modulos perfil<span class="icon-dot"></span></a></li>
+                <li><a href="controlmodulosperfil?btnModPerfilConsultar=true">Modulos perfil<span class="icon-dot"></span></a></li>
             </ul>
         </li>
 
