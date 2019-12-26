@@ -50,17 +50,17 @@ public class ControlEstadisticas extends HttpServlet {
             BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
         } else if (request.getParameter("btnConsultarEstaQuincena1") != null) {
             BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
-            request.getRequestDispatcher("estadisticasquincena1.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticasquincena1.jsp").forward(request, response);
         } else if (request.getParameter("btnConsultarEstaQuincena2") != null) {
             BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
-            request.getRequestDispatcher("estadisticasquincena2.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticasquincena2.jsp").forward(request, response);
         } else if (request.getParameter("btnAgregarEsta") != null) {
 
             //Listas desplegables
@@ -128,7 +128,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsDia29", bl_clsDia29.getDia29());
             request.setAttribute("lstclsDia30", bl_clsDia30.getDia30());
 
-            request.getRequestDispatcher("agregarestadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/agregarestadisticas.jsp").forward(request, response);
 
         } else if (request.getParameter("btnBuscarEstaMensualidad") != null) {
             btnBuscarEstaMensualidad(request, response);
@@ -464,7 +464,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores            
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
@@ -534,7 +534,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsDia29", bl_clsDia29.getDia29());
             request.setAttribute("lstclsDia30", bl_clsDia30.getDia30());
 
-            request.getRequestDispatcher("agregarestadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/agregarestadisticas.jsp").forward(request, response);
         }
 
     }
@@ -625,13 +625,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -664,14 +664,14 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
 
-            request.getRequestDispatcher("comentarestadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/comentarestadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
 
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -701,13 +701,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("eliminarestadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/eliminarestadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -747,7 +747,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
             
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
             
         } catch (Exception ex) {
             
@@ -758,7 +758,7 @@ public class ControlEstadisticas extends HttpServlet {
             BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
             
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
             
         }
     }
@@ -971,7 +971,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
@@ -1046,7 +1046,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsDia29", bl_clsDia29.getDia29());
             request.setAttribute("lstclsDia30", bl_clsDia30.getDia30());
 
-            request.getRequestDispatcher("editarestadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticas.jsp").forward(request, response);
         }
 
     }
@@ -1074,7 +1074,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1087,7 +1087,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia1 bl_clsDia1 = new BL.Estadisticas.clsDia1();
             request.setAttribute("lstclsDia1", bl_clsDia1.getDia1());
-            request.getRequestDispatcher("editarestadisticasdia1.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia1.jsp").forward(request, response);
 
         }
     }
@@ -1115,7 +1115,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1128,7 +1128,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia2 bl_clsDia2 = new BL.Estadisticas.clsDia2();
             request.setAttribute("lstclsDia2", bl_clsDia2.getDia2());
-            request.getRequestDispatcher("editarestadisticasdia2.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia2.jsp").forward(request, response);
 
         }
     }
@@ -1156,7 +1156,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1169,7 +1169,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia3 bl_clsDia3 = new BL.Estadisticas.clsDia3();
             request.setAttribute("lstclsDia3", bl_clsDia3.getDia3());
-            request.getRequestDispatcher("editarestadisticasdia3.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia3.jsp").forward(request, response);
 
         }
     }
@@ -1197,7 +1197,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1210,7 +1210,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia4 bl_clsDia4 = new BL.Estadisticas.clsDia4();
             request.setAttribute("lstclsDia4", bl_clsDia4.getDia4());
-            request.getRequestDispatcher("editarestadisticasdia4.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia4.jsp").forward(request, response);
 
         }
     }
@@ -1238,7 +1238,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1251,7 +1251,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia5 bl_clsDia5 = new BL.Estadisticas.clsDia5();
             request.setAttribute("lstclsDia5", bl_clsDia5.getDia5());
-            request.getRequestDispatcher("editarestadisticasdia5.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia5.jsp").forward(request, response);
 
         }
     }
@@ -1279,7 +1279,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1292,7 +1292,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia6 bl_clsDia6 = new BL.Estadisticas.clsDia6();
             request.setAttribute("lstclsDia6", bl_clsDia6.getDia6());
-            request.getRequestDispatcher("editarestadisticasdia6.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia6.jsp").forward(request, response);
 
         }
     }
@@ -1320,7 +1320,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1333,7 +1333,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia7 bl_clsDia7 = new BL.Estadisticas.clsDia7();
             request.setAttribute("lstclsDia7", bl_clsDia7.getDia7());
-            request.getRequestDispatcher("editarestadisticasdia7.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia7.jsp").forward(request, response);
 
         }
     }
@@ -1361,7 +1361,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1374,7 +1374,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia8 bl_clsDia8 = new BL.Estadisticas.clsDia8();
             request.setAttribute("lstclsDia8", bl_clsDia8.getDia8());
-            request.getRequestDispatcher("editarestadisticasdia8.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia8.jsp").forward(request, response);
 
         }
     }
@@ -1402,7 +1402,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1415,7 +1415,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia9 bl_clsDia9 = new BL.Estadisticas.clsDia9();
             request.setAttribute("lstclsDia9", bl_clsDia9.getDia9());
-            request.getRequestDispatcher("editarestadisticasdia9.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia9.jsp").forward(request, response);
 
         }
     }
@@ -1443,7 +1443,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1456,7 +1456,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia10 bl_clsDia10 = new BL.Estadisticas.clsDia10();
             request.setAttribute("lstclsDia10", bl_clsDia10.getDia10());
-            request.getRequestDispatcher("editarestadisticasdia10.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia10.jsp").forward(request, response);
 
         }
     }
@@ -1484,7 +1484,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1497,7 +1497,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia11 bl_clsDia11 = new BL.Estadisticas.clsDia11();
             request.setAttribute("lstclsDia11", bl_clsDia11.getDia11());
-            request.getRequestDispatcher("editarestadisticasdia11.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia11.jsp").forward(request, response);
 
         }
     }
@@ -1525,7 +1525,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1538,7 +1538,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia12 bl_clsDia12 = new BL.Estadisticas.clsDia12();
             request.setAttribute("lstclsDia12", bl_clsDia12.getDia12());
-            request.getRequestDispatcher("editarestadisticasdia12.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia12.jsp").forward(request, response);
 
         }
     }
@@ -1566,7 +1566,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1579,7 +1579,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia13 bl_clsDia13 = new BL.Estadisticas.clsDia13();
             request.setAttribute("lstclsDia13", bl_clsDia13.getDia13());
-            request.getRequestDispatcher("editarestadisticasdia13.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia13.jsp").forward(request, response);
 
         }
     }
@@ -1607,7 +1607,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1620,7 +1620,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia14 bl_clsDia14 = new BL.Estadisticas.clsDia14();
             request.setAttribute("lstclsDia14", bl_clsDia14.getDia14());
-            request.getRequestDispatcher("editarestadisticasdia14.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia14.jsp").forward(request, response);
 
         }
     }
@@ -1648,7 +1648,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1661,7 +1661,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia15 bl_clsDia15 = new BL.Estadisticas.clsDia15();
             request.setAttribute("lstclsDia15", bl_clsDia15.getDia15());
-            request.getRequestDispatcher("editarestadisticasdia15.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia15.jspp").forward(request, response);
 
         }
     }
@@ -1689,7 +1689,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1702,7 +1702,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia16 bl_clsDia16 = new BL.Estadisticas.clsDia16();
             request.setAttribute("lstclsDia16", bl_clsDia16.getDia16());
-            request.getRequestDispatcher("editarestadisticasdia16.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia16.jsp").forward(request, response);
 
         }
     }
@@ -1730,7 +1730,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1743,7 +1743,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia17 bl_clsDia17 = new BL.Estadisticas.clsDia17();
             request.setAttribute("lstclsDia17", bl_clsDia17.getDia17());
-            request.getRequestDispatcher("editarestadisticasdia17.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia17.jsp").forward(request, response);
 
         }
     }
@@ -1771,7 +1771,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1784,7 +1784,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia18 bl_clsDia18 = new BL.Estadisticas.clsDia18();
             request.setAttribute("lstclsDia18", bl_clsDia18.getDia18());
-            request.getRequestDispatcher("editarestadisticasdia18.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia18.jsp").forward(request, response);
 
         }
     }
@@ -1812,7 +1812,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1825,7 +1825,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia19 bl_clsDia19 = new BL.Estadisticas.clsDia19();
             request.setAttribute("lstclsDia19", bl_clsDia19.getDia19());
-            request.getRequestDispatcher("editarestadisticasdia19.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia19.jsp").forward(request, response);
 
         }
     }
@@ -1853,7 +1853,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1866,7 +1866,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia20 bl_clsDia20 = new BL.Estadisticas.clsDia20();
             request.setAttribute("lstclsDia20", bl_clsDia20.getDia20());
-            request.getRequestDispatcher("editarestadisticasdia20.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia20.jsp").forward(request, response);
 
         }
     }
@@ -1894,7 +1894,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1907,7 +1907,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia21 bl_clsDia21 = new BL.Estadisticas.clsDia21();
             request.setAttribute("lstclsDia21", bl_clsDia21.getDia21());
-            request.getRequestDispatcher("editarestadisticasdia21.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia21.jsp").forward(request, response);
 
         }
     }
@@ -1935,7 +1935,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1948,7 +1948,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia22 bl_clsDia22 = new BL.Estadisticas.clsDia22();
             request.setAttribute("lstclsDia22", bl_clsDia22.getDia22());
-            request.getRequestDispatcher("editarestadisticasdia22.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia22.jsp").forward(request, response);
 
         }
     }
@@ -1976,7 +1976,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -1989,7 +1989,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia23 bl_clsDia23 = new BL.Estadisticas.clsDia23();
             request.setAttribute("lstclsDia23", bl_clsDia23.getDia23());
-            request.getRequestDispatcher("editarestadisticasdia23.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia23.jsp").forward(request, response);
 
         }
     }
@@ -2017,7 +2017,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -2030,7 +2030,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia24 bl_clsDia24 = new BL.Estadisticas.clsDia24();
             request.setAttribute("lstclsDia24", bl_clsDia24.getDia24());
-            request.getRequestDispatcher("editarestadisticasdia24.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia24.jsp").forward(request, response);
 
         }
     }
@@ -2058,7 +2058,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -2071,7 +2071,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia25 bl_clsDia25 = new BL.Estadisticas.clsDia25();
             request.setAttribute("lstclsDia25", bl_clsDia25.getDia25());
-            request.getRequestDispatcher("editarestadisticasdia25.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia25.jsp").forward(request, response);
 
         }
     }
@@ -2099,7 +2099,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -2112,7 +2112,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia26 bl_clsDia26 = new BL.Estadisticas.clsDia26();
             request.setAttribute("lstclsDia26", bl_clsDia26.getDia26());
-            request.getRequestDispatcher("editarestadisticasdia26.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia26.jsp").forward(request, response);
 
         }
     }
@@ -2140,7 +2140,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -2153,7 +2153,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia27 bl_clsDia27 = new BL.Estadisticas.clsDia27();
             request.setAttribute("lstclsDia27", bl_clsDia27.getDia27());
-            request.getRequestDispatcher("editarestadisticasdia27.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia27.jsp").forward(request, response);
 
         }
     }
@@ -2181,7 +2181,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -2194,7 +2194,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia28 bl_clsDia28 = new BL.Estadisticas.clsDia28();
             request.setAttribute("lstclsDia28", bl_clsDia28.getDia28());
-            request.getRequestDispatcher("editarestadisticasdia28.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia28.jsp").forward(request, response);
 
         }
     }
@@ -2222,7 +2222,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -2235,7 +2235,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia29 bl_clsDia29 = new BL.Estadisticas.clsDia29();
             request.setAttribute("lstclsDia29", bl_clsDia29.getDia29());
-            request.getRequestDispatcher("editarestadisticasdia29.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia29.jsp").forward(request, response);
 
         }
     }
@@ -2263,7 +2263,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -2276,7 +2276,7 @@ public class ControlEstadisticas extends HttpServlet {
 
             BL.Estadisticas.clsDia30 bl_clsDia30 = new BL.Estadisticas.clsDia30();
             request.setAttribute("lstclsDia30", bl_clsDia30.getDia30());
-            request.getRequestDispatcher("editarestadisticasdia30.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia30.jsp").forward(request, response);
 
         }
     }
@@ -2296,12 +2296,12 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsEstadisticas", bl_Estadisticas.getEstadisticas());
 
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
         } catch (Exception ex) {
 
             request.setAttribute("stTipo", "error");
             request.setAttribute("stMensaje", ex.getMessage());
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/eliminarestadisticas.jsp").forward(request, response);
         }
     }
 
@@ -2321,12 +2321,12 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getBuscarEstadisticas(obclsBuscar));
 
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("stTipo", "error");
             request.setAttribute("stMensaje", ex.getMessage());
 
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
         }
     }
 
@@ -2346,12 +2346,12 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getBuscarEstadisticas(obclsBuscar));
 
-            request.getRequestDispatcher("estadisticasquincena1.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticasquincena1.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("stTipo", "error");
             request.setAttribute("stMensaje", ex.getMessage());
 
-            request.getRequestDispatcher("estadisticasquincena1.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticasquincena1.jsp").forward(request, response);
         }
     }
 
@@ -2371,12 +2371,12 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getBuscarEstadisticas(obclsBuscar));
 
-            request.getRequestDispatcher("estadisticasquincena2.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticasquincena2.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("stTipo", "error");
             request.setAttribute("stMensaje", ex.getMessage());
 
-            request.getRequestDispatcher("estadisticasquincena2.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticasquincena2.jsp").forward(request, response);
         }
     }
 
@@ -2404,13 +2404,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia1.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia1.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -2445,13 +2445,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia2.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia2.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -2486,13 +2486,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia3.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia3.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -2527,13 +2527,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia4.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia4.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -2568,13 +2568,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia5.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia5.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -2609,13 +2609,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia6.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia6.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -2650,13 +2650,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia7.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia7.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -2691,13 +2691,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia8.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia8.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -2732,13 +2732,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia9.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia9.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -2773,13 +2773,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia10.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia10.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -2814,13 +2814,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia11.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia11.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -2855,13 +2855,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia12.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia12.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -2896,13 +2896,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia13.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia13.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -2937,13 +2937,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia14.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia14.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -2978,13 +2978,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia15.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia15.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -3019,13 +3019,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia16.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia16.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -3060,13 +3060,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia17.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia17.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -3101,13 +3101,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia18.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia18.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -3142,13 +3142,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia19.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia19.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -3183,13 +3183,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia20.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia20.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -3224,13 +3224,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia21.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia21.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -3265,13 +3265,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia22.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia22.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -3306,13 +3306,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia23.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia23.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -3347,13 +3347,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia24.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia24.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -3388,13 +3388,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia25.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia25.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -3429,13 +3429,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia26.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia26.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -3470,13 +3470,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia27.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia27.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -3511,13 +3511,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia28.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia28.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -3552,13 +3552,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia29.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia29.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 
@@ -3593,13 +3593,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
-            request.getRequestDispatcher("editarestadisticasdia30.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia30.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            request.getRequestDispatcher("estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
 
             ex.getMessage();
 

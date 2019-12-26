@@ -91,7 +91,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12">                                 
-                                    <label for="lnlComentario:"><b>Cambiar Comentario <i class="fas fa-exclamation-triangle" data-toggle="tooltip" title="Al guardar remplezara el comentario anterior" style="color:#ffae42;"></i></b></label>   
+                                    <label for="lnlComentario:"><b>Cambiar Comentario <i class="fas fa-exclamation-triangle" data-toggle="tooltip" title="Al guardar remplazara el comentario anterior" style="color:#ffae42;"></i></b></label>   
                                     <textarea class="form-control" row="3" name="txtComentario"></textarea>
                                 </div>
                             </div>
