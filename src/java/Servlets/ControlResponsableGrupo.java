@@ -41,7 +41,7 @@ public class ControlResponsableGrupo extends HttpServlet {
                 BL.ResponsableGrupo.clsResponsableGrupo bl_clsResponsableGrupo = new BL.ResponsableGrupo.clsResponsableGrupo();
                 request.setAttribute("lstclsResponsableGrupo", bl_clsResponsableGrupo.getResponsableGrupo());
 
-                request.getRequestDispatcher("responsablegrupo.jsp").forward(request, response);
+                request.getRequestDispatcher("ResponsableGrupo/responsablegrupo.jsp").forward(request, response);
             } else if (request.getParameter("codigoSeleccionado") != null) {
                 if (request.getParameter("stOpcion").equals("M")) {
                     cargarReGruEditar(response, request);
@@ -58,7 +58,7 @@ public class ControlResponsableGrupo extends HttpServlet {
                 request.setAttribute("lstclsGrupo", bl_clsGrupo.getGrupo());
                 request.setAttribute("lstclsUsuario", bl_clsUsuario.getUsuario());
 
-                request.getRequestDispatcher("agregarresponsablegrupo.jsp").forward(request, response);
+                request.getRequestDispatcher("ResponsableGrupo/agregarresponsablegrupo.jsp").forward(request, response);
 
             }
         }
@@ -88,7 +88,7 @@ public class ControlResponsableGrupo extends HttpServlet {
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsResponsableGrupo", bl_clsResponsableGrupo.getResponsableGrupo());
 
-            request.getRequestDispatcher("responsablegrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("ResponsableGrupo/responsablegrupo.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -101,7 +101,7 @@ public class ControlResponsableGrupo extends HttpServlet {
             request.setAttribute("lstclsGrupo", bl_clsGrupo.getGrupo());
             request.setAttribute("lstclsUsuario", bl_clsUsuario.getUsuario());
 
-            request.getRequestDispatcher("agregarresponsablegrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("ResponsableGrupo/agregarresponsablegrupo.jsp").forward(request, response);
 
         }
     }
@@ -134,7 +134,7 @@ public class ControlResponsableGrupo extends HttpServlet {
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsResponsableGrupo", bl_clsResponsableGrupo.getResponsableGrupo());
 
-            request.getRequestDispatcher("responsablegrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("ResponsableGrupo/responsablegrupo.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
@@ -152,7 +152,7 @@ public class ControlResponsableGrupo extends HttpServlet {
             request.setAttribute("lstclsGrupo", bl_clsGrupo.getGrupo());
             request.setAttribute("lstclsUsuario", bl_clsUsuario.getUsuario());
 
-            request.getRequestDispatcher("agregarresponsablegrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("ResponsableGrupo/agregarresponsablegrupo.jsp").forward(request, response);
 
         }
 
@@ -172,14 +172,14 @@ public class ControlResponsableGrupo extends HttpServlet {
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsResponsableGrupo", bl_clsResponsableGrupo.getResponsableGrupo());
 
-            request.getRequestDispatcher("responsablegrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("ResponsableGrupo/responsablegrupo.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
 
-            request.getRequestDispatcher("responsablegrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("ResponsableGrupo/responsablegrupo.jsp").forward(request, response);
 
         }
 
@@ -200,14 +200,14 @@ public class ControlResponsableGrupo extends HttpServlet {
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsResponsableGrupo", bl_clsResponsableGrupo.getBuscarResponsableGrupo(obclsBuscar));
 
-            request.getRequestDispatcher("responsablegrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("ResponsableGrupo/responsablegrupo.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
 
-            request.getRequestDispatcher("responsablegrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("ResponsableGrupo/responsablegrupo.jsp").forward(request, response);
         }
 
     }
@@ -243,14 +243,14 @@ public class ControlResponsableGrupo extends HttpServlet {
             request.setAttribute("obclsResponsableGrupo", obclsResponsableGrupo);
             request.setAttribute("lstclsResponsableGrupo", lstclsResponsableGrupo);
 
-            request.getRequestDispatcher("editarresponsablegrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("ResponsableGrupo/editarresponsablegrupo.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
 
-            request.getRequestDispatcher("responsablegrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("ResponsableGrupo/responsablegrupo.jsp").forward(request, response);
         }
 
     }
@@ -282,14 +282,14 @@ public class ControlResponsableGrupo extends HttpServlet {
             request.setAttribute("obclsResponsableGrupo", obclsResponsableGrupo);
             request.setAttribute("lstclsResponsableGrupo", lstclsResponsableGrupo);
 
-            request.getRequestDispatcher("eliminarresponsablegrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("ResponsableGrupo/eliminarresponsablegrupo.jsp").forward(request, response);
 
         } catch (Exception ex) {
 
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
 
-            request.getRequestDispatcher("responsablegrupo.jsp").forward(request, response);
+            request.getRequestDispatcher("ResponsableGrupo/responsablegrupo.jsp").forward(request, response);
         }
 
     }
