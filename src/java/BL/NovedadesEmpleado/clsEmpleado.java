@@ -31,8 +31,10 @@ public class clsEmpleado {
             while(rs.next()){
                 Modelos.NovedadesEmpleado.clsEmpleado obclsEmpleado = new Modelos.NovedadesEmpleado.clsEmpleado();
                 obclsEmpleado.setId_empleado(rs.getInt("emplId"));
-                obclsEmpleado.setEmplnombre(rs.getString("emplNombre"));
-                
+                obclsEmpleado.setEmplPrimerNombre(rs.getString("emplPrimerNombre"));
+                obclsEmpleado.setEmplSegundoNombre(rs.getString("emplSegundoNombre"));
+                obclsEmpleado.setEmplPrimerApellido(rs.getString("emplPrimerApellido"));
+                obclsEmpleado.setEmplSegundoApellido(rs.getString("emplSegundoApellido"));
                 lstclsEmpleado.add(obclsEmpleado);
             }
             

@@ -145,7 +145,12 @@
                             for (Modelos.NovedadesEmpleado.clsNovedadesEmpleado elem : lstclsNovedadesEmpleado) {
                         %>
                         <tr>
-                            <td class="align-middle"><%=elem.getObclsEmpleado().getEmplnombre()%></td>
+                            <td class="align-middle">
+                                <%=elem.getObclsEmpleado().getEmplPrimerNombre()%>
+                                <%=elem.getObclsEmpleado().getEmplSegundoNombre()%>
+                                <%=elem.getObclsEmpleado().getEmplPrimerApellido()%>
+                                <%=elem.getObclsEmpleado().getEmplSegundoApellido()%>
+                            </td>
                             <td class="align-middle"><%=elem.getObclsTipoNovedad().getDescripcion_novedad()%></td>
                             <td class="align-middle"><%=elem.getObclsTipoNovedad().getAlias_novedad()%></td>
                             <td class="align-middle"><%=elem.getDetalle()%></td>

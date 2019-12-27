@@ -68,7 +68,12 @@
                         <div class="form-group">
                             <div class="col-12 text-center">                                    
                                 <h5 class="align-middle mt-1"> 
-                                    <b><%=obclsNovedadesEmpleado.getObclsEmpleado().getEmplnombre() != null ? obclsNovedadesEmpleado.getObclsEmpleado().getEmplnombre() : ""%></b>
+                                    <b>
+                                        <%=obclsNovedadesEmpleado.getObclsEmpleado().getEmplPrimerNombre() != null ? obclsNovedadesEmpleado.getObclsEmpleado().getEmplPrimerNombre() : ""%>
+                                        <%=obclsNovedadesEmpleado.getObclsEmpleado().getEmplSegundoNombre() != null ? obclsNovedadesEmpleado.getObclsEmpleado().getEmplSegundoNombre() : ""%>
+                                        <%=obclsNovedadesEmpleado.getObclsEmpleado().getEmplPrimerApellido() != null ? obclsNovedadesEmpleado.getObclsEmpleado().getEmplPrimerApellido() : ""%>
+                                        <%=obclsNovedadesEmpleado.getObclsEmpleado().getEmplSegundoApellido() != null ? obclsNovedadesEmpleado.getObclsEmpleado().getEmplSegundoApellido() : ""%>
+                                    </b>
                                 </h5>                                         
                             </div>
                         </div>

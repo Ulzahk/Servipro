@@ -32,7 +32,10 @@ public class clsNovedadesEmpleado {
                 
                 Modelos.NovedadesEmpleado.clsEmpleado obclsEmpleado = new Modelos.NovedadesEmpleado.clsEmpleado();
                 obclsEmpleado.setId_empleado(rs.getInt("Id_empleado"));
-                obclsEmpleado.setEmplnombre(rs.getString("emplNombre"));
+                obclsEmpleado.setEmplPrimerNombre(rs.getString("emplPrimerNombre"));
+                obclsEmpleado.setEmplSegundoNombre(rs.getString("emplSegundoNombre"));
+                obclsEmpleado.setEmplPrimerApellido(rs.getString("emplPrimerApellido"));
+                obclsEmpleado.setEmplSegundoApellido(rs.getString("emplSegundoApellido"));
                 obclsNovedadesEmpleado.setObclsEmpleado(obclsEmpleado);
                 
                 Modelos.NovedadesEmpleado.clsTipoNovedad obclsTipoNovedad = new Modelos.NovedadesEmpleado.clsTipoNovedad();
@@ -71,7 +74,10 @@ public class clsNovedadesEmpleado {
                 
                 Modelos.NovedadesEmpleado.clsEmpleado obclsEmpleado = new Modelos.NovedadesEmpleado.clsEmpleado();
                 obclsEmpleado.setId_empleado(rs.getInt("Id_empleado"));
-                obclsEmpleado.setEmplnombre(rs.getString("emplNombre"));
+                obclsEmpleado.setEmplPrimerNombre(rs.getString("emplPrimerNombre"));
+                obclsEmpleado.setEmplSegundoNombre(rs.getString("emplSegundoNombre"));
+                obclsEmpleado.setEmplPrimerApellido(rs.getString("emplPrimerApellido"));
+                obclsEmpleado.setEmplSegundoApellido(rs.getString("emplSegundoApellido"));
                 obclsNovedadesEmpleado.setObclsEmpleado(obclsEmpleado);
                 
                 Modelos.NovedadesEmpleado.clsTipoNovedad obclsTipoNovedad = new Modelos.NovedadesEmpleado.clsTipoNovedad();
