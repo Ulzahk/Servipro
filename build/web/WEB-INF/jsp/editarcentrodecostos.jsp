@@ -31,49 +31,22 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-        
-      <header>
-        <%--Barra de Navegación de Jefe--%>
-        <%
-            if (Descripcion_perfil.equals("JEFE")) {
-
-        %>       
-
-        <jsp:include page="menujefe.jsp"></jsp:include>
-
-        <%        }
-        %>
-
-        <%--Barra de Navegación de Coordinador--%>
-        <%
-            if (Descripcion_perfil.equals("COORDINADOR")) {
-        %>
-
-        <jsp:include page="menucordi.jsp"></jsp:include>
-
-        <%
-            }
-        %> 
-    </header>
-        
-        <div class="container mt-4">
-            <h1 class="text-center">Editar Centros de Costos</h1>
-            <br>
+        <div class="container">
             <div class="card border-info">
-                <div class="card-header bg-info text-white">
-                    <a href="centrodecostos.htm" class="btn btn-secondary"data-toggle="tooltip" title="Haz clic para regresar al menú centro de costos"><i class="fas fa-arrow-left"></i></a>
+                <div class="card-header bg-info text-white" >
                 </div>
                 <div class="card-body">
-                <form:form method="post" commandName="centrodecostos">
-                    <form:errors path="*" element="div" cssClass="alert alert-danger"/>
+                    <form:form method="post" commandName="centrodecostos">
+                        <form:errors path="*" element="div" cssClass="alert alert-danger"/>
                     <p>
                         <form:label path="nombre_ccostos"><b>Nombre C.Costos</b></form:label>
                         <form:input path="nombre_ccostos" cssClass="form-control"/>
                     </p>
-                    <hr/>
-                    <input type="submit" value="Guardar" class="btn btn-info"/>
-                </form:form>
+                        <hr/>
+                        <input type="submit" value="Guardar" class="btn btn-info"/>
+                    </form:form>
                 </div>
+
             </div>
         </div>
     </body>

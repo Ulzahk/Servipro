@@ -117,8 +117,8 @@
                                     <td class="align-middle">${dato.Descripcion_cargo}</td>
                                     <td class="align-middle">
                                         <div class="btn-group">
-                                            <a href="<c:url value="editarcargoempleado.htm?id_cargo=${dato.Id_cargo}"/>" class="btn btn-warning rounded mr-1 ml-4"data-toggle="tooltip" title="Haz clic para editar cargo empleado"><i class="fas fa-edit"></i></a>
-                                            <a href="<c:url value="eliminarcargoempleado.htm?id_cargo=${dato.Id_cargo}"/>" class="btn btn-danger rounded mr-4"data-toggle="tooltip" title="Haz clic para eliminar"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="<c:url value="editarcargoempleado.htm?id_cargo=${dato.Id_cargo}"/>" class="btn btn-warning rounded mr-1 ml-4 openBtn"data-toggle="modal" data-target="#myModal" title="Haz clic para editar cargo empleado"><i class="fas fa-edit"></i></a>
+                                            <a href="<c:url value="eliminarcargoempleado.htm?id_cargo=${dato.Id_cargo}"/>" class="btn btn-danger rounded mr-4 openBtn"data-toggle="modal" data-target="#myModal" title="Haz clic para eliminar"><i class="fas fa-trash-alt"></i></a>
                                         </div>
                                     </td>
                                 </tr>
@@ -136,8 +136,30 @@
                 </div>
             </div>
         </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content">  
+                    <div class="modal-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>F
     </body>
     <script>
+
+        $('.openBtn').on('click', function () {
+            $('.modal-body').load(this.href, function ()
+            {
+                $('#myModal').modal({show: false});
+            });
+        });
+
+
+
         $(document).ready(main);
 
         var contador = 1;
