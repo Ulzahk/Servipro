@@ -12,7 +12,10 @@ package Modelos.Usuarios;
 public class clsEmpleados {
     
     public int Id_empleado;
-    public String stNombreEmpleado;
+    public String stPrimerNombre;
+    public String stSegundoNombre;
+    public String stPrimerApellido;
+    public String stSegundoApellido;
 
     public int getId_empleado() {
         return Id_empleado;
@@ -22,12 +25,35 @@ public class clsEmpleados {
         this.Id_empleado = Id_empleado;
     }
 
-    public String getStNombreEmpleado() {
-        return stNombreEmpleado;
+    public String getStPrimerNombre() {
+        return stPrimerNombre;
     }
 
-    public void setStNombreEmpleado(String stNombreEmpleado) {
-        this.stNombreEmpleado = stNombreEmpleado;
+    public void setStPrimerNombre(String stPrimerNombre) {
+        this.stPrimerNombre = stPrimerNombre;
     }
-    
+
+    public String getStSegundoNombre() {
+        return stSegundoNombre;
+    }
+
+    public void setStSegundoNombre(String stSegundoNombre) {
+        this.stSegundoNombre = stSegundoNombre;
+    }
+
+    public String getStPrimerApellido() {
+        return stPrimerApellido;
+    }
+
+    public void setStPrimerApellido(String stPrimerApellido) {
+        this.stPrimerApellido = stPrimerApellido;
+    }
+
+    public String getStSegundoApellido() {
+        return stSegundoApellido;
+    }
+
+    public void setStSegundoApellido(String stSegundoApellido) {
+        this.stSegundoApellido = stSegundoApellido;
+    }
 }

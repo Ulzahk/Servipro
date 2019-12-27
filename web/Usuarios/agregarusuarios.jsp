@@ -132,7 +132,10 @@
                                         %>
                                         <option value="<%=elem.getId_empleado()%>"
                                                 <%=obclsUsuarios.getObclsEmpleado() != null ? obclsUsuarios.getObclsEmpleado().getId_empleado() == elem.getId_empleado() ? "selected" : "" : ""%>>
-                                            <%=elem.getStNombreEmpleado()%>
+                                            <%=elem.getStPrimerNombre()%>
+                                            <%=elem.getStSegundoNombre()%>
+                                            <%=elem.getStPrimerApellido()%>
+                                            <%=elem.getStSegundoApellido()%>
                                         </option>
                                         <%
                                             }
@@ -179,24 +182,24 @@
         var contador = 1;
 
         function main() {
-        $('.menu_bar').click(function () {
-        if (contador == 1) {
-        $('nav').animate({
-        left: '0'
-        });
-        contador = 0;
-        } else {
-        contador = 1;
-        $('nav').animate({
-        left: '-100%'
-        });
-        }
-        });
+            $('.menu_bar').click(function () {
+                if (contador == 1) {
+                    $('nav').animate({
+                        left: '0'
+                    });
+                    contador = 0;
+                } else {
+                    contador = 1;
+                    $('nav').animate({
+                        left: '-100%'
+                    });
+                }
+            });
 
-        // Mostramos y ocultamos submenus
-        $('.submenu').click(function () {
-        $(this).children('.children').slideToggle();
-        });
+            // Mostramos y ocultamos submenus
+            $('.submenu').click(function () {
+                $(this).children('.children').slideToggle();
+            });
         }
     </script>
 </html>

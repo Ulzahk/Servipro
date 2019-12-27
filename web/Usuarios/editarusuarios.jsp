@@ -77,7 +77,12 @@
                     <div class="form-group">
                         <div class="col-12 text-center">                                    
                             <h5 class="align-middle mt-1"> 
-                                <b><%=obclsUsuarios.getObclsEmpleado().getStNombreEmpleado() != null ? obclsUsuarios.getObclsEmpleado().getStNombreEmpleado() : ""%></b>
+                                <b>
+                                    <%=obclsUsuarios.getObclsEmpleado().getStPrimerNombre() != null ? obclsUsuarios.getObclsEmpleado().getStPrimerNombre() : ""%>
+                                    <%=obclsUsuarios.getObclsEmpleado().getStSegundoNombre() != null ? obclsUsuarios.getObclsEmpleado().getStSegundoNombre() : ""%>
+                                    <%=obclsUsuarios.getObclsEmpleado().getStPrimerApellido() != null ? obclsUsuarios.getObclsEmpleado().getStPrimerApellido() : ""%>
+                                    <%=obclsUsuarios.getObclsEmpleado().getStSegundoApellido() != null ? obclsUsuarios.getObclsEmpleado().getStSegundoApellido() : ""%>
+                                </b>
                             </h5>                                         
                         </div>
                     </div>
@@ -124,7 +129,10 @@
                                         %>
                                         <option value="<%=elem.getId_empleado()%>"
                                                 <%=obclsUsuarios.getObclsEmpleado() != null ? obclsUsuarios.getObclsEmpleado().getId_empleado() == elem.getId_empleado() ? "selected" : "" : ""%>>
-                                            <%=elem.getStNombreEmpleado()%>
+                                            <%=elem.getStPrimerNombre()%>
+                                            <%=elem.getStSegundoNombre()%>
+                                            <%=elem.getStPrimerApellido()%>
+                                            <%=elem.getStSegundoApellido()%>
                                         </option>
                                         <%
                                             }

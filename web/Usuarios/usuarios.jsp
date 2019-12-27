@@ -139,7 +139,12 @@
                         %>
                         <tr>
                             <td class="align-middle"><%=elem.getId_Usuarios()%></td>
-                            <td class="align-middle"><%=elem.getObclsEmpleado().getStNombreEmpleado()%></td>
+                            <td class="align-middle">
+                                <%=elem.getObclsEmpleado().getStPrimerNombre()%>
+                                <%=elem.getObclsEmpleado().getStSegundoNombre()%>
+                                <%=elem.getObclsEmpleado().getStPrimerApellido()%>
+                                <%=elem.getObclsEmpleado().getStSegundoApellido()%>
+                            </td>
                             <td class="align-middle"><%=elem.getContraseña()%></td>
                             <td class="align-middle"><%=elem.getObclsPerfil().getStDescripcion_Perfil()%></td>
                             <td class="align-middle">

@@ -33,8 +33,10 @@ public class clsEmpleados {
             while(rs.next()){
                 Modelos.Usuarios.clsEmpleados obclsEmpleados = new Modelos.Usuarios.clsEmpleados();
                 obclsEmpleados.setId_empleado(rs.getInt("emplId"));
-                obclsEmpleados.setStNombreEmpleado(rs.getString("emplNombre"));
-                
+                obclsEmpleados.setStPrimerNombre(rs.getString("emplPrimerNombre"));
+                obclsEmpleados.setStSegundoNombre(rs.getString("emplSegundoNombre"));
+                obclsEmpleados.setStPrimerApellido(rs.getString("emplPrimerApellido"));
+                obclsEmpleados.setStSegundoApellido(rs.getString("emplSegundoApellido"));
                 lstclsEmpleados.add(obclsEmpleados);
             }
         } catch (Exception e) {

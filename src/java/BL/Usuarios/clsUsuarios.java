@@ -36,7 +36,10 @@ public class clsUsuarios {
 
                 Modelos.Usuarios.clsEmpleados obclsEmpleados = new Modelos.Usuarios.clsEmpleados();
                 obclsEmpleados.setId_empleado(rs.getInt("Id_empleado"));
-                obclsEmpleados.setStNombreEmpleado(rs.getString("emplNombre"));
+                obclsEmpleados.setStPrimerNombre(rs.getString("emplPrimerNombre"));
+                obclsEmpleados.setStSegundoNombre(rs.getString("emplSegundoNombre"));
+                obclsEmpleados.setStPrimerApellido(rs.getString("emplPrimerApellido"));
+                obclsEmpleados.setStSegundoApellido(rs.getString("emplSegundoApellido"));
                 obclsUsuario.setObclsEmpleado(obclsEmpleados);
 
                 Modelos.Usuarios.clsPerfil obclsPerfil = new Modelos.Usuarios.clsPerfil();
@@ -71,7 +74,10 @@ public class clsUsuarios {
 
                 Modelos.Usuarios.clsEmpleados obclsEmpleados = new Modelos.Usuarios.clsEmpleados();
                 obclsEmpleados.setId_empleado(rs.getInt("Id_empleado"));
-                obclsEmpleados.setStNombreEmpleado(rs.getString("emplNombre"));
+                obclsEmpleados.setStPrimerNombre(rs.getString("emplPrimerNombre"));
+                obclsEmpleados.setStSegundoNombre(rs.getString("emplSegundoNombre"));
+                obclsEmpleados.setStPrimerApellido(rs.getString("emplPrimerApellido"));
+                obclsEmpleados.setStSegundoApellido(rs.getString("emplSegundoApellido"));
                 obclsUsuario.setObclsEmpleado(obclsEmpleados);
 
                 Modelos.Usuarios.clsPerfil obclsPerfil = new Modelos.Usuarios.clsPerfil();
