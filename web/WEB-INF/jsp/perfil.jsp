@@ -75,9 +75,9 @@
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
                     <form action="" method="post">
-                        <div class="input-group">
-                            <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú"><i class="fas fa-arrow-left"></i></a>
-                            <a href="agregarperfil.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para agregar un registro">Agregar Registro</a>
+                        <div class="input-group mt-3">
+                            <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú"><i class="fas fa-arrow-left"></i></a>
+                            <a href="agregarperfil.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un registro">Agregar Registro</a>
                             <input type="text" class="form-control" name="Buscar" placeholder="Buscar en ServiSoft S.A."/>
                             <div class="input-group-append">
                                 <button type="submit" Value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar"><i class="fas fa-search"></i></button> 
@@ -113,8 +113,8 @@
                                 <c:forEach var="dato" items="${datos}"  begin="<%=rs.getInt("Id_perfil") - 1%>" end="<%=rs.getInt("Id_perfil") - 1%>">
                                     <td class="align-middle">
                                         <div class="btn-group">
-                                        <a href="<c:url value="editarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-warning rounded mr-1 ml-4"><i class="fas fa-edit"></i></a>
-                                        <a href="<c:url value="eliminarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-danger rounded mr-4"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="<c:url value="editarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-warning rounded mr-1 ml-4"><i class="fas fa-edit"></i></a>
+                                            <a href="<c:url value="eliminarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-danger rounded mr-4"><i class="fas fa-trash-alt"></i></a>
                                         </div>
                                     </td>
                                 </c:forEach>
@@ -130,9 +130,10 @@
                                     <td class="align-middle"><c:out value="${dato.Descripcion_perfil}"/></td>
                                     <td class="align-middle">
                                         <div class="btn-group">
-                                            <a href="<c:url value="editarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-warning rounded mr-1 ml-4"data-toggle="tooltip" title="Haz clic para editar perfil"><i class="fas fa-edit"></i></a>
-                                            <a href="<c:url value="eliminarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-danger rounded mr-4" data-toggle="tooltip" title="Haz clic para eliminar"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="<c:url value="editarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-warning rounded mr-1 ml-4 openBtn" data-toggle="modal" data-target="#myModal" data- title="Haz clic para editar perfil"><i class="fas fa-edit"></i></a>
+                                            <a href="<c:url value="eliminarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-danger rounded mr-4 openBtn" data-toggle="modal" data-target="#myModal" title="Haz clic para eliminar"><i class="fas fa-trash-alt"></i></a>
                                         </div>
+
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -149,8 +150,29 @@
                 </div>
             </div>
         </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content">  
+                    <div class="modal-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
     <script>
+        $('.openBtn').on('click', function () {
+            $('.modal-body').load(this.href, function ()
+            {
+                $('#myModal').modal({show: false});
+            });
+        });
+
+
+
         $(document).ready(main);
 
         var contador = 1;
