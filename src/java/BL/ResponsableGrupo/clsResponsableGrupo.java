@@ -37,7 +37,10 @@ public class clsResponsableGrupo {
                 obclsResponsableGrupo.setObclsGrupo(obclsGrupo);
 
                 Modelos.ResponsableGrupo.clsUsuario obclsUsuario = new Modelos.ResponsableGrupo.clsUsuario();
-                obclsUsuario.setEmpleado(rs.getString("emplNombre"));
+                obclsUsuario.setEmplPrimerNombre(rs.getString("emplPrimerNombre"));
+                obclsUsuario.setEmplSegundoNombre(rs.getString("emplSegundoNombre"));
+                obclsUsuario.setEmplPrimerApellido(rs.getString("emplPrimerApellido"));
+                obclsUsuario.setEmplSegundoApellido(rs.getString("emplSegundoApellido"));
                 obclsUsuario.setNro_usuario(rs.getInt("Nro_usuario"));
                 obclsUsuario.setId_usuario(rs.getString("Id_usuario"));
                 obclsResponsableGrupo.setObclsUsuario(obclsUsuario);
@@ -72,7 +75,10 @@ public class clsResponsableGrupo {
                 obclsResponsableGrupo.setObclsGrupo(obclsGrupo);
 
                 Modelos.ResponsableGrupo.clsUsuario obclsUsuario = new Modelos.ResponsableGrupo.clsUsuario();
-                obclsUsuario.setEmpleado(rs.getString("emplNombre"));
+                obclsUsuario.setEmplPrimerNombre(rs.getString("emplPrimerNombre"));
+                obclsUsuario.setEmplSegundoNombre(rs.getString("emplSegundoNombre"));
+                obclsUsuario.setEmplPrimerApellido(rs.getString("emplPrimerApellido"));
+                obclsUsuario.setEmplSegundoApellido(rs.getString("emplSegundoApellido"));
                 obclsUsuario.setNro_usuario(rs.getInt("Nro_usuario"));
                 obclsUsuario.setId_usuario(rs.getString("Id_usuario"));
                 obclsResponsableGrupo.setObclsUsuario(obclsUsuario);

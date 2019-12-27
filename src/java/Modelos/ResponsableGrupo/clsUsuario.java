@@ -5,7 +5,10 @@ package Modelos.ResponsableGrupo;
 public class clsUsuario {
     
     public int Nro_usuario;
-    public String Empleado;
+    public String emplPrimerNombre;
+    public String emplSegundoNombre;
+    public String emplPrimerApellido;
+    public String emplSegundoApellido;
     public String Id_usuario;
 
     public int getNro_usuario() {
@@ -16,12 +19,36 @@ public class clsUsuario {
         this.Nro_usuario = Nro_usuario;
     }
 
-    public String getEmpleado() {
-        return Empleado;
+    public String getEmplPrimerNombre() {
+        return emplPrimerNombre;
     }
 
-    public void setEmpleado(String Empleado) {
-        this.Empleado = Empleado;
+    public void setEmplPrimerNombre(String emplPrimerNombre) {
+        this.emplPrimerNombre = emplPrimerNombre;
+    }
+
+    public String getEmplSegundoNombre() {
+        return emplSegundoNombre;
+    }
+
+    public void setEmplSegundoNombre(String emplSegundoNombre) {
+        this.emplSegundoNombre = emplSegundoNombre;
+    }
+
+    public String getEmplPrimerApellido() {
+        return emplPrimerApellido;
+    }
+
+    public void setEmplPrimerApellido(String emplPrimerApellido) {
+        this.emplPrimerApellido = emplPrimerApellido;
+    }
+
+    public String getEmplSegundoApellido() {
+        return emplSegundoApellido;
+    }
+
+    public void setEmplSegundoApellido(String emplSegundoApellido) {
+        this.emplSegundoApellido = emplSegundoApellido;
     }
 
     public String getId_usuario() {

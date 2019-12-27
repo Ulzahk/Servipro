@@ -34,7 +34,7 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
     <body>
-         <%
+        <%
             Modelos.ResponsableGrupo.clsResponsableGrupo obclsResponsableGrupo = new Modelos.ResponsableGrupo.clsResponsableGrupo();
 
             if (request.getAttribute("obclsResponsableGrupo") != null) {
@@ -69,7 +69,7 @@
                         <div class="form-group">
                             <div class="col-12 text-center">                                    
                                 <h5 class="align-middle mt-1"> 
-                                    <b><%=obclsResponsableGrupo.getObclsGrupo().getNombre()!= null ? obclsResponsableGrupo.getObclsGrupo().getNombre() : ""%></b>
+                                    <b><%=obclsResponsableGrupo.getObclsGrupo().getNombre() != null ? obclsResponsableGrupo.getObclsGrupo().getNombre() : ""%></b>
                                 </h5>                                         
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                                 <div class="col-6">
                                     <label for="lblUsuario"><b>Usuario</b></label>
                                     <select class="form-control" name="ddlUsuario">
-                                           <%
+                                        <%
                                             List<Modelos.ResponsableGrupo.clsUsuario> lstclsUsuario = new ArrayList<Modelos.ResponsableGrupo.clsUsuario>();
 
                                             if (request.getAttribute("lstclsUsuario") != null) {
@@ -115,7 +115,10 @@
                                         %>
                                         <option value="<%=elem.getNro_usuario()%>"
                                                 <%=obclsResponsableGrupo.getObclsUsuario() != null ? obclsResponsableGrupo.getObclsUsuario().getNro_usuario() == elem.getNro_usuario() ? "selected" : "" : ""%>>
-                                             <%=elem.getEmpleado()%> (<%=elem.getId_usuario()%>)
+                                            <%=elem.getEmplPrimerNombre()%>
+                                            <%=elem.getEmplSegundoNombre()%>
+                                            <%=elem.getEmplPrimerApellido()%>
+                                            <%=elem.getEmplSegundoApellido()%> (<%=elem.getId_usuario()%>)
                                         </option>
                                         <%
                                             }

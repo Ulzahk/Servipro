@@ -142,7 +142,12 @@
                         %>
                         <tr>
                             <td class="align-middle"><%=elem.getObclsGrupo().getNombre()%></td>
-                            <td class="align-middle"><%=elem.getObclsUsuario().getEmpleado()%></td>
+                            <td class="align-middle">
+                                <%=elem.getObclsUsuario().getEmplPrimerNombre()%>
+                                <%=elem.getObclsUsuario().getEmplSegundoNombre()%>
+                                <%=elem.getObclsUsuario().getEmplPrimerApellido()%>
+                                <%=elem.getObclsUsuario().getEmplSegundoNombre()%>
+                            </td>
                             <td class="align-middle"><%=elem.getObclsUsuario().getId_usuario()%></td>
                             <td class="align-middle">
                                 <div class="btn-group">

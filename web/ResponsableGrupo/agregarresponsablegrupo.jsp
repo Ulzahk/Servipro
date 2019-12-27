@@ -134,7 +134,10 @@
                                         %>
                                         <option value="<%=elem.getNro_usuario()%>"
                                                 <%=obclsResponsableGrupo.getObclsUsuario() != null ? obclsResponsableGrupo.getObclsUsuario().getNro_usuario() == elem.getNro_usuario() ? "selected" : "" : ""%>>
-                                            <%=elem.getEmpleado()%> (<%=elem.getId_usuario()%>)
+                                            <%=elem.getEmplPrimerNombre()%>
+                                            <%=elem.getEmplSegundoNombre()%>
+                                            <%=elem.getEmplPrimerApellido()%>
+                                            <%=elem.getEmplSegundoApellido()%> (<%=elem.getId_usuario()%>)
                                         </option>
                                         <%
                                             }
@@ -163,24 +166,24 @@
         var contador = 1;
 
         function main() {
-        $('.menu_bar').click(function () {
-        if (contador == 1) {
-        $('nav').animate({
-        left: '0'
-        });
-        contador = 0;
-        } else {
-        contador = 1;
-        $('nav').animate({
-        left: '-100%'
-        });
-        }
-        });
+            $('.menu_bar').click(function () {
+                if (contador == 1) {
+                    $('nav').animate({
+                        left: '0'
+                    });
+                    contador = 0;
+                } else {
+                    contador = 1;
+                    $('nav').animate({
+                        left: '-100%'
+                    });
+                }
+            });
 
-        // Mostramos y ocultamos submenus
-        $('.submenu').click(function () {
-        $(this).children('.children').slideToggle();
-        });
+            // Mostramos y ocultamos submenus
+            $('.submenu').click(function () {
+                $(this).children('.children').slideToggle();
+            });
         }
     </script>
 </html>
