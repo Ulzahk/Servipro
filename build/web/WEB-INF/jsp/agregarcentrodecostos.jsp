@@ -61,7 +61,7 @@
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
-                    <a href="centrodecostos.htm" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
+                    <a href="centrodecostos.htm" class="btn btn-secondary"data-toggle="tooltip" title="Haz clic para regresar al menú centro de costos"><i class="fas fa-arrow-left"></i></a>
                 </div>
                 <div class="card-body">
                 <form:form method="post" commandName="centrodecostos">

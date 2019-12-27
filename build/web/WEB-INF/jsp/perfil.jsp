@@ -75,9 +75,9 @@
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
                     <form action="" method="post">
-                        <div class="input-group mt-3">
-                            <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú"><i class="fas fa-arrow-left"></i></a>
-                            <a href="agregarperfil.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un registro">Agregar Registro</a>
+                        <div class="input-group">
+                            <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
+                            <a href="agregarperfil.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para agregar un registro">Agregar Registro</a>
                             <input type="text" class="form-control" name="Buscar" placeholder="Buscar en ServiSoft S.A."/>
                             <div class="input-group-append">
                                 <button type="submit" Value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar"><i class="fas fa-search"></i></button> 

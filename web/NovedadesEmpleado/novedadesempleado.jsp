@@ -96,7 +96,7 @@
                 <div class="card-header bg-info text-white">
                     <form action="controlnovedadesempleado" method="post">
                         <div class="input-group mt-3">
-                            <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú"><i class="fas fa-arrow-left"></i></a>
+                            <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
                             <a href="controlnovedadesempleado?btnNoveEmplAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
                             <input type="text" class="form-control" name="txtNoveEmplBuscar" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
                             <div class="input-group-append">
@@ -158,7 +158,7 @@
                             <td class="align-middle"><%=elem.getDia()%></td>
                             <td class="align-middle">
                                 <div class="btn-group">
-                                    <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para modificar el registro" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
+                                    <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para editar novedad" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
                                        href="controlnovedadesempleado?stOpcion=M&codigoSeleccionado=<%=elem.getId_novedad_empleado()%>">
                                         <i class="fas fa-edit" style="font-size:15px;"></i>
                                     </a>

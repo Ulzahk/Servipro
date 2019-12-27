@@ -91,7 +91,7 @@
                 <div class="card-header bg-info text-white">
                     <form action="controlusuarios" method="post">
                         <div class="input-group mt-3">
-                            <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú"><i class="fas fa-arrow-left"></i></a>
+                            <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
                             <a href="controlusuarios?btnUsuAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
                             <input type="text" class="form-control" name="txtUsuBuscar" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
                             <div class="input-group-append">
@@ -149,7 +149,7 @@
                             <td class="align-middle"><%=elem.getObclsPerfil().getStDescripcion_Perfil()%></td>
                             <td class="align-middle">
                                 <div class="btn-group">
-                                    <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para modificar empleado" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
+                                    <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para editar empleado" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
                                        href="controlusuarios?stOpcion=M&codigoSeleccionado=<%=elem.getNro_usuario()%>">
                                         <i class="fas fa-edit" style="font-size:15px;"></i>
                                     </a>
