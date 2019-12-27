@@ -4,16 +4,16 @@
 <%@page import="java.sql.*"%>
 <%
     HttpSession objsesion = request.getSession(false);
-    String id_usuario = (String)objsesion.getAttribute("id_usuario");
-    String Descripcion_perfil = (String)objsesion.getAttribute("descripcion_perfil");
-    if(id_usuario==null){
+    String id_usuario = (String) objsesion.getAttribute("id_usuario");
+    String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
+    if (id_usuario == null) {
         response.sendRedirect("login.jsp");
-    }else{
-        if(Descripcion_perfil.equals("COORDINADOR")||
-                Descripcion_perfil.equals("JEFE")){
-            
-        }else{
-          response.sendRedirect("nomina.htm");  
+    } else {
+        if (Descripcion_perfil.equals("COORDINADOR")
+                || Descripcion_perfil.equals("JEFE")) {
+
+        } else {
+            response.sendRedirect("nomina.htm");
         }
     }
 %>
@@ -32,93 +32,62 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-        
-      <header>
-        <%--Barra de Navegación de Jefe--%>
-        <%
-            if (Descripcion_perfil.equals("JEFE")) {
-
-        %>       
-
-        <jsp:include page="menujefe.jsp"></jsp:include>
-
-        <%        }
-        %>
-
-
-        <%--Barra de Navegación de Coordinador--%>
-        <%
-            if (Descripcion_perfil.equals("COORDINADOR")) {
-        %>
-
-        <jsp:include page="menucordi.jsp"></jsp:include>
-
-        <%
-            }
-        %> 
-    </header>
-        
-        <div class="container mt-4">
-            <h1 class="text-center">Editar Configuración</h1>
-            <br>
+        <div class="container">
             <div class="card border-info">
-                <div class="card-header bg-info text-white">
-                    <a href="configuracion.htm" class="btn btn-secondary"><i class="fas fa-arrow-left"></i></a>
+                <div class="card-header bg-info text-white" >
                 </div>
                 <div class="card-body">
-                <form:form method="post" commandName="configuracion">
-                    <form:errors path="*" element="div" cssClass="alert alert-danger"/>
-                    <p>
-                        <form:label path="desconfiguracion"><b>Desconfiguración</b></form:label>
-                        <form:input path="desconfiguracion" cssClass="form-control"/>
-                    </p>
-                    <p>
-                        <form:label path="desconfiguracion_d"><b>Desconfiguración D.</b></form:label>
-                        <form:input path="desconfiguracion_d" cssClass="form-control"/>
-                    </p>
-                    <p>
-                        <form:label path="nombre_variable"><b>Nombre Variable</b></form:label>
-                        <form:input path="nombre_variable" cssClass="form-control"/>
-                    </p>
-                    <p>
-                        <form:label path="valor"><b>Valor</b></form:label>
-                        <form:input path="valor" cssClass="form-control"/>
-                    </p>
-                    <p>
-                        <label id="id_modulo"><b>Modulo</b></label>
-                        <select id="id_modulo" name="id_modulo" class="form-control">
-                            <option value="-1">SELECCIONE NUEVAMENTE UN MÓDULO</option>
-                            <%
-                                try
-                                {
-                                    String Query="select * from nm_modulos";
-                                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                                    Connection conn=DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable","contable19","contable19");
-                                    Statement stm=conn.createStatement();
-                                    ResultSet rs=stm.executeQuery(Query);
-                                    while(rs.next()){
-                                        %>
-                                        <option value="<%=rs.getInt("Id_modulo")%>"><%=rs.getString("Nombre_modulo")%></option>
-                                        <%
-                                        
+                    <form:form method="post" commandName="configuracion">
+                        <form:errors path="*" element="div" cssClass="alert alert-danger"/>
+                        <p>
+                            <form:label path="desconfiguracion"><b>Desconfiguración</b></form:label>
+                            <form:input path="desconfiguracion" cssClass="form-control"/>
+                        </p>
+                        <p>
+                            <form:label path="desconfiguracion_d"><b>Desconfiguración D.</b></form:label>
+                            <form:input path="desconfiguracion_d" cssClass="form-control"/>
+                        </p>
+                        <p>
+                            <form:label path="nombre_variable"><b>Nombre Variable</b></form:label>
+                            <form:input path="nombre_variable" cssClass="form-control"/>
+                        </p>
+                        <p>
+                            <form:label path="valor"><b>Valor</b></form:label>
+                            <form:input path="valor" cssClass="form-control"/>
+                        </p>
+                        <p>
+                            <label id="id_modulo"><b>Modulo</b></label>
+                            <select id="id_modulo" name="id_modulo" class="form-control">
+                                <option value="-1">SELECCIONE NUEVAMENTE UN MÓDULO</option>
+                                <%
+                                    try {
+                                        String Query = "select * from nm_modulos";
+                                        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                                        Connection conn = DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable", "contable19", "contable19");
+                                        Statement stm = conn.createStatement();
+                                        ResultSet rs = stm.executeQuery(Query);
+                                        while (rs.next()) {
+                                %>
+                                <option value="<%=rs.getInt("Id_modulo")%>"><%=rs.getString("Nombre_modulo")%></option>
+                                <%
+
+                                        }
+                                    } catch (Exception ex) {
+                                        ex.printStackTrace();
+                                        out.println("Error " + ex.getMessage());
                                     }
-                                }    
-                                catch( Exception ex)
-                                {  
-                                    ex.printStackTrace();
-                                    out.println("Error "+ex.getMessage());
-                                }      
-                            %>    
-                        </select>
-                    </p>
-                    <hr/>
-                    <input type="submit" value="Guardar" class="btn btn-info"/>
-                </form:form>
+                                %>    
+                            </select>
+                        </p>
+                        <hr/>
+                        <input type="submit" value="Guardar" class="btn btn-info"/>
+                    </form:form>
                 </div>
+
             </div>
         </div>
     </body>
-      <script>
+    <script>
         $(document).ready(main);
 
         var contador = 1;

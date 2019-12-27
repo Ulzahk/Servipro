@@ -118,8 +118,8 @@
                                     <td class="align-middle">${dato.nombre_grupo}</td>
                                     <td class="align-middle">
                                         <div class="btn-group mr-4 ml-4">
-                                            <a href="<c:url value="editargrupos.htm?id_grupo=${dato.Id_grupo}"/>" class="btn btn-warning rounded ml-4 mr-1"><i class="fas fa-edit"></i></a>
-                                            <a href="<c:url value="eliminargrupos.htm?id_grupo=${dato.Id_grupo}"/>" class="btn btn-danger rounded mr-4"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="<c:url value="editargrupos.htm?id_grupo=${dato.Id_grupo}"/>" class="btn btn-warning rounded ml-4 mr-1 openBtn" data-toggle="modal" data-target="#myModal"><i class="fas fa-edit"></i></a>
+                                            <a href="<c:url value="eliminargrupos.htm?id_grupo=${dato.Id_grupo}"/>" class="btn btn-danger rounded mr-4 openBtn" data-toggle="modal" data-target="#myModal"><i class="fas fa-trash-alt"></i></a>
                                         </div>
                                     </td>
                                 </tr>
@@ -137,8 +137,29 @@
                 </div>
             </div>
         </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content">  
+                    <div class="modal-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
     <script>
+        $('.openBtn').on('click', function () {
+            $('.modal-body').load(this.href, function ()
+            {
+                $('#myModal').modal({show: false});
+            });
+        });
+
+
+
         $(document).ready(main);
 
         var contador = 1;
