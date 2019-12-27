@@ -66,7 +66,7 @@
         <%
             }
         %>
-         <header>
+        <header>
             <%--Barra de Navegación de Jefe--%>
             <%
                 if (Descripcion_perfil.equals("JEFE")) {
@@ -143,7 +143,12 @@
                         %>
                         <tr>
                             <td class="align-middle"><%=elem.getObclsGrupo().getNombre_grupo()%></td>
-                            <td class="align-middle"><%=elem.getObclsEmpleado().getEmplNombre()%></td>
+                            <td class="align-middle">
+                                <%=elem.getObclsEmpleado().getEmplPrimerNombre()%>
+                                <%=elem.getObclsEmpleado().getEmplSegundoNombre()%>
+                                <%=elem.getObclsEmpleado().getEmplPrimerApellido()%>
+                                <%=elem.getObclsEmpleado().getEmplSegundoApellido()%>
+                            </td>
                             <td class="align-middle">
                                 <div class="btn-group">
                                     <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para modificar empleado" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
@@ -352,30 +357,30 @@
 
             </script>
     </body>
-      <script>
+    <script>
         $(document).ready(main);
 
         var contador = 1;
 
         function main() {
-        $('.menu_bar').click(function () {
-        if (contador == 1) {
-        $('nav').animate({
-        left: '0'
-        });
-        contador = 0;
-        } else {
-        contador = 1;
-        $('nav').animate({
-        left: '-100%'
-        });
-        }
-        });
+            $('.menu_bar').click(function () {
+                if (contador == 1) {
+                    $('nav').animate({
+                        left: '0'
+                    });
+                    contador = 0;
+                } else {
+                    contador = 1;
+                    $('nav').animate({
+                        left: '-100%'
+                    });
+                }
+            });
 
-        // Mostramos y ocultamos submenus
-        $('.submenu').click(function () {
-        $(this).children('.children').slideToggle();
-        });
+            // Mostramos y ocultamos submenus
+            $('.submenu').click(function () {
+                $(this).children('.children').slideToggle();
+            });
         }
     </script>
 </html>

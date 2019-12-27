@@ -63,7 +63,7 @@
         <%
             }
         %>
-         <header>
+        <header>
             <%--Barra de Navegación de Jefe--%>
             <%
                 if (Descripcion_perfil.equals("JEFE")) {
@@ -87,7 +87,7 @@
                 }
             %> 
         </header> 
-       
+
         <div class="container mt-4">
             <h1 class="text-center">Agregar Nuevo Empleado por Grupo</h1>
             <br>
@@ -113,7 +113,7 @@
                                             for (Modelos.EmpleadosGrupo.clsGrupo elem : lstclsGrupo) {
                                         %>
                                         <option value="<%=elem.getId_grupo()%>"
-                                                <%=obclsEmpleadosGrupo.getObclsGrupo()!= null ? obclsEmpleadosGrupo.getObclsGrupo().getId_grupo()== elem.getId_grupo()? "selected" : "" : ""%>>
+                                                <%=obclsEmpleadosGrupo.getObclsGrupo() != null ? obclsEmpleadosGrupo.getObclsGrupo().getId_grupo() == elem.getId_grupo() ? "selected" : "" : ""%>>
                                             <%=elem.getNombre_grupo()%>
                                         </option>
                                         <%
@@ -134,8 +134,11 @@
                                             for (Modelos.EmpleadosGrupo.clsEmpleado elem : lstclsEmpleado) {
                                         %>
                                         <option value="<%=elem.getEmplId()%>"
-                                                <%=obclsEmpleadosGrupo.getObclsEmpleado()!= null ? obclsEmpleadosGrupo.getObclsEmpleado().getEmplId()== elem.getEmplId()? "selected" : "" : ""%>>
-                                            <%=elem.getEmplNombre()%>
+                                                <%=obclsEmpleadosGrupo.getObclsEmpleado() != null ? obclsEmpleadosGrupo.getObclsEmpleado().getEmplId() == elem.getEmplId() ? "selected" : "" : ""%>>
+                                            <%=elem.getEmplPrimerNombre()%>
+                                            <%=elem.getEmplSegundoNombre()%>
+                                            <%=elem.getEmplPrimerApellido()%>
+                                            <%=elem.getEmplSegundoApellido()%>
                                         </option>
                                         <%
                                             }
@@ -157,30 +160,30 @@
             </div>
         </div>
     </body>
-        <script>
+    <script>
         $(document).ready(main);
 
         var contador = 1;
 
         function main() {
-        $('.menu_bar').click(function () {
-        if (contador == 1) {
-        $('nav').animate({
-        left: '0'
-        });
-        contador = 0;
-        } else {
-        contador = 1;
-        $('nav').animate({
-        left: '-100%'
-        });
-        }
-        });
+            $('.menu_bar').click(function () {
+                if (contador == 1) {
+                    $('nav').animate({
+                        left: '0'
+                    });
+                    contador = 0;
+                } else {
+                    contador = 1;
+                    $('nav').animate({
+                        left: '-100%'
+                    });
+                }
+            });
 
-        // Mostramos y ocultamos submenus
-        $('.submenu').click(function () {
-        $(this).children('.children').slideToggle();
-        });
+            // Mostramos y ocultamos submenus
+            $('.submenu').click(function () {
+                $(this).children('.children').slideToggle();
+            });
         }
     </script>
 </html>

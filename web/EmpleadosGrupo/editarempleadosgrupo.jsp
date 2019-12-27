@@ -70,7 +70,7 @@
                     <div class="form-group">
                         <div class="col-12 text-center">                                    
                             <h5 class="align-middle mt-1"> 
-                                <b><%=obclsEmpleadosGrupo.getObclsGrupo().getNombre_grupo()!= null ? obclsEmpleadosGrupo.getObclsGrupo().getNombre_grupo(): ""%></b>
+                                <b><%=obclsEmpleadosGrupo.getObclsGrupo().getNombre_grupo() != null ? obclsEmpleadosGrupo.getObclsGrupo().getNombre_grupo() : ""%></b>
                             </h5>                                         
                         </div>
                     </div>
@@ -115,7 +115,10 @@
                                         %>
                                         <option value="<%=elem.getEmplId()%>"
                                                 <%=obclsEmpleadosGrupo.getObclsEmpleado() != null ? obclsEmpleadosGrupo.getObclsEmpleado().getEmplId() == elem.getEmplId() ? "selected" : "" : ""%>>
-                                            <%=elem.getEmplNombre()%>
+                                            <%=elem.getEmplPrimerNombre()%>
+                                            <%=elem.getEmplSegundoNombre()%>
+                                            <%=elem.getEmplPrimerApellido()%>
+                                            <%=elem.getEmplSegundoApellido()%>
                                         </option>
                                         <%
                                             }
