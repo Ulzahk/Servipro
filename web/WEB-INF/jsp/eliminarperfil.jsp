@@ -48,43 +48,38 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="controlusuarios" method="POST">
-                        <!--FILA-->
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-2">
-                                </div>
+                    <!--FILA-->
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-2">
+                            </div>
+                            <div class="col-8 text-center">
+                                <i class="fas fa-exclamation-triangle mb-2" style="font-size:70px;color:#FFCC00;"></i>
+                                <h4 class="font-weight-bold">¿Estás seguro de que quieres eliminar esto?</h4>
+                                <h6>No podrás deshacer esta acción</h6>
+                            </div>
+                            <div class="col-2">
+                            </div>
+                        </div>
+                    </div>
+                    <!--FILA-->   
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-2">
+                            </div>
+                            <c:forEach var="dato" items="${datos}">                                    
                                 <div class="col-8 text-center">
-                                    <i class="fas fa-exclamation-triangle mb-2" style="font-size:70px;color:#FFCC00;"></i>
-                                    <h4 class="font-weight-bold">¿Estás seguro de que quieres eliminar esto?</h4>
-                                    <h6>No podrás deshacer esta acción</h6>
-                                </div>
+                                    <a href="perfil.htm" class="btn btn-info" data-toggle="tooltip" title="Haz clic para regresar al menú perfil" class="btn btn-info font-weight-bold"><span>No, cancelar</span></a>
+                                    <span>&nbsp;</span>
+                                    <a href="<c:url value="confirmareliminarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-danger"><b>Confirmar Eliminación</b></a>                                        
+                                </c:forEach>
                                 <div class="col-2">
                                 </div>
                             </div>
                         </div>
-                        <!--FILA-->   
-                        <div class="form-group">
-                            <div class="form-row">
-                                <div class="col-2">
-                                </div>
-                                <c:forEach var="dato" items="${datos}">
-                                    <tr>
-                                    <div class="col-8 text-center">
-                                        <a href="perfil.htm" class="btn btn-info" data-toggle="tooltip" title="Haz clic para regresar al menú perfil" class="btn btn-info font-weight-bold"<span>No, cancelar</span></a>
-                                        <span>&nbsp;</span>
-                                        <a href="<c:url value="confirmareliminarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-danger"><b>Confirmar Eliminación</b></a>
-                                        </td>
-                                        </tr>
-                                    </c:forEach>
-                                    <div class="col-2">
-                                    </div>
-                                </div>
-                            </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
     </body>
     <script>
         $(document).ready(main);

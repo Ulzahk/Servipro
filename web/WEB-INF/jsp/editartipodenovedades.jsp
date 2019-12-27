@@ -3,16 +3,16 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     HttpSession objsesion = request.getSession(false);
-    String id_usuario = (String)objsesion.getAttribute("id_usuario");
-    String Descripcion_perfil = (String)objsesion.getAttribute("descripcion_perfil");
-    if(id_usuario==null){
+    String id_usuario = (String) objsesion.getAttribute("id_usuario");
+    String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
+    if (id_usuario == null) {
         response.sendRedirect("login.jsp");
-    }else{
-        if(Descripcion_perfil.equals("COORDINADOR")||
-                Descripcion_perfil.equals("JEFE")){
-            
-        }else{
-          response.sendRedirect("nomina.htm");  
+    } else {
+        if (Descripcion_perfil.equals("COORDINADOR")
+                || Descripcion_perfil.equals("JEFE")) {
+
+        } else {
+            response.sendRedirect("nomina.htm");
         }
     }
 %>
@@ -31,80 +31,51 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-        
-      <header>
-        <%--Barra de Navegación de Jefe--%>
-        <%
-            if (Descripcion_perfil.equals("JEFE")) {
-
-        %>       
-
-        <jsp:include page="menujefe.jsp"></jsp:include>
-
-        <%        }
-        %>
-
-        <%--Barra de Navegación de Coordinador--%>
-        <%
-            if (Descripcion_perfil.equals("COORDINADOR")) {
-        %>
-
-        <jsp:include page="menucordi.jsp"></jsp:include>
-
-        <%
-            }
-        %> 
-    </header>
-        
-        <div class="container mt-4">
-            <h1 class="text-center">Editar Tipo De Novedades</h1>
-            <br>
+        <div class="container">
             <div class="card border-info">
-                <div class="card-header bg-info text-white">
-                    <a href="tipodenovedades.htm" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para regresar al menú tipo de novedades"><i class="fas fa-arrow-left"></i></a>
+                <div class="card-header bg-info text-white" >
                 </div>
                 <div class="card-body">
-                <form:form method="post" commandName="novedades">
-                    <form:errors path="*" element="div" cssClass="alert alert-danger"/>
-                    <p>
-                        <form:label path="descripcion"><b>Descripción</b></form:label>
-                        <form:input path="descripcion" cssClass="form-control"/>
-                    </p>
-                    <p>
-                        <form:label path="alias"><b>Alias</b></form:label>
-                        <form:input path="alias" cssClass="form-control"/>
-                    </p>
-                    <hr/>
-                    <input type="submit" value="Guardar" class="btn btn-info"/>
-                </form:form>
+                    <form:form method="post" commandName="novedades">
+                        <form:errors path="*" element="div" cssClass="alert alert-danger"/>
+                        <p>
+                            <form:label path="descripcion"><b>Descripción</b></form:label>
+                            <form:input path="descripcion" cssClass="form-control"/>
+                        </p>
+                        <p>
+                            <form:label path="alias"><b>Alias</b></form:label>
+                            <form:input path="alias" cssClass="form-control"/>
+                        </p>
+                        <hr/>
+                        <input type="submit" value="Guardar" class="btn btn-info">
+                    </form:form>
                 </div>
             </div>
         </div>
-    </body>
-      <script>
-        $(document).ready(main);
+        <script>
+            $(document).ready(main);
 
-        var contador = 1;
+            var contador = 1;
 
-        function main() {
-            $('.menu_bar').click(function () {
-                if (contador == 1) {
-                    $('nav').animate({
-                        left: '0'
-                    });
-                    contador = 0;
-                } else {
-                    contador = 1;
-                    $('nav').animate({
-                        left: '-100%'
-                    });
-                }
-            });
+            function main() {
+                $('.menu_bar').click(function () {
+                    if (contador == 1) {
+                        $('nav').animate({
+                            left: '0'
+                        });
+                        contador = 0;
+                    } else {
+                        contador = 1;
+                        $('nav').animate({
+                            left: '-100%'
+                        });
+                    }
+                });
 
-            // Mostramos y ocultamos submenus
-            $('.submenu').click(function () {
-                $(this).children('.children').slideToggle();
-            });
-        }
-    </script>
+                // Mostramos y ocultamos submenus
+                $('.submenu').click(function () {
+                    $(this).children('.children').slideToggle();
+                });
+            }
+        </script>
 </html>

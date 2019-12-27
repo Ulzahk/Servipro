@@ -63,7 +63,7 @@ public class ControlEditarTipoDeNovedades {
         }else{
             
             int id_novedad=Integer.parseInt(request.getParameter("id_novedad"));
-            this.jdbcTemplate.update("update novedades set descripcion=?, alias=? "
+            this.jdbcTemplate.update("update nm_tipo_novedad set descripcion=?, alias=? "
             +"where id_novedad=?",n.getDescripcion(),n.getAlias(),id_novedad);
             return new ModelAndView("redirect:/tipodenovedades.htm");
             
