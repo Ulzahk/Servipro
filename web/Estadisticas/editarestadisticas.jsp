@@ -4,16 +4,16 @@
 <%@page import="java.util.*"%>
 <%
     HttpSession objsesion = request.getSession(false);
-    String id_usuario = (String)objsesion.getAttribute("id_usuario");
-    String Descripcion_perfil = (String)objsesion.getAttribute("descripcion_perfil");
-    if(id_usuario==null){
+    String id_usuario = (String) objsesion.getAttribute("id_usuario");
+    String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
+    if (id_usuario == null) {
         response.sendRedirect("login.jsp");
-    }else{
-        if(Descripcion_perfil.equals("COORDINADOR")||
-                Descripcion_perfil.equals("JEFE")){
-            
-        }else{
-          response.sendRedirect("nomina.htm");  
+    } else {
+        if (Descripcion_perfil.equals("COORDINADOR")
+                || Descripcion_perfil.equals("JEFE")) {
+
+        } else {
+            response.sendRedirect("nomina.htm");
         }
     }
 %>
@@ -37,22 +37,21 @@
     <body>
         <%
             Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
-            
-            if(request.getAttribute("obclsEstadisticas")!=null){
-                obclsEstadisticas = (Modelos.Estadisticas.clsEstadisticas)request.getAttribute("obclsEstadisticas");
+
+            if (request.getAttribute("obclsEstadisticas") != null) {
+                obclsEstadisticas = (Modelos.Estadisticas.clsEstadisticas) request.getAttribute("obclsEstadisticas");
             }
-            
+
             List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticas = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
-            
-            if(request.getAttribute("lstclsEstadisticas")!=null){
-                
-                lstclsEstadisticas = (List<Modelos.Estadisticas.clsEstadisticas>)request.getAttribute("lstclsEstadisticas");
+
+            if (request.getAttribute("lstclsEstadisticas") != null) {
+
+                lstclsEstadisticas = (List<Modelos.Estadisticas.clsEstadisticas>) request.getAttribute("lstclsEstadisticas");
             }
-            
-            if(request.getAttribute("stMensaje")!=null && request.getAttribute("stTipo")!=null){
-                
-            
-        
+
+            if (request.getAttribute("stMensaje") != null && request.getAttribute("stTipo") != null) {
+
+
         %>
         <input type="text" hidden="" id="txtMensaje" value="<%=request.getAttribute("stMensaje")%>"/>
         <input type="text" hidden="" id="txtTipo" value="<%=request.getAttribute("stTipo")%>"/>
@@ -60,12 +59,12 @@
             var mensaje = document.getElementById("txtMensaje").value;
             var tipo = document.getElementById("txtTipo").value;
 
-            swal.fire("Mensaje",mensaje, tipo);
+            swal.fire("Mensaje", mensaje, tipo);
         </script>
         <%
             }
         %>
-          <header>
+        <header>
             <%--Barra de Navegación de Jefe--%>
             <%
                 if (Descripcion_perfil.equals("JEFE")) {
@@ -101,8 +100,13 @@
                         <div class="form-group">
                             <div class="form-group">
                                 <div class="col-12 text-center">                                 
-                                    <h4> 
-                                        <b><%=obclsEstadisticas.getObEmpleado().getNombreEmp()!= null ? obclsEstadisticas.getObEmpleado().getNombreEmp(): ""%></b>
+                                    <h4 class="align-middle"> 
+                                        <b>
+                                            <%=obclsEstadisticas.getObEmpleado().getEmplPrimerNombre() != null ? obclsEstadisticas.getObEmpleado().getEmplPrimerNombre() : ""%>
+                                            <%=obclsEstadisticas.getObEmpleado().getEmplSegundoNombre() != null ? obclsEstadisticas.getObEmpleado().getEmplSegundoNombre() : ""%>
+                                            <%=obclsEstadisticas.getObEmpleado().getEmplPrimerApellido() != null ? obclsEstadisticas.getObEmpleado().getEmplPrimerApellido() : ""%>
+                                            <%=obclsEstadisticas.getObEmpleado().getEmplSegundoApellido() != null ? obclsEstadisticas.getObEmpleado().getEmplSegundoApellido() : ""%>
+                                        </b>
                                     </h4>                                         
                                 </div>
                             </div>
@@ -124,7 +128,7 @@
                                             for (Modelos.Estadisticas.clsId_dia1 elem : lstclsDia1) {
                                         %>
                                         <option value="<%=elem.getId_dia1()%>"
-                                                <%=obclsEstadisticas.getObId_dia1()!= null ? obclsEstadisticas.getObId_dia1().getId_dia1()== elem.getId_dia1()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia1() != null ? obclsEstadisticas.getObId_dia1().getId_dia1() == elem.getId_dia1() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia1()%>(<%=elem.getAliasDia1()%>)
                                         </option>
                                         <%
@@ -145,7 +149,7 @@
                                             for (Modelos.Estadisticas.clsId_dia2 elem : lstclsDia2) {
                                         %>
                                         <option value="<%=elem.getId_dia2()%>"
-                                                <%=obclsEstadisticas.getObId_dia2()!= null ? obclsEstadisticas.getObId_dia2().getId_dia2()== elem.getId_dia2()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia2() != null ? obclsEstadisticas.getObId_dia2().getId_dia2() == elem.getId_dia2() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia2()%>(<%=elem.getAliasDia2()%>)
                                         </option>
                                         <%
@@ -166,7 +170,7 @@
                                             for (Modelos.Estadisticas.clsId_dia3 elem : lstclsDia3) {
                                         %>
                                         <option value="<%=elem.getId_dia3()%>"
-                                                <%=obclsEstadisticas.getObId_dia3()!= null ? obclsEstadisticas.getObId_dia3().getId_dia3()== elem.getId_dia3()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia3() != null ? obclsEstadisticas.getObId_dia3().getId_dia3() == elem.getId_dia3() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia3()%>(<%=elem.getAliasDia3()%>)
                                         </option>
                                         <%
@@ -192,7 +196,7 @@
                                             for (Modelos.Estadisticas.clsId_dia4 elem : lstclsDia4) {
                                         %>
                                         <option value="<%=elem.getId_dia4()%>"
-                                                <%=obclsEstadisticas.getObId_dia4()!= null ? obclsEstadisticas.getObId_dia4().getId_dia4()== elem.getId_dia4()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia4() != null ? obclsEstadisticas.getObId_dia4().getId_dia4() == elem.getId_dia4() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia4()%>(<%=elem.getAliasDia4()%>)
                                         </option>
                                         <%
@@ -213,7 +217,7 @@
                                             for (Modelos.Estadisticas.clsId_dia5 elem : lstclsDia5) {
                                         %>
                                         <option value="<%=elem.getId_dia5()%>"
-                                                <%=obclsEstadisticas.getObId_dia5()!= null ? obclsEstadisticas.getObId_dia5().getId_dia5()== elem.getId_dia5()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia5() != null ? obclsEstadisticas.getObId_dia5().getId_dia5() == elem.getId_dia5() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia5()%>(<%=elem.getAliasDia5()%>)
                                         </option>
                                         <%
@@ -234,7 +238,7 @@
                                             for (Modelos.Estadisticas.clsId_dia6 elem : lstclsDia6) {
                                         %>
                                         <option value="<%=elem.getId_dia6()%>"
-                                                <%=obclsEstadisticas.getObId_dia6()!= null ? obclsEstadisticas.getObId_dia6().getId_dia6()== elem.getId_dia6()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia6() != null ? obclsEstadisticas.getObId_dia6().getId_dia6() == elem.getId_dia6() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia6()%>(<%=elem.getAliasDia6()%>)
                                         </option>
                                         <%
@@ -260,7 +264,7 @@
                                             for (Modelos.Estadisticas.clsId_dia7 elem : lstclsDia7) {
                                         %>
                                         <option value="<%=elem.getId_dia7()%>"
-                                                <%=obclsEstadisticas.getObId_dia7()!= null ? obclsEstadisticas.getObId_dia7().getId_dia7()== elem.getId_dia7()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia7() != null ? obclsEstadisticas.getObId_dia7().getId_dia7() == elem.getId_dia7() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia7()%>(<%=elem.getAliasDia7()%>)
                                         </option>
                                         <%
@@ -281,7 +285,7 @@
                                             for (Modelos.Estadisticas.clsId_dia8 elem : lstclsDia8) {
                                         %>
                                         <option value="<%=elem.getId_dia8()%>"
-                                                <%=obclsEstadisticas.getObId_dia8()!= null ? obclsEstadisticas.getObId_dia8().getId_dia8()== elem.getId_dia8()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia8() != null ? obclsEstadisticas.getObId_dia8().getId_dia8() == elem.getId_dia8() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia8()%>(<%=elem.getAliasDia8()%>)
                                         </option>
                                         <%
@@ -302,7 +306,7 @@
                                             for (Modelos.Estadisticas.clsId_dia9 elem : lstclsDia9) {
                                         %>
                                         <option value="<%=elem.getId_dia9()%>"
-                                                <%=obclsEstadisticas.getObId_dia9()!= null ? obclsEstadisticas.getObId_dia9().getId_dia9()== elem.getId_dia9()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia9() != null ? obclsEstadisticas.getObId_dia9().getId_dia9() == elem.getId_dia9() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia9()%>(<%=elem.getAliasDia9()%>)
                                         </option>
                                         <%
@@ -328,7 +332,7 @@
                                             for (Modelos.Estadisticas.clsId_dia10 elem : lstclsDia10) {
                                         %>
                                         <option value="<%=elem.getId_dia10()%>"
-                                                <%=obclsEstadisticas.getObId_dia10()!= null ? obclsEstadisticas.getObId_dia10().getId_dia10()== elem.getId_dia10()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia10() != null ? obclsEstadisticas.getObId_dia10().getId_dia10() == elem.getId_dia10() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia10()%>(<%=elem.getAliasDia10()%>)
                                         </option>
                                         <%
@@ -349,7 +353,7 @@
                                             for (Modelos.Estadisticas.clsId_dia11 elem : lstclsDia11) {
                                         %>
                                         <option value="<%=elem.getId_dia11()%>"
-                                                <%=obclsEstadisticas.getObId_dia11()!= null ? obclsEstadisticas.getObId_dia11().getId_dia11()== elem.getId_dia11()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia11() != null ? obclsEstadisticas.getObId_dia11().getId_dia11() == elem.getId_dia11() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia11()%>(<%=elem.getAliasDia11()%>)
                                         </option>
                                         <%
@@ -370,7 +374,7 @@
                                             for (Modelos.Estadisticas.clsId_dia12 elem : lstclsDia12) {
                                         %>
                                         <option value="<%=elem.getId_dia12()%>"
-                                                <%=obclsEstadisticas.getObId_dia12()!= null ? obclsEstadisticas.getObId_dia12().getId_dia12()== elem.getId_dia12()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia12() != null ? obclsEstadisticas.getObId_dia12().getId_dia12() == elem.getId_dia12() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia12()%>(<%=elem.getAliasDia12()%>)
                                         </option>
                                         <%
@@ -396,7 +400,7 @@
                                             for (Modelos.Estadisticas.clsId_dia13 elem : lstclsDia13) {
                                         %>
                                         <option value="<%=elem.getId_dia13()%>"
-                                                <%=obclsEstadisticas.getObId_dia13()!= null ? obclsEstadisticas.getObId_dia13().getId_dia13()== elem.getId_dia13()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia13() != null ? obclsEstadisticas.getObId_dia13().getId_dia13() == elem.getId_dia13() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia13()%>(<%=elem.getAliasDia13()%>)
                                         </option>
                                         <%
@@ -417,7 +421,7 @@
                                             for (Modelos.Estadisticas.clsId_dia14 elem : lstclsDia14) {
                                         %>
                                         <option value="<%=elem.getId_dia14()%>"
-                                                <%=obclsEstadisticas.getObId_dia14()!= null ? obclsEstadisticas.getObId_dia14().getId_dia14()== elem.getId_dia14()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia14() != null ? obclsEstadisticas.getObId_dia14().getId_dia14() == elem.getId_dia14() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia14()%>(<%=elem.getAliasDia14()%>)
                                         </option>
                                         <%
@@ -438,7 +442,7 @@
                                             for (Modelos.Estadisticas.clsId_dia15 elem : lstclsDia15) {
                                         %>
                                         <option value="<%=elem.getId_dia15()%>"
-                                                <%=obclsEstadisticas.getObId_dia15()!= null ? obclsEstadisticas.getObId_dia15().getId_dia15()== elem.getId_dia15()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia15() != null ? obclsEstadisticas.getObId_dia15().getId_dia15() == elem.getId_dia15() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia15()%>(<%=elem.getAliasDia15()%>)
                                         </option>
                                         <%
@@ -464,7 +468,7 @@
                                             for (Modelos.Estadisticas.clsId_dia16 elem : lstclsDia16) {
                                         %>
                                         <option value="<%=elem.getId_dia16()%>"
-                                                <%=obclsEstadisticas.getObId_dia16()!= null ? obclsEstadisticas.getObId_dia16().getId_dia16()== elem.getId_dia16()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia16() != null ? obclsEstadisticas.getObId_dia16().getId_dia16() == elem.getId_dia16() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia16()%>(<%=elem.getAliasDia16()%>)
                                         </option>
                                         <%
@@ -485,7 +489,7 @@
                                             for (Modelos.Estadisticas.clsId_dia17 elem : lstclsDia17) {
                                         %>
                                         <option value="<%=elem.getId_dia17()%>"
-                                                <%=obclsEstadisticas.getObId_dia17()!= null ? obclsEstadisticas.getObId_dia17().getId_dia17()== elem.getId_dia17()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia17() != null ? obclsEstadisticas.getObId_dia17().getId_dia17() == elem.getId_dia17() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia17()%>(<%=elem.getAliasDia17()%>)
                                         </option>
                                         <%
@@ -506,7 +510,7 @@
                                             for (Modelos.Estadisticas.clsId_dia18 elem : lstclsDia18) {
                                         %>
                                         <option value="<%=elem.getId_dia18()%>"
-                                                <%=obclsEstadisticas.getObId_dia18()!= null ? obclsEstadisticas.getObId_dia18().getId_dia18()== elem.getId_dia18()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia18() != null ? obclsEstadisticas.getObId_dia18().getId_dia18() == elem.getId_dia18() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia18()%>(<%=elem.getAliasDia18()%>)
                                         </option>
                                         <%
@@ -532,7 +536,7 @@
                                             for (Modelos.Estadisticas.clsId_dia19 elem : lstclsDia19) {
                                         %>
                                         <option value="<%=elem.getId_dia19()%>"
-                                                <%=obclsEstadisticas.getObId_dia19()!= null ? obclsEstadisticas.getObId_dia19().getId_dia19()== elem.getId_dia19()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia19() != null ? obclsEstadisticas.getObId_dia19().getId_dia19() == elem.getId_dia19() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia19()%>(<%=elem.getAliasDia19()%>)
                                         </option>
                                         <%
@@ -553,7 +557,7 @@
                                             for (Modelos.Estadisticas.clsId_dia20 elem : lstclsDia20) {
                                         %>
                                         <option value="<%=elem.getId_dia20()%>"
-                                                <%=obclsEstadisticas.getObId_dia20()!= null ? obclsEstadisticas.getObId_dia20().getId_dia20()== elem.getId_dia20()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia20() != null ? obclsEstadisticas.getObId_dia20().getId_dia20() == elem.getId_dia20() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia20()%>(<%=elem.getAliasDia20()%>)
                                         </option>
                                         <%
@@ -574,7 +578,7 @@
                                             for (Modelos.Estadisticas.clsId_dia21 elem : lstclsDia21) {
                                         %>
                                         <option value="<%=elem.getId_dia21()%>"
-                                                <%=obclsEstadisticas.getObId_dia21()!= null ? obclsEstadisticas.getObId_dia21().getId_dia21()== elem.getId_dia21()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia21() != null ? obclsEstadisticas.getObId_dia21().getId_dia21() == elem.getId_dia21() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia21()%>(<%=elem.getAliasDia21()%>)
                                         </option>
                                         <%
@@ -600,7 +604,7 @@
                                             for (Modelos.Estadisticas.clsId_dia22 elem : lstclsDia22) {
                                         %>
                                         <option value="<%=elem.getId_dia22()%>"
-                                                <%=obclsEstadisticas.getObId_dia22()!= null ? obclsEstadisticas.getObId_dia22().getId_dia22()== elem.getId_dia22()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia22() != null ? obclsEstadisticas.getObId_dia22().getId_dia22() == elem.getId_dia22() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia22()%>(<%=elem.getAliasDia22()%>)
                                         </option>
                                         <%
@@ -621,7 +625,7 @@
                                             for (Modelos.Estadisticas.clsId_dia23 elem : lstclsDia23) {
                                         %>
                                         <option value="<%=elem.getId_dia23()%>"
-                                                <%=obclsEstadisticas.getObId_dia23()!= null ? obclsEstadisticas.getObId_dia23().getId_dia23()== elem.getId_dia23()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia23() != null ? obclsEstadisticas.getObId_dia23().getId_dia23() == elem.getId_dia23() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia23()%>(<%=elem.getAliasDia23()%>)
                                         </option>
                                         <%
@@ -642,7 +646,7 @@
                                             for (Modelos.Estadisticas.clsId_dia24 elem : lstclsDia24) {
                                         %>
                                         <option value="<%=elem.getId_dia24()%>"
-                                                <%=obclsEstadisticas.getObId_dia24()!= null ? obclsEstadisticas.getObId_dia24().getId_dia24()== elem.getId_dia24()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia24() != null ? obclsEstadisticas.getObId_dia24().getId_dia24() == elem.getId_dia24() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia24()%>(<%=elem.getAliasDia24()%>)
                                         </option>
                                         <%
@@ -668,7 +672,7 @@
                                             for (Modelos.Estadisticas.clsId_dia25 elem : lstclsDia25) {
                                         %>
                                         <option value="<%=elem.getId_dia25()%>"
-                                                <%=obclsEstadisticas.getObId_dia25()!= null ? obclsEstadisticas.getObId_dia25().getId_dia25()== elem.getId_dia25()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia25() != null ? obclsEstadisticas.getObId_dia25().getId_dia25() == elem.getId_dia25() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia25()%>(<%=elem.getAliasDia25()%>)
                                         </option>
                                         <%
@@ -689,7 +693,7 @@
                                             for (Modelos.Estadisticas.clsId_dia26 elem : lstclsDia26) {
                                         %>
                                         <option value="<%=elem.getId_dia26()%>"
-                                                <%=obclsEstadisticas.getObId_dia26()!= null ? obclsEstadisticas.getObId_dia26().getId_dia26()== elem.getId_dia26()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia26() != null ? obclsEstadisticas.getObId_dia26().getId_dia26() == elem.getId_dia26() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia26()%>(<%=elem.getAliasDia26()%>)
                                         </option>
                                         <%
@@ -710,7 +714,7 @@
                                             for (Modelos.Estadisticas.clsId_dia27 elem : lstclsDia27) {
                                         %>
                                         <option value="<%=elem.getId_dia27()%>"
-                                                <%=obclsEstadisticas.getObId_dia27()!= null ? obclsEstadisticas.getObId_dia27().getId_dia27()== elem.getId_dia27()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia27() != null ? obclsEstadisticas.getObId_dia27().getId_dia27() == elem.getId_dia27() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia27()%>(<%=elem.getAliasDia27()%>)
                                         </option>
                                         <%
@@ -736,7 +740,7 @@
                                             for (Modelos.Estadisticas.clsId_dia28 elem : lstclsDia28) {
                                         %>
                                         <option value="<%=elem.getId_dia28()%>"
-                                                <%=obclsEstadisticas.getObId_dia28()!= null ? obclsEstadisticas.getObId_dia28().getId_dia28()== elem.getId_dia28()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia28() != null ? obclsEstadisticas.getObId_dia28().getId_dia28() == elem.getId_dia28() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia28()%>(<%=elem.getAliasDia28()%>)
                                         </option>
                                         <%
@@ -757,7 +761,7 @@
                                             for (Modelos.Estadisticas.clsId_dia29 elem : lstclsDia29) {
                                         %>
                                         <option value="<%=elem.getId_dia29()%>"
-                                                <%=obclsEstadisticas.getObId_dia29()!= null ? obclsEstadisticas.getObId_dia29().getId_dia29()== elem.getId_dia29()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia29() != null ? obclsEstadisticas.getObId_dia29().getId_dia29() == elem.getId_dia29() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia29()%>(<%=elem.getAliasDia29()%>)
                                         </option>
                                         <%
@@ -778,7 +782,7 @@
                                             for (Modelos.Estadisticas.clsId_dia30 elem : lstclsDia30) {
                                         %>
                                         <option value="<%=elem.getId_dia30()%>"
-                                                <%=obclsEstadisticas.getObId_dia30()!= null ? obclsEstadisticas.getObId_dia30().getId_dia30()== elem.getId_dia30()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia30() != null ? obclsEstadisticas.getObId_dia30().getId_dia30() == elem.getId_dia30() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia30()%>(<%=elem.getAliasDia30()%>)
                                         </option>
                                         <%
@@ -802,30 +806,30 @@
             </div>
         </div>
     </body>
-      <script>
+    <script>
         $(document).ready(main);
 
         var contador = 1;
 
         function main() {
-        $('.menu_bar').click(function () {
-        if (contador == 1) {
-        $('nav').animate({
-        left: '0'
-        });
-        contador = 0;
-        } else {
-        contador = 1;
-        $('nav').animate({
-        left: '-100%'
-        });
-        }
-        });
+            $('.menu_bar').click(function () {
+                if (contador == 1) {
+                    $('nav').animate({
+                        left: '0'
+                    });
+                    contador = 0;
+                } else {
+                    contador = 1;
+                    $('nav').animate({
+                        left: '-100%'
+                    });
+                }
+            });
 
-        // Mostramos y ocultamos submenus
-        $('.submenu').click(function () {
-        $(this).children('.children').slideToggle();
-        });
+            // Mostramos y ocultamos submenus
+            $('.submenu').click(function () {
+                $(this).children('.children').slideToggle();
+            });
         }
     </script>
 </html>

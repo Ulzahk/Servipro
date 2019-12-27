@@ -4,16 +4,16 @@
 <%@page import="java.util.*"%>
 <%
     HttpSession objsesion = request.getSession(false);
-    String id_usuario = (String)objsesion.getAttribute("id_usuario");
-    String Descripcion_perfil = (String)objsesion.getAttribute("descripcion_perfil");
-    if(id_usuario==null){
+    String id_usuario = (String) objsesion.getAttribute("id_usuario");
+    String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
+    if (id_usuario == null) {
         response.sendRedirect("login.jsp");
-    }else{
-        if(Descripcion_perfil.equals("COORDINADOR")||
-                Descripcion_perfil.equals("JEFE")){
-            
-        }else{
-          response.sendRedirect("nomina.htm");  
+    } else {
+        if (Descripcion_perfil.equals("COORDINADOR")
+                || Descripcion_perfil.equals("JEFE")) {
+
+        } else {
+            response.sendRedirect("nomina.htm");
         }
     }
 %>
@@ -36,22 +36,21 @@
     <body>
         <%
             Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
-            
-            if(request.getAttribute("obclsEstadisticas")!=null){
-                obclsEstadisticas = (Modelos.Estadisticas.clsEstadisticas)request.getAttribute("obclsEstadisticas");
+
+            if (request.getAttribute("obclsEstadisticas") != null) {
+                obclsEstadisticas = (Modelos.Estadisticas.clsEstadisticas) request.getAttribute("obclsEstadisticas");
             }
-            
+
             List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticas = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
-            
-            if(request.getAttribute("lstclsEstadisticas")!=null){
-                
-                lstclsEstadisticas = (List<Modelos.Estadisticas.clsEstadisticas>)request.getAttribute("lstclsEstadisticas");
+
+            if (request.getAttribute("lstclsEstadisticas") != null) {
+
+                lstclsEstadisticas = (List<Modelos.Estadisticas.clsEstadisticas>) request.getAttribute("lstclsEstadisticas");
             }
-            
-            if(request.getAttribute("stMensaje")!=null && request.getAttribute("stTipo")!=null){
-                
-            
-        
+
+            if (request.getAttribute("stMensaje") != null && request.getAttribute("stTipo") != null) {
+
+
         %>
         <input type="text" hidden="" id="txtMensaje" value="<%=request.getAttribute("stMensaje")%>"/>
         <input type="text" hidden="" id="txtTipo" value="<%=request.getAttribute("stTipo")%>"/>
@@ -59,7 +58,7 @@
             var mensaje = document.getElementById("txtMensaje").value;
             var tipo = document.getElementById("txtTipo").value;
 
-            swal.fire("Mensaje",mensaje, tipo);
+            swal.fire("Mensaje", mensaje, tipo);
         </script>
         <%
             }
@@ -67,15 +66,20 @@
         <div>    
             <div class="card border-info ">
                 <div class="card-header bg-info text-white">                    
+                    <div class="form-group">
                         <div class="form-group">
-                            <div class="form-group">
-                                <div class="col-12 text-center">                                    
-                                    <h5 class="align-middle mt-1"> 
-                                        <b><%=obclsEstadisticas.getObEmpleado().getNombreEmp()!= null ? obclsEstadisticas.getObEmpleado().getNombreEmp(): ""%></b>
-                                    </h5>                                         
-                                </div>
+                            <div class="col-12 text-center">                                    
+                                <h5 class="align-middle mt-1">
+                                    <b>
+                                        <%=obclsEstadisticas.getObEmpleado().getEmplPrimerNombre() != null ? obclsEstadisticas.getObEmpleado().getEmplPrimerNombre() : ""%>
+                                        <%=obclsEstadisticas.getObEmpleado().getEmplSegundoNombre() != null ? obclsEstadisticas.getObEmpleado().getEmplSegundoNombre() : ""%>
+                                        <%=obclsEstadisticas.getObEmpleado().getEmplPrimerApellido() != null ? obclsEstadisticas.getObEmpleado().getEmplPrimerApellido() : ""%>
+                                        <%=obclsEstadisticas.getObEmpleado().getEmplSegundoApellido() != null ? obclsEstadisticas.getObEmpleado().getEmplSegundoApellido() : ""%>
+                                    </b>
+                                </h5>                                         
                             </div>
                         </div>
+                    </div>
                 </div>
                 <div class="card-body">
                     <form action="estadisticas" method="POST">                           
@@ -95,7 +99,7 @@
                                             for (Modelos.Estadisticas.clsId_dia8 elem : lstclsDia8) {
                                         %>
                                         <option value="<%=elem.getId_dia8()%>"
-                                                <%=obclsEstadisticas.getObId_dia1()!= null ? obclsEstadisticas.getObId_dia8().getId_dia8()== elem.getId_dia8()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia1() != null ? obclsEstadisticas.getObId_dia8().getId_dia8() == elem.getId_dia8() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia8()%>(<%=elem.getAliasDia8()%>)
                                         </option>
                                         <%

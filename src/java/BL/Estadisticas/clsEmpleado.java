@@ -27,7 +27,10 @@ public class clsEmpleado {
             while(rs.next()){
                 Modelos.Estadisticas.clsEmpleado obclsEmpleado = new Modelos.Estadisticas.clsEmpleado();
                 obclsEmpleado.setId_empleado(rs.getInt("emplId"));
-                obclsEmpleado.setNombreEmp(rs.getString("emplNombre"));
+                obclsEmpleado.setEmplPrimerNombre(rs.getString("emplPrimerNombre"));
+                obclsEmpleado.setEmplSegundoNombre(rs.getString("emplSegundoNombre"));
+                obclsEmpleado.setEmplPrimerApellido(rs.getString("emplPrimerApellido"));
+                obclsEmpleado.setEmplSegundoApellido(rs.getString("emplSegundoApellido"));
                 
                 lstclsEmpleado.add(obclsEmpleado);
             }

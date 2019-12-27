@@ -535,7 +535,10 @@ public class clsEstadisticas {
 
                 Modelos.Estadisticas.clsEmpleado obEmpleado = new Modelos.Estadisticas.clsEmpleado();
                 obEmpleado.setId_empleado(rs.getInt("Id_empleado"));
-                obEmpleado.setNombreEmp(rs.getString("emplNombre"));
+                obEmpleado.setEmplPrimerNombre(rs.getString("emplPrimerNombre"));
+                obEmpleado.setEmplSegundoNombre(rs.getString("emplSegundoNombre"));
+                obEmpleado.setEmplPrimerApellido(rs.getString("emplPrimerApellido"));
+                obEmpleado.setEmplSegundoApellido(rs.getString("emplSegundoApellido"));
                 obEstadisticas.setObEmpleado(obEmpleado);
 
                 Modelos.Estadisticas.clsId_dia1 obId_dia1 = new Modelos.Estadisticas.clsId_dia1();
@@ -743,7 +746,10 @@ public class clsEstadisticas {
 
                 Modelos.Estadisticas.clsEmpleado obEmpleado = new Modelos.Estadisticas.clsEmpleado();
                 obEmpleado.setId_empleado(rs.getInt("Id_empleado"));
-                obEmpleado.setNombreEmp(rs.getString("emplNombre"));
+                obEmpleado.setEmplPrimerNombre(rs.getString("emplPrimerNombre"));
+                obEmpleado.setEmplSegundoNombre(rs.getString("emplSegundoNombre"));
+                obEmpleado.setEmplPrimerApellido(rs.getString("emplPrimerApellido"));
+                obEmpleado.setEmplSegundoApellido(rs.getString("emplSegundoApellido"));
                 obEstadisticas.setObEmpleado(obEmpleado);
 
                 Modelos.Estadisticas.clsId_dia1 obId_dia1 = new Modelos.Estadisticas.clsId_dia1();

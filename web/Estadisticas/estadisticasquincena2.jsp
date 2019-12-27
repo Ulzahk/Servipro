@@ -158,7 +158,7 @@
                             for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticas) {
                         %>
                         <tr>
-                            <td class="align-middle"><%=elem.getObEmpleado().getNombreEmp()%></td>
+                            <td class="align-middle"><%=elem.getObEmpleado().getEmplPrimerNombre()%> <%=elem.getObEmpleado().getEmplSegundoNombre()%> <%=elem.getObEmpleado().getEmplPrimerApellido()%> <%=elem.getObEmpleado().getEmplSegundoApellido()%></td>
                             <td class="align-middle"><a href="estadisticas?codigoDia16=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia16().getAliasDia16()%></a></td>
                             <td class="align-middle"><a href="estadisticas?codigoDia17=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia17().getAliasDia17()%></a></td>
                             <td class="align-middle"><a href="estadisticas?codigoDia18=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia18().getAliasDia18()%></a></td>

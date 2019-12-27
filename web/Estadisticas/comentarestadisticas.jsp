@@ -68,8 +68,13 @@
                 <div class="card-header bg-info text-white">
                     <div class="form-group">
                         <div class="col-12 text-center">                                 
-                            <h5> 
-                                <b><%=obclsEstadisticas.getObEmpleado().getNombreEmp() != null ? obclsEstadisticas.getObEmpleado().getNombreEmp() : ""%></b>
+                            <h5 class="align-middle"> 
+                                <b>
+                                    <%=obclsEstadisticas.getObEmpleado().getEmplPrimerNombre() != null ? obclsEstadisticas.getObEmpleado().getEmplPrimerNombre() : ""%>
+                                    <%=obclsEstadisticas.getObEmpleado().getEmplSegundoNombre() != null ? obclsEstadisticas.getObEmpleado().getEmplSegundoNombre() : ""%>
+                                    <%=obclsEstadisticas.getObEmpleado().getEmplPrimerApellido() != null ? obclsEstadisticas.getObEmpleado().getEmplPrimerApellido() : ""%>
+                                    <%=obclsEstadisticas.getObEmpleado().getEmplSegundoApellido() != null ? obclsEstadisticas.getObEmpleado().getEmplSegundoApellido() : ""%>
+                                </b>
                             </h5>                                         
                         </div>
                     </div>

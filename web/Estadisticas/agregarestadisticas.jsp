@@ -114,7 +114,7 @@
                                         %>
                                         <option value="<%=elem.getId_empleado()%>"
                                                 <%=obclsEstadisticas.getObEmpleado() != null ? obclsEstadisticas.getObEmpleado().getId_empleado() == elem.getId_empleado() ? "selected" : "" : ""%>>
-                                            <%=elem.getNombreEmp()%>
+                                            <%=elem.getEmplPrimerNombre()%> <%=elem.getEmplSegundoNombre()%> <%=elem.getEmplPrimerApellido()%> <%=elem.getEmplSegundoApellido()%>
                                         </option>
                                         <%
                                             }
