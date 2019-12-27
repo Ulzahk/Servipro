@@ -2,16 +2,16 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     HttpSession objsesion = request.getSession(false);
-    String id_usuario = (String)objsesion.getAttribute("id_usuario");
-    String Descripcion_perfil = (String)objsesion.getAttribute("descripcion_perfil");
-    if(id_usuario==null){
+    String id_usuario = (String) objsesion.getAttribute("id_usuario");
+    String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
+    if (id_usuario == null) {
         response.sendRedirect("login.jsp");
-    }else{
-        if(Descripcion_perfil.equals("COORDINADOR")||
-                Descripcion_perfil.equals("JEFE")){
-            
-        }else{
-          response.sendRedirect("nomina.htm");  
+    } else {
+        if (Descripcion_perfil.equals("COORDINADOR")
+                || Descripcion_perfil.equals("JEFE")) {
+
+        } else {
+            response.sendRedirect("nomina.htm");
         }
     }
 %>
@@ -30,64 +30,56 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-        
-      <header>
-        <%--Barra de Navegación de Jefe--%>
-        <%
-            if (Descripcion_perfil.equals("JEFE")) {
-
-        %>       
-
-        <jsp:include page="menujefe.jsp"></jsp:include>
-
-        <%        }
-        %>
-
-        <%--Barra de Navegación de Coordinador--%>
-        <%
-            if (Descripcion_perfil.equals("COORDINADOR")) {
-        %>
-
-        <jsp:include page="menucordi.jsp"></jsp:include>
-
-        <%
-            }
-        %> 
-    </header>
-        
-        <div class="container mt-4">
-            <h1 class="text-center">Eliminar Facturación</h1>
-            <br>
-            <h3 class="text-center">¿Está seguro de que quiere eliminar este registro?</h3>
-            <br>
+        <div class="container">
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
-                    <a href="facturacion.htm" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para regresar al menú facturación"><i class="fas fa-arrow-left"></i></a>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <div class="col-12 text-center">                                    
+                                <h5 class="align-middle mt-1"> 
+                                    <b>
+
+                                    </b>
+                                </h5>                                         
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <table border="1" class="table table-bordered table-striped table-hover text-center">
-                        <thead>
-                            <tr>
-                                <th class="align-middle">Descripción</th>
-                                <th class="align-middle">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <c:forEach var="dato" items="${datos}">
-                            <tr>
-                                <td class="align-middle">${dato.Descripcion}</td>
-                                <td>
-                                    <a href="<c:url value="confirmareliminarfacturacion.htm?id_tipo_novedad=${dato.Id_tipo_novedad}"/>"class="btn btn-danger"><b>Confirmar Eliminación</b></a>
-                                </td>
-                            </tr>
-                            </c:forEach>
-                        </tbody>    
-                    </table>   
+                    <!--FILA-->
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-2">
+                            </div>
+                            <div class="col-8 text-center">
+                                <i class="fas fa-exclamation-triangle mb-2" style="font-size:70px;color:#FFCC00;"></i>
+                                <h4 class="font-weight-bold">¿Estás seguro de que quieres eliminar esto?</h4>
+                                <h6>No podrás deshacer esta acción</h6>
+                            </div>
+                            <div class="col-2">
+                            </div>
+                        </div>
+                    </div>
+                    <!--FILA-->   
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-2">
+                            </div>
+                            <c:forEach var="dato" items="${datos}">                                    
+                                <div class="col-8 text-center">
+                                    <a href="facturacion.htm" class="btn btn-info" data-toggle="tooltip" title="Haz clic para regresar al menú perfil" class="btn btn-info font-weight-bold"><span>No, cancelar</span></a>
+                                    <span>&nbsp;</span>
+                                    <a href="<c:url value="confirmareliminarfacturacion.htm?id_tipo_novedad=${dato.Id_tipo_novedad}"/>"class="btn btn-danger"><b>Confirmar Eliminación</b></a>                                </c:forEach>
+                                <div class="col-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </body>
-      <script>
+    <script>
         $(document).ready(main);
 
         var contador = 1;
