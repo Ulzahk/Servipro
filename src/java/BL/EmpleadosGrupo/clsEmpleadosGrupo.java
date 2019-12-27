@@ -60,7 +60,7 @@ public class clsEmpleadosGrupo {
             
             ps.execute();
             
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -110,7 +110,7 @@ public class clsEmpleadosGrupo {
             
             ps.execute();
             
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
             
         } catch (Exception ex) {
             return ex.getMessage();
@@ -123,7 +123,7 @@ public class clsEmpleadosGrupo {
             PreparedStatement ps = conn.prepareStatement("{call spEliminarEmpleadosGrupo(?)}");
             ps.setInt(1, obclsEmpleadosGrupo.getId_empleados_grupo());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }

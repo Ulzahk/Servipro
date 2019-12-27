@@ -23,7 +23,7 @@ public class clsEstadisticas {
             PreparedStatement ps = conn.prepareStatement("{call spEliminarEsta (?)}");
             ps.setInt(1, obclsEstadistica.getId_estadistica());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -68,7 +68,7 @@ public class clsEstadisticas {
 
             ps.execute();
 
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -82,7 +82,7 @@ public class clsEstadisticas {
             
             ps.execute();
             
-            return "Se realizo el proceso correctamente";
+            return "Se realizó el proceso con éxito";
             
         } catch (Exception ex) {
             return ex.getMessage();
@@ -128,7 +128,7 @@ public class clsEstadisticas {
 
             ps.execute();
 
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -141,7 +141,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia1().getId_dia1());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -154,7 +154,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia2().getId_dia2());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -167,7 +167,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia3().getId_dia3());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -180,7 +180,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia4().getId_dia4());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -193,7 +193,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia5().getId_dia5());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -206,7 +206,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia6().getId_dia6());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -221,7 +221,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia7().getId_dia7());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -234,7 +234,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia8().getId_dia8());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -247,7 +247,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia9().getId_dia9());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -260,7 +260,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia10().getId_dia10());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -273,7 +273,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia11().getId_dia11());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -286,7 +286,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia12().getId_dia12());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -299,7 +299,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia13().getId_dia13());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -312,7 +312,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia14().getId_dia14());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -325,7 +325,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia15().getId_dia15());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -338,7 +338,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia16().getId_dia16());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -351,7 +351,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia17().getId_dia17());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -364,7 +364,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia18().getId_dia18());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -377,7 +377,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia19().getId_dia19());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -390,7 +390,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia20().getId_dia20());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -403,7 +403,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia21().getId_dia21());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -416,7 +416,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia22().getId_dia22());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -428,7 +428,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia23().getId_dia23());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -440,7 +440,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia24().getId_dia24());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -452,7 +452,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia25().getId_dia25());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -464,7 +464,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia26().getId_dia26());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -476,7 +476,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia27().getId_dia27());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -488,7 +488,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia28().getId_dia28());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -500,7 +500,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia29().getId_dia29());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -512,7 +512,7 @@ public class clsEstadisticas {
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia30().getId_dia30());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }

@@ -32,7 +32,7 @@ public class clsModulosPerfil {
             ps.setInt(1, obclsModulosPerfil.getObclsModulo().getId_modulo());            
             ps.setInt(2, obclsModulosPerfil.getObclsPerfil().getId_perfil());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } 
         catch (Exception ex) {
              return ex.getMessage();
@@ -80,7 +80,7 @@ public class clsModulosPerfil {
             
             ps.execute();
             
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
             
         } catch (Exception ex) {
             return ex.getMessage();
@@ -94,7 +94,7 @@ public class clsModulosPerfil {
             ps.setInt(1, obclsModulosperfil.getId_modulos_perfil());
             ps.execute();
             
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }

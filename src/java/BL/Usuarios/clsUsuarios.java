@@ -105,10 +105,10 @@ public class clsUsuarios {
             ps.setString(3, obclsUsuarios.getContraseña());
             ps.setInt(4, obclsUsuarios.getObclsPerfil().getId_perfil());
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
 
         } catch (Exception ex) {
-            return "El proceso presento un error";
+            return "El proceso presentó un error";
         }
     }
     
@@ -123,10 +123,10 @@ public class clsUsuarios {
             ps.setInt(5, obclsUsuarios.getNro_usuario());
             ps.execute();
             
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
              
         } catch (Exception ex) {
-            return "El proceso presento un error";
+            return "El proceso presentó un error";
         }
     }
     
@@ -137,7 +137,7 @@ public class clsUsuarios {
             ps.setInt(1, obclsUsuarios.getNro_usuario());
             ps.execute();
             
-            return "Se ralizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }

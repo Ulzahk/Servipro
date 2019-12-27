@@ -112,7 +112,7 @@ public class clsNovedadesEmpleado {
             
             ps.execute();
             
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
             
         } catch (Exception ex) {
             return ex.getMessage();
@@ -134,7 +134,7 @@ public class clsNovedadesEmpleado {
             
             ps.execute();
             
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
             
         } catch (Exception ex) {
             return ex.getMessage();
@@ -148,7 +148,7 @@ public class clsNovedadesEmpleado {
             ps.setInt(1, obclsNovedadesEmpleado.getId_novedad_empleado());
             ps.execute();
             
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
             
         } catch (Exception ex) {
             

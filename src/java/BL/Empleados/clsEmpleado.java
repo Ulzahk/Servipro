@@ -31,7 +31,7 @@ public class clsEmpleado {
             ps.setInt(9, obclsEmpleado.getObclsCargo().getInId());
 
             ps.execute();
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -100,7 +100,7 @@ public class clsEmpleado {
 
             ps.execute();
 
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
             return ex.getMessage();
         }
@@ -114,7 +114,7 @@ public class clsEmpleado {
             ps.setInt(1, obclsEmpleado.getInId());
             ps.execute();
 
-            return "Se realizo el proceso con exito";
+            return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
 
             return ex.getMessage();
