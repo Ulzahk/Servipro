@@ -22,7 +22,7 @@ public class AccesoDatos extends Conexion {
                     + " where Descripcion_perfil=? and Id_usuario=? and Contraseña=?");
             ps.setString(1, Descripcion_perfil);
             ps.setString(2, Id_usuario);
-            ps.setString(3, Contraseña);
+            ps.setString(3, AnotherOneBitesTheSaltest.encrypt(Contraseña, secretKey));
             rs = ps.executeQuery();
 
             if (rs.next() == true) {
