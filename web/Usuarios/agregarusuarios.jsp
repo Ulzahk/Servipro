@@ -34,6 +34,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="Resources/JS/functions.js"></script>
     </head>
     <body>
         <%
@@ -176,30 +177,7 @@
             </div>
         </div>
     </body>
-    <script>
-        $(document).ready(main);
-
-        var contador = 1;
-
-        function main() {
-            $('.menu_bar').click(function () {
-                if (contador == 1) {
-                    $('nav').animate({
-                        left: '0'
-                    });
-                    contador = 0;
-                } else {
-                    contador = 1;
-                    $('nav').animate({
-                        left: '-100%'
-                    });
-                }
-            });
-
-            // Mostramos y ocultamos submenus
-            $('.submenu').click(function () {
-                $(this).children('.children').slideToggle();
-            });
-        }
+    <script type="text/javascript" language="JavaScript">
+        main();
     </script>
 </html>

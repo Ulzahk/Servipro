@@ -35,6 +35,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script src="Resources/JS/functions.js"></script>
 
     </head>
     <body>
@@ -442,30 +443,7 @@
 
         </style>
     </body>
-    <script>
-        $(document).ready(main);
-
-        var contador = 1;
-
-        function main() {
-            $('.menu_bar').click(function () {
-                if (contador == 1) {
-                    $('nav').animate({
-                        left: '0'
-                    });
-                    contador = 0;
-                } else {
-                    contador = 1;
-                    $('nav').animate({
-                        left: '-100%'
-                    });
-                }
-            });
-
-            // Mostramos y ocultamos submenus
-            $('.submenu').click(function () {
-                $(this).children('.children').slideToggle();
-            });
-        }
+    <script type="text/javascript" language="JavaScript">
+        main();
     </script>
 </html>                           

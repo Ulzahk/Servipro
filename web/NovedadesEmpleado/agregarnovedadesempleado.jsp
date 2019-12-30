@@ -33,6 +33,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="Resources/JS/functions.js"></script>
     </head>
     <body>
         <%
@@ -84,127 +85,104 @@
             <%
                 }
             %> 
-        <div class="container mt-4">
-            <h1 class="text-center">Agregar Nueva Novedad por Empleado</h1>
-            <br>
-            <div class="card border-info">
-                <div class="card-header bg-info text-white">
-                    <a href="controlnovedadesempleado?btnNoveEmplConsultar=true" class="btn btn-secondary"data-toggle="tooltip" title="Haz clic para regresar al menú novedades por empleados"><i class="fas fa-arrow-left"></i></a>
-                </div>
-                <div class="card-body">
-                    <form action="controlnovedadesempleado" method="POST">
-                        <!--FILA-->
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label for="lblEmpleado"><b>Empleado</b></label>
-                                    <select class="form-control" name="ddlEmpleado">
-                                        <%
-                                            List<Modelos.NovedadesEmpleado.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.NovedadesEmpleado.clsEmpleado>();
+            <div class="container mt-4">
+                <h1 class="text-center">Agregar Nueva Novedad por Empleado</h1>
+                <br>
+                <div class="card border-info">
+                    <div class="card-header bg-info text-white">
+                        <a href="controlnovedadesempleado?btnNoveEmplConsultar=true" class="btn btn-secondary"data-toggle="tooltip" title="Haz clic para regresar al menú novedades por empleados"><i class="fas fa-arrow-left"></i></a>
+                    </div>
+                    <div class="card-body">
+                        <form action="controlnovedadesempleado" method="POST">
+                            <!--FILA-->
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="lblEmpleado"><b>Empleado</b></label>
+                                        <select class="form-control" name="ddlEmpleado">
+                                            <%
+                                                List<Modelos.NovedadesEmpleado.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.NovedadesEmpleado.clsEmpleado>();
 
-                                            if (request.getAttribute("lstclsEmpleado") != null) {
-                                                lstclsEmpleado = (List<Modelos.NovedadesEmpleado.clsEmpleado>) request.getAttribute("lstclsEmpleado");
-                                            }
+                                                if (request.getAttribute("lstclsEmpleado") != null) {
+                                                    lstclsEmpleado = (List<Modelos.NovedadesEmpleado.clsEmpleado>) request.getAttribute("lstclsEmpleado");
+                                                }
 
-                                            for (Modelos.NovedadesEmpleado.clsEmpleado elem : lstclsEmpleado) {
-                                        %>
-                                        <option value="<%=elem.getId_empleado()%>"
-                                                <%=obclsNovedadesEmpleado.getObclsEmpleado() != null ? obclsNovedadesEmpleado.getObclsEmpleado().getId_empleado() == elem.getId_empleado() ? "selected" : "" : ""%>>
-                                            <%=elem.getEmplPrimerNombre()%>
-                                            <%=elem.getEmplSegundoNombre()%>
-                                            <%=elem.getEmplPrimerApellido()%>
-                                            <%=elem.getEmplSegundoApellido()%>
-                                        </option>
-                                        <%
-                                            }
-                                        %>
-                                    </select>
-                                </div>
-                                <div class="col-6">
-                                    <label for="lblTipoNovedad"><b>Tipo de Novedad</b></label>
-                                    <select class="form-control" name="ddlTipoNovedad">
-                                        <%
-                                            List<Modelos.NovedadesEmpleado.clsTipoNovedad> lstclsTipoNovedad = new ArrayList<Modelos.NovedadesEmpleado.clsTipoNovedad>();
+                                                for (Modelos.NovedadesEmpleado.clsEmpleado elem : lstclsEmpleado) {
+                                            %>
+                                            <option value="<%=elem.getId_empleado()%>"
+                                                    <%=obclsNovedadesEmpleado.getObclsEmpleado() != null ? obclsNovedadesEmpleado.getObclsEmpleado().getId_empleado() == elem.getId_empleado() ? "selected" : "" : ""%>>
+                                                <%=elem.getEmplPrimerNombre()%>
+                                                <%=elem.getEmplSegundoNombre()%>
+                                                <%=elem.getEmplPrimerApellido()%>
+                                                <%=elem.getEmplSegundoApellido()%>
+                                            </option>
+                                            <%
+                                                }
+                                            %>
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="lblTipoNovedad"><b>Tipo de Novedad</b></label>
+                                        <select class="form-control" name="ddlTipoNovedad">
+                                            <%
+                                                List<Modelos.NovedadesEmpleado.clsTipoNovedad> lstclsTipoNovedad = new ArrayList<Modelos.NovedadesEmpleado.clsTipoNovedad>();
 
-                                            if (request.getAttribute("lstclsTipoNovedad") != null) {
-                                                lstclsTipoNovedad = (List<Modelos.NovedadesEmpleado.clsTipoNovedad>) request.getAttribute("lstclsTipoNovedad");
-                                            }
+                                                if (request.getAttribute("lstclsTipoNovedad") != null) {
+                                                    lstclsTipoNovedad = (List<Modelos.NovedadesEmpleado.clsTipoNovedad>) request.getAttribute("lstclsTipoNovedad");
+                                                }
 
-                                            for (Modelos.NovedadesEmpleado.clsTipoNovedad elem : lstclsTipoNovedad) {
-                                        %>
-                                        <option value="<%=elem.getId_novedad()%>"
-                                                <%=obclsNovedadesEmpleado.getObclsTipoNovedad() != null ? obclsNovedadesEmpleado.getObclsTipoNovedad().getId_novedad() == elem.getId_novedad() ? "selected" : "" : ""%>>
-                                            <%=elem.getDescripcion_novedad()%> (<%=elem.getAlias_novedad()%>)
-                                        </option>
-                                        <%
-                                            }
-                                        %>
-                                    </select>
+                                                for (Modelos.NovedadesEmpleado.clsTipoNovedad elem : lstclsTipoNovedad) {
+                                            %>
+                                            <option value="<%=elem.getId_novedad()%>"
+                                                    <%=obclsNovedadesEmpleado.getObclsTipoNovedad() != null ? obclsNovedadesEmpleado.getObclsTipoNovedad().getId_novedad() == elem.getId_novedad() ? "selected" : "" : ""%>>
+                                                <%=elem.getDescripcion_novedad()%> (<%=elem.getAlias_novedad()%>)
+                                            </option>
+                                            <%
+                                                }
+                                            %>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!--FILA-->
-                        <div class="form-group">
-                            <div class="form-row">
-                                <div class="col-12">
-                                    <label for="lblDetalle"><b>Detalle</b></label>
-                                    <input type="text" class="form-control" row="3" name="txtDetalle"
-                                           value="<%=obclsNovedadesEmpleado.getDetalle() != null ? obclsNovedadesEmpleado.getDetalle() : ""%>"/>
+                            <!--FILA-->
+                            <div class="form-group">
+                                <div class="form-row">
+                                    <div class="col-12">
+                                        <label for="lblDetalle"><b>Detalle</b></label>
+                                        <input type="text" class="form-control" row="3" name="txtDetalle"
+                                               value="<%=obclsNovedadesEmpleado.getDetalle() != null ? obclsNovedadesEmpleado.getDetalle() : ""%>"/>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!--FILA-->       
-                        <div class="form-group">
-                            <div class="form-row">
-                                <div class="col-6">
-                                    <label for="lblFecha"><b>Fecha</b></label>
-                                    <input type="text" class="form-control" row="3" name="txtFecha"
-                                           value="<%=obclsNovedadesEmpleado.getFecha() != null ? obclsNovedadesEmpleado.getFecha() : ""%>"/>
-                                </div>
-                                <div class="col-6">
-                                    <label for="lblDia"><b>Día</b></label>
-                                    <input type="text" class="form-control" name="txtDia"
-                                           value="<%=obclsNovedadesEmpleado.getDia() != 0 ? obclsNovedadesEmpleado.getDia() : ""%>"/>
-                                </div>
-                            </div>
-                        </div>
-                        <!--FILA-->   
-                        <div class="form-group">
-                            <div class="form-row">
-                                <div class="col-12">
-                                    <input type="submit" value="Guardar" class="btn btn-info" data-toggle="tooltip" title="Haz clic para guardar" name="btnNoveEmplGuardar"/>
+                            <!--FILA-->       
+                            <div class="form-group">
+                                <div class="form-row">
+                                    <div class="col-6">
+                                        <label for="lblFecha"><b>Fecha</b></label>
+                                        <input type="text" class="form-control" row="3" name="txtFecha"
+                                               value="<%=obclsNovedadesEmpleado.getFecha() != null ? obclsNovedadesEmpleado.getFecha() : ""%>"/>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="lblDia"><b>Día</b></label>
+                                        <input type="text" class="form-control" name="txtDia"
+                                               value="<%=obclsNovedadesEmpleado.getDia() != 0 ? obclsNovedadesEmpleado.getDia() : ""%>"/>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                            <!--FILA-->   
+                            <div class="form-group">
+                                <div class="form-row">
+                                    <div class="col-12">
+                                        <input type="submit" value="Guardar" class="btn btn-info" data-toggle="tooltip" title="Haz clic para guardar" name="btnNoveEmplGuardar"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
     </body>
-    <script>
-        $(document).ready(main);
-
-        var contador = 1;
-
-        function main() {
-        $('.menu_bar').click(function () {
-        if (contador == 1) {
-        $('nav').animate({
-        left: '0'
-        });
-        contador = 0;
-        } else {
-        contador = 1;
-        $('nav').animate({
-        left: '-100%'
-        });
-        }
-        });
-
-        // Mostramos y ocultamos submenus
-        $('.submenu').click(function () {
-        $(this).children('.children').slideToggle();
-        });
-        }
+    <script type="text/javascript" language="JavaScript">
+        main();
     </script>
 </html>

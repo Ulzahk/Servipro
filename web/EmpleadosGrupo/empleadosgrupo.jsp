@@ -34,6 +34,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script src="Resources/JS/functions.js"></script>
 
     </head>
     <body>
@@ -357,31 +358,8 @@
 
             </script>
     </body>
-    <script>
-        $(document).ready(main);
-
-        var contador = 1;
-
-        function main() {
-            $('.menu_bar').click(function () {
-                if (contador == 1) {
-                    $('nav').animate({
-                        left: '0'
-                    });
-                    contador = 0;
-                } else {
-                    contador = 1;
-                    $('nav').animate({
-                        left: '-100%'
-                    });
-                }
-            });
-
-            // Mostramos y ocultamos submenus
-            $('.submenu').click(function () {
-                $(this).children('.children').slideToggle();
-            });
-        }
+    <script type="text/javascript" language="JavaScript">
+        main();
     </script>
 </html>
 

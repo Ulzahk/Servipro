@@ -27,12 +27,13 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Agregar Nuevo Empleado</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-          <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
+        <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="Resources/JS/functions.js"></script>
     </head>
     <body>
         <%
@@ -61,7 +62,7 @@
         <%
             }
         %>
-            <header>
+        <header>
             <%--Barra de Navegación de Jefe--%>
             <%
                 if (Descripcion_perfil.equals("JEFE")) {
@@ -131,12 +132,12 @@
                                 <div class="col-6">
                                     <label for="lblPrimerNombre"><b>Primer Nombre</b></label>
                                     <input type="text" class="form-control" name="txtPrimerNombre"
-                                           value="<%=obclsEmpleado.getStPrimerNombre()!= null ? obclsEmpleado.getStPrimerNombre(): ""%>"/>
+                                           value="<%=obclsEmpleado.getStPrimerNombre() != null ? obclsEmpleado.getStPrimerNombre() : ""%>"/>
                                 </div>
                                 <div class="col-6">
                                     <label for="lblSegundoNombre"><b>Segundo Nombre</b></label>
                                     <input type="text" class="form-control" name="txtSegundoNombre"
-                                           value="<%=obclsEmpleado.getStSegundoNombre()!= null ? obclsEmpleado.getStSegundoNombre(): ""%>"/>
+                                           value="<%=obclsEmpleado.getStSegundoNombre() != null ? obclsEmpleado.getStSegundoNombre() : ""%>"/>
                                 </div>
                             </div>
                         </div>
@@ -146,12 +147,12 @@
                                 <div class="col-6">
                                     <label for="lblPrimerApellido"><b>Primer Apellido</b></label>
                                     <input type="text" class="form-control" name="txtPrimerApellido"
-                                           value="<%=obclsEmpleado.getStPrimerApellido()!= null ? obclsEmpleado.getStPrimerApellido(): ""%>"/>
+                                           value="<%=obclsEmpleado.getStPrimerApellido() != null ? obclsEmpleado.getStPrimerApellido() : ""%>"/>
                                 </div>
                                 <div class="col-6">
                                     <label for="lblSegundoApellido"><b>Segundo Apellido</b></label>
                                     <input type="text" class="form-control" name="txtSegundoApellido"
-                                           value="<%=obclsEmpleado.getStSegundoApellido()!= null ? obclsEmpleado.getStSegundoApellido(): ""%>"/>
+                                           value="<%=obclsEmpleado.getStSegundoApellido() != null ? obclsEmpleado.getStSegundoApellido() : ""%>"/>
                                 </div>
                             </div>
                         </div>        
@@ -217,30 +218,7 @@
             </div>
         </div>
     </body>
-     <script>
-        $(document).ready(main);
-
-        var contador = 1;
-
-        function main() {
-        $('.menu_bar').click(function () {
-        if (contador == 1) {
-        $('nav').animate({
-        left: '0'
-        });
-        contador = 0;
-        } else {
-        contador = 1;
-        $('nav').animate({
-        left: '-100%'
-        });
-        }
-        });
-
-        // Mostramos y ocultamos submenus
-        $('.submenu').click(function () {
-        $(this).children('.children').slideToggle();
-        });
-        }
+    <script type="text/javascript" language="JavaScript">
+        main();
     </script>
 </html>
