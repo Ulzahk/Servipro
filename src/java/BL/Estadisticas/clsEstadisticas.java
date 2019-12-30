@@ -33,7 +33,7 @@ public class clsEstadisticas {
 
         try {
 
-            PreparedStatement ps = conn.prepareStatement("{call spInsertarEstadistica(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+            PreparedStatement ps = conn.prepareStatement("{call spInsertarEstadistica(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
             ps.setInt(1, obEstadisticas.getObEmpleado().getId_empleado());
             ps.setInt(2, obEstadisticas.getObId_dia1().getId_dia1());
             ps.setInt(3, obEstadisticas.getObId_dia2().getId_dia2());
@@ -66,6 +66,8 @@ public class clsEstadisticas {
             ps.setInt(30, obEstadisticas.getObId_dia29().getId_dia29());
             ps.setInt(31, obEstadisticas.getObId_dia30().getId_dia30());
             ps.setInt(32, obEstadisticas.getObId_dia31().getId_dia31());
+            ps.setInt(33, obEstadisticas.getObMes().getId_mes());
+            ps.setInt(34, obEstadisticas.getObAnio().getId_anio());
 
             ps.execute();
 
@@ -94,7 +96,7 @@ public class clsEstadisticas {
 
         try {
 
-            PreparedStatement ps = conn.prepareStatement("{call spEditarEsta(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+            PreparedStatement ps = conn.prepareStatement("{call spEditarEsta(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
             ps.setInt(1, obEstadisticas.getId_estadistica());
             ps.setInt(2, obEstadisticas.getObId_dia1().getId_dia1());
             ps.setInt(3, obEstadisticas.getObId_dia2().getId_dia2());
@@ -127,6 +129,8 @@ public class clsEstadisticas {
             ps.setInt(30, obEstadisticas.getObId_dia29().getId_dia29());
             ps.setInt(31, obEstadisticas.getObId_dia30().getId_dia30());
             ps.setInt(32, obEstadisticas.getObId_dia31().getId_dia31());
+            ps.setInt(33, obEstadisticas.getObMes().getId_mes());
+            ps.setInt(34, obEstadisticas.getObAnio().getId_anio());
 
             ps.execute();
 
@@ -528,11 +532,37 @@ public class clsEstadisticas {
     }
 
     public String updateEstaDia31(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
-        
+
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia31(?,?)}");
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia31().getId_dia31());
+            ps.execute();
+            return "Se realizó el proceso con éxito";
+        } catch (Exception ex) {
+            return ex.getMessage();
+        }
+    }
+
+    public String updateEstaMes(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+        try {
+            PreparedStatement ps = conn.prepareStatement("{call spEditarEstaMes(?,?)}");
+            ps.setInt(1, obclsEstadisticas.getId_estadistica());
+            ps.setInt(2, obclsEstadisticas.getObMes().getId_mes());
+            ps.execute();
+            return "Se realizó el proceso con éxito";
+        } catch (Exception ex) {
+            return ex.getMessage();
+        }
+    }
+
+    public String updateEstaAnio(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+        try {
+            PreparedStatement ps = conn.prepareStatement("{call spEditarEstaAnio(?,?)}");
+            ps.setInt(1, obclsEstadisticas.getId_estadistica());
+            ps.setInt(2, obclsEstadisticas.getObAnio().getId_anio());
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
@@ -742,12 +772,22 @@ public class clsEstadisticas {
                 obId_dia30.setDescripcionDia30(rs.getString("Descripcion30"));
                 obId_dia30.setAliasDia30(rs.getString("Alias30"));
                 obEstadisticas.setObId_dia30(obId_dia30);
-                
+
                 Modelos.Estadisticas.clsId_dia31 obId_dia31 = new Modelos.Estadisticas.clsId_dia31();
                 obId_dia31.setId_dia31(rs.getInt("Id_dia31"));
                 obId_dia31.setDescripcionDia31(rs.getString("Descripcion31"));
                 obId_dia31.setAliasDia31(rs.getString("Alias31"));
                 obEstadisticas.setObId_dia31(obId_dia31);
+
+                Modelos.Estadisticas.clsMes obclsMes = new Modelos.Estadisticas.clsMes();
+                obclsMes.setId_mes(rs.getInt("Id_mes"));
+                obclsMes.setMesNombre(rs.getString("mesNombre"));
+                obEstadisticas.setObMes(obclsMes);
+
+                Modelos.Estadisticas.clsAnio obclsAnio = new Modelos.Estadisticas.clsAnio();
+                obclsAnio.setId_anio(rs.getInt("Id_anio"));
+                obclsAnio.setNombreAnio(rs.getString("nombreAnio"));
+                obEstadisticas.setObAnio(obclsAnio);
 
                 obEstadisticas.setComentario(rs.getString("Comentario"));
 
@@ -959,12 +999,22 @@ public class clsEstadisticas {
                 obId_dia30.setDescripcionDia30(rs.getString("Descripcion30"));
                 obId_dia30.setAliasDia30(rs.getString("Alias30"));
                 obEstadisticas.setObId_dia30(obId_dia30);
-                
+
                 Modelos.Estadisticas.clsId_dia31 obId_dia31 = new Modelos.Estadisticas.clsId_dia31();
                 obId_dia31.setId_dia31(rs.getInt("Id_dia31"));
                 obId_dia31.setDescripcionDia31(rs.getString("Descripcion31"));
                 obId_dia31.setAliasDia31(rs.getString("Alias31"));
                 obEstadisticas.setObId_dia31(obId_dia31);
+
+                Modelos.Estadisticas.clsMes obclsMes = new Modelos.Estadisticas.clsMes();
+                obclsMes.setId_mes(rs.getInt("Id_mes"));
+                obclsMes.setMesNombre(rs.getString("mesNombre"));
+                obEstadisticas.setObMes(obclsMes);
+
+                Modelos.Estadisticas.clsAnio obclsAnio = new Modelos.Estadisticas.clsAnio();
+                obclsAnio.setId_anio(rs.getInt("Id_anio"));
+                obclsAnio.setNombreAnio(rs.getString("nombreAnio"));
+                obEstadisticas.setObAnio(obclsAnio);
 
                 lstclsEstadisticas.add(obEstadisticas);
             }
