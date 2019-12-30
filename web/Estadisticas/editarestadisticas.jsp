@@ -112,7 +112,54 @@
                             </div>
                         </div>
                         <hr/>
-                        <!--FILA 1-->
+                        <!--FILA -->
+                        <div class="form-group">
+                            <div class="form-row">        
+                                <div class="col-6">
+                                    <label for="lblAnio"><b>A&ntilde;o</b></label>
+                                    <select class="form-control border border-dark" name="ddlAnio">
+                                        <%
+                                            List<Modelos.Estadisticas.clsAnio> lstclsAnio = new ArrayList<Modelos.Estadisticas.clsAnio>();
+
+                                            if (request.getAttribute("lstclsAnio") != null) {
+                                                lstclsAnio = (List<Modelos.Estadisticas.clsAnio>) request.getAttribute("lstclsAnio");
+                                            }
+
+                                            for (Modelos.Estadisticas.clsAnio elem : lstclsAnio) {
+                                        %>
+                                        <option value="<%=elem.getId_anio()%>"
+                                                <%=obclsEstadisticas.getObAnio() != null ? obclsEstadisticas.getObAnio().getId_anio() == elem.getId_anio() ? "selected" : "" : ""%>>
+                                            <%=elem.getNombreAnio()%>
+                                        </option>
+                                        <%
+                                            }
+                                        %>
+                                    </select>                                    
+                                </div>
+                                <div class="col-6">
+                                    <label for="lblMes"><b>Mes</b></label>
+                                    <select class="form-control border border-dark" name="ddlMes">
+                                        <%
+                                            List<Modelos.Estadisticas.clsMes> lstclsMes = new ArrayList<Modelos.Estadisticas.clsMes>();
+
+                                            if (request.getAttribute("lstclsMes") != null) {
+                                                lstclsMes = (List<Modelos.Estadisticas.clsMes>) request.getAttribute("lstclsMes");
+                                            }
+
+                                            for (Modelos.Estadisticas.clsMes elem : lstclsMes) {
+                                        %>
+                                        <option value="<%=elem.getId_mes()%>"
+                                                <%=obclsEstadisticas.getObMes() != null ? obclsEstadisticas.getObMes().getId_mes() == elem.getId_mes() ? "selected" : "" : ""%>>
+                                            <%=elem.getMesNombre()%>
+                                        </option>
+                                        <%
+                                            }
+                                        %>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FILA 1--> 
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-4">
@@ -810,48 +857,6 @@
                                         <option value="<%=elem.getId_dia31()%>"
                                                 <%=obclsEstadisticas.getObId_dia31() != null ? obclsEstadisticas.getObId_dia31().getId_dia31() == elem.getId_dia31() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia31()%>(<%=elem.getAliasDia31()%>)
-                                        </option>
-                                        <%
-                                            }
-                                        %>
-                                    </select>                                    
-                                </div>
-                                <div class="col-4">
-                                    <label for="lblMes"><b>Mes</b></label>
-                                    <select class="form-control" name="ddlMes">
-                                        <%
-                                            List<Modelos.Estadisticas.clsMes> lstclsMes = new ArrayList<Modelos.Estadisticas.clsMes>();
-
-                                            if (request.getAttribute("lstclsMes") != null) {
-                                                lstclsMes = (List<Modelos.Estadisticas.clsMes>) request.getAttribute("lstclsMes");
-                                            }
-
-                                            for (Modelos.Estadisticas.clsMes elem : lstclsMes) {
-                                        %>
-                                        <option value="<%=elem.getId_mes()%>"
-                                                <%=obclsEstadisticas.getObMes() != null ? obclsEstadisticas.getObMes().getId_mes() == elem.getId_mes() ? "selected" : "" : ""%>>
-                                            <%=elem.getMesNombre()%>
-                                        </option>
-                                        <%
-                                            }
-                                        %>
-                                    </select>
-                                </div>
-                                <div class="col-4">
-                                    <label for="lblAnio"><b>A&ntilde;o</b></label>
-                                    <select class="form-control" name="ddlAnio">
-                                        <%
-                                            List<Modelos.Estadisticas.clsAnio> lstclsAnio = new ArrayList<Modelos.Estadisticas.clsAnio>();
-
-                                            if (request.getAttribute("lstclsAnio") != null) {
-                                                lstclsAnio = (List<Modelos.Estadisticas.clsAnio>) request.getAttribute("lstclsAnio");
-                                            }
-
-                                            for (Modelos.Estadisticas.clsAnio elem : lstclsAnio) {
-                                        %>
-                                        <option value="<%=elem.getId_anio()%>"
-                                                <%=obclsEstadisticas.getObAnio() != null ? obclsEstadisticas.getObAnio().getId_anio() == elem.getId_anio() ? "selected" : "" : ""%>>
-                                            <%=elem.getNombreAnio()%>
                                         </option>
                                         <%
                                             }
