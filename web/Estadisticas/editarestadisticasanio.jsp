@@ -100,7 +100,7 @@
                                             for (Modelos.Estadisticas.clsAnio elem : lstclsAnio) {
                                         %>
                                         <option value="<%=elem.getId_anio()%>"
-                                                <%=obclsEstadisticas.getObId_dia12() != null ? obclsEstadisticas.getObId_dia12().getId_dia12() == elem.getId_anio()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObAnio()!= null ? obclsEstadisticas.getObAnio().getId_anio()== elem.getId_anio()? "selected" : "" : ""%>>
                                             <%=elem.getNombreAnio()%>
                                         </option>
                                         <%

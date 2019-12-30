@@ -100,7 +100,7 @@
                                             for (Modelos.Estadisticas.clsMes elem : lstclsMes) {
                                         %>
                                         <option value="<%=elem.getId_mes()%>"
-                                                <%=obclsEstadisticas.getObId_dia12() != null ? obclsEstadisticas.getObId_dia12().getId_dia12() == elem.getId_mes()? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObMes()!= null ? obclsEstadisticas.getObMes().getId_mes()== elem.getId_mes()? "selected" : "" : ""%>>
                                             <%=elem.getMesNombre()%>
                                         </option>
                                         <%
