@@ -59,7 +59,7 @@
             var mensaje = document.getElementById("txtMensaje").value;
             var tipo = document.getElementById("txtTipo").value;
 
-            swal.fire("Mensaje",mensaje, tipo);
+            swal.fire("Mensaje", mensaje, tipo);
         </script>
         <%
             }
@@ -801,6 +801,27 @@
                                         %>
                                     </select>                                    
                                 </div>
+                                <div class="col-4">
+                                    <label for="lblDia31"><b>Día 31</b></label>
+                                    <select class="form-control" name="ddlDia31">
+                                        <%
+                                            List<Modelos.Estadisticas.clsId_dia31> lstclsDia31 = new ArrayList<Modelos.Estadisticas.clsId_dia31>();
+
+                                            if (request.getAttribute("lstclsDia31") != null) {
+                                                lstclsDia31 = (List<Modelos.Estadisticas.clsId_dia31>) request.getAttribute("lstclsDia31");
+                                            }
+
+                                            for (Modelos.Estadisticas.clsId_dia31 elem : lstclsDia31) {
+                                        %>
+                                        <option value="<%=elem.getId_dia31()%>"
+                                                <%=obclsEstadisticas.getObId_dia31() != null ? obclsEstadisticas.getObId_dia31().getId_dia31() == elem.getId_dia31() ? "selected" : "" : ""%>>
+                                            <%=elem.getDescripcionDia31()%>(<%=elem.getAliasDia31()%>)
+                                        </option>
+                                        <%
+                                            }
+                                        %>
+                                    </select>                                    
+                                </div>
                             </div>
                         </div>                        
                         <!--FILA 11-->   
@@ -822,24 +843,24 @@
         var contador = 1;
 
         function main() {
-        $('.menu_bar').click(function () {
-        if (contador == 1) {
-        $('nav').animate({
-        left: '0'
-        });
-        contador = 0;
-        } else {
-        contador = 1;
-        $('nav').animate({
-        left: '-100%'
-        });
-        }
-        });
+            $('.menu_bar').click(function () {
+                if (contador == 1) {
+                    $('nav').animate({
+                        left: '0'
+                    });
+                    contador = 0;
+                } else {
+                    contador = 1;
+                    $('nav').animate({
+                        left: '-100%'
+                    });
+                }
+            });
 
-        // Mostramos y ocultamos submenus
-        $('.submenu').click(function () {
-        $(this).children('.children').slideToggle();
-        });
+            // Mostramos y ocultamos submenus
+            $('.submenu').click(function () {
+                $(this).children('.children').slideToggle();
+            });
         }
     </script>
 </html>

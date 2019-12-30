@@ -23,7 +23,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Editar Día 28</title>
+        <title>Editar Día 31</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -87,20 +87,20 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12">
-                                    <label for="lblDia28"><b>Día 28</b></label>
-                                    <select class="form-control" name="ddlDia28">
+                                    <label for="lblDia31"><b>Día 31</b></label>
+                                    <select class="form-control" name="ddlDia31">
                                         <%
-                                            List<Modelos.Estadisticas.clsId_dia28> lstclsDia28 = new ArrayList<Modelos.Estadisticas.clsId_dia28>();
+                                            List<Modelos.Estadisticas.clsId_dia31> lstclsDia31 = new ArrayList<Modelos.Estadisticas.clsId_dia31>();
 
-                                            if (request.getAttribute("lstclsDia28") != null) {
-                                                lstclsDia28 = (List<Modelos.Estadisticas.clsId_dia28>) request.getAttribute("lstclsDia28");
+                                            if (request.getAttribute("lstclsDia31") != null) {
+                                                lstclsDia31 = (List<Modelos.Estadisticas.clsId_dia31>) request.getAttribute("lstclsDia31");
                                             }
 
-                                            for (Modelos.Estadisticas.clsId_dia28 elem : lstclsDia28) {
+                                            for (Modelos.Estadisticas.clsId_dia31 elem : lstclsDia31) {
                                         %>
-                                        <option value="<%=elem.getId_dia28()%>"
-                                                <%=obclsEstadisticas.getObId_dia28() != null ? obclsEstadisticas.getObId_dia28().getId_dia28() == elem.getId_dia28() ? "selected" : "" : ""%>>
-                                            <%=elem.getDescripcionDia28()%>(<%=elem.getAliasDia28()%>)
+                                        <option value="<%=elem.getId_dia31()%>"
+                                                <%=obclsEstadisticas.getObId_dia31() != null ? obclsEstadisticas.getObId_dia31().getId_dia31() == elem.getId_dia31() ? "selected" : "" : ""%>>
+                                            <%=elem.getDescripcionDia31()%>(<%=elem.getAliasDia31()%>)
                                         </option>
                                         <%
                                             }
@@ -113,7 +113,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12">
-                                    <input type="submit" value="Guardar" class="btn btn-info" name="btnEditarEstaDia28"/>
+                                    <input type="submit" value="Guardar" class="btn btn-info" name="btnEditarEstaDia31"/>
                                     <input type="text" name="IdModificar" id="IdModificar" value="<%=obclsEstadisticas.getId_estadistica()%>" hidden=""/>
                                 </div>
                             </div>

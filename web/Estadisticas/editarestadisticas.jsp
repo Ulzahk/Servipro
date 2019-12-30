@@ -790,6 +790,27 @@
                                         %>
                                     </select>                                    
                                 </div>
+                                <div class="col-4">
+                                    <label for="lblDia31"><b>Día 31</b></label>
+                                    <select class="form-control" name="ddlDia31">
+                                        <%
+                                            List<Modelos.Estadisticas.clsId_dia31> lstclsDia31 = new ArrayList<Modelos.Estadisticas.clsId_dia31>();
+
+                                            if (request.getAttribute("lstclsDia31") != null) {
+                                                lstclsDia31 = (List<Modelos.Estadisticas.clsId_dia31>) request.getAttribute("lstclsDia31");
+                                            }
+
+                                            for (Modelos.Estadisticas.clsId_dia31 elem : lstclsDia31) {
+                                        %>
+                                        <option value="<%=elem.getId_dia31()%>"
+                                                <%=obclsEstadisticas.getObId_dia31() != null ? obclsEstadisticas.getObId_dia31().getId_dia31() == elem.getId_dia31() ? "selected" : "" : ""%>>
+                                            <%=elem.getDescripcionDia31()%>(<%=elem.getAliasDia31()%>)
+                                        </option>
+                                        <%
+                                            }
+                                        %>
+                                    </select>                                    
+                                </div>
                             </div>
                         </div>                        
                         <!--FILA 11-->   

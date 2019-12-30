@@ -34,6 +34,7 @@ public class clsEstadisticas {
     public clsId_dia28 obId_dia28;
     public clsId_dia29 obId_dia29;
     public clsId_dia30 obId_dia30;
+    public clsId_dia31 obId_dia31;
     public String Comentario;
 
     public int getId_estadistica() {
@@ -290,6 +291,14 @@ public class clsEstadisticas {
 
     public void setObId_dia30(clsId_dia30 obId_dia30) {
         this.obId_dia30 = obId_dia30;
+    }
+
+    public clsId_dia31 getObId_dia31() {
+        return obId_dia31;
+    }
+
+    public void setObId_dia31(clsId_dia31 obId_dia31) {
+        this.obId_dia31 = obId_dia31;
     }
 
     public String getComentario() {

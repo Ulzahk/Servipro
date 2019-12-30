@@ -33,7 +33,7 @@ public class clsEstadisticas {
 
         try {
 
-            PreparedStatement ps = conn.prepareStatement("{call spInsertarEstadistica(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+            PreparedStatement ps = conn.prepareStatement("{call spInsertarEstadistica(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
             ps.setInt(1, obEstadisticas.getObEmpleado().getId_empleado());
             ps.setInt(2, obEstadisticas.getObId_dia1().getId_dia1());
             ps.setInt(3, obEstadisticas.getObId_dia2().getId_dia2());
@@ -65,6 +65,7 @@ public class clsEstadisticas {
             ps.setInt(29, obEstadisticas.getObId_dia28().getId_dia28());
             ps.setInt(30, obEstadisticas.getObId_dia29().getId_dia29());
             ps.setInt(31, obEstadisticas.getObId_dia30().getId_dia30());
+            ps.setInt(32, obEstadisticas.getObId_dia31().getId_dia31());
 
             ps.execute();
 
@@ -73,27 +74,27 @@ public class clsEstadisticas {
             return ex.getMessage();
         }
     }
-    
-    public String commentEstadistica(Modelos.Estadisticas.clsComentarEstadisticas obclsComentarEstadisticas){
+
+    public String commentEstadistica(Modelos.Estadisticas.clsComentarEstadisticas obclsComentarEstadisticas) {
         try {
             PreparedStatement ps = conn.prepareStatement("{call spComentarEsta(?,?)}");
             ps.setInt(1, obclsComentarEstadisticas.getId_estadisticas());
             ps.setString(2, obclsComentarEstadisticas.getComentario());
-            
+
             ps.execute();
-            
+
             return "Se realizó el proceso con éxito";
-            
+
         } catch (Exception ex) {
             return ex.getMessage();
         }
     }
-    
+
     public String updateEstadistica(Modelos.Estadisticas.clsEstadisticas obEstadisticas) {
 
         try {
 
-            PreparedStatement ps = conn.prepareStatement("{call spEditarEsta(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+            PreparedStatement ps = conn.prepareStatement("{call spEditarEsta(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
             ps.setInt(1, obEstadisticas.getId_estadistica());
             ps.setInt(2, obEstadisticas.getObId_dia1().getId_dia1());
             ps.setInt(3, obEstadisticas.getObId_dia2().getId_dia2());
@@ -125,6 +126,7 @@ public class clsEstadisticas {
             ps.setInt(29, obEstadisticas.getObId_dia28().getId_dia28());
             ps.setInt(30, obEstadisticas.getObId_dia29().getId_dia29());
             ps.setInt(31, obEstadisticas.getObId_dia30().getId_dia30());
+            ps.setInt(32, obEstadisticas.getObId_dia31().getId_dia31());
 
             ps.execute();
 
@@ -199,7 +201,7 @@ public class clsEstadisticas {
         }
     }
 
-      public String updateEstaDia6(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+    public String updateEstaDia6(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia6(?,?)}");
@@ -211,8 +213,6 @@ public class clsEstadisticas {
             return ex.getMessage();
         }
     }
-
-   
 
     public String updateEstaDia7(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
@@ -278,8 +278,8 @@ public class clsEstadisticas {
             return ex.getMessage();
         }
     }
-    
-       public String updateEstaDia12(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+    public String updateEstaDia12(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia12(?,?)}");
@@ -292,7 +292,7 @@ public class clsEstadisticas {
         }
     }
 
-       public String updateEstaDia13(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+    public String updateEstaDia13(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia13(?,?)}");
@@ -305,7 +305,7 @@ public class clsEstadisticas {
         }
     }
 
-       public String updateEstaDia14(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+    public String updateEstaDia14(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia14(?,?)}");
@@ -318,7 +318,7 @@ public class clsEstadisticas {
         }
     }
 
-       public String updateEstaDia15(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+    public String updateEstaDia15(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia15(?,?)}");
@@ -331,7 +331,7 @@ public class clsEstadisticas {
         }
     }
 
-       public String updateEstaDia16(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+    public String updateEstaDia16(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia16(?,?)}");
@@ -344,7 +344,7 @@ public class clsEstadisticas {
         }
     }
 
-       public String updateEstaDia17(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+    public String updateEstaDia17(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia17(?,?)}");
@@ -357,7 +357,7 @@ public class clsEstadisticas {
         }
     }
 
-       public String updateEstaDia18(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+    public String updateEstaDia18(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia18(?,?)}");
@@ -370,7 +370,7 @@ public class clsEstadisticas {
         }
     }
 
-       public String updateEstaDia19(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+    public String updateEstaDia19(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia19(?,?)}");
@@ -383,7 +383,7 @@ public class clsEstadisticas {
         }
     }
 
-       public String updateEstaDia20(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+    public String updateEstaDia20(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia20(?,?)}");
@@ -396,7 +396,7 @@ public class clsEstadisticas {
         }
     }
 
-       public String updateEstaDia21(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+    public String updateEstaDia21(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia21(?,?)}");
@@ -409,7 +409,7 @@ public class clsEstadisticas {
         }
     }
 
-       public String updateEstaDia22(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+    public String updateEstaDia22(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia22(?,?)}");
@@ -421,7 +421,8 @@ public class clsEstadisticas {
             return ex.getMessage();
         }
     }
-       public String updateEstaDia23(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+    public String updateEstaDia23(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia23(?,?)}");
@@ -433,7 +434,8 @@ public class clsEstadisticas {
             return ex.getMessage();
         }
     }
-       public String updateEstaDia24(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+    public String updateEstaDia24(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia24(?,?)}");
@@ -445,7 +447,8 @@ public class clsEstadisticas {
             return ex.getMessage();
         }
     }
-       public String updateEstaDia25(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+    public String updateEstaDia25(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia25(?,?)}");
@@ -457,7 +460,8 @@ public class clsEstadisticas {
             return ex.getMessage();
         }
     }
-       public String updateEstaDia26(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+    public String updateEstaDia26(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia26(?,?)}");
@@ -469,7 +473,8 @@ public class clsEstadisticas {
             return ex.getMessage();
         }
     }
-       public String updateEstaDia27(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+    public String updateEstaDia27(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia27(?,?)}");
@@ -481,7 +486,8 @@ public class clsEstadisticas {
             return ex.getMessage();
         }
     }
-       public String updateEstaDia28(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+    public String updateEstaDia28(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia28(?,?)}");
@@ -493,7 +499,8 @@ public class clsEstadisticas {
             return ex.getMessage();
         }
     }
-       public String updateEstaDia29(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+    public String updateEstaDia29(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia29(?,?)}");
@@ -505,12 +512,27 @@ public class clsEstadisticas {
             return ex.getMessage();
         }
     }
-       public String updateEstaDia30(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+
+    public String updateEstaDia30(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
 
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia30(?,?)}");
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
             ps.setInt(2, obclsEstadisticas.getObId_dia30().getId_dia30());
+            ps.execute();
+            return "Se realizó el proceso con éxito";
+        } catch (Exception ex) {
+            return ex.getMessage();
+        }
+
+    }
+
+    public String updateEstaDia31(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
+        
+        try {
+            PreparedStatement ps = conn.prepareStatement("{call spEditarEstaDia31(?,?)}");
+            ps.setInt(1, obclsEstadisticas.getId_estadistica());
+            ps.setInt(2, obclsEstadisticas.getObId_dia31().getId_dia31());
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
@@ -721,8 +743,14 @@ public class clsEstadisticas {
                 obId_dia30.setAliasDia30(rs.getString("Alias30"));
                 obEstadisticas.setObId_dia30(obId_dia30);
                 
+                Modelos.Estadisticas.clsId_dia31 obId_dia31 = new Modelos.Estadisticas.clsId_dia31();
+                obId_dia31.setId_dia31(rs.getInt("Id_dia31"));
+                obId_dia31.setDescripcionDia31(rs.getString("Descripcion31"));
+                obId_dia31.setAliasDia31(rs.getString("Alias31"));
+                obEstadisticas.setObId_dia31(obId_dia31);
+
                 obEstadisticas.setComentario(rs.getString("Comentario"));
-                
+
                 lstclsEstadisticas.add(obEstadisticas);
             }
         } catch (Exception ex) {
@@ -931,6 +959,12 @@ public class clsEstadisticas {
                 obId_dia30.setDescripcionDia30(rs.getString("Descripcion30"));
                 obId_dia30.setAliasDia30(rs.getString("Alias30"));
                 obEstadisticas.setObId_dia30(obId_dia30);
+                
+                Modelos.Estadisticas.clsId_dia31 obId_dia31 = new Modelos.Estadisticas.clsId_dia31();
+                obId_dia31.setId_dia31(rs.getInt("Id_dia31"));
+                obId_dia31.setDescripcionDia31(rs.getString("Descripcion31"));
+                obId_dia31.setAliasDia31(rs.getString("Alias31"));
+                obEstadisticas.setObId_dia31(obId_dia31);
 
                 lstclsEstadisticas.add(obEstadisticas);
             }
@@ -941,5 +975,4 @@ public class clsEstadisticas {
         return lstclsEstadisticas;
     }
 
-    
 }

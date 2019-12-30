@@ -95,6 +95,7 @@ public class ControlEstadisticas extends HttpServlet {
             BL.Estadisticas.clsDia28 bl_clsDia28 = new BL.Estadisticas.clsDia28();
             BL.Estadisticas.clsDia29 bl_clsDia29 = new BL.Estadisticas.clsDia29();
             BL.Estadisticas.clsDia30 bl_clsDia30 = new BL.Estadisticas.clsDia30();
+            BL.Estadisticas.clsDia31 bl_clsDia31 = new BL.Estadisticas.clsDia31();
 
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
             request.setAttribute("lstclsDia1", bl_clsDia1.getDia1());
@@ -127,6 +128,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsDia28", bl_clsDia28.getDia28());
             request.setAttribute("lstclsDia29", bl_clsDia29.getDia29());
             request.setAttribute("lstclsDia30", bl_clsDia30.getDia30());
+            request.setAttribute("lstclsDia31", bl_clsDia31.getDia31());
 
             request.getRequestDispatcher("Estadisticas/agregarestadisticas.jsp").forward(request, response);
 
@@ -258,6 +260,10 @@ public class ControlEstadisticas extends HttpServlet {
             cargarEditarEstaDia30(request, response);
         } else if (request.getParameter("btnEditarEstaDia30") != null) {
             btnEditarEstaDia30(request, response);
+        } else if (request.getParameter("codigoDia31") != null) {
+            cargarEditarEstaDia31(request, response);
+        }else if (request.getParameter("btnEditarEstaDia31") != null){
+            btnEditarEstaDia31(request, response);
         }
 
     }
@@ -302,6 +308,7 @@ public class ControlEstadisticas extends HttpServlet {
             Modelos.Estadisticas.clsId_dia28 obclsDia28 = new Modelos.Estadisticas.clsId_dia28();
             Modelos.Estadisticas.clsId_dia29 obclsDia29 = new Modelos.Estadisticas.clsId_dia29();
             Modelos.Estadisticas.clsId_dia30 obclsDia30 = new Modelos.Estadisticas.clsId_dia30();
+            Modelos.Estadisticas.clsId_dia31 obclsDia31 = new Modelos.Estadisticas.clsId_dia31();
 
             if (request.getParameter("ddlEmpleado") != null) {
                 obclsEmpleado.setId_empleado(Integer.parseInt(request.getParameter("ddlEmpleado")));
@@ -458,6 +465,11 @@ public class ControlEstadisticas extends HttpServlet {
                 obclsEstadisticas.setObId_dia30(obclsDia30);
             }
 
+            if (request.getParameter("ddlDia31") != null) {
+                obclsDia31.setId_dia31(Integer.parseInt(request.getParameter("ddlDia31")));
+                obclsEstadisticas.setObId_dia31(obclsDia31);
+            }
+
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.createEstadistica(obclsEstadisticas));
             request.setAttribute("stTipo", "success");
@@ -501,6 +513,7 @@ public class ControlEstadisticas extends HttpServlet {
             BL.Estadisticas.clsDia28 bl_clsDia28 = new BL.Estadisticas.clsDia28();
             BL.Estadisticas.clsDia29 bl_clsDia29 = new BL.Estadisticas.clsDia29();
             BL.Estadisticas.clsDia30 bl_clsDia30 = new BL.Estadisticas.clsDia30();
+            BL.Estadisticas.clsDia31 bl_clsDia31 = new BL.Estadisticas.clsDia31();
 
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
             request.setAttribute("lstclsDia1", bl_clsDia1.getDia1());
@@ -533,6 +546,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsDia28", bl_clsDia28.getDia28());
             request.setAttribute("lstclsDia29", bl_clsDia29.getDia29());
             request.setAttribute("lstclsDia30", bl_clsDia30.getDia30());
+            request.setAttribute("lstclsDia31", bl_clsDia31.getDia31());
 
             request.getRequestDispatcher("Estadisticas/agregarestadisticas.jsp").forward(request, response);
         }
@@ -590,6 +604,7 @@ public class ControlEstadisticas extends HttpServlet {
             BL.Estadisticas.clsDia28 bl_clsDia28 = new BL.Estadisticas.clsDia28();
             BL.Estadisticas.clsDia29 bl_clsDia29 = new BL.Estadisticas.clsDia29();
             BL.Estadisticas.clsDia30 bl_clsDia30 = new BL.Estadisticas.clsDia30();
+            BL.Estadisticas.clsDia31 bl_clsDia31 = new BL.Estadisticas.clsDia31();
 
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
             request.setAttribute("lstclsDia1", bl_clsDia1.getDia1());
@@ -622,6 +637,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsDia28", bl_clsDia28.getDia28());
             request.setAttribute("lstclsDia29", bl_clsDia29.getDia29());
             request.setAttribute("lstclsDia30", bl_clsDia30.getDia30());
+            request.setAttribute("lstclsDia31", bl_clsDia31.getDia31());
 
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
@@ -719,51 +735,50 @@ public class ControlEstadisticas extends HttpServlet {
     }
 
     public void btnComentarEsta(HttpServletRequest request,
-            HttpServletResponse response)throws IOException, ServletException{
-        
+            HttpServletResponse response) throws IOException, ServletException {
+
         try {
             BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
-            
+
             Modelos.Estadisticas.clsComentarEstadisticas obclsComentarEstadisticas = new Modelos.Estadisticas.clsComentarEstadisticas();
-            
-            if(request.getParameter("IdModificar")!=null){
+
+            if (request.getParameter("IdModificar") != null) {
                 obclsComentarEstadisticas.setId_estadisticas(Integer.valueOf(request.getParameter("IdModificar")));
             }
-            
-            if(request.getParameter("txtComentario")!=null){
-                
+
+            if (request.getParameter("txtComentario") != null) {
+
                 String comentario = request.getParameter("txtComentario");
-                
-                if(comentario.contains("\n")){
-                    comentario = comentario.replaceAll(("\r\n|\n"),"<br/>");
+
+                if (comentario.contains("\n")) {
+                    comentario = comentario.replaceAll(("\r\n|\n"), "<br/>");
                 }
- 
+
                 obclsComentarEstadisticas.setComentario(comentario);
             }
-            
+
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.commentEstadistica(obclsComentarEstadisticas));
             request.setAttribute("stTipo", "success");
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
-            
+
             //Redireccion y envio de valores
             request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
-            
+
         } catch (Exception ex) {
-            
+
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
 
             //Lista de Empleados
             BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
-            
+
             request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
-            
+
         }
     }
-    
-    
+
     public void btnEditarEsta(HttpServletRequest request,
             HttpServletResponse response) throws IOException, ServletException {
         try {
@@ -803,6 +818,7 @@ public class ControlEstadisticas extends HttpServlet {
             Modelos.Estadisticas.clsId_dia28 obclsDia28 = new Modelos.Estadisticas.clsId_dia28();
             Modelos.Estadisticas.clsId_dia29 obclsDia29 = new Modelos.Estadisticas.clsId_dia29();
             Modelos.Estadisticas.clsId_dia30 obclsDia30 = new Modelos.Estadisticas.clsId_dia30();
+            Modelos.Estadisticas.clsId_dia31 obclsDia31 = new Modelos.Estadisticas.clsId_dia31();
 
             if (request.getParameter("IdModificar") != null) {
                 obclsEstadisticas.setId_estadistica(Integer.valueOf(request.getParameter("IdModificar")));
@@ -965,6 +981,11 @@ public class ControlEstadisticas extends HttpServlet {
                 obclsEstadisticas.setObId_dia30(obclsDia30);
             }
 
+            if (request.getParameter("ddlDia31") != null) {
+                obclsDia31.setId_dia31(Integer.parseInt(request.getParameter("ddlDia31")));
+                obclsEstadisticas.setObId_dia31(obclsDia31);
+            }
+
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstadistica(obclsEstadisticas));
             request.setAttribute("stTipo", "success");
@@ -1013,6 +1034,7 @@ public class ControlEstadisticas extends HttpServlet {
             BL.Estadisticas.clsDia28 bl_clsDia28 = new BL.Estadisticas.clsDia28();
             BL.Estadisticas.clsDia29 bl_clsDia29 = new BL.Estadisticas.clsDia29();
             BL.Estadisticas.clsDia30 bl_clsDia30 = new BL.Estadisticas.clsDia30();
+            BL.Estadisticas.clsDia31 bl_clsDia31 = new BL.Estadisticas.clsDia31();
 
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
             request.setAttribute("lstclsDia1", bl_clsDia1.getDia1());
@@ -1045,6 +1067,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsDia28", bl_clsDia28.getDia28());
             request.setAttribute("lstclsDia29", bl_clsDia29.getDia29());
             request.setAttribute("lstclsDia30", bl_clsDia30.getDia30());
+            request.setAttribute("lstclsDia31", bl_clsDia31.getDia31());
 
             request.getRequestDispatcher("Estadisticas/editarestadisticas.jsp").forward(request, response);
         }
@@ -2277,6 +2300,47 @@ public class ControlEstadisticas extends HttpServlet {
             BL.Estadisticas.clsDia30 bl_clsDia30 = new BL.Estadisticas.clsDia30();
             request.setAttribute("lstclsDia30", bl_clsDia30.getDia30());
             request.getRequestDispatcher("Estadisticas/editarestadisticasdia30.jsp").forward(request, response);
+
+        }
+    }
+
+    public void btnEditarEstaDia31(HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException {
+
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            Modelos.Estadisticas.clsId_dia31 obclsDia31 = new Modelos.Estadisticas.clsId_dia31();
+
+            if (request.getParameter("IdModificar") != null) {
+                obclsEstadisticas.setId_estadistica(Integer.valueOf(request.getParameter("IdModificar")));
+            }
+            if (request.getParameter("ddlDia31") != null) {
+                //Modelo Externo
+                obclsDia31.setId_dia31(Integer.parseInt(request.getParameter("ddlDia31")));
+                //Asignación al modelo padre
+                obclsEstadisticas.setObId_dia31(obclsDia31);
+            }
+            //Definición de parametros desde el controlador
+            request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia31(obclsEstadisticas));
+            request.setAttribute("stTipo", "success");
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+
+            //Redireccion y envio de valores
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
+
+        } catch (Exception ex) {
+
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+
+            BL.Estadisticas.clsDia31 bl_clsDia31 = new BL.Estadisticas.clsDia31();
+            request.setAttribute("lstclsDia31", bl_clsDia31.getDia31());
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia31.jsp").forward(request, response);
 
         }
     }
@@ -3594,6 +3658,47 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("obclsEstadisticas", obclsEstadisticas);
             request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
             request.getRequestDispatcher("Estadisticas/editarestadisticasdia30.jsp").forward(request, response);
+
+        } catch (Exception ex) {
+
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
+
+            ex.getMessage();
+
+            //Lista de Empleados
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+            request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
+
+        }
+    }
+
+    public void cargarEditarEstaDia31(HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException {
+
+        try {
+            BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
+
+            List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticas = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+
+            Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+
+            lstclsEstadisticas = bl_clsEstadisticas.getEstadisticas();
+
+            for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticas) {
+                if (elem.getId_estadistica() == Integer.parseInt(request.getParameter("codigoDia31"))) {
+                    obclsEstadisticas = elem;
+                    break;
+                }
+            }
+            //Lista Dia 31 
+            BL.Estadisticas.clsDia31 bl_clsDia31 = new BL.Estadisticas.clsDia31();
+            request.setAttribute("lstclsDia31", bl_clsDia31.getDia31());
+
+            request.setAttribute("obclsEstadisticas", obclsEstadisticas);
+            request.setAttribute("lstclsEstadisticas", lstclsEstadisticas);
+            request.getRequestDispatcher("Estadisticas/editarestadisticasdia31.jsp").forward(request, response);
 
         } catch (Exception ex) {
 

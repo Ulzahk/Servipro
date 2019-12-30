@@ -99,7 +99,7 @@
                                             for (Modelos.Estadisticas.clsId_dia15 elem : lstclsDia15) {
                                         %>
                                         <option value="<%=elem.getId_dia15()%>"
-                                                <%=obclsEstadisticas.getObId_dia1() != null ? obclsEstadisticas.getObId_dia15().getId_dia15() == elem.getId_dia15() ? "selected" : "" : ""%>>
+                                                <%=obclsEstadisticas.getObId_dia15() != null ? obclsEstadisticas.getObId_dia15().getId_dia15() == elem.getId_dia15() ? "selected" : "" : ""%>>
                                             <%=elem.getDescripcionDia15()%>(<%=elem.getAliasDia15()%>)
                                         </option>
                                         <%
