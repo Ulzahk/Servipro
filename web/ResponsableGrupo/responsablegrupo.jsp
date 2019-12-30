@@ -95,9 +95,9 @@
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
                     <form action="controlresponsablegrupo" method="post">
-                        <div class="input-group mt-3">
-                            <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú"><i class="fas fa-arrow-left"></i></a>
-                            <a href="controlresponsablegrupo?btnReGruAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
+                        <div class="input-group">
+                            <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
+                            <a href="controlresponsablegrupo?btnReGruAgregar=true" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
                             <input type="text" class="form-control" name="txtReGruBuscar" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
                             <div class="input-group-append">
                                 <button type="submit" Value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar" name="btnReGruBuscar"><i class="fas fa-search"></i></button>
@@ -152,7 +152,7 @@
                             <td class="align-middle"><%=elem.getObclsUsuario().getId_usuario()%></td>
                             <td class="align-middle">
                                 <div class="btn-group">
-                                    <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para modificar el registro" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
+                                    <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para editar responsable por grupo" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
                                        href="controlresponsablegrupo?stOpcion=M&codigoSeleccionado=<%=elem.getId_responsable()%>">
                                         <i class="fas fa-edit" style="font-size:15px;"></i>
                                     </a>
