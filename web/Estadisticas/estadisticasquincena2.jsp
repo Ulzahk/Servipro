@@ -137,6 +137,8 @@
                         </div>
                         <tr>
                             <th class="align-middle"><b>Empleado</b></th>
+                            <th>A&ntilde;o</th>
+                            <th>Mes</th>
                             <th>16</th>
                             <th>17</th>
                             <th>18</th>
@@ -160,6 +162,8 @@
                         %>
                         <tr>
                             <td class="align-middle"><%=elem.getObEmpleado().getEmplPrimerNombre()%> <%=elem.getObEmpleado().getEmplSegundoNombre()%> <%=elem.getObEmpleado().getEmplPrimerApellido()%> <%=elem.getObEmpleado().getEmplSegundoApellido()%></td>
+                            <td class="align-middle"><a href="estadisticas?codigoAnio=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObAnio().getNombreAnio()%></a></td>
+                            <td class="align-middle"><a href="estadisticas?codigoMes=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObMes().getMesNombre()%></a></td>
                             <td class="align-middle"><a href="estadisticas?codigoDia16=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia16().getAliasDia16()%></a></td>
                             <td class="align-middle"><a href="estadisticas?codigoDia17=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia17().getAliasDia17()%></a></td>
                             <td class="align-middle"><a href="estadisticas?codigoDia18=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia18().getAliasDia18()%></a></td>
@@ -231,17 +235,6 @@
             </div>
         </div>
         <script>
-            $('a.btn-danger').click(function (event) {
-                event.preventDefault();
-
-                var r = confirm("¿Esta seguro que quiere eliminar este registro?");
-                if (r == true) {
-                    window.location = this.href;
-                } else {
-                    alert("El registro se mantiene intacto");
-                }
-            });
-
             $('.openBtn').on('click', function () {
                 $('.modal-body').load(this.href, function ()
                 {
