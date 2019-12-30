@@ -114,8 +114,8 @@
                                 <c:forEach var="dato" items="${datos}"  begin="<%=rs.getInt("Id_perfil") - 1%>" end="<%=rs.getInt("Id_perfil") - 1%>">
                                     <td class="align-middle">
                                         <div class="btn-group">
-                                            <a href="<c:url value="editarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-warning rounded mr-1 ml-4"><i class="fas fa-edit"></i></a>
-                                            <a href="<c:url value="eliminarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-danger rounded mr-4"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="<c:url value="editarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-warning rounded mr-1 ml-4" data-toggle="modal" data-target="#myModal"><i class="fas fa-edit"></i></a>
+                                            <a href="<c:url value="eliminarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-danger rounded mr-4" data-toggle="modal" data-target="#myModal"><i class="fas fa-trash-alt"></i></a>
                                         </div>
                                     </td>
                                 </c:forEach>

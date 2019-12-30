@@ -119,8 +119,8 @@
                                     <td class="align-middle">${dato.nombre_grupo}</td>
                                     <td class="align-middle">
                                         <div class="btn-group mr-4 ml-4">
-                                            <a href="<c:url value="editargrupos.htm?id_grupo=${dato.Id_grupo}"/>" class="btn btn-warning rounded ml-4 mr-1 openBtn" data-toggle="modal" data-target="#myModal"data-toggle="tooltip" title="Haz clic para editar grupo"><i class="fas fa-edit"></i></a>
-                                            <a href="<c:url value="eliminargrupos.htm?id_grupo=${dato.Id_grupo}"/>" class="btn btn-danger rounded mr-4 openBtn" data-toggle="modal" data-target="#myModal"data-toggle="tooltip" title="Haz clic para eliminar"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="<c:url value="editargrupos.htm?id_grupo=${dato.Id_grupo}"/>" class="btn btn-warning rounded ml-4 mr-1 openBtn" data-toggle="modal" data-target="#myModal" title="Haz clic para editar grupo"><i class="fas fa-edit"></i></a>
+                                            <a href="<c:url value="eliminargrupos.htm?id_grupo=${dato.Id_grupo}"/>" class="btn btn-danger rounded mr-4 openBtn" data-toggle="modal" data-target="#myModal" title="Haz clic para eliminar"><i class="fas fa-trash-alt"></i></a>
                                         </div>
                                     </td>
                                 </tr>

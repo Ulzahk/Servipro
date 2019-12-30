@@ -80,6 +80,13 @@ function main() {
         }
     });
 
+    $('.openBtn').on('click', function () {
+        $('.modal-body').load(this.href, function ()
+        {
+            $('#myModal').modal({show: false});
+        });
+    });
+
     // Mostramos y ocultamos submenus
     $('.submenu').click(function () {
         $(this).children('.children').slideToggle();

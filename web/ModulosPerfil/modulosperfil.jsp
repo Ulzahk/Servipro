@@ -141,11 +141,11 @@
                             <td class="align-middle"><%=elem.getObclsPerfil().getStDescripcion_perfil()%></td>
                             <td class="align-middle">
                                 <div class="btn-group">
-                                    <a class="btn btn-warning btn-sm mr-1 openBtn rounded"data-toggle="tooltip" title="Haz clic para editar perfil" data-toggle="modal" data-target="#myModal" id="btnModPerfilEditar" 
+                                    <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para editar perfil" data-toggle="modal" data-target="#myModal" id="btnModPerfilEditar" 
                                        href="controlmodulosperfil?stOpcion=M&codigoSeleccionado=<%=elem.getId_modulos_perfil()%>">
                                         <i class="fas fa-edit" style="font-size:15px;"></i>
                                     </a>
-                                    <a class="btn btn-danger btn-sm openBtn rounded"data-toggle="tooltip" title="Haz clic para eliminar" data-toggle="modal" data-target="#myModal" id="btnModPerfilEliminar"
+                                    <a class="btn btn-danger btn-sm openBtn rounded"  title="Haz clic para eliminar" data-toggle="modal" data-target="#myModal" id="btnModPerfilEliminar"
                                        href="controlmodulosperfil?stOpcion=E&codigoSeleccionado=<%=elem.getId_modulos_perfil()%>">
                                         <i class="fas fa-trash-alt" style="font-size:15px;"></i>
                                     </a>
