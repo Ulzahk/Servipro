@@ -92,12 +92,12 @@
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
                     <form action="controlmodulosperfil" method="post">
-                        <div class="input-group mt-3">
-                            <a href="nomina.htm" class="btn btn-secondary mr-2"><i class="fas fa-arrow-left"></i></a>
-                            <a href="controlmodulosperfil?btnModPerfilAgregar=true" class="btn btn-secondary mr-2">Agregar Registro</a>
+                        <div class="input-group">
+                            <a href="nomina.htm" class="btn btn-secondary mr-1"data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
+                            <a href="controlmodulosperfil?btnModPerfilAgregar=true" class="btn btn-secondary mr-1"data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
                             <input type="text" class="form-control" name="txtModPerfilBuscar" id="txtModPerfilBuscar" placeholder="Buscar en Servisoft S.A."/>
                             <div class="input-group-append">                                
-                                <button type="submit" Value="Buscar" class="btn btn-secondary" name="btnModPerfilBuscar"><i class="fas fa-search"></i></button>
+                                <button type="submit" Value="Buscar" class="btn btn-secondary" name="btnModPerfilBuscar"data-toggle="tooltip" title="Haz clic para buscar"><i class="fas fa-search"></i></button>
                             </div>
                         </div>
                     </form>
@@ -141,11 +141,11 @@
                             <td class="align-middle"><%=elem.getObclsPerfil().getStDescripcion_perfil()%></td>
                             <td class="align-middle">
                                 <div class="btn-group">
-                                    <a class="btn btn-warning btn-sm mr-1 openBtn rounded" data-toggle="modal" data-target="#myModal" id="btnModPerfilEditar" 
+                                    <a class="btn btn-warning btn-sm mr-1 openBtn rounded"data-toggle="tooltip" title="Haz clic para editar perfil" data-toggle="modal" data-target="#myModal" id="btnModPerfilEditar" 
                                        href="controlmodulosperfil?stOpcion=M&codigoSeleccionado=<%=elem.getId_modulos_perfil()%>">
                                         <i class="fas fa-edit" style="font-size:15px;"></i>
                                     </a>
-                                    <a class="btn btn-danger btn-sm openBtn rounded" data-toggle="modal" data-target="#myModal" id="btnModPerfilEliminar"
+                                    <a class="btn btn-danger btn-sm openBtn rounded"data-toggle="tooltip" title="Haz clic para eliminar" data-toggle="modal" data-target="#myModal" id="btnModPerfilEliminar"
                                        href="controlmodulosperfil?stOpcion=E&codigoSeleccionado=<%=elem.getId_modulos_perfil()%>">
                                         <i class="fas fa-trash-alt" style="font-size:15px;"></i>
                                     </a>

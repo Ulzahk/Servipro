@@ -1,7 +1,7 @@
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
-<%@page import="java.util.*"%>
 <%
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
@@ -23,50 +23,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Empleados por Grupo</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+        <title>Grupos</title>
         <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-        <script src="Resources/JS/functions.js"></script>
-
     </head>
     <body>
-        <%
-            Modelos.EmpleadosGrupo.clsEmpleadosGrupo obclsEmpleadosGrupo = new Modelos.EmpleadosGrupo.clsEmpleadosGrupo();
 
-            if (request.getAttribute("obclsEmpleadosGrupo") != null) {
-                obclsEmpleadosGrupo = (Modelos.EmpleadosGrupo.clsEmpleadosGrupo) request.getAttribute("obclsEmpleadosGrupo");
-            }
-
-            List<Modelos.EmpleadosGrupo.clsEmpleadosGrupo> lstclsEmpleadosGrupo = new ArrayList<Modelos.EmpleadosGrupo.clsEmpleadosGrupo>();
-
-            if (request.getAttribute("lstclsEmpleadosGrupo") != null) {
-
-                lstclsEmpleadosGrupo = (List<Modelos.EmpleadosGrupo.clsEmpleadosGrupo>) request.getAttribute("lstclsEmpleadosGrupo");
-            }
-
-            if (request.getAttribute("stMensaje") != null && request.getAttribute("stTipo") != null) {
-
-
-        %>
-        <input type="text" hidden="" id="txtMensaje" value="<%=request.getAttribute("stMensaje")%>"/>
-        <input type="text" hidden="" id="txtTipo" value="<%=request.getAttribute("stTipo")%>"/>
-        <script>
-            var mensaje = document.getElementById("txtMensaje").value;
-            var tipo = document.getElementById("txtTipo").value;
-
-            swal.fire("Mensaje", mensaje, tipo);
-        </script>
-        <%
-            }
-        %>
         <header>
             <%--Barra de Navegación de Jefe--%>
             <%
@@ -74,297 +40,128 @@
 
             %>       
 
-            <jsp:include page="../WEB-INF/jsp/menujefe.jsp"></jsp:include>
+            <jsp:include page="menujefe.jsp"></jsp:include>
 
             <%        }
             %>
-
 
             <%--Barra de Navegación de Coordinador--%>
             <%
                 if (Descripcion_perfil.equals("COORDINADOR")) {
             %>
 
-            <jsp:include page="../WEB-INF/jsp/menucordi.jsp"></jsp:include>
+            <jsp:include page="menucordi.jsp"></jsp:include>
 
             <%
                 }
             %> 
-        </header>  
+        </header>
+
         <div class="container mt-4">
-            <h1 class="text-center">Empleados por Grupo</h1>
+            <h1 class="text-center">Grupos</h1>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
-                    <form action="controlempleadosgrupo" method="post">
-                        <div class="input-group mt-3">
-                            <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú"><i class="fas fa-arrow-left"></i></a>
-                            <a href="controlempleadosgrupo?btnEmplGruAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
-                            <input type="text" class="form-control" name="txtEmplGruBuscar" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
+                    <form action="" method="post">
+                        <div class="input-group">
+                            <a href="nomina.htm" class="btn btn-secondary mr-1"data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
+                            <a href="agregargrupos.htm" class="btn btn-secondary mr-1"data-toggle="tooltip" title="Haz clic para para agregar un nuevo registro">Agregar Registro</a>
+                            <input type="text" class="form-control" name="Buscar" placeholder="Buscar en Servisoft S.A."/>
                             <div class="input-group-append">
-                                <button type="submit" Value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar" name="btnEmplGruBuscar"><i class="fas fa-search"></i></button>
+                                <button type="submit" Value="Buscar" class="btn btn-secondary"data-toggle="tooltip" title="Haz clic para buscar"><i class="fas fa-search"></i></button> 
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="card-body">
-                    <table id="table-id" border="1" class="table table-bordered table-striped table-hover text-center table-responsive-lg">
-                        <div class="form-group">
-                            <div class="form-row">
-                                <div class="col-3">
-                                    <select class="form-control form-control-sm" name="state" id="maxRows">
-                                        <option value="5000">Filtro de Paginación</option>
-                                        <option value="5000">Todos</option>
-                                        <option value="5">5</option>
-                                        <option value="10">10</option>
-                                        <option value="15">15</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                        <option value="75">75</option>
-                                        <option value="100">100</option>
-                                    </select>
-                                </div>
-                                <div class="col-8">
-                                    <b>
-                                        <i class="fas fa-clipboard-list"></i>
-                                        <span>Registros Existentes: <%=lstclsEmpleadosGrupo.size()%></span>
-                                    </b>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <tr>
-                            <td class="align-middle"><b>Grupo</b></td>
-                            <td class="align-middle"><b>Empleado</b></td>
-                            <td class="align-middle"><b>Acciones</b></td>
-                        </tr>
+                    <table border="1" class="table table-bordered table-striped table-hover text-center table-responsive-sm">
+                        <thead>
+                            <tr>
+                                <th class="align-middle">Grupo</th>
+                                <th class="align-middle">Acciones</th>
+                            </tr>
+                        </thead>
                         <%
-                            for (Modelos.EmpleadosGrupo.clsEmpleadosGrupo elem : lstclsEmpleadosGrupo) {
+                            String control = request.getParameter("Buscar");
+                            try {
+                                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                                Connection conn = DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable", "contable19", "contable19");
+                                String Query = "SELECT * FROM nm_grupos where "
+                                        + " Id_grupo like '%" + request.getParameter("Buscar") + "%' or "
+                                        + " nombre_grupo like '%" + request.getParameter("Buscar") + "%'";
+                                Statement stm = conn.createStatement();
+                                ResultSet rs = stm.executeQuery(Query);
+
+                                if (control != null) {
+                                    while (rs.next()) {
                         %>
-                        <tr>
-                            <td class="align-middle"><%=elem.getObclsGrupo().getNombre_grupo()%></td>
-                            <td class="align-middle">
-                                <%=elem.getObclsEmpleado().getEmplPrimerNombre()%>
-                                <%=elem.getObclsEmpleado().getEmplSegundoNombre()%>
-                                <%=elem.getObclsEmpleado().getEmplPrimerApellido()%>
-                                <%=elem.getObclsEmpleado().getEmplSegundoApellido()%>
-                            </td>
-                            <td class="align-middle">
-                                <div class="btn-group">
-                                    <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para modificar empleado" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
-                                       href="controlempleadosgrupo?stOpcion=M&codigoSeleccionado=<%=elem.getId_empleados_grupo()%>">
-                                        <i class="fas fa-edit" style="font-size:15px;"></i>
-                                    </a>
-                                    <a class="btn btn-danger btn-sm openBtn rounded" title="Haz clic para eliminar" data-toggle="modal" data-target="#myModal" id="btnEmplEliminar"
-                                       href="controlempleadosgrupo?stOpcion=E&codigoSeleccionado=<%=elem.getId_empleados_grupo()%>">
-                                        <i class="fas fa-trash-alt" style="font-size:15px;"></i>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td class="align-middle"><%=rs.getString("nombre_grupo")%></td>
+                                <c:forEach var="dato" items="${datos}"  begin="<%=rs.getInt("Id_grupo") - 1%>" end="<%=rs.getInt("Id_grupo") - 1%>">
+                                    <td class="align-middle">
+                                        <div class="btn-group mr-4 ml-4">
+                                            <a href="<c:url value="editargrupos.htm?id_grupo=${dato.Id_grupo}"/>" class="btn btn-warning rounded ml-4 mr-1"><i class="fas fa-edit"></i></a>
+                                            <a href="<c:url value="eliminargrupos.htm?id_grupo=${dato.Id_grupo}"/>" class="btn btn-danger rounded mr-4"><i class="fas fa-trash-alt"></i></a>
+                                        </div>
+                                    </td>
+                                </c:forEach>
+                            </tr>
+                        </tbody>  
                         <%
                             }
+                        } else {
                         %>
-                    </table>
-                    <!--Inicio de la Paginación -->
-                    <div class='pagination-container' >
-                        <nav>
-                            <ul class="pagination">
-
-                                <li data-page="prev" >
-                                    <button class="btn btn-secondary btn-sm mr-1"><i class="fas fa-angle-left" style="font-size: 15px;"></i>&nbsp;<span class="sr-only">(current)</span></button>
-                                </li>
-                                <!--	Here the JS Function Will Add the Rows -->
-                                <li data-page="next" id="prev">
-                                    <button class="btn btn-secondary btn-sm"><i class="fas fa-angle-right" style="font-size: 15px;"></i><span class="sr-only">(current)</span></button>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog modal-lg">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">  
-                        <div class="modal-body">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <script>
-                $('.openBtn').on('click', function () {
-                    $('.modal-body').load(this.href, function ()
-                    {
-                        $('#myModal').modal({show: false});
-                    });
-                });
-
-                getPagination('#table-id');
-                //getPagination('.table-class');
-                //getPagination('table');
-
-                /*					PAGINATION 
-                 - on change max rows select options fade out all rows gt option value mx = 5
-                 - append pagination list as per numbers of rows / max rows option (20row/5= 4pages )
-                 - each pagination li on click -> fade out all tr gt max rows * li num and (5*pagenum 2 = 10 rows)
-                 - fade out all tr lt max rows * li num - max rows ((5*pagenum 2 = 10) - 5)
-                 - fade in all tr between (maxRows*PageNum) and (maxRows*pageNum)- MaxRows 
-                 */
-
-
-                function getPagination(table) {
-                    var lastPage = 1;
-
-                    $('#maxRows')
-                            .on('change', function (evt) {
-                                //$('.paginationprev').html(''); // reset pagination
-
-                                lastPage = 1;
-                                $('.pagination')
-                                        .find('li')
-                                        .slice(1, -1)
-                                        .remove();
-                                var trnum = 0; // reset tr counter
-                                var maxRows = parseInt($(this).val()); // get Max Rows from select option
-
-                                if (maxRows == 5000) {
-                                    $('.pagination').hide();
-                                } else {
-                                    $('.pagination').show();
+                        <tbody>
+                            <c:forEach var="dato" items="${datos}">
+                                <tr>
+                                    <td class="align-middle">${dato.nombre_grupo}</td>
+                                    <td class="align-middle">
+                                        <div class="btn-group mr-4 ml-4">
+                                            <a href="<c:url value="editargrupos.htm?id_grupo=${dato.Id_grupo}"/>" class="btn btn-warning rounded ml-4 mr-1"data-toggle="tooltip" title="Haz clic para editar grupo"><i class="fas fa-edit"></i></a>
+                                            <a href="<c:url value="eliminargrupos.htm?id_grupo=${dato.Id_grupo}"/>" class="btn btn-danger rounded mr-4"data-toggle="tooltip" title="Haz clic para eliminar"><i class="fas fa-trash-alt"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </tbody> 
+                        <%
                                 }
-
-                                var totalRows = $(table + ' tbody tr').length; // numbers of rows
-                                $(table + ' tr:gt(0)').each(function () {
-                                    // each TR in  table and not the header
-                                    trnum++; // Start Counter
-                                    if (trnum > maxRows) {
-                                        // if tr number gt maxRows
-
-                                        $(this).hide(); // fade it out
-                                    }
-                                    if (trnum <= maxRows) {
-                                        $(this).show();
-                                    } // else fade in Important in case if it ..
-                                }); //  was fade out to fade it in
-                                if (totalRows > maxRows) {
-                                    // if tr total rows gt max rows option
-                                    var pagenum = Math.ceil(totalRows / maxRows); // ceil total(rows/maxrows) to get ..
-                                    //	numbers of pages
-                                    for (var i = 1; i <= pagenum; ) {
-                                        // for each page append pagination li
-                                        $('.pagination #prev')
-                                                .before(
-                                                        '<li data-page="' +
-                                                        i +
-                                                        '">\
-                                                                  <button class="btn btn-secondary btn-sm mr-1">' +
-                                                        i++ +
-                                                        '<span class="sr-only">(current)</span></button>\
-                                                                </li>'
-                                                        )
-                                                .show();
-                                    } // end for i
-                                } // end if row count > max rows
-                                $('.pagination [data-page="1"]').addClass('active'); // add active class to the first li
-                                $('.pagination li').on('click', function (evt) {
-                                    // on click each page
-                                    evt.stopImmediatePropagation();
-                                    evt.preventDefault();
-                                    var pageNum = $(this).attr('data-page'); // get it's number
-
-                                    var maxRows = parseInt($('#maxRows').val()); // get Max Rows from select option
-
-                                    if (pageNum == 'prev') {
-                                        if (lastPage == 1) {
-                                            return;
-                                        }
-                                        pageNum = --lastPage;
-                                    }
-                                    if (pageNum == 'next') {
-                                        if (lastPage == $('.pagination li').length - 2) {
-                                            return;
-                                        }
-                                        pageNum = ++lastPage;
-                                    }
-
-                                    lastPage = pageNum;
-                                    var trIndex = 0; // reset tr counter
-                                    $('.pagination li').removeClass('active'); // remove active class from all li
-                                    $('.pagination [data-page="' + lastPage + '"]').addClass('active'); // add active class to the clicked
-                                    //$(this).addClass('active');					// add active class to the clicked
-                                    limitPagging();
-                                    $(table + ' tr:gt(0)').each(function () {
-                                        // each tr in table not the header
-                                        trIndex++; // tr index counter
-                                        // if tr index gt maxRows*pageNum or lt maxRows*pageNum-maxRows fade if out
-                                        if (
-                                                trIndex > maxRows * pageNum ||
-                                                trIndex <= maxRows * pageNum - maxRows
-                                                ) {
-                                            $(this).hide();
-                                        } else {
-                                            $(this).show();
-                                        } //else fade in
-                                    }); // end of for each tr in table
-                                }); // end of on click pagination list
-                                limitPagging();
-                            })
-                            .val(5000)
-                            .change();
-
-                    // end of on select change
-
-                    // END OF PAGINATION
-                }
-
-                function limitPagging() {
-                    // alert($('.pagination li').length)
-
-                    if ($('.pagination li').length > 7) {
-                        if ($('.pagination li.active').attr('data-page') <= 3) {
-                            $('.pagination li:gt(5)').hide();
-                            $('.pagination li:lt(5)').show();
-                            $('.pagination [data-page="next"]').show();
-                        }
-                        if ($('.pagination li.active').attr('data-page') > 3) {
-                            $('.pagination li:gt(0)').hide();
-                            $('.pagination [data-page="next"]').show();
-                            for (let i = (parseInt($('.pagination li.active').attr('data-page')) - 2); i <= (parseInt($('.pagination li.active').attr('data-page')) + 2); i++) {
-                                $('.pagination [data-page="' + i + '"]').show();
-
+                            } catch (Exception ex) {
+                                ex.printStackTrace();
+                                out.println("Error " + ex.getMessage());
                             }
 
-                        }
-                    }
-                }
-
-                $(function () {
-                    // Just to append id number for each row
-                    $('table tr:eq(0)').prepend('<th> ID </th>');
-
-                    var id = 0;
-
-                    $('table tr:gt(0)').each(function () {
-                        id++;
-                        $(this).prepend('<td>' + id + '</td>');
-                    });
-                });
-
-
-            </script>
+                        %>   
+                    </table>   
+                </div>
+            </div>
+        </div>
     </body>
-    <script type="text/javascript" language="JavaScript">
-        main();
+    <script>
+        $(document).ready(main);
+
+        var contador = 1;
+
+        function main() {
+            $('.menu_bar').click(function () {
+                if (contador == 1) {
+                    $('nav').animate({
+                        left: '0'
+                    });
+                    contador = 0;
+                } else {
+                    contador = 1;
+                    $('nav').animate({
+                        left: '-100%'
+                    });
+                }
+            });
+
+            // Mostramos y ocultamos submenus
+            $('.submenu').click(function () {
+                $(this).children('.children').slideToggle();
+            });
+        }
     </script>
 </html>
-
-
-
-
-
-
