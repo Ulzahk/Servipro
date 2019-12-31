@@ -155,7 +155,7 @@
                             <td class="align-middle"><%=elem.getObclsCargo().getStDescripcion()%></td>
                             <td class="align-middle">
                                 <div class="btn-group">
-                                    <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para modificar empleado" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
+                                    <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para editar empleado" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
                                        href="empleados?stOpcion=M&codigoSeleccionado=<%=elem.getInId()%>">
                                         <i class="fas fa-edit" style="font-size:15px;"></i>
                                     </a>

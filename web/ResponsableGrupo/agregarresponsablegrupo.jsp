@@ -93,7 +93,7 @@
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
-                    <a href="controlresponsablegrupo?btnReGruConsultar=true" class="btn btn-secondary"data-toggle="tooltip" title="Haz clic para regresar a la tabla anterior"><i class="fas fa-arrow-left"></i></a>
+                    <a href="controlresponsablegrupo?btnReGruConsultar=true" class="btn btn-secondary"data-toggle="tooltip" title="Haz clic para regresar al menú responsable por grupo"><i class="fas fa-arrow-left"></i></a>
                 </div>
                 <div class="card-body">
                     <form action="controlresponsablegrupo" method="POST">
