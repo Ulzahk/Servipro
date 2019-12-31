@@ -106,9 +106,9 @@
                         </div>
                         <div class="input-group mt-2" >
                             <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
-                            <input type="text" class="form-control" name="txtBuscarEsta" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
+                            <input type="text" class="form-control rounded-left" name="txtBuscarEsta" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
                             <div class="input-group-append">
-                                <button type="submit" Value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar" name="btnBuscarEstaMensualidad"><i class="fas fa-search"></i></button>                            
+                                <button type="submit" Value="Buscar" class="btn btn-secondary rounded-right" data-toggle="tooltip" title="Haz clic para buscar" name="btnBuscarEstaMensualidad"><i class="fas fa-search"></i></button>                            
                             </div>
                         </div>
                     </form>

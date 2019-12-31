@@ -21,6 +21,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Módulos</title>
         <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
@@ -77,9 +79,9 @@
                         <div class="input-group">
                             <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
                             <a href="agregarmodulos.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
-                            <input type="text" class="form-control" name="Buscar" placeholder="Buscar en ServiSoft S.A."/>
+                            <input type="text" class="form-control rounded-left" name="Buscar" placeholder="Buscar en ServiSoft S.A."/>
                             <div class="input-group-append">
-                                <button type="submit" Value="Buscar" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para buscar"><i class="fas fa-search"></i></button> 
+                                <button type="submit" Value="Buscar" class="btn btn-secondary rounded-right" data-toggle="tooltip" title="Haz clic para buscar"><i class="fas fa-search"></i></button> 
                             </div>
                         </div>
                     </form>

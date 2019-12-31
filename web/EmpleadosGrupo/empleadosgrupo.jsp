@@ -95,9 +95,9 @@
                         <div class="input-group">
                             <a href="nomina.htm" class="btn btn-secondary mr-1"data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
                             <a href="controlempleadosgrupo?btnEmplGruAgregar=true" class="btn btn-secondary mr-1"data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
-                            <input type="text" class="form-control" name="txtEmplGruBuscar" id="txtModPerfilBuscar" placeholder="Buscar en Servisoft S.A."/>
+                            <input type="text" class="form-control rounded-left" name="txtEmplGruBuscar" id="txtModPerfilBuscar" placeholder="Buscar en Servisoft S.A."/>
                             <div class="input-group-append">                                
-                                <button type="submit" Value="Buscar" class="btn btn-secondary" name="btnEmplGruBuscar"data-toggle="tooltip" title="Haz clic para buscar"><i class="fas fa-search"></i></button>
+                                <button type="submit" Value="Buscar" class="btn btn-secondary rounded-right" name="btnEmplGruBuscar"data-toggle="tooltip" title="Haz clic para buscar"><i class="fas fa-search"></i></button>
                             </div>
                         </div>
                     </form>

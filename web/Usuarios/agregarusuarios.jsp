@@ -112,9 +112,9 @@
                                            value="<%=obclsUsuarios.getContraseña() != null ? obclsUsuarios.getContraseña() : ""%>"/>
                                 </div>
                                 <div class="col-6">
-                                    <label for="lblcContraseña"><b>Confirmar Contraseña</b></label>
+                                    <label for="lblcContraseña"><b>Confirmación</b></label>
                                     <input type="text" class="form-control" name="txtConfirmarContraseña"
-                                           value="<%=obclsUsuarios.getContraseña() != null ? obclsUsuarios.getContraseña() : ""%>"/>                                           
+                                           value="<%=obclsUsuarios.getContraseña() != null ? obclsUsuarios.getContraseña() : ""%>" placeholder="Repetir contraseña"/>                                           
                                 </div>
                             </div>
                         </div>

@@ -98,8 +98,8 @@
                         <!--FILA-->
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-4">
-                                    <label for="lblTipoDocumento"><b>Tipo Documento</b></label>
+                                <div class="col-5">
+                                    <label for="lblTipoDocumento"><b>T. Documento</b></label>
                                     <select class="form-control" name="ddlTipoDocumento">
                                         <%
                                             List<Modelos.Empleados.clsTipoDocumento> lstclsTipoDocumento = new ArrayList<Modelos.Empleados.clsTipoDocumento>();
@@ -119,7 +119,7 @@
                                         %>
                                     </select>
                                 </div>
-                                <div class="col-8">
+                                <div class="col-7">
                                     <label for="lblDocumento"><b>Documento</b></label>
                                     <input type="txt" class="form-control" name="txtDocumento"
                                            value="<%=obclsEmpleado.getStDocumento() != null ? obclsEmpleado.getStDocumento() : ""%>"/>
@@ -165,7 +165,7 @@
                                            value="<%=obclsEmpleado.getStTelefono() != null ? obclsEmpleado.getStTelefono() : ""%>"/>
                                 </div>
                                 <div class="col-4">
-                                    <label for="lblCentroCosto"><b>Centro Costos</b></label>
+                                    <label for="lblCentroCosto"><b>C. Costos</b></label>
                                     <select class="form-control" name="ddlCentroCosto">
                                         <%
                                             List<Modelos.Empleados.clsCentroCosto> lstclsCentroCosto = new ArrayList<Modelos.Empleados.clsCentroCosto>();
