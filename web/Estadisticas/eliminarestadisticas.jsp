@@ -98,14 +98,10 @@
                         <!--FILA 11-->   
                         <div class="form-group">
                             <div class="form-row">
-                                <div class="col-2">
-                                </div>
-                                <div class="col-8 text-center">
-                                    <a href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-info font-weight-bold"><span>No, cancelar</span></a>
-                                    <input type="submit" value="Si, eliminar" class="btn btn-danger font-weight-bold" name="btnEliminarEsta"/>
+                                <div class="col-12 text-center btn-group">
+                                    <a href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-info font-weight-bold rounded"><span>No, cancelar</span></a>
+                                    <input type="submit" value="Si, eliminar" class="btn btn-danger font-weight-bold rounded ml-1" name="btnEliminarEsta"/>
                                     <input type="text" name="IdModificar" id="IdModificar" value="<%=obclsEstadisticas.getId_estadistica()%>" hidden=""/>
-                                </div>
-                                <div class="col-2">
                                 </div>
                             </div>
                         </div>

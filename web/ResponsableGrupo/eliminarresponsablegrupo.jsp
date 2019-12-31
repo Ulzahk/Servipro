@@ -95,15 +95,11 @@
                         <!--FILA-->   
                         <div class="form-group">
                             <div class="form-row">
-                                <div class="col-2">
-                                </div>
-                                <div class="col-8 text-center">
-                                    <a href="controlresponsablegrupo?btnReGruConsultar=true" class="btn btn-info font-weight-bold"><span>No, cancelar</span></a>
+                                <div class="col-12 text-center btn-group">
+                                    <a href="controlresponsablegrupo?btnReGruConsultar=true" class="btn btn-info font-weight-bold rounded"><span>No, cancelar</span></a>
                                     <span>&nbsp;</span>
-                                    <input type="submit" value="Si, eliminar" class="btn btn-danger font-weight-bold" name="btnReGruEliminar"/>
+                                    <input type="submit" value="Si, eliminar" class="btn btn-danger font-weight-bold rounded ml-1" name="btnReGruEliminar"/>
                                     <input type="text" name="IdModificar" id="IdModificar" value="<%=obclsResponsableGrupo.getId_responsable()%>" hidden=""/>
-                                </div>
-                                <div class="col-2">
                                 </div>
                             </div>
                         </div>

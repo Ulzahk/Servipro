@@ -98,15 +98,11 @@
                         <!--FILA-->   
                         <div class="form-group">
                             <div class="form-row">
-                                <div class="col-2">
-                                </div>
-                                <div class="col-8 text-center">
-                                    <a href="controlnovedadesempleado?btnNoveEmplConsultar=true" class="btn btn-info font-weight-bold"><span>No, cancelar</span></a>
+                                <div class="col-12 text-center btn-group">
+                                    <a href="controlnovedadesempleado?btnNoveEmplConsultar=true" class="btn btn-info font-weight-bold rounded "><span>No, cancelar</span></a>
                                     <span>&nbsp;</span>
-                                    <input type="submit" value="Si, eliminar" class="btn btn-danger font-weight-bold" name="btnNoveEmplEliminar"/>
+                                    <input type="submit" value="Si, eliminar" class="btn btn-danger font-weight-bold rounded ml-1" name="btnNoveEmplEliminar"/>
                                     <input type="text" name="IdModificar" id="IdModificar" value="<%=obclsNovedadesEmpleado.getId_novedad_empleado()%>" hidden=""/>
-                                </div>
-                                <div class="col-2">
                                 </div>
                             </div>
                         </div>

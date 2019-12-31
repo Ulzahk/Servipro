@@ -65,23 +65,18 @@
                     <!--FILA-->   
                     <div class="form-group">
                         <div class="form-row">
-                            <div class="col-2">
-                            </div>
                             <c:forEach var="dato" items="${datos}">                                    
-                                <div class="col-8 text-center">
-                                    <a href="grupos.htm" class="btn btn-info" data-toggle="tooltip" title="Haz clic para regresar al menú perfil" class="btn btn-info font-weight-bold"><span>No, cancelar</span></a>
+                                <div class="col-12 text-center btn-group">
+                                    <a href="grupos.htm" class="btn btn-info font-weight-bold rounded" data-toggle="tooltip" title="Haz clic para regresar al menú perfil"><span>No, cancelar</span></a>
                                     <span>&nbsp;</span>
-                                    <a href="<c:url value="confirmareliminargrupos.htm?id_grupo=${dato.Id_grupo}"/>" class="btn btn-danger"><b>Confirmar Eliminación</b></a>                                </c:forEach>
-                                <div class="col-2">
+                                    <a href="<c:url value="confirmareliminargrupos.htm?id_grupo=${dato.Id_grupo}"/>" class="btn btn-danger rounded ml-1"><b>Si, eliminar</b></a>                                
                                 </div>
-                            </div>
+                            </c:forEach>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
-    <script type="text/javascript" language="JavaScript">
-        main();
-    </script>
+    </div>
+</body>
 </html>

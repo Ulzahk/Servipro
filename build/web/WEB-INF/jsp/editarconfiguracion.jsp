@@ -88,7 +88,4 @@
             </div>
         </div>
     </body>
-    <script type="text/javascript" language="JavaScript">
-        main();
-    </script>
 </html>

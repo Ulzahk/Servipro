@@ -53,7 +53,5 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript" language="JavaScript">
-            main();
-        </script>
+    </body>
 </html>
