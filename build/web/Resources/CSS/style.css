@@ -6,11 +6,16 @@
 
 body{
 	margin: 0;
-	
+	font-family: arial,sans-serif;
   }
 
 .tipoLetra{
     font-family: arial,sans-serif;
+}
+
+.tipoLetraLabel{
+    font-family: arial, sans-serif;
+    font-weight: 500;
 }
 
 .barraNavegacion{
@@ -281,6 +286,10 @@ header .Menu ul li .caret {
     }
 
     .logo{
+        display: none;
+    }
+    
+    .coloriphonex {
         display: none;
     }
 }
