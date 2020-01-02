@@ -17,27 +17,42 @@
         }
     }
 %>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
     <head>
-        <meta charset="UTF-8" />
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Estadísticas</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="Resources/CSS/style.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"></script>
+
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
         <script src="Resources/JS/functions.js"></script>
-
     </head>
+
     <body>
         <%
             Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
@@ -92,7 +107,7 @@
                 }
             %> 
         </header> 
-        <div class="container mt-4">
+        <div class="container">
             <h1 class="text-center">Estadísticas</h1>
             <br>
             <div class="card border-info">
@@ -103,44 +118,15 @@
                             <a href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la mensualidad"><i class="fas fa-calendar-alt"></i></a>
                             <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 1 al 15"><i class="fas fa-calendar-week"></i></a>
                             <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 16 al 31"><i class="fas fa-calendar-minus"></i></a>
-                        </div>
-                        <div class="input-group mt-2" >
-                            <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro">Agregar Registro</a>
-                            <input type="text" class="form-control rounded-left" name="txtBuscarEsta" id="txtEmplBuscar" placeholder="Buscar en Servisoft S.A."/>
-                            <div class="input-group-append">
-                                <button type="submit" Value="Buscar" class="btn btn-secondary rounded-right" data-toggle="tooltip" title="Haz clic para buscar" name="btnBuscarEstaMensualidad"><i class="fas fa-search"></i></button>                            
-                            </div>
+                            <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" title="Haz clic para agregar un registro" ><i class="fas fa-plus"></i></a>
                         </div>
                     </form>
-                </div>                     
+                </div> 
                 <div class="card-body">
-                    <div class="">
-                        <table   id="table-id" cellspacing="0" border="1" class="table table-bordered table-striped table-hover text-center table-responsive">
-                            <div class="form-group">
-                                <div class="form-row">
-                                    <div class="col-3">
-                                        <select class="form-control form-control-sm" name="state" id="maxRows"> 
-                                            <option value="5000">Filtro de Paginación</option>
-                                            <option value="5000">Todos</option>
-                                            <option value="5">5</option>
-                                            <option value="10">10</option>
-                                            <option value="15">15</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="75">75</option>
-                                            <option value="100">100</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-8 ml-2">
-                                        <b>
-                                            <i class="fas fa-clipboard-list"></i>
-                                            <span>Registros Existentes: <%=lstclsEstadisticas.size()%></span>
-                                        </b>
-                                    </div>
-                                </div>
-                            </div>    
+                    <table class="table table-fluid table table-bordered table-striped table-hover text-center table-responsive" id="myTable">
+                        <thead>
                             <tr>
-                                <th class="align-middle"><b>Empleado</b></th>
+                                <th class="align-middle">Empleado</th>
                                 <th>A&ntilde;o</th>
                                 <th>Mes</th>
                                 <th>1</th>
@@ -176,7 +162,8 @@
                                 <th>31</th>
                                 <th rowspan="1" class="align-middle"><b>Acciones</b></th> 
                             </tr>
-
+                        </thead>
+                        <tbody>
                             <%
                                 for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticas) {
                             %>
@@ -239,58 +226,67 @@
                             <%
                                 }
                             %>
-                        </table>
-                        <!--Inicio de la Paginación -->
-                        <div class='pagination-container' >
-                            <nav>
-                                <ul class="pagination">
-
-                                    <li data-page="prev" >
-                                        <button class="btn btn-secondary btn-sm mr-1"><i class="fas fa-angle-left" style="font-size: 15px;"></i>&nbsp;<span class="sr-only">(current)</span></button>
-                                    </li>
-                                    <!--	Here the JS Function Will Add the Rows -->
-                                    <li data-page="next" id="prev">
-                                        <button class="btn btn-secondary btn-sm"><i class="fas fa-angle-right" style="font-size: 15px;"></i><span class="sr-only">(current)</span></button>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th class="align-middle">Empleado</th>
+                                <th>A&ntilde;o</th>
+                                <th>Mes</th>
+                                <th>1</th>
+                                <th>2</th>
+                                <th>3</th>
+                                <th>4</th>
+                                <th>5</th>
+                                <th>6</th>
+                                <th>7</th>
+                                <th>8</th>
+                                <th>9</th>
+                                <th>10</th>
+                                <th>11</th>
+                                <th>12</th>
+                                <th>13</th>
+                                <th>14</th>
+                                <th>15</th>
+                                <th>16</th>
+                                <th>17</th>
+                                <th>18</th>
+                                <th>19</th>
+                                <th>20</th>
+                                <th>21</th>
+                                <th>22</th>
+                                <th>23</th>
+                                <th>24</th>
+                                <th>25</th>
+                                <th>26</th>
+                                <th>27</th>
+                                <th>28</th>
+                                <th>29</th>
+                                <th>30</th>
+                                <th>31</th>
+                                <th rowspan="1" class="align-middle"><b>Acciones</b></th> 
+                            </tr>
+                        </tfoot>
+                    </table>
                 </div>
             </div>
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog modal-lg">
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
 
-                    <!-- Modal content-->
-                    <div class="modal-content">  
-                        <div class="modal-body">
+                <!-- Modal content-->
+                <div class="modal-content">  
+                    <div class="modal-body">
 
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script type="text/javascript" language="JavaScript">
-            fpaginacion();
+
+        <script>
+
+            main();
         </script>
-        <style>
-            table th , table td{
-                text-align: center;
-            }
-
-            table tr:nth-child(even){
-                background-color: #fff;
-            }
-
-            .pagination li:hover{
-                cursor: pointer;
-            }
-
-
-        </style>
     </body>
-    <script type="text/javascript" language="JavaScript">
-        main();
-    </script>
-</html>                           
+
+</html>

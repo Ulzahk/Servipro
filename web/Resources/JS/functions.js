@@ -101,23 +101,8 @@ function fpaginacion() {
             $('#myModal').modal({show: false});
         });
     });
-
-    getPagination('#table-id');
-
-
-    $(function () {
-        // Just to append id number for each row
-        $('table tr:eq(0)').prepend('<th> ID </th>');
-
-        var id = 0;
-
-        $('table tr:gt(0)').each(function () {
-            id++;
-            $(this).prepend('<td>' + id + '</td>');
-        });
-    });
-
 }
+getPagination('#table-id');
 //getPagination('.table-class');
 //getPagination('table');
 
@@ -233,7 +218,8 @@ function getPagination(table) {
     // end of on select change
 
     // END OF PAGINATION
-};
+}
+;
 
 function limitPagging() {
     // alert($('.pagination li').length)
@@ -254,5 +240,50 @@ function limitPagging() {
 
         }
     }
-};
+}
+;
+
+$(function () {
+    // Just to append id number for each row
+    $('table tr:eq(0)').prepend('<th> ID </th>');
+
+    var id = 0;
+
+    $('table tr:gt(0)').each(function () {
+        id++;
+        $(this).prepend('<td>' + id + '</td>');
+    });
+});
+
+$(document).ready(function () {
+    $('#myTable').DataTable({
+        language: {"sProcessing": "Procesando...",
+            "sLengthMenu": "Mostrar _MENU_ registros",
+            "sZeroRecords": "No se encontraron resultados",
+            "sEmptyTable": "Ningún dato disponible en esta tabla =(",
+            "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix": "",
+            "sSearch": "Buscar:",
+            "sUrl": "",
+            "sInfoThousands": ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            },
+            "buttons": {
+                "copy": "Copiar",
+                "colvis": "Visibilidad"
+            }
+        }
+    });
+});
 

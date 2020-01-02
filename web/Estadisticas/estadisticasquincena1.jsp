@@ -254,5 +254,7 @@
     </body>
     <script type="text/javascript" language="JavaScript">
         main();
+        
+        fpaginacion();
     </script>
 </html>                           
