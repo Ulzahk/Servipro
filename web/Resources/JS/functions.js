@@ -140,8 +140,8 @@ $(document).ready(function () {
                 "copy": "Copiar",
                 "colvis": "Visibilidad",
                 "pageLength": "Mostrar registros",
-                "csv": "<i class='fas fa-file-csv' style='font-size:17px;'></i>",
-                "excel": "<i class='far fa-file-excel' style='font-size:17px;'></i>"
+                "csv": "<i class='fas fa-file-csv' style='font-size:17px;' data-toggle='tooltip' title='Haz clic para descargar archivo CSV'></i>",
+                "excel": "<i class='far fa-file-excel' style='font-size:17px;' data-toggle='tooltip' title='Haz clic para descargar archivo CSV'></i>"
             }
         }
 
