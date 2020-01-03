@@ -18,7 +18,7 @@
 %>
 <!DOCTYPE html>
 <html>
-    <head>
+  <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -31,7 +31,15 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
         <script src="https://cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"></script>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
