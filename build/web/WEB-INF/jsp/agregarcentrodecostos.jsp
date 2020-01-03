@@ -68,7 +68,7 @@
                     <form:form method="post" commandName="centrodecostos">
                         <form:errors path="*" element="div" cssClass="alert alert-danger"/>
                         <p>
-                            <form:label path="nombre_ccostos"><b>Nombre C.Costos</b></form:label>
+                            <form:label path="nombre_ccostos"><b>Centro de Costos</b></form:label>
                             <form:input path="nombre_ccostos" cssClass="form-control"/>
                         </p>
                         <hr/>
