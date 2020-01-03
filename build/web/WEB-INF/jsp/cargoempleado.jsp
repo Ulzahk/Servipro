@@ -90,8 +90,8 @@
                                     <td class="align-middle">${dato.Descripcion_cargo}</td>
                                     <td class="align-middle">
                                         <div class="btn-group">
-                                            <a href="<c:url value="editarcargoempleado.htm?id_cargo=${dato.Id_cargo}"/>" class="btn btn-warning rounded mr-1 ml-4 openBtn"data-toggle="modal" data-target="#myModal" title="Haz clic para editar cargo empleado"><i class="fas fa-edit"></i></a>
-                                            <a href="<c:url value="eliminarcargoempleado.htm?id_cargo=${dato.Id_cargo}"/>" class="btn btn-danger rounded mr-4 openBtn"data-toggle="modal" data-target="#myModal" title="Haz clic para eliminar"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="<c:url value="editarcargoempleado.htm?id_cargo=${dato.Id_cargo}"/>" class="btn btn-warning rounded mr-1 ml-4 openBtn" data-toggle="modal" data-target="#myModal" title="Haz clic para editar cargo empleado"><i class="fas fa-edit"></i></a>
+                                            <a href="<c:url value="eliminarcargoempleado.htm?id_cargo=${dato.Id_cargo}"/>" class="btn btn-danger rounded mr-4 openBtn" data-toggle="modal" data-target="#myModal" title="Haz clic para eliminar"><i class="fas fa-trash-alt"></i></a>
                                         </div>
                                     </td>
                                 </tr>
