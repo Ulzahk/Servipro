@@ -83,40 +83,7 @@
                                 <th class="align-middle">Alias</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
-                        </thead>
-                        <%
-                            String control = request.getParameter("Buscar");
-                            try {
-                                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                                Connection conn = DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable", "contable19", "contable19");
-                                String Query = "SELECT * FROM nm_tipo_novedad where "
-                                        + " Id_novedad like '%" + request.getParameter("Buscar") + "%' or "
-                                        + " Descripcion like '%" + request.getParameter("Buscar") + "%' or "
-                                        + " Alias like '%" + request.getParameter("Buscar") + "%'";
-                                Statement stm = conn.createStatement();
-                                ResultSet rs = stm.executeQuery(Query);
-
-                                if (control != null) {
-                                    while (rs.next()) {
-                        %>
-                        <tbody>
-                            <tr>
-                                <td class="align-middle"><%=rs.getString("Descripcion")%></td>
-                                <td class="align-middle"><%=rs.getString("Alias")%></td>
-                                <c:forEach var="dato" items="${datos}"  begin="<%=rs.getInt("Id_novedad") - 1%>" end="<%=rs.getInt("Id_novedad") - 1%>">
-                                    <td class="align-middle">
-                                        <div class="btn-group">
-                                            <a href="<c:url value="editartipodenovedades.htm?id_novedad=${dato.Id_novedad}"/>" class="btn btn-warning rounded mr-1"><i class="fas fa-edit"></i></a>
-                                            <a href="<c:url value="eliminartipodenovedades.htm?id_novedad=${dato.Id_novedad}"/>"class="btn btn-danger rounded mr-4"><i class="fas fa-trash-alt"></i></a>
-                                        </div>
-                                    </td>
-                                </c:forEach>
-                            </tr>
-                        </tbody>  
-                        <%
-                            }
-                        } else {
-                        %>
+                        </thead>                        
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                                 <tr>
@@ -130,15 +97,7 @@
                                     </td>
                                 </tr>
                             </c:forEach>
-                        </tbody> 
-                        <%
-                                }
-                            } catch (Exception ex) {
-                                ex.printStackTrace();
-                                out.println("Error " + ex.getMessage());
-                            }
-
-                        %>
+                        </tbody>                        
                         <tfoot>
                             <tr>
                                 <th class="align-middle">Descripción</th>

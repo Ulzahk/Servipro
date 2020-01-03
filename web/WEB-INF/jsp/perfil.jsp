@@ -96,37 +96,6 @@
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </thead>
-                        <%
-                            String control = request.getParameter("Buscar");
-                            try {
-                                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                                Connection conn = DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable", "contable19", "contable19");
-                                String Query = "SELECT * FROM nm_perfil where  "
-                                        + " Id_perfil like '%" + request.getParameter("Buscar") + "%' or "
-                                        + " Descripcion_perfil like '%" + request.getParameter("Buscar") + "%'";
-                                Statement stm = conn.createStatement();
-                                ResultSet rs = stm.executeQuery(Query);
-
-                                if (control != null) {
-                                    while (rs.next()) {
-                        %>
-                        <tbody>
-                            <tr>
-                                <td class="align-middle"><%=rs.getString("Descripcion_perfil")%></td>
-                                <c:forEach var="dato" items="${datos}"  begin="<%=rs.getInt("Id_perfil") - 1%>" end="<%=rs.getInt("Id_perfil") - 1%>">
-                                    <td class="align-middle">
-                                        <div class="btn-group">
-                                            <a href="<c:url value="editarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-warning rounded mr-1 ml-4" data-toggle="modal" data-target="#myModal"><i class="fas fa-edit"></i></a>
-                                            <a href="<c:url value="eliminarperfil.htm?id_perfil=${dato.Id_perfil}"/>"class="btn btn-danger rounded mr-4" data-toggle="modal" data-target="#myModal"><i class="fas fa-trash-alt"></i></a>
-                                        </div>
-                                    </td>
-                                </c:forEach>
-                            </tr>
-                        </tbody>  
-                        <%
-                            }
-                        } else {
-                        %>
                         <tbody>
                             <c:forEach var="dato" items="${datos}">
                                 <tr>
@@ -141,14 +110,6 @@
                                 </tr>
                             </c:forEach>
                         </tbody> 
-                        <%
-                                }
-                            } catch (Exception ex) {
-                                ex.printStackTrace();
-                                out.println("Error " + ex.getMessage());
-                            }
-
-                        %> 
                         <tfoot>
                             <tr>
                                 <th class="align-middle">Perfil</th>
