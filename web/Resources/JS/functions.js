@@ -92,17 +92,12 @@ function main() {
         $(this).children('.children').slideToggle();
     });
 
-}
-
-
-function fpaginacion() {
     $('.openBtn').on('click', function () {
         $('.modal-body').load(this.href, function ()
         {
             $('#myModal').modal({show: false});
         });
     });
-}
 
 $(document).ready(function () {
     $('#myTable').DataTable({
@@ -148,6 +143,12 @@ $(document).ready(function () {
     }
     );
 })
+}
+
+
+
+
+
 
 
 
