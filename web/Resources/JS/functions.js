@@ -91,9 +91,29 @@ function main() {
     $('.submenu').click(function () {
         $(this).children('.children').slideToggle();
     });
-    
-    $(document).ready(function () {
+
+}
+
+
+function fpaginacion() {
+    $('.openBtn').on('click', function () {
+        $('.modal-body').load(this.href, function ()
+        {
+            $('#myModal').modal({show: false});
+        });
+    });
+}
+
+$(document).ready(function () {
     $('#myTable').DataTable({
+        dom: 'Bfrtip',
+        lengthMenu: [
+            [5, 10, 25, 50, -1],
+            ['5 registros', '10 registros', '25 registros', '50 registros', 'Mostrar Todos']
+        ],
+        buttons: [
+            'pageLength', 'csv', 'excel'
+        ],
         language: {"sProcessing": "Procesando...",
             "sLengthMenu": "Mostrar _MENU_ registros",
             "sZeroRecords": "No se encontraron resultados",
@@ -118,21 +138,16 @@ function main() {
             },
             "buttons": {
                 "copy": "Copiar",
-                "colvis": "Visibilidad"
+                "colvis": "Visibilidad",
+                "pageLength": "Mostrar registros",
+                "csv": "<i class='fas fa-file-csv' style='font-size:17px;'></i>",
+                "excel": "<i class='far fa-file-excel' style='font-size:17px;'></i>"
             }
         }
-    });
+
+    }
+    );
 })
-}
 
-
-function fpaginacion() {
-    $('.openBtn').on('click', function () {
-        $('.modal-body').load(this.href, function ()
-        {
-            $('#myModal').modal({show: false});
-        });
-    });
-}
 
 
