@@ -145,7 +145,7 @@
                                 <th>29</th>
                                 <th>30</th>
                                 <th>31</th>
-                                <th rowspan="1" class="align-middle"><b>Acciones</b></th> 
+                                <th rowspan="1" class="align-middle">Acciones</th> 
                             </tr>
                         </thead>
                         <tbody>
@@ -248,7 +248,7 @@
                                 <th>29</th>
                                 <th>30</th>
                                 <th>31</th>
-                                <th rowspan="1" class="align-middle"><b>Acciones</b></th> 
+                                <th rowspan="1" class="align-middle">Acciones</th> 
                             </tr>
                         </tfoot>
                     </table>
