@@ -296,7 +296,7 @@
                                 <th>13</th>
                                 <th>14</th>
                                 <th>15</th>                                
-                                <th rowspan="1" class="align-middle"><b>Acciones</b></th> 
+                                <th rowspan="1" class="align-middle">Acciones</th> 
                             </tr>
                         </tfoot>
                     </table>
