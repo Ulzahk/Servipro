@@ -47,6 +47,10 @@ public class clsNovedadesEmpleado {
                 obclsNovedadesEmpleado.setDetalle(rs.getString("Detalle"));
                 obclsNovedadesEmpleado.setFecha(rs.getString("Fecha"));
                 obclsNovedadesEmpleado.setDia(rs.getInt("Dia"));
+                
+                Modelos.NovedadesEmpleado.clsGrupoEmpl obclsGrupoEmpl = new Modelos.NovedadesEmpleado.clsGrupoEmpl();
+                obclsGrupoEmpl.setId_grupo(rs.getInt("Id_grupo"));
+                obclsNovedadesEmpleado.setObclsGrupoEmpl(obclsGrupoEmpl);
 
                 lstclsNovedadesEmpleado.add(obclsNovedadesEmpleado);
 
@@ -89,6 +93,10 @@ public class clsNovedadesEmpleado {
                 obclsNovedadesEmpleado.setDetalle(rs.getString("Detalle"));
                 obclsNovedadesEmpleado.setFecha(rs.getString("Fecha"));
                 obclsNovedadesEmpleado.setDia(rs.getInt("Dia"));
+                
+                Modelos.NovedadesEmpleado.clsGrupoEmpl obclsGrupoEmpl = new Modelos.NovedadesEmpleado.clsGrupoEmpl();
+                obclsGrupoEmpl.setId_grupo(rs.getInt("Id_grupo"));
+                obclsNovedadesEmpleado.setObclsGrupoEmpl(obclsGrupoEmpl);
 
                 lstclsNovedadesEmpleado.add(obclsNovedadesEmpleado);
             }

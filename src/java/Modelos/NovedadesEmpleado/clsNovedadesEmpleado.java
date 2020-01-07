@@ -10,6 +10,7 @@ public class clsNovedadesEmpleado {
     public String detalle;
     public String fecha;
     public int dia;
+    public clsGrupoEmpl obclsGrupoEmpl;
 
     public int getId_novedad_empleado() {
         return Id_novedad_empleado;
@@ -58,7 +59,13 @@ public class clsNovedadesEmpleado {
     public void setDia(int dia) {
         this.dia = dia;
     }
-    
-    
-    
+
+    public clsGrupoEmpl getObclsGrupoEmpl() {
+        return obclsGrupoEmpl;
+    }
+
+    public void setObclsGrupoEmpl(clsGrupoEmpl obclsGrupoEmpl) {
+        this.obclsGrupoEmpl = obclsGrupoEmpl;
+    }
+     
 }

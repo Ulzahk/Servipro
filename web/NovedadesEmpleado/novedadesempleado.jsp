@@ -2,10 +2,17 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
+<%@page import="BL.clsConexion"%>
 <%
+    Connection conn = null;
+
+    clsConexion obclsConexion = new clsConexion();
+    conn = obclsConexion.getConexion();
+
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
     String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
+
     if (id_usuario == null) {
         response.sendRedirect("login.jsp");
     } else {
@@ -19,7 +26,7 @@
 %>
 <!DOCTYPE html>
 <html>
-   <head>
+    <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -115,7 +122,7 @@
                     </form>
                 </div>
                 <div class="card-body">
-                    <table class="table table-fluid table table-bordered table-striped table-hover text-center table-responsive" id="myTable">
+                    <table class="table table-fluid table table-bordered table-striped table-hover text-center table-responsive-sm" id="myTable">
                         <thead>
                             <tr>
                                 <th class="align-middle">Empleado</th>
@@ -129,7 +136,37 @@
                         </thead>
                         <tbody>
                             <%
-                                for (Modelos.NovedadesEmpleado.clsNovedadesEmpleado elem : lstclsNovedadesEmpleado) {
+                                int GrupoEmpl = 0;
+
+                                List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticasGrupo = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+                                try {
+                                    ResultSet rs = null;
+                                    PreparedStatement ps = conn.prepareStatement("{call spBuscarGrupoUsuario(?)}");
+                                    ps.setString(1, id_usuario);
+                                    rs = ps.executeQuery();
+
+                                    while (rs.next()) {
+                                        Modelos.Estadisticas.clsEstadisticas obEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+
+                                        Modelos.Estadisticas.clsGrupoEmpl obGrupoEmpl = new Modelos.Estadisticas.clsGrupoEmpl();
+                                        obGrupoEmpl.setId_grupo(rs.getInt("Id_grupo"));
+                                        obEstadisticas.setObGrupoEmpl(obGrupoEmpl);
+
+                                        lstclsEstadisticasGrupo.add(obEstadisticas);
+                                    }
+
+                                } catch (Exception ex) {
+
+                                }
+
+                                for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticasGrupo) {
+
+                                    GrupoEmpl = elem.getObGrupoEmpl().getId_grupo();
+
+                                }
+
+                                if (Descripcion_perfil.equals("JEFE")) {
+                                    for (Modelos.NovedadesEmpleado.clsNovedadesEmpleado elem : lstclsNovedadesEmpleado) {
                             %>
                             <tr>
                                 <td class="align-middle">
@@ -157,6 +194,39 @@
                                 </td>
                             </tr>
                             <%
+                                }
+                            } else {
+                                for (Modelos.NovedadesEmpleado.clsNovedadesEmpleado elem : lstclsNovedadesEmpleado) {
+                                    if (GrupoEmpl == (elem.getObclsGrupoEmpl().getId_grupo())) {   
+                            %>
+                            <tr>
+                                <td class="align-middle">
+                                    <%=elem.getObclsEmpleado().getEmplPrimerNombre()%>
+                                    <%=elem.getObclsEmpleado().getEmplSegundoNombre()%>
+                                    <%=elem.getObclsEmpleado().getEmplPrimerApellido()%>
+                                    <%=elem.getObclsEmpleado().getEmplSegundoApellido()%>
+                                </td>
+                                <td class="align-middle"><%=elem.getObclsTipoNovedad().getDescripcion_novedad()%></td>
+                                <td class="align-middle"><%=elem.getObclsTipoNovedad().getAlias_novedad()%></td>
+                                <td class="align-middle"><%=elem.getDetalle()%></td>
+                                <td class="align-middle"><%=elem.getFecha()%></td>
+                                <td class="align-middle"><%=elem.getDia()%></td>
+                                <td class="align-middle">
+                                    <div class="btn-group">
+                                        <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para editar novedad" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
+                                           href="controlnovedadesempleado?stOpcion=M&codigoSeleccionado=<%=elem.getId_novedad_empleado()%>">
+                                            <i class="fas fa-edit" style="font-size:15px;"></i>
+                                        </a>
+                                        <a class="btn btn-danger btn-sm openBtn rounded" title="Haz clic para eliminar" data-toggle="modal" data-target="#myModal" id="btnEmplEliminar"
+                                           href="controlnovedadesempleado?stOpcion=E&codigoSeleccionado=<%=elem.getId_novedad_empleado()%>">
+                                            <i class="fas fa-trash-alt" style="font-size:15px;"></i>
+                                        </a>
+                                    </div>                                
+                                </td>
+                            </tr>
+                            <%
+                                        }
+                                    }
                                 }
                             %>
                         </tbody>
