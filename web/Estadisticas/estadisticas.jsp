@@ -254,7 +254,6 @@
                             </tr>
                             <%
                                 }
-
                             } else {
                                 for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticas) {
                                     if (GrupoEmpl == (elem.getObGrupoEmpl().getId_grupo())) {
