@@ -111,13 +111,15 @@ public class ControlUsuarios extends HttpServlet {
 
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsUsuarios.createUsuario(obclsUsuarios));
-            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+            
+            if (request.getAttribute("stMensaje").equals("Se realizó el proceso con éxito")) {
                 request.setAttribute("stTipo", "success");
-            }else{
+            }
+            
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
                 request.setAttribute("stTipo", "error");
             }
             request.setAttribute("lstclsUsuarios", bl_clsUsuarios.getUsuarios());
-
             //Redireccion y envio de valores
             request.getRequestDispatcher("Usuarios/usuarios.jsp").forward(request, response);
         } catch (Exception ex) {
@@ -276,7 +278,9 @@ public class ControlUsuarios extends HttpServlet {
             request.setAttribute("stMensaje", bl_clsUsuarios.updateUsuarios(obclsUsuarios));
             if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
                 request.setAttribute("stTipo", "success");
-            }else{
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
                 request.setAttribute("stTipo", "error");
             }
             request.setAttribute("lstclsUsuarios", bl_clsUsuarios.getUsuarios());

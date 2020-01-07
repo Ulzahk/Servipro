@@ -108,7 +108,7 @@ public class clsUsuarios {
             return "Se realizó el proceso con éxito";
 
         } catch (Exception ex) {
-            return "El proceso presentó un error";
+            return "Hubo un error, revisa la información ingresada";
         }
     }
     
@@ -126,7 +126,7 @@ public class clsUsuarios {
             return "Se realizó el proceso con éxito";
              
         } catch (Exception ex) {
-            return "El proceso presentó un error";
+            return "Hubo un error, revisa la información ingresada";
         }
     }
     
@@ -139,7 +139,7 @@ public class clsUsuarios {
             
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
+            return "Hubo un error, revisa la información ingresada";
         }
     }
 }

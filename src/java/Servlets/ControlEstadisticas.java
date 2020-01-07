@@ -496,7 +496,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.createEstadistica(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+
+            if (request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")) {
+                request.setAttribute("stTipo", "error");
+            }
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores            
@@ -791,7 +797,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.commentEstadistica(obclsComentarEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+
+            if (request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")) {
+                request.setAttribute("stTipo", "error");
+            }
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1032,7 +1044,13 @@ public class ControlEstadisticas extends HttpServlet {
 
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstadistica(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+
+            if (request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")) {
+                request.setAttribute("stTipo", "error");
+            }
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1141,7 +1159,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia1(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+
+            if (request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")) {
+                request.setAttribute("stTipo", "error");
+            }
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1182,7 +1206,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia2(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }            
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1223,7 +1253,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia3(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }            
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1264,7 +1300,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia4(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }            
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1305,7 +1347,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia5(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }            
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1346,7 +1394,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia6(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }            
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1387,7 +1441,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia7(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }            
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1428,7 +1488,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia8(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1469,7 +1535,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia9(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1510,7 +1582,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia10(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1551,7 +1629,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia11(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1592,7 +1676,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia12(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1633,7 +1723,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia13(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1674,7 +1770,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia14(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1715,7 +1817,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia15(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1756,7 +1864,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia16(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1797,7 +1911,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia17(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1838,7 +1958,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia18(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1879,7 +2005,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia19(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1920,7 +2052,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia20(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -1961,7 +2099,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia21(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -2002,7 +2146,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia22(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -2043,7 +2193,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia23(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -2084,7 +2240,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia24(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -2125,7 +2287,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia25(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -2166,7 +2334,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia26(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -2207,7 +2381,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia27(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -2248,7 +2428,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia28(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -2289,7 +2475,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia29(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -2330,7 +2522,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia30(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -2371,7 +2569,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaDia31(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -2412,7 +2616,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaMes(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores
@@ -2450,7 +2660,13 @@ public class ControlEstadisticas extends HttpServlet {
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaAnio(obclsEstadisticas));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores

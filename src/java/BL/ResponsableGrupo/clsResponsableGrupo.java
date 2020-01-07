@@ -103,8 +103,7 @@ public class clsResponsableGrupo {
             return "Se realizó el proceso con éxito";
             
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
     
     public String updateResponsableGrupo(Modelos.ResponsableGrupo.clsResponsableGrupo obclsResponsableGrupo){
@@ -117,8 +116,7 @@ public class clsResponsableGrupo {
             return "Se realizó el proceso con éxito";
             
         } catch (Exception ex) {
-             return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
     
     public String deleteResponsableGrupo(Modelos.ResponsableGrupo.clsResponsableGrupo obclsResponsableGrupo){
