@@ -184,7 +184,8 @@
                                 }
                             } else {
                                 for (Modelos.EmpleadosGrupo.clsEmpleadosGrupo elem : lstclsEmpleadosGrupo) {
-                                    if (GrupoEmpl == (elem.getObclsGrupo().getId_grupo())) {
+                                    if (GrupoEmpl == (elem.getObclsGrupo().getId_grupo())
+                                            || (elem.getObclsGrupo().getId_grupo()) == 1) {
                             %>
                             <tr>
                                 <td class="align-middle"><%=elem.getObclsGrupo().getNombre_grupo()%></td>
