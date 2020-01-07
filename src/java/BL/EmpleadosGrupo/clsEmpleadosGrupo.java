@@ -62,7 +62,7 @@ public class clsEmpleadosGrupo {
             
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
+            return "Hubo un error, revisa la información ingresada";
         }
     }
     
@@ -113,7 +113,7 @@ public class clsEmpleadosGrupo {
             return "Se realizó el proceso con éxito";
             
         } catch (Exception ex) {
-            return ex.getMessage();
+            return "Hubo un error, revisa la información ingresada";
         }
     }
     

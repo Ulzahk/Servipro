@@ -48,9 +48,9 @@ public class ControlEmpleadosGrupo extends HttpServlet {
             } else if (request.getParameter("stOpcion").equals("E")) {
                 cargarEmplGruEliminar(request, response);
             }
-        } else if (request.getParameter("btnEmplGruEditar")!=null){
+        } else if (request.getParameter("btnEmplGruEditar") != null) {
             btnEmplGruEditar(request, response);
-        } else if (request.getParameter("btnEmplGruEliminar")!=null){
+        } else if (request.getParameter("btnEmplGruEliminar") != null) {
             btnEmplGruEliminar(request, response);
         }
     }
@@ -79,7 +79,13 @@ public class ControlEmpleadosGrupo extends HttpServlet {
 
             //Definición de Parametros del Controlador
             request.setAttribute("stMensaje", bl_clsEmpleadosGrupo.createEmpleadosGrupo(obclsEmpleadosGrupo));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+
+            if (request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")) {
+                request.setAttribute("stTipo", "error");
+            }
             request.setAttribute("lstclsEmpleadosGrupo", bl_clsEmpleadosGrupo.getEmpleadosGrupo());
 
             //Redirección y envio de valores
@@ -154,16 +160,16 @@ public class ControlEmpleadosGrupo extends HttpServlet {
             request.getRequestDispatcher("EmpleadosGrupo/editarempleadosgrupo.jsp").forward(request, response);
 
         } catch (Exception ex) {
-            
+
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
             request.getRequestDispatcher("EmpleadosGrupo/empleadosgrupo.jsp").forward(request, response);
         }
 
     }
-    
+
     public void cargarEmplGruEliminar(HttpServletRequest request,
-            HttpServletResponse response)throws IOException, ServletException{
+            HttpServletResponse response) throws IOException, ServletException {
         try {
             BL.EmpleadosGrupo.clsEmpleadosGrupo bl_clsEmpleadosGrupo = new BL.EmpleadosGrupo.clsEmpleadosGrupo();
 
@@ -179,33 +185,33 @@ public class ControlEmpleadosGrupo extends HttpServlet {
                     break;
                 }
             }
-            
+
             request.setAttribute("obclsEmpleadosGrupo", obclsEmpleadosGrupo);
             request.setAttribute("lstclsEmpleadosGrupo", lstclsEmpleadosGrupo);
             request.getRequestDispatcher("EmpleadosGrupo/eliminarempleadosgrupo.jsp").forward(request, response);
-            
+
         } catch (Exception ex) {
-            
+
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
             request.getRequestDispatcher("EmpleadosGrupo/empleadosgrupo.jsp").forward(request, response);
         }
     }
-    
+
     public void btnEmplGruEditar(HttpServletRequest request,
-            HttpServletResponse response)throws IOException, ServletException{
+            HttpServletResponse response) throws IOException, ServletException {
         try {
             BL.EmpleadosGrupo.clsEmpleadosGrupo bl_clsEmpleadosGrupo = new BL.EmpleadosGrupo.clsEmpleadosGrupo();
-            
+
             Modelos.EmpleadosGrupo.clsEmpleadosGrupo obclsEmpleadosGrupo = new Modelos.EmpleadosGrupo.clsEmpleadosGrupo();
-            
+
             Modelos.EmpleadosGrupo.clsGrupo obclsGrupo = new Modelos.EmpleadosGrupo.clsGrupo();
             Modelos.EmpleadosGrupo.clsEmpleado obclsEmpleado = new Modelos.EmpleadosGrupo.clsEmpleado();
-            
-            if(request.getParameter("IdModificar")!=null){
+
+            if (request.getParameter("IdModificar") != null) {
                 obclsEmpleadosGrupo.setId_empleados_grupo(Integer.valueOf(request.getParameter("IdModificar")));
             }
-            
+
             if (request.getParameter("ddlGrupo") != null) {
                 obclsGrupo.setId_grupo(Integer.parseInt(request.getParameter("ddlGrupo")));
                 obclsEmpleadosGrupo.setObclsGrupo(obclsGrupo);
@@ -215,20 +221,26 @@ public class ControlEmpleadosGrupo extends HttpServlet {
                 obclsEmpleado.setEmplId(Integer.parseInt(request.getParameter("ddlEmpleado")));
                 obclsEmpleadosGrupo.setObclsEmpleado(obclsEmpleado);
             }
-            
+
             //Definición de Parametros del Controlador
             request.setAttribute("stMensaje", bl_clsEmpleadosGrupo.updateEmpleadosGrupo(obclsEmpleadosGrupo));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+
+            if (request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")) {
+                request.setAttribute("stTipo", "error");
+            }
             request.setAttribute("lstclsEmpleadosGrupo", bl_clsEmpleadosGrupo.getEmpleadosGrupo());
 
             //Redirección y envio de valores
             request.getRequestDispatcher("EmpleadosGrupo/empleadosgrupo.jsp").forward(request, response);
         } catch (Exception ex) {
-            
+
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            
-             //Lista Empleados por Grupo
+
+            //Lista Empleados por Grupo
             BL.EmpleadosGrupo.clsEmpleadosGrupo bl_clsEmpleadosGrupo = new BL.EmpleadosGrupo.clsEmpleadosGrupo();
             request.setAttribute("lstclsEmpleadosGrupo", bl_clsEmpleadosGrupo.getEmpleadosGrupo());
 
@@ -241,18 +253,18 @@ public class ControlEmpleadosGrupo extends HttpServlet {
 
             request.getRequestDispatcher("EmpleadosGrupo/editarempleadosgrupo.jsp").forward(request, response);
         }
-        
+
     }
-    
+
     public void btnEmplGruEliminar(HttpServletRequest request,
-            HttpServletResponse response)throws IOException, ServletException{
-        
+            HttpServletResponse response) throws IOException, ServletException {
+
         try {
             BL.EmpleadosGrupo.clsEmpleadosGrupo bl_clsEmpleadosGrupo = new BL.EmpleadosGrupo.clsEmpleadosGrupo();
-            
+
             Modelos.EmpleadosGrupo.clsEmpleadosGrupo obclsEmpleadosGrupo = new Modelos.EmpleadosGrupo.clsEmpleadosGrupo();
 
-            if(request.getParameter("IdModificar")!=null){
+            if (request.getParameter("IdModificar") != null) {
                 obclsEmpleadosGrupo.setId_empleados_grupo(Integer.valueOf(request.getParameter("IdModificar")));
             }
 
@@ -263,15 +275,15 @@ public class ControlEmpleadosGrupo extends HttpServlet {
 
             //Redirección y envio de valores
             request.getRequestDispatcher("EmpleadosGrupo/empleadosgrupo.jsp").forward(request, response);
-            
+
         } catch (Exception ex) {
-            
+
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
-            
+
             request.getRequestDispatcher("EmpleadosGrupo/eliminarempleadosgrupo.jsp").forward(request, response);
         }
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

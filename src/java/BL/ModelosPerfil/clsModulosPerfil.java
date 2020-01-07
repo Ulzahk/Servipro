@@ -35,8 +35,7 @@ public class clsModulosPerfil {
             return "Se realizó el proceso con éxito";
         } 
         catch (Exception ex) {
-             return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
     
     public List<Modelos.ModulosPerfil.clsModulosPerfil> getModulosPerfil(){
@@ -83,8 +82,7 @@ public class clsModulosPerfil {
             return "Se realizó el proceso con éxito";
             
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
     
     public String deleteModulosPerfil (Modelos.ModulosPerfil.clsModulosPerfil obclsModulosperfil){

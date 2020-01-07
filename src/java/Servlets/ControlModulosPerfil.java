@@ -88,7 +88,13 @@ public class ControlModulosPerfil extends HttpServlet {
             
             //Definición de parametros desde el controlador 
             request.setAttribute("stMensaje", bl_clsModulosPerfil.createModuloPerfil(obclsModulosPerfil));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsModulosPerfil", bl_clsModulosPerfil.getModulosPerfil());
             
             //Redirección y envio de valores
@@ -197,7 +203,13 @@ public class ControlModulosPerfil extends HttpServlet {
             
             //Definición de parametros desde el controlador 
             request.setAttribute("stMensaje", bl_clsModulosPerfil.UpdateModulosPerfil(obclsModulosPerfil));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsModulosPerfil", bl_clsModulosPerfil.getModulosPerfil());
             
             //Redirección y envio de valores

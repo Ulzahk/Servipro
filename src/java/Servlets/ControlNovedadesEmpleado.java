@@ -94,7 +94,13 @@ public class ControlNovedadesEmpleado extends HttpServlet {
 
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsNovedadesEmpleados.createNovedadesEmpleado(obclsNovedadesEmpleado));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsNovedadesEmpleado", bl_clsNovedadesEmpleados.getNovedadesEmpleado());
 
             //Redirección y envio de valores
@@ -227,7 +233,13 @@ public class ControlNovedadesEmpleado extends HttpServlet {
 
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsNovedadesEmpleados.updateNovedadesEmpleado(obclsNovedadesEmpleado));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsNovedadesEmpleado", bl_clsNovedadesEmpleados.getNovedadesEmpleado());
 
             //Redirección y envio de valores

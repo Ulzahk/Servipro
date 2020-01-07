@@ -93,7 +93,7 @@ public class ControlEmpleados extends HttpServlet {
             if (request.getParameter("txtSegundoApellido") != null) {
                 obclsEmpleado.setStSegundoApellido(request.getParameter("txtSegundoApellido"));
             }
-            
+
             if (request.getParameter("txtTelefono") != null) {
                 obclsEmpleado.setStTelefono(request.getParameter("txtTelefono"));
             }
@@ -112,7 +112,13 @@ public class ControlEmpleados extends HttpServlet {
 
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEmpleado.createEmpleado(obclsEmpleado));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+
+            if (request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")) {
+                request.setAttribute("stTipo", "error");
+            }
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
 
             //Redireccion y envio de valores
@@ -152,7 +158,7 @@ public class ControlEmpleados extends HttpServlet {
                 }
             }
 
-             //Listas desplegables
+            //Listas desplegables
             BL.Empleados.clsTipoDocumento bl_clsTipoDocumento = new BL.Empleados.clsTipoDocumento();
             BL.Empleados.clsCentroCosto bl_clsCentroCosto = new BL.Empleados.clsCentroCosto();
             BL.Empleados.clsCargo bl_clsCargo = new BL.Empleados.clsCargo();
@@ -179,27 +185,26 @@ public class ControlEmpleados extends HttpServlet {
             HttpServletResponse response) throws IOException, ServletException {
         try {
             BL.Empleados.clsEmpleado bl_clsEmpleado = new BL.Empleados.clsEmpleado();
-            
+
             List<Modelos.Empleados.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.Empleados.clsEmpleado>();
-            
+
             Modelos.Empleados.clsEmpleado obclsEmpleado = new Modelos.Empleados.clsEmpleado();
-            
+
             lstclsEmpleado = bl_clsEmpleado.getEmpleado();
-            
-            for (Modelos.Empleados.clsEmpleado elem: lstclsEmpleado){
-                if(elem.getInId() == Integer.parseInt(request.getParameter("codigoSeleccionado"))){
+
+            for (Modelos.Empleados.clsEmpleado elem : lstclsEmpleado) {
+                if (elem.getInId() == Integer.parseInt(request.getParameter("codigoSeleccionado"))) {
                     obclsEmpleado = elem;
                     break;
                 }
             }
-            
+
             request.setAttribute("obclsEmpleado", obclsEmpleado);
             request.setAttribute("lstclsEmpleado", lstclsEmpleado);
             request.getRequestDispatcher("Empleados/eliminarempleados.jsp").forward(request, response);
-            
-            
+
         } catch (Exception ex) {
-            
+
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
             request.getRequestDispatcher("Empleados/empleados.jsp").forward(request, response);
@@ -265,7 +270,13 @@ public class ControlEmpleados extends HttpServlet {
 
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEmpleado.updateEmpleado(obclsEmpleado));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+
+            if (request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")) {
+                request.setAttribute("stTipo", "error");
+            }
             request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
 
             //Redireccion y envio de valores

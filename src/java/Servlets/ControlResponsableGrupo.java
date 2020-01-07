@@ -85,7 +85,13 @@ public class ControlResponsableGrupo extends HttpServlet {
             }
 
             request.setAttribute("stMensaje", bl_clsResponsableGrupo.createResponsableGrupo(obclsResponsableGrupo));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsResponsableGrupo", bl_clsResponsableGrupo.getResponsableGrupo());
 
             request.getRequestDispatcher("ResponsableGrupo/responsablegrupo.jsp").forward(request, response);
@@ -131,7 +137,13 @@ public class ControlResponsableGrupo extends HttpServlet {
             }
 
             request.setAttribute("stMensaje", bl_clsResponsableGrupo.updateResponsableGrupo(obclsResponsableGrupo));
-            request.setAttribute("stTipo", "success");
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }                   
             request.setAttribute("lstclsResponsableGrupo", bl_clsResponsableGrupo.getResponsableGrupo());
 
             request.getRequestDispatcher("ResponsableGrupo/responsablegrupo.jsp").forward(request, response);

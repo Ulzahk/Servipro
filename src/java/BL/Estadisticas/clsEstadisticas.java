@@ -73,7 +73,7 @@ public class clsEstadisticas {
 
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
+            return "Hubo un error, revisa la información ingresada";
         }
     }
 
@@ -88,7 +88,7 @@ public class clsEstadisticas {
             return "Se realizó el proceso con éxito";
 
         } catch (Exception ex) {
-            return ex.getMessage();
+            return "Hubo un error, revisa la información ingresada";
         }
     }
 
@@ -136,7 +136,7 @@ public class clsEstadisticas {
 
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
+            return "Hubo un error, revisa la información ingresada";
         }
     }
 
@@ -149,7 +149,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
+            return "Hubo un error, revisa la información ingresada";
         }
     }
 
@@ -162,7 +162,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
+            return "Hubo un error, revisa la información ingresada";
         }
     }
 
@@ -175,8 +175,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia4(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -188,8 +187,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia5(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -201,8 +199,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia6(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -214,8 +211,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia7(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -227,8 +223,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia8(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -240,8 +235,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia9(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -253,8 +247,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia10(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -266,8 +259,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia11(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -279,8 +271,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia12(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -292,8 +283,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia13(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -305,8 +295,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia14(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -318,8 +307,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia15(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -331,8 +319,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia16(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -344,8 +331,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia17(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -357,8 +343,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia18(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -370,8 +355,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia19(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -383,8 +367,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia20(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -396,8 +379,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia21(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -409,8 +391,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia22(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -422,8 +403,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia23(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -435,8 +415,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia24(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -448,8 +427,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia25(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -461,8 +439,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia26(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -474,8 +451,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia27(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -487,8 +463,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia28(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -500,8 +475,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia29(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -513,8 +487,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaDia30(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -526,8 +499,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
 
     }
 
@@ -540,8 +512,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaMes(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -553,8 +524,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public String updateEstaAnio(Modelos.Estadisticas.clsEstadisticas obclsEstadisticas) {
@@ -566,8 +536,7 @@ public class clsEstadisticas {
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
-            return ex.getMessage();
-        }
+            return "Hubo un error, revisa la información ingresada";        }
     }
 
     public List<Modelos.Estadisticas.clsEstadisticas> getEstadisticas() {
@@ -592,7 +561,7 @@ public class clsEstadisticas {
                 obEmpleado.setEmplPrimerApellido(rs.getString("emplPrimerApellido"));
                 obEmpleado.setEmplSegundoApellido(rs.getString("emplSegundoApellido"));
                 obEstadisticas.setObEmpleado(obEmpleado);
-                
+
                 Modelos.Estadisticas.clsGrupoEmpl obGrupoEmpl = new Modelos.Estadisticas.clsGrupoEmpl();
                 obGrupoEmpl.setId_grupo(rs.getInt("Id_grupo"));
                 obEstadisticas.setObGrupoEmpl(obGrupoEmpl);
@@ -823,7 +792,7 @@ public class clsEstadisticas {
                 obEmpleado.setEmplPrimerApellido(rs.getString("emplPrimerApellido"));
                 obEmpleado.setEmplSegundoApellido(rs.getString("emplSegundoApellido"));
                 obEstadisticas.setObEmpleado(obEmpleado);
-                
+
                 Modelos.Estadisticas.clsGrupoEmpl obGrupoEmpl = new Modelos.Estadisticas.clsGrupoEmpl();
                 obGrupoEmpl.setId_grupo(rs.getInt("Id_grupo"));
                 obEstadisticas.setObGrupoEmpl(obGrupoEmpl);
