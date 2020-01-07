@@ -4,6 +4,7 @@ public class clsEstadisticas {
 
     public int Id_estadistica;
     public clsEmpleado obEmpleado;
+    public clsGrupoEmpl obGrupoEmpl;
     public clsId_dia1 obId_dia1;
     public clsId_dia2 obId_dia2;
     public clsId_dia3 obId_dia3;
@@ -55,6 +56,14 @@ public class clsEstadisticas {
         this.obEmpleado = obEmpleado;
     }
 
+    public clsGrupoEmpl getObGrupoEmpl() {
+        return obGrupoEmpl;
+    }
+
+    public void setObGrupoEmpl(clsGrupoEmpl obGrupoEmpl) {
+        this.obGrupoEmpl = obGrupoEmpl;
+    }
+    
     public clsId_dia1 getObId_dia1() {
         return obId_dia1;
     }

@@ -1,4 +1,3 @@
-
 package Servlets;
 
 import Controles.AccesoDatos;
@@ -10,6 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import Utils.Encriptar;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class IniciarSesion extends HttpServlet {
 
@@ -22,24 +26,27 @@ public class IniciarSesion extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String Descripcion_perfil=null, Id_usuario=null, Contraseña=null;
-            Descripcion_perfil=request.getParameter("descripcion_perfil");
-            Id_usuario=request.getParameter("id_usuario");
-            Contraseña=request.getParameter("contraseña");
-            
+            String Descripcion_perfil = null, Id_usuario = null, Contraseña = null;
+            int GrupoEmpl = 0;
+            Descripcion_perfil = request.getParameter("descripcion_perfil");
+            Id_usuario = request.getParameter("id_usuario");
+            Contraseña = request.getParameter("contraseña");
+
             AccesoDatos a = new AccesoDatos();
-            int ca=a.buscar(Descripcion_perfil, Id_usuario, Contraseña);
-            if(ca>0){
-                HttpSession objsesion=request.getSession(true);
+            int ca = a.buscar(Descripcion_perfil, Id_usuario, Contraseña);
+            if (ca > 0) {
+                HttpSession objsesion = request.getSession(true);
                 objsesion.setAttribute("descripcion_perfil", Descripcion_perfil);
                 objsesion.setAttribute("id_usuario", Id_usuario);
                 response.sendRedirect("index.htm");
-            }else{
+            } else {
                 response.sendRedirect("login.jsp");
             }
         }
