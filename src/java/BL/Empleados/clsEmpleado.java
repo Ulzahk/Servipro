@@ -72,6 +72,10 @@ public class clsEmpleado {
                 obclsCargo.setInId(rs.getInt("cargId"));
                 obclsCargo.setStDescripcion(rs.getString("Descripcion_cargo"));
                 obclsEmpleado.setObclsCargo(obclsCargo);
+                
+                Modelos.Empleados.clsGrupoEmpl obclsGrupoEmpl = new Modelos.Empleados.clsGrupoEmpl();
+                obclsGrupoEmpl.setId_grupo(rs.getInt("Id_grupo"));
+                obclsEmpleado.setObclsGrupoEmpl(obclsGrupoEmpl);
 
                 lstclsEmpleado.add(obclsEmpleado);
             }
@@ -158,6 +162,10 @@ public class clsEmpleado {
                 obclsCargo.setInId(rs.getInt("cargId"));
                 obclsCargo.setStDescripcion(rs.getString("Descripcion_cargo"));
                 obclsEmpleado.setObclsCargo(obclsCargo);
+                
+                Modelos.Empleados.clsGrupoEmpl obclsGrupoEmpl = new Modelos.Empleados.clsGrupoEmpl();
+                obclsGrupoEmpl.setId_grupo(rs.getInt("Id_grupo"));
+                obclsEmpleado.setObclsGrupoEmpl(obclsGrupoEmpl);
 
                 lstclsEmpleado.add(obclsEmpleado);
             }

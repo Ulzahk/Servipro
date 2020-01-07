@@ -16,6 +16,7 @@ public class clsEmpleado {
     public String stTelefono;
     public clsCentroCosto obclsCentroCosto;
     public clsCargo obclsCargo;
+    public clsGrupoEmpl obclsGrupoEmpl;
 
     public int getInId() {
         return inId;
@@ -96,6 +97,12 @@ public class clsEmpleado {
     public void setObclsCargo(clsCargo obclsCargo) {
         this.obclsCargo = obclsCargo;
     }
-    
-    
+
+    public clsGrupoEmpl getObclsGrupoEmpl() {
+        return obclsGrupoEmpl;
+    }
+
+    public void setObclsGrupoEmpl(clsGrupoEmpl obclsGrupoEmpl) {
+        this.obclsGrupoEmpl = obclsGrupoEmpl;
+    }
 }
