@@ -93,7 +93,7 @@
                                     <h6>
                                         <b>Comentario Actual</b>
                                     </h6>
-                                    <p class="shadow p-4 mb-4 bg-white border border-dark"> 
+                                    <p class="p-4 mb-4 bg-white"> 
                                         <%=obclsEstadisticas.getComentario() != null ? obclsEstadisticas.getComentario() : ""%>
                                     </p>                                         
                                 </div>
