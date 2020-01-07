@@ -143,11 +143,13 @@
                                 }
                             %>
                         </tbody>
-                        <tr>
-                            <th class="align-middle">Módulo</th>
-                            <th class="align-middle">Perfil</th>
-                            <th class="align-middle">Acciones</th>
-                        </tr>
+                        <tfoot>
+                            <tr>
+                                <th class="align-middle">Módulo</th>
+                                <th class="align-middle">Perfil</th>
+                                <th class="align-middle">Acciones</th>
+                            </tr>
+                        </tfoot>
                     </table> 
                 </div>
             </div>
