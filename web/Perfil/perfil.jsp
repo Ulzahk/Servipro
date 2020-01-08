@@ -2,12 +2,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
-<%@page import="BL.clsConexion"%>
 <%
-    Connection conn = null;
-
-    clsConexion obclsConexion = new clsConexion();
-    conn = obclsConexion.getConexion();
 
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
@@ -30,7 +25,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Empleados</title>
+        <title>Perfil</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="Resources/CSS/style.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
@@ -55,19 +50,18 @@
         <script src="Resources/JS/functions.js"></script>
     </head>
     <body>
-
         <%
-            Modelos.Empleados.clsEmpleado obclsEmpleado = new Modelos.Empleados.clsEmpleado();
+            Modelos.Perfil.clsPerfil obclsPerfil = new Modelos.Perfil.clsPerfil();
 
-            if (request.getAttribute("obclsEmpleado") != null) {
-                obclsEmpleado = (Modelos.Empleados.clsEmpleado) request.getAttribute("obclsEmpleado");
+            if (request.getAttribute("obclsPerfil") != null) {
+                obclsPerfil = (Modelos.Perfil.clsPerfil) request.getAttribute("obclsPerfil");
             }
 
-            List<Modelos.Empleados.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.Empleados.clsEmpleado>();
+            List<Modelos.Perfil.clsPerfil> lstclsPerfil = new ArrayList<Modelos.Perfil.clsPerfil>();
 
-            if (request.getAttribute("lstclsEmpleado") != null) {
+            if (request.getAttribute("lstclsPerfil") != null) {
 
-                lstclsEmpleado = (List<Modelos.Empleados.clsEmpleado>) request.getAttribute("lstclsEmpleado");
+                lstclsPerfil = (List<Modelos.Perfil.clsPerfil>) request.getAttribute("lstclsPerfil");
             }
 
             if (request.getAttribute("stMensaje") != null && request.getAttribute("stTipo") != null) {
@@ -111,14 +105,14 @@
             %> 
         </header> 
         <div class="container mt-4">
-            <h1 class="text-center">Empleados</h1>
+            <h1 class="text-center">Perfil</h1>
             <br>
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
-                    <form action="empleados" method="post">
+                    <form action="controlperfil" method="post">
                         <div class="input-group">
                             <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
-                            <a href="empleados?btnEmplAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
+                            <a href="controlperfil?btnEmplAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
                         </div>
                     </form>
                 </div>
@@ -126,112 +120,88 @@
                     <table class="table table-fluid table table-bordered table-striped table-hover text-center table-responsive" id="myTable">
                         <thead>
                             <tr>
-                                <th class="align-middle">Tipo Documento</th>
-                                <th class="align-middle">Documento</th>
-                                <th class="align-middle">Nombre Completo</th>
-                                <th class="align-middle">Telefono</th>
-                                <th class="align-middle">Centro de Costos</th>
-                                <th class="align-middle">Cargo</th>
+                                <th class="align-middle">Perfil</th>
+                                <th class="align-middle">Vista Usuario</th>
+                                <th class="align-middle">Vista Perfil</th>
+                                <th class="align-middle">Vista Tipo Novedades</th>
+                                <th class="align-middle">Vista Facturación</th>
+                                <th class="align-middle">Vista Novedades Empleado</th>
+                                <th class="align-middle">Vista Centro Costos</th>
+                                <th class="align-middle">Vista Empleados</th>
+                                <th class="align-middle">Vista Cargo Empleado</th>
+                                <th class="align-middle">Vista Modulos</th>
+                                <th class="align-middle">Vista Modulos Perfil</th>
+                                <th class="align-middle">Vista Grupos</th>
+                                <th class="align-middle">Vista Empleados Grupo</th>
+                                <th class="align-middle">Vista Responsable Grupo</th>
+                                <th class="align-middle">Vista Configuracion</th>
+                                <th class="align-middle">Vista Estadisticas</th>
                                 <th class="align-middle">Acciones</th>
-                            </tr>
+                            <tr>
                         </thead>
                         <tbody>
                             <%
-                                int GrupoEmpl = 0;
-
-                                List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticasGrupo = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
-                                try {
-                                    ResultSet rs = null;
-                                    PreparedStatement ps = conn.prepareStatement("{call spBuscarGrupoUsuario(?)}");
-                                    ps.setString(1, id_usuario);
-                                    rs = ps.executeQuery();
-
-                                    while (rs.next()) {
-                                        Modelos.Estadisticas.clsEstadisticas obEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
-
-                                        Modelos.Estadisticas.clsGrupoEmpl obGrupoEmpl = new Modelos.Estadisticas.clsGrupoEmpl();
-                                        obGrupoEmpl.setId_grupo(rs.getInt("Id_grupo"));
-                                        obEstadisticas.setObGrupoEmpl(obGrupoEmpl);
-
-                                        lstclsEstadisticasGrupo.add(obEstadisticas);
-                                    }
-
-                                } catch (Exception ex) {
-
-                                }
-
-                                for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticasGrupo) {
-
-                                    GrupoEmpl = elem.getObGrupoEmpl().getId_grupo();
-
-                                }
-
-                                if (Descripcion_perfil.equals("JEFE")) {
-                                    for (Modelos.Empleados.clsEmpleado elem : lstclsEmpleado) {
+                
+                                    for (Modelos.Perfil.clsPerfil elem : lstclsPerfil) {
                             %>
                             <tr>
-                                <td class="align-middle"><%=elem.getObclsTipoDocumento().getStDescripcion()%></td>
-                                <td class="align-middle"><%=elem.getStDocumento()%></td>
-                                <td class="align-middle"><%=elem.getStPrimerNombre()%> <%=elem.getStSegundoNombre()%> <%=elem.getStPrimerApellido()%> <%=elem.getStSegundoApellido()%></td>
-                                <td class="align-middle"><%=elem.getStTelefono()%></td>
-                                <td class="align-middle"><%=elem.getObclsCentroCosto().getStDescripcion()%></td>
-                                <td class="align-middle"><%=elem.getObclsCargo().getStDescripcion()%></td>
+                                <td class="align-middle"><%=elem.getDescripcion_perfil()%></td>
+                                <td class="align-middle"><%=elem.getVista_usuarios()%></td>
+                                <td class="align-middle"><%=elem.getVista_perfil()%></td>
+                                <td class="align-middle"><%=elem.getVista_tiponovedades()%></td>
+                                <td class="align-middle"><%=elem.getVista_facturacion()%></td>
+                                <td class="align-middle"><%=elem.getVista_novedadesempleado()%></td>
+                                <td class="align-middle"><%=elem.getVista_centrocostos()%></td>
+                                <td class="align-middle"><%=elem.getVista_empleados()%></td>
+                                <td class="align-middle"><%=elem.getVista_cargoempleado()%></td>
+                                <td class="align-middle"><%=elem.getVista_modulos()%></td>
+                                <td class="align-middle"><%=elem.getVista_modulosperfil()%></td>
+                                <td class="align-middle"><%=elem.getVista_grupos()%></td>
+                                <td class="align-middle"><%=elem.getVista_empleadosgrupo()%></td>
+                                <td class="align-middle"><%=elem.getVista_responsablegrupo()%></td>
+                                <td class="align-middle"><%=elem.getVista_configuracion()%></td>
+                                <td class="align-middle"><%=elem.getVista_estadisticas()%></td>
                                 <td class="align-middle">
                                     <div class="btn-group">
                                         <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para editar empleado" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
-                                           href="empleados?stOpcion=M&codigoSeleccionado=<%=elem.getInId()%>">
+                                           href="controlperfil?stOpcion=M&codigoSeleccionado=<%=elem.getId_perfil()%>">
                                             <i class="fas fa-edit" style="font-size:15px;"></i>
                                         </a>
                                         <a class="btn btn-danger btn-sm openBtn rounded" title="Haz clic para eliminar" data-toggle="modal" data-target="#myModal" id="btnEmplEliminar"
-                                           href="empleados?stOpcion=E&codigoSeleccionado=<%=elem.getInId()%>">
+                                           href="controlperfil?stOpcion=E&codigoSeleccionado=<%=elem.getId_perfil()%>">
                                             <i class="fas fa-trash-alt" style="font-size:15px;"></i>
                                         </a>
                                     </div>
                                 </td>
                             </tr>
+                            
                             <%
-                                }
-                            } else {
-                                for (Modelos.Empleados.clsEmpleado elem : lstclsEmpleado) {
-                                    if (GrupoEmpl == (elem.getObclsGrupoEmpl().getId_grupo())) {
-                            %>
-                            <tr>
-                                <td class="align-middle"><%=elem.getObclsTipoDocumento().getStDescripcion()%></td>
-                                <td class="align-middle"><%=elem.getStDocumento()%></td>
-                                <td class="align-middle"><%=elem.getStPrimerNombre()%> <%=elem.getStSegundoNombre()%> <%=elem.getStPrimerApellido()%> <%=elem.getStSegundoApellido()%></td>
-                                <td class="align-middle"><%=elem.getStTelefono()%></td>
-                                <td class="align-middle"><%=elem.getObclsCentroCosto().getStDescripcion()%></td>
-                                <td class="align-middle"><%=elem.getObclsCargo().getStDescripcion()%></td>
-                                <td class="align-middle">
-                                    <div class="btn-group">
-                                        <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para editar empleado" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
-                                           href="empleados?stOpcion=M&codigoSeleccionado=<%=elem.getInId()%>">
-                                            <i class="fas fa-edit" style="font-size:15px;"></i>
-                                        </a>
-                                        <a class="btn btn-danger btn-sm openBtn rounded" title="Haz clic para eliminar" data-toggle="modal" data-target="#myModal" id="btnEmplEliminar"
-                                           href="empleados?stOpcion=E&codigoSeleccionado=<%=elem.getInId()%>">
-                                            <i class="fas fa-trash-alt" style="font-size:15px;"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <%
-                                        }
-                                    }
+                                        
+                                    
                                 }
 
                             %>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th class="align-middle">Tipo Documento</th>
-                                <th class="align-middle">Documento</th>
-                                <th class="align-middle">Nombre Completo</th>
-                                <th class="align-middle">Telefono</th>
-                                <th class="align-middle">Centro de Costos</th>
-                                <th class="align-middle">Cargo</th>
+                                <th class="align-middle">Perfil</th>
+                                <th class="align-middle">Vista_Usuario</th>
+                                <th class="align-middle">Vista_Perfil</th>
+                                <th class="align-middle">Vista_Tipo_Novedades</th>
+                                <th class="align-middle">Vista_Facturación</th>
+                                <th class="align-middle">Vista_Novedades_Empleado</th>
+                                <th class="align-middle">Vista_Centro_Costos</th>
+                                <th class="align-middle">Vista_Empleados</th>
+                                <th class="align-middle">Vista_Cargo_Empleado</th>
+                                <th class="align-middle">Vista_Modulos</th>
+                                <th class="align-middle">Vista_Modulos_Perfil</th>
+                                <th class="align-middle">Vista_Grupos</th>
+                                <th class="align-middle">Vista_Empleados_Grupo</th>
+                                <th class="align-middle">Vista_Responsable_Grupo</th>
+                                <th class="align-middle">Vista_Configuracion</th>
+                                <th class="align-middle">Vista_Estadisticas</th>
                                 <th class="align-middle">Acciones</th>
-                            </tr>
+                            <tr>
                         </tfoot>
                     </table> 
                 </div>
