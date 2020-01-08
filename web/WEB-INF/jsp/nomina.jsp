@@ -102,7 +102,7 @@
                 <i class='fas fa-user-circle mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Usuarios</b></p>
             </a>
-            <a href='perfil.htm' class='col aIndex colorEnlace'>
+            <a href='controlperfil?btnPerfConsultar=true' class='col aIndex colorEnlace'>
                 <i class='fas fa-address-card mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Perfil</b></p>
             </a>
@@ -177,7 +177,7 @@
                 <i class='fas fa-user-circle mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Usuarios</b></p>
             </a>
-            <a href='perfil.htm' class='col aIndex colorEnlace'>
+            <a href='controlperfil?btnPerfConsultar=true' class='col aIndex colorEnlace'>
                 <i class='fas fa-address-card mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Perfil</b></p>
             </a>
