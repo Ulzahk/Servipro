@@ -237,18 +237,49 @@
                 </div>
             </div>
         </div>
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog modal-lg">
 
-                <!-- Modal content-->
-                <div class="modal-content">  
-                    <div class="modal-body">
+        <!----- DROP AND UPLOAD FILE ------>             
 
+        <div class="container p-y-1">
+            <div class="row m-b-1">
+                <div class="col-sm-6 offset-sm-3">
+                    <div class="form-group inputDnD">
+                        <label class="sr-only" for="btnImportarDatos">File Upload</label>
+                        <input type="file" class="form-control-file text-primary font-weight-bold" id="btnImportarDatos" accept="xlsx/*" onchange="readUrl(this)" data-title="Drag and drop a file">
                     </div>
                 </div>
             </div>
-        </div>
+
+            <!-------- SCRIPT DROP AND UPLOAD -------->
+            <script>
+                function readUrl(input) {
+
+                    if (input.files && input.files[0]) {
+                        let reader = new FileReader();
+                        reader.onload = (e) => {
+                            let imgData = e.target.result;
+                            let imgName = input.files[0].name;
+                            input.setAttribute("data-title", imgName);
+                            console.log(e.target.result);
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                    }
+
+                }
+            </script>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">  
+                        <div class="modal-body">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
     </body>
     <script type="text/javascript" language="JavaScript">
         main();

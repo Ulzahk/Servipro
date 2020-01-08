@@ -1,5 +1,6 @@
 package Servlets;
 
+import static ImportExcel.NewMain.cargar;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -55,6 +56,8 @@ public class ControlEmpleados extends HttpServlet {
             request.getRequestDispatcher("Empleados/agregarempleados.jsp").forward(request, response);
         } else if (request.getParameter("btnEmplBuscar") != null) {
             btnEmplBuscar(request, response);
+        } else if (request.getParameter("btnImportarDatos") != null) {
+            btnImportarDatos(request, response);
         }
     }
 
@@ -354,6 +357,16 @@ public class ControlEmpleados extends HttpServlet {
             request.setAttribute("stMensaje", ex.getMessage());
 
             request.getRequestDispatcher("Empleados/empleados.jsp").forward(request, response);
+
+        }
+    }
+
+    public void btnImportarDatos(HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException {
+        try {
+            cargar();
+        } catch (Exception ex) {
+            request.getRequestDispatcher("Empleados.jsp").forward(request, response);
 
         }
     }

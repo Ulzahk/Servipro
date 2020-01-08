@@ -1,13 +1,13 @@
 * {
-	padding:0;
-	margin:0;
-	
+    padding:0;
+    margin:0;
+
 }
 
 body{
-	margin: 0;
-	font-family: arial,sans-serif;
-  }
+    margin: 0;
+    font-family: arial,sans-serif;
+}
 
 .tipoLetra{
     font-family: arial,sans-serif;
@@ -28,11 +28,11 @@ body{
 .colorEnlace:hover{
     color:#ffffff;
     text-decoration:none;
-    
+
 }
 .colorEnlace:active{
     color:#ffffff;
-    
+
 }
 
 .tamañoIcono{
@@ -113,7 +113,7 @@ body{
 
 .tituloEsta{
     font-size: 200px !important;
-    
+
 }
 
 /* Barra desplegable */
@@ -288,15 +288,8 @@ header .Menu ul li .caret {
     .logo{
         display: none;
     }
-    
+
     .coloriphonex {
         display: none;
     }
 }
-
-
-
-
-
-
-
