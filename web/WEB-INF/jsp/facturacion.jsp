@@ -96,7 +96,6 @@
             <jsp:include page="menunavegacion.jsp"></jsp:include>
             </header>
 
-
             <div class="container mt-4">
                 <h1 class="text-center">Facturación</h1>
                 <br>
