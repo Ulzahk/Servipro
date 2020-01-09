@@ -4,18 +4,17 @@
 <%@page import="java.util.*"%>
 <%@page import="BL.clsConexion"%>
 <%
-    
+
     Connection conn = null;
 
     clsConexion obclsConexion = new clsConexion();
     conn = obclsConexion.getConexion();
-    
+
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
-    
+
     char VistaUsuarios = 'N';
 
-    
     List<Modelos.Perfil.clsFiltroPerfil> lstclsFiltroPerfil = new ArrayList<Modelos.Perfil.clsFiltroPerfil>();
     try {
         ResultSet rs = null;
@@ -47,9 +46,9 @@
     } catch (Exception ex) {
 
     }
-    
-    for(Modelos.Perfil.clsFiltroPerfil elem: lstclsFiltroPerfil){
-        
+
+    for (Modelos.Perfil.clsFiltroPerfil elem : lstclsFiltroPerfil) {
+
         VistaUsuarios = elem.getVista_usuarios();
 
     }
@@ -60,12 +59,12 @@
         if (VistaUsuarios != 'S') {
             response.sendRedirect("nomina.htm");
         }
-            
+
     }
 %>
 <!DOCTYPE html>
 <html>
-   <head>
+    <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -125,31 +124,31 @@
         %>
         <header>
             <jsp:include page="../WEB-INF/jsp/menunavegacion.jsp"></jsp:include>
-        </header>
-        <div class="container mt-4">
-            <h1 class="text-center">Usuarios</h1>
-            <br>
-            <div class="card border-info">
-                <div class="card-header bg-info text-white">
-                    <form action="controlusuarios" method="post">
-                        <div class="input-group">
-                            <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
-                            <a href="controlusuarios?btnUsuAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" title="Haz clic para agregar un registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>                          
-                        </div>
-                    </form>
-                </div>
-                <div class="card-body">
-                    <table class="table table-fluid table-bordered table-striped table-hover text-center table-responsive-lg" id="myTable">
-                        <thead>
-                            <tr>
-                                <th class="align-middle">Usuarios</th>
-                                <th class="align-middle">Empleado</th>
-                                <th class="align-middle">Contraseña</th>
-                                <th class="align-middle">Perfil</th>
-                                <th class="align-middle">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+            </header>
+            <div class="container mt-4">
+                <h1 class="text-center">Usuarios</h1>
+                <br>
+                <div class="card border-info">
+                    <div class="card-header bg-info text-white">
+                        <form action="controlusuarios" method="post">
+                            <div class="input-group">
+                                <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
+                                <a href="controlusuarios?btnUsuAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" title="Haz clic para agregar un registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>                          
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-fluid table-bordered table-striped table-hover text-center table-responsive-lg" id="myTable">
+                            <thead>
+                                <tr>
+                                    <th class="align-middle">Usuarios</th>
+                                    <th class="align-middle">Empleado</th>
+                                    <th class="align-middle">Contraseña</th>
+                                    <th class="align-middle">Perfil</th>
+                                    <th class="align-middle">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                             <%
                                 for (Modelos.Usuarios.clsUsuarios elem : lstclsUsuarios) {
                             %>
