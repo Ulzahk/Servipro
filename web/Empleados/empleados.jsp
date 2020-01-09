@@ -119,6 +119,7 @@
                         <div class="input-group">
                             <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
                             <a href="empleados?btnEmplAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
+                            <a href="empleados?btnImportarDatos=true" class="btn btn-secondary mr-2 openBtn" data-toggle="modal" data-target="#myModal" title="Haz clic para importar un archivo de Excel" ><i class="fas fa-file-upload"> <label class="coloriphonex tipoLetraLabel">Importar</label></i></a>
                         </div>
                     </form>
                 </div>
@@ -237,37 +238,6 @@
                 </div>
             </div>
         </div>
-
-        <!----- DROP AND UPLOAD FILE ------>             
-
-        <div class="container p-y-1">
-            <div class="row m-b-1">
-                <div class="col-sm-6 offset-sm-3">
-                    <div class="form-group inputDnD">
-                        <label class="sr-only" for="btnImportarDatos">File Upload</label>
-                        <input type="file" class="form-control-file text-primary font-weight-bold" id="btnImportarDatos" accept="xlsx/*" onchange="readUrl(this)" data-title="Drag and drop a file">
-                    </div>
-                </div>
-            </div>
-
-            <!-------- SCRIPT DROP AND UPLOAD -------->
-            <script>
-                function readUrl(input) {
-
-                    if (input.files && input.files[0]) {
-                        let reader = new FileReader();
-                        reader.onload = (e) => {
-                            let imgData = e.target.result;
-                            let imgName = input.files[0].name;
-                            input.setAttribute("data-title", imgName);
-                            console.log(e.target.result);
-                        }
-                        reader.readAsDataURL(input.files[0]);
-                    }
-
-                }
-            </script>
-
             <!-- Modal -->
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog modal-lg">

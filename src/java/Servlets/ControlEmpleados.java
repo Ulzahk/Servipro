@@ -57,6 +57,8 @@ public class ControlEmpleados extends HttpServlet {
         } else if (request.getParameter("btnEmplBuscar") != null) {
             btnEmplBuscar(request, response);
         } else if (request.getParameter("btnImportarDatos") != null) {
+            btnImportarRedi(request, response);
+        } else if (request.getParameter("btnImpoGuardar") != null) {
             btnImportarDatos(request, response);
         }
     }
@@ -364,10 +366,40 @@ public class ControlEmpleados extends HttpServlet {
     public void btnImportarDatos(HttpServletRequest request,
             HttpServletResponse response) throws IOException, ServletException {
         try {
-            cargar();
+            BL.Empleados.clsEmpleado bl_clsEmpleado = new BL.Empleados.clsEmpleado();
+            
+            ImportExcel.clsRutaDeImportar obclsRutaDeImportar = new ImportExcel.clsRutaDeImportar();
+            
+            if(request.getParameter("rutaArchivo") != null){
+                obclsRutaDeImportar.setRuta(request.getParameter("rutaArchivo"));
+            }
+            cargar(obclsRutaDeImportar);
+            
+            request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
+            
+            request.getRequestDispatcher("Empleados/empleados.jsp").forward(request, response);
+            
         } catch (Exception ex) {
-            request.getRequestDispatcher("Empleados.jsp").forward(request, response);
+            
+            request.setAttribute("stMensaje", ex.getMessage());
+            
+            request.setAttribute("stTipo", "success");
+            
+            BL.Empleados.clsEmpleado bl_clsEmpleado = new BL.Empleados.clsEmpleado();
+            
+            request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
+            
+            request.getRequestDispatcher("Empleados/empleados.jsp").forward(request, response);
 
+        }
+    }
+
+    public void btnImportarRedi(HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException {
+
+        try {
+            request.getRequestDispatcher("Empleados/importarexcel.jsp").forward(request, response);
+        } catch (Exception e) {
         }
     }
 

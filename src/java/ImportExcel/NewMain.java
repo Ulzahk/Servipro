@@ -34,13 +34,6 @@ public class NewMain {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException, SQLException {
-        // TODO code application logic here
-        //crearExcel();
-        //leer();
-        cargar();
-        //modificar();
-    }
 
     Connection conn = null;
     PreparedStatement ps;
@@ -123,11 +116,11 @@ public class NewMain {
         }
     }
 */
-    public static void cargar() throws IOException, SQLException {
+    public static void cargar(ImportExcel.clsRutaDeImportar obclsRutaDeImportar) throws IOException, SQLException {
 
         try {
             Connection conn = Conexion.conectar();
-            FileInputStream file = new FileInputStream(new File("E:\\EmpleadosImport.xlsx"));
+            FileInputStream file = new FileInputStream(new File(obclsRutaDeImportar.getRuta()));
 
             XSSFWorkbook wb = new XSSFWorkbook(file);
             XSSFSheet sheet = wb.getSheetAt(0);
@@ -151,7 +144,6 @@ public class NewMain {
                 ps.execute();
             }
 
-            conn.close();
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(NewMain.class.getName()).log(Level.SEVERE, null, ex);
