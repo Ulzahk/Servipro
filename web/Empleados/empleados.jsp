@@ -13,44 +13,53 @@
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
     String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
 
-    int GrupoEmpl = 0;
+    char VistaEmpleados = 'N';
 
-    List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticasGrupo = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+    List<Modelos.Perfil.clsFiltroPerfil> lstclsFiltroPerfil = new ArrayList<Modelos.Perfil.clsFiltroPerfil>();
     try {
         ResultSet rs = null;
-        PreparedStatement ps = conn.prepareStatement("{call spBuscarGrupoUsuario(?)}");
+        PreparedStatement ps = conn.prepareStatement("{call spBuscarFiltroPerfil(?)}");
         ps.setString(1, id_usuario);
         rs = ps.executeQuery();
 
         while (rs.next()) {
-            Modelos.Estadisticas.clsEstadisticas obEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+            Modelos.Perfil.clsFiltroPerfil obclsFiltroPerfil = new Modelos.Perfil.clsFiltroPerfil();
+            obclsFiltroPerfil.setVista_usuarios(rs.getString("Vista_usuarios").charAt(0));
+            obclsFiltroPerfil.setVista_perfil(rs.getString("Vista_perfil").charAt(0));
+            obclsFiltroPerfil.setVista_tiponovedades(rs.getString("Vista_tiponovedades").charAt(0));
+            obclsFiltroPerfil.setVista_facturacion(rs.getString("Vista_facturacion").charAt(0));
+            obclsFiltroPerfil.setVista_novedadesempleado(rs.getString("Vista_novedadesempleado").charAt(0));
+            obclsFiltroPerfil.setVista_centrocostos(rs.getString("Vista_centrocostos").charAt(0));
+            obclsFiltroPerfil.setVista_empleados(rs.getString("Vista_empleados").charAt(0));
+            obclsFiltroPerfil.setVista_cargoempleado(rs.getString("Vista_cargoempleado").charAt(0));
+            obclsFiltroPerfil.setVista_modulos(rs.getString("Vista_modulos").charAt(0));
+            obclsFiltroPerfil.setVista_modulosperfil(rs.getString("Vista_modulosperfil").charAt(0));
+            obclsFiltroPerfil.setVista_grupos(rs.getString("Vista_grupos").charAt(0));
+            obclsFiltroPerfil.setVista_empleadosgrupo(rs.getString("Vista_empleadosgrupo").charAt(0));
+            obclsFiltroPerfil.setVista_responsablegrupo(rs.getString("Vista_responsablegrupo").charAt(0));
+            obclsFiltroPerfil.setVista_configuracion(rs.getString("Vista_configuracion").charAt(0));
+            obclsFiltroPerfil.setVista_estadisticas(rs.getString("Vista_estadisticas").charAt(0));
 
-            Modelos.Estadisticas.clsGrupoEmpl obGrupoEmpl = new Modelos.Estadisticas.clsGrupoEmpl();
-            obGrupoEmpl.setId_grupo(rs.getInt("Id_grupo"));
-            obEstadisticas.setObGrupoEmpl(obGrupoEmpl);
-
-            lstclsEstadisticasGrupo.add(obEstadisticas);
+            lstclsFiltroPerfil.add(obclsFiltroPerfil);
         }
 
     } catch (Exception ex) {
 
     }
 
-    for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticasGrupo) {
+    for (Modelos.Perfil.clsFiltroPerfil elem : lstclsFiltroPerfil) {
 
-        GrupoEmpl = elem.getObGrupoEmpl().getId_grupo();
+        VistaEmpleados = elem.getVista_empleados();
 
     }
 
     if (id_usuario == null) {
         response.sendRedirect("login.jsp");
     } else {
-        if (Descripcion_perfil.equals("COORDINADOR")
-                || Descripcion_perfil.equals("JEFE")) {
-
-        } else {
+        if (VistaEmpleados != 'S') {
             response.sendRedirect("nomina.htm");
         }
+
     }
 %>
 <!DOCTYPE html>
@@ -116,57 +125,65 @@
         %>
 
         <header>
-            <%--Barra de Navegación de Jefe--%>
-            <%
-                if (Descripcion_perfil.equals("JEFE")) {
-
-            %>       
-
-            <jsp:include page="../WEB-INF/jsp/menujefe.jsp"></jsp:include>
-
-            <%        }
-            %>
-
-
-            <%--Barra de Navegación de Coordinador--%>
-            <%
-                if (Descripcion_perfil.equals("COORDINADOR")) {
-            %>
-
-            <jsp:include page="../WEB-INF/jsp/menucordi.jsp"></jsp:include>
-
-            <%
-                }
-            %> 
-        </header> 
-        <div class="container mt-4">
-            <h1 class="text-center">Empleados</h1>
-            <br>
-            <div class="card border-info">
-                <div class="card-header bg-info text-white">
-                    <form action="empleados" method="post">
-                        <div class="input-group">
-                            <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
-                            <a href="empleados?btnEmplAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
-                            <a href="empleados?btnImportarDatos=true" class="btn btn-secondary mr-2 openBtn" data-toggle="modal" data-target="#myModal" title="Haz clic para importar un archivo de Excel" ><i class="fas fa-file-upload"> <label class="coloriphonex tipoLetraLabel">Importar</label></i></a>
-                        </div>
-                    </form>
-                </div>
-                <div class="card-body">
-                    <table class="table table-fluid table table-bordered table-striped table-hover text-center table-responsive" id="myTable">
-                        <thead>
-                            <tr>
-                                <th class="align-middle">Tipo Documento</th>
-                                <th class="align-middle">Documento</th>
-                                <th class="align-middle">Nombre Completo</th>
-                                <th class="align-middle">Telefono</th>
-                                <th class="align-middle">Centro de Costos</th>
-                                <th class="align-middle">Cargo</th>
-                                <th class="align-middle">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+            <jsp:include page="../WEB-INF/jsp/menunavegacion.jsp"></jsp:include>
+            </header>
+            <div class="container mt-4">
+                <h1 class="text-center">Empleados</h1>
+                <br>
+                <div class="card border-info">
+                    <div class="card-header bg-info text-white">
+                        <form action="empleados" method="post">
+                            <div class="input-group">
+                                <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
+                                <a href="empleados?btnEmplAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
+                                <a href="empleados?btnImportarDatos=true" class="btn btn-secondary mr-2 openBtn" data-toggle="modal" data-target="#myModal" title="Haz clic para importar un archivo de Excel" ><i class="fas fa-file-upload"> <label class="coloriphonex tipoLetraLabel">Importar</label></i></a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-fluid table table-bordered table-striped table-hover text-center table-responsive" id="myTable">
+                            <thead>
+                                <tr>
+                                    <th class="align-middle">Tipo Documento</th>
+                                    <th class="align-middle">Documento</th>
+                                    <th class="align-middle">Nombre Completo</th>
+                                    <th class="align-middle">Telefono</th>
+                                    <th class="align-middle">Centro de Costos</th>
+                                    <th class="align-middle">Cargo</th>
+                                    <th class="align-middle">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                             <%
+                                int GrupoEmpl = 0;
+
+                                List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticasGrupo = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+                                try {
+                                    ResultSet rs = null;
+                                    PreparedStatement ps = conn.prepareStatement("{call spBuscarGrupoUsuario(?)}");
+                                    ps.setString(1, id_usuario);
+                                    rs = ps.executeQuery();
+
+                                    while (rs.next()) {
+                                        Modelos.Estadisticas.clsEstadisticas obEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+
+                                        Modelos.Estadisticas.clsGrupoEmpl obGrupoEmpl = new Modelos.Estadisticas.clsGrupoEmpl();
+                                        obGrupoEmpl.setId_grupo(rs.getInt("Id_grupo"));
+                                        obEstadisticas.setObGrupoEmpl(obGrupoEmpl);
+
+                                        lstclsEstadisticasGrupo.add(obEstadisticas);
+                                    }
+
+                                } catch (Exception ex) {
+
+                                }
+
+                                for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticasGrupo) {
+
+                                    GrupoEmpl = elem.getObGrupoEmpl().getId_grupo();
+
+                                }
+
                                 if (Descripcion_perfil.equals("JEFE")) {
                                     for (Modelos.Empleados.clsEmpleado elem : lstclsEmpleado) {
                             %>
