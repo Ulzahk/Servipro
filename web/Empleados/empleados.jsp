@@ -13,6 +13,35 @@
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
     String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
 
+    int GrupoEmpl = 0;
+
+    List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticasGrupo = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
+    try {
+        ResultSet rs = null;
+        PreparedStatement ps = conn.prepareStatement("{call spBuscarGrupoUsuario(?)}");
+        ps.setString(1, id_usuario);
+        rs = ps.executeQuery();
+
+        while (rs.next()) {
+            Modelos.Estadisticas.clsEstadisticas obEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+
+            Modelos.Estadisticas.clsGrupoEmpl obGrupoEmpl = new Modelos.Estadisticas.clsGrupoEmpl();
+            obGrupoEmpl.setId_grupo(rs.getInt("Id_grupo"));
+            obEstadisticas.setObGrupoEmpl(obGrupoEmpl);
+
+            lstclsEstadisticasGrupo.add(obEstadisticas);
+        }
+
+    } catch (Exception ex) {
+
+    }
+
+    for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticasGrupo) {
+
+        GrupoEmpl = elem.getObGrupoEmpl().getId_grupo();
+
+    }
+
     if (id_usuario == null) {
         response.sendRedirect("login.jsp");
     } else {
@@ -138,35 +167,6 @@
                         </thead>
                         <tbody>
                             <%
-                                int GrupoEmpl = 0;
-
-                                List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticasGrupo = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
-                                try {
-                                    ResultSet rs = null;
-                                    PreparedStatement ps = conn.prepareStatement("{call spBuscarGrupoUsuario(?)}");
-                                    ps.setString(1, id_usuario);
-                                    rs = ps.executeQuery();
-
-                                    while (rs.next()) {
-                                        Modelos.Estadisticas.clsEstadisticas obEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
-
-                                        Modelos.Estadisticas.clsGrupoEmpl obGrupoEmpl = new Modelos.Estadisticas.clsGrupoEmpl();
-                                        obGrupoEmpl.setId_grupo(rs.getInt("Id_grupo"));
-                                        obEstadisticas.setObGrupoEmpl(obGrupoEmpl);
-
-                                        lstclsEstadisticasGrupo.add(obEstadisticas);
-                                    }
-
-                                } catch (Exception ex) {
-
-                                }
-
-                                for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticasGrupo) {
-
-                                    GrupoEmpl = elem.getObGrupoEmpl().getId_grupo();
-
-                                }
-
                                 if (Descripcion_perfil.equals("JEFE")) {
                                     for (Modelos.Empleados.clsEmpleado elem : lstclsEmpleado) {
                             %>
@@ -238,18 +238,18 @@
                 </div>
             </div>
         </div>
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog modal-lg">
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
 
-                    <!-- Modal content-->
-                    <div class="modal-content">  
-                        <div class="modal-body">
+                <!-- Modal content-->
+                <div class="modal-content">  
+                    <div class="modal-body">
 
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
     </body>
     <script type="text/javascript" language="JavaScript">
         main();

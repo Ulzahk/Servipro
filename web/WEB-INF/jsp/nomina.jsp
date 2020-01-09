@@ -1,26 +1,96 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.util.*"%>
+<%@page import="BL.clsConexion"%>
 <%
+
+    Connection conn = null;
+
+    clsConexion obclsConexion = new clsConexion();
+    conn = obclsConexion.getConexion();
+
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
-    String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
+
+    char VistaUsuarios = 'N';
+    char VistaPerfil = 'N';
+    char VistaTipoNovedades = 'N';
+    char VistaFacturacion = 'N';
+    char VistaNovedadesEmpleado = 'N';
+    char VistaCentroCostos = 'N';
+    char VistaEmpleados = 'N';
+    char VistaCargoEmpleado = 'N';
+    char VistaModulos = 'N';
+    char VistaModulosPerfil = 'N';
+    char VistaGrupos = 'N';
+    char VistaEmpleadosGrupo = 'N';
+    char VistaResponsableGrupo = 'N';
+    char VistaConfiguracion = 'N';
+    char VistaEstadisticas = 'N';
+
+    List<Modelos.Perfil.clsFiltroPerfil> lstclsFiltroPerfil = new ArrayList<Modelos.Perfil.clsFiltroPerfil>();
+    try {
+        ResultSet rs = null;
+        PreparedStatement ps = conn.prepareStatement("{call spBuscarFiltroPerfil(?)}");
+        ps.setString(1, id_usuario);
+        rs = ps.executeQuery();
+
+        while (rs.next()) {
+            Modelos.Perfil.clsFiltroPerfil obclsFiltroPerfil = new Modelos.Perfil.clsFiltroPerfil();
+            obclsFiltroPerfil.setVista_usuarios(rs.getString("Vista_usuarios").charAt(0));
+            obclsFiltroPerfil.setVista_perfil(rs.getString("Vista_perfil").charAt(0));
+            obclsFiltroPerfil.setVista_tiponovedades(rs.getString("Vista_tiponovedades").charAt(0));
+            obclsFiltroPerfil.setVista_facturacion(rs.getString("Vista_facturacion").charAt(0));
+            obclsFiltroPerfil.setVista_novedadesempleado(rs.getString("Vista_novedadesempleado").charAt(0));
+            obclsFiltroPerfil.setVista_centrocostos(rs.getString("Vista_centrocostos").charAt(0));
+            obclsFiltroPerfil.setVista_empleados(rs.getString("Vista_empleados").charAt(0));
+            obclsFiltroPerfil.setVista_cargoempleado(rs.getString("Vista_cargoempleado").charAt(0));
+            obclsFiltroPerfil.setVista_modulos(rs.getString("Vista_modulos").charAt(0));
+            obclsFiltroPerfil.setVista_modulosperfil(rs.getString("Vista_modulosperfil").charAt(0));
+            obclsFiltroPerfil.setVista_grupos(rs.getString("Vista_grupos").charAt(0));
+            obclsFiltroPerfil.setVista_empleadosgrupo(rs.getString("Vista_empleadosgrupo").charAt(0));
+            obclsFiltroPerfil.setVista_responsablegrupo(rs.getString("Vista_responsablegrupo").charAt(0));
+            obclsFiltroPerfil.setVista_configuracion(rs.getString("Vista_configuracion").charAt(0));
+            obclsFiltroPerfil.setVista_estadisticas(rs.getString("Vista_estadisticas").charAt(0));
+
+            lstclsFiltroPerfil.add(obclsFiltroPerfil);
+        }
+
+    } catch (Exception ex) {
+
+    }
+
+    for (Modelos.Perfil.clsFiltroPerfil elem : lstclsFiltroPerfil) {
+
+        VistaUsuarios = elem.getVista_usuarios();
+        VistaPerfil = elem.getVista_perfil();
+        VistaTipoNovedades = elem.getVista_tiponovedades();
+        VistaFacturacion = elem.getVista_facturacion();
+        VistaNovedadesEmpleado = elem.getVista_novedadesempleado();
+        VistaCentroCostos = elem.getVista_centrocostos();
+        VistaEmpleados = elem.getVista_empleados();
+        VistaCargoEmpleado = elem.getVista_cargoempleado();
+        VistaModulos = elem.getVista_modulos();
+        VistaModulosPerfil = elem.getVista_modulosperfil();
+        VistaGrupos = elem.getVista_grupos();
+        VistaEmpleadosGrupo = elem.getVista_empleadosgrupo();
+        VistaResponsableGrupo = elem.getVista_responsablegrupo();
+        VistaConfiguracion = elem.getVista_configuracion();
+        VistaEstadisticas = elem.getVista_estadisticas();
+    }
+
     if (id_usuario == null) {
         response.sendRedirect("login.jsp");
     } else {
-        if (Descripcion_perfil.equals("COORDINADOR")
-                || Descripcion_perfil.equals("ADMINISTRADOR")
-                || Descripcion_perfil.equals("JEFE")) {
 
-        } else {
-            response.sendRedirect("index.htm");
-        }
     }
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-  <head>
+    <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -52,210 +122,152 @@
     <body>
 
     <header>
-        <%--Barra de Navegación de Jefe--%>
-        <%
-            if (Descripcion_perfil.equals("JEFE")) {
+        <%--Barra de Navegación de Jefe--%>   
+        <jsp:include page="menunavegacion.jsp"></jsp:include>
+        </header>
 
-        %>       
-
-        <jsp:include page="menujefe.jsp"></jsp:include>
-
-        <%        }
-        %>
-
-        <%--Barra de Navegación de Administrador--%>
-        <%
-            if (Descripcion_perfil.equals("ADMINISTRADOR")) {
-        %>
-
-        <jsp:include page="menuadmin.jsp"></jsp:include>
-
-        <%
-            }
-        %> 
-
-        <%--Barra de Navegación de Coordinador--%>
-        <%
-            if (Descripcion_perfil.equals("COORDINADOR")) {
-        %>
-
-        <jsp:include page="menucordi.jsp"></jsp:include>
-
-        <%
-            }
-        %> 
-    </header>
-
-    <div class="logo container mt-3 mb-1 text-center">
-        <img src="<c:url value="/Resources/Images/LogoServiSoft.png"/>"/>  
+        <div class="logo container mt-3 mb-1 text-center">
+            <img src="<c:url value="/Resources/Images/LogoServiSoft.png"/>"/>  
     </div>
     <br/>
 
     <%--Menú Nomina de Jefe--%>
-    <%
-        if (Descripcion_perfil.equals("JEFE")) {
-
-    %>
     <div class='container mt-4 text-center'>
         <div class='row text-center'>
+            <%
+                if (VistaUsuarios == 'S') {
+            %>
             <a href='controlusuarios?btnUsuConsultar=true' class='col aIndex colorEnlace'>
                 <i class='fas fa-user-circle mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Usuarios</b></p>
             </a>
+            <%
+                }
+                if (VistaPerfil == 'S') {
+            %>
             <a href='controlperfil?btnPerfConsultar=true' class='col aIndex colorEnlace'>
                 <i class='fas fa-address-card mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Perfil</b></p>
             </a>
+            <%
+                }
+                if (VistaTipoNovedades == 'S') {
+            %>
             <a href='tipodenovedades.htm' class='col bIndex colorEnlace'>
                 <i class='fas fa-bullhorn mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Tipo De Novedades</b></p>
             </a>
+            <%
+                }
+                if (VistaFacturacion == 'S') {
+            %>
             <a href='facturacion.htm' class='col bIndex colorEnlace'>
                 <i class='fab fa-buromobelexperte mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Facturación</b></p>
             </a>
+            <%
+                }
+                if (VistaNovedadesEmpleado == 'S') {
+            %>
             <a href='controlnovedadesempleado?btnNoveEmplConsultar=true' class='col bIndex colorEnlace'>
                 <i class='fas fa-user-check mb-2 tamañoIcono'></i>
                 <p><b>Novedades por Empleado</b></p>
             </a>
+            <%
+                }
+                if (VistaCentroCostos == 'S') {
+            %>
             <a href='centrodecostos.htm' class='col eIndex colorEnlace'>
                 <i class='fas fa-file-invoice-dollar mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Centro de Costos</b></p>
             </a>
+            <%
+                }
+            %>
         </div>
         <div class='row text-center'>
+            <%
+                if (VistaEmpleados == 'S') {
+            %>
             <a href='empleados?btnEmplConsultar=true' class='col dIndex colorEnlace'>
                 <i class='fas fa-user-clock mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Empleados</b></p>
             </a>
+            <%
+                }
+                if (VistaCargoEmpleado == 'S') {
+            %>
             <a href='cargoempleado.htm' class='col dIndex colorEnlace'>
                 <i class='fas fa-briefcase mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Cargo Empleado</b></p>
             </a>
+            <%
+                }
+                if (VistaModulos == 'S') {
+            %>
             <a href='modulos.htm' class='col cIndex colorEnlace'>
                 <i class='fas fa-th mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Módulos</b></p>
             </a>
+            <%
+                }
+                if (VistaModulosPerfil == 'S') {
+            %>
             <a href='controlmodulosperfil?btnModPerfilConsultar=true' class='col cIndex colorEnlace'>
                 <i class='fas fa-th-list mb-2 tamañoIcono'></i>
                 <p><b>Módulos por Perfil</b></p>
             </a>
+            <%
+                }
+                if (VistaGrupos == 'S') {
+            %>
             <a href='grupos.htm' class='col fIndex colorEnlace'>
                 <i class='fas fa-users mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Grupos</b></p>
             </a>
+            <%
+                }
+                if (VistaEmpleadosGrupo == 'S') {
+            %>
             <a href='controlempleadosgrupo?btnEmplGruConsultar=true' class='col fIndex colorEnlace'>
                 <i class='fas fa-users-cog mb-2 tamañoIcono'></i>
                 <p><b>Empleados por Grupo</b></p>
             </a>
+            <%
+                }
+            %>
         </div>
         <div class='row text-center'>
+            <%
+                if (VistaResponsableGrupo == 'S') {
+            %>
             <a href='controlresponsablegrupo?btnReGruConsultar=true' class='col fIndex colorEnlace'>
                 <i class='fas fa-user-tie mb-2 mt-2 tamañoIcono'></i>
                 <p><b>Responsable por Grupo</b></p>
             </a>
+            <%
+                }
+                if (VistaConfiguracion == 'S') {
+            %>
             <a href='configuracion.htm' class='col gIndex colorEnlace'>
                 <i class='fas fa-cog mb-2  tamañoIcono'></i>
                 <p><b>Configuración</b></p>
             </a>
+            <%
+                }
+                if (VistaEstadisticas == 'S') {
+            %>
             <a href='estadisticas?btnConsultarEstaMensualidad=true' class='col gIndex colorEnlace'>
                 <i class='fas fa-chart-bar mb-2  tamañoIcono'></i>
                 <p><b>Estadísticas</b></p>
             </a>
+            <%
+                }
+            %>
         </div>
     </div>
-    <%        }
-    %>
-
-    <%--Menú Nomina de Administrador--%>
-    <%
-        if (Descripcion_perfil.equals("ADMINISTRADOR")) {
-    %>
-    <div class='container mt-4 text-center'>
-        <div class='row text-center'>
-            <a href='controlusuarios?btnUsuConsultar=true' class='col aIndex colorEnlace'>
-                <i class='fas fa-user-circle mb-2 mt-2 tamañoIcono'></i>
-                <p><b>Usuarios</b></p>
-            </a>
-            <a href='controlperfil?btnPerfConsultar=true' class='col aIndex colorEnlace'>
-                <i class='fas fa-address-card mb-2 mt-2 tamañoIcono'></i>
-                <p><b>Perfil</b></p>
-            </a>
-        </div>
-        <div class='row text-center'>
-            <a href='modulos.htm' class='col cIndex colorEnlace'>
-                <i class='fas fa-th mb-2 mt-2 tamañoIcono'></i>
-                <p><b>Módulos</b></p>
-            </a>
-            <a href='controlmodulosperfil?btnModPerfilConsultar=true' class='col cIndex colorEnlace'>
-                <i class='fas fa-th-list mb-2 mt-2 tamañoIcono'></i>
-                <p><b>Módulos por Perfil</b></p>
-            </a>
-        </div>
-        <%
-            }
-        %>
-
-        <%--Menú Nomina de Coordinador--%>
-        <%
-            if (Descripcion_perfil.equals("COORDINADOR")) {
-        %>
-        <div class='container mt-4 text-center'>
-            <div class='row text-center'>
-                <a href='tipodenovedades.htm' class='col bIndex colorEnlace'>
-                    <i class='fas fa-bullhorn mb-2 mt-2 tamañoIcono'></i>
-                    <p><b>Tipo De Novedades</b></p>
-                </a>
-                <a href='facturacion.htm' class='col bIndex colorEnlace'>
-                    <i class='fab fa-buromobelexperte mb-2 mt-2 tamañoIcono'></i>
-                    <p><b>Facturación</b></p>
-                </a>
-                <a href='controlnovedadesempleado?btnNoveEmplConsultar=true' class='col bIndex colorEnlace'>
-                    <i class='fas fa-user-check mb-2 tamañoIcono'></i>
-                    <p><b>Novedades por Empleado</b></p>
-                </a>
-                <a href='centrodecostos.htm' class='col eIndex colorEnlace'>
-                    <i class='fas fa-file-invoice-dollar mb-2 mt-2 tamañoIcono'></i>
-                    <p><b>Centro de Costos</b></p>
-                </a>
-                <a href='empleados?btnEmplConsultar=true' class='col dIndex colorEnlace'>
-                    <i class='fas fa-user-clock mb-2 mt-2 tamañoIcono'></i>
-                    <p><b>Empleados</b></p>
-                </a>
-                <a href='cargoempleado.htm' class='col dIndex colorEnlace'>
-                    <i class='fas fa-briefcase mb-2 mt-2 tamañoIcono'></i>
-                    <p><b>Cargo Empleado</b></p>
-                </a>
-            </div>
-            <div class='row text-center'>
-                <a href='grupos.htm' class='col-2 fIndex colorEnlace'>
-                    <i class='fas fa-users mb-2 mt-2 tamañoIcono'></i>
-                    <p><b>Grupos</b></p>
-                </a>
-                <a href='controlempleadosgrupo?btnEmplGruConsultar=true' class='col-2 fIndex colorEnlace'>
-                    <i class='fas fa-users-cog mb-2 tamañoIcono'></i>
-                    <p><b>Empleados por Grupo</b></p>
-                </a>
-                <a href='controlresponsablegrupo?btnReGruConsultar=true' class='col-2 fIndex colorEnlace'>
-                    <i class='fas fa-user-tie mb-2 mt-2 tamañoIcono'></i>
-                    <p><b>Responsable por Grupo</b></p>
-                </a>
-                <a href='configuracion.htm' class='col-2 gIndex colorEnlace'>
-                    <i class='fas fa-cog mb-2  tamañoIcono'></i>
-                    <p><b>Configuracion</b></p>
-                </a>
-                <a href='estadisticas?btnConsultarEstaMensualidad=true' class='col-2 gIndex colorEnlace'>
-                    <i class='fas fa-chart-bar mb-2  tamañoIcono'></i>
-                    <p><b>Estadísticas</b></p>
-                </a>
-            </div>
-        </div>
-        <%
-            }
-        %>
-
-    </body>   
-    <script type="text/javascript" language="JavaScript">
-        main();
-    </script>
+</body>  
+<script type="text/javascript" language="JavaScript">
+    main();
+</script>
 </html>
