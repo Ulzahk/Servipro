@@ -80,6 +80,11 @@ function main() {
         }
     });
 
+    // Mostramos y ocultamos submenus
+    $('.submenu').click(function () {
+        $(this).children('.children').slideToggle();
+    });
+    
     $('.openBtn').on('click', function () {
         $('.modal-body').load(this.href, function ()
         {
@@ -87,10 +92,7 @@ function main() {
     });
 
 
-    // Mostramos y ocultamos submenus
-    $('.submenu').click(function () {
-        $(this).children('.children').slideToggle();
-    });
+    
 
     $(document).ready(function () {
         $('#myTable').DataTable({
