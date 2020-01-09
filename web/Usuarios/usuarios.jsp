@@ -59,7 +59,6 @@
         if (VistaUsuarios != 'S') {
             response.sendRedirect("nomina.htm");
         }
-
     }
 %>
 <!DOCTYPE html>

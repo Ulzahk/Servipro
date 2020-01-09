@@ -2,17 +2,59 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
+<%@page import="BL.clsConexion"%>
 <%
+    Connection conn = null;
+
+    clsConexion obclsConexion = new clsConexion();
+    conn = obclsConexion.getConexion();
+
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
-    String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
+
+    char VistaModulosPerfil = 'N';
+
+    List<Modelos.Perfil.clsFiltroPerfil> lstclsFiltroPerfil = new ArrayList<Modelos.Perfil.clsFiltroPerfil>();
+    try {
+        ResultSet rs = null;
+        PreparedStatement ps = conn.prepareStatement("{call spBuscarFiltroPerfil(?)}");
+        ps.setString(1, id_usuario);
+        rs = ps.executeQuery();
+
+        while (rs.next()) {
+            Modelos.Perfil.clsFiltroPerfil obclsFiltroPerfil = new Modelos.Perfil.clsFiltroPerfil();
+            obclsFiltroPerfil.setVista_usuarios(rs.getString("Vista_usuarios").charAt(0));
+            obclsFiltroPerfil.setVista_perfil(rs.getString("Vista_perfil").charAt(0));
+            obclsFiltroPerfil.setVista_tiponovedades(rs.getString("Vista_tiponovedades").charAt(0));
+            obclsFiltroPerfil.setVista_facturacion(rs.getString("Vista_facturacion").charAt(0));
+            obclsFiltroPerfil.setVista_novedadesempleado(rs.getString("Vista_novedadesempleado").charAt(0));
+            obclsFiltroPerfil.setVista_centrocostos(rs.getString("Vista_centrocostos").charAt(0));
+            obclsFiltroPerfil.setVista_empleados(rs.getString("Vista_empleados").charAt(0));
+            obclsFiltroPerfil.setVista_cargoempleado(rs.getString("Vista_cargoempleado").charAt(0));
+            obclsFiltroPerfil.setVista_modulos(rs.getString("Vista_modulos").charAt(0));
+            obclsFiltroPerfil.setVista_modulosperfil(rs.getString("Vista_modulosperfil").charAt(0));
+            obclsFiltroPerfil.setVista_grupos(rs.getString("Vista_grupos").charAt(0));
+            obclsFiltroPerfil.setVista_empleadosgrupo(rs.getString("Vista_empleadosgrupo").charAt(0));
+            obclsFiltroPerfil.setVista_responsablegrupo(rs.getString("Vista_responsablegrupo").charAt(0));
+            obclsFiltroPerfil.setVista_configuracion(rs.getString("Vista_configuracion").charAt(0));
+            obclsFiltroPerfil.setVista_estadisticas(rs.getString("Vista_estadisticas").charAt(0));
+
+            lstclsFiltroPerfil.add(obclsFiltroPerfil);
+        }
+
+    } catch (Exception ex) {
+
+    }
+
+    for (Modelos.Perfil.clsFiltroPerfil elem : lstclsFiltroPerfil) {
+
+        VistaModulosPerfil = elem.getVista_modulosperfil();
+    }
+
     if (id_usuario == null) {
         response.sendRedirect("login.jsp");
     } else {
-        if (Descripcion_perfil.equals("ADMINISTRADOR")
-                || Descripcion_perfil.equals("JEFE")) {
-
-        } else {
+        if (VistaModulosPerfil != 'S') {
             response.sendRedirect("nomina.htm");
         }
     }
@@ -70,39 +112,23 @@
             }
         %>
         <header>
-            <%--Barra de Navegación de Jefe--%>
-            <%
-                if (Descripcion_perfil.equals("JEFE")) {
-            %>
-            <jsp:include page="../WEB-INF/jsp/menujefe.jsp"></jsp:include>
-            <%
-                }
-            %>
-
-            <%--Barra de Navegación de Administrador--%>
-            <%
-                if (Descripcion_perfil.equals("ADMINISTRADOR")) {
-            %>
-            <jsp:include page="../WEB-INF/jsp/menuadmin.jsp"></jsp:include>
-            <%
-                }
-            %> 
-        </header> 
-        <div class="container mt-4">
-            <h1 class="text-center">Agregar Módulos por Perfil</h1>
-            <br>
-            <div class="card border-info">
-                <div class="card-header bg-info text-white">
-                    <a href="controlmodulosperfil?btnModPerfilConsultar=true" class="btn btn-secondary"data-toggle="tooltip" title="Haz clic para regresar al menú módulos por perfil"><i class="fas fa-arrow-left"></i></a>
-                </div>
-                <div class="card-body">
-                    <form action="controlmodulosperfil" method="POST">
-                        <!--FILA-->
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label for="lblmodulos"><b>Módulos</b></label>
-                                    <select class="form-control" name="ddlModulo">
+            <jsp:include page="../WEB-INF/jsp/menunavegacion.jsp"></jsp:include>
+            </header>
+            <div class="container mt-4">
+                <h1 class="text-center">Agregar Módulos por Perfil</h1>
+                <br>
+                <div class="card border-info">
+                    <div class="card-header bg-info text-white">
+                        <a href="controlmodulosperfil?btnModPerfilConsultar=true" class="btn btn-secondary"data-toggle="tooltip" title="Haz clic para regresar al menú módulos por perfil"><i class="fas fa-arrow-left"></i></a>
+                    </div>
+                    <div class="card-body">
+                        <form action="controlmodulosperfil" method="POST">
+                            <!--FILA-->
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="lblmodulos"><b>Módulos</b></label>
+                                        <select class="form-control" name="ddlModulo">
                                         <%
                                             List<Modelos.ModulosPerfil.clsModulo> lstclsModulos = new ArrayList<Modelos.ModulosPerfil.clsModulo>();
 
