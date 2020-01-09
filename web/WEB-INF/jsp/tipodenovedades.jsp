@@ -1,19 +1,64 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*"%>
+<%@page import="java.util.*"%>
+<%@page import="BL.clsConexion"%>
 <%
+    Connection conn = null;
+
+    clsConexion obclsConexion = new clsConexion();
+    conn = obclsConexion.getConexion();
+
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
-    String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
+
+    char VistaTipoNovedades = 'N';
+
+
+    List<Modelos.Perfil.clsFiltroPerfil> lstclsFiltroPerfil = new ArrayList<Modelos.Perfil.clsFiltroPerfil>();
+    try {
+        ResultSet rs = null;
+        PreparedStatement ps = conn.prepareStatement("{call spBuscarFiltroPerfil(?)}");
+        ps.setString(1, id_usuario);
+        rs = ps.executeQuery();
+
+        while (rs.next()) {
+            Modelos.Perfil.clsFiltroPerfil obclsFiltroPerfil = new Modelos.Perfil.clsFiltroPerfil();
+            obclsFiltroPerfil.setVista_usuarios(rs.getString("Vista_usuarios").charAt(0));
+            obclsFiltroPerfil.setVista_perfil(rs.getString("Vista_perfil").charAt(0));
+            obclsFiltroPerfil.setVista_tiponovedades(rs.getString("Vista_tiponovedades").charAt(0));
+            obclsFiltroPerfil.setVista_facturacion(rs.getString("Vista_facturacion").charAt(0));
+            obclsFiltroPerfil.setVista_novedadesempleado(rs.getString("Vista_novedadesempleado").charAt(0));
+            obclsFiltroPerfil.setVista_centrocostos(rs.getString("Vista_centrocostos").charAt(0));
+            obclsFiltroPerfil.setVista_empleados(rs.getString("Vista_empleados").charAt(0));
+            obclsFiltroPerfil.setVista_cargoempleado(rs.getString("Vista_cargoempleado").charAt(0));
+            obclsFiltroPerfil.setVista_modulos(rs.getString("Vista_modulos").charAt(0));
+            obclsFiltroPerfil.setVista_modulosperfil(rs.getString("Vista_modulosperfil").charAt(0));
+            obclsFiltroPerfil.setVista_grupos(rs.getString("Vista_grupos").charAt(0));
+            obclsFiltroPerfil.setVista_empleadosgrupo(rs.getString("Vista_empleadosgrupo").charAt(0));
+            obclsFiltroPerfil.setVista_responsablegrupo(rs.getString("Vista_responsablegrupo").charAt(0));
+            obclsFiltroPerfil.setVista_configuracion(rs.getString("Vista_configuracion").charAt(0));
+            obclsFiltroPerfil.setVista_estadisticas(rs.getString("Vista_estadisticas").charAt(0));
+
+            lstclsFiltroPerfil.add(obclsFiltroPerfil);
+        }
+
+    } catch (Exception ex) {
+
+    }
+
+    for (Modelos.Perfil.clsFiltroPerfil elem : lstclsFiltroPerfil) {
+
+        VistaTipoNovedades = elem.getVista_tiponovedades();
+    }
+
     if (id_usuario == null) {
         response.sendRedirect("login.jsp");
     } else {
-        if (Descripcion_perfil.equals("COORDINADOR")
-                || Descripcion_perfil.equals("JEFE")) {
-
-        } else {
+        if (VistaTipoNovedades != 'S') {
             response.sendRedirect("nomina.htm");
         }
+            
     }
 %>
 <!DOCTYPE html>
@@ -46,53 +91,34 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="Resources/JS/functions.js"></script>
     </head>
-    <header>
-        <%--Barra de Navegación de Jefe--%>
-        <%
-            if (Descripcion_perfil.equals("JEFE")) {
-
-        %>       
-
-        <jsp:include page="menujefe.jsp"></jsp:include>
-
-        <%        }
-        %>
-
-
-        <%--Barra de Navegación de Coordinador--%>
-        <%
-            if (Descripcion_perfil.equals("COORDINADOR")) {
-        %>
-
-        <jsp:include page="menucordi.jsp"></jsp:include>
-
-        <%
-            }
-        %> 
-    </header>
     <body>
-        <div class="container mt-4">
-            <h1 class="text-center">Tipo De Novedades</h1>
-            <br>
-            <div class="card border-info">
-                <div class="card-header bg-info text-white">
-                    <form action="" method="post">
-                        <div class="input-group">
-                            <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
-                            <a href="agregartipodenovedades.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" title="Haz clic para agregar un registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>                            
-                        </div>
-                    </form>
-                </div>
-                <div class="card-body">
-                    <table class="table table-fluid table table-bordered table-striped table-hover text-center table-responsive-sm" id="myTable">
-                        <thead>
-                            <tr>
-                                <th class="align-middle">Descripción</th>
-                                <th class="align-middle">Alias</th>
-                                <th class="align-middle">Acciones</th>
-                            </tr>
-                        </thead>                        
-                        <tbody>
+
+        <header>
+            <jsp:include page="menunavegacion.jsp"></jsp:include>
+            </header>
+
+            <div class="container mt-4">
+                <h1 class="text-center">Tipo De Novedades</h1>
+                <br>
+                <div class="card border-info">
+                    <div class="card-header bg-info text-white">
+                        <form action="" method="post">
+                            <div class="input-group">
+                                <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
+                                <a href="agregartipodenovedades.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" title="Haz clic para agregar un registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>                            
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-fluid table table-bordered table-striped table-hover text-center table-responsive-sm" id="myTable">
+                            <thead>
+                                <tr>
+                                    <th class="align-middle">Descripción</th>
+                                    <th class="align-middle">Alias</th>
+                                    <th class="align-middle">Acciones</th>
+                                </tr>
+                            </thead>                        
+                            <tbody>
                             <c:forEach var="dato" items="${datos}">
                                 <tr>
                                     <td class="align-middle">${dato.Descripcion}</td>
