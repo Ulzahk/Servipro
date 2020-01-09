@@ -83,66 +83,59 @@ function main() {
     $('.openBtn').on('click', function () {
         $('.modal-body').load(this.href, function ()
         {
-            $('#myModal').modal({show: false});
         });
     });
+
 
     // Mostramos y ocultamos submenus
     $('.submenu').click(function () {
         $(this).children('.children').slideToggle();
     });
 
-    $('.openBtn').on('click', function () {
-        $('.modal-body').load(this.href, function ()
-        {
-            $('#myModal').modal({show: false});
-        });
-    });
-
-$(document).ready(function () {
-    $('#myTable').DataTable({
-        dom: 'Bfrtip',
-        lengthMenu: [
-            [5, 10, 25, 50, -1],
-            ['5 registros', '10 registros', '25 registros', '50 registros', 'Mostrar Todos']
-        ],
-        buttons: [
-            'pageLength', 'csv', 'excel'
-        ],
-        language: {"sProcessing": "Procesando...",
-            "sLengthMenu": "Mostrar _MENU_ registros",
-            "sZeroRecords": "No se encontraron resultados",
-            "sEmptyTable": "Ningún dato disponible en esta tabla =(",
-            "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-            "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-            "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-            "sInfoPostFix": "",
-            "sSearch": "Buscar:",
-            "sUrl": "",
-            "sInfoThousands": ",",
-            "sLoadingRecords": "Cargando...",
-            "oPaginate": {
-                "sFirst": "Primero",
-                "sLast": "Último",
-                "sNext": "Siguiente",
-                "sPrevious": "Anterior"
-            },
-            "oAria": {
-                "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-            },
-            "buttons": {
-                "copy": "Copiar",
-                "colvis": "Visibilidad",
-                "pageLength": "Mostrar registros",
-                "csv": "<i class='fas fa-file-csv' style='font-size:17px;' data-toggle='tooltip' title='Haz clic para descargar archivo CSV'></i>",
-                "excel": "<i class='far fa-file-excel' style='font-size:17px;' data-toggle='tooltip' title='Haz clic para descargar archivo CSV'></i>"
+    $(document).ready(function () {
+        $('#myTable').DataTable({
+            dom: 'Bfrtip',
+            lengthMenu: [
+                [5, 10, 25, 50, -1],
+                ['5 registros', '10 registros', '25 registros', '50 registros', 'Mostrar Todos']
+            ],
+            buttons: [
+                'pageLength', 'csv', 'excel'
+            ],
+            language: {"sProcessing": "Procesando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla =(",
+                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                },
+                "buttons": {
+                    "copy": "Copiar",
+                    "colvis": "Visibilidad",
+                    "pageLength": "Mostrar registros",
+                    "csv": "<i class='fas fa-file-csv' style='font-size:17px;' data-toggle='tooltip' title='Haz clic para descargar archivo CSV'></i>",
+                    "excel": "<i class='far fa-file-excel' style='font-size:17px;' data-toggle='tooltip' title='Haz clic para descargar archivo CSV'></i>"
+                }
             }
-        }
 
-    }
-    );
-})
+        }
+        );
+    })
 }
 
 

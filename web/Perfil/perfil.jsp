@@ -112,7 +112,7 @@
                     <form action="controlperfil" method="post">
                         <div class="input-group">
                             <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
-                            <a href="controlperfil?btnEmplAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
+                            <a href="controlperfil?btnPerfAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
                         </div>
                     </form>
                 </div>
@@ -121,28 +121,27 @@
                         <thead>
                             <tr>
                                 <th class="align-middle">Perfil</th>
-                                <th class="align-middle">Vista Usuario</th>
-                                <th class="align-middle">Vista Perfil</th>
-                                <th class="align-middle">Vista Tipo Novedades</th>
-                                <th class="align-middle">Vista Facturación</th>
-                                <th class="align-middle">Vista Novedades Empleado</th>
-                                <th class="align-middle">Vista Centro Costos</th>
-                                <th class="align-middle">Vista Empleados</th>
-                                <th class="align-middle">Vista Cargo Empleado</th>
-                                <th class="align-middle">Vista Modulos</th>
-                                <th class="align-middle">Vista Modulos Perfil</th>
-                                <th class="align-middle">Vista Grupos</th>
-                                <th class="align-middle">Vista Empleados Grupo</th>
-                                <th class="align-middle">Vista Responsable Grupo</th>
-                                <th class="align-middle">Vista Configuracion</th>
-                                <th class="align-middle">Vista Estadisticas</th>
+                                <th class="align-middle">V. Usuario</th>
+                                <th class="align-middle">V. Perfil</th>
+                                <th class="align-middle">V. Tipo Novedades</th>
+                                <th class="align-middle">V. Facturación</th>
+                                <th class="align-middle">V. Novedades Empleado</th>
+                                <th class="align-middle">V. Centro Costos</th>
+                                <th class="align-middle">V. Empleados</th>
+                                <th class="align-middle">V. Cargo Empleado</th>
+                                <th class="align-middle">V. Modulos</th>
+                                <th class="align-middle">V. Modulos Perfil</th>
+                                <th class="align-middle">V. Grupos</th>
+                                <th class="align-middle">V. Empleados Grupo</th>
+                                <th class="align-middle">V. Responsable Grupo</th>
+                                <th class="align-middle">V. Configuracion</th>
+                                <th class="align-middle">V. Estadisticas</th>
                                 <th class="align-middle">Acciones</th>
-                            <tr>
+                            </tr>
                         </thead>
                         <tbody>
                             <%
-                
-                                    for (Modelos.Perfil.clsPerfil elem : lstclsPerfil) {
+                                for (Modelos.Perfil.clsPerfil elem : lstclsPerfil) {
                             %>
                             <tr>
                                 <td class="align-middle"><%=elem.getDescripcion_perfil()%></td>
@@ -174,10 +173,9 @@
                                     </div>
                                 </td>
                             </tr>
-                            
+
                             <%
-                                        
-                                    
+
                                 }
 
                             %>
@@ -185,23 +183,23 @@
                         <tfoot>
                             <tr>
                                 <th class="align-middle">Perfil</th>
-                                <th class="align-middle">Vista_Usuario</th>
-                                <th class="align-middle">Vista_Perfil</th>
-                                <th class="align-middle">Vista_Tipo_Novedades</th>
-                                <th class="align-middle">Vista_Facturación</th>
-                                <th class="align-middle">Vista_Novedades_Empleado</th>
-                                <th class="align-middle">Vista_Centro_Costos</th>
-                                <th class="align-middle">Vista_Empleados</th>
-                                <th class="align-middle">Vista_Cargo_Empleado</th>
-                                <th class="align-middle">Vista_Modulos</th>
-                                <th class="align-middle">Vista_Modulos_Perfil</th>
-                                <th class="align-middle">Vista_Grupos</th>
-                                <th class="align-middle">Vista_Empleados_Grupo</th>
-                                <th class="align-middle">Vista_Responsable_Grupo</th>
-                                <th class="align-middle">Vista_Configuracion</th>
-                                <th class="align-middle">Vista_Estadisticas</th>
+                                <th class="align-middle">V. Usuario</th>
+                                <th class="align-middle">V. Perfil</th>
+                                <th class="align-middle">V. Tipo Novedades</th>
+                                <th class="align-middle">V. Facturación</th>
+                                <th class="align-middle">V. Novedades Empleado</th>
+                                <th class="align-middle">V. Centro Costos</th>
+                                <th class="align-middle">V. Empleados</th>
+                                <th class="align-middle">V. Cargo Empleado</th>
+                                <th class="align-middle">V. Modulos</th>
+                                <th class="align-middle">V. Modulos Perfil</th>
+                                <th class="align-middle">V. Grupos</th>
+                                <th class="align-middle">V. Empleados Grupo</th>
+                                <th class="align-middle">V. Responsable Grupo</th>
+                                <th class="align-middle">V. Configuracion</th>
+                                <th class="align-middle">V. Estadisticas</th>
                                 <th class="align-middle">Acciones</th>
-                            <tr>
+                            </tr>
                         </tfoot>
                     </table> 
                 </div>
