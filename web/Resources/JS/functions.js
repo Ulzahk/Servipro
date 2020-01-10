@@ -84,7 +84,7 @@ function main() {
     $('.submenu').click(function () {
         $(this).children('.children').slideToggle();
     });
-    
+
     $('.openBtn').on('click', function () {
         $('.modal-body').load(this.href, function ()
         {
@@ -92,7 +92,7 @@ function main() {
     });
 
 
-    
+
 
     $(document).ready(function () {
         $('#myTable').DataTable({
@@ -138,6 +138,12 @@ function main() {
         }
         );
     })
+}
+
+function selectAll() {
+    $(".selectall").click(function () {
+        $(".individual").prop("checked", $(this).prop("checked"));
+    });
 }
 
 
