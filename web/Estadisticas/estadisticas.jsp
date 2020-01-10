@@ -13,13 +13,49 @@
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
     String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
 
+    char VistaEstadisticas = 'N';
+
+    List<Modelos.Perfil.clsFiltroPerfil> lstclsFiltroPerfil = new ArrayList<Modelos.Perfil.clsFiltroPerfil>();
+    try {
+        ResultSet rs = null;
+        PreparedStatement ps = conn.prepareStatement("{call spBuscarFiltroPerfil(?)}");
+        ps.setString(1, id_usuario);
+        rs = ps.executeQuery();
+
+        while (rs.next()) {
+            Modelos.Perfil.clsFiltroPerfil obclsFiltroPerfil = new Modelos.Perfil.clsFiltroPerfil();
+            obclsFiltroPerfil.setVista_usuarios(rs.getString("Vista_usuarios").charAt(0));
+            obclsFiltroPerfil.setVista_perfil(rs.getString("Vista_perfil").charAt(0));
+            obclsFiltroPerfil.setVista_tiponovedades(rs.getString("Vista_tiponovedades").charAt(0));
+            obclsFiltroPerfil.setVista_facturacion(rs.getString("Vista_facturacion").charAt(0));
+            obclsFiltroPerfil.setVista_novedadesempleado(rs.getString("Vista_novedadesempleado").charAt(0));
+            obclsFiltroPerfil.setVista_centrocostos(rs.getString("Vista_centrocostos").charAt(0));
+            obclsFiltroPerfil.setVista_empleados(rs.getString("Vista_empleados").charAt(0));
+            obclsFiltroPerfil.setVista_cargoempleado(rs.getString("Vista_cargoempleado").charAt(0));
+            obclsFiltroPerfil.setVista_modulos(rs.getString("Vista_modulos").charAt(0));
+            obclsFiltroPerfil.setVista_modulosperfil(rs.getString("Vista_modulosperfil").charAt(0));
+            obclsFiltroPerfil.setVista_grupos(rs.getString("Vista_grupos").charAt(0));
+            obclsFiltroPerfil.setVista_empleadosgrupo(rs.getString("Vista_empleadosgrupo").charAt(0));
+            obclsFiltroPerfil.setVista_responsablegrupo(rs.getString("Vista_responsablegrupo").charAt(0));
+            obclsFiltroPerfil.setVista_configuracion(rs.getString("Vista_configuracion").charAt(0));
+            obclsFiltroPerfil.setVista_estadisticas(rs.getString("Vista_estadisticas").charAt(0));
+
+            lstclsFiltroPerfil.add(obclsFiltroPerfil);
+        }
+
+    } catch (Exception ex) {
+
+    }
+
+    for (Modelos.Perfil.clsFiltroPerfil elem : lstclsFiltroPerfil) {
+
+        VistaEstadisticas = elem.getVista_estadisticas();
+    }
+
     if (id_usuario == null) {
         response.sendRedirect("login.jsp");
     } else {
-        if (Descripcion_perfil.equals("COORDINADOR")
-                || Descripcion_perfil.equals("JEFE")) {
-
-        } else {
+        if (VistaEstadisticas != 'S') {
             response.sendRedirect("nomina.htm");
         }
     }
@@ -76,93 +112,72 @@
         <input type="text" hidden="" id="txtTipo" value="<%=request.getAttribute("stTipo")%>"/>
         <script>
             var mensaje = document.getElementById("txtMensaje").value;
-            var tipo = document.getElementById("txtTipo").value; 
+            var tipo = document.getElementById("txtTipo").value;
             swal.fire("Mensaje", mensaje, tipo);
         </script>
         <%
             }
         %>
         <header>
-            <%--Barra de Navegación de Jefe--%>
-            <%
-                if (Descripcion_perfil.equals("JEFE")) {
-
-            %>       
-
-            <jsp:include page="../WEB-INF/jsp/menujefe.jsp"></jsp:include>
-
-            <%        }
-            %>
-
-
-            <%--Barra de Navegación de Coordinador--%>
-            <%
-                if (Descripcion_perfil.equals("COORDINADOR")) {
-            %>
-
-            <jsp:include page="../WEB-INF/jsp/menucordi.jsp"></jsp:include>
-
-            <%
-                }
-            %> 
-        </header> 
-        <div class="container mt-4">
-            <h1 class="text-center">Estadísticas</h1>
-            <br>
-            <div class="card border-info">
-                <div class="card-header bg-info text-white">
-                    <form action="estadisticas" method="post">
-                        <div class="input-group">
-                            <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
-                            <a href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la mensualidad"><i class="fas fa-calendar-alt"></i></a>
-                            <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 1 al 15"><i class="fas fa-calendar-week"></i></a>
-                            <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 16 al 31"><i class="fas fa-calendar-minus"></i></a>
-                            <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" title="Haz clic para agregar un registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
-                        </div>
-                    </form>
-                </div> 
-                <div class="card-body">
-                    <table class="table table-fluid table table-bordered table-striped table-hover text-center table-responsive" id="myTable">
-                        <thead>
-                            <tr>
-                                <th class="align-middle">Empleado</th>
-                                <th>A&ntilde;o</th>
-                                <th>Mes</th>
-                                <th>1</th>
-                                <th>2</th>
-                                <th>3</th>
-                                <th>4</th>
-                                <th>5</th>
-                                <th>6</th>
-                                <th>7</th>
-                                <th>8</th>
-                                <th>9</th>
-                                <th>10</th>
-                                <th>11</th>
-                                <th>12</th>
-                                <th>13</th>
-                                <th>14</th>
-                                <th>15</th>
-                                <th>16</th>
-                                <th>17</th>
-                                <th>18</th>
-                                <th>19</th>
-                                <th>20</th>
-                                <th>21</th>
-                                <th>22</th>
-                                <th>23</th>
-                                <th>24</th>
-                                <th>25</th>
-                                <th>26</th>
-                                <th>27</th>
-                                <th>28</th>
-                                <th>29</th>
-                                <th>30</th>
-                                <th>31</th>
-                                <th rowspan="1" class="align-middle">Acciones</th> 
-                            </tr>
-                        </thead>
-                        <tbody>
+            <jsp:include page="../WEB-INF/jsp/menunavegacion.jsp"></jsp:include>
+            </header> 
+            <div class="container mt-4">
+                <h1 class="text-center">Estadísticas</h1>
+                <br>
+                <div class="card border-info">
+                    <div class="card-header bg-info text-white">
+                        <form action="estadisticas" method="post">
+                            <div class="input-group">
+                                <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
+                                <a href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la mensualidad"><i class="fas fa-calendar-alt"></i></a>
+                                <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 1 al 15"><i class="fas fa-calendar-week"></i></a>
+                                <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 16 al 31"><i class="fas fa-calendar-minus"></i></a>
+                                <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" title="Haz clic para agregar un registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
+                            </div>
+                        </form>
+                    </div> 
+                    <div class="card-body">
+                        <table class="table table-fluid table table-bordered table-striped table-hover text-center table-responsive" id="myTable">
+                            <thead>
+                                <tr>
+                                    <th class="align-middle">Empleado</th>
+                                    <th>A&ntilde;o</th>
+                                    <th>Mes</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th>5</th>
+                                    <th>6</th>
+                                    <th>7</th>
+                                    <th>8</th>
+                                    <th>9</th>
+                                    <th>10</th>
+                                    <th>11</th>
+                                    <th>12</th>
+                                    <th>13</th>
+                                    <th>14</th>
+                                    <th>15</th>
+                                    <th>16</th>
+                                    <th>17</th>
+                                    <th>18</th>
+                                    <th>19</th>
+                                    <th>20</th>
+                                    <th>21</th>
+                                    <th>22</th>
+                                    <th>23</th>
+                                    <th>24</th>
+                                    <th>25</th>
+                                    <th>26</th>
+                                    <th>27</th>
+                                    <th>28</th>
+                                    <th>29</th>
+                                    <th>30</th>
+                                    <th>31</th>
+                                    <th rowspan="1" class="align-middle">Acciones</th> 
+                                </tr>
+                            </thead>
+                            <tbody>
                             <%
                                 int GrupoEmpl = 0;
 
@@ -257,7 +272,7 @@
                             } else {
                                 for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticas) {
                                     if (GrupoEmpl == (elem.getObGrupoEmpl().getId_grupo())) {
-                                    
+
                             %>
                             <tr>
                                 <td class="align-middle"><%=elem.getObEmpleado().getEmplPrimerNombre()%> <%=elem.getObEmpleado().getEmplSegundoNombre()%> <%=elem.getObEmpleado().getEmplPrimerApellido()%> <%=elem.getObEmpleado().getEmplSegundoApellido()%></td>
