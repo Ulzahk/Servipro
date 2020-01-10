@@ -22,13 +22,7 @@
                 
                 <prop key="index.htm">indexController</prop>
                 <!--Nomina-->
-                <prop key="nomina.htm">controlNomina</prop>
-                <!--Perfil props-->
-                <prop key="perfil.htm">controlPerfil</prop>
-                <prop key="agregarperfil.htm">controlAgregarPerfil</prop>
-                <prop key="editarperfil.htm">controlEditarPerfil</prop>
-                <prop key="eliminarperfil.htm">controlEliminarPerfil</prop>
-                <prop key="confirmareliminarperfil.htm">controlConfirmarEliminarPerfil</prop>
+                <prop key="nomina.htm">controlNomina</prop>                
                 <!--Configuracion props-->
                 <prop key="configuracion.htm">controlConfiguracion</prop>
                 <prop key="agregarconfiguracion.htm">controlAgregarConfiguracion</prop>
@@ -83,13 +77,7 @@
     <!--Controles-->
     <!--Nomina-->
     <bean name="controlNomina" class="Controles.ControlNomina"/>
-    <!--Consulta-->
-     <!--Perfil-->
-    <bean name="controlPerfil" class="Controles.Perfil.ControlPerfil"/>
-    <bean name="controlAgregarPerfil" class="Controles.Perfil.ControlAgregarPerfil"/>
-    <bean name="controlEditarPerfil" class="Controles.Perfil.ControlEditarPerfil"/>
-    <bean name="controlEliminarPerfil" class="Controles.Perfil.ControlEliminarPerfil"/>
-    <bean name="controlConfirmarEliminarPerfil" class="Controles.Perfil.ControlConfirmarEliminarPerfil"/>
+    <!--Consulta-->   
     <!--Configuracion-->
     <bean name="controlConfiguracion" class="Controles.Configuracion.ControlConfiguracion"/>
     <bean name="controlAgregarConfiguracion" class="Controles.Configuracion.ControlAgregarConfiguracion"/>
