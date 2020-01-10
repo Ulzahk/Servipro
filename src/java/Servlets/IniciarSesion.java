@@ -32,7 +32,15 @@ public class IniciarSesion extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            
+            if (request.getParameter("Login") != null) {
+                //Listas Desplegables
+                BL.Usuarios.clsPerfil bl_clsPerfil = new BL.Usuarios.clsPerfil();
+
+                request.setAttribute("lstclsPerfil", bl_clsPerfil.getPerfil());
+                
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            }
             String Descripcion_perfil = null, Id_usuario = null, Contraseña = null;
             int GrupoEmpl = 0;
             Descripcion_perfil = request.getParameter("descripcion_perfil");
@@ -47,7 +55,7 @@ public class IniciarSesion extends HttpServlet {
                 objsesion.setAttribute("id_usuario", Id_usuario);
                 response.sendRedirect("index.htm");
             } else {
-                response.sendRedirect("login.jsp");
+                response.sendRedirect("logear?Login=true");
             }
         }
     }

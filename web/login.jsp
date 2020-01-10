@@ -1,13 +1,11 @@
-<%@page import="java.math.BigInteger"%>
-<%@page import="java.security.MessageDigest"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="Utils.Encriptar"%>
-<%@page import="Utils.Encriptar.*"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.math.BigInteger"%>
+<%@page import="java.security.MessageDigest"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.util.*"%>
+<%@page import="Utils.Encriptar"%>
+<%@page import="Utils.Encriptar.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,6 +18,20 @@
 
     </head>
     <body background="Resources/Images/city.png" style="background-repeat: no-repeat; background-position: center center; background-size: cover;">
+        <%
+            Modelos.Usuarios.clsUsuarios obclsUsuarios = new Modelos.Usuarios.clsUsuarios();
+
+            if (request.getAttribute("obclsUsuarios") != null) {
+                obclsUsuarios = (Modelos.Usuarios.clsUsuarios) request.getAttribute("obclsUsuarios");
+            }
+
+            List<Modelos.Usuarios.clsUsuarios> lstclsUsuarios = new ArrayList<Modelos.Usuarios.clsUsuarios>();
+
+            if (request.getAttribute("lstclsUsuarios") != null) {
+
+                lstclsUsuarios = (List<Modelos.Usuarios.clsUsuarios>) request.getAttribute("lstclsUsuarios");
+            }
+        %>
         <div class="loginbox">
             <img src="<c:url value="/Resources/Images/LogoUsuario.png"/>" class="avatar"/>
             <img src="<c:url value="/Resources/Images/unnamed.png"/>" class="imgLogo"/>
@@ -28,10 +40,17 @@
                 <p>Perfiles:</p>
                 <span class="custom-dropdown">
                     <select name="descripcion_perfil" id="txtperfil">
-                        <option value="">Seleccione una opción</option>
-                        <option value="JEFE">Jefe</option>
-                        <option value="ADMINISTRADOR">Administrador</option>
-                        <option value="COORDINADOR">Coordinador</option>
+                        <%
+                            List<Modelos.Usuarios.clsPerfil> lstclsPerfil = new ArrayList<Modelos.Usuarios.clsPerfil>();
+                            if(request.getAttribute("lstclsPerfil")!=null){
+                                lstclsPerfil = (List<Modelos.Usuarios.clsPerfil>) request.getAttribute("lstclsPerfil");
+                            }
+                            for(Modelos.Usuarios.clsPerfil elem: lstclsPerfil){
+                        %>
+                        <option value="<%=elem.getStDescripcion_Perfil()%>"><%=elem.getStDescripcion_Perfil()%></option>
+                        <%
+                            }
+                        %>
                     </select>
                 </span>
                 <input type="text" name="id_usuario" placeholder="Usuario" id="txtusuario"/>                   

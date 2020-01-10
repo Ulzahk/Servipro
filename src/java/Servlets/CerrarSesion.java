@@ -36,7 +36,7 @@ public class CerrarSesion extends HttpServlet {
             
             HttpSession objsesion=request.getSession(true);
             objsesion.invalidate();
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("logear?Login=true");
         }
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
