@@ -183,13 +183,11 @@
                             <div class="row"> 
                                 <div class="col-6">
                                     <label for="lblContraseña"><b>Contraseña</b></label>
-                                    <input type="text" class="form-control" name="txtContraseña"
-                                           value="<%=obclsUsuarios.getContraseña() != null ? obclsUsuarios.getContraseña() : ""%>"/>
+                                    <input type="text" class="form-control" name="txtContraseña"/>
                                 </div>
                                 <div class="col-6">
                                     <label for="lblcContraseña"><b>Confirmación</b></label>
-                                    <input type="text" class="form-control" name="txtConfirmarContraseña"
-                                           value="<%=obclsUsuarios.getContraseña() != null ? obclsUsuarios.getContraseña() : ""%>" placeholder="Repetir contraseña"/>                                           
+                                    <input type="text" class="form-control" name="txtConfirmarContraseña" placeholder="Repetir contraseña"/>                                           
                                 </div>
                             </div>
                         </div>
