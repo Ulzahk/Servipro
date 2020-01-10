@@ -140,133 +140,104 @@
                             </div>
                         </div>
                         <!--FILA-->
-                        <div class="form-group">
-                            <div class="form-row">                                
-                                <div class="col-lg-4">
-                                    <input type="checkbox" class="selectall" /><b>&nbsp;Poner/Quitar Todos</b><br>
+                        <div class="form-group" >
+                            <div  class="form-row ml-1">                                
+                                <div id="SwitchEstado" class="col-lg-4 custom-control custom-switch ml-4">
+                                    <input id="customSwitch0" type="checkbox" class="selectall custom-control-input" />
+                                    <label class="custom-control-label" for="customSwitch0"><b>Poner/Quitar Todos</b></label> 
                                 </div>
                             </div>
                         </div>
                         <!--FILA-->
                         <div class="form-group">
-                            <div class="form-row">                                
-                                <div class="col-lg-4">
-                                    <label for="lblVistaUsuarios">                                        
-                                        <input type="checkbox" name="chVistaUsuarios" class="align-middle individual"
-                                               <%=obclsPerfil.getVista_usuarios() == 'S' ? "checked" : ""%>/>
-                                        <b>V. Usuarios</b>
-                                    </label>
+                            <div class="form-row ml-1">                                
+                                <div  class="col-lg-3 custom-control custom-switch ml-4">
+                                    <input  id="customSwitch1" type="checkbox" name="chVistaUsuarios" class="align-middle custom-control-input individual"
+                                            <%=obclsPerfil.getVista_usuarios() == 'S' ? "checked" : ""%>/>
+                                    <label class="custom-control-label" for="customSwitch1"><b>V. Usuarios</b></label>
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="lblVistaPerfil">                                        
-                                        <input type="checkbox" name="chVistaPerfil" class="align-middle individual"
-                                               <%=obclsPerfil.getVista_perfil() == 'S' ? "checked" : ""%>/>
-                                        <b>V. Perfil</b>
-                                    </label>
+                                <div class="col-lg-3 custom-control custom-switch ml-4">
+                                    <input id="customSwitch2" type="checkbox" name="chVistaPerfil" class="align-middle custom-control-input individual"
+                                           <%=obclsPerfil.getVista_perfil() == 'S' ? "checked" : ""%>/>
+                                    <label class="custom-control-label" for="customSwitch2"><b>V. Perfil</b></label>                                  
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="lblVistaTipoNovedades">                                        
-                                        <input type="checkbox" name="chVistaTipoNovedades" class="align-middle individual"
-                                               <%=obclsPerfil.getVista_tiponovedades() == 'S' ? "checked" : ""%>/>
-                                        <b>V. Tipo Novedades</b>
-                                    </label>
+                                <div class="col-lg-3 custom-control custom-switch ml-4">                                       
+                                    <input id="customSwitch3" type="checkbox" name="chVistaTipoNovedades" class="align-middle custom-control-input individual"
+                                           <%=obclsPerfil.getVista_tiponovedades() == 'S' ? "checked" : ""%>/>
+                                    <label class="custom-control-label" for="customSwitch3"><b>V. Tipo Novedades</b></label>                                    
                                 </div>
                             </div>
                             <!--FILA-->
-                            <div class="form-row">
-                                <div class="col-lg-4">
-                                    <label for="lblVistaFacturacion">
-                                        <input type="checkbox" name="chVistaFacturacion" class="align-middle individual"
-                                               <%=obclsPerfil.getVista_facturacion() == 'S' ? "checked" : ""%>/>
-                                        <b>V. Facturación</b>
-                                    </label>
+                            <div class="form-row ml-1">
+                                <div class="col-lg-3 custom-control custom-switch ml-4">
+                                    <input id="customSwitch4" type="checkbox" name="chVistaFacturacion" class="align-middle custom-control-input individual"
+                                           <%=obclsPerfil.getVista_facturacion() == 'S' ? "checked" : ""%>/>
+                                    <label class="custom-control-label" for="customSwitch4"><b>V. Facturación</b></label>                                    
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="lblVistaNovedadesEmpleado">
-                                        <input type="checkbox" name="chVistaNovedadesEmpleado" class="align-middle individual"
-                                               <%=obclsPerfil.getVista_novedadesempleado() == 'S' ? "checked" : ""%>/>
-                                        <b>V. Novedades Empleado</b>
-                                    </label>
+                                <div class="col-lg-3 custom-control custom-switch ml-4">
+                                    <input id="customSwitch5" type="checkbox" name="chVistaNovedadesEmpleado" class="align-middle custom-control-input individual"
+                                           <%=obclsPerfil.getVista_novedadesempleado() == 'S' ? "checked" : ""%>/>
+                                    <label class="custom-control-label" for="customSwitch5"><b>V. N. Empleado</b></label>                                    
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="lblVistaCentroCostos">
-                                        <input type="checkbox" name="chVistaCentroCostos" class="align-middle individual"
-                                               <%=obclsPerfil.getVista_centrocostos() == 'S' ? "checked" : ""%>/>
-                                        <b>V. Centro Costos</b>
-                                    </label>                                            
+                                <div class="col-lg-3 custom-control custom-switch ml-4">
+                                    <input id="customSwitch6" type="checkbox" name="chVistaCentroCostos" class="align-middle custom-control-input individual"
+                                           <%=obclsPerfil.getVista_centrocostos() == 'S' ? "checked" : ""%>/>
+                                    <label class="custom-control-label" for="customSwitch6"><b>V. Centro Costos</b></label>                                        
                                 </div>
                             </div>
                             <!--FILA-->
-                            <div class="form-row">
-                                <div class="col-lg-4">
-                                    <label for="lblVistaEmpleados">
-                                        <input type="checkbox" name="chVistaEmpleados" class="align-middle individual"
-                                               <%=obclsPerfil.getVista_empleados() == 'S' ? "checked" : ""%>/>
-                                        <b>V. Empleados</b>
-                                    </label>
+                            <div class="form-row ml-1">
+                                <div class="col-lg-3 custom-control custom-switch ml-4">
+                                    <input id="customSwitch7" type="checkbox" name="chVistaEmpleados" class="align-middle custom-control-input individual"
+                                           <%=obclsPerfil.getVista_empleados() == 'S' ? "checked" : ""%>/>
+                                    <label class="custom-control-label" for="customSwitch7"><b>V. Empleados</b></label>                                    
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="lblVistaCargoEmpleado">
-                                        <input type="checkbox" name="chVistaCargoEmpleado" class="align-middle individual"
-                                               <%=obclsPerfil.getVista_cargoempleado() == 'S' ? "checked" : ""%>/>
-                                        <b>V. Cargo Empleado</b>
-                                    </label>
+                                <div class="col-lg-3 custom-control custom-switch ml-4">
+                                    <input id="customSwitch8" type="checkbox" name="chVistaCargoEmpleado" class="align-middle custom-control-input individual"
+                                           <%=obclsPerfil.getVista_cargoempleado() == 'S' ? "checked" : ""%>/>
+                                    <label class="custom-control-label" for="customSwitch8"><b>V. Cargo Empleado</b></label> 
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="lblVistaModulos">
-                                        <input type="checkbox" name="chVistaModulos" class="align-middle individual"
-                                               <%=obclsPerfil.getVista_modulos() == 'S' ? "checked" : ""%>/>
-                                        <b>V. Modulos</b>
-                                    </label>                                            
+                                <div class="col-lg-3 custom-control custom-switch ml-4">                                    
+                                    <input id="customSwitch9" type="checkbox" name="chVistaModulos" class="align-middle custom-control-input individual"
+                                           <%=obclsPerfil.getVista_modulos() == 'S' ? "checked" : ""%>/>
+                                    <label class="custom-control-label" for="customSwitch9"><b>V. Modulos</b></label>   
                                 </div>
                             </div>
                             <!--FILA-->
-                            <div class="form-row">
-                                <div class="col-lg-4">
-                                    <label for="lblVistaModulosPerfil">
-                                        <input type="checkbox" name="chVistaModulosPerfil" class="align-middle individual"
-                                               <%=obclsPerfil.getVista_modulosperfil() == 'S' ? "checked" : ""%>/>
-                                        <b>V. Modulos Perfil</b>
-                                    </label>
+                            <div class="form-row ml-1">
+                                <div class="col-lg-3 custom-control custom-switch ml-4">
+                                    <input id="customSwitch10" type="checkbox" name="chVistaModulosPerfil" class="align-middle custom-control-input individual"
+                                           <%=obclsPerfil.getVista_modulosperfil() == 'S' ? "checked" : ""%>/>
+                                    <label class="custom-control-label" for="customSwitch10"><b>V. Modulos Perfil</b></label>
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="lblVistaGrupos">
-                                        <input type="checkbox" name="chVistaGrupos" class="align-middle individual"
-                                               <%=obclsPerfil.getVista_grupos() == 'S' ? "checked" : ""%>/>
-                                        <b>V. Grupos</b>
-                                    </label>
+                                <div class="col-lg-3 custom-control custom-switch ml-4">
+                                    <input id="customSwitch11" type="checkbox" name="chVistaGrupos" class="align-middle custom-control-input individual"
+                                           <%=obclsPerfil.getVista_grupos() == 'S' ? "checked" : ""%>/>
+                                    <label class="custom-control-label" for="customSwitch11"><b>V. Grupos</b></label>
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="lblVistaEmpleadosGrupo">
-                                        <input type="checkbox" name="chVistaEmpleadosGrupo" class="align-middle individual"
-                                               <%=obclsPerfil.getVista_empleadosgrupo() == 'S' ? "checked" : ""%>/>
-                                        <b>V. Empleados Grupo</b>
-                                    </label>                                            
+                                <div class="col-lg-3 custom-control custom-switch ml-4">
+                                    <input id="customSwitch12" type="checkbox" name="chVistaEmpleadosGrupo" class="align-middle custom-control-input individual"
+                                           <%=obclsPerfil.getVista_empleadosgrupo() == 'S' ? "checked" : ""%>/>
+                                    <label class="custom-control-label" for="customSwitch12"><b>V. Empleados Grupo</b></label>                                          
                                 </div>
                             </div>
                             <!--FILA-->
-                            <div class="form-row">
-                                <div class="col-lg-4">
-                                    <label for="lblVistaResponsableGrupo">
-                                        <input type="checkbox" name="chVistaResponsableGrupo" class="align-middle individual"
-                                               <%=obclsPerfil.getVista_responsablegrupo() == 'S' ? "checked" : ""%>/>
-                                        <b>V. Responsable Grupo</b>
-                                    </label>
+                            <div class="form-row ml-1">
+                                <div class="col-lg-3 custom-control custom-switch ml-4">
+                                    <input id="customSwitch13" type="checkbox" name="chVistaResponsableGrupo" class="align-middle custom-control-input individual"
+                                           <%=obclsPerfil.getVista_responsablegrupo() == 'S' ? "checked" : ""%>/>
+                                    <label class="custom-control-label" for="customSwitch13"><b>V. R. Grupo</b></label>  
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="lblVistaConfiguracion">
-                                        <input type="checkbox" name="chVistaConfiguracion" class="align-middle individual"
-                                               <%=obclsPerfil.getVista_configuracion() == 'S' ? "checked" : ""%>/>
-                                        <b>V. Configuracion</b>
-                                    </label>
+                                <div class="col-lg-3 custom-control custom-switch ml-4">
+                                    <input id="customSwitch14" type="checkbox" name="chVistaConfiguracion" class="align-middle custom-control-input individual"
+                                           <%=obclsPerfil.getVista_configuracion() == 'S' ? "checked" : ""%>/>
+                                    <label class="custom-control-label" for="customSwitch14"><b>V. Configuracion</b></label>                                         
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="lblVistaEstadisticas">
-                                        <input type="checkbox" name="chVistaEstadisticas" class="align-middle individual"
-                                               <%=obclsPerfil.getVista_estadisticas() == 'S' ? "checked" : ""%>/>
-                                        <b>V. Estadisticas</b>
-                                    </label>                                            
-                                </div>
+                                <div class="col-lg-3 custom-control custom-switch ml-4">
+                                    <input id="customSwitch15" type="checkbox" name="chVistaEstadisticas" class="align-middle custom-control-input individual"
+                                           <%=obclsPerfil.getVista_estadisticas() == 'S' ? "checked" : ""%>/>
+                                    <label class="custom-control-label" for="customSwitch15"><b>V. Estadisticas</b> </label>                                                                             
+                                </div>                              
                             </div>
                         </div>
                         <!--FILA-->   
