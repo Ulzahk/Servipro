@@ -81,17 +81,10 @@
         VistaEstadisticas = elem.getVista_estadisticas();
     }
     
-    
     if (id_usuario == null) {
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("logear?Login=true");
     } else {
-        if (Descripcion_perfil.equals("COORDINADOR")
-                || Descripcion_perfil.equals("ADMINISTRADOR")
-                || Descripcion_perfil.equals("JEFE")) {
 
-        } else {
-            response.sendRedirect("index.htm");
-        }
     }
 %>
 

@@ -5,7 +5,7 @@
     String id_usuario = (String)objsesion.getAttribute("id_usuario");
     String Descripcion_perfil = (String)objsesion.getAttribute("descripcion_perfil");
     if(id_usuario==null){
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("logear?Login=true");
     }
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"

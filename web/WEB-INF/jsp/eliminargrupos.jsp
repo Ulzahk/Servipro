@@ -53,7 +53,7 @@
     }
 
     if (id_usuario == null) {
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("logear?Login=true");
     } else {
         if (VistaGrupos != 'S') {
             response.sendRedirect("nomina.htm");

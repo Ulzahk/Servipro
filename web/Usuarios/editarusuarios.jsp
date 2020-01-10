@@ -14,20 +14,7 @@
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
     
     char VistaUsuarios = 'N';
-    char VistaPerfil = 'N';
-    char VistaTipoNovedades = 'N';
-    char VistaFacturacion = 'N';
-    char VistaNovedadesEmpleado = 'N';
-    char VistaCentroCostos = 'N';
-    char VistaEmpleados = 'N';
-    char VistaCargoEmpleado = 'N';
-    char VistaModulos = 'N';
-    char VistaModulosPerfil = 'N';
-    char VistaGrupos = 'N';
-    char VistaEmpleadosGrupo = 'N';
-    char VistaResponsableGrupo = 'N';
-    char VistaConfiguracion = 'N';
-    char VistaEstadisticas = 'N';
+
     
     List<Modelos.Perfil.clsFiltroPerfil> lstclsFiltroPerfil = new ArrayList<Modelos.Perfil.clsFiltroPerfil>();
     try {
@@ -64,24 +51,11 @@
     for(Modelos.Perfil.clsFiltroPerfil elem: lstclsFiltroPerfil){
         
         VistaUsuarios = elem.getVista_usuarios();
-        VistaPerfil = elem.getVista_perfil();
-        VistaTipoNovedades = elem.getVista_tiponovedades();
-        VistaFacturacion = elem.getVista_facturacion();
-        VistaNovedadesEmpleado = elem.getVista_novedadesempleado();
-        VistaCentroCostos = elem.getVista_centrocostos();
-        VistaEmpleados = elem.getVista_empleados();
-        VistaCargoEmpleado = elem.getVista_cargoempleado();
-        VistaModulos = elem.getVista_modulos();
-        VistaModulosPerfil = elem.getVista_modulosperfil();
-        VistaGrupos = elem.getVista_grupos();
-        VistaEmpleadosGrupo = elem.getVista_empleadosgrupo();
-        VistaResponsableGrupo = elem.getVista_responsablegrupo();
-        VistaConfiguracion = elem.getVista_configuracion();
-        VistaEstadisticas = elem.getVista_estadisticas();
+        
     }
 
     if (id_usuario == null) {
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("logear?Login=true");
     } else {
         if (VistaUsuarios != 'S') {
             response.sendRedirect("nomina.htm");

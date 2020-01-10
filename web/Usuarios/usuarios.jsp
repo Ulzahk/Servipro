@@ -54,7 +54,7 @@
     }
 
     if (id_usuario == null) {
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("logear?Login=true");
     } else {
         if (VistaUsuarios != 'S') {
             response.sendRedirect("nomina.htm");
