@@ -1,22 +1,26 @@
+<%-- 
+    Document   : precarga
+    Created on : 13/01/2020, 09:35:17 AM
+    Author     : PRACTICANTE
+--%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     HttpSession objsesion = request.getSession(false);
-    String id_usuario = (String)objsesion.getAttribute("id_usuario");
-    String Descripcion_perfil = (String)objsesion.getAttribute("descripcion_perfil");
-    if(id_usuario==null){
+    String id_usuario = (String) objsesion.getAttribute("id_usuario");
+    String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
+    if (id_usuario == null) {
         response.sendRedirect("logear?Login=true");
     }
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-    "http://www.w3.org/TR/html4/loose.dtd">
-
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Index</title>
+        <link href="Resources/CSS/styleloadingnew.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="Resources/CSS/style.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
@@ -32,9 +36,11 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="Resources/JS/functions.js"></script>
     </head>
-
     <body>
-        
+        <div id="contenedor_carga">
+            <div id="carga"></div>
+        </div>
+
         <nav class="navbar navbar-expand-sm bg-info navbar-dark justify-content-center">
             <a class="navbar-brand" href="index.htm">ServiSoft S.A.</a>  
             <div>
@@ -69,14 +75,11 @@
                 </ul>
             </div>    
         </nav>
-        
-        
-        
-        
-        
+
         <div class="container mt-3 mb-1 text-center">
-           <img src="<c:url value="/Resources/Images/LogoServiSoft.png"/>"/>  
+            <img src="<c:url value="/Resources/Images/LogoServiSoft.png"/>"/>  
         </div>
+
         <br/>
         <div class="container mt-4 text-center">
             <!--Primera Fila-->
@@ -91,5 +94,16 @@
                 </a>
             </div>
         </div>
-    </body>   
+
+        <script>
+            setTimeout(function () {
+                var contenedor = document.getElementById('contenedor_carga');
+
+                contenedor.style.visibility = 'hidden';
+                contenedor.style.opacity = '0';
+
+            }, 750)
+
+        </script>
+    </body>
 </html>
