@@ -10,8 +10,8 @@ body{
 }
 
 .background-body{
-    background: #DCDCDC;
-    
+    background-color: #dcdcdc;
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
 }
 
 .background-card{

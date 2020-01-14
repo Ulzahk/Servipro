@@ -86,7 +86,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="Resources/JS/functions.js"></script>
     </head>
-    <body>
+    <body class="background-body">
         <%
             Modelos.Perfil.clsPerfil obclsPerfil = new Modelos.Perfil.clsPerfil();
 
