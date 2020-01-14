@@ -85,8 +85,8 @@
     </head>
     <body>
         <div class="container">
-            <div class="card border-info">
-                <div class="card-header bg-info text-white">
+            <div class="card border-dark">
+                <div class="card-header background-card border-dark text-white">
                     <div class="form-group">
                         <div class="form-group">
                             <div class="col-12 text-center">                                    
@@ -119,7 +119,7 @@
                         <div class="form-row">
                             <c:forEach var="dato" items="${datos}">                                    
                                 <div class="col-12 text-center">
-                                    <a href="configuracion.htm" class="btn btn-info font-weight-bold founded" data-toggle="tooltip" title="Haz clic para regresar al menú perfil"><span>No, cancelar</span></a>
+                                    <a href="configuracion.htm" class="btn background-button font-weight-bold founded" data-toggle="tooltip" title="Haz clic para regresar al menú perfil"><span>No, cancelar</span></a>
                                     <span>&nbsp;</span>
                                     <a href="<c:url value="confirmareliminarconfiguracion.htm?id_configuracion=${dato.Id_configuracion}"/>" class="btn btn-danger founded ml-1"><b>Si, eliminar</b></a>                                
                             </c:forEach>

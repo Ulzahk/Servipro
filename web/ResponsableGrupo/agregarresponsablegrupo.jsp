@@ -84,7 +84,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="Resources/JS/functions.js"></script>
     </head>
-    <body>
+    <body class="background-body">
         <%
             Modelos.ResponsableGrupo.clsResponsableGrupo obclsResponsableGrupo = new Modelos.ResponsableGrupo.clsResponsableGrupo();
 
@@ -119,8 +119,8 @@
             <div class="container mt-4">
                 <h1 class="text-center">Agregar Nuevo Responsable por Grupo</h1>
                 <br>
-                <div class="card border-info">
-                    <div class="card-header bg-info text-white">
+                <div class="card border-dark">
+                    <div class="card-header background-card border-dark text-white">
                         <a href="controlresponsablegrupo?btnReGruConsultar=true" class="btn btn-secondary"data-toggle="tooltip" title="Haz clic para regresar al menú responsable por grupo"><i class="fas fa-arrow-left"></i></a>
                     </div>
                     <div class="card-body">
@@ -180,7 +180,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12">
-                                    <input type="submit" value="Guardar" class="btn btn-info" data-toggle="tooltip" title="Haz clic para guardar" name="btnReGruGuardar"/>
+                                    <input type="submit" value="Guardar" class="btn background-button" data-toggle="tooltip" title="Haz clic para guardar" name="btnReGruGuardar"/>
                                 </div>
                             </div>
                         </div>

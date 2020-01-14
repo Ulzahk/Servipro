@@ -113,8 +113,8 @@
             }
         %>
         <div class="container">
-            <div class="card border-info">
-                <div class="card-header bg-info text-white">
+            <div class="card border-dark">
+                <div class="card-header background-card border-dark text-white">
                     <div class="form-group">
                         <div class="col-12 text-center">                                 
                             <h5 class="align-middle"> 
@@ -154,7 +154,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12">
-                                    <input type="submit" value="Guardar" class="btn btn-info" name="btnComentarEsta"/>
+                                    <input type="submit" value="Guardar" class="btn background-button" name="btnComentarEsta"/>
                                     <input type="text" name="IdModificar" id="IdModificar" value="<%=obclsEstadisticas.getId_estadistica()%>" hidden=""/>
                                 </div>
                             </div>

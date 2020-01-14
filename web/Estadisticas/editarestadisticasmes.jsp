@@ -113,9 +113,9 @@
             }
         %>
         <div>    
-            <div class="card border-info ">
+            <div class="card border-dark ">
 
-                <div class="card-header bg-info text-white">                    
+                <div class="card-header background-card border-dark text-white">                    
                     <div class="form-group">
                         <div class="form-group">
                             <div class="col-12 text-center">                                    
@@ -163,7 +163,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12">
-                                    <input type="submit" value="Guardar" class="btn btn-info" name="btnEditarEstaMes"/>
+                                    <input type="submit" value="Guardar" class="btn background-button" name="btnEditarEstaMes"/>
                                     <input type="text" name="IdModificar" id="IdModificar" value="<%=obclsEstadisticas.getId_estadistica()%>" hidden=""/>
                                 </div>
                             </div>

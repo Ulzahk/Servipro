@@ -83,7 +83,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="Resources/JS/functions.js"></script>
     </head>
-    <body>
+    <body class="background-body">
 
         <header>
             <jsp:include page="menunavegacion.jsp"></jsp:include>
@@ -92,8 +92,8 @@
             <div class="container mt-4">
                 <h1 class="text-center">Agregar Configuración</h1>
                 <br>
-                <div class="card border-info">
-                    <div class="card-header bg-info text-white">
+                <div class="card border-dark">
+                    <div class="card-header background-card border-dark text-white">
                         <a href="configuracion.htm" class="btn btn-secondary"data-toggle="tooltip" title="Haz clic para regresar al menú configuración"><i class="fas fa-arrow-left"></i></a>
                     </div>
                     <div class="card-body">
@@ -140,7 +140,7 @@
                             </select>
                         </p>
                         <hr/>
-                        <input type="submit" value="Guardar" class="btn btn-info"/>
+                        <input type="submit" value="Guardar" class="btn background-button"/>
                     </form:form>
                 </div>
             </div>

@@ -82,7 +82,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="Resources/JS/functions.js"></script>
     </head>
-    <body>
+    <body class="background-body">
         <%
             Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
 
@@ -118,8 +118,8 @@
             <div class="container mt-4">
                 <h1 class="text-center">Editar Estadísticas por Empleado</h1>
                 <br>
-                <div class="card border-info">
-                    <div class="card-header bg-info text-white">
+                <div class="card border-dark">
+                    <div class="card-header background-card border-dark text-white">
                         <a href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary" data-toggle="tooltip" title="Haz clic para volver a la vista estadísticas"><i class="fas fa-arrow-left"></i></a>
                     </div>
                     <div class="card-body">
@@ -896,7 +896,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12">
-                                    <input type="submit" value="Guardar" class="btn btn-info" name="btnEditarEsta"/>
+                                    <input type="submit" value="Guardar" class="btn background-button" name="btnEditarEsta"/>
                                     <input type="text" name="IdModificar" id="IdModificar" value="<%=obclsEstadisticas.getId_estadistica()%>" hidden=""/>
                                 </div>
                             </div>
@@ -907,29 +907,6 @@
         </div>
     </body>
     <script>
-        $(document).ready(main);
-
-        var contador = 1;
-
-        function main() {
-            $('.menu_bar').click(function () {
-                if (contador == 1) {
-                    $('nav').animate({
-                        left: '0'
-                    });
-                    contador = 0;
-                } else {
-                    contador = 1;
-                    $('nav').animate({
-                        left: '-100%'
-                    });
-                }
-            });
-
-            // Mostramos y ocultamos submenus
-            $('.submenu').click(function () {
-                $(this).children('.children').slideToggle();
-            });
-        }
+        main();
     </script>
 </html>

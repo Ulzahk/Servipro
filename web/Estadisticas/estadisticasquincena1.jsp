@@ -89,7 +89,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="Resources/JS/functions.js"></script>
     </head>
-    <body>
+    <body class="background-body">
         <%
             Modelos.Estadisticas.clsEstadisticas obclsEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
 
@@ -125,8 +125,8 @@
             <div class="container mt-4">
                 <h1 class="text-center">Estadísticas</h1>
                 <br>
-                <div class="card border-info">
-                    <div class="card-header bg-info text-white">
+                <div class="card border-dark">
+                    <div class="card-header background-card border-dark text-white">
                         <form action="estadisticas" method="post">
                             <div class="input-group">
                                 <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>

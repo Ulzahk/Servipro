@@ -113,8 +113,8 @@
             }
         %>
         <div class="container">
-            <div class="card border-info">
-                <div class="card-header bg-info text-white"> 
+            <div class="card border-dark">
+                <div class="card-header background-card border-dark text-white"> 
                     <div class="form-group">
                         <div class="col-12 text-center">                                 
                             <h4 class="align-middle"> 
@@ -148,7 +148,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12 text-center btn-group">
-                                    <a href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-info font-weight-bold rounded"><span>No, cancelar</span></a>
+                                    <a href="estadisticas?btnConsultarEstaMensualidad=true" class="btn background-button font-weight-bold rounded"><span>No, cancelar</span></a>
                                     <input type="submit" value="Si, eliminar" class="btn btn-danger font-weight-bold rounded ml-1" name="btnEliminarEsta"/>
                                     <input type="text" name="IdModificar" id="IdModificar" value="<%=obclsEstadisticas.getId_estadistica()%>" hidden=""/>
                                 </div>
