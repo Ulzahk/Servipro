@@ -117,8 +117,8 @@
         %>
 
         <div class="container">
-            <div class="card border-info">
-                <div class="card-header bg-info text-white">
+            <div class="card border-dark">
+                <div class="card-header text-white border-dark background-card"">
                     <div class="form-group">
                         <div class="col-12 text-center">                                    
                             <h5 class="align-middle mt-1"> 
@@ -147,7 +147,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12 text-center btn-group">
-                                    <a href="controlperfil?btnPerfConsultar=true" class="btn btn-info font-weight-bold rounded"><span>No, cancelar</span></a>
+                                    <a href="controlperfil?btnPerfConsultar=true" class="btn background-button font-weight-bold rounded"><span>No, cancelar</span></a>
                                     <span>&nbsp;</span>
                                     <input type="submit" value="Si, eliminar" class="btn btn-danger font-weight-bold rounded ml-1" name="btnPerfEliminar"/>
                                     <input type="text" name="IdModificar" id="IdModificar" value="<%=obclsPerfil.getId_perfil()%>" hidden=""/>                      

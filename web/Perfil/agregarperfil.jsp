@@ -123,8 +123,8 @@
             <div class="container mt-4">
                 <h1 class="text-center">Agregar Perfil</h1>
                 <br>
-                <div class="card border-info">
-                    <div class="card-header bg-info text-white">
+                <div class="card border-dark">
+                    <div class="card-header border-dark text-white background-card">
                         <a href="controlperfil?btnPerfConsultar=true" class="btn btn-secondary"data-toggle="tooltip" title="Haz clic para regresar al menú perfil"><i class="fas fa-arrow-left"></i></a>
                     </div>
                     <div class="card-body">
@@ -244,7 +244,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12">
-                                    <input type="submit" value="Guardar" class="btn btn-info" data-toggle="tooltip" title="Haz clic para guardar" name="btnPerfGuardar"/>
+                                    <input type="submit" value="Guardar" class="btn background-button" data-toggle="tooltip" title="Haz clic para guardar" name="btnPerfGuardar"/>
                                 </div>
                             </div>
                         </div>

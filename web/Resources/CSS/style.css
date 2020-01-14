@@ -9,6 +9,24 @@ body{
     font-family: arial,sans-serif;
 }
 
+.background-body{
+    background: #DCDCDC;
+    
+}
+
+.background-card{
+    background: #2980b9;
+}
+
+.background-button{
+    background: #2980b9;
+    color: white;
+}
+.background-button:hover {
+    background: #5399c7;
+    color: white;
+}
+
 .tipoLetra{
     font-family: arial,sans-serif;
 }
@@ -129,7 +147,7 @@ header {
 }
 
 header .Menu {
-    background: #17A2B8;
+    background: #2980b9;
     z-index:1000;
 
     width: 100%;
@@ -151,7 +169,7 @@ header .Menu ul li {
 }
 
 header .Menu ul li:hover {
-    background:#FF6666;
+    background:#5399C7;
     border-radius: 3px;
     transition: .3s;
 }
@@ -178,14 +196,14 @@ header .Menu ul li:hover .children {
 
 }
 header .Menu ul li ul li:hover{
-    border-left: 4px solid  rgb(25, 109, 134);
+    border-left: 4px solid #427A9F;
     transition: 0.5s;
 
 }
 
 header .Menu ul li .children {
     display: none;
-    background: #17A2B8;
+    background: #2980b9;
     position: absolute;
     width: 150%;
     z-index:1000;
@@ -232,7 +250,7 @@ header .Menu ul li .caret {
         width:100%;
         position: fixed;
         top:0;
-        background: #17A2B8;
+        background: #2980b9;
     }
 
     .menu_bar .bt-menu {
