@@ -1,18 +1,26 @@
-<%-- 
-    Document   : precarga
-    Created on : 13/01/2020, 09:35:17 AM
-    Author     : PRACTICANTE
---%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.util.*"%>
+<%@page import="BL.clsConexion"%>
 <%
+    Connection conn = null;
+
+    clsConexion obclsConexion = new clsConexion();
+    conn = obclsConexion.getConexion();
+
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
     String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
+
     if (id_usuario == null) {
         response.sendRedirect("logear?Login=true");
+    } else {
+
     }
 %>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,7 +31,6 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="Resources/CSS/style.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
-        <link href="Resources/CSS/styleloadingnew.css" rel="stylesheet" type="text/css"/>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -45,48 +52,46 @@
         <script src="Resources/JS/functions.js"></script>
     </head>
     <body>
-        
-        <div id="contenedor_carga">
-            <div id="carga"></div>
+        <div class="menu_bar">
+            <a href="#" class="bt-menu">Menú</a>
         </div>
 
-        <header>
-            <%--Barra de Navegación de Jefe--%>   
-            <jsp:include page="menumodulos.jsp"></jsp:include>
-            </header>
-
-            <div class="logo container mt-3 mb-1 text-center">
-                <img src="<c:url value="/Resources/Images/LogoServiSoft.png"/>"/>  
-        </div>
-        <br/>
-        <div class="container mt-4 text-center">
-            <!--Primera Fila-->
-            <div class="form-group">
-                <div class="row text-center">
-                    <a href="nomina.htm" class="col cIndex colorEnlace">
-                        <i class="fas fa-file-invoice-dollar mb-2 mt-2 tamañoIcono"></i>
-                        <p><b>Nómina</b></p>
-                    </a>
-                    <a href="#" class="col cIndex colorEnlace" onclick="bloqueo();">
-                        <i class="fas fa-chart-bar mb-2 mt-2 tamañoIcono"></i>
-                        <p><b>Contabilidad</b></p>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <script>
-            main();
-
-            setTimeout(function () {
-                var contenedor = document.getElementById('contenedor_carga');
-
-                contenedor.style.visibility = 'hidden';
-                contenedor.style.opacity = '0';
-
-            }, 750)
-
-        </script>
+        <nav class="Menu">
+            <ul>
+                <li>
+                    <a class='navbar-brand' href='index.htm'>ServiSoft S.A.</a>
+                </li>               
+                <li class="submenu">
+                    <a href="nomina.htm">Nomina </a>
+                </li>
+                <li class="submenu">
+                    <a href="#">Contabilidad </a>
+                </li>
+                <li class="submenu">
+                    <a href="#">Modulo 3 </a>
+                </li>
+                <li class="submenu">
+                    <a href="#">Modulo 4 </a>
+                </li> 
+                <li class="submenu">
+                    <a href="#">Modulo 5 </a>
+                </li>
+                <li class="submenu">
+                    <a href="#" class="btn btn-dark">Usuario: <%out.println(id_usuario);%> <i class="fas fa-caret-down"></i></a>
+                    <ul class="children">
+                        <li class="bg-dark text-center">
+                            <div class="mx-auto">
+                                <a href="#" class="btn btn-dark mx-auto">Perfil: <%out.println(Descripcion_perfil);%> </a>
+                            </div>
+                        </li>
+                        <li class="bg-dark text-center">
+                            <form action='cerrar' method='post' id='formcerrar'>
+                                <input type='submit' value='Cerrar Sesión' class="btn btn-dark btn-block"/>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </body>
-
 </html>

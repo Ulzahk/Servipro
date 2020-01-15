@@ -254,7 +254,7 @@
                     Perfil: <%out.println(Descripcion_perfil);%>
                 </a>
                 <form action='cerrar' method='post' id='formcerrar'>
-                    <input type='submit' value='Cerrar Sesión'class='btn btn-link text-center' style='color: black;'/>
+                    <input type='submit' value='Cerrar Sesión' class='btn btn-link text-center' style='color: black;'/>
                 </form>
             </div>
         </li>

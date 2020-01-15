@@ -3,39 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/Usuarios/agregarusuarios.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Modelos/Estadisticas/clsMes.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/Perfil/editarperfil.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/tipodenovedades.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Modelos/Estadisticas/clsBuscar.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Modelos/Estadisticas/clsEmpleado.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/agregartipodenovedades.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/centrodecostos.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Modelos/Estadisticas/EstadisticasValidacion.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/Perfil/agregarperfil.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Modelos/Estadisticas/clsEstadisticas.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/cargoempleado.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Servlets/ControlEstadisticas.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/Usuarios/usuarios.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/Usuarios/eliminarusuarios.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/NovedadesEmpleado/agregarnovedadesempleado.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Controles/AccesoDatos.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/agregarfacturacion.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/Empleados/agregarempleados.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/BL/Usuarios/clsUsuarios.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/agregarcentrodecostos.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Servlets/ControlUsuarios.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Modelos/Estadisticas/Estadisticas.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Modelos/Estadisticas/clsId_dia1.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/Usuarios/editarusuarios.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/WEB-INF/jsp/facturacion.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Modelos/Estadisticas/clsComentarEstadisticas.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Modelos/Estadisticas/clsAnio.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/NovedadesEmpleado/novedadesempleado.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/Empleados/empleados.jsp</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/Resources/CSS/style.css</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Modelos/Estadisticas/clsGrupoEmpl.java</file>
-            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/ImportExcel/NewMain.java</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/Estadisticas/editarestadisticasdia9.jsp</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/Estadisticas/editarestadisticasdia8.jsp</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/Estadisticas/editarestadisticasmes.jsp</file>
         </group>
     </open-files>
 </project-private>
