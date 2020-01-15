@@ -8,7 +8,6 @@
 <%
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
-    String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
     if (id_usuario == null) {
         response.sendRedirect("logear?Login=true");
     }
