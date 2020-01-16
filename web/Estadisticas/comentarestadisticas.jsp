@@ -145,7 +145,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12">                                 
-                                    <label for="lnlComentario:"><b>Cambiar Comentario <i class="fas fa-exclamation-triangle" data-toggle="tooltip" title="Al guardar remplazara el comentario anterior" style="color:#ffae42;"></i></b></label>   
+                                    <label for="lnlComentario:"><b>Nuevo Comentario <i class="fas fa-exclamation-triangle" data-toggle="tooltip" title="Al guardar se acumularan los comentarios" style="color:#ffae42;"></i></b></label>   
                                     <textarea class="form-control" row="3" name="txtComentario"></textarea>
                                 </div>
                             </div>
@@ -155,6 +155,7 @@
                             <div class="form-row">
                                 <div class="col-12">
                                     <input type="submit" value="Guardar" class="btn background-button" name="btnComentarEsta"/>
+                                    <input type="submit" value="Eliminar" class="btn btn-danger" name="btnEliminarComentarEsta"/>
                                     <input type="text" name="IdModificar" id="IdModificar" value="<%=obclsEstadisticas.getId_estadistica()%>" hidden=""/>
                                 </div>
                             </div>

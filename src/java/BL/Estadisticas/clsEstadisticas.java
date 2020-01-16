@@ -91,6 +91,17 @@ public class clsEstadisticas {
             return "Hubo un error, revisa la información ingresada";
         }
     }
+    
+    public String deletecommentEstadistica (Modelos.Estadisticas.clsComentarEstadisticas obclsComentarEstadisticas){
+        try {
+            PreparedStatement ps = conn.prepareStatement("{call spEliminarComentarEsta (?)}");
+            ps.setInt(1, obclsComentarEstadisticas.getId_estadisticas());
+            ps.execute();
+            return "Se realizó el proceso con éxito";
+        } catch (Exception ex) {
+            return ex.getMessage();
+        }
+    }
 
     public String updateEstadistica(Modelos.Estadisticas.clsEstadisticas obEstadisticas) {
 
