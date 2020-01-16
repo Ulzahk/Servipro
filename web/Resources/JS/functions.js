@@ -18,7 +18,6 @@ function formValidation() {
 //    };
     var user = document.getElementById('txtusuario').value;
     var pass = document.getElementById('txtpass').value;
-    var perfil = document.getElementById('txtperfil').value;
 
     if (user === "" && pass.length > 0 && perfil.length > 0) {
         document.getElementById('txtusuario').style.borderColor = "#D54324";
@@ -34,31 +33,14 @@ function formValidation() {
         return false;
     }
 
-    if (perfil === "" && user.length > 0 && pass.length > 0) {
-        document.getElementById('txtperfil').backgroundColor = "#D54324";
-        document.getElementById('lblerror').style.color = '#D54324';
-        document.getElementById('txtperfil').style.background = '#D54324';
-        document.getElementById('txtperfil').style.hover = '#D54324';
-        document.getElementById('lblerror').innerHTML = 'Seleccione un perfil';
-        return false;
-    }
 
-    if (pass === "" && user === "" && perfil.length > 0) {
+    if (pass === "" && user === "") {
         document.getElementById('txtuser').style.borderColor = "#D54324";
         document.getElementById('txtpass').style.borderColor = "#D54324";
         document.getElementById('lblerror').innerHTML = 'Ingrese un usuario y una contraseña válidos';
         return false;
     }
-
-    if (user === "" && pass === "" && perfil === "") {
-        document.getElementById('txtuser').style.borderColor = "#D54324";
-        document.getElementById('txtpass').style.borderColor = "#D54324";
-        document.getElementById('lblerror').style.color = '#D54324';
-        document.getElementById('txtperfil').style.background = '#D54324';
-        document.getElementById('lblerror').innerHTML = 'Ingrese un perfil,usuario y una contraseña válidos';
-        return false;
-
-    } else {
+    else {
         document.getElementById('forminicio').submit();
     }
 }

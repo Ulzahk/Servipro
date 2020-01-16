@@ -37,22 +37,6 @@
             <img src="<c:url value="/Resources/Images/unnamed.png"/>" class="imgLogo"/>
             <h1>Iniciar Sesión</h1>
             <form action="logear" method="post" id="forminicio">
-                <p>Perfiles:</p>
-                <span class="custom-dropdown">
-                    <select name="descripcion_perfil" id="txtperfil">
-                        <%
-                            List<Modelos.Usuarios.clsPerfil> lstclsPerfil = new ArrayList<Modelos.Usuarios.clsPerfil>();
-                            if(request.getAttribute("lstclsPerfil")!=null){
-                                lstclsPerfil = (List<Modelos.Usuarios.clsPerfil>) request.getAttribute("lstclsPerfil");
-                            }
-                            for(Modelos.Usuarios.clsPerfil elem: lstclsPerfil){
-                        %>
-                        <option value="<%=elem.getStDescripcion_Perfil()%>"><%=elem.getStDescripcion_Perfil()%></option>
-                        <%
-                            }
-                        %>
-                    </select>
-                </span>
                 <input type="text" name="id_usuario" placeholder="Usuario" id="txtusuario"/>                   
                 <input type="password" name="contraseña" id="txtpass" placeholder="Contraseña"/>
                 <input type="button" value="Acceder"  id="btniniciar" onclick="formValidation();"/>
@@ -66,7 +50,6 @@
                 Encriptar enc = new Encriptar();
 
                 if (request.getParameter("login") != null) {
-                    String perfil = request.getParameter("txtperfil");
                     String user = request.getParameter("txtusuario");
                     String password = request.getParameter("txtpass");
                     String hash = enc.getMD5(password);
@@ -77,7 +60,7 @@
                         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
                         conn = DriverManager.getConnection("jdbc:sqlserver://10.0.0.98:1433;databaseName=sssacontable", "contable19", "contable19");
                         st = conn.createStatement();
-                        rs = st.executeQuery("SELECT * FROM nm_usuarios where Id_perfil='" + perfil + "'and contraseña='" + password + "'; ");
+                        rs = st.executeQuery("SELECT * FROM nm_usuarios where contraseña='" + password + "'; ");
 
                         while (rs.next()) {
                             sesion.setAttribute("logueado", "1");

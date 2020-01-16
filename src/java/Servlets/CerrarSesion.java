@@ -27,12 +27,11 @@ public class CerrarSesion extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String Descripcion_perfil=null, Id_usuario=null, Contraseña=null;
-            Descripcion_perfil=request.getParameter("descripcion_perfil");
+            String Id_usuario=null, Contraseña=null;
             Id_usuario=request.getParameter("id_usuario");
             Contraseña=request.getParameter("contraseña");
             AccesoDatos a = new AccesoDatos();
-            int ca=a.buscar(Descripcion_perfil, Id_usuario, Contraseña);
+            int ca=a.buscar(Id_usuario, Contraseña);
             
             HttpSession objsesion=request.getSession(true);
             objsesion.invalidate();

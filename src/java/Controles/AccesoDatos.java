@@ -11,7 +11,7 @@ public class AccesoDatos extends Conexion {
     private static String salt = "ssshhhhhhhhhhh!!!!";
     Connection conn = conectar();
 
-    public int buscar(String Descripcion_perfil, String Id_usuario, String Contraseña) {
+    public int buscar(String Id_usuario, String Contraseña) {
         int r = 0;
         Encriptar enc = new Encriptar();
         try {
@@ -19,10 +19,9 @@ public class AccesoDatos extends Conexion {
             ResultSet rs = null;
             ps = conn.prepareStatement("Select * from nm_usuarios join nm_perfil "
                     + " on nm_usuarios.id_perfil=nm_perfil.id_perfil "
-                    + " where Descripcion_perfil=? and Id_usuario=? and Contraseña=?");
-            ps.setString(1, Descripcion_perfil);
-            ps.setString(2, Id_usuario);
-            ps.setString(3, AnotherOneBitesTheSaltest.encrypt(Contraseña, secretKey));
+                    + " where Id_usuario=? and Contraseña=?");
+            ps.setString(1, Id_usuario);
+            ps.setString(2, AnotherOneBitesTheSaltest.encrypt(Contraseña, secretKey));
             rs = ps.executeQuery();
 
             if (rs.next() == true) {
@@ -37,6 +36,6 @@ public class AccesoDatos extends Conexion {
 
     public static void main(String[] args) {
         AccesoDatos a = new AccesoDatos();
-        System.out.println(a.buscar("JEFE", "PPEREZ", "123456"));
+        System.out.println(a.buscar("PPEREZ", "123456"));
     }
 }

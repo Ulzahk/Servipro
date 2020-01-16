@@ -12,7 +12,6 @@
     
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
-    String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
     
     char VistaUsuarios = 'N';
     char VistaPerfil = 'N';
@@ -250,9 +249,6 @@
                 Usuario: <%out.println(id_usuario);%>
             </a>
             <div style='color: black;' class='dropdown-menu text-center'>
-                <a style='color: black;' class='dropdown-item' href='nomina.htm'>
-                    Perfil: <%out.println(Descripcion_perfil);%>
-                </a>
                 <form action='cerrar' method='post' id='formcerrar'>
                     <input type='submit' value='Cerrar Sesión' class='btn btn-link text-center' style='color: black;'/>
                 </form>

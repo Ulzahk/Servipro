@@ -41,17 +41,15 @@ public class IniciarSesion extends HttpServlet {
                 
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
-            String Descripcion_perfil = null, Id_usuario = null, Contraseña = null;
+            String Id_usuario = null, Contraseña = null;
             int GrupoEmpl = 0;
-            Descripcion_perfil = request.getParameter("descripcion_perfil");
             Id_usuario = request.getParameter("id_usuario");
             Contraseña = request.getParameter("contraseña");
 
             AccesoDatos a = new AccesoDatos();
-            int ca = a.buscar(Descripcion_perfil, Id_usuario, Contraseña);
+            int ca = a.buscar(Id_usuario, Contraseña);
             if (ca > 0) {
                 HttpSession objsesion = request.getSession(true);
-                objsesion.setAttribute("descripcion_perfil", Descripcion_perfil);
                 objsesion.setAttribute("id_usuario", Id_usuario);
                 response.sendRedirect("index.htm");
             } else {

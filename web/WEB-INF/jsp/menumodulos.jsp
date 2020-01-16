@@ -11,7 +11,6 @@
 
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
-    String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
 
     if (id_usuario == null) {
         response.sendRedirect("logear?Login=true");
@@ -79,11 +78,6 @@
                 <li class="submenu">
                     <a href="#" class="btn btn-dark">Usuario: <%out.println(id_usuario);%> <i class="fas fa-caret-down"></i></a>
                     <ul class="children">
-                        <li class="bg-dark text-center">
-                            <div class="mx-auto">
-                                <a href="#" class="btn btn-dark mx-auto">Perfil: <%out.println(Descripcion_perfil);%> </a>
-                            </div>
-                        </li>
                         <li class="bg-dark text-center">
                             <form action='cerrar' method='post' id='formcerrar'>
                                 <input type='submit' value='Cerrar Sesión' class="btn btn-dark btn-block"/>

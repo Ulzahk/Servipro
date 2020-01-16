@@ -11,11 +11,11 @@
 
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
-    String Descripcion_perfil = (String) objsesion.getAttribute("descripcion_perfil");
-
+    
     char VistaEstadisticas = 'N';
+    String Descripcion_perfil = null;
 
-    List<Modelos.Perfil.clsFiltroPerfil> lstclsFiltroPerfil = new ArrayList<Modelos.Perfil.clsFiltroPerfil>();
+    List<Modelos.Perfil.clsFiltroPerfilNombre> lstclsFiltroPerfilNombre = new ArrayList<Modelos.Perfil.clsFiltroPerfilNombre>();
     try {
         ResultSet rs = null;
         PreparedStatement ps = conn.prepareStatement("{call spBuscarFiltroPerfil(?)}");
@@ -23,33 +23,36 @@
         rs = ps.executeQuery();
 
         while (rs.next()) {
-            Modelos.Perfil.clsFiltroPerfil obclsFiltroPerfil = new Modelos.Perfil.clsFiltroPerfil();
-            obclsFiltroPerfil.setVista_usuarios(rs.getString("Vista_usuarios").charAt(0));
-            obclsFiltroPerfil.setVista_perfil(rs.getString("Vista_perfil").charAt(0));
-            obclsFiltroPerfil.setVista_tiponovedades(rs.getString("Vista_tiponovedades").charAt(0));
-            obclsFiltroPerfil.setVista_facturacion(rs.getString("Vista_facturacion").charAt(0));
-            obclsFiltroPerfil.setVista_novedadesempleado(rs.getString("Vista_novedadesempleado").charAt(0));
-            obclsFiltroPerfil.setVista_centrocostos(rs.getString("Vista_centrocostos").charAt(0));
-            obclsFiltroPerfil.setVista_empleados(rs.getString("Vista_empleados").charAt(0));
-            obclsFiltroPerfil.setVista_cargoempleado(rs.getString("Vista_cargoempleado").charAt(0));
-            obclsFiltroPerfil.setVista_modulos(rs.getString("Vista_modulos").charAt(0));
-            obclsFiltroPerfil.setVista_modulosperfil(rs.getString("Vista_modulosperfil").charAt(0));
-            obclsFiltroPerfil.setVista_grupos(rs.getString("Vista_grupos").charAt(0));
-            obclsFiltroPerfil.setVista_empleadosgrupo(rs.getString("Vista_empleadosgrupo").charAt(0));
-            obclsFiltroPerfil.setVista_responsablegrupo(rs.getString("Vista_responsablegrupo").charAt(0));
-            obclsFiltroPerfil.setVista_configuracion(rs.getString("Vista_configuracion").charAt(0));
-            obclsFiltroPerfil.setVista_estadisticas(rs.getString("Vista_estadisticas").charAt(0));
+            Modelos.Perfil.clsFiltroPerfilNombre obclsFiltroPerfilNombre = new Modelos.Perfil.clsFiltroPerfilNombre();
+            obclsFiltroPerfilNombre.setDescripcion_perfil(rs.getString("Descripcion_perfil"));
+            obclsFiltroPerfilNombre.setVista_usuarios(rs.getString("Vista_usuarios").charAt(0));
+            obclsFiltroPerfilNombre.setVista_perfil(rs.getString("Vista_perfil").charAt(0));
+            obclsFiltroPerfilNombre.setVista_tiponovedades(rs.getString("Vista_tiponovedades").charAt(0));
+            obclsFiltroPerfilNombre.setVista_facturacion(rs.getString("Vista_facturacion").charAt(0));
+            obclsFiltroPerfilNombre.setVista_novedadesempleado(rs.getString("Vista_novedadesempleado").charAt(0));
+            obclsFiltroPerfilNombre.setVista_centrocostos(rs.getString("Vista_centrocostos").charAt(0));
+            obclsFiltroPerfilNombre.setVista_empleados(rs.getString("Vista_empleados").charAt(0));
+            obclsFiltroPerfilNombre.setVista_cargoempleado(rs.getString("Vista_cargoempleado").charAt(0));
+            obclsFiltroPerfilNombre.setVista_modulos(rs.getString("Vista_modulos").charAt(0));
+            obclsFiltroPerfilNombre.setVista_modulosperfil(rs.getString("Vista_modulosperfil").charAt(0));
+            obclsFiltroPerfilNombre.setVista_grupos(rs.getString("Vista_grupos").charAt(0));
+            obclsFiltroPerfilNombre.setVista_empleadosgrupo(rs.getString("Vista_empleadosgrupo").charAt(0));
+            obclsFiltroPerfilNombre.setVista_responsablegrupo(rs.getString("Vista_responsablegrupo").charAt(0));
+            obclsFiltroPerfilNombre.setVista_configuracion(rs.getString("Vista_configuracion").charAt(0));
+            obclsFiltroPerfilNombre.setVista_estadisticas(rs.getString("Vista_estadisticas").charAt(0));
 
-            lstclsFiltroPerfil.add(obclsFiltroPerfil);
+            lstclsFiltroPerfilNombre.add(obclsFiltroPerfilNombre);
         }
 
     } catch (Exception ex) {
 
     }
 
-    for (Modelos.Perfil.clsFiltroPerfil elem : lstclsFiltroPerfil) {
+    for (Modelos.Perfil.clsFiltroPerfilNombre elem : lstclsFiltroPerfilNombre) {
 
+        Descripcion_perfil = elem.getDescripcion_perfil();
         VistaEstadisticas = elem.getVista_estadisticas();
+        
     }
 
     if (id_usuario == null) {
@@ -132,7 +135,6 @@
                                 <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
                                 <a href="estadisticas?btnConsultarEstaMensualidad=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la mensualidad"><i class="fas fa-calendar-alt"></i></a>
                                 <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 1 al 15"><i class="fas fa-calendar-week"></i></a>
-                                <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 16 al 31"><i class="fas fa-calendar-minus"></i></a>
                                 <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" title="Haz clic para agregar un registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
                             </div>           
                         </form>
@@ -166,6 +168,8 @@
                             <tbody>
                             <%
                                 int GrupoEmpl = 0;
+                                
+
 
                                 List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticasGrupo = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
                                 try {
