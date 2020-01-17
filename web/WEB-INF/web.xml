@@ -52,6 +52,10 @@
         <servlet-name>ControlPerfil</servlet-name>
         <servlet-class>Servlets.ControlPerfil</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControlReportes</servlet-name>
+        <servlet-class>Servlets.ControlReportes</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -95,6 +99,10 @@
     <servlet-mapping>
         <servlet-name>ControlPerfil</servlet-name>
         <url-pattern>/controlperfil</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControlReportes</servlet-name>
+        <url-pattern>/controlreportes</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

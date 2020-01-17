@@ -28,6 +28,7 @@
     char VistaResponsableGrupo = 'N';
     char VistaConfiguracion = 'N';
     char VistaEstadisticas = 'N';
+    char VistaReportes = 'N';
 
     List<Modelos.Perfil.clsFiltroPerfil> lstclsFiltroPerfil = new ArrayList<Modelos.Perfil.clsFiltroPerfil>();
     try {
@@ -258,8 +259,12 @@
                 if (VistaEstadisticas == 'S') {
             %>
             <a href='estadisticas?btnConsultarEstaMensualidad=true' class='col gIndex colorEnlace'>
+                <i class='fas fa-history mb-2  tamañoIcono'></i>
+                <p><b>H.Reportes</b></p>
+            </a>
+            <a href='controlreportes?btnConsultarEstaMensualidad=true' class='col gIndex colorEnlace'>
                 <i class='fas fa-chart-bar mb-2  tamañoIcono'></i>
-                <p><b>Estadísticas</b></p>
+                <p><b>Reportes</b></p>
             </a>
             <%
                 }

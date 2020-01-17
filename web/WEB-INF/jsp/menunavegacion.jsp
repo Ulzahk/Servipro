@@ -28,6 +28,7 @@
     char VistaResponsableGrupo = 'N';
     char VistaConfiguracion = 'N';
     char VistaEstadisticas = 'N';
+    char VistaReportes = 'N';
     
     List<Modelos.Perfil.clsFiltroPerfil> lstclsFiltroPerfil = new ArrayList<Modelos.Perfil.clsFiltroPerfil>();
     try {
@@ -148,7 +149,8 @@
                     }
                     if(VistaEstadisticas == 'S'){
                 %>
-                <li><a href="estadisticas?btnConsultarEstaMensualidad=true">Estadísticas<span class="icon-dot"></span></a></li>
+                <li><a href="estadisticas?btnConsultarEstaMensualidad=true">H.Reportes<span class="icon-dot"></span></a></li>
+                <li><a href="controlreportes?btnConsultarEstaMensualidad=true">Reportes<span class="icon-dot"></span></a></li>
                 <%
                     }
                 %>
