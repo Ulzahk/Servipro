@@ -226,7 +226,7 @@
                                     vector[28] =elem.getObId_dia29().getAliasDia29();
                                     vector[29] =elem.getObId_dia30().getAliasDia30();
                                     vector[30] =elem.getObId_dia31().getAliasDia31();
-                                    for (int f = 28; f <= 11; f++) {
+                                    for (int f = 5; f <= 19; f++) {
                                         
                                 %>
                                 <td class="align-middle"><%=vector[f]%></td>
