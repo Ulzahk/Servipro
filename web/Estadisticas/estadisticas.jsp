@@ -126,61 +126,37 @@
             </header> 
             <div class="container mt-4">
                 <h1 class="text-center">Historial de Reportes</h1>
-            <br>
-            <div class="card border-dark">
-                <div class="card-header background-card border-dark text-white">
-                    <form action="estadisticas" method="post">
-                        <div class="input-group">
-                            <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
-                            <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 1 al 15"><i class="fas fa-calendar-week"></i></a>
-                            <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 16 al 31"><i class="fas fa-calendar-minus"></i></a>
-                            <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" title="Haz clic para agregar un registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
-                        </div>
-                    </form>
-                </div> 
-                <div class="card-body">
-                    <table class="table table-fluid table table-bordered table-striped table-hover text-center table-responsive" id="myTable">
-                        <thead>
-                            <tr>
-                                <th class="align-middle">Empleado</th>
-                                <th>A&ntilde;o</th>
-                                <th>Mes</th>
-                                <th>1</th>
-                                <th>2</th>
-                                <th>3</th>
-                                <th>4</th>
-                                <th>5</th>
-                                <th>6</th>
-                                <th>7</th>
-                                <th>8</th>
-                                <th>9</th>
-                                <th>10</th>
-                                <th>11</th>
-                                <th>12</th>
-                                <th>13</th>
-                                <th>14</th>
-                                <th>15</th>
-                                <th>16</th>
-                                <th>17</th>
-                                <th>18</th>
-                                <th>19</th>
-                                <th>20</th>
-                                <th>21</th>
-                                <th>22</th>
-                                <th>23</th>
-                                <th>24</th>
-                                <th>25</th>
-                                <th>26</th>
-                                <th>27</th>
-                                <th>28</th>
-                                <th>29</th>
-                                <th>30</th>
-                                <th>31</th>
-                                <th rowspan="1" class="align-middle"><b>Acciones</b></th> 
+                <br>
+                <div class="card border-dark">
+                    <div class="card-header background-card border-dark text-white">
+                        <form action="estadisticas" method="post">
+                            <div class="input-group">
+                                <a href="nomina.htm" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
+                                <a href="estadisticas?btnConsultarEstaQuincena1=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 1 al 15"><i class="fas fa-calendar-week"></i></a>
+                                <a href="estadisticas?btnConsultarEstaQuincena2=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para mostrar la quincena del día 16 al 31"><i class="fas fa-calendar-minus"></i></a>
+                                <a href="estadisticas?btnAgregarEsta=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" title="Haz clic para agregar un registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
+                            </div>
+                        </form>
+                    </div> 
+                    <div class="card-body">
+                        <table class="table table-fluid table table-bordered table-striped table-hover text-center table-responsive" id="myTable">
+                            <thead>
+                                <tr>
+                                    <th class="align-middle">Empleado</th>
+                                    <th>A&ntilde;o</th>
+                                    <th>Mes</th>
+                                    <%
+                                        for (int f = 6; f <= 20; f++) {
+                                    %>
+                                            <th><%=f%></th>
+                                    <%
+                                        }
+                                    %>
+                                <th rowspan="1" class="align-middle"><b>Acciones</b></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <%                                int GrupoEmpl = 0;
+                            <%  int GrupoEmpl = 0;
 
                                 List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticasGrupo = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
                                 try {
@@ -211,42 +187,52 @@
 
                                 if (Descripcion_perfil.equals("JEFE")) {
                                     for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticas) {
+
                             %>
                             <tr>
                                 <td class="align-middle"><%=elem.getObEmpleado().getEmplPrimerNombre()%> <%=elem.getObEmpleado().getEmplSegundoNombre()%> <%=elem.getObEmpleado().getEmplPrimerApellido()%> <%=elem.getObEmpleado().getEmplSegundoApellido()%></td>
                                 <td class="align-middle"><%=elem.getObAnio().getNombreAnio()%></td>
                                 <td class="align-middle"><%=elem.getObMes().getMesNombre()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia1().getAliasDia1()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia2().getAliasDia2()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia3().getAliasDia3()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia4().getAliasDia4()%></a></td>
-                                <td class="align-middle"><%=elem.getObId_dia5().getAliasDia5()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia6().getAliasDia6()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia7().getAliasDia7()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia8().getAliasDia8()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia9().getAliasDia9()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia10().getAliasDia10()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia11().getAliasDia11()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia12().getAliasDia12()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia13().getAliasDia13()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia14().getAliasDia14()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia15().getAliasDia15()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia16().getAliasDia16()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia17().getAliasDia17()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia18().getAliasDia18()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia19().getAliasDia19()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia20().getAliasDia20()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia21().getAliasDia21()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia22().getAliasDia22()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia23().getAliasDia23()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia24().getAliasDia24()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia25().getAliasDia25()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia26().getAliasDia26()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia27().getAliasDia27()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia28().getAliasDia28()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia29().getAliasDia29()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia30().getAliasDia30()%></td>
-                                <td class="align-middle"><%=elem.getObId_dia31().getAliasDia31()%></td>
+                                <%
+                                    String[] vector = new String[31];
+                                    vector[0] =elem.getObId_dia1().getAliasDia1();
+                                    vector[1] =elem.getObId_dia2().getAliasDia2();
+                                    vector[2] =elem.getObId_dia3().getAliasDia3();
+                                    vector[3] =elem.getObId_dia4().getAliasDia4();
+                                    vector[4] =elem.getObId_dia5().getAliasDia5();
+                                    vector[5] =elem.getObId_dia6().getAliasDia6();
+                                    vector[6] =elem.getObId_dia7().getAliasDia7();
+                                    vector[7] =elem.getObId_dia8().getAliasDia8();
+                                    vector[8] =elem.getObId_dia9().getAliasDia9();
+                                    vector[9] =elem.getObId_dia10().getAliasDia10();
+                                    vector[10] =elem.getObId_dia11().getAliasDia11();
+                                    vector[11] =elem.getObId_dia12().getAliasDia12();
+                                    vector[12] =elem.getObId_dia13().getAliasDia13();
+                                    vector[13] =elem.getObId_dia14().getAliasDia14();
+                                    vector[14] =elem.getObId_dia15().getAliasDia15();
+                                    vector[15] =elem.getObId_dia16().getAliasDia16();
+                                    vector[16] =elem.getObId_dia17().getAliasDia17();
+                                    vector[17] =elem.getObId_dia18().getAliasDia18();
+                                    vector[18] =elem.getObId_dia19().getAliasDia19();
+                                    vector[19] =elem.getObId_dia20().getAliasDia20();
+                                    vector[20] =elem.getObId_dia21().getAliasDia21();
+                                    vector[21] =elem.getObId_dia22().getAliasDia22();
+                                    vector[22] =elem.getObId_dia23().getAliasDia23();
+                                    vector[23] =elem.getObId_dia24().getAliasDia24();
+                                    vector[24] =elem.getObId_dia25().getAliasDia25();
+                                    vector[25] =elem.getObId_dia26().getAliasDia26();
+                                    vector[26] =elem.getObId_dia27().getAliasDia27();
+                                    vector[27] =elem.getObId_dia28().getAliasDia28();
+                                    vector[28] =elem.getObId_dia29().getAliasDia29();
+                                    vector[29] =elem.getObId_dia30().getAliasDia30();
+                                    vector[30] =elem.getObId_dia31().getAliasDia31();
+                                    for (int f = 28; f <= 11; f++) {
+                                        
+                                %>
+                                <td class="align-middle"><%=vector[f]%></td>
+                                <%
+                                    }
+                                %>
                                 <td class="align-middle">
                                     <div class="btn-group">
                                         <a class="btn btn-primary rounded mr-1 openBtn" data-toggle="modal" data-target="#myModal" id="btnEmplComentar"
@@ -257,6 +243,7 @@
                                 </td>
                             </tr>
                             <%
+
                                 }
                             } else {
                                 for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticas) {
@@ -330,38 +317,14 @@
                                 <th class="align-middle">Empleado</th>
                                 <th>A&ntilde;o</th>
                                 <th>Mes</th>
-                                <th>1</th>
-                                <th>2</th>
-                                <th>3</th>
-                                <th>4</th>
-                                <th>5</th>
-                                <th>6</th>
-                                <th>7</th>
-                                <th>8</th>
-                                <th>9</th>
-                                <th>10</th>
-                                <th>11</th>
-                                <th>12</th>
-                                <th>13</th>
-                                <th>14</th>
-                                <th>15</th>
-                                <th>16</th>
-                                <th>17</th>
-                                <th>18</th>
-                                <th>19</th>
-                                <th>20</th>
-                                <th>21</th>
-                                <th>22</th>
-                                <th>23</th>
-                                <th>24</th>
-                                <th>25</th>
-                                <th>26</th>
-                                <th>27</th>
-                                <th>28</th>
-                                <th>29</th>
-                                <th>30</th>
-                                <th>31</th>
-                                <th rowspan="1" class="align-middle">Acciones</th> 
+                                    <%
+                                        for (int f = 6; f <= 20; f++) {
+                                    %>
+                                        <th><%=f%></th>
+                                    <%
+                                        }
+                                    %>
+                                <th rowspan="1" class="align-middle"><b>Acciones</b></th>
                             </tr>
                         </tfoot>
                     </table>
