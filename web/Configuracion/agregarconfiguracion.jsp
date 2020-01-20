@@ -122,7 +122,7 @@
                 <br>
                 <div class="card border-dark">
                     <div class="card-header border-dark background-card text-white">
-                        <a href="controlconfiguracion?btnConfConsultar=true" class="btn btn-secondary"data-toggle="tooltip" title="Haz clic para regresar al menú empleados"><i class="fas fa-arrow-left"></i></a>
+                        <a href="controlconfiguracion?btnConfConsultar=true" class="btn btn-secondary"data-toggle="tooltip" title="Haz clic para regresar al menú configuración"><i class="fas fa-arrow-left"></i></a>
                     </div>
                     <div class="card-body">
                         <form action="controlconfiguracion" method="POST">
@@ -186,7 +186,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12">
-                                    <input type="submit" value="Guardar" class="btn background-button" data-toggle="tooltip" title="Haz clic para guardar" name="btnConfigGuardar"/>
+                                    <input type="submit" value="Guardar" class="btn background-button" data-toggle="tooltip" title="Haz clic para guardar" name="btnConfGuardar"/>
                                 </div>
                             </div>
                         </div>

@@ -162,12 +162,12 @@
                                 <td class="align-middle"><%=elem.getObclsModulo().getNombre_modulo()%></td>
                                 <td class="align-middle">
                                     <div class="btn-group">
-                                        <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para editar empleado" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
-                                           href="controlConfiguracion?stOpcion=M&codigoSeleccionado=<%=elem.getId_configuracion()%>">
+                                        <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para editar configuración" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
+                                           href="controlconfiguracion?stOpcion=M&codigoSeleccionado=<%=elem.getId_configuracion()%>">
                                             <i class="fas fa-edit" style="font-size:15px;"></i>
                                         </a>
                                         <a class="btn btn-danger btn-sm openBtn rounded" title="Haz clic para eliminar" data-toggle="modal" data-target="#myModal" id="btnEmplEliminar"
-                                           href="controlConfiguracion?stOpcion=E&codigoSeleccionado=<%=elem.getId_configuracion()%>">
+                                           href="controlconfiguracion?stOpcion=E&codigoSeleccionado=<%=elem.getId_configuracion()%>">
                                             <i class="fas fa-trash-alt" style="font-size:15px;"></i>
                                         </a>
                                     </div>

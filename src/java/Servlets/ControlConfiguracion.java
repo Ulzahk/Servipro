@@ -7,6 +7,8 @@ package Servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -45,14 +47,14 @@ public class ControlConfiguracion extends HttpServlet {
         } else if (request.getParameter("btnConfGuardar") != null) {
             btnConfGuardar(request, response);
         } else if (request.getParameter("btnConfEditar") != null) {
-
+            btnConfEditar(request, response);
         } else if (request.getParameter("btnConfEliminar") != null) {
-
-        } else if (request.getParameter("codigoSeleccionar") != null) {
+            btnConfEliminar(request, response);
+        } else if (request.getParameter("codigoSeleccionado") != null) {
             if (request.getParameter("stOpcion").equals("M")) {
-
+                cargarConfEditar(request, response);
             } else if (request.getParameter("stOpcion").equals("E")) {
-
+                cargarConfEliminar(request, response);
             }
         }
     }
@@ -101,7 +103,7 @@ public class ControlConfiguracion extends HttpServlet {
             request.setAttribute("lstclsConfiguracion", bl_clsConfiguracion.getConfiguracion());
             
             //Redirección y envio de valores
-            request.getRequestDispatcher("NovedadesEmpleado/novedadesempleado.jsp").forward(request, response);  
+            request.getRequestDispatcher("Configuracion/configuracion.jsp").forward(request, response);  
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
@@ -111,6 +113,162 @@ public class ControlConfiguracion extends HttpServlet {
             request.setAttribute("lstclsModulos", bl_clsModulos.getModulo());
 
             request.getRequestDispatcher("Configuracion/agregarconfiguracion.jsp").forward(request, response);
+        }
+    }
+    
+    public void cargarConfEditar(HttpServletRequest request,
+            HttpServletResponse response)throws IOException, ServletException{
+        
+        try {
+            BL.Configuracion.clsConfiguracion bl_clsConfiguracion = new BL.Configuracion.clsConfiguracion();
+            
+            List<Modelos.Configuracion.clsConfiguracion> lstclsConfiguracion = new ArrayList<Modelos.Configuracion.clsConfiguracion>();
+            
+            Modelos.Configuracion.clsConfiguracion obclsConfiguracion = new Modelos.Configuracion.clsConfiguracion();
+            
+            lstclsConfiguracion = bl_clsConfiguracion.getConfiguracion();
+            
+            for(Modelos.Configuracion.clsConfiguracion elem: lstclsConfiguracion){
+                if(elem.getId_configuracion() == Integer.parseInt(request.getParameter("codigoSeleccionado"))){
+                    obclsConfiguracion = elem;
+                    break;
+                }
+            }
+            
+            //Lista desplegable
+            BL.Configuracion.clsModulos bl_clsModulos = new BL.Configuracion.clsModulos();
+            request.setAttribute("lstclsModulo", bl_clsModulos.getModulo());
+
+            request.setAttribute("obclsConfiguracion", obclsConfiguracion);
+            request.setAttribute("lstclsConfiguracion", lstclsConfiguracion);
+            request.getRequestDispatcher("Configuracion/editarconfiguracion.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+
+            request.getRequestDispatcher("Configuracion/configuracion.jsp").forward(request, response);
+        }
+    }
+    
+     public void cargarConfEliminar(HttpServletRequest request,
+            HttpServletResponse response)throws IOException, ServletException{
+        
+        try {
+            BL.Configuracion.clsConfiguracion bl_clsConfiguracion = new BL.Configuracion.clsConfiguracion();
+            
+            List<Modelos.Configuracion.clsConfiguracion> lstclsConfiguracion = new ArrayList<Modelos.Configuracion.clsConfiguracion>();
+            
+            Modelos.Configuracion.clsConfiguracion obclsConfiguracion = new Modelos.Configuracion.clsConfiguracion();
+            
+            lstclsConfiguracion = bl_clsConfiguracion.getConfiguracion();
+            
+            for(Modelos.Configuracion.clsConfiguracion elem: lstclsConfiguracion){
+                if(elem.getId_configuracion() == Integer.parseInt(request.getParameter("codigoSeleccionado"))){
+                    obclsConfiguracion = elem;
+                    break;
+                }
+            }
+
+            request.setAttribute("obclsConfiguracion", obclsConfiguracion);
+            request.setAttribute("lstclsConfiguracion", lstclsConfiguracion);
+            request.getRequestDispatcher("Configuracion/eliminarconfiguracion.jsp").forward(request, response);
+            
+        } catch (Exception ex) {
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+
+            request.getRequestDispatcher("Configuracion/configuracion.jsp").forward(request, response);
+        }
+    }
+    
+    
+    public void btnConfEditar(HttpServletRequest request,
+            HttpServletResponse response)throws IOException, ServletException{
+        
+        try {
+            BL.Configuracion.clsConfiguracion bl_clsConfiguracion = new BL.Configuracion.clsConfiguracion();
+            
+            //Definición de Modelos
+            Modelos.Configuracion.clsConfiguracion obclsConfiguracion = new Modelos.Configuracion.clsConfiguracion();
+            Modelos.Configuracion.clsModulo obclsModulo = new Modelos.Configuracion.clsModulo();
+            
+            if(request.getParameter("IdModificar")!=null){
+                obclsConfiguracion.setId_configuracion(Integer.valueOf(request.getParameter("IdModificar")));
+            }
+            
+            if (request.getParameter("txtValor") != null) {
+                obclsConfiguracion.setValor(Integer.parseInt(request.getParameter("txtValor")));
+            }
+
+            if (request.getParameter("ddlModulo") != null) {
+                obclsModulo.setId_modulo(Integer.parseInt(request.getParameter("ddlModulo")));
+
+                obclsConfiguracion.setObclsModulo(obclsModulo);
+            }
+            
+            //Definición de parametros desde el controlador
+            request.setAttribute("stMensaje", bl_clsConfiguracion.updateConfiguracion(obclsConfiguracion));
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }
+            request.setAttribute("lstclsConfiguracion", bl_clsConfiguracion.getConfiguracion());
+            
+            request.getRequestDispatcher("Configuracion/configuracion.jsp").forward(request, response);
+        } catch (Exception ex) {
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+            
+            //Lista de Configuaciones
+            BL.Configuracion.clsConfiguracion bl_clsConfiguracion = new BL.Configuracion.clsConfiguracion();
+            request.setAttribute("lstclsConfiguracion", bl_clsConfiguracion.getConfiguracion());
+            
+            //Lista desplegable
+            BL.Configuracion.clsModulos bl_clsModulos = new BL.Configuracion.clsModulos();
+            request.setAttribute("lstclsModulo", bl_clsModulos.getModulo());
+            
+            request.getRequestDispatcher("Configuracion/editarconfiguracion.jsp").forward(request, response);
+        }
+    }
+    
+    public void btnConfEliminar(HttpServletRequest request,
+            HttpServletResponse response)throws IOException, ServletException{
+        
+        try {
+            BL.Configuracion.clsConfiguracion bl_clsConfiguracion = new BL.Configuracion.clsConfiguracion();
+            
+            //Definición de Modelos
+            Modelos.Configuracion.clsConfiguracion obclsConfiguracion = new Modelos.Configuracion.clsConfiguracion();
+            
+            if(request.getParameter("IdModificar")!=null){
+                obclsConfiguracion.setId_configuracion(Integer.valueOf(request.getParameter("IdModificar")));
+            }
+            
+            //Definición de parametros desde el controlador
+            request.setAttribute("stMensaje", bl_clsConfiguracion.deleteConfiguracion(obclsConfiguracion));
+            if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
+                request.setAttribute("stTipo", "success");
+            }
+                        
+            if(request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")){
+                request.setAttribute("stTipo", "error");
+            }
+            request.setAttribute("lstclsConfiguracion", bl_clsConfiguracion.getConfiguracion());
+            
+            request.getRequestDispatcher("Configuracion/configuracion.jsp").forward(request, response);
+        } catch (Exception ex) {
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.setAttribute("stTipo", "error");
+            
+            //Lista de Configuaciones
+            BL.Configuracion.clsConfiguracion bl_clsConfiguracion = new BL.Configuracion.clsConfiguracion();
+            request.setAttribute("lstclsConfiguracion", bl_clsConfiguracion.getConfiguracion());
+            
+            request.getRequestDispatcher("Configuracion/eliminarconfiguracion.jsp").forward(request, response);
         }
     }
 
