@@ -146,10 +146,93 @@
                                     <th>A&ntilde;o</th>
                                     <th>Mes</th>
                                     <%
-                                        for (int f = 6; f <= 20; f++) {
+                                        int conUno = 1;
+                                        int numUno = 1;                                       
+                                        int variableX = 10 - 25;
+                                        if(variableX<0){
+                                            variableX = variableX * -1;
+                                        }
+                                        
+                                        
+                                        int año = 2000;
+                                        int mes = 2;
+                                        int dias=0;
+                                        String nombreMes = "";
+                                        
+                                        switch(mes){
+                                            case 1:
+                                                nombreMes = "ENERO";
+                                                dias = 31;
+                                                break;
+                                            case 2:
+                                                nombreMes = "FEBRERO";                                                
+                                                if ( (año % 4 == 0 &&  año % 100 != 0) || ( año % 400 == 0)){
+                                                    dias = 29;
+                                                    break;
+                                                } else {
+                                                    dias = 28;
+                                                    break;
+                                                }
+                                                
+                                            case 3:
+                                                nombreMes = "MARZO";
+                                                dias = 31;
+                                                break;
+                                            case 4:
+                                                nombreMes = "ABRIL";
+                                                dias = 30;
+                                                break;
+                                            case 5:
+                                                nombreMes = "MAYO";
+                                                dias = 31;
+                                                break;
+                                            case 6:
+                                                nombreMes = "JUNIO";
+                                                dias = 30;
+                                                break;
+                                            case 7:
+                                                nombreMes = "JULIO";
+                                                dias = 31;
+                                                break;
+                                            case 8:
+                                                nombreMes = "AGOSTO";
+                                                dias = 31;
+                                                break;
+                                            case 9:
+                                                nombreMes = "SEPTIEMBRE";
+                                                dias = 30 ;
+                                                break;
+                                            case 10:
+                                                nombreMes = "OCTUBRE";
+                                                dias = 31 ;
+                                                break; 
+                                            case 11:
+                                                nombreMes = "NOVIEMBRE";
+                                                dias = 30;
+                                                break;
+                                            case 12:
+                                                nombreMes = "DICIEMBRE";
+                                                dias = 31;
+                                                break;
+                                            default:
+                                                out.print("No existe ese mes");       
+                                        }
+                                        
+                                        
+
+                                        for (int f = 25; conUno <= variableX; conUno++) {
+
+                                            if (f <= dias) {
                                     %>
-                                            <th><%=f%></th>
+                                <th><%=f%></th>
                                     <%
+                                        f++;
+                                    } else {
+                                    %>
+                                <th><%=numUno%></th>                                
+                                    <%
+                                                numUno++;
+                                            }
                                         }
                                     %>
                                 <th rowspan="1" class="align-middle"><b>Acciones</b></th>
@@ -194,43 +277,90 @@
                                 <td class="align-middle"><%=elem.getObAnio().getNombreAnio()%></td>
                                 <td class="align-middle"><%=elem.getObMes().getMesNombre()%></td>
                                 <%
-                                    String[] vector = new String[31];
-                                    vector[0] =elem.getObId_dia1().getAliasDia1();
-                                    vector[1] =elem.getObId_dia2().getAliasDia2();
-                                    vector[2] =elem.getObId_dia3().getAliasDia3();
-                                    vector[3] =elem.getObId_dia4().getAliasDia4();
-                                    vector[4] =elem.getObId_dia5().getAliasDia5();
-                                    vector[5] =elem.getObId_dia6().getAliasDia6();
-                                    vector[6] =elem.getObId_dia7().getAliasDia7();
-                                    vector[7] =elem.getObId_dia8().getAliasDia8();
-                                    vector[8] =elem.getObId_dia9().getAliasDia9();
-                                    vector[9] =elem.getObId_dia10().getAliasDia10();
-                                    vector[10] =elem.getObId_dia11().getAliasDia11();
-                                    vector[11] =elem.getObId_dia12().getAliasDia12();
-                                    vector[12] =elem.getObId_dia13().getAliasDia13();
-                                    vector[13] =elem.getObId_dia14().getAliasDia14();
-                                    vector[14] =elem.getObId_dia15().getAliasDia15();
-                                    vector[15] =elem.getObId_dia16().getAliasDia16();
-                                    vector[16] =elem.getObId_dia17().getAliasDia17();
-                                    vector[17] =elem.getObId_dia18().getAliasDia18();
-                                    vector[18] =elem.getObId_dia19().getAliasDia19();
-                                    vector[19] =elem.getObId_dia20().getAliasDia20();
-                                    vector[20] =elem.getObId_dia21().getAliasDia21();
-                                    vector[21] =elem.getObId_dia22().getAliasDia22();
-                                    vector[22] =elem.getObId_dia23().getAliasDia23();
-                                    vector[23] =elem.getObId_dia24().getAliasDia24();
-                                    vector[24] =elem.getObId_dia25().getAliasDia25();
-                                    vector[25] =elem.getObId_dia26().getAliasDia26();
-                                    vector[26] =elem.getObId_dia27().getAliasDia27();
-                                    vector[27] =elem.getObId_dia28().getAliasDia28();
-                                    vector[28] =elem.getObId_dia29().getAliasDia29();
-                                    vector[29] =elem.getObId_dia30().getAliasDia30();
-                                    vector[30] =elem.getObId_dia31().getAliasDia31();
-                                    for (int f = 5; f <= 19; f++) {
-                                        
+                                    String[] vector = new String[32];
+                                    vector[0] = "1";
+                                    vector[1] = "2";
+                                    vector[2] = "3";
+                                    vector[3] = "4";
+                                    vector[4] = "5";
+                                    vector[5] = "6";
+                                    vector[6] = "7";
+                                    vector[7] = "8";
+                                    vector[8] = "9";
+                                    vector[9] = "10";
+                                    vector[10] = "11";
+                                    vector[11] = "12";
+                                    vector[12] = "13";
+                                    vector[13] = "14";
+                                    vector[14] = "15";
+                                    vector[15] = "16";
+                                    vector[16] = "17";
+                                    vector[17] = "18";
+                                    vector[18] = "19";
+                                    vector[19] = "20";
+                                    vector[20] = "21";
+                                    vector[21] = "22";
+                                    vector[22] = "23";
+                                    vector[23] = "24";
+                                    vector[24] = "25";
+                                    vector[25] = "26";
+                                    vector[26] = "27";
+                                    vector[27] = "28";
+                                    vector[28] = "29";
+                                    vector[29] = "30";
+                                    vector[30] = "31";
+                                    vector[31]= "32";
+
+                                    String[] vecCol2 = new String[31];
+
+                                    vecCol2[0] = "1";
+                                    vecCol2[1] = "2";
+                                    vecCol2[2] = "3";
+                                    vecCol2[3] = "4";
+                                    vecCol2[4] = "5";
+                                    vecCol2[5] = "6";
+                                    vecCol2[6] = "7";
+                                    vecCol2[7] = "8";
+                                    vecCol2[8] = "9";
+                                    vecCol2[9] = "10";
+                                    vecCol2[10] = "11";
+                                    vecCol2[11] = "12";
+                                    vecCol2[12] = "13";
+                                    vecCol2[13] = "14";
+                                    vecCol2[14] = "15";
+                                    vecCol2[15] = "16";
+                                    vecCol2[16] = "17";
+                                    vecCol2[17] = "18";
+                                    vecCol2[18] = "19";
+                                    vecCol2[19] = "20";
+                                    vecCol2[20] = "21";
+                                    vecCol2[21] = "22";
+                                    vecCol2[22] = "23";
+                                    vecCol2[23] = "24";
+                                    vecCol2[24] = "25";
+                                    vecCol2[25] = "26";
+                                    vecCol2[26] = "27";
+                                    vecCol2[27] = "28";
+                                    vecCol2[28] = "29";
+                                    vecCol2[29] = "30";
+                                    vecCol2[30] = "31";
+
+                                    int conDos = 1;
+
+                                    int numDos = 0;
+
+                                    for (int f = 24; conDos <= 15; conDos++) {
+
+                                        if (f < dias) {
                                 %>
                                 <td class="align-middle"><%=vector[f]%></td>
                                 <%
+                                f++;
+                                } else {
+                                %>        
+                                <td class="align-middle"><%=vecCol2[numDos]%></td>
+                                <%          numDos++;
+                                        }
                                     }
                                 %>
                                 <td class="align-middle">
@@ -318,12 +448,24 @@
                                 <th>A&ntilde;o</th>
                                 <th>Mes</th>
                                     <%
-                                        for (int f = 6; f <= 20; f++) {
+                                        int conTres = 1;
+
+                                        int numTres = 1;
+
+                                        for (int f = 25; conTres <= 15; conTres++) {
+                                            if (f <= dias) {
                                     %>
-                                        <th><%=f%></th>
+                                <th><%=f%></th>
                                     <%
-                                        }
+                                    f++;
+                                    } else {        
                                     %>
+                                <th><%=numTres%></th>
+                                <%
+                                    numTres++;
+                                        }
+                                    }
+                                %>
                                 <th rowspan="1" class="align-middle"><b>Acciones</b></th>
                             </tr>
                         </tfoot>
