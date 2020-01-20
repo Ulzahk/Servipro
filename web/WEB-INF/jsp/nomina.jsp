@@ -250,7 +250,7 @@
                 }
                 if (VistaConfiguracion == 'S') {
             %>
-            <a href='configuracion.htm' class='col gIndex colorEnlace'>
+            <a href='controlconfiguracion?btnConfConsultar=true' class='col gIndex colorEnlace'>
                 <i class='fas fa-cog mb-2  tamañoIcono'></i>
                 <p><b>Configuración</b></p>
             </a>

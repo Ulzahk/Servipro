@@ -155,7 +155,7 @@
                                         
                                         
                                         int año = 2000;
-                                        int mes = 2;
+                                        int mes = 3;
                                         int dias=0;
                                         String nombreMes = "";
                                         
@@ -277,7 +277,7 @@
                                 <td class="align-middle"><%=elem.getObAnio().getNombreAnio()%></td>
                                 <td class="align-middle"><%=elem.getObMes().getMesNombre()%></td>
                                 <%
-                                    String[] vector = new String[32];
+                                    String[] vector = new String[31];
                                     vector[0] = "1";
                                     vector[1] = "2";
                                     vector[2] = "3";
@@ -309,7 +309,6 @@
                                     vector[28] = "29";
                                     vector[29] = "30";
                                     vector[30] = "31";
-                                    vector[31]= "32";
 
                                     String[] vecCol2 = new String[31];
 

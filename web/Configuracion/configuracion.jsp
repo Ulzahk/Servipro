@@ -12,7 +12,7 @@
     HttpSession objsesion = request.getSession(false);
     String id_usuario = (String) objsesion.getAttribute("id_usuario");
 
-    char VistaEmpleados = 'N';
+    char VistaConfiguracion = 'N';
 
     List<Modelos.Perfil.clsFiltroPerfil> lstclsFiltroPerfil = new ArrayList<Modelos.Perfil.clsFiltroPerfil>();
     try {
@@ -48,14 +48,14 @@
 
     for (Modelos.Perfil.clsFiltroPerfil elem : lstclsFiltroPerfil) {
 
-        VistaEmpleados = elem.getVista_empleados();
+        VistaConfiguracion = elem.getVista_configuracion();
 
     }
 
     if (id_usuario == null) {
         response.sendRedirect("logear?Login=true");
     } else {
-        if (VistaEmpleados != 'S') {
+        if (VistaConfiguracion != 'S') {
             response.sendRedirect("nomina.htm");
         }
 
@@ -67,7 +67,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Empleados</title>
+        <title>Configuración</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="Resources/CSS/style.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
@@ -94,17 +94,17 @@
     <body class="background-body">
 
         <%
-            Modelos.Empleados.clsEmpleado obclsEmpleado = new Modelos.Empleados.clsEmpleado();
+            Modelos.Configuracion.clsConfiguracion obclsConfiguracion = new Modelos.Configuracion.clsConfiguracion();
 
-            if (request.getAttribute("obclsEmpleado") != null) {
-                obclsEmpleado = (Modelos.Empleados.clsEmpleado) request.getAttribute("obclsEmpleado");
+            if (request.getAttribute("obclsConfiguracion") != null) {
+                obclsConfiguracion = (Modelos.Configuracion.clsConfiguracion) request.getAttribute("obclsConfiguracion");
             }
 
-            List<Modelos.Empleados.clsEmpleado> lstclsEmpleado = new ArrayList<Modelos.Empleados.clsEmpleado>();
+            List<Modelos.Configuracion.clsConfiguracion> lstclsConfiguracion = new ArrayList<Modelos.Configuracion.clsConfiguracion>();
 
-            if (request.getAttribute("lstclsEmpleado") != null) {
+            if (request.getAttribute("lstclsConfiguracion") != null) {
 
-                lstclsEmpleado = (List<Modelos.Empleados.clsEmpleado>) request.getAttribute("lstclsEmpleado");
+                lstclsConfiguracion = (List<Modelos.Configuracion.clsConfiguracion>) request.getAttribute("lstclsConfiguracion");
             }
 
             if (request.getAttribute("stMensaje") != null && request.getAttribute("stTipo") != null) {
@@ -127,15 +127,14 @@
             <jsp:include page="../WEB-INF/jsp/menunavegacion.jsp"></jsp:include>
             </header>
             <div class="container mt-4">
-                <h1 class="text-center">Empleados</h1>
+                <h1 class="text-center">Configuración</h1>
                 <br>
                 <div class="card border-dark">
                     <div class="card-header border-dark background-card text-white">
-                        <form action="empleados" method="post">
+                        <form action="controlconfiguracion" method="post">
                             <div class="input-group">
                                 <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
-                                <a href="empleados?btnEmplAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
-                                <a href="empleados?btnImportarDatos=true" class="btn btn-secondary mr-2 openBtn" data-toggle="modal" data-target="#myModal" title="Haz clic para importar un archivo de Excel" ><i class="fas fa-file-upload"> <label class="coloriphonex tipoLetraLabel">Importar</label></i></a>
+                                <a href="controlconfiguracion?btnConfAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
                             </div>
                         </form>
                     </div>
@@ -143,34 +142,32 @@
                         <table class="table table-fluid table table-bordered table-striped table-hover text-center table-responsive" id="myTable">
                             <thead>
                                 <tr>
-                                    <th class="align-middle">Tipo Documento</th>
-                                    <th class="align-middle">Documento</th>
-                                    <th class="align-middle">Nombre Completo</th>
-                                    <th class="align-middle">Telefono</th>
-                                    <th class="align-middle">Centro de Costos</th>
-                                    <th class="align-middle">Cargo</th>
+                                    <th class="align-middle">Desconfiguracion</th>
+                                    <th class="align-middle">Desconfiguracion D.</th>
+                                    <th class="align-middle">Variable</th>
+                                    <th class="align-middle">Valor</th>
+                                    <th class="align-middle">Módulo/th>
                                     <th class="align-middle">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                             <%
-                                for (Modelos.Empleados.clsEmpleado elem : lstclsEmpleado) {
+                                for (Modelos.Configuracion.clsConfiguracion elem : lstclsConfiguracion) {
                             %>
                             <tr>
-                                <td class="align-middle"><%=elem.getObclsTipoDocumento().getStDescripcion()%></td>
-                                <td class="align-middle"><%=elem.getStDocumento()%></td>
-                                <td class="align-middle"><%=elem.getStPrimerNombre()%> <%=elem.getStSegundoNombre()%> <%=elem.getStPrimerApellido()%> <%=elem.getStSegundoApellido()%></td>
-                                <td class="align-middle"><%=elem.getStTelefono()%></td>
-                                <td class="align-middle"><%=elem.getObclsCentroCosto().getStDescripcion()%></td>
-                                <td class="align-middle"><%=elem.getObclsCargo().getStDescripcion()%></td>
+                                <td class="align-middle"><%=elem.getNombre_configuracion()%></td>
+                                <td class="align-middle"><%=elem.getDescripcion_configuracion()%></td>
+                                <td class="align-middle"><%=elem.getNombre_variable()%></td>
+                                <td class="align-middle"><%=elem.getValor()%></td>
+                                <td class="align-middle"><%=elem.getObclsModulo().getNombre_modulo()%></td>
                                 <td class="align-middle">
                                     <div class="btn-group">
                                         <a class="btn btn-warning btn-sm mr-1 openBtn rounded" title="Haz clic para editar empleado" data-toggle="modal" data-target="#myModal" id="btnEmplModificar" 
-                                           href="empleados?stOpcion=M&codigoSeleccionado=<%=elem.getInId()%>">
+                                           href="controlConfiguracion?stOpcion=M&codigoSeleccionado=<%=elem.getId_configuracion()%>">
                                             <i class="fas fa-edit" style="font-size:15px;"></i>
                                         </a>
                                         <a class="btn btn-danger btn-sm openBtn rounded" title="Haz clic para eliminar" data-toggle="modal" data-target="#myModal" id="btnEmplEliminar"
-                                           href="empleados?stOpcion=E&codigoSeleccionado=<%=elem.getInId()%>">
+                                           href="controlConfiguracion?stOpcion=E&codigoSeleccionado=<%=elem.getId_configuracion()%>">
                                             <i class="fas fa-trash-alt" style="font-size:15px;"></i>
                                         </a>
                                     </div>
@@ -182,12 +179,11 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th class="align-middle">Tipo Documento</th>
-                                <th class="align-middle">Documento</th>
-                                <th class="align-middle">Nombre Completo</th>
-                                <th class="align-middle">Telefono</th>
-                                <th class="align-middle">Centro de Costos</th>
-                                <th class="align-middle">Cargo</th>
+                                <th class="align-middle">Desconfiguracion</th>
+                                <th class="align-middle">Desconfiguracion D.</th>
+                                <th class="align-middle">Variable</th>
+                                <th class="align-middle">Valor</th>
+                                <th class="align-middle">Módulo/th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </tfoot>

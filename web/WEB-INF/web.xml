@@ -56,6 +56,10 @@
         <servlet-name>ControlReportes</servlet-name>
         <servlet-class>Servlets.ControlReportes</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControlConfiguracion</servlet-name>
+        <servlet-class>Servlets.ControlConfiguracion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -103,6 +107,10 @@
     <servlet-mapping>
         <servlet-name>ControlReportes</servlet-name>
         <url-pattern>/controlreportes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControlConfiguracion</servlet-name>
+        <url-pattern>/controlconfiguracion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -241,7 +241,7 @@
             if(VistaConfiguracion == 'S'){
         %>
         <li class="submenu">
-            <a href="configuracion.htm">Configuración<span class="icon-dot"></span></a>
+            <a href="controlconfiguracion?btnConfConsultar=true">Configuración<span class="icon-dot"></span></a>
         </li>
         <%
             }
