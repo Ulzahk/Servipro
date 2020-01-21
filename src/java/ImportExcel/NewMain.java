@@ -42,7 +42,7 @@ public class NewMain {
         clsConexion obclsConexion = new clsConexion();
         conn = obclsConexion.getConexion();
     }
-/*
+
     public static void crearExcel() {
         Workbook book = new XSSFWorkbook();
         Sheet sheet = book.createSheet("Hola Java");
@@ -115,7 +115,7 @@ public class NewMain {
             Logger.getLogger(NewMain.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-*/
+
     public static void cargar(ImportExcel.clsRutaDeImportar obclsRutaDeImportar) throws IOException, SQLException {
 
         try {

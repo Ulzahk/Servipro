@@ -32,10 +32,13 @@ public class clsCargo {
                 
                 lstclsCargo.add(obclsCargo);
             }
+
         } 
         catch (Exception e) {
         }
         return lstclsCargo;
+        
+      
         
     }
     

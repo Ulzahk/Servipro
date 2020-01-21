@@ -39,8 +39,7 @@ function formValidation() {
         document.getElementById('txtpass').style.borderColor = "#D54324";
         document.getElementById('lblerror').innerHTML = 'Ingrese un usuario y una contraseña válidos';
         return false;
-    }
-    else {
+    } else {
         document.getElementById('forminicio').submit();
     }
 }
@@ -127,11 +126,4 @@ function selectAll() {
         $(".individual").prop("checked", $(this).prop("checked"));
     });
 }
-
-
-
-
-
-
-
 
