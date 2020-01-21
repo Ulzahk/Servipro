@@ -22,13 +22,7 @@
                 
                 <prop key="index.htm">indexController</prop>
                 <!--Nomina-->
-                <prop key="nomina.htm">controlNomina</prop>                
-                <!--Configuracion props-->
-                <prop key="configuracion.htm">controlConfiguracion</prop>
-                <prop key="agregarconfiguracion.htm">controlAgregarConfiguracion</prop>
-                <prop key="editarconfiguracion.htm">controlEditarConfiguracion</prop>
-                <prop key="eliminarconfiguracion.htm">controlEliminarConfiguracion</prop>
-                <prop key="confirmareliminarconfiguracion.htm">controlConfirmarEliminarConfiguracion</prop>               
+                <prop key="nomina.htm">controlNomina</prop>                         
                 <!--TipoDeNovedades props-->
                 <prop key="tipodenovedades.htm">controlTipoDeNovedades</prop>
                 <prop key="agregartipodenovedades.htm">controlAgregarTipoDeNovedades</prop>
@@ -77,14 +71,7 @@
     <!--Controles-->
     <!--Nomina-->
     <bean name="controlNomina" class="Controles.ControlNomina"/>
-    <!--Consulta-->   
-    <!--Configuracion-->
-    <bean name="controlConfiguracion" class="Controles.Configuracion.ControlConfiguracion"/>
-    <bean name="controlAgregarConfiguracion" class="Controles.Configuracion.ControlAgregarConfiguracion"/>
-    <bean name="controlEditarConfiguracion" class="Controles.Configuracion.ControlEditarConfiguracion" />
-    <bean name="controlEliminarConfiguracion" class="Controles.Configuracion.ControlEliminarConfiguracion"/>
-    <bean name="controlConfirmarEliminarConfiguracion" class="Controles.Configuracion.ControlConfirmarEliminarConfiguracion"/>
-
+    <!--Consulta-->
     <!--TipoDeNovedades-->
     <bean name="controlTipoDeNovedades" class="Controles.TipoDeNovedades.ControlTipoDeNovedades"/>
     <bean name="controlAgregarTipoDeNovedades" class="Controles.TipoDeNovedades.ControlAgregarTipoDeNovedades"/>
