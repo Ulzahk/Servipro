@@ -146,7 +146,7 @@
                                     <th class="align-middle">Desconfiguracion D.</th>
                                     <th class="align-middle">Variable</th>
                                     <th class="align-middle">Valor</th>
-                                    <th class="align-middle">Módulo/th>
+                                    <th class="align-middle">Módulo</th>
                                     <th class="align-middle">Acciones</th>
                                 </tr>
                             </thead>
@@ -183,7 +183,7 @@
                                 <th class="align-middle">Desconfiguracion D.</th>
                                 <th class="align-middle">Variable</th>
                                 <th class="align-middle">Valor</th>
-                                <th class="align-middle">Módulo/th>
+                                <th class="align-middle">Módulo</th>
                                 <th class="align-middle">Acciones</th>
                             </tr>
                         </tfoot>

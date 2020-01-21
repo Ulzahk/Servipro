@@ -145,101 +145,43 @@
                                     <th class="align-middle">Empleado</th>
                                     <th>A&ntilde;o</th>
                                     <th>Mes</th>
-                                    <%
-                                        int conUno = 1;
-                                        int numUno = 1;                                       
-                                        int variableX = 10 - 25;
-                                        if(variableX<0){
-                                            variableX = variableX * -1;
-                                        }
-                                        
-                                        
-                                        int año = 2000;
-                                        int mes = 3;
-                                        int dias=0;
-                                        String nombreMes = "";
-                                        
-                                        switch(mes){
-                                            case 1:
-                                                nombreMes = "ENERO";
-                                                dias = 31;
-                                                break;
-                                            case 2:
-                                                nombreMes = "FEBRERO";                                                
-                                                if ( (año % 4 == 0 &&  año % 100 != 0) || ( año % 400 == 0)){
-                                                    dias = 29;
-                                                    break;
-                                                } else {
-                                                    dias = 28;
-                                                    break;
-                                                }
-                                                
-                                            case 3:
-                                                nombreMes = "MARZO";
-                                                dias = 31;
-                                                break;
-                                            case 4:
-                                                nombreMes = "ABRIL";
-                                                dias = 30;
-                                                break;
-                                            case 5:
-                                                nombreMes = "MAYO";
-                                                dias = 31;
-                                                break;
-                                            case 6:
-                                                nombreMes = "JUNIO";
-                                                dias = 30;
-                                                break;
-                                            case 7:
-                                                nombreMes = "JULIO";
-                                                dias = 31;
-                                                break;
-                                            case 8:
-                                                nombreMes = "AGOSTO";
-                                                dias = 31;
-                                                break;
-                                            case 9:
-                                                nombreMes = "SEPTIEMBRE";
-                                                dias = 30 ;
-                                                break;
-                                            case 10:
-                                                nombreMes = "OCTUBRE";
-                                                dias = 31 ;
-                                                break; 
-                                            case 11:
-                                                nombreMes = "NOVIEMBRE";
-                                                dias = 30;
-                                                break;
-                                            case 12:
-                                                nombreMes = "DICIEMBRE";
-                                                dias = 31;
-                                                break;
-                                            default:
-                                                out.print("No existe ese mes");       
-                                        }
-                                        
-                                        
-
-                                        for (int f = 25; conUno <= variableX; conUno++) {
-
-                                            if (f <= dias) {
-                                    %>
-                                <th><%=f%></th>
-                                    <%
-                                        f++;
-                                    } else {
-                                    %>
-                                <th><%=numUno%></th>                                
-                                    <%
-                                                numUno++;
-                                            }
-                                        }
-                                    %>
-                                <th rowspan="1" class="align-middle"><b>Acciones</b></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <%  int GrupoEmpl = 0;
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th>5</th>
+                                    <th>6</th>
+                                    <th>7</th>
+                                    <th>8</th>
+                                    <th>9</th>
+                                    <th>10</th>
+                                    <th>11</th>
+                                    <th>12</th>
+                                    <th>13</th>
+                                    <th>14</th>
+                                    <th>15</th>
+                                    <th>16</th>
+                                    <th>17</th>
+                                    <th>18</th>
+                                    <th>19</th>
+                                    <th>20</th>
+                                    <th>21</th>
+                                    <th>22</th>
+                                    <th>23</th>
+                                    <th>24</th>
+                                    <th>25</th>
+                                    <th>26</th>
+                                    <th>27</th>
+                                    <th>28</th>
+                                    <th>29</th>
+                                    <th>30</th>
+                                    <th>31</th> 
+                                    <th rowspan="1" class="align-middle"><b>Acciones</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <%
+                                int GrupoEmpl = 0;
 
                                 List<Modelos.Estadisticas.clsEstadisticas> lstclsEstadisticasGrupo = new ArrayList<Modelos.Estadisticas.clsEstadisticas>();
                                 try {
@@ -270,150 +212,43 @@
 
                                 if (Descripcion_perfil.equals("JEFE")) {
                                     for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticas) {
-
                             %>
+
                             <tr>
                                 <td class="align-middle"><%=elem.getObEmpleado().getEmplPrimerNombre()%> <%=elem.getObEmpleado().getEmplSegundoNombre()%> <%=elem.getObEmpleado().getEmplPrimerApellido()%> <%=elem.getObEmpleado().getEmplSegundoApellido()%></td>
                                 <td class="align-middle"><%=elem.getObAnio().getNombreAnio()%></td>
                                 <td class="align-middle"><%=elem.getObMes().getMesNombre()%></td>
-                                <%
-                                    String[] vector = new String[31];
-                                    vector[0] = "1";
-                                    vector[1] = "2";
-                                    vector[2] = "3";
-                                    vector[3] = "4";
-                                    vector[4] = "5";
-                                    vector[5] = "6";
-                                    vector[6] = "7";
-                                    vector[7] = "8";
-                                    vector[8] = "9";
-                                    vector[9] = "10";
-                                    vector[10] = "11";
-                                    vector[11] = "12";
-                                    vector[12] = "13";
-                                    vector[13] = "14";
-                                    vector[14] = "15";
-                                    vector[15] = "16";
-                                    vector[16] = "17";
-                                    vector[17] = "18";
-                                    vector[18] = "19";
-                                    vector[19] = "20";
-                                    vector[20] = "21";
-                                    vector[21] = "22";
-                                    vector[22] = "23";
-                                    vector[23] = "24";
-                                    vector[24] = "25";
-                                    vector[25] = "26";
-                                    vector[26] = "27";
-                                    vector[27] = "28";
-                                    vector[28] = "29";
-                                    vector[29] = "30";
-                                    vector[30] = "31";
-
-                                    String[] vecCol2 = new String[31];
-
-                                    vecCol2[0] = "1";
-                                    vecCol2[1] = "2";
-                                    vecCol2[2] = "3";
-                                    vecCol2[3] = "4";
-                                    vecCol2[4] = "5";
-                                    vecCol2[5] = "6";
-                                    vecCol2[6] = "7";
-                                    vecCol2[7] = "8";
-                                    vecCol2[8] = "9";
-                                    vecCol2[9] = "10";
-                                    vecCol2[10] = "11";
-                                    vecCol2[11] = "12";
-                                    vecCol2[12] = "13";
-                                    vecCol2[13] = "14";
-                                    vecCol2[14] = "15";
-                                    vecCol2[15] = "16";
-                                    vecCol2[16] = "17";
-                                    vecCol2[17] = "18";
-                                    vecCol2[18] = "19";
-                                    vecCol2[19] = "20";
-                                    vecCol2[20] = "21";
-                                    vecCol2[21] = "22";
-                                    vecCol2[22] = "23";
-                                    vecCol2[23] = "24";
-                                    vecCol2[24] = "25";
-                                    vecCol2[25] = "26";
-                                    vecCol2[26] = "27";
-                                    vecCol2[27] = "28";
-                                    vecCol2[28] = "29";
-                                    vecCol2[29] = "30";
-                                    vecCol2[30] = "31";
-
-                                    int conDos = 1;
-
-                                    int numDos = 0;
-
-                                    for (int f = 24; conDos <= 15; conDos++) {
-
-                                        if (f < dias) {
-                                %>
-                                <td class="align-middle"><%=vector[f]%></td>
-                                <%
-                                f++;
-                                } else {
-                                %>        
-                                <td class="align-middle"><%=vecCol2[numDos]%></td>
-                                <%          numDos++;
-                                        }
-                                    }
-                                %>
-                                <td class="align-middle">
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary rounded mr-1 openBtn" data-toggle="modal" data-target="#myModal" id="btnEmplComentar"
-                                           title="Haz clic para comentar" href="estadisticas?codigoComentar=<%=elem.getId_estadistica()%>">
-                                            <i class="far fa-comment" style="font-size:15px;"></i>
-                                        </a>
-                                    </div>     
-                                </td>
-                            </tr>
-                            <%
-
-                                }
-                            } else {
-                                for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticas) {
-                                    if (GrupoEmpl == (elem.getObGrupoEmpl().getId_grupo())) {
-
-                            %>
-                            <tr>
-                                <td class="align-middle"><%=elem.getObEmpleado().getEmplPrimerNombre()%> <%=elem.getObEmpleado().getEmplSegundoNombre()%> <%=elem.getObEmpleado().getEmplPrimerApellido()%> <%=elem.getObEmpleado().getEmplSegundoApellido()%></td>
-                                <td class="align-middle"><a href="estadisticas?codigoAnio=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObAnio().getNombreAnio()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoMes=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObMes().getMesNombre()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia1=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia1().getAliasDia1()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia2=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia2().getAliasDia2()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia3=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia3().getAliasDia3()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia4=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia4().getAliasDia4()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia5=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia5().getAliasDia5()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia6=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia6().getAliasDia6()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia7=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia7().getAliasDia7()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia8=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia8().getAliasDia8()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia9=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia9().getAliasDia9()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia10=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia10().getAliasDia10()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia11=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia11().getAliasDia11()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia12=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia12().getAliasDia12()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia13=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia13().getAliasDia13()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia14=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia14().getAliasDia14()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia15=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia15().getAliasDia15()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia16=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia16().getAliasDia16()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia17=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia17().getAliasDia17()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia18=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia18().getAliasDia18()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia19=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia19().getAliasDia19()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia20=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia20().getAliasDia20()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia21=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia21().getAliasDia21()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia22=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia22().getAliasDia22()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia23=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia23().getAliasDia23()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia24=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia24().getAliasDia24()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia25=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia25().getAliasDia25()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia26=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia26().getAliasDia26()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia27=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia27().getAliasDia27()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia28=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia28().getAliasDia28()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia29=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia29().getAliasDia29()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia30=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia30().getAliasDia30()%></a></td>
-                                <td class="align-middle"><a href="estadisticas?codigoDia31=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia31().getAliasDia31()%></a></td>
+                                <td class="align-middle"><%=elem.getObId_dia1().getAliasDia1()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia2().getAliasDia2()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia3().getAliasDia3()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia4().getAliasDia4()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia5().getAliasDia5()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia6().getAliasDia6()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia7().getAliasDia7()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia8().getAliasDia8()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia9().getAliasDia9()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia10().getAliasDia10()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia11().getAliasDia11()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia12().getAliasDia12()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia13().getAliasDia13()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia14().getAliasDia14()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia15().getAliasDia15()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia16().getAliasDia16()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia17().getAliasDia17()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia18().getAliasDia18()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia19().getAliasDia19()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia20().getAliasDia20()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia21().getAliasDia21()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia22().getAliasDia22()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia23().getAliasDia23()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia24().getAliasDia24()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia25().getAliasDia25()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia26().getAliasDia26()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia27().getAliasDia27()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia28().getAliasDia28()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia29().getAliasDia29()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia30().getAliasDia30()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia31().getAliasDia31()%></td> 
                                 <td class="align-middle">
                                     <div class="btn-group">
                                         <a class="btn btn-warning rounded mr-1" id="btnEditarEsta" data-toggle="tooltip" title="Haz clic para editar el registro" 
@@ -432,7 +267,70 @@
                                            title="Haz clic paa eliminar" href="estadisticas?codigoEliminar=<%=elem.getId_estadistica()%>">
                                             <i class="fas fa-trash-alt" style="font-size:15px;"></i>
                                         </a>
-                                    </div>     
+                                    </div> 
+                                </td>
+                            </tr>
+                            <%
+                                }
+                            } else {
+                                for (Modelos.Estadisticas.clsEstadisticas elem : lstclsEstadisticas) {
+                                    if (GrupoEmpl == (elem.getObGrupoEmpl().getId_grupo())) {
+
+                            %>
+                            <tr>
+                                <td class="align-middle"><%=elem.getObEmpleado().getEmplPrimerNombre()%> <%=elem.getObEmpleado().getEmplSegundoNombre()%> <%=elem.getObEmpleado().getEmplPrimerApellido()%> <%=elem.getObEmpleado().getEmplSegundoApellido()%></td>
+                                <td class="align-middle"><%=elem.getObAnio().getNombreAnio()%></td>
+                                <td class="align-middle"><%=elem.getObMes().getMesNombre()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia1().getAliasDia1()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia2().getAliasDia2()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia3().getAliasDia3()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia4().getAliasDia4()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia5().getAliasDia5()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia6().getAliasDia6()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia7().getAliasDia7()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia8().getAliasDia8()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia9().getAliasDia9()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia10().getAliasDia10()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia11().getAliasDia11()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia12().getAliasDia12()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia13().getAliasDia13()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia14().getAliasDia14()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia15().getAliasDia15()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia16().getAliasDia16()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia17().getAliasDia17()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia18().getAliasDia18()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia19().getAliasDia19()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia20().getAliasDia20()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia21().getAliasDia21()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia22().getAliasDia22()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia23().getAliasDia23()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia24().getAliasDia24()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia25().getAliasDia25()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia26().getAliasDia26()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia27().getAliasDia27()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia28().getAliasDia28()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia29().getAliasDia29()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia30().getAliasDia30()%></td>
+                                <td class="align-middle"><%=elem.getObId_dia31().getAliasDia31()%></td>
+                                <td class="align-middle">
+                                    <div class="btn-group">
+                                        <a class="btn btn-warning rounded mr-1" id="btnEditarEsta" data-toggle="tooltip" title="Haz clic para editar el registro" 
+                                           href="estadisticas?codigoSeleccionado=<%=elem.getId_estadistica()%>">
+                                            <i class="fas fa-edit" style="font-size:15px;"></i>
+                                        </a>
+
+
+                                        <a class="btn btn-primary rounded mr-1 openBtn" data-toggle="modal" data-target="#myModal" id="btnEmplComentar"
+                                           title="Haz clic para comentar" href="estadisticas?codigoComentar=<%=elem.getId_estadistica()%>">
+                                            <i class="far fa-comment" style="font-size:15px;"></i>
+                                        </a>
+
+
+                                        <a class="btn btn-danger rounded openBtn" data-toggle="modal" data-target="#myModal" id="btnEmplEliminar"
+                                           title="Haz clic paa eliminar" href="estadisticas?codigoEliminar=<%=elem.getId_estadistica()%>">
+                                            <i class="fas fa-trash-alt" style="font-size:15px;"></i>
+                                        </a>
+                                    </div> 
                                 </td>
                             </tr>
                             <%
@@ -446,30 +344,42 @@
                                 <th class="align-middle">Empleado</th>
                                 <th>A&ntilde;o</th>
                                 <th>Mes</th>
-                                    <%
-                                        int conTres = 1;
-
-                                        int numTres = 1;
-
-                                        for (int f = 25; conTres <= 15; conTres++) {
-                                            if (f <= dias) {
-                                    %>
-                                <th><%=f%></th>
-                                    <%
-                                    f++;
-                                    } else {        
-                                    %>
-                                <th><%=numTres%></th>
-                                <%
-                                    numTres++;
-                                        }
-                                    }
-                                %>
+                                <th>1</th>
+                                <th>2</th>
+                                <th>3</th>
+                                <th>4</th>
+                                <th>5</th>
+                                <th>6</th>
+                                <th>7</th>
+                                <th>8</th>
+                                <th>9</th>
+                                <th>10</th>
+                                <th>11</th>
+                                <th>12</th>
+                                <th>13</th>
+                                <th>14</th>
+                                <th>15</th>
+                                <th>16</th>
+                                <th>17</th>
+                                <th>18</th>
+                                <th>19</th>
+                                <th>20</th>
+                                <th>21</th>
+                                <th>22</th>
+                                <th>23</th>
+                                <th>24</th>
+                                <th>25</th>
+                                <th>26</th>
+                                <th>27</th>
+                                <th>28</th>
+                                <th>29</th>
+                                <th>30</th>
+                                <th>31</th> 
                                 <th rowspan="1" class="align-middle"><b>Acciones</b></th>
                             </tr>
                         </tfoot>
                     </table>
-                </div>
+                </div>                 
             </div>
         </div>
         <!-- Modal -->
