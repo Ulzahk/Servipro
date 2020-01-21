@@ -114,8 +114,8 @@
             }
         %>
         <div class="container">
-            <div class="card border-info">
-                <div class="card-header bg-info text-white">
+            <div class="card border-dark">
+                <div class="card-header background-card text-white border-dark">
                     <div class="form-group">
                         <div class="form-group">
                             <div class="col-12 text-center">                                    
@@ -188,7 +188,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12">
-                                    <input type="submit" value="Guardar" class="btn btn-info" data-toggle="tooltip" title="Haz clic para guardar" name="btnNoveEmplEditar"/>
+                                    <input type="submit" value="Guardar" class="btn background-button" data-toggle="tooltip" title="Haz clic para guardar" name="btnNoveEmplEditar"/>
                                     <input type="text" name="IdModificar" id="IdModificar" value="<%=obclsNovedadesEmpleado.getId_novedad_empleado()%>" hidden=""/>
                                 </div>
                             </div>

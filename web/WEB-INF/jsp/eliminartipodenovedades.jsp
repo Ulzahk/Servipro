@@ -83,8 +83,8 @@
         <script src="Resources/JS/functions.js"></script>
     </head>
     <body>
-        <div class="card border-info">
-            <div class="card-header bg-info text-white">
+        <div class="card border-dark">
+            <div class="card-header background-card text-white border-dark">
                 <div class="form-group">
                     <div class="form-group">
                         <div class="col-12 text-center">                                    
@@ -117,7 +117,7 @@
                     <div class="form-row">
                         <c:forEach var="dato" items="${datos}">                                
                             <div class="col-12 text-center btn-group">
-                                <a href="tipodenovedades.htm" class="btn btn-info font-weight-bold rounded" data-toggle="tooltip" title="Haz clic para regresar al menú perfil"><span>No, cancelar</span></a>
+                                <a href="tipodenovedades.htm" class="btn background-button font-weight-bold rounded" data-toggle="tooltip" title="Haz clic para regresar al menú perfil"><span>No, cancelar</span></a>
                                 <span>&nbsp;</span>
                                 <a href="<c:url value="confirmareliminartipodenovedades.htm?id_novedad=${dato.Id_novedad}"/>"class="btn btn-danger rounded ml-1"><b>Si, eliminar</b></a>                                        
                             </div>

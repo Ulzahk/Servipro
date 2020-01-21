@@ -115,8 +115,8 @@
         %>
 
         <div class="container">
-            <div class="card border-info">
-                <div class="card-header bg-info text-white">
+            <div class="card border-dark">
+                <div class="card-header background-card text-white border-dark">
                     <div class="form-group">
                         <div class="form-group">
                             <div class="col-12 text-center">                                    
@@ -152,7 +152,7 @@
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col-12 text-center btn-group">
-                                    <a href="controlnovedadesempleado?btnNoveEmplConsultar=true" class="btn btn-info font-weight-bold rounded "><span>No, cancelar</span></a>
+                                    <a href="controlnovedadesempleado?btnNoveEmplConsultar=true" class="btn background-button font-weight-bold rounded "><span>No, cancelar</span></a>
                                     <span>&nbsp;</span>
                                     <input type="submit" value="Si, eliminar" class="btn btn-danger font-weight-bold rounded ml-1" name="btnNoveEmplEliminar"/>
                                     <input type="text" name="IdModificar" id="IdModificar" value="<%=obclsNovedadesEmpleado.getId_novedad_empleado()%>" hidden=""/>

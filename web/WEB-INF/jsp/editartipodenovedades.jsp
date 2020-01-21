@@ -85,8 +85,8 @@
     </head>
     <body>
         <div class="container">
-            <div class="card border-info">
-                <div class="card-header bg-info text-white" >
+            <div class="card border-dark">
+                <div class="card-header background-card text-white border-dark" >
                 </div>
                 <div class="card-body">
                     <form:form method="post" commandName="novedades">
@@ -100,7 +100,7 @@
                             <form:input path="alias" cssClass="form-control"/>
                         </p>
                         <hr/>
-                        <input type="submit" value="Guardar" class="btn btn-info">
+                        <input type="submit" value="Guardar" class="btn background-button">
                     </form:form>
                 </div>
             </div>
