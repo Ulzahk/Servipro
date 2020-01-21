@@ -30,7 +30,7 @@ public class clsCentroCosto {
                 
                 lstclsCentroCosto.add(obclsCentroCosto);
             }
-            
+
         } 
         catch (Exception e) 
         {

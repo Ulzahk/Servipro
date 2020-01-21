@@ -1,5 +1,6 @@
 package Servlets;
 
+import ImportExcel.NewMain;
 import static ImportExcel.NewMain.cargar;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -370,8 +371,8 @@ public class ControlEmpleados extends HttpServlet {
             
             ImportExcel.clsRutaDeImportar obclsRutaDeImportar = new ImportExcel.clsRutaDeImportar();
             
-            if(request.getParameter("rutaArchivo") != null){
-                obclsRutaDeImportar.setRuta(request.getParameter("rutaArchivo"));
+            if(request.getParameter("exampleFormControlFile1") != null){
+                obclsRutaDeImportar.setRuta(request.getParameter("exampleFormControlFile1"));
             }
             cargar(obclsRutaDeImportar);
             
@@ -398,7 +399,7 @@ public class ControlEmpleados extends HttpServlet {
             HttpServletResponse response) throws IOException, ServletException {
 
         try {
-            request.getRequestDispatcher("Empleados/importarexcel.jsp").forward(request, response);
+            request.getRequestDispatcher("Empleados/importararchivosexcel.jsp").forward(request, response);
         } catch (Exception e) {
         }
     }
