@@ -74,7 +74,6 @@ function main() {
 
 
 
-
     $(document).ready(function () {
         $('#myTable').DataTable({
             dom: 'Bfrtip',

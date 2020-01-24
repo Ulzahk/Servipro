@@ -52,7 +52,79 @@ public class ControlReportes extends HttpServlet {
             BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
+            //Listas desplegables
+            BL.Estadisticas.clsEmpleado bl_clsEmpleado = new BL.Estadisticas.clsEmpleado();
+            BL.Estadisticas.clsDia1 bl_clsDia1 = new BL.Estadisticas.clsDia1();
+            BL.Estadisticas.clsDia2 bl_clsDia2 = new BL.Estadisticas.clsDia2();
+            BL.Estadisticas.clsDia3 bl_clsDia3 = new BL.Estadisticas.clsDia3();
+            BL.Estadisticas.clsDia4 bl_clsDia4 = new BL.Estadisticas.clsDia4();
+            BL.Estadisticas.clsDia5 bl_clsDia5 = new BL.Estadisticas.clsDia5();
+            BL.Estadisticas.clsDia6 bl_clsDia6 = new BL.Estadisticas.clsDia6();
+            BL.Estadisticas.clsDia7 bl_clsDia7 = new BL.Estadisticas.clsDia7();
+            BL.Estadisticas.clsDia8 bl_clsDia8 = new BL.Estadisticas.clsDia8();
+            BL.Estadisticas.clsDia9 bl_clsDia9 = new BL.Estadisticas.clsDia9();
+            BL.Estadisticas.clsDia10 bl_clsDia10 = new BL.Estadisticas.clsDia10();
+            BL.Estadisticas.clsDia11 bl_clsDia11 = new BL.Estadisticas.clsDia11();
+            BL.Estadisticas.clsDia12 bl_clsDia12 = new BL.Estadisticas.clsDia12();
+            BL.Estadisticas.clsDia13 bl_clsDia13 = new BL.Estadisticas.clsDia13();
+            BL.Estadisticas.clsDia14 bl_clsDia14 = new BL.Estadisticas.clsDia14();
+            BL.Estadisticas.clsDia15 bl_clsDia15 = new BL.Estadisticas.clsDia15();
+            BL.Estadisticas.clsDia16 bl_clsDia16 = new BL.Estadisticas.clsDia16();
+            BL.Estadisticas.clsDia17 bl_clsDia17 = new BL.Estadisticas.clsDia17();
+            BL.Estadisticas.clsDia18 bl_clsDia18 = new BL.Estadisticas.clsDia18();
+            BL.Estadisticas.clsDia19 bl_clsDia19 = new BL.Estadisticas.clsDia19();
+            BL.Estadisticas.clsDia20 bl_clsDia20 = new BL.Estadisticas.clsDia20();
+            BL.Estadisticas.clsDia21 bl_clsDia21 = new BL.Estadisticas.clsDia21();
+            BL.Estadisticas.clsDia22 bl_clsDia22 = new BL.Estadisticas.clsDia22();
+            BL.Estadisticas.clsDia23 bl_clsDia23 = new BL.Estadisticas.clsDia23();
+            BL.Estadisticas.clsDia24 bl_clsDia24 = new BL.Estadisticas.clsDia24();
+            BL.Estadisticas.clsDia25 bl_clsDia25 = new BL.Estadisticas.clsDia25();
+            BL.Estadisticas.clsDia26 bl_clsDia26 = new BL.Estadisticas.clsDia26();
+            BL.Estadisticas.clsDia27 bl_clsDia27 = new BL.Estadisticas.clsDia27();
+            BL.Estadisticas.clsDia28 bl_clsDia28 = new BL.Estadisticas.clsDia28();
+            BL.Estadisticas.clsDia29 bl_clsDia29 = new BL.Estadisticas.clsDia29();
+            BL.Estadisticas.clsDia30 bl_clsDia30 = new BL.Estadisticas.clsDia30();
+            BL.Estadisticas.clsDia31 bl_clsDia31 = new BL.Estadisticas.clsDia31();
+            BL.Estadisticas.clsMes bl_clsMes = new BL.Estadisticas.clsMes();
+            BL.Estadisticas.clsAnio bl_clsAnio = new BL.Estadisticas.clsAnio();
+
+            request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
+            request.setAttribute("lstclsDia1", bl_clsDia1.getDia1());
+            request.setAttribute("lstclsDia2", bl_clsDia2.getDia2());
+            request.setAttribute("lstclsDia3", bl_clsDia3.getDia3());
+            request.setAttribute("lstclsDia4", bl_clsDia4.getDia4());
+            request.setAttribute("lstclsDia5", bl_clsDia5.getDia5());
+            request.setAttribute("lstclsDia6", bl_clsDia6.getDia6());
+            request.setAttribute("lstclsDia7", bl_clsDia7.getDia7());
+            request.setAttribute("lstclsDia8", bl_clsDia8.getDia8());
+            request.setAttribute("lstclsDia9", bl_clsDia9.getDia9());
+            request.setAttribute("lstclsDia10", bl_clsDia10.getDia10());
+            request.setAttribute("lstclsDia11", bl_clsDia11.getDia11());
+            request.setAttribute("lstclsDia12", bl_clsDia12.getDia12());
+            request.setAttribute("lstclsDia13", bl_clsDia13.getDia13());
+            request.setAttribute("lstclsDia14", bl_clsDia14.getDia14());
+            request.setAttribute("lstclsDia15", bl_clsDia15.getDia15());
+            request.setAttribute("lstclsDia16", bl_clsDia16.getDia16());
+            request.setAttribute("lstclsDia17", bl_clsDia17.getDia17());
+            request.setAttribute("lstclsDia18", bl_clsDia18.getDia18());
+            request.setAttribute("lstclsDia19", bl_clsDia19.getDia19());
+            request.setAttribute("lstclsDia20", bl_clsDia20.getDia20());
+            request.setAttribute("lstclsDia21", bl_clsDia21.getDia21());
+            request.setAttribute("lstclsDia22", bl_clsDia22.getDia22());
+            request.setAttribute("lstclsDia23", bl_clsDia23.getDia23());
+            request.setAttribute("lstclsDia24", bl_clsDia24.getDia24());
+            request.setAttribute("lstclsDia25", bl_clsDia25.getDia25());
+            request.setAttribute("lstclsDia26", bl_clsDia26.getDia26());
+            request.setAttribute("lstclsDia27", bl_clsDia27.getDia27());
+            request.setAttribute("lstclsDia28", bl_clsDia28.getDia28());
+            request.setAttribute("lstclsDia29", bl_clsDia29.getDia29());
+            request.setAttribute("lstclsDia30", bl_clsDia30.getDia30());
+            request.setAttribute("lstclsDia31", bl_clsDia31.getDia31());
+            request.setAttribute("lstclsMes", bl_clsMes.getMes());
+            request.setAttribute("lstclsAnio", bl_clsAnio.getAnio());
+
             request.getRequestDispatcher("Estadisticas/reportes.jsp").forward(request, response);
+
         } else if (request.getParameter("btnConsultarEstaQuincena1") != null) {
             BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
@@ -845,11 +917,11 @@ public class ControlReportes extends HttpServlet {
 
             request.setAttribute("stTipo", "error");
             request.setAttribute("stMensaje", ex.getMessage());
-            
+
             //Lista de Empleados
             BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
-            
+
             request.getRequestDispatcher("Estadisticas/reportes.jsp.jsp").forward(request, response);
         }
 
