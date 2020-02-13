@@ -60,6 +60,10 @@
         <servlet-name>ControlConfiguracion</servlet-name>
         <servlet-class>Servlets.ControlConfiguracion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControlPraEmpleados</servlet-name>
+        <servlet-class>Servlets.ControlPraEmpleados</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -111,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>ControlConfiguracion</servlet-name>
         <url-pattern>/controlconfiguracion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControlPraEmpleados</servlet-name>
+        <url-pattern>/controlpraempleados</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
