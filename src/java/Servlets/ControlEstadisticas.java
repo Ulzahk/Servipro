@@ -492,8 +492,7 @@ public class ControlEstadisticas extends HttpServlet {
             }
 
             if (request.getParameter("ddlAnio") != null) {
-                obclsAnio.setId_anio(Integer.parseInt(request.getParameter("ddlAnio")));
-                obclsEstadisticas.setObAnio(obclsAnio);
+                obclsEstadisticas.setAnio(Integer.parseInt(request.getParameter("ddlAnio")));
             }
 
             //Definición de parametros desde el controlador
@@ -508,7 +507,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
             //Redireccion y envio de valores            
-            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/reportes.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
@@ -584,7 +583,7 @@ public class ControlEstadisticas extends HttpServlet {
             request.setAttribute("lstclsMes", bl_clsMes.getMes());
             request.setAttribute("lstclsAnio", bl_clsAnio.getAnio());
 
-            request.getRequestDispatcher("Estadisticas/agregarestadisticas.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/reportes.jsp").forward(request, response);
         }
 
     }
@@ -1070,8 +1069,7 @@ public class ControlEstadisticas extends HttpServlet {
             }
 
             if (request.getParameter("ddlAnio") != null) {
-                obclsAnio.setId_anio(Integer.parseInt(request.getParameter("ddlAnio")));
-                obclsEstadisticas.setObAnio(obclsAnio);
+                obclsEstadisticas.setAnio(Integer.parseInt(request.getParameter("ddlAnio")));
             }
 
             //Definición de parametros desde el controlador
@@ -2686,9 +2684,8 @@ public class ControlEstadisticas extends HttpServlet {
             }
             if (request.getParameter("ddlAnio") != null) {
                 //Modelo Externo
-                obclsAnio.setId_anio(Integer.parseInt(request.getParameter("ddlAnio")));
+                obclsEstadisticas.setAnio(Integer.parseInt(request.getParameter("ddlAnio")));
                 //Asignación al modelo padre
-                obclsEstadisticas.setObAnio(obclsAnio);
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaAnio(obclsEstadisticas));

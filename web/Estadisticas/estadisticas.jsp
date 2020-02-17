@@ -216,7 +216,7 @@
 
                             <tr>
                                 <td class="align-middle"><%=elem.getObEmpleado().getEmplPrimerNombre()%> <%=elem.getObEmpleado().getEmplSegundoNombre()%> <%=elem.getObEmpleado().getEmplPrimerApellido()%> <%=elem.getObEmpleado().getEmplSegundoApellido()%></td>
-                                <td class="align-middle"><%=elem.getObAnio().getNombreAnio()%></td>
+                                <td class="align-middle"><%=elem.getAnio()%></td>
                                 <td class="align-middle"><%=elem.getObMes().getMesNombre()%></td>
                                 <td class="align-middle"><%=elem.getObId_dia1().getAliasDia1()%></td>
                                 <td class="align-middle"><%=elem.getObId_dia2().getAliasDia2()%></td>
@@ -279,7 +279,7 @@
                             %>
                             <tr>
                                 <td class="align-middle"><%=elem.getObEmpleado().getEmplPrimerNombre()%> <%=elem.getObEmpleado().getEmplSegundoNombre()%> <%=elem.getObEmpleado().getEmplPrimerApellido()%> <%=elem.getObEmpleado().getEmplSegundoApellido()%></td>
-                                <td class="align-middle"><%=elem.getObAnio().getNombreAnio()%></td>
+                                <td class="align-middle"><%=elem.getAnio()%></td>
                                 <td class="align-middle"><%=elem.getObMes().getMesNombre()%></td>
                                 <td class="align-middle"><%=elem.getObId_dia1().getAliasDia1()%></td>
                                 <td class="align-middle"><%=elem.getObId_dia2().getAliasDia2()%></td>

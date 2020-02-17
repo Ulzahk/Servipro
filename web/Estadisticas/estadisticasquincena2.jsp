@@ -203,7 +203,7 @@
                             %>
                             <tr>
                                 <td class="align-middle"><%=elem.getObEmpleado().getEmplPrimerNombre()%> <%=elem.getObEmpleado().getEmplSegundoNombre()%> <%=elem.getObEmpleado().getEmplPrimerApellido()%> <%=elem.getObEmpleado().getEmplSegundoApellido()%></td>
-                                <td class="align-middle"><%=elem.getObAnio().getNombreAnio()%></td>
+                                <td class="align-middle"><%=elem.getAnio()%></td>
                                 <td class="align-middle"><%=elem.getObMes().getMesNombre()%></td>
                                 <td class="align-middle"><%=elem.getObId_dia16().getAliasDia16()%></td>
                                 <td class="align-middle"><%=elem.getObId_dia17().getAliasDia17()%></td>
@@ -250,7 +250,7 @@
                             %>
                             <tr>
                                 <td class="align-middle"><%=elem.getObEmpleado().getEmplPrimerNombre()%> <%=elem.getObEmpleado().getEmplSegundoNombre()%> <%=elem.getObEmpleado().getEmplPrimerApellido()%> <%=elem.getObEmpleado().getEmplSegundoApellido()%></td>
-                                <td class="align-middle"><a href="estadisticas?codigoAnio=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObAnio().getNombreAnio()%></a></td>
+                                <td class="align-middle"><a href="estadisticas?codigoAnio=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getAnio()%></a></td>
                                 <td class="align-middle"><a href="estadisticas?codigoMes=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObMes().getMesNombre()%></a></td>
                                 <td class="align-middle"><a href="estadisticas?codigoDia16=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia16().getAliasDia16()%></a></td>
                                 <td class="align-middle"><a href="estadisticas?codigoDia17=<%=elem.getId_estadistica()%>" class="btn btn-link openBtn" data-toggle="modal" data-target="#myModal"><%=elem.getObId_dia17().getAliasDia17()%></a></td>

@@ -37,7 +37,7 @@ public class clsEstadisticas {
     public clsId_dia30 obId_dia30;
     public clsId_dia31 obId_dia31;
     public clsMes obMes;
-    public clsAnio obAnio;
+    public int Anio;
     public String Comentario;
 
     public int getId_estadistica() {
@@ -320,14 +320,14 @@ public class clsEstadisticas {
         this.obMes = obMes;
     }
 
-    public clsAnio getObAnio() {
-        return obAnio;
+    public int getAnio() {
+        return Anio;
     }
 
-    public void setObAnio(clsAnio obAnio) {
-        this.obAnio = obAnio;
+    public void setAnio(int Anio) {
+        this.Anio = Anio;
     }
-    
+
     public String getComentario() {
         return Comentario;
     }

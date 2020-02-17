@@ -155,24 +155,11 @@
                             <div class="row">
                                 <div class="col-6">
                                     <label for="lblAnio"><b>A&ntilde;o</b></label>
-                                    <select class="form-control border border-dark" name="ddlAnio">
-                                        <%
-                                            List<Modelos.Estadisticas.clsAnio> lstclsAnio = new ArrayList<Modelos.Estadisticas.clsAnio>();
-
-                                            if (request.getAttribute("lstclsAnio") != null) {
-                                                lstclsAnio = (List<Modelos.Estadisticas.clsAnio>) request.getAttribute("lstclsAnio");
-                                            }
-
-                                            for (Modelos.Estadisticas.clsAnio elem : lstclsAnio) {
-                                        %>
-                                        <option value="<%=elem.getId_anio()%>"
-                                                <%=obclsEstadisticas.getObAnio() != null ? obclsEstadisticas.getObAnio().getId_anio() == elem.getId_anio() ? "selected" : "" : ""%>>
-                                            <%=elem.getNombreAnio()%>
-                                        </option>
-                                        <%
-                                            }
-                                        %>
-                                    </select>                                    
+                                    <%
+                                        Calendar fecha = Calendar.getInstance();       
+                                        int año = fecha.get(Calendar.YEAR);
+                                    %>
+                                    <input name="ddlAnio" value="<%=año%>" readondoly/><%=año%>                                   
                                 </div>
                                 <div class="col-6">
                                     <label for="lblMes"><b>Mes</b></label>

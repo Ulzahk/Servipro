@@ -67,7 +67,7 @@ public class clsEstadisticas {
             ps.setInt(31, obEstadisticas.getObId_dia30().getId_dia30());
             ps.setInt(32, obEstadisticas.getObId_dia31().getId_dia31());
             ps.setInt(33, obEstadisticas.getObMes().getId_mes());
-            ps.setInt(34, obEstadisticas.getObAnio().getId_anio());
+            ps.setInt(34, obEstadisticas.getAnio());
 
             ps.execute();
 
@@ -141,7 +141,7 @@ public class clsEstadisticas {
             ps.setInt(31, obEstadisticas.getObId_dia30().getId_dia30());
             ps.setInt(32, obEstadisticas.getObId_dia31().getId_dia31());
             ps.setInt(33, obEstadisticas.getObMes().getId_mes());
-            ps.setInt(34, obEstadisticas.getObAnio().getId_anio());
+            ps.setInt(34, obEstadisticas.getAnio());
 
             ps.execute();
 
@@ -543,7 +543,7 @@ public class clsEstadisticas {
         try {
             PreparedStatement ps = conn.prepareStatement("{call spEditarEstaAnio(?,?)}");
             ps.setInt(1, obclsEstadisticas.getId_estadistica());
-            ps.setInt(2, obclsEstadisticas.getObAnio().getId_anio());
+            ps.setInt(2, obclsEstadisticas.getAnio());
             ps.execute();
             return "Se realizó el proceso con éxito";
         } catch (Exception ex) {
@@ -563,6 +563,7 @@ public class clsEstadisticas {
 
             while (rs.next()) {
                 Modelos.Estadisticas.clsEstadisticas obEstadisticas = new Modelos.Estadisticas.clsEstadisticas();
+                
                 obEstadisticas.setId_estadistica(rs.getInt("Id_estadistica"));
 
                 Modelos.Estadisticas.clsEmpleado obEmpleado = new Modelos.Estadisticas.clsEmpleado();
@@ -768,10 +769,7 @@ public class clsEstadisticas {
                 obclsMes.setMesNombre(rs.getString("mesNombre"));
                 obEstadisticas.setObMes(obclsMes);
 
-                Modelos.Estadisticas.clsAnio obclsAnio = new Modelos.Estadisticas.clsAnio();
-                obclsAnio.setId_anio(rs.getInt("Id_anio"));
-                obclsAnio.setNombreAnio(rs.getString("nombreAnio"));
-                obEstadisticas.setObAnio(obclsAnio);
+                obEstadisticas.setAnio(rs.getInt("Id_anio"));
 
                 obEstadisticas.setComentario(rs.getString("Comentario"));
 
@@ -999,10 +997,7 @@ public class clsEstadisticas {
                 obclsMes.setMesNombre(rs.getString("mesNombre"));
                 obEstadisticas.setObMes(obclsMes);
 
-                Modelos.Estadisticas.clsAnio obclsAnio = new Modelos.Estadisticas.clsAnio();
-                obclsAnio.setId_anio(rs.getInt("Id_anio"));
-                obclsAnio.setNombreAnio(rs.getString("nombreAnio"));
-                obEstadisticas.setObAnio(obclsAnio);
+                obEstadisticas.setAnio(rs.getInt("Id_anio"));
 
                 lstclsEstadisticas.add(obEstadisticas);
             }
