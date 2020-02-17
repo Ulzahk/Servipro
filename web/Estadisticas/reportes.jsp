@@ -364,7 +364,7 @@
 
                                 %>
                                 <!-- Modal 1 -->
-                            <div class="modal fade" id="myModal1" role="dialog">
+                            <div class="modal fade" id="myModal1-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -401,7 +401,7 @@
                                 </div>
                             </div>
                             <!-- Modal 2 -->
-                            <div class="modal fade" id="myModal2" role="dialog">
+                            <div class="modal fade" id="myModal2-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -439,7 +439,7 @@
                                 </div>
                             </div>
                             <!-- Modal 3 -->
-                            <div class="modal fade" id="myModal3" role="dialog">
+                            <div class="modal fade" id="myModal3-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -477,7 +477,7 @@
                                 </div>
                             </div>
                             <!-- Modal 4 -->
-                            <div class="modal fade" id="myModal4" role="dialog">
+                            <div class="modal fade" id="myModal4-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -515,7 +515,7 @@
                                 </div>
                             </div>
                             <!-- Modal 5 -->
-                            <div class="modal fade" id="myModal5" role="dialog">
+                            <div class="modal fade" id="myModal5-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -553,7 +553,7 @@
                                 </div>
                             </div>
                             <!-- Modal 6 -->
-                            <div class="modal fade" id="myModal6" role="dialog">
+                            <div class="modal fade" id="myModal6-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -591,7 +591,7 @@
                                 </div>
                             </div>
                             <!-- Modal 7 -->
-                            <div class="modal fade" id="myModal7" role="dialog">
+                            <div class="modal fade" id="myModal7-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -629,7 +629,7 @@
                                 </div>
                             </div>
                             <!-- Modal 8 -->
-                            <div class="modal fade" id="myModal8" role="dialog">
+                            <div class="modal fade" id="myModal8-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -667,7 +667,7 @@
                                 </div>
                             </div>
                             <!-- Modal 9 -->
-                            <div class="modal fade" id="myModal9" role="dialog">
+                            <div class="modal fade" id="myModal9-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -705,7 +705,7 @@
                                 </div>
                             </div>
                             <!-- Modal 10 -->
-                            <div class="modal fade" id="myModal10" role="dialog">
+                            <div class="modal fade" id="myModal10-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -743,7 +743,7 @@
                                 </div>
                             </div>
                             <!-- Modal 11 -->
-                            <div class="modal fade" id="myModal11" role="dialog">
+                            <div class="modal fade" id="myModal11-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -781,7 +781,7 @@
                                 </div>
                             </div>
                             <!-- Modal 12 -->
-                            <div class="modal fade" id="myModal12" role="dialog">
+                            <div class="modal fade" id="myModal12-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -819,7 +819,7 @@
                                 </div>
                             </div>
                             <!-- Modal 13 -->
-                            <div class="modal fade" id="myModal13" role="dialog">
+                            <div class="modal fade" id="myModal13-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -857,7 +857,7 @@
                                 </div>
                             </div>
                             <!-- Modal 14 -->
-                            <div class="modal fade" id="myModal14" role="dialog">
+                            <div class="modal fade" id="myModal14-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -895,7 +895,7 @@
                                 </div>
                             </div>
                             <!-- Modal 15 -->
-                            <div class="modal fade" id="myModal15" role="dialog">
+                            <div class="modal fade" id="myModal15-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -933,7 +933,7 @@
                                 </div>
                             </div>
                             <!-- Modal 16 -->
-                            <div class="modal fade" id="myModal16" role="dialog">
+                            <div class="modal fade" id="myModal16-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -971,7 +971,7 @@
                                 </div>
                             </div>
                             <!-- Modal 17 -->
-                            <div class="modal fade" id="myModal17" role="dialog">
+                            <div class="modal fade" id="myModal17-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -1009,7 +1009,7 @@
                                 </div>
                             </div>
                             <!-- Modal 18 -->
-                            <div class="modal fade" id="myModal18" role="dialog">
+                            <div class="modal fade" id="myModal18-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -1047,7 +1047,7 @@
                                 </div>
                             </div>
                             <!-- Modal 19 -->
-                            <div class="modal fade" id="myModal19" role="dialog">
+                            <div class="modal fade" id="myModal19-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -1085,7 +1085,7 @@
                                 </div>
                             </div>
                             <!-- Modal 20 -->
-                            <div class="modal fade" id="myModal20" role="dialog">
+                            <div class="modal fade" id="myModal20-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -1123,7 +1123,7 @@
                                 </div>
                             </div>
                             <!-- Modal 21 -->
-                            <div class="modal fade" id="myModal21" role="dialog">
+                            <div class="modal fade" id="myModal21-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -1161,7 +1161,7 @@
                                 </div>
                             </div>
                             <!-- Modal 22 -->
-                            <div class="modal fade" id="myModal22" role="dialog">
+                            <div class="modal fade" id="myModal22-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -1199,7 +1199,7 @@
                                 </div>
                             </div>
                             <!-- Modal 23 -->
-                            <div class="modal fade" id="myModal23" role="dialog">
+                            <div class="modal fade" id="myModal23-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -1237,7 +1237,7 @@
                                 </div>
                             </div>
                             <!-- Modal 24 -->
-                            <div class="modal fade" id="myModal24" role="dialog">
+                            <div class="modal fade" id="myModal24-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -1275,7 +1275,7 @@
                                 </div>
                             </div>
                             <!-- Modal 25 -->
-                            <div class="modal fade" id="myModal25" role="dialog">
+                            <div class="modal fade" id="myModal25-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -1313,7 +1313,7 @@
                                 </div>
                             </div>
                             <!-- Modal 26-->
-                            <div class="modal fade" id="myModal26" role="dialog">
+                            <div class="modal fade" id="myModal26-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -1351,7 +1351,7 @@
                                 </div>
                             </div>
                             <!-- Modal 27 -->
-                            <div class="modal fade" id="myModal27" role="dialog">
+                            <div class="modal fade" id="myModal27-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -1389,7 +1389,7 @@
                                 </div>
                             </div>
                             <!-- Modal 28 -->
-                            <div class="modal fade" id="myModal28" role="dialog">
+                            <div class="modal fade" id="myModal28-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -1427,7 +1427,7 @@
                                 </div>
                             </div>
                             <!-- Modal 29 -->
-                            <div class="modal fade" id="myModal29" role="dialog">
+                            <div class="modal fade" id="myModal29-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -1465,7 +1465,7 @@
                                 </div>
                             </div>
                             <!-- Modal 30 -->
-                            <div class="modal fade" id="myModal30" role="dialog">
+                            <div class="modal fade" id="myModal30-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -1503,7 +1503,7 @@
                                 </div>
                             </div>
                             <!-- Modal 31 -->
-                            <div class="modal fade" id="myModal31" role="dialog">
+                            <div class="modal fade" id="myModal31-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -1581,7 +1581,7 @@
                                     int k = 1;
                                     for (int i = 0; i < 31; i++) {
                                         Integer.toString(k);
-                                        vModal[i] = "#myModal" + k;
+                                        vModal[i] = "#myModal" + k + "-";
                                         k++;
                                     }
 
@@ -1593,12 +1593,12 @@
 
                                         if (f < dias) {
                                 %>
-                                <td class="align-middle"><a href="<%=vEnModal[f]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[f]%>"  id="result25" data-toggle="modal" data-target="<%=vModal[f]%>"><%=vector[f]%></a></td>
+                                <td class="align-middle"><a href="<%=vEnModal[f]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[f]%>"  id="result25" data-toggle="modal" data-target="<%=vModal[f]%><%=elemA.getInId()%>"><%=vector[f]%></a></td>
                                     <%
                                         f++;
                                     } else {
                                     %>        
-                                <td class="align-middle"><a href="<%=vEnModal[numDos]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[numDos]%>" data-toggle="modal" data-target="<%=vModal[numDos]%>"><%=vector[numDos]%></a></td>
+                                <td class="align-middle"><a href="<%=vEnModal[numDos]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[numDos]%>" data-toggle="modal" data-target="<%=vModal[numDos]%><%=elemA.getInId()%>"><%=vector[numDos]%></a></td>
                                     <%numDos++;
                                             }
                                         }

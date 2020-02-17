@@ -1,4 +1,3 @@
-
 package Servlets;
 
 import java.io.IOException;
@@ -13,54 +12,63 @@ public class ControlPraEmpleados extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        if(request.getParameter("btnGuardar")!= null){
+
+        if (request.getParameter("btnGuardar") != null) {
             btnGuardar(request, response);
-        } else if (request.getParameter("btnAgregar")!=null){
+        } else if (request.getParameter("btnAgregar") != null) {
             request.getRequestDispatcher("PraEmpleados/praempleados.jsp").forward(request, response);
         }
     }
-    
+
     public void btnGuardar(HttpServletRequest request,
-            HttpServletResponse response)throws ServletException, IOException{
+            HttpServletResponse response) throws ServletException, IOException {
         try {
-            
+
             BL.PraEmpleados.clsPraEmpleados bl_clsPraEmpleados = new BL.PraEmpleados.clsPraEmpleados();
-            
-            
-              Modelos.PraEmpleados.clsPraEmpleados obclsPraEmpleados = new Modelos.PraEmpleados.clsPraEmpleados();  
-            
+
+            Modelos.PraEmpleados.clsPraEmpleados obclsPraEmpleados = new Modelos.PraEmpleados.clsPraEmpleados();
+
             String[] number = new String[10];
-            for( int i = 0; i<10; i++){
-                number[i] = "number"+i;
+            for (int i = 0; i < 10; i++) {
+                number[i] = "number" + i;
             }
-            
+
             String[] name = new String[10];
-            for ( int i = 0; i<10; i++){
-                name[i] = "name"+i;
+            for (int i = 0; i < 10; i++) {
+                name[i] = "name" + i;
             }
-            
+
             String[] password = new String[10];
-            for (int i = 0; i<10; i++){
-                password[i] = "password"+i;
-            } 
-              
-            for(int i = 0; i<10; i++){
-              
-            if(request.getParameter(number[i])!=null){
-                obclsPraEmpleados.setId_praempleado(Integer.parseInt(request.getParameter(number[i])));
+            for (int i = 0; i < 10; i++) {
+                password[i] = "password" + i;
             }
-            
-            if(request.getParameter(name[i])!=null){
-                obclsPraEmpleados.setNombre(request.getParameter(name[i]));
-            }
-            
-            if(request.getParameter(password[i])!=null){
-                obclsPraEmpleados.setContraseña(request.getParameter(password[i]));
-            }
-            
-            request.setAttribute("stMensaje", bl_clsPraEmpleados.createPraEmpleado(obclsPraEmpleados));
-            
+
+            for (int i = 0; i < 10; i++) {
+
+                for (int j = 0; j < 10; j++) {
+                    if(request.getParameter(number[i]) != null){
+                        int control = Integer.parseInt(request.getParameter(number[i]));
+                        if(control == 0){
+                        i++;
+                        break;
+                        }
+                    }
+                }
+                
+                if (request.getParameter(number[i]) != null) {
+                    obclsPraEmpleados.setId_praempleado(Integer.parseInt(request.getParameter(number[i])));
+                }
+
+                if (request.getParameter(name[i]) != null) {
+                    obclsPraEmpleados.setNombre(request.getParameter(name[i]));
+                }
+
+                if (request.getParameter(password[i]) != null) {
+                    obclsPraEmpleados.setContraseña(request.getParameter(password[i]));
+                }
+
+                request.setAttribute("stMensaje", bl_clsPraEmpleados.createPraEmpleado(obclsPraEmpleados));
+
             }
             if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
                 request.setAttribute("stTipo", "success");
@@ -69,11 +77,9 @@ public class ControlPraEmpleados extends HttpServlet {
             if (request.getAttribute("stMensaje") != ("Se realizó el proceso con éxito")) {
                 request.setAttribute("stTipo", "error");
             }
-            
+
             request.getRequestDispatcher("PraEmpleados/praempleados.jsp").forward(request, response);
         } catch (Exception ex) {
-            request.setAttribute("stMensaje", ex.getMessage());
-            request.setAttribute("stTipo", "error");
         }
     }
 
