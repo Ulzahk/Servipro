@@ -147,17 +147,54 @@
                                         <th class="align-middle">A&ntilde;o</th>
                                         <th class="align-middle">Mes</th>
                                         <%
+            
+            
+                                            List<Modelos.Configuracion.clsConfiguracion> lstclsConfiguracion =  new ArrayList<Modelos.Configuracion.clsConfiguracion>();
+                                                try{
+                                                    ResultSet rs = null;
+                                                    PreparedStatement ps = conn.prepareStatement("{call spConsultarConfiguracion}");
+                                                    rs = ps.executeQuery();
+                                                    
+                                                    while(rs.next()){
+                                                        Modelos.Configuracion.clsConfiguracion obclsConfiguracion = new Modelos.Configuracion.clsConfiguracion();
+                                                        obclsConfiguracion.setId_configuracion(rs.getInt("Id_configuracion"));
+                                                        obclsConfiguracion.setNombre_configuracion(rs.getString("Desconfiguracion"));
+                                                        obclsConfiguracion.setDescripcion_configuracion(rs.getString("Desconfiguracion_d"));
+                                                        obclsConfiguracion.setNombre_variable(rs.getString("Nombre_variable"));
+                                                        obclsConfiguracion.setValor(rs.getInt("Valor"));
+                                                        
+                                                        Modelos.Configuracion.clsModulo obclsModulo = new Modelos.Configuracion.clsModulo();
+                                                        obclsModulo.setId_modulo(rs.getInt("Id_modulo"));
+                                                        obclsModulo.setNombre_modulo(rs.getString("Nombre_modulo"));
+                                                        obclsConfiguracion.setObclsModulo(obclsModulo);
+                                                        
+                                                        lstclsConfiguracion.add(obclsConfiguracion);
+                                                    }
+                                                } catch (Exception ex){
+                                                    
+                                                }
+                                            int quincena1 = 0;
+                                            int quincena2 = 0;
+                                                
+                                            for (Modelos.Configuracion.clsConfiguracion elem: lstclsConfiguracion){   
+                                                
+                                                if(elem.getId_configuracion()== 1){
+                                                    quincena1 = elem.getValor();
+                                                } else if(elem.getId_configuracion()== 2){
+                                                    quincena2 = elem.getValor();
+                                                }  
+                                            }                                             
                                             int conUno = 1;
                                             int numUno = 1;
-                                            int variableX = 10 - 25;
-                                            if (variableX < 0) {
-                                                variableX = variableX * -1;
+                                            int intervaloEntreQuincenas = quincena1 - quincena2;
+                                            if (intervaloEntreQuincenas < 0) {
+                                                intervaloEntreQuincenas = intervaloEntreQuincenas * -1;
                                             }
 
                                             Calendar fecha = Calendar.getInstance();
 
                                             int año = fecha.get(Calendar.YEAR);
-                                            int mes = (fecha.get(Calendar.MONTH) + 2);
+                                            int mes = (fecha.get(Calendar.MONTH) + 1);
                                             int dias = 0;
                                             String nombreMes = "";
 
@@ -220,7 +257,7 @@
                                                     out.print("No existe ese mes");
                                             }
 
-                                            for (int f = 25; conUno <= variableX; conUno++) {
+                                            for (int f = quincena2; conUno <= intervaloEntreQuincenas; conUno++) {
 
                                                 if (f <= dias) {
                                         %>
@@ -1496,13 +1533,13 @@
                             </div> 
                             <tr>
                                 <td class="align-middle">
-                                    <label name="empleadoId" value="<%=elemA.getInId()%>"><%=elemA.getStPrimerNombre() + " " + elemA.getStSegundoNombre() + " " + elemA.getStPrimerApellido() + " " + elemA.getStSegundoApellido()%></label>
+                                    <input name="ddlEmpleado" value="<%=elemA.getInId()%>" hidden /><%=elemA.getStPrimerNombre() + " " + elemA.getStSegundoNombre() + " " + elemA.getStPrimerApellido() + " " + elemA.getStSegundoApellido()%>
                                 </td>
                                 <td class="align-middle">
-                                    <label name="año" value="<%=año%>"><%=año%></label>
+                                    <input name="ddlAnio" value="<%=año%>" hidden/><%=año%>
                                 </td>
                                 <td class="align-middle">
-                                    <label name="mes" value="<%=mes%>"><%=nombreMes%></label>
+                                    <input name="ddlMes" value="<%=mes%>" hidden /><%=nombreMes%></label>
                                 </td>
                                 <%
                                     //Vector Novedades Empleados
@@ -1542,7 +1579,7 @@
 
                                     int numDos = 0;
 
-                                    for (int f = 24; conDos <= 15; conDos++) {
+                                    for (int f = (quincena2 - 1); conDos <= intervaloEntreQuincenas; conDos++) {
 
                                         if (f < dias) {
                                 %>
@@ -1566,13 +1603,13 @@
                             %>
                             <tr>
                                 <td class="align-middle">
-                                    <label name="empleadoId" value="<%=elemA.getInId()%>"><%=elemA.getStPrimerNombre() + " " + elemA.getStSegundoNombre() + " " + elemA.getStPrimerApellido() + " " + elemA.getStSegundoApellido()%></label>
+                                    <input name="ddlEmpleado" value="<%=elemA.getInId()%>" hidden /><%=elemA.getStPrimerNombre() + " " + elemA.getStSegundoNombre() + " " + elemA.getStPrimerApellido() + " " + elemA.getStSegundoApellido()%>
                                 </td>
                                 <td class="align-middle">
-                                    <label name="año" value="<%=año%>"><%=año%></label>
+                                    <input name="ddlAnio" value="<%=año%>" hidden/><%=año%>
                                 </td>
                                 <td class="align-middle">
-                                    <label name="mes" value="<%=mes%>"><%=nombreMes%></label>
+                                    <input name="ddlMes" value="<%=mes%>" hidden /><%=nombreMes%></label>
                                 </td>
                             </tr>
                             <%
@@ -1592,7 +1629,7 @@
 
                                             int numTres = 1;
 
-                                            for (int f = 25; conTres <= 15; conTres++) {
+                                            for (int f = quincena2; conTres <= intervaloEntreQuincenas; conTres++) {
                                                 if (f <= dias) {
                                         %>
                                     <th class="align-middle"><%=f%></th>

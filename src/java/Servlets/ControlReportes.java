@@ -564,8 +564,7 @@ public class ControlReportes extends HttpServlet {
             }
 
             if (request.getParameter("ddlAnio") != null) {
-                obclsAnio.setId_anio(Integer.parseInt(request.getParameter("ddlAnio")));
-                obclsEstadisticas.setObAnio(obclsAnio);
+                obclsEstadisticas.setAnio(Integer.parseInt(request.getParameter("ddlAnio")));
             }
 
             //Definición de parametros desde el controlador
@@ -1142,8 +1141,7 @@ public class ControlReportes extends HttpServlet {
             }
 
             if (request.getParameter("ddlAnio") != null) {
-                obclsAnio.setId_anio(Integer.parseInt(request.getParameter("ddlAnio")));
-                obclsEstadisticas.setObAnio(obclsAnio);
+                obclsEstadisticas.setAnio(Integer.parseInt(request.getParameter("ddlAnio")));
             }
 
             //Definición de parametros desde el controlador
@@ -2757,10 +2755,7 @@ public class ControlReportes extends HttpServlet {
                 obclsEstadisticas.setId_estadistica(Integer.valueOf(request.getParameter("IdModificar")));
             }
             if (request.getParameter("ddlAnio") != null) {
-                //Modelo Externo
-                obclsAnio.setId_anio(Integer.parseInt(request.getParameter("ddlAnio")));
-                //Asignación al modelo padre
-                obclsEstadisticas.setObAnio(obclsAnio);
+                obclsEstadisticas.setAnio(Integer.parseInt(request.getParameter("ddlAnio")));
             }
             //Definición de parametros desde el controlador
             request.setAttribute("stMensaje", bl_clsEstadisticas.updateEstaAnio(obclsEstadisticas));
