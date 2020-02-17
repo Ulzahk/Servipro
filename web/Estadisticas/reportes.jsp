@@ -147,49 +147,43 @@
                                         <th class="align-middle">A&ntilde;o</th>
                                         <th class="align-middle">Mes</th>
                                         <%
-            
-            
-                                            List<Modelos.Configuracion.clsConfiguracion> lstclsConfiguracion =  new ArrayList<Modelos.Configuracion.clsConfiguracion>();
-                                                try{
-                                                    ResultSet rs = null;
-                                                    PreparedStatement ps = conn.prepareStatement("{call spConsultarConfiguracion}");
-                                                    rs = ps.executeQuery();
-                                                    
-                                                    while(rs.next()){
-                                                        Modelos.Configuracion.clsConfiguracion obclsConfiguracion = new Modelos.Configuracion.clsConfiguracion();
-                                                        obclsConfiguracion.setId_configuracion(rs.getInt("Id_configuracion"));
-                                                        obclsConfiguracion.setNombre_configuracion(rs.getString("Desconfiguracion"));
-                                                        obclsConfiguracion.setDescripcion_configuracion(rs.getString("Desconfiguracion_d"));
-                                                        obclsConfiguracion.setNombre_variable(rs.getString("Nombre_variable"));
-                                                        obclsConfiguracion.setValor(rs.getInt("Valor"));
-                                                        
-                                                        Modelos.Configuracion.clsModulo obclsModulo = new Modelos.Configuracion.clsModulo();
-                                                        obclsModulo.setId_modulo(rs.getInt("Id_modulo"));
-                                                        obclsModulo.setNombre_modulo(rs.getString("Nombre_modulo"));
-                                                        obclsConfiguracion.setObclsModulo(obclsModulo);
-                                                        
-                                                        lstclsConfiguracion.add(obclsConfiguracion);
-                                                    }
-                                                } catch (Exception ex){
-                                                    
+                                            List<Modelos.Configuracion.clsConfiguracion> lstclsConfiguracion = new ArrayList<Modelos.Configuracion.clsConfiguracion>();
+                                            try {
+                                                ResultSet rs = null;
+                                                PreparedStatement ps = conn.prepareStatement("{call spConsultarConfiguracion}");
+                                                rs = ps.executeQuery();
+
+                                                while (rs.next()) {
+                                                    Modelos.Configuracion.clsConfiguracion obclsConfiguracion = new Modelos.Configuracion.clsConfiguracion();
+                                                    obclsConfiguracion.setId_configuracion(rs.getInt("Id_configuracion"));
+                                                    obclsConfiguracion.setNombre_configuracion(rs.getString("Desconfiguracion"));
+                                                    obclsConfiguracion.setDescripcion_configuracion(rs.getString("Desconfiguracion_d"));
+                                                    obclsConfiguracion.setNombre_variable(rs.getString("Nombre_variable"));
+                                                    obclsConfiguracion.setValor(rs.getInt("Valor"));
+
+                                                    Modelos.Configuracion.clsModulo obclsModulo = new Modelos.Configuracion.clsModulo();
+                                                    obclsModulo.setId_modulo(rs.getInt("Id_modulo"));
+                                                    obclsModulo.setNombre_modulo(rs.getString("Nombre_modulo"));
+                                                    obclsConfiguracion.setObclsModulo(obclsModulo);
+
+                                                    lstclsConfiguracion.add(obclsConfiguracion);
                                                 }
+                                            } catch (Exception ex) {
+
+                                            }
                                             int quincena1 = 0;
                                             int quincena2 = 0;
-                                                
-                                            for (Modelos.Configuracion.clsConfiguracion elem: lstclsConfiguracion){   
-                                                
-                                                if(elem.getId_configuracion()== 1){
+
+                                            for (Modelos.Configuracion.clsConfiguracion elem : lstclsConfiguracion) {
+
+                                                if (elem.getId_configuracion() == 1) {
                                                     quincena1 = elem.getValor();
-                                                } else if(elem.getId_configuracion()== 2){
+                                                } else if (elem.getId_configuracion() == 2) {
                                                     quincena2 = elem.getValor();
-                                                }  
-                                            }                                             
+                                                }
+                                            }
                                             int conUno = 1;
                                             int numUno = 1;
-                                            int intervaloEntreQuincenas = quincena1 - quincena2;
-                                            if (intervaloEntreQuincenas < 0) {
-                                                intervaloEntreQuincenas = intervaloEntreQuincenas * -1;
-                                            }
 
                                             Calendar fecha = Calendar.getInstance();
 
@@ -257,7 +251,23 @@
                                                     out.print("No existe ese mes");
                                             }
 
-                                            for (int f = quincena2; conUno <= intervaloEntreQuincenas; conUno++) {
+                                            int intervaloEntreQuincenas = quincena1 - quincena2;
+
+                                            if (intervaloEntreQuincenas < 0) {
+                                                intervaloEntreQuincenas = intervaloEntreQuincenas * -1;
+                                            }
+                                            //Condiciones para meses con días diferentes a 30
+                                            if (intervaloEntreQuincenas == 15) {
+                                                if (dias < 30) {
+                                                    intervaloEntreQuincenas = intervaloEntreQuincenas - 1;
+                                                } else if (dias < 29) {
+                                                    intervaloEntreQuincenas = (intervaloEntreQuincenas - 2);
+                                                } else if (dias > 30) {
+                                                    intervaloEntreQuincenas = (intervaloEntreQuincenas + 1);
+                                                }
+                                            }
+
+                                            for (int f = (quincena2 + 1); conUno <= intervaloEntreQuincenas; conUno++) {
 
                                                 if (f <= dias) {
                                         %>
@@ -351,6 +361,7 @@
 
                                     if (Descripcion_perfil.equals("JEFE")) {
                                         for (Modelos.Empleados.clsEmpleado elemA : lstclsEmpleado) {
+
                                 %>
                                 <!-- Modal 1 -->
                             <div class="modal fade" id="myModal1" role="dialog">
@@ -365,8 +376,7 @@
                                             <div class="form-group">
                                                 <label for="lblDia1"><b>Día 1</b></label>
                                                 <select class="form-control" name="ddlDia1">
-                                                    <%
-                                                        List<Modelos.Estadisticas.clsId_dia1> lstclsDia1 = new ArrayList<Modelos.Estadisticas.clsId_dia1>();
+                                                    <%                                                        List<Modelos.Estadisticas.clsId_dia1> lstclsDia1 = new ArrayList<Modelos.Estadisticas.clsId_dia1>();
 
                                                         if (request.getAttribute("lstclsDia1") != null) {
                                                             lstclsDia1 = (List<Modelos.Estadisticas.clsId_dia1>) request.getAttribute("lstclsDia1");
@@ -1579,7 +1589,7 @@
 
                                     int numDos = 0;
 
-                                    for (int f = (quincena2 - 1); conDos <= intervaloEntreQuincenas; conDos++) {
+                                    for (int f = quincena2; conDos <= intervaloEntreQuincenas; conDos++) {
 
                                         if (f < dias) {
                                 %>
@@ -1629,7 +1639,7 @@
 
                                             int numTres = 1;
 
-                                            for (int f = quincena2; conTres <= intervaloEntreQuincenas; conTres++) {
+                                            for (int f = (quincena2 + 1); conTres <= intervaloEntreQuincenas; conTres++) {
                                                 if (f <= dias) {
                                         %>
                                     <th class="align-middle"><%=f%></th>
