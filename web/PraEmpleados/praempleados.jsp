@@ -70,17 +70,17 @@
                 </thead>
                 <tbody>
                     <%
-                        for(int i = 0; i<10; i++){ 
+                        for(int i = 0; i<4; i++){ 
                     %>
                     <tr>
                         <td>
-                            <input type="number" name="<%=number[i]%>" placeholder="Numero aqui">
+                            <input type="number" name="<%=number[i]%>" placeholder="Numero aqui" value="0">
                         </td>
                         <td>
-                            <input type="text" name="<%=name[i]%>" placeholder="Nombre aqui" required>
+                            <input type="text" name="<%=name[i]%>" placeholder="Nombre aqui">
                         </td>
                         <td>
-                            <input type="password" name="<%=password[i]%>" placeholder="Contraseña aqui" required>
+                            <input type="password" name="<%=password[i]%>" placeholder="Contraseña aqui">
                         </td>
                     </tr>
                     <%
