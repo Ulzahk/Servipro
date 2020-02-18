@@ -1,5 +1,5 @@
 # Servipro
-![](https://img.shields.io/github/stars/nia-nyan/Servipro) ![](https://img.shields.io/github/forks/nia-nyan/Servipro) ![](https://img.shields.io/github/tag/nia-nyan/Servipro) ![](https://img.shields.io/github/release/nia-nyan/Servipro) ![](https://img.shields.io/github/issues/nia-nyan/Servipro)
+![](https://img.shields.io/github/stars/Ulzahk/Servipro) ![](https://img.shields.io/github/forks/Ulzahk/Servipro) ![](https://img.shields.io/github/tag/Ulzahk/Servipro) ![](https://img.shields.io/github/release/Ulzahk/Servipro) ![](https://img.shields.io/github/issues/Ulzahk/Servipro)
 
 (Continua en desarrollo)
 
