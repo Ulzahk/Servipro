@@ -45,15 +45,7 @@ public class ControlPraEmpleados extends HttpServlet {
 
             for (int i = 0; i < 10; i++) {
 
-                for (int j = 0; j < 10; j++) {
-                    if(request.getParameter(number[i]) != null){
-                        int control = Integer.parseInt(request.getParameter(number[i]));
-                        if(control == 0){
-                        i++;
-                        break;
-                        }
-                    }
-                }
+                
                 
                 if (request.getParameter(number[i]) != null) {
                     obclsPraEmpleados.setId_praempleado(Integer.parseInt(request.getParameter(number[i])));
