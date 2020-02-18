@@ -188,7 +188,7 @@
                                             Calendar fecha = Calendar.getInstance();
 
                                             int año = fecha.get(Calendar.YEAR);
-                                            int mes = (fecha.get(Calendar.MONTH) + 1);
+                                            int mes = (fecha.get(Calendar.MONTH) + 2);
                                             int dias = 0;
                                             String nombreMes = "";
 
@@ -376,7 +376,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia1"><b>Día 1</b></label>
-                                                <select class="form-control" name="ddlDia1">
+                                                <select class="form-control" name="ddlDia1-<%=elemA.getInId()%>">
                                                     <%                                                        List<Modelos.Estadisticas.clsId_dia1> lstclsDia1 = new ArrayList<Modelos.Estadisticas.clsId_dia1>();
 
                                                         if (request.getAttribute("lstclsDia1") != null) {
@@ -413,7 +413,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia2"><b>Día 2</b></label>
-                                                <select class="form-control" name="ddlDia2">
+                                                <select class="form-control" name="ddlDia2-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia2> lstclsDia2 = new ArrayList<Modelos.Estadisticas.clsId_dia2>();
 
@@ -451,7 +451,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia3"><b>Día 3</b></label>
-                                                <select class="form-control" name="ddlDia3">
+                                                <select class="form-control" name="ddlDia3-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia3> lstclsDia3 = new ArrayList<Modelos.Estadisticas.clsId_dia3>();
 
@@ -489,7 +489,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia4"><b>Día 4</b></label>
-                                                <select class="form-control" name="ddlDia4">
+                                                <select class="form-control" name="ddlDia4-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia4> lstclsDia4 = new ArrayList<Modelos.Estadisticas.clsId_dia4>();
 
@@ -527,7 +527,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia5"><b>Día 5</b></label>
-                                                <select class="form-control" name="ddlDia5">
+                                                <select class="form-control" name="ddlDia5-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia5> lstclsDia5 = new ArrayList<Modelos.Estadisticas.clsId_dia5>();
 
@@ -565,7 +565,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia6"><b>Día 6</b></label>
-                                                <select class="form-control" name="ddlDia6">
+                                                <select class="form-control" name="ddlDia6-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia6> lstclsDia6 = new ArrayList<Modelos.Estadisticas.clsId_dia6>();
 
@@ -603,7 +603,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia7"><b>Día 7</b></label>
-                                                <select class="form-control" name="ddlDia7">
+                                                <select class="form-control" name="ddlDia7-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia7> lstclsDia7 = new ArrayList<Modelos.Estadisticas.clsId_dia7>();
 
@@ -641,7 +641,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia8"><b>Día 8</b></label>
-                                                <select class="form-control" name="ddlDia8">
+                                                <select class="form-control" name="ddlDia8-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia8> lstclsDia8 = new ArrayList<Modelos.Estadisticas.clsId_dia8>();
 
@@ -679,7 +679,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia9"><b>Día 9</b></label>
-                                                <select class="form-control" name="ddlDia9">
+                                                <select class="form-control" name="ddlDia9-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia9> lstclsDia9 = new ArrayList<Modelos.Estadisticas.clsId_dia9>();
 
@@ -717,7 +717,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia10"><b>Día 10</b></label>
-                                                <select class="form-control" name="ddlDia10">
+                                                <select class="form-control" name="ddlDia10-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia10> lstclsDia10 = new ArrayList<Modelos.Estadisticas.clsId_dia10>();
 
@@ -755,7 +755,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia11"><b>Día 11</b></label>
-                                                <select class="form-control" name="ddlDia11">
+                                                <select class="form-control" name="ddlDia11-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia11> lstclsDia11 = new ArrayList<Modelos.Estadisticas.clsId_dia11>();
 
@@ -793,7 +793,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia12"><b>Día 12</b></label>
-                                                <select class="form-control" name="ddlDia12">
+                                                <select class="form-control" name="ddlDia12-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia12> lstclsDia12 = new ArrayList<Modelos.Estadisticas.clsId_dia12>();
 
@@ -831,7 +831,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia13"><b>Día 13</b></label>
-                                                <select class="form-control" name="ddlDia13">
+                                                <select class="form-control" name="ddlDia13-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia13> lstclsDia13 = new ArrayList<Modelos.Estadisticas.clsId_dia13>();
 
@@ -869,7 +869,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia14"><b>Día 14</b></label>
-                                                <select class="form-control" name="ddlDia14">
+                                                <select class="form-control" name="ddlDia14-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia14> lstclsDia14 = new ArrayList<Modelos.Estadisticas.clsId_dia14>();
 
@@ -907,7 +907,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia15"><b>Día 15</b></label>
-                                                <select class="form-control" name="ddlDia15">
+                                                <select class="form-control" name="ddlDia15-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia15> lstclsDia15 = new ArrayList<Modelos.Estadisticas.clsId_dia15>();
 
@@ -945,7 +945,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia16"><b>Día 16</b></label>
-                                                <select class="form-control" name="ddlDia16">
+                                                <select class="form-control" name="ddlDia16-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia16> lstclsDia16 = new ArrayList<Modelos.Estadisticas.clsId_dia16>();
 
@@ -983,7 +983,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia17"><b>Día 17</b></label>
-                                                <select class="form-control" name="ddlDia17">
+                                                <select class="form-control" name="ddlDia17-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia17> lstclsDia17 = new ArrayList<Modelos.Estadisticas.clsId_dia17>();
 
@@ -1021,7 +1021,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia18"><b>Día 18</b></label>
-                                                <select class="form-control" name="ddlDia18">
+                                                <select class="form-control" name="ddlDia18-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia18> lstclsDia18 = new ArrayList<Modelos.Estadisticas.clsId_dia18>();
 
@@ -1059,7 +1059,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia19"><b>Día 19</b></label>
-                                                <select class="form-control" name="ddlDia19">
+                                                <select class="form-control" name="ddlDia19-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia19> lstclsDia19 = new ArrayList<Modelos.Estadisticas.clsId_dia19>();
 
@@ -1097,7 +1097,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia20"><b>Día 20</b></label>
-                                                <select class="form-control" name="ddlDia20">
+                                                <select class="form-control" name="ddlDia20-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia20> lstclsDia20 = new ArrayList<Modelos.Estadisticas.clsId_dia20>();
 
@@ -1135,7 +1135,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia21"><b>Día 21</b></label>
-                                                <select class="form-control" name="ddlDia21">
+                                                <select class="form-control" name="ddlDia21-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia21> lstclsDia21 = new ArrayList<Modelos.Estadisticas.clsId_dia21>();
 
@@ -1173,7 +1173,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia22"><b>Día 22</b></label>
-                                                <select class="form-control" name="ddlDia22">
+                                                <select class="form-control" name="ddlDia22-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia22> lstclsDia22 = new ArrayList<Modelos.Estadisticas.clsId_dia22>();
 
@@ -1211,7 +1211,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia23"><b>Día 23</b></label>
-                                                <select class="form-control" name="ddlDia23">
+                                                <select class="form-control" name="ddlDia23-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia23> lstclsDia23 = new ArrayList<Modelos.Estadisticas.clsId_dia23>();
 
@@ -1249,7 +1249,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia24"><b>Día 24</b></label>
-                                                <select class="form-control" name="ddlDia24">
+                                                <select class="form-control" name="ddlDia24-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia24> lstclsDia24 = new ArrayList<Modelos.Estadisticas.clsId_dia24>();
 
@@ -1287,7 +1287,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia25"><b>Día 25</b></label>
-                                                <select class="form-control" name="ddlDia25">
+                                                <select class="form-control" name="ddlDia25-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia25> lstclsDia25 = new ArrayList<Modelos.Estadisticas.clsId_dia25>();
 
@@ -1325,7 +1325,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia26"><b>Día 26</b></label>
-                                                <select class="form-control" name="ddlDia26">
+                                                <select class="form-control" name="ddlDia26-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia26> lstclsDia26 = new ArrayList<Modelos.Estadisticas.clsId_dia26>();
 
@@ -1363,7 +1363,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia27"><b>Día 27</b></label>
-                                                <select class="form-control" name="ddlDia27">
+                                                <select class="form-control" name="ddlDia27-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia27> lstclsDia27 = new ArrayList<Modelos.Estadisticas.clsId_dia27>();
 
@@ -1401,7 +1401,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia28"><b>Día 28</b></label>
-                                                <select class="form-control" name="ddlDia28">
+                                                <select class="form-control" name="ddlDia28-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia28> lstclsDia28 = new ArrayList<Modelos.Estadisticas.clsId_dia28>();
 
@@ -1439,7 +1439,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia29"><b>Día 29</b></label>
-                                                <select class="form-control" name="ddlDia29">
+                                                <select class="form-control" name="ddlDia29-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia29> lstclsDia29 = new ArrayList<Modelos.Estadisticas.clsId_dia29>();
 
@@ -1477,7 +1477,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia30"><b>Día 30</b></label>
-                                                <select class="form-control" name="ddlDia30">
+                                                <select class="form-control" name="ddlDia30-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia30> lstclsDia30 = new ArrayList<Modelos.Estadisticas.clsId_dia30>();
 
@@ -1515,7 +1515,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia31"><b>Día 31</b></label>
-                                                <select class="form-control" name="ddlDia31">
+                                                <select class="form-control" name="ddlDia31-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia31> lstclsDia31 = new ArrayList<Modelos.Estadisticas.clsId_dia31>();
 
@@ -1553,7 +1553,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lnlComentario:"><b>Nuevo Comentario</b></label>   
-                                                <textarea class="form-control" row="3" name="txtComentario"></textarea>
+                                                <textarea class="form-control" row="3" name="txtComentario-<%=elemA.getInId()%>"></textarea>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -1565,7 +1565,7 @@
 
                             <tr>
                                 <td class="align-middle">
-                                    <input name="ddlEmpleado" value="<%=elemA.getInId()%>" hidden /><%=elemA.getStPrimerNombre() + " " + elemA.getStSegundoNombre() + " " + elemA.getStPrimerApellido() + " " + elemA.getStSegundoApellido()%>
+                                    <input name="ddlEmpleado-<%=elemA.getInId()%>" value="<%=elemA.getInId()%>" hidden /><%=elemA.getStPrimerNombre() + " " + elemA.getStSegundoNombre() + " " + elemA.getStPrimerApellido() + " " + elemA.getStSegundoApellido()%>
                                 </td>
                                 <td class="align-middle">
                                     <input name="ddlAnio" value="<%=año%>" hidden/><%=año%>
@@ -1641,7 +1641,7 @@
                             %>
                             <tr>
                                 <td class="align-middle">
-                                    <input name="ddlEmpleado" value="<%=elemA.getInId()%>" hidden /><%=elemA.getStPrimerNombre() + " " + elemA.getStSegundoNombre() + " " + elemA.getStPrimerApellido() + " " + elemA.getStSegundoApellido()%>
+                                    <input name="ddlEmpleado-<%=elemA.getInId()%>" value="<%=elemA.getInId()%>" hidden /><%=elemA.getStPrimerNombre() + " " + elemA.getStSegundoNombre() + " " + elemA.getStPrimerApellido() + " " + elemA.getStSegundoApellido()%>
                                 </td>
                                 <td class="align-middle">
                                     <input name="ddlAnio" value="<%=año%>" hidden/><%=año%>

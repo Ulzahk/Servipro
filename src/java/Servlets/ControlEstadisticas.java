@@ -324,190 +324,262 @@ public class ControlEstadisticas extends HttpServlet {
             Modelos.Estadisticas.clsId_dia30 obclsDia30 = new Modelos.Estadisticas.clsId_dia30();
             Modelos.Estadisticas.clsId_dia31 obclsDia31 = new Modelos.Estadisticas.clsId_dia31();
             Modelos.Estadisticas.clsMes obclsMes = new Modelos.Estadisticas.clsMes();
-            Modelos.Estadisticas.clsAnio obclsAnio = new Modelos.Estadisticas.clsAnio();
 
-            if (request.getParameter("ddlEmpleado") != null) {
-                obclsEmpleado.setId_empleado(Integer.parseInt(request.getParameter("ddlEmpleado")));
-                obclsEstadisticas.setObEmpleado(obclsEmpleado);
-            }
-
-            if (request.getParameter("ddlDia1") != null) {
-                obclsDia1.setId_dia1(Integer.parseInt(request.getParameter("ddlDia1")));
-                obclsEstadisticas.setObId_dia1(obclsDia1);
-            }
-
-            if (request.getParameter("ddlDia2") != null) {
-                obclsDia2.setId_dia2(Integer.parseInt(request.getParameter("ddlDia2")));
-                obclsEstadisticas.setObId_dia2(obclsDia2);
-            }
-
-            if (request.getParameter("ddlDia3") != null) {
-                obclsDia3.setId_dia3(Integer.parseInt(request.getParameter("ddlDia3")));
-                obclsEstadisticas.setObId_dia3(obclsDia3);
-            }
-
-            if (request.getParameter("ddlDia4") != null) {
-                obclsDia4.setId_dia4(Integer.parseInt(request.getParameter("ddlDia4")));
-                obclsEstadisticas.setObId_dia4(obclsDia4);
-            }
-
-            if (request.getParameter("ddlDia5") != null) {
-                obclsDia5.setId_dia5(Integer.parseInt(request.getParameter("ddlDia5")));
-                obclsEstadisticas.setObId_dia5(obclsDia5);
-            }
-
-            if (request.getParameter("ddlDia6") != null) {
-                obclsDia6.setId_dia6(Integer.parseInt(request.getParameter("ddlDia6")));
-                obclsEstadisticas.setObId_dia6(obclsDia6);
-            }
-
-            if (request.getParameter("ddlDia7") != null) {
-                obclsDia7.setId_dia7(Integer.parseInt(request.getParameter("ddlDia7")));
-                obclsEstadisticas.setObId_dia7(obclsDia7);
-            }
-
-            if (request.getParameter("ddlDia8") != null) {
-                obclsDia8.setId_dia8(Integer.parseInt(request.getParameter("ddlDia8")));
-                obclsEstadisticas.setObId_dia8(obclsDia8);
-            }
-
-            if (request.getParameter("ddlDia9") != null) {
-                obclsDia9.setId_dia9(Integer.parseInt(request.getParameter("ddlDia9")));
-                obclsEstadisticas.setObId_dia9(obclsDia9);
-            }
-
-            if (request.getParameter("ddlDia10") != null) {
-                obclsDia10.setId_dia10(Integer.parseInt(request.getParameter("ddlDia10")));
-                obclsEstadisticas.setObId_dia10(obclsDia10);
-            }
-
-            if (request.getParameter("ddlDia11") != null) {
-                obclsDia11.setId_dia11(Integer.parseInt(request.getParameter("ddlDia11")));
-                obclsEstadisticas.setObId_dia11(obclsDia11);
-            }
-
-            if (request.getParameter("ddlDia12") != null) {
-                obclsDia12.setId_dia12(Integer.parseInt(request.getParameter("ddlDia12")));
-                obclsEstadisticas.setObId_dia12(obclsDia12);
-            }
-
-            if (request.getParameter("ddlDia13") != null) {
-                obclsDia13.setId_dia13(Integer.parseInt(request.getParameter("ddlDia13")));
-                obclsEstadisticas.setObId_dia13(obclsDia13);
-            }
-
-            if (request.getParameter("ddlDia14") != null) {
-                obclsDia14.setId_dia14(Integer.parseInt(request.getParameter("ddlDia14")));
-                obclsEstadisticas.setObId_dia14(obclsDia14);
-            }
-
-            if (request.getParameter("ddlDia15") != null) {
-                obclsDia15.setId_dia15(Integer.parseInt(request.getParameter("ddlDia15")));
-                obclsEstadisticas.setObId_dia15(obclsDia15);
-            }
-
-            if (request.getParameter("ddlDia16") != null) {
-                obclsDia16.setId_dia16(Integer.parseInt(request.getParameter("ddlDia16")));
-                obclsEstadisticas.setObId_dia16(obclsDia16);
-            }
-
-            if (request.getParameter("ddlDia17") != null) {
-                obclsDia17.setId_dia17(Integer.parseInt(request.getParameter("ddlDia17")));
-                obclsEstadisticas.setObId_dia17(obclsDia17);
-            }
-
-            if (request.getParameter("ddlDia18") != null) {
-                obclsDia18.setId_dia18(Integer.parseInt(request.getParameter("ddlDia18")));
-                obclsEstadisticas.setObId_dia18(obclsDia18);
-            }
-
-            if (request.getParameter("ddlDia19") != null) {
-                obclsDia19.setId_dia19(Integer.parseInt(request.getParameter("ddlDia19")));
-                obclsEstadisticas.setObId_dia19(obclsDia19);
-            }
-
-            if (request.getParameter("ddlDia20") != null) {
-                obclsDia20.setId_dia20(Integer.parseInt(request.getParameter("ddlDia20")));
-                obclsEstadisticas.setObId_dia20(obclsDia20);
-            }
-
-            if (request.getParameter("ddlDia21") != null) {
-                obclsDia21.setId_dia21(Integer.parseInt(request.getParameter("ddlDia21")));
-                obclsEstadisticas.setObId_dia21(obclsDia21);
-            }
-
-            if (request.getParameter("ddlDia22") != null) {
-                obclsDia22.setId_dia22(Integer.parseInt(request.getParameter("ddlDia22")));
-                obclsEstadisticas.setObId_dia22(obclsDia22);
-            }
-
-            if (request.getParameter("ddlDia23") != null) {
-                obclsDia23.setId_dia23(Integer.parseInt(request.getParameter("ddlDia23")));
-                obclsEstadisticas.setObId_dia23(obclsDia23);
-            }
-
-            if (request.getParameter("ddlDia24") != null) {
-                obclsDia24.setId_dia24(Integer.parseInt(request.getParameter("ddlDia24")));
-                obclsEstadisticas.setObId_dia24(obclsDia24);
-            }
-
-            if (request.getParameter("ddlDia25") != null) {
-                obclsDia25.setId_dia25(Integer.parseInt(request.getParameter("ddlDia25")));
-                obclsEstadisticas.setObId_dia25(obclsDia25);
-            }
-
-            if (request.getParameter("ddlDia26") != null) {
-                obclsDia26.setId_dia26(Integer.parseInt(request.getParameter("ddlDia26")));
-                obclsEstadisticas.setObId_dia26(obclsDia26);
-            }
-
-            if (request.getParameter("ddlDia27") != null) {
-                obclsDia27.setId_dia27(Integer.parseInt(request.getParameter("ddlDia27")));
-                obclsEstadisticas.setObId_dia27(obclsDia27);
-            }
-
-            if (request.getParameter("ddlDia28") != null) {
-                obclsDia28.setId_dia28(Integer.parseInt(request.getParameter("ddlDia28")));
-                obclsEstadisticas.setObId_dia28(obclsDia28);
-            }
-
-            if (request.getParameter("ddlDia29") != null) {
-                obclsDia29.setId_dia29(Integer.parseInt(request.getParameter("ddlDia29")));
-                obclsEstadisticas.setObId_dia29(obclsDia29);
-            }
-
-            if (request.getParameter("ddlDia30") != null) {
-                obclsDia30.setId_dia30(Integer.parseInt(request.getParameter("ddlDia30")));
-                obclsEstadisticas.setObId_dia30(obclsDia30);
-            }
-
-            if (request.getParameter("ddlDia31") != null) {
-                obclsDia31.setId_dia31(Integer.parseInt(request.getParameter("ddlDia31")));
-                obclsEstadisticas.setObId_dia31(obclsDia31);
-            }
-
-            if (request.getParameter("ddlMes") != null) {
-                obclsMes.setId_mes(Integer.parseInt(request.getParameter("ddlMes")));
-                obclsEstadisticas.setObMes(obclsMes);
-            }
-
-            if (request.getParameter("ddlAnio") != null) {
-                obclsEstadisticas.setAnio(Integer.parseInt(request.getParameter("ddlAnio")));
-            }
+            String[] ddlEmpleado = new String[100];
+            String[] ddlDia1 = new String [100];
+            String[] ddlDia2 = new String [100];
+            String[] ddlDia3 = new String [100];
+            String[] ddlDia4 = new String [100];
+            String[] ddlDia5 = new String [100];
+            String[] ddlDia6 = new String [100];
+            String[] ddlDia7 = new String [100];
+            String[] ddlDia8 = new String [100];
+            String[] ddlDia9 = new String [100];
+            String[] ddlDia10 = new String [100];
+            String[] ddlDia11 = new String [100];
+            String[] ddlDia12= new String [100];
+            String[] ddlDia13 = new String [100];
+            String[] ddlDia14 = new String [100];
+            String[] ddlDia15 = new String [100];
+            String[] ddlDia16 = new String [100];
+            String[] ddlDia17 = new String [100];
+            String[] ddlDia18 = new String [100];
+            String[] ddlDia19 = new String [100];
+            String[] ddlDia20 = new String [100];
+            String[] ddlDia21 = new String [100];
+            String[] ddlDia22= new String [100];
+            String[] ddlDia23 = new String [100];
+            String[] ddlDia24 = new String [100];
+            String[] ddlDia25 = new String [100];
+            String[] ddlDia26 = new String [100];
+            String[] ddlDia27 = new String [100];
+            String[] ddlDia28 = new String [100];
+            String[] ddlDia29 = new String [100];
+            String[] ddlDia30 = new String [100];
+            String[] ddlDia31 = new String [100];
+            String[] txtComentario = new String [100];
             
-            if (request.getParameter("txtComentario") != null) {
-
-                String comentario = request.getParameter("txtComentario");
-
-                if (comentario.contains("\n")) {
-                    comentario = comentario.replaceAll(("\r\n|\n"), "<br/>");
-                }
+            
+            
+            for (int i = 1; i < 24; i++) {
+                ddlEmpleado[i]="ddlEmpleado-"+i;
+                ddlDia1[i]="ddlDia1-"+i;
+                ddlDia2[i]="ddlDia2-"+i;
+                ddlDia3[i]="ddlDia3-"+i;
+                ddlDia4[i]="ddlDia4-"+i;
+                ddlDia5[i]="ddlDia5-"+i;
+                ddlDia6[i]="ddlDia6-"+i;
+                ddlDia7[i]="ddlDia7-"+i;
+                ddlDia8[i]="ddlDia8-"+i;
+                ddlDia9[i]="ddlDia9-"+i;
+                ddlDia10[i]="ddlDia10-"+i;
+                ddlDia11[i]="ddlDia11-"+i;
+                ddlDia12[i]="ddlDia12-"+i;
+                ddlDia13[i]="ddlDia13-"+i;
+                ddlDia14[i]="ddlDia14-"+i;
+                ddlDia15[i]="ddlDia15-"+i;
+                ddlDia16[i]="ddlDia16-"+i;
+                ddlDia17[i]="ddlDia17-"+i;
+                ddlDia18[i]="ddlDia18-"+i;
+                ddlDia19[i]="ddlDia19-"+i;
+                ddlDia20[i]="ddlDia20-"+i;
+                ddlDia21[i]="ddlDia21-"+i;
+                ddlDia22[i]="ddlDia22-"+i;
+                ddlDia23[i]="ddlDia23-"+i;
+                ddlDia24[i]="ddlDia24-"+i;
+                ddlDia25[i]="ddlDia25-"+i;
+                ddlDia26[i]="ddlDia26-"+i;
+                ddlDia27[i]="ddlDia27-"+i;
+                ddlDia28[i]="ddlDia28-"+i;
+                ddlDia29[i]="ddlDia29-"+i;
+                ddlDia30[i]="ddlDia30-"+i;
+                ddlDia31[i]="ddlDia31-"+i;
+                txtComentario[i]="txtComentario-"+i;
                 
-                obclsEstadisticas.setComentario(comentario);
-            }
+                
+                if (request.getParameter(ddlEmpleado[i]) != null) {
+                    obclsEmpleado.setId_empleado(Integer.parseInt(request.getParameter(ddlEmpleado[i])));
+                    obclsEstadisticas.setObEmpleado(obclsEmpleado);
+                }
 
-            //Definición de parametros desde el controlador
-            request.setAttribute("stMensaje", bl_clsEstadisticas.createEstadistica(obclsEstadisticas));
+                if (request.getParameter(ddlDia1[i]) != null) {
+                    obclsDia1.setId_dia1(Integer.parseInt(request.getParameter(ddlDia1[i])));
+                    obclsEstadisticas.setObId_dia1(obclsDia1);
+                }
+
+                if (request.getParameter(ddlDia2[i]) != null) {
+                    obclsDia2.setId_dia2(Integer.parseInt(request.getParameter(ddlDia2[i])));
+                    obclsEstadisticas.setObId_dia2(obclsDia2);
+                }
+
+                if (request.getParameter(ddlDia3[i]) != null) {
+                    obclsDia3.setId_dia3(Integer.parseInt(request.getParameter(ddlDia3[i])));
+                    obclsEstadisticas.setObId_dia3(obclsDia3);
+                }
+
+                if (request.getParameter(ddlDia4[i]) != null) {
+                    obclsDia4.setId_dia4(Integer.parseInt(request.getParameter(ddlDia4[i])));
+                    obclsEstadisticas.setObId_dia4(obclsDia4);
+                }
+
+                if (request.getParameter(ddlDia5[i]) != null) {
+                    obclsDia5.setId_dia5(Integer.parseInt(request.getParameter(ddlDia5[i])));
+                    obclsEstadisticas.setObId_dia5(obclsDia5);
+                }
+
+                if (request.getParameter(ddlDia6[i]) != null) {
+                    obclsDia6.setId_dia6(Integer.parseInt(request.getParameter(ddlDia6[i])));
+                    obclsEstadisticas.setObId_dia6(obclsDia6);
+                }
+
+                if (request.getParameter(ddlDia7[i]) != null) {
+                    obclsDia7.setId_dia7(Integer.parseInt(request.getParameter(ddlDia7[i])));
+                    obclsEstadisticas.setObId_dia7(obclsDia7);
+                }
+
+                if (request.getParameter(ddlDia8[i]) != null) {
+                    obclsDia8.setId_dia8(Integer.parseInt(request.getParameter(ddlDia8[i])));
+                    obclsEstadisticas.setObId_dia8(obclsDia8);
+                }
+
+                if (request.getParameter(ddlDia9[i]) != null) {
+                    obclsDia9.setId_dia9(Integer.parseInt(request.getParameter(ddlDia9[i])));
+                    obclsEstadisticas.setObId_dia9(obclsDia9);
+                }
+
+                if (request.getParameter(ddlDia10[i]) != null) {
+                    obclsDia10.setId_dia10(Integer.parseInt(request.getParameter(ddlDia10[i])));
+                    obclsEstadisticas.setObId_dia10(obclsDia10);
+                }
+
+                if (request.getParameter(ddlDia11[i]) != null) {
+                    obclsDia11.setId_dia11(Integer.parseInt(request.getParameter(ddlDia11[i])));
+                    obclsEstadisticas.setObId_dia11(obclsDia11);
+                }
+
+                if (request.getParameter(ddlDia12[i]) != null) {
+                    obclsDia12.setId_dia12(Integer.parseInt(request.getParameter(ddlDia12[i])));
+                    obclsEstadisticas.setObId_dia12(obclsDia12);
+                }
+
+                if (request.getParameter(ddlDia13[i]) != null) {
+                    obclsDia13.setId_dia13(Integer.parseInt(request.getParameter(ddlDia13[i])));
+                    obclsEstadisticas.setObId_dia13(obclsDia13);
+                }
+
+                if (request.getParameter(ddlDia14[i]) != null) {
+                    obclsDia14.setId_dia14(Integer.parseInt(request.getParameter(ddlDia14[i])));
+                    obclsEstadisticas.setObId_dia14(obclsDia14);
+                }
+
+                if (request.getParameter(ddlDia15[i]) != null) {
+                    obclsDia15.setId_dia15(Integer.parseInt(request.getParameter(ddlDia15[i])));
+                    obclsEstadisticas.setObId_dia15(obclsDia15);
+                }
+
+                if (request.getParameter(ddlDia16[i]) != null) {
+                    obclsDia16.setId_dia16(Integer.parseInt(request.getParameter(ddlDia16[i])));
+                    obclsEstadisticas.setObId_dia16(obclsDia16);
+                }
+
+                if (request.getParameter(ddlDia17[i]) != null) {
+                    obclsDia17.setId_dia17(Integer.parseInt(request.getParameter(ddlDia17[i])));
+                    obclsEstadisticas.setObId_dia17(obclsDia17);
+                }
+
+                if (request.getParameter(ddlDia18[i]) != null) {
+                    obclsDia18.setId_dia18(Integer.parseInt(request.getParameter(ddlDia18[i])));
+                    obclsEstadisticas.setObId_dia18(obclsDia18);
+                }
+
+                if (request.getParameter(ddlDia19[i]) != null) {
+                    obclsDia19.setId_dia19(Integer.parseInt(request.getParameter(ddlDia19[i])));
+                    obclsEstadisticas.setObId_dia19(obclsDia19);
+                }
+
+                if (request.getParameter(ddlDia20[i]) != null) {
+                    obclsDia20.setId_dia20(Integer.parseInt(request.getParameter(ddlDia20[i])));
+                    obclsEstadisticas.setObId_dia20(obclsDia20);
+                }
+
+                if (request.getParameter(ddlDia21[i]) != null) {
+                    obclsDia21.setId_dia21(Integer.parseInt(request.getParameter(ddlDia21[i])));
+                    obclsEstadisticas.setObId_dia21(obclsDia21);
+                }
+
+                if (request.getParameter(ddlDia22[i]) != null) {
+                    obclsDia22.setId_dia22(Integer.parseInt(request.getParameter(ddlDia22[i])));
+                    obclsEstadisticas.setObId_dia22(obclsDia22);
+                }
+
+                if (request.getParameter(ddlDia23[i]) != null) {
+                    obclsDia23.setId_dia23(Integer.parseInt(request.getParameter(ddlDia23[i])));
+                    obclsEstadisticas.setObId_dia23(obclsDia23);
+                }
+
+                if (request.getParameter(ddlDia24[i]) != null) {
+                    obclsDia24.setId_dia24(Integer.parseInt(request.getParameter(ddlDia24[i])));
+                    obclsEstadisticas.setObId_dia24(obclsDia24);
+                }
+
+                if (request.getParameter(ddlDia25[i]) != null) {
+                    obclsDia25.setId_dia25(Integer.parseInt(request.getParameter(ddlDia25[i])));
+                    obclsEstadisticas.setObId_dia25(obclsDia25);
+                }
+
+                if (request.getParameter(ddlDia26[i]) != null) {
+                    obclsDia26.setId_dia26(Integer.parseInt(request.getParameter(ddlDia26[i])));
+                    obclsEstadisticas.setObId_dia26(obclsDia26);
+                }
+
+                if (request.getParameter(ddlDia27[i]) != null) {
+                    obclsDia27.setId_dia27(Integer.parseInt(request.getParameter(ddlDia27[i])));
+                    obclsEstadisticas.setObId_dia27(obclsDia27);
+                }
+
+                if (request.getParameter(ddlDia28[i]) != null) {
+                    obclsDia28.setId_dia28(Integer.parseInt(request.getParameter(ddlDia28[i])));
+                    obclsEstadisticas.setObId_dia28(obclsDia28);
+                }
+
+                if (request.getParameter(ddlDia29[i]) != null) {
+                    obclsDia29.setId_dia29(Integer.parseInt(request.getParameter(ddlDia29[i])));
+                    obclsEstadisticas.setObId_dia29(obclsDia29);
+                }
+
+                if (request.getParameter(ddlDia30[i]) != null) {
+                    obclsDia30.setId_dia30(Integer.parseInt(request.getParameter(ddlDia30[i])));
+                    obclsEstadisticas.setObId_dia30(obclsDia30);
+                }
+
+                if (request.getParameter(ddlDia31[i]) != null) {
+                    obclsDia31.setId_dia31(Integer.parseInt(request.getParameter(ddlDia31[i])));
+                    obclsEstadisticas.setObId_dia31(obclsDia31);
+                }
+
+                if (request.getParameter("ddlMes") != null) {
+                    obclsMes.setId_mes(Integer.parseInt(request.getParameter("ddlMes")));
+                    obclsEstadisticas.setObMes(obclsMes);
+                }
+
+                if (request.getParameter("ddlAnio") != null) {
+                    obclsEstadisticas.setAnio(Integer.parseInt(request.getParameter("ddlAnio")));
+                }
+
+                if (request.getParameter(txtComentario[i]) != null) {
+
+                    String comentario = request.getParameter(txtComentario[i]);
+
+                    if (comentario.contains("\n")) {
+                        comentario = comentario.replaceAll(("\r\n|\n"), "<br/>");
+                    }
+
+                    obclsEstadisticas.setComentario(comentario);
+                }
+
+                //Definición de parametros desde el controlador
+                request.setAttribute("stMensaje", bl_clsEstadisticas.createEstadistica(obclsEstadisticas));
+            }
             if (request.getAttribute("stMensaje").equals("Se realizo el proceso con exito")) {
                 request.setAttribute("stTipo", "success");
             }
@@ -517,79 +589,8 @@ public class ControlEstadisticas extends HttpServlet {
             }
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
 
-            //Listas desplegables
-            BL.Estadisticas.clsEmpleado bl_clsEmpleado = new BL.Estadisticas.clsEmpleado();
-            BL.Estadisticas.clsDia1 bl_clsDia1 = new BL.Estadisticas.clsDia1();
-            BL.Estadisticas.clsDia2 bl_clsDia2 = new BL.Estadisticas.clsDia2();
-            BL.Estadisticas.clsDia3 bl_clsDia3 = new BL.Estadisticas.clsDia3();
-            BL.Estadisticas.clsDia4 bl_clsDia4 = new BL.Estadisticas.clsDia4();
-            BL.Estadisticas.clsDia5 bl_clsDia5 = new BL.Estadisticas.clsDia5();
-            BL.Estadisticas.clsDia6 bl_clsDia6 = new BL.Estadisticas.clsDia6();
-            BL.Estadisticas.clsDia7 bl_clsDia7 = new BL.Estadisticas.clsDia7();
-            BL.Estadisticas.clsDia8 bl_clsDia8 = new BL.Estadisticas.clsDia8();
-            BL.Estadisticas.clsDia9 bl_clsDia9 = new BL.Estadisticas.clsDia9();
-            BL.Estadisticas.clsDia10 bl_clsDia10 = new BL.Estadisticas.clsDia10();
-            BL.Estadisticas.clsDia11 bl_clsDia11 = new BL.Estadisticas.clsDia11();
-            BL.Estadisticas.clsDia12 bl_clsDia12 = new BL.Estadisticas.clsDia12();
-            BL.Estadisticas.clsDia13 bl_clsDia13 = new BL.Estadisticas.clsDia13();
-            BL.Estadisticas.clsDia14 bl_clsDia14 = new BL.Estadisticas.clsDia14();
-            BL.Estadisticas.clsDia15 bl_clsDia15 = new BL.Estadisticas.clsDia15();
-            BL.Estadisticas.clsDia16 bl_clsDia16 = new BL.Estadisticas.clsDia16();
-            BL.Estadisticas.clsDia17 bl_clsDia17 = new BL.Estadisticas.clsDia17();
-            BL.Estadisticas.clsDia18 bl_clsDia18 = new BL.Estadisticas.clsDia18();
-            BL.Estadisticas.clsDia19 bl_clsDia19 = new BL.Estadisticas.clsDia19();
-            BL.Estadisticas.clsDia20 bl_clsDia20 = new BL.Estadisticas.clsDia20();
-            BL.Estadisticas.clsDia21 bl_clsDia21 = new BL.Estadisticas.clsDia21();
-            BL.Estadisticas.clsDia22 bl_clsDia22 = new BL.Estadisticas.clsDia22();
-            BL.Estadisticas.clsDia23 bl_clsDia23 = new BL.Estadisticas.clsDia23();
-            BL.Estadisticas.clsDia24 bl_clsDia24 = new BL.Estadisticas.clsDia24();
-            BL.Estadisticas.clsDia25 bl_clsDia25 = new BL.Estadisticas.clsDia25();
-            BL.Estadisticas.clsDia26 bl_clsDia26 = new BL.Estadisticas.clsDia26();
-            BL.Estadisticas.clsDia27 bl_clsDia27 = new BL.Estadisticas.clsDia27();
-            BL.Estadisticas.clsDia28 bl_clsDia28 = new BL.Estadisticas.clsDia28();
-            BL.Estadisticas.clsDia29 bl_clsDia29 = new BL.Estadisticas.clsDia29();
-            BL.Estadisticas.clsDia30 bl_clsDia30 = new BL.Estadisticas.clsDia30();
-            BL.Estadisticas.clsDia31 bl_clsDia31 = new BL.Estadisticas.clsDia31();
-            BL.Estadisticas.clsMes bl_clsMes = new BL.Estadisticas.clsMes();
-            BL.Estadisticas.clsAnio bl_clsAnio = new BL.Estadisticas.clsAnio();
-
-            request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
-            request.setAttribute("lstclsDia1", bl_clsDia1.getDia1());
-            request.setAttribute("lstclsDia2", bl_clsDia2.getDia2());
-            request.setAttribute("lstclsDia3", bl_clsDia3.getDia3());
-            request.setAttribute("lstclsDia4", bl_clsDia4.getDia4());
-            request.setAttribute("lstclsDia5", bl_clsDia5.getDia5());
-            request.setAttribute("lstclsDia6", bl_clsDia6.getDia6());
-            request.setAttribute("lstclsDia7", bl_clsDia7.getDia7());
-            request.setAttribute("lstclsDia8", bl_clsDia8.getDia8());
-            request.setAttribute("lstclsDia9", bl_clsDia9.getDia9());
-            request.setAttribute("lstclsDia10", bl_clsDia10.getDia10());
-            request.setAttribute("lstclsDia11", bl_clsDia11.getDia11());
-            request.setAttribute("lstclsDia12", bl_clsDia12.getDia12());
-            request.setAttribute("lstclsDia13", bl_clsDia13.getDia13());
-            request.setAttribute("lstclsDia14", bl_clsDia14.getDia14());
-            request.setAttribute("lstclsDia15", bl_clsDia15.getDia15());
-            request.setAttribute("lstclsDia16", bl_clsDia16.getDia16());
-            request.setAttribute("lstclsDia17", bl_clsDia17.getDia17());
-            request.setAttribute("lstclsDia18", bl_clsDia18.getDia18());
-            request.setAttribute("lstclsDia19", bl_clsDia19.getDia19());
-            request.setAttribute("lstclsDia20", bl_clsDia20.getDia20());
-            request.setAttribute("lstclsDia21", bl_clsDia21.getDia21());
-            request.setAttribute("lstclsDia22", bl_clsDia22.getDia22());
-            request.setAttribute("lstclsDia23", bl_clsDia23.getDia23());
-            request.setAttribute("lstclsDia24", bl_clsDia24.getDia24());
-            request.setAttribute("lstclsDia25", bl_clsDia25.getDia25());
-            request.setAttribute("lstclsDia26", bl_clsDia26.getDia26());
-            request.setAttribute("lstclsDia27", bl_clsDia27.getDia27());
-            request.setAttribute("lstclsDia28", bl_clsDia28.getDia28());
-            request.setAttribute("lstclsDia29", bl_clsDia29.getDia29());
-            request.setAttribute("lstclsDia30", bl_clsDia30.getDia30());
-            request.setAttribute("lstclsDia31", bl_clsDia31.getDia31());
-            request.setAttribute("lstclsMes", bl_clsMes.getMes());
-            request.setAttribute("lstclsAnio", bl_clsAnio.getAnio());
-            
             //Redireccion y envio de valores            
-            request.getRequestDispatcher("Estadisticas/reportes.jsp").forward(request, response);
+            request.getRequestDispatcher("Estadisticas/estadisticas.jsp").forward(request, response);
         } catch (Exception ex) {
             request.setAttribute("stMensaje", ex.getMessage());
             request.setAttribute("stTipo", "error");
@@ -926,11 +927,11 @@ public class ControlEstadisticas extends HttpServlet {
 
             request.setAttribute("stTipo", "error");
             request.setAttribute("stMensaje", ex.getMessage());
-            
+
             //Lista de Empleados
             BL.Estadisticas.clsEstadisticas bl_clsEstadisticas = new BL.Estadisticas.clsEstadisticas();
             request.setAttribute("lstclsEstadisticas", bl_clsEstadisticas.getEstadisticas());
-            
+
             request.getRequestDispatcher("Estadisticas/estadisticas.jsp.jsp").forward(request, response);
         }
 
