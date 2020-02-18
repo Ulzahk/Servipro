@@ -365,9 +365,9 @@
 
                                 %>
                                 <!--Input Oculto Tamaño de la Lista-->
-                                <input type="text" hidden="" name="extensionLista" value="<%=lstclsEmpleado.size()%>"/>
-                                
-                                <!-- Modal 1 -->
+                            <input type="text" hidden="" name="extensionLista" value="<%=lstclsEmpleado.size()%>"/>
+
+                            <!-- Modal 1 -->
                             <div class="modal fade" id="myModal1-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
@@ -1328,7 +1328,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia26"><b>Día 26</b></label>
-                                                <select class="form-control" name="ddlDia26-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia26-<%=elemA.getInId()%>" name="ddlDia26-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia26> lstclsDia26 = new ArrayList<Modelos.Estadisticas.clsId_dia26>();
 
@@ -1338,9 +1338,9 @@
 
                                                         for (Modelos.Estadisticas.clsId_dia26 elem : lstclsDia26) {
                                                     %>
-                                                    <option value="<%=elem.getId_dia26()%>"
+                                                    <option id="aliasInicialDia26-<%=elemA.getInId()%>" value="<%=elem.getId_dia26()%>"
                                                             <%=obclsEstadisticas.getObId_dia26() != null ? obclsEstadisticas.getObId_dia26().getId_dia26() == elem.getId_dia26() ? "selected" : "" : ""%>>
-                                                        <%=elem.getDescripcionDia26()%>(<%=elem.getAliasDia26()%>)
+                                                    <%=elem.getDescripcionDia26()%> (<%=elem.getAliasDia26()%>)
                                                     </option>
                                                     <%
                                                         }
@@ -1618,11 +1618,11 @@
 
                                         if (f < dias) {
                                 %>
-                                <td class="align-middle"><a href="<%=vEnModal[f]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[f]%>" data-toggle="modal" data-target="<%=vModal[f]%><%=elemA.getInId()%>"><%=vector[f]%></a></td>
-                                    <%
-                                        f++;
-                                    } else {
-                                    %>        
+                                <td class="align-middle"><a id="aliasDia" href="<%=vEnModal[f]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[f]%>" data-toggle="modal" data-target="<%=vModal[f]%><%=elemA.getInId()%>"></a></td>
+                                            <%
+                                                f++;
+                                            } else {
+                                            %>        
                                 <td class="align-middle"><a href="<%=vEnModal[numDos]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[numDos]%>" data-toggle="modal" data-target="<%=vModal[numDos]%><%=elemA.getInId()%>"><%=vector[numDos]%></a></td>
                                     <%numDos++;
                                             }
@@ -1642,9 +1642,9 @@
                                     if (GrupoEmpl == (elemA.getObclsGrupoEmpl().getId_grupo())) {
 
                             %>
-                                <!--Input Oculto Tamaño de la Lista-->
-                                <input type="text" hidden="" name="extensionLista" value="<%=lstclsEmpleado.size()%>"/>
-                                
+                            <!--Input Oculto Tamaño de la Lista-->
+                            <input type="text" hidden="" name="extensionLista" value="<%=lstclsEmpleado.size()%>"/>
+
                             <tr>
                                 <td class="align-middle">
                                     <input name="ddlEmpleado-<%=elemA.getInId()%>" value="<%=elemA.getInId()%>" hidden /><%=elemA.getStPrimerNombre() + " " + elemA.getStSegundoNombre() + " " + elemA.getStPrimerApellido() + " " + elemA.getStSegundoApellido()%>
@@ -1707,6 +1707,21 @@
     <script type="text/javascript" language="JavaScript">
 
         main();
+        
+
+            var novedadInicial = document.getElementById("aliasInicialDia26-1").textContent;
+            document.getElementById("aliasDia").innerHTML = novedadInicial;
+
+        
+
+        $('#ddlDia26-1').change(function ()
+        {
+            var selected = $(this).find('option:selected').text();
+            document.getElementById("aliasDia").innerHTML = selected;
+
+
+        });
+
 
     </script>
 </html>                           
