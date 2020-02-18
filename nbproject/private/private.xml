@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/EmpleadosGrupo/editarempleadosgrupo.jsp</file>
-            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/src/java/Servlets/ControlUsuarios.java</file>
-            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/src/java/Servlets/IniciarSesion.java</file>
-            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/src/java/Servlets/CerrarSesion.java</file>
-            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/src/java/Controles/AccesoDatos.java</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/EmpleadosGrupo/agregarempleadosgrupo.jsp</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/src/java/Servlets/ControlPraEmpleados.java</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/src/java/BL/PraEmpleados/clsPraEmpleados.java</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/src/java/BL/Estadisticas/clsEstadisticas.java</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/PraEmpleados/praempleados.jsp</file>
+            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/Empleados/agregarempleados.jsp</file>
         </group>
     </open-files>
 </project-private>
