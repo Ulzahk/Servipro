@@ -33,7 +33,7 @@ public class clsEstadisticas {
 
         try {
 
-            PreparedStatement ps = conn.prepareStatement("{call spInsertarEstadistica(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+            PreparedStatement ps = conn.prepareStatement("{call spInsertarEstadistica(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
             ps.setInt(1, obEstadisticas.getObEmpleado().getId_empleado());
             ps.setInt(2, obEstadisticas.getObId_dia1().getId_dia1());
             ps.setInt(3, obEstadisticas.getObId_dia2().getId_dia2());
@@ -68,6 +68,7 @@ public class clsEstadisticas {
             ps.setInt(32, obEstadisticas.getObId_dia31().getId_dia31());
             ps.setInt(33, obEstadisticas.getObMes().getId_mes());
             ps.setInt(34, obEstadisticas.getAnio());
+            ps.setString(35, obEstadisticas.getComentario());
 
             ps.execute();
 

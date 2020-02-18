@@ -282,6 +282,7 @@
                                                 }
                                             }
                                         %>
+                                    <th class="align-middle">Comentar</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1513,7 +1514,6 @@
                                         <div class="modal-body">
                                             <!--FILA 1-->
                                             <div class="form-group">
-                                                <label for="lblDia30"><b>Día 30</b></label>
                                                 <label for="lblDia31"><b>Día 31</b></label>
                                                 <select class="form-control" name="ddlDia31">
                                                     <%
@@ -1540,7 +1540,29 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>                                               
+                            <!--Modal Comentario-->
+                            <div class="modal fade" id="myModalComentario-<%=elemA.getInId()%>" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header background-card">
+                                            <button type="button" class="close" data-dismiss="modal">X</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--FILA 1-->
+                                            <div class="form-group">
+                                                <label for="lnlComentario:"><b>Nuevo Comentario</b></label>   
+                                                <textarea class="form-control" row="3" name="txtComentario"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" id="buttonCloseIDComentario" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <tr>
                                 <td class="align-middle">
                                     <input name="ddlEmpleado" value="<%=elemA.getInId()%>" hidden /><%=elemA.getStPrimerNombre() + " " + elemA.getStSegundoNombre() + " " + elemA.getStPrimerApellido() + " " + elemA.getStSegundoApellido()%>
@@ -1593,7 +1615,7 @@
 
                                         if (f < dias) {
                                 %>
-                                <td class="align-middle"><a href="<%=vEnModal[f]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[f]%>"  id="result25" data-toggle="modal" data-target="<%=vModal[f]%><%=elemA.getInId()%>"><%=vector[f]%></a></td>
+                                <td class="align-middle"><a href="<%=vEnModal[f]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[f]%>" data-toggle="modal" data-target="<%=vModal[f]%><%=elemA.getInId()%>"><%=vector[f]%></a></td>
                                     <%
                                         f++;
                                     } else {
@@ -1603,6 +1625,12 @@
                                             }
                                         }
                                     %>
+                                <td class="align-middle">
+                                    <a class="btn btn-primary rounded mr-1 openBtn1" data-toggle="modal" data-target="#myModalComentario-<%=elemA.getInId()%>" id="btnEmplComentar"
+                                       title="Haz clic para comentar" href="estadisticas?codigoComentar=<%=elemA.getInId()%>">
+                                        <i class="far fa-comment" style="font-size:15px;"></i>
+                                    </a>
+                                </td>
                             </tr>
                             <%
                                 }
@@ -1653,6 +1681,7 @@
                                                 }
                                             }
                                         %>
+                                    <th class="align-middle">Comentar</th>
                                 </tr>
                             </tfoot>
                         </table>
