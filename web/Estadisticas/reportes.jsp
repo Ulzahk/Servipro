@@ -364,6 +364,9 @@
                                         for (Modelos.Empleados.clsEmpleado elemA : lstclsEmpleado) {
 
                                 %>
+                                <!--Input Oculto Tamaño de la Lista-->
+                                <input type="text" hidden="" name="extensionLista" value="<%=lstclsEmpleado.size()%>"/>
+                                
                                 <!-- Modal 1 -->
                             <div class="modal fade" id="myModal1-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
@@ -1639,6 +1642,9 @@
                                     if (GrupoEmpl == (elemA.getObclsGrupoEmpl().getId_grupo())) {
 
                             %>
+                                <!--Input Oculto Tamaño de la Lista-->
+                                <input type="text" hidden="" name="extensionLista" value="<%=lstclsEmpleado.size()%>"/>
+                                
                             <tr>
                                 <td class="align-middle">
                                     <input name="ddlEmpleado-<%=elemA.getInId()%>" value="<%=elemA.getInId()%>" hidden /><%=elemA.getStPrimerNombre() + " " + elemA.getStSegundoNombre() + " " + elemA.getStPrimerApellido() + " " + elemA.getStSegundoApellido()%>
@@ -1690,6 +1696,7 @@
                             <div class="form-row">
                                 <div class="col-12">
                                     <input type="submit" value="Guardar" class="btn background-button" name="btnGuardarEsta"/>
+                                    <a><%=lstclsEmpleado.size()%></a>
                                 </div>
                             </div>
                         </div>
