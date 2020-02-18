@@ -188,7 +188,7 @@
                                             Calendar fecha = Calendar.getInstance();
 
                                             int año = fecha.get(Calendar.YEAR);
-                                            int mes = (fecha.get(Calendar.MONTH) + 2);
+                                            int mes = (fecha.get(Calendar.MONTH) + 1);
                                             int dias = 0;
                                             String nombreMes = "";
 
@@ -1696,7 +1696,6 @@
                             <div class="form-row">
                                 <div class="col-12">
                                     <input type="submit" value="Guardar" class="btn background-button" name="btnGuardarEsta"/>
-                                    <a><%=lstclsEmpleado.size()%></a>
                                 </div>
                             </div>
                         </div>
