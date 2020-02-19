@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/EmpleadosGrupo/agregarempleadosgrupo.jsp</file>
-            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/src/java/Servlets/ControlPraEmpleados.java</file>
-            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/src/java/BL/PraEmpleados/clsPraEmpleados.java</file>
-            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/src/java/BL/Estadisticas/clsEstadisticas.java</file>
-            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/PraEmpleados/praempleados.jsp</file>
-            <file>file:/C:/Users/PRACTICANTE/Documents/GitHub/Servipro/web/Empleados/agregarempleados.jsp</file>
+            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/Servlets/FileUploadHandler.java</file>
+            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/Empleados/empleados.jsp</file>
+            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/Empleados/importararchivosexcel.jsp</file>
+            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/web/importexcel.jsp</file>
+            <file>file:/C:/Users/practicante/Documents/GitHub/Servipro/src/java/ImportExcel/NewMain.java</file>
         </group>
     </open-files>
 </project-private>

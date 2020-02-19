@@ -64,6 +64,10 @@
         <servlet-name>ControlPraEmpleados</servlet-name>
         <servlet-class>Servlets.ControlPraEmpleados</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FileUploadHandler</servlet-name>
+        <servlet-class>Servlets.FileUploadHandler</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -119,6 +123,10 @@
     <servlet-mapping>
         <servlet-name>ControlPraEmpleados</servlet-name>
         <url-pattern>/controlpraempleados</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FileUploadHandler</servlet-name>
+        <url-pattern>/FileUploadHandler</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
