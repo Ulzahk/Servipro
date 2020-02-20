@@ -27,8 +27,7 @@
                         <div class="row">
                             <div class="col-2"></div>
                             <div class="col-8 text-center">
-                                <label class="mt-2" for="file2"><b>Selecciona el archivo</b></label>
-                                <input type="file" name="file2" class="form-control-file border">
+                                <input type="file" name="file2" class="form-control-file border mt-4">
                                 <input type="submit" value="Subir" name="subirExcel" class="btn background-button mt-2">
                             </div>                                             
                             <%
