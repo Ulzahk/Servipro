@@ -29,8 +29,6 @@
                             <div class="col-8 text-center">
                                 <label class="mt-2" for="file2"><b>Selecciona el archivo</b></label>
                                 <input type="file" name="file2" class="form-control-file border">
-                                <label class="mt-2"><b>Nombre del archivo</b></label>
-                                <input type="text" name="file_name" class="form-control">
                                 <input type="submit" value="Subir" name="subirExcel" class="btn background-button mt-2">
                             </div>                                             
                             <%
