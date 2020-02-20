@@ -131,13 +131,15 @@
                 <br>
                 <div class="card border-dark">
                     <div class="card-header border-dark background-card text-white">
-                        <form action="empleados" method="post">
-                            <div class="input-group">
+
+                        <div class="input-group">
+                            <form action="empleados" method="post">
                                 <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
                                 <a href="empleados?btnEmplAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
-                                <a href="empleados?btnImportarDatos=true" class="btn btn-secondary mr-2 openBtn" data-toggle="modal" data-target="#myModal" title="Haz clic para importar un archivo de Excel" ><i class="fas fa-file-upload"> <label class="coloriphonex tipoLetraLabel">Importar</label></i></a>
-                            </div>
-                        </form>
+                            </form>
+                            <a href="importexcel.jsp" id="btnImportarDatos" class="btn btn-secondary mr-2 openBtn" data-toggle="modal" data-target="#myModal" title="Haz clic para importar un archivo de Excel" ><i class="fas fa-file-upload"> <label class="coloriphonex tipoLetraLabel">Importar</label></i></a>
+                        </div>
+
                     </div>
                     <div class="card-body">
                         <table class="table table-fluid table table-bordered table-striped table-hover text-center table-responsive" id="myTable">

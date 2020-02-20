@@ -1,7 +1,5 @@
 package Servlets;
 
-import ImportExcel.NewMain;
-import static ImportExcel.NewMain.cargar;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -59,8 +57,6 @@ public class ControlEmpleados extends HttpServlet {
             btnEmplBuscar(request, response);
         } else if (request.getParameter("btnImportarDatos") != null) {
             btnImportarRedi(request, response);
-        } else if (request.getParameter("btnImpoGuardar") != null) {
-            btnImportarDatos(request, response);
         }
     }
 
@@ -359,37 +355,6 @@ public class ControlEmpleados extends HttpServlet {
             request.setAttribute("stTipo", "error");
             request.setAttribute("stMensaje", ex.getMessage());
 
-            request.getRequestDispatcher("Empleados/empleados.jsp").forward(request, response);
-
-        }
-    }
-
-    public void btnImportarDatos(HttpServletRequest request,
-            HttpServletResponse response) throws IOException, ServletException {
-        try {
-            BL.Empleados.clsEmpleado bl_clsEmpleado = new BL.Empleados.clsEmpleado();
-            
-            ImportExcel.clsRutaDeImportar obclsRutaDeImportar = new ImportExcel.clsRutaDeImportar();
-            
-            if(request.getParameter("exampleFormControlFile1") != null){
-                obclsRutaDeImportar.setRuta(request.getParameter("exampleFormControlFile1"));
-            }
-            cargar(obclsRutaDeImportar);
-            
-            request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
-            
-            request.getRequestDispatcher("Empleados/empleados.jsp").forward(request, response);
-            
-        } catch (Exception ex) {
-            
-            request.setAttribute("stMensaje", ex.getMessage());
-            
-            request.setAttribute("stTipo", "success");
-            
-            BL.Empleados.clsEmpleado bl_clsEmpleado = new BL.Empleados.clsEmpleado();
-            
-            request.setAttribute("lstclsEmpleado", bl_clsEmpleado.getEmpleado());
-            
             request.getRequestDispatcher("Empleados/empleados.jsp").forward(request, response);
 
         }
