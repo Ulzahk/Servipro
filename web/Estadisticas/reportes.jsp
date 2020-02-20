@@ -381,7 +381,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia1"><b>Día 1</b></label>
-                                                <select class="form-control" name="ddlDia1-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia1-<%=elemA.getInId()%>"  name="ddlDia1-<%=elemA.getInId()%>">
                                                     <%                                                        List<Modelos.Estadisticas.clsId_dia1> lstclsDia1 = new ArrayList<Modelos.Estadisticas.clsId_dia1>();
 
                                                         if (request.getAttribute("lstclsDia1") != null) {
@@ -418,7 +418,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia2"><b>Día 2</b></label>
-                                                <select class="form-control" name="ddlDia2-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia2-<%=elemA.getInId()%>" name="ddlDia2-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia2> lstclsDia2 = new ArrayList<Modelos.Estadisticas.clsId_dia2>();
 
@@ -456,7 +456,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia3"><b>Día 3</b></label>
-                                                <select class="form-control" name="ddlDia3-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia3-<%=elemA.getInId()%>" name="ddlDia3-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia3> lstclsDia3 = new ArrayList<Modelos.Estadisticas.clsId_dia3>();
 
@@ -494,7 +494,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia4"><b>Día 4</b></label>
-                                                <select class="form-control" name="ddlDia4-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia4-<%=elemA.getInId()%>" name="ddlDia4-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia4> lstclsDia4 = new ArrayList<Modelos.Estadisticas.clsId_dia4>();
 
@@ -532,7 +532,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia5"><b>Día 5</b></label>
-                                                <select class="form-control" name="ddlDia5-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia5-<%=elemA.getInId()%>" name="ddlDia5-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia5> lstclsDia5 = new ArrayList<Modelos.Estadisticas.clsId_dia5>();
 
@@ -570,7 +570,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia6"><b>Día 6</b></label>
-                                                <select class="form-control" name="ddlDia6-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia6-<%=elemA.getInId()%>" name="ddlDia6-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia6> lstclsDia6 = new ArrayList<Modelos.Estadisticas.clsId_dia6>();
 
@@ -608,7 +608,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia7"><b>Día 7</b></label>
-                                                <select class="form-control" name="ddlDia7-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia7-<%=elemA.getInId()%>" name="ddlDia7-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia7> lstclsDia7 = new ArrayList<Modelos.Estadisticas.clsId_dia7>();
 
@@ -646,7 +646,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia8"><b>Día 8</b></label>
-                                                <select class="form-control" name="ddlDia8-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia8-<%=elemA.getInId()%>" name="ddlDia8-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia8> lstclsDia8 = new ArrayList<Modelos.Estadisticas.clsId_dia8>();
 
@@ -684,7 +684,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia9"><b>Día 9</b></label>
-                                                <select class="form-control" name="ddlDia9-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia9-<%=elemA.getInId()%>" name="ddlDia9-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia9> lstclsDia9 = new ArrayList<Modelos.Estadisticas.clsId_dia9>();
 
@@ -722,7 +722,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia10"><b>Día 10</b></label>
-                                                <select class="form-control" name="ddlDia10-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia10-<%=elemA.getInId()%>" name="ddlDia10-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia10> lstclsDia10 = new ArrayList<Modelos.Estadisticas.clsId_dia10>();
 
@@ -760,7 +760,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia11"><b>Día 11</b></label>
-                                                <select class="form-control" name="ddlDia11-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia11-<%=elemA.getInId()%>" name="ddlDia11-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia11> lstclsDia11 = new ArrayList<Modelos.Estadisticas.clsId_dia11>();
 
@@ -798,7 +798,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia12"><b>Día 12</b></label>
-                                                <select class="form-control" name="ddlDia12-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia12-<%=elemA.getInId()%>" name="ddlDia12-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia12> lstclsDia12 = new ArrayList<Modelos.Estadisticas.clsId_dia12>();
 
@@ -836,7 +836,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia13"><b>Día 13</b></label>
-                                                <select class="form-control" name="ddlDia13-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia13-<%=elemA.getInId()%>" name="ddlDia13-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia13> lstclsDia13 = new ArrayList<Modelos.Estadisticas.clsId_dia13>();
 
@@ -874,7 +874,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia14"><b>Día 14</b></label>
-                                                <select class="form-control" name="ddlDia14-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia14-<%=elemA.getInId()%>" name="ddlDia14-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia14> lstclsDia14 = new ArrayList<Modelos.Estadisticas.clsId_dia14>();
 
@@ -912,7 +912,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia15"><b>Día 15</b></label>
-                                                <select class="form-control" name="ddlDia15-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia15-<%=elemA.getInId()%>" name="ddlDia15-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia15> lstclsDia15 = new ArrayList<Modelos.Estadisticas.clsId_dia15>();
 
@@ -950,7 +950,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia16"><b>Día 16</b></label>
-                                                <select class="form-control" name="ddlDia16-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia16-<%=elemA.getInId()%>" name="ddlDia16-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia16> lstclsDia16 = new ArrayList<Modelos.Estadisticas.clsId_dia16>();
 
@@ -988,7 +988,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia17"><b>Día 17</b></label>
-                                                <select class="form-control" name="ddlDia17-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia17-<%=elemA.getInId()%>" name="ddlDia17-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia17> lstclsDia17 = new ArrayList<Modelos.Estadisticas.clsId_dia17>();
 
@@ -1026,7 +1026,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia18"><b>Día 18</b></label>
-                                                <select class="form-control" name="ddlDia18-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia18-<%=elemA.getInId()%>" name="ddlDia18-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia18> lstclsDia18 = new ArrayList<Modelos.Estadisticas.clsId_dia18>();
 
@@ -1064,7 +1064,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia19"><b>Día 19</b></label>
-                                                <select class="form-control" name="ddlDia19-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia19-<%=elemA.getInId()%>" name="ddlDia19-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia19> lstclsDia19 = new ArrayList<Modelos.Estadisticas.clsId_dia19>();
 
@@ -1102,7 +1102,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia20"><b>Día 20</b></label>
-                                                <select class="form-control" name="ddlDia20-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia20-<%=elemA.getInId()%>" name="ddlDia20-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia20> lstclsDia20 = new ArrayList<Modelos.Estadisticas.clsId_dia20>();
 
@@ -1140,7 +1140,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia21"><b>Día 21</b></label>
-                                                <select class="form-control" name="ddlDia21-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia21-<%=elemA.getInId()%>" name="ddlDia21-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia21> lstclsDia21 = new ArrayList<Modelos.Estadisticas.clsId_dia21>();
 
@@ -1178,7 +1178,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia22"><b>Día 22</b></label>
-                                                <select class="form-control" name="ddlDia22-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia22-<%=elemA.getInId()%>" name="ddlDia22-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia22> lstclsDia22 = new ArrayList<Modelos.Estadisticas.clsId_dia22>();
 
@@ -1216,7 +1216,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia23"><b>Día 23</b></label>
-                                                <select class="form-control" name="ddlDia23-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia23-<%=elemA.getInId()%>" name="ddlDia23-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia23> lstclsDia23 = new ArrayList<Modelos.Estadisticas.clsId_dia23>();
 
@@ -1254,7 +1254,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia24"><b>Día 24</b></label>
-                                                <select class="form-control" name="ddlDia24-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia24-<%=elemA.getInId()%>" name="ddlDia24-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia24> lstclsDia24 = new ArrayList<Modelos.Estadisticas.clsId_dia24>();
 
@@ -1292,7 +1292,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia25"><b>Día 25</b></label>
-                                                <select class="form-control" name="ddlDia25-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia25-<%=elemA.getInId()%>" name="ddlDia25-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia25> lstclsDia25 = new ArrayList<Modelos.Estadisticas.clsId_dia25>();
 
@@ -1342,7 +1342,7 @@
                                                     %>
                                                     <option id="aliasInicialDia26-<%=elemA.getInId()%>" value="<%=elem.getId_dia26()%>"
                                                             <%=obclsEstadisticas.getObId_dia26() != null ? obclsEstadisticas.getObId_dia26().getId_dia26() == elem.getId_dia26() ? "selected" : "" : ""%>>
-                                                    <%=elem.getDescripcionDia26()%> (<%=elem.getAliasDia26()%>)
+                                                        <%=elem.getDescripcionDia26()%> (<%=elem.getAliasDia26()%>)
                                                     </option>
                                                     <%
                                                         }
@@ -1368,7 +1368,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia27"><b>Día 27</b></label>
-                                                <select class="form-control" name="ddlDia27-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia27-<%=elemA.getInId()%>" name="ddlDia27-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia27> lstclsDia27 = new ArrayList<Modelos.Estadisticas.clsId_dia27>();
 
@@ -1406,7 +1406,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia28"><b>Día 28</b></label>
-                                                <select class="form-control" name="ddlDia28-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia28-<%=elemA.getInId()%>" name="ddlDia28-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia28> lstclsDia28 = new ArrayList<Modelos.Estadisticas.clsId_dia28>();
 
@@ -1444,7 +1444,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia29"><b>Día 29</b></label>
-                                                <select class="form-control" name="ddlDia29-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia29-<%=elemA.getInId()%>" name="ddlDia29-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia29> lstclsDia29 = new ArrayList<Modelos.Estadisticas.clsId_dia29>();
 
@@ -1482,7 +1482,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia30"><b>Día 30</b></label>
-                                                <select class="form-control" name="ddlDia30-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia30-<%=elemA.getInId()%>" name="ddlDia30-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia30> lstclsDia30 = new ArrayList<Modelos.Estadisticas.clsId_dia30>();
 
@@ -1520,7 +1520,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia31"><b>Día 31</b></label>
-                                                <select class="form-control" name="ddlDia31-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia31-<%=elemA.getInId()%>" name="ddlDia31-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia31> lstclsDia31 = new ArrayList<Modelos.Estadisticas.clsId_dia31>();
 
@@ -1596,7 +1596,7 @@
                                         vEnModal[i] = "estadisticas?codigoDia" + j + "=";
                                         vopenBtn[i] = "openBtn" + j;
                                         vModal[i] = "#myModal" + j + "-";
-                                        vAliasDia[i] = "aliasDia"+ j + "-";
+                                        vAliasDia[i] = "aliasDia" + j + "-";
                                         j++;
                                     }
 
@@ -1608,12 +1608,12 @@
 
                                         if (f < dias) {
                                 %>
-                                <td class="align-middle"><a id="<%=vAliasDia[f]%><%=elemA.getInId()%>" href="<%=vEnModal[f]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[f]%>" data-toggle="modal" data-target="<%=vModal[f]%><%=elemA.getInId()%>"></a></td>
-                                            <%
-                                                f++;
-                                            } else {
-                                            %>        
-                                <td class="align-middle"><a href="<%=vEnModal[numDos]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[numDos]%>" data-toggle="modal" data-target="<%=vModal[numDos]%><%=elemA.getInId()%>"><%=vector[numDos]%></a></td>
+                                <td class="align-middle"><a id="<%=vAliasDia[f]%><%=elemA.getInId()%>" href="<%=vEnModal[f]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[f]%>" data-toggle="modal" data-target="<%=vModal[f]%><%=elemA.getInId()%>"><%=vector[f]%></a></td>
+                                    <%
+                                        f++;
+                                    } else {
+                                    %>        
+                                <td class="align-middle"><a id="<%=vAliasDia[numDos]%><%=elemA.getInId()%>" href="<%=vEnModal[numDos]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[numDos]%>" data-toggle="modal" data-target="<%=vModal[numDos]%><%=elemA.getInId()%>"><%=vector[numDos]%></a></td>
                                     <%numDos++;
                                             }
                                         }
@@ -1697,33 +1697,108 @@
     <script type="text/javascript" language="JavaScript">
 
         main();
-        
+
         var aliasInicialDia26 = [];
         var aliasDia26 = [];
         var ddlDia26 = [];
-        
-        
-        var i;
-        for (i = 1; i < 48; i++ ){
-            aliasInicialDia26[i] = "aliasInicialDia26-"+i;
-            aliasDia26[i] = "aliasDia26-"+i;
-            ddlDia26[i] = '#ddlDia26-'+i;
-        }
-        
-            
-        var j;
-    for ( j = 1; j < 90; j++){
-        
-        var novedadInicial = document.getElementById(aliasInicialDia26[j]).textContent;
-        document.getElementById(aliasDia26[j]).innerHTML = novedadInicial;
-        
-        $(ddlDia26[j]).change(function ()
-        {
-            var selected = $(this).find('option:selected').text();
-            document.getElementById("aliasDia26-2").innerHTML = selected;
-            
-        });
-     }
 
+
+        var i;
+        for (i = 1; i < 48; i++) {
+            aliasInicialDia26[i] = "aliasInicialDia26-" + i;
+            aliasDia26[i] = "aliasDia26-" + i;
+            ddlDia26[i] = '#ddlDia26-' + i;
+        }
+
+
+        var j;
+        for (j = 1; j < 90; j++) {
+
+            var novedadInicial = document.getElementById(aliasInicialDia26[j]).textContent;
+            document.getElementById(aliasDia26[j]).innerHTML = novedadInicial;
+
+            $(ddlDia26[j]).change(function ()
+            {
+                var selected26 = $(this).find('option:selected').text();
+                document.getElementById("aliasDia26-1").innerHTML = "<span style=\"font-weight: 750;\">" + selected26 + "</span>";
+
+            });
+        }
+
+    </script>
+    <script>
+        function dia27() {
+            var aliasInicialDia27 = [];
+            var aliasDia27 = [];
+            var ddlDia27 = [];
+            var i;
+            for (i = 1; i < 48; i++) {
+                aliasInicialDia27[i] = "aliasInicialDia27-" + i;
+                aliasDia27[i] = "aliasDia27-" + i;
+                ddlDia27[i] = '#ddlDia27-' + i;
+            }
+            ;
+            var j;
+            for (j = 1; j < 90; j++) {
+                var novedadInicial = document.getElementById(aliasInicialDia27[j]).textContent;
+                document.getElementById(aliasDia27[j]).innerHTML = novedadInicial;
+                $(ddlDia27[j]).change(function j()
+                {
+                    var selected27 = $(this).find('option:selected').text();
+                    document.getElementById("aliasDia27-1").innerHTML = "<span style=\"color: black; font-weight: 750;\">" + selected27 + "</span>";
+                });
+            }
+        }
+        dia27();
+    </script>
+    <script>
+        function dia28() {
+            var aliasInicialDia28 = [];
+            var aliasDia28 = [];
+            var ddlDia28 = [];
+            var i;
+            for (i = 1; i < 48; i++) {
+                aliasInicialDia28[i] = "aliasInicialDia28-" + i;
+                aliasDia28[i] = "aliasDia28-" + i;
+                ddlDia28[i] = '#ddlDia28-' + i;
+            }
+            ;
+            var j;
+            for (j = 1; j < 90; j++) {
+                var novedadInicial = document.getElementById(aliasInicialDia28[j]).textContent;
+                document.getElementById(aliasDia28[j]).innerHTML = novedadInicial;
+                $(ddlDia28[j]).change(function j()
+                {
+                    var selected28 = $(this).find('option:selected').text();
+                    document.getElementById("aliasDia28-1").innerHTML = "<span style=\"color: red;\">" + selected28 + "</span>";
+                });
+            }
+        }
+        dia28();
+    </script>
+    <script>
+        function dia29() {
+            var aliasInicialDia29 = [];
+            var aliasDia29 = [];
+            var ddlDia29 = [];
+            var i;
+            for (i = 1; i < 48; i++) {
+                aliasInicialDia29[i] = "aliasInicialDia29-" + i;
+                aliasDia29[i] = "aliasDia29-" + i;
+                ddlDia29[i] = '#ddlDia29-' + i;
+            }
+            ;
+            var j;
+            for (j = 1; j < 90; j++) {
+                var novedadInicial = document.getElementById(aliasInicialDia29[j]).textContent;
+                document.getElementById(aliasDia29[j]).innerHTML = novedadInicial;
+                $(ddlDia29[j]).change(function j()
+                {
+                    var selected29 = $(this).find('option:selected').text();
+                    document.getElementById("aliasDia29-1").innerHTML = "<span style=\"color: red; font-weight: 750;\">" + selected29 + "</span>";
+                });
+            }
+        }
+        dia29();
     </script>
 </html>                           
