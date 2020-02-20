@@ -366,7 +366,7 @@
                                 %>
                                 <!--Input Oculto Tamaño de la Lista-->
                             <input type="text" hidden="" name="extensionLista" value="<%=lstclsEmpleado.size()%>"/>
-
+                            <input type="text" hidden="" name="idEmpleado" id="idEmpleado" value="<%=elemA.getInId()%>"/>
                             <!-- Modal 1 -->
                             <div class="modal fade" id="myModal1-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
@@ -1340,7 +1340,7 @@
                                                     %>
                                                     <option id="aliasInicialDia26-<%=elemA.getInId()%>" value="<%=elem.getId_dia26()%>"
                                                             <%=obclsEstadisticas.getObId_dia26() != null ? obclsEstadisticas.getObId_dia26().getId_dia26() == elem.getId_dia26() ? "selected" : "" : ""%>>
-                                                    <%=elem.getDescripcionDia26()%> (<%=elem.getAliasDia26()%>)
+                                                        <%=elem.getDescripcionDia26()%> (<%=elem.getAliasDia26()%>)
                                                     </option>
                                                     <%
                                                         }
@@ -1366,7 +1366,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia27"><b>Día 27</b></label>
-                                                <select class="form-control" name="ddlDia27-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia27-<%=elemA.getInId()%>" name="ddlDia27-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia27> lstclsDia27 = new ArrayList<Modelos.Estadisticas.clsId_dia27>();
 
@@ -1404,7 +1404,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia28"><b>Día 28</b></label>
-                                                <select class="form-control" name="ddlDia28-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia28-<%=elemA.getInId()%>" name="ddlDia28-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia28> lstclsDia28 = new ArrayList<Modelos.Estadisticas.clsId_dia28>();
 
@@ -1425,7 +1425,7 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" id="buttonCloseID28" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                            <button type="button" id="ddlDia28-<%=elemA.getInId()%>" id="buttonCloseID28" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -1442,7 +1442,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia29"><b>Día 29</b></label>
-                                                <select class="form-control" name="ddlDia29-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia29-<%=elemA.getInId()%>" name="ddlDia29-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia29> lstclsDia29 = new ArrayList<Modelos.Estadisticas.clsId_dia29>();
 
@@ -1480,7 +1480,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia30"><b>Día 30</b></label>
-                                                <select class="form-control" name="ddlDia30-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia30-<%=elemA.getInId()%>" name="ddlDia30-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia30> lstclsDia30 = new ArrayList<Modelos.Estadisticas.clsId_dia30>();
 
@@ -1518,7 +1518,7 @@
                                             <!--FILA 1-->
                                             <div class="form-group">
                                                 <label for="lblDia31"><b>Día 31</b></label>
-                                                <select class="form-control" name="ddlDia31-<%=elemA.getInId()%>">
+                                                <select class="form-control" id="ddlDia31-<%=elemA.getInId()%>" name="ddlDia31-<%=elemA.getInId()%>">
                                                     <%
                                                         List<Modelos.Estadisticas.clsId_dia31> lstclsDia31 = new ArrayList<Modelos.Estadisticas.clsId_dia31>();
 
@@ -1594,7 +1594,7 @@
                                         vEnModal[i] = "estadisticas?codigoDia" + j + "=";
                                         vopenBtn[i] = "openBtn" + j;
                                         vModal[i] = "#myModal" + j + "-";
-                                        vAliasDia[i] = "aliasDia"+ j + "-";
+                                        vAliasDia[i] = "aliasDia" + j + "-";
                                         j++;
                                     }
 
@@ -1606,12 +1606,12 @@
 
                                         if (f < dias) {
                                 %>
-                                <td class="align-middle"><a id="<%=vAliasDia[f]%><%=elemA.getInId()%>" href="<%=vEnModal[f]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[f]%>" data-toggle="modal" data-target="<%=vModal[f]%><%=elemA.getInId()%>"></a></td>
-                                            <%
-                                                f++;
-                                            } else {
-                                            %>        
-                                <td class="align-middle"><a href="<%=vEnModal[numDos]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[numDos]%>" data-toggle="modal" data-target="<%=vModal[numDos]%><%=elemA.getInId()%>"><%=vector[numDos]%></a></td>
+                                <td class="align-middle"><a id="<%=vAliasDia[f]%><%=elemA.getInId()%>" href="<%=vEnModal[f]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[f]%>" data-toggle="modal" data-target="<%=vModal[f]%><%=elemA.getInId()%>"><%=vector[f]%></a></td>
+                                    <%
+                                        f++;
+                                    } else {
+                                    %>        
+                                <td class="align-middle"><a id="<%=vAliasDia[numDos]%><%=elemA.getInId()%>" href="<%=vEnModal[numDos]%><%=elemA.getInId()%>" class="btn btn-link <%=vopenBtn[numDos]%>" data-toggle="modal" data-target="<%=vModal[numDos]%><%=elemA.getInId()%>"><%=vector[numDos]%></a></td>
                                     <%numDos++;
                                             }
                                         }
@@ -1695,33 +1695,102 @@
     <script type="text/javascript" language="JavaScript">
 
         main();
-        
-        var aliasInicialDia26 = [];
-        var aliasDia26 = [];
-        var ddlDia26 = [];
-        
-        
-        var i;
-        for (i = 1; i < 48; i++ ){
-            aliasInicialDia26[i] = "aliasInicialDia26-"+i;
-            aliasDia26[i] = "aliasDia26-"+i;
-            ddlDia26[i] = '#ddlDia26-'+i;
-        }
-        
-            
-        var j;
-    for ( j = 1; j < 90; j++){
-        
-        var novedadInicial = document.getElementById(aliasInicialDia26[j]).textContent;
-        document.getElementById(aliasDia26[j]).innerHTML = novedadInicial;
-        
-        $(ddlDia26[j]).change(function ()
-        {
-            var selected = $(this).find('option:selected').text();
-            document.getElementById("aliasDia26-2").innerHTML = selected;
-            
-        });
-     }
 
+        function dia26() {
+            var aliasInicialDia26 = [];
+            var aliasDia26 = [];
+            var ddlDia26 = [];
+            
+            
+            var i;
+            for (i = 1; i < 48; i++) {
+                aliasInicialDia26[i] = "aliasInicialDia26-" + i;
+                aliasDia26[i] = "aliasDia26-" + i;
+                ddlDia26[i] = '#ddlDia26-' + i;
+            }
+            ;
+
+            var j;
+            for (j = 1; j < 46; j++) {
+
+                var novedadInicial = document.getElementById(aliasInicialDia26[j]).textContent;
+                document.getElementById(aliasDia26[j]).innerHTML = novedadInicial;
+                var controlaliasDia26 = aliasDia26[j];
+                
+                $(ddlDia26[j]).change(function j()
+                {
+                        var selected26 = $(this).find('option:selected').text();
+                        document.getElementById("aliasDia26-1").innerHTML = "<span style=\"font-weight: 750;\">" + selected26 + "</span>";
+                });
+
+            }
+        }
+
+        dia26();
+
+    </script>
+    
+    <script>
+
+        function dia27() {
+            var aliasInicialDia27 = [];
+            var aliasDia27 = [];
+            var ddlDia27 = [];
+
+            var i;
+            for (i = 1; i < 48; i++) {
+                aliasInicialDia27[i] = "aliasInicialDia27-" + i;
+                aliasDia27[i] = "aliasDia27-" + i;
+                ddlDia27[i] = '#ddlDia27-' + i;
+            }
+            ;
+
+            var j;
+            for (j = 1; j < 90; j++) {
+
+                var novedadInicial = document.getElementById(aliasInicialDia27[j]).textContent;
+                document.getElementById(aliasDia27[j]).innerHTML = novedadInicial;
+
+                $(ddlDia27[j]).change(function j()
+                {
+                    var selected27 = $(this).find('option:selected').text();
+                    document.getElementById("aliasDia27-1").innerHTML = "<span style=\"font-weight: 750;\">" + selected27 + "</span>";
+
+                });
+            }
+        }
+
+        dia27();
+    </script>
+    <script>
+        function dia28() {
+            var aliasInicialDia28 = [];
+            var aliasDia28 = [];
+            var ddlDia28 = [];
+
+            var i;
+            for (i = 1; i < 48; i++) {
+                aliasInicialDia28[i] = "aliasInicialDia28-" + i;
+                aliasDia28[i] = "aliasDia28-" + i;
+                ddlDia28[i] = '#ddlDia28-' + i;
+            }
+            ;
+
+            var j;
+            for (j = 1; j < 90; j++) {
+
+                var novedadInicial = document.getElementById(aliasInicialDia28[j]).textContent;
+                document.getElementById(aliasDia28[j]).innerHTML = novedadInicial;
+
+                $(ddlDia28[j]).change(function j()
+                {
+                    var selected28 = $(this).find('option:selected').text();
+                    document.getElementById("aliasDia28-1").innerHTML = "<span style=\"font-weight: 750;\">" + selected28 + "</span>";
+
+                });
+            }
+        }
+
+        dia28();
     </script>
 </html>                           
