@@ -366,7 +366,7 @@
                                 %>
                                 <!--Input Oculto Tamaño de la Lista-->
                             <input type="text" hidden="" name="extensionLista" value="<%=lstclsEmpleado.size()%>"/>
-                            <input type="text" hidden="" name="idEmpleado" id="idEmpleado" value="<%=elemA.getInId()%>"/>
+                            <input type="text" hidden="" name="idEmpleadoN" id="idEmpleadoN" value="<%=elemA.getInId()%>"/>
                             <!-- Modal 1 -->
                             <div class="modal fade" id="myModal1-<%=elemA.getInId()%>" role="dialog">
                                 <div class="modal-dialog">
