@@ -240,6 +240,131 @@ header .Menu ul li .caret {
     margin-right:0px;
 }
 
+.switchTheme{
+    background: #285783;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+    width: 60px;
+    height: 30px;
+    
+}
+.switchTheme:after{
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #f1f1f1;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,.2);
+}
+.switchTheme.active{
+    background: rgb(233, 233, 233);
+    color: black;
+}
+.switchTheme.active:after{
+    right: 0;
+    left: unset;
+    display: block;
+}
+.switchTheme span{
+    whidth: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: #fff;
+}
+body.dark{
+    background: linear-gradient(to right top, #232526, #1d1d1e, #161617, #0d0d0d, #000000);
+    color: white;
+}
+body.dark div .card-body{
+    background: linear-gradient(to right top, #232526, #1d1d1e, #161617, #0d0d0d, #000000);
+    color: white;
+}
+body.dark #lista{
+    background:  linear-gradient(to right top, #232526, #1d1d1e, #161617, #0d0d0d, #000000);
+    color: white;
+}
+body.dark nav{
+    background:  #285783;
+}
+body.dark #botonesAI{
+    background: #285783;
+}
+body.dark #estiloBtns{
+    background:  #244666 ;
+    border-color:  #7e7d7d ;
+}
+body.dark #cardTab{
+    background: #1b1e23;
+    border-color: white;
+}
+body.dark #myTable_info{
+    color: white;
+}
+body.dark .dataTables_paginate .paginate_button{
+    color: white !important;
+}
+body.dark #myTable_next{
+    color: white;
+}
+body.dark .paginate_button{
+    color: white;
+}
+#cardTab{
+    border-color: black;
+}
+
+.buttons-page-length{
+    bottom: 5px;
+    
+}
+.buttons-csv{
+    bottom: 5px;
+}
+.buttons-excel{
+    bottom: 5px;
+}
+body.dark .buttons-page-length{
+    background: linear-gradient(to right top, #232526, #1d1d1e, #161617, #0d0d0d, #000000);
+    color: white;
+}
+body.dark .buttons-csv{
+    background: linear-gradient(to right top, #232526, #1d1d1e, #161617, #0d0d0d, #000000);
+    color: white;
+}
+body.dark .buttons-excel{
+    background: linear-gradient(to right top, #232526, #1d1d1e, #161617, #0d0d0d, #000000);
+    color: white;
+}
+body.dark #myTable_filter label{
+    color: white;
+}
+body.dark #myTable_filter label input{
+    background: black;
+    color: white;
+}
+body.dark .dataTables_empty{
+    background: linear-gradient(to right top, #232526, #1d1d1e, #161617, #0d0d0d, #000000);
+    color: white;
+}
+#spanSun{
+    color:#000000;
+    padding-left: 7px;
+}
+#spanMoon{
+    padding-left: 14px;
+}
 @media screen and (max-width: 800px) {
     body {
         padding-top:80px;
@@ -251,6 +376,10 @@ header .Menu ul li .caret {
         position: fixed;
         top:0;
         background: #2980b9;
+    }
+    body.dark .menu_bar{
+        background:  #285783;
+        border-color:  #285783;
     }
 
     .menu_bar .bt-menu {

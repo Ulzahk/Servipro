@@ -126,3 +126,10 @@ function selectAll() {
     });
 }
 
+function darkMode(){
+    const btnSwitch = document.querySelector('#switchT');
+    
+        document.body.classList.toggle('dark');
+        btnSwitch.classList.toggle('active');
+}
+

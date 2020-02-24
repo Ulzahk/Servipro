@@ -71,6 +71,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="Resources/CSS/style.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="<c:url value="/Resources/CSS/style.css"/>"/>
+        <link href="../Resources/CSS/style.css" rel="stylesheet" type="text/css"/>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -87,6 +88,7 @@
         <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
         <script src="https://cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"></script>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="https://kit.fontawesome.com/2c3639b7b1.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="Resources/JS/functions.js"></script>
@@ -129,22 +131,26 @@
             <div class="container mt-4">
                 <h1 class="text-center">Empleados</h1>
                 <br>
-                <div class="card border-dark">
-                    <div class="card-header border-dark background-card text-white">
+                <div id="cardTab" class="card border-dark">
+                    <div id="botonesAI" class="card-header border-dark background-card text-white">
 
                         <div class="input-group">
                             <form action="empleados" method="post">
-                                <a href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
-                                <a href="empleados?btnEmplAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
+                                <a id="estiloBtns" href="nomina.htm" class="btn btn-secondary mr-1" data-toggle="tooltip" title="Haz clic para regresar al menú nómina"><i class="fas fa-arrow-left"></i></a>
+                                <a id="estiloBtns" href="empleados?btnEmplAgregar=true" class="btn btn-secondary mr-2" data-toggle="tooltip" title="Haz clic para agregar un nuevo registro" ><i class="fas fa-plus-circle"> <label class="coloriphonex tipoLetraLabel">Agregar</label></i></a>
                             </form>
-                            <a href="importexcel.jsp" id="btnImportarDatos" class="btn btn-secondary mr-2 openBtn" data-toggle="modal" data-target="#myModal" title="Haz clic para importar un archivo de Excel" ><i class="fas fa-file-upload"> <label class="coloriphonex tipoLetraLabel">Importar</label></i></a>
+                            <a id="estiloBtns" href="importexcel.jsp" id="btnImportarDatos" class="btn btn-secondary mr-2 openBtn" data-toggle="modal" data-target="#myModal" title="Haz clic para importar un archivo de Excel" ><i class="fas fa-file-upload"> <label class="coloriphonex tipoLetraLabel">Importar</label></i></a>
+                            <button class="switchTheme mt-1" id="switchT" onclick="darkMode()">
+                                <span id="spanSun"><i class="far fa-sun"></i></span>
+                                <span id="spanMoon"><i class="far fa-moon"></i></span>
+                            </button>
                         </div>
 
                     </div>
-                    <div class="card-body">
-                        <table class="table table-fluid table table-bordered table-striped table-hover text-center table-responsive" id="myTable">
+                    <div class="card-body" >
+                        <table class="table table-fluid table table-bordered table-hover text-center table-responsive" id="myTable">
                             <thead>
-                                <tr>
+                                <tr id="lista">
                                     <th class="align-middle">Tipo Documento</th>
                                     <th class="align-middle">Documento</th>
                                     <th class="align-middle">Nombre Completo</th>
@@ -158,7 +164,7 @@
                             <%
                                 for (Modelos.Empleados.clsEmpleado elem : lstclsEmpleado) {
                             %>
-                            <tr>
+                            <tr id="lista">
                                 <td class="align-middle"><%=elem.getObclsTipoDocumento().getStDescripcion()%></td>
                                 <td class="align-middle"><%=elem.getStDocumento()%></td>
                                 <td class="align-middle"><%=elem.getStPrimerNombre()%> <%=elem.getStSegundoNombre()%> <%=elem.getStPrimerApellido()%> <%=elem.getStSegundoApellido()%></td>
@@ -183,7 +189,7 @@
                             %>
                         </tbody>
                         <tfoot>
-                            <tr>
+                            <tr id="lista">
                                 <th class="align-middle">Tipo Documento</th>
                                 <th class="align-middle">Documento</th>
                                 <th class="align-middle">Nombre Completo</th>
@@ -209,6 +215,7 @@
                 </div>
             </div>
         </div>
+
     </body>
     <script type="text/javascript" language="JavaScript">
         main();
