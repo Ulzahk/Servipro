@@ -142,7 +142,7 @@
                                 </div>
                                 <div class="col-8 text-center">
                                     <i class="fas fa-exclamation-triangle mb-2" style="font-size:70px;color:#FFCC00;"></i>
-                                    <h4 class="font-weight-bold">¿Estás seguro de que quieres eliminar esto?</h4>
+                                    <h4 class="font-weight-bold">¿Estás seguro de que quieres eliminar este registro?</h4>
                                     <h6>No podrás deshacer esta acción</h6>
                                 </div>
                                 <div class="col-2">
@@ -155,7 +155,7 @@
                                 <div class="col-12 text-center btn-group">
                                     <a href="controlusuarios?btnUsuConsultar=true" class="btn background-button font-weight-bold rounded"><span>No, cancelar</span></a>
                                     <span>&nbsp;</span>
-                                    <input type="submit" value="Si, eliminar" class="btn btn-danger font-weight-bold rounded ml-1" name="btnUsuEliminar"/>
+                                    <input type="submit" value="Sí, eliminar" class="btn btn-danger font-weight-bold rounded ml-1" name="btnUsuEliminar"/>
                                     <input type="text" name="IdModificar" id="IdModificar" value="<%=obclsUsuarios.getNro_usuario()%>" hidden=""/>                               
                                 </div>
                             </div>

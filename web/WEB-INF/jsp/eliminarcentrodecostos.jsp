@@ -107,7 +107,7 @@
                             </div>
                             <div class="col-8 text-center">
                                 <i class="fas fa-exclamation-triangle mb-2" style="font-size:70px;color:#FFCC00;"></i>
-                                <h4 class="font-weight-bold">¿Estás seguro de que quieres eliminar esto?</h4>
+                                <h4 class="font-weight-bold">¿Estás seguro de que quieres eliminar este registro?</h4>
                                 <h6>No podrás deshacer esta acción</h6>
                             </div>
                             <div class="col-2">
@@ -121,7 +121,7 @@
                                 <div class="col-12 text-center btn-group">
                                     <a href="centrodecostos.htm" class="btn background-button font-weight-bold rounded" data-toggle="tooltip" title="Haz clic para regresar al menú perfil"><span>No, cancelar</span></a>
                                     <span>&nbsp;</span>
-                                    <a href="<c:url value="confirmareliminarcentrodecostos.htm?id_ccostos=${dato.Id_ccostos}"/>" class="btn btn-danger rounded ml-1"><b>Si, eliminar</b></a>                                        
+                                    <a href="<c:url value="confirmareliminarcentrodecostos.htm?id_ccostos=${dato.Id_ccostos}"/>" class="btn btn-danger rounded ml-1"><b>Sí, eliminar</b></a>                                        
                                 </div>
                                 </c:forEach>                            
                         </div>
